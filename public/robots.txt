@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Sitemap: https://carrgo.netlify.app/sitemap.xml
+Sitemap: https://carrgo.co.uk/sitemap.xml
