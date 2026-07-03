@@ -5,6 +5,29 @@ import Loading from './components/Loading';
 import Placeholder from './pages/Placeholder';
 
 const Home = lazy(() => import('./pages/Home'));
+const PortCongestion = lazy(() => import('./pages/resources/PortCongestion'));
+const ShippingGuides = lazy(() => import('./pages/resources/ShippingGuides'));
+const ContainerGuide = lazy(() => import('./pages/resources/ContainerGuide'));
+const Incoterms = lazy(() => import('./pages/resources/Incoterms'));
+const FreightFaqs = lazy(() => import('./pages/resources/FreightFaqs'));
+const CaseStudies = lazy(() => import('./pages/resources/CaseStudies'));
+const Testimonials = lazy(() => import('./pages/resources/Testimonials'));
+const Industries = lazy(() => import('./pages/resources/Industries'));
+const OurProcess = lazy(() => import('./pages/resources/OurProcess'));
+const PostBrexit = lazy(() => import('./pages/resources/PostBrexit'));
+
+const resourcePages: Record<string, React.ComponentType> = {
+  '/resources/port-congestion-tracker': PortCongestion,
+  '/resources/shipping-guides': ShippingGuides,
+  '/resources/container-size-guide': ContainerGuide,
+  '/resources/incoterms-guide': Incoterms,
+  '/resources/freight-faqs': FreightFaqs,
+  '/resources/case-studies': CaseStudies,
+  '/resources/testimonials': Testimonials,
+  '/resources/industries': Industries,
+  '/resources/our-process': OurProcess,
+  '/resources/post-brexit-customs-guide': PostBrexit,
+};
 
 const pageMap: Record<string, { title: string; desc?: string }> = {
   '/about': { title: 'About Carrgo', desc: 'Learn about Carrgo Freight Solutions, our story, mission, and values as a trusted UK freight forwarder.' },
@@ -29,15 +52,6 @@ const pageMap: Record<string, { title: string; desc?: string }> = {
   '/routes/turkey-to-uk': { title: 'Turkey to UK Shipping', desc: 'Sea and road freight from Turkey to UK. Transit times and rates.' },
   '/routes/uae-to-uk': { title: 'UAE to UK Shipping', desc: 'Sea and air freight from UAE to UK. Transit times and rates.' },
   '/routes/spain-to-uk': { title: 'Spain to UK Shipping', desc: 'Road and sea freight from Spain to UK. Transit times and rates.' },
-  '/resources/port-congestion-tracker': { title: 'Port Congestion Tracker', desc: 'Live UK port congestion status for Felixstowe, Southampton and London Gateway.' },
-  '/resources/shipping-guides': { title: 'Shipping Guides', desc: 'Comprehensive guides to sea, air, road and rail freight shipping.' },
-  '/resources/container-size-guide': { title: 'Container Size Guide', desc: '20ft, 40ft and 40ft HC container dimensions, capacity and weight limits.' },
-  '/resources/incoterms-guide': { title: 'Incoterms Guide', desc: 'Complete guide to EXW, FCA, CPT, CIP, DAP, DPU, DDP, FAS, FOB, CFR, CIF.' },
-  '/resources/freight-faqs': { title: 'Freight FAQs', desc: 'Answers to common freight forwarding questions.' },
-  '/resources/case-studies': { title: 'Case Studies', desc: 'Success stories from UK importers using Carrgo freight services.' },
-  '/resources/industries': { title: 'Industries We Serve', desc: 'Freight solutions for furniture, ecommerce, automotive, construction and more.' },
-  '/resources/our-process': { title: 'Our Process', desc: 'Our 5-step freight forwarding process from quote to delivery.' },
-  '/resources/post-brexit-customs-guide': { title: 'Post-Brexit Customs Guide', desc: 'Navigating UK customs after Brexit. Essential guidance for importers.' },
 };
 
 function PlaceholderRoute({ path }: { path: string }) {
@@ -51,6 +65,11 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
+          {/* Resource pages — fully implemented */}
+          {Object.entries(resourcePages).map(([path, Component]) => (
+            <Route key={path} path={path} element={<Suspense fallback={<Loading />}><Component /></Suspense>} />
+          ))}
+          {/* Placeholder pages — not yet implemented */}
           {Object.keys(pageMap).map(path => (
             <Route key={path} path={path} element={<PlaceholderRoute path={path} />} />
           ))}
