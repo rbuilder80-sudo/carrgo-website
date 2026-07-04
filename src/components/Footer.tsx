@@ -35,12 +35,25 @@ const legal = [
   { label: 'Terms of Service', to: '/terms' },
 ];
 
+const resources = [
+  { label: 'Port Congestion Tracker', to: '/resources/port-congestion-tracker' },
+  { label: 'Shipping Guides', to: '/resources/shipping-guides' },
+  { label: 'Container Size Guide', to: '/resources/container-size-guide' },
+  { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
+  { label: 'Freight FAQs', to: '/resources/freight-faqs' },
+  { label: 'Case Studies', to: '/resources/case-studies' },
+  { label: 'Testimonials', to: '/resources/testimonials' },
+  { label: 'Industries', to: '/resources/industries' },
+  { label: 'Our Process', to: '/resources/our-process' },
+  { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container-carrgo py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 text-white font-bold text-xl mb-4">
               <Ship className="w-8 h-8" aria-hidden="true" />
@@ -70,6 +83,15 @@ export default function Footer() {
             <h2 className="text-white font-semibold mb-4 text-base">Trade Routes</h2>
             <ul className="space-y-2 text-sm">
               {routes.map(r => (
+                <li key={r.to}><Link to={r.to} className="hover:text-white transition-colors">{r.label}</Link></li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Resources">
+            <h2 className="text-white font-semibold mb-4 text-base">Resources</h2>
+            <ul className="space-y-2 text-sm">
+              {resources.map(r => (
                 <li key={r.to}><Link to={r.to} className="hover:text-white transition-colors">{r.label}</Link></li>
               ))}
             </ul>
