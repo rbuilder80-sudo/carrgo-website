@@ -11,7 +11,7 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Customs Clearance UK — HMRC-Authorised Brokers',
+  name: 'Customs Clearance UK — Customs Brokers',
   provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -73,8 +73,8 @@ export default function CustomsClearance() {
   return (
     <>
       <Seo
-        title="Customs Clearance UK | HMRC-Authorised Customs Brokers | Carrgo"
-        description="HMRC-authorised customs brokers handling UK import & export declarations via CDS. Duty deferment, commodity code classification, T1 transit docs. 99%+ first-submission clearance success."
+        title="Customs Clearance UK | Import Export Brokers | Carrgo"
+        description="Professional customs brokers handling UK import & export declarations via CDS. Duty deferment, commodity code classification, T1 transit docs. 99%+ first-submission clearance success."
         keywords="customs clearance uk, customs broker, import declarations cds, customs clearance northern ireland, irish customs broker, t1 documents, transit documents, customs duty vat"
         ogUrl="https://carrgo.co.uk/services/customs-clearance"
         canonical="https://carrgo.co.uk/services/customs-clearance"
@@ -88,14 +88,14 @@ export default function CustomsClearance() {
               <div>
                 <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Customs Clearance</span>
                 <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Customs Clearance UK — HMRC-Authorised Brokers
+                  Customs Clearance UK — Customs Brokers
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  HMRC-authorised customs brokers handling all UK import and export declarations. CDS entries, duty deferment, commodity code classification, and full compliance. 99%+ first-submission success rate.
+                  Our customs brokers handle all UK import and export declarations. CDS entries, duty deferment, commodity code classification, and full compliance. 99%+ first-submission success rate.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    'HMRC-authorised customs brokers',
+                    'Professional customs brokers',
                     'CDS (Customs Declaration Service) entries',
                     'Duty deferment accounts',
                     'Commodity code classification',
@@ -110,7 +110,7 @@ export default function CustomsClearance() {
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
                     Get a Customs Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+442039505050" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
+                  <a href="mailto:info@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
                     Call Our Team
                   </a>
                 </div>
@@ -173,7 +173,7 @@ export default function CustomsClearance() {
               {[
                 { step: '1', title: 'Document Review', desc: 'We review your commercial invoice, packing list, and shipping documents' },
                 { step: '2', title: 'Classification', desc: 'Correct commodity codes assigned and duty/VAT calculated' },
-                { step: '3', title: 'Submission', desc: 'CDS entry submitted to HMRC with all required declarations' },
+                { step: '3', title: 'Submission', desc: 'CDS entry submitted with all required declarations' },
                 { step: '4', title: 'Clearance', desc: 'Goods cleared and released for delivery to your premises' },
               ].map(item => (
                 <li key={item.step} className="text-center relative">
@@ -265,22 +265,22 @@ export default function CustomsClearance() {
           </div>
         </section>
 
-        {/* ====== WHY HMRC-AUTHORISED ====== */}
+        {/* ====== WHY CUSTOMS ====== */}
         <section aria-labelledby="why-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Trust</span>
               <h2 id="why-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                Why Choose an HMRC-Authorised Customs Broker?
+                Why Choose Our Customs Brokers?
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 { stat: '99%+', label: 'First-Submission Success Rate', desc: 'Our experienced brokers get declarations right the first time.' },
                 { stat: '2hr', label: 'Average Clearance Time', desc: 'Fast clearance means less time waiting at the port.' },
-                { stat: '50%', label: 'Fewer Inspections', desc: 'HMRC trusts authorised brokers with lower inspection rates.' },
+                { stat: '50%', label: 'Fewer Inspections', desc: 'Experienced brokers benefit from lower inspection rates.' },
                 { stat: '100%', label: 'Compliance Guarantee', desc: 'Full regulatory compliance on every declaration.' },
-                { stat: 'Zero', label: 'Client Penalties', desc: 'No HMRC penalties for any Carrgo client declarations.' },
+                { stat: 'Zero', label: 'Client Penalties', desc: 'No customs penalties for any Carrgo client declarations.' },
               ].map((item, i) => (
                 <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] text-center">
                   <div className="text-3xl font-extrabold text-[#1A6DFF] mb-2">{item.stat}</div>
@@ -312,7 +312,7 @@ export default function CustomsClearance() {
               Get Your Customs Clearance Quote
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
-              HMRC-authorised customs brokers with a 99%+ first-submission success rate. Fast, compliant, hassle-free clearance.
+              Professional customs brokers with a 99%+ first-submission success rate. Fast, compliant, hassle-free clearance.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
