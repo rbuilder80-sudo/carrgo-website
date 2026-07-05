@@ -387,7 +387,7 @@ const faqs = [
   },
   {
     q: 'Does port congestion affect freight forwarding costs?',
-    a: 'Yes, congestion at major UK and Irish Sea ports can increase demurrage, detention and haulage costs. Our tracker helps you plan around Northern Ireland port delays and ROI port congestion to minimise additional charges.',
+    a: 'Yes, congestion at major UK and Irish Sea ports can increase detention and haulage costs. Our tracker helps you plan around Northern Ireland port delays and ROI port congestion to minimise additional charges.',
   },
 ];
 
