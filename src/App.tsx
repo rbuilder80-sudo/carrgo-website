@@ -47,7 +47,6 @@ const ContainerGuide = lazy(() => import('./pages/resources/ContainerGuide'));
 const Incoterms = lazy(() => import('./pages/resources/Incoterms'));
 const FreightFaqs = lazy(() => import('./pages/resources/FreightFaqs'));
 const CaseStudies = lazy(() => import('./pages/resources/CaseStudies'));
-const Testimonials = lazy(() => import('./pages/resources/Testimonials'));
 const Industries = lazy(() => import('./pages/resources/Industries'));
 const OurProcess = lazy(() => import('./pages/resources/OurProcess'));
 const PostBrexit = lazy(() => import('./pages/resources/PostBrexit'));
@@ -101,7 +100,6 @@ export default function App() {
           <Route path="/resources/incoterms-guide" element={<Suspense fallback={<Loading />}><Incoterms /></Suspense>} />
           <Route path="/resources/freight-faqs" element={<Suspense fallback={<Loading />}><FreightFaqs /></Suspense>} />
           <Route path="/resources/case-studies" element={<Suspense fallback={<Loading />}><CaseStudies /></Suspense>} />
-          <Route path="/resources/testimonials" element={<Suspense fallback={<Loading />}><Testimonials /></Suspense>} />
           <Route path="/resources/industries" element={<Suspense fallback={<Loading />}><Industries /></Suspense>} />
           <Route path="/resources/our-process" element={<Suspense fallback={<Loading />}><OurProcess /></Suspense>} />
           <Route path="/resources/post-brexit-customs-guide" element={<Suspense fallback={<Loading />}><PostBrexit /></Suspense>} />
