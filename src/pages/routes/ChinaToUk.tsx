@@ -294,7 +294,7 @@ export default function ChinaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our HMRC-authorised customs brokers handle all UK import declarations to ensure smooth clearance at the port of entry.
+              Our experienced customs brokers handle all UK import declarations to ensure smooth clearance at the port of entry.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -355,7 +355,7 @@ export default function ChinaToUk() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'China Expertise', desc: 'Established relationships with Chinese freight agents and carriers across all major ports and cities.' },
-                { icon: FileCheck, title: 'Customs Specialists', desc: 'Our HMRC-authorised brokers ensure first-time clearance with accurate declarations every time.' },
+                { icon: FileCheck, title: 'Customs Specialists', desc: 'Our experienced brokers ensure first-time clearance with accurate declarations every time.' },
                 { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive China–UK freight quote within 2 hours during UK business hours.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Track your shipment from Chinese factory to UK warehouse with real-time milestone updates.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'A single point of contact who understands your China supply chain and keeps you informed.' },
