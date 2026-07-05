@@ -306,7 +306,7 @@ export default function UsaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our HMRC-authorised customs brokers handle all UK import declarations for US cargo, ensuring efficient clearance at the port of entry.
+              Our experienced customs brokers handle all UK import declarations for US cargo, ensuring efficient clearance at the port of entry.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -367,7 +367,7 @@ export default function UsaToUk() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'Transatlantic Expertise', desc: 'Deep experience managing USA–UK freight from both East and West Coasts with reliable carrier partnerships.' },
-                { icon: FileCheck, title: 'Customs Specialists', desc: 'HMRC-authorised brokers experienced in US commodity classifications and import requirements.' },
+                { icon: FileCheck, title: 'Customs Specialists', desc: 'Experienced brokers specialising in US commodity classifications and import requirements.' },
                 { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive USA–UK freight quote within 2 hours during UK business hours.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full visibility from US collection or port through transatlantic transit to UK delivery.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'Your personal account manager understands the transatlantic route and your business needs.' },
