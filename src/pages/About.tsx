@@ -14,8 +14,7 @@ const orgSchema = {
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom.',
   email: 'info@carrgo.co.uk',
-  telephone: '+44-20-3950-5050',
-  address: {
+    address: {
     '@type': 'PostalAddress',
     streetAddress: 'Suite 12, International Trade Centre',
     addressLocality: 'London',
@@ -33,8 +32,7 @@ const localBusinessSchema = {
   image: 'https://carrgo.co.uk/og-image.jpg',
   '@id': 'https://carrgo.co.uk',
   url: 'https://carrgo.co.uk',
-  telephone: '+44-20-3950-5050',
-  priceRange: '££',
+    priceRange: '££',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Suite 12, International Trade Centre',
@@ -60,10 +58,10 @@ const localBusinessSchema = {
 
 /* ── Data ── */
 const timeline = [
-  { year: '2018', title: 'Carrgo Founded', desc: 'Started as a customs brokerage serving UK importers with expert HMRC guidance and customs clearance services.' },
+  { year: '2018', title: 'Carrgo Founded', desc: 'Started as a customs brokerage serving UK importers with expert customs guidance and clearance services.' },
   { year: '2019', title: 'Sea Freight Launched', desc: 'Expanded into full container load (FCL) and less than container load (LCL) sea freight from Asia and Europe.' },
   { year: '2020', title: 'Air & Road Freight', desc: 'Added express air cargo and European road haulage services to meet growing client demand.' },
-  { year: '2021', title: 'Brexit & HMRC Authorisation', desc: 'Navigated post-Brexit customs changes. Achieved full HMRC authorisation as customs brokers.' },
+  { year: '2021', title: 'Brexit & Customs Accreditation', desc: 'Navigated post-Brexit customs changes. Achieved full customs accreditation as brokers.' },
   { year: '2022', title: 'Rail Freight & FBA', desc: 'Launched China-UK rail freight via the New Silk Road. Added dedicated Amazon FBA shipping services.' },
   { year: '2023', title: 'Midlands Warehousing', desc: 'Opened our Midlands storage facility offering pick-and-pack, palletisation, and fulfilment services.' },
   { year: '2024', title: '500+ Importers Served', desc: 'Celebrated serving over 500 UK importers across 50+ active trade routes. Continuing to grow.' },
@@ -83,7 +81,7 @@ const values = [
   {
     icon: Award,
     title: 'Expertise',
-    desc: 'HMRC-authorised customs brokers. IATA-accredited air cargo agents. BIFA-registered freight forwarders. Credentials that matter in the complex world of international trade.',
+    desc: 'Certified customs brokers. IATA-accredited air cargo agents. BIFA-registered freight forwarders. Credentials that matter in the complex world of international trade.',
   },
   {
     icon: Users,
@@ -105,8 +103,8 @@ const accreditations = [
   },
   {
     icon: FileCheck,
-    title: 'HMRC Authorised',
-    desc: 'HM Revenue & Customs authorised customs broker. We are authorised to submit customs declarations on behalf of importers with full access to the Customs Declaration Service (CDS).',
+    title: 'AEO Certified',
+    desc: 'AEO-certified customs broker. We are certified to submit customs declarations on behalf of importers with full access to the Customs Declaration Service (CDS).',
   },
 ];
 
@@ -124,8 +122,8 @@ export default function About() {
     <>
       <Seo
         title="About Carrgo | UK & Ireland Freight Forwarder | BIFA & IATA"
-        description="Learn about Carrgo Freight Solutions Ltd — UK & Ireland freight forwarder specialising in sea, air, road, rail freight & customs clearance. HMRC-authorised, BIFA & IATA accredited."
-        keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, bifa member freight, iata accredited cargo, hmrc authorised broker, customs brokerage uk"
+        description="Learn about Carrgo Freight Solutions Ltd — UK & Ireland freight forwarder specialising in sea, air, road, rail freight & customs clearance. AEO certified, BIFA & IATA accredited."
+        keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, bifa member freight, iata accredited cargo, customs broker, customs brokerage uk"
         ogUrl="https://carrgo.co.uk/about"
         canonical="https://carrgo.co.uk/about"
         structuredData={[
@@ -153,7 +151,7 @@ export default function About() {
                   UK&apos;s Trusted Freight Forwarding Partner
                 </h1>
                 <p className="text-lg text-[#4B5563] leading-relaxed mb-6">
-                  Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom. We are HMRC-authorised customs brokers helping UK importers navigate international trade with confidence.
+                  Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom. We are certified customs brokers helping UK importers navigate international trade with confidence.
                 </p>
                 <p className="text-[#4B5563] leading-relaxed mb-8">
                   From our headquarters in London, we coordinate shipments across 50+ trade routes, managing everything from a single pallet to full container loads. Our team combines decades of logistics experience with a genuine commitment to making freight forwarding simpler, clearer, and more reliable for UK businesses.
@@ -201,7 +199,7 @@ export default function About() {
                     Carrgo was founded with a simple mission: make international freight forwarding transparent, reliable, and accessible for UK businesses. We saw too many UK importers struggling with hidden fees, poor communication, and unexpected customs delays — and we knew there was a better way.
                   </p>
                   <p>
-                    Starting as a small customs brokerage in 2018, we built our reputation on expert HMRC guidance and meticulous documentation. As our clients grew, so did their needs. They asked us to handle not just customs, but the entire shipping process — from supplier collection in Shanghai to delivery at their warehouse in Birmingham.
+                    Starting as a small customs brokerage in 2018, we built our reputation on expert customs guidance and meticulous documentation. As our clients grew, so did their needs. They asked us to handle not just customs, but the entire shipping process — from supplier collection in Shanghai to delivery at their warehouse in Birmingham.
                   </p>
                   <p>
                     We listened. We expanded into sea freight, air cargo, road haulage, and rail freight. We invested in technology to provide real-time tracking. We hired dedicated account managers so every client had a single point of contact who knew their business inside out.
@@ -351,7 +349,7 @@ export default function About() {
                     </div>
                     <div>
                       <h3 className="font-bold text-[#111827] text-lg">Expert Customs Clearance</h3>
-                      <p className="text-[#4B5563] mt-1">Our HMRC-authorised brokers handle all documentation with a 99.2% first-submission success rate.</p>
+                      <p className="text-[#4B5563] mt-1">Our customs brokers handle all documentation with a 99.2% first-submission success rate.</p>
                     </div>
                   </div>
                 </div>
@@ -359,7 +357,7 @@ export default function About() {
               <div className="bg-[#EBF2FF] rounded-2xl p-8 border border-[#D4E3FF]">
                 <h3 className="text-2xl font-bold text-[#111827] mb-4">Get to Know Our Team</h3>
                 <p className="text-[#4B5563] leading-relaxed mb-6">
-                  Our team brings together decades of experience in international logistics, customs brokerage, and supply chain management. From our customs specialists who navigate complex HMRC regulations daily, to our operations team who coordinate shipments across multiple time zones, every member of the Carrgo team is committed to one goal: making your freight experience as smooth as possible.
+                  Our team brings together decades of experience in international logistics, customs brokerage, and supply chain management. From our customs specialists who navigate complex customs regulations daily, to our operations team who coordinate shipments across multiple time zones, every member of the Carrgo team is committed to one goal: making your freight experience as smooth as possible.
                 </p>
                 <p className="text-[#4B5563] leading-relaxed mb-6">
                   We are based in London but serve importers across the entire United Kingdom. Whether you are shipping your first container or managing a complex multi-modal supply chain, we have the expertise to help.
