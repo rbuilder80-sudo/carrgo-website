@@ -281,7 +281,7 @@ export default function BelfastToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance for Northern Ireland</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our HMRC-authorised customs brokers specialise in Northern Ireland's unique customs arrangements. We handle all NI Protocol documentation to ensure smooth movement across the Irish Sea.
+              Our experienced customs brokers specialise in Northern Ireland's unique customs arrangements. We handle all NI Protocol documentation to ensure smooth movement across the Irish Sea.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
