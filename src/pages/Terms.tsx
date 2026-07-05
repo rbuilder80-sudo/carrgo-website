@@ -179,7 +179,7 @@ export default function Terms() {
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span>Additional charges may apply for customs inspections (both physical and documentary), additional storage, demurrage or detention charges at ports, special handling requirements, or any other costs arising from circumstances beyond our reasonable control.</span>
+                          <span>Additional charges may apply for customs inspections (both physical and documentary), additional storage, detention charges at ports, special handling requirements, or any other costs arising from circumstances beyond our reasonable control.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
@@ -335,7 +335,7 @@ export default function Terms() {
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span>Our HMRC-authorised status applies to our customs brokerage services only. It does not guarantee the outcome of any customs declaration or inspection, nor does it exempt you from your obligations as the importer or exporter.</span>
+                          <span>Our customs accreditation applies to our customs brokerage services only. It does not guarantee the outcome of any customs declaration or inspection, nor does it exempt you from your obligations as the importer or exporter.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
