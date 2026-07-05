@@ -29,7 +29,7 @@ const faqData = [
   { q: 'How much does a 20ft container from China to the UK cost?', a: 'A 20ft FCL container from Shanghai or Ningbo to Felixstowe typically costs £1,200–£2,800 depending on the carrier, fuel surcharges, and time of year. This includes ocean freight, UK port handling, and customs clearance. Contact us for an all-inclusive quote.' },
   { q: 'How long does sea freight from China to the UK take?', a: 'Sea freight from China to the UK takes approximately 24–35 days port-to-port, depending on the origin port and UK destination. FCL shipments are generally faster than LCL as they don\'t require consolidation.' },
   { q: 'What is the difference between FCL and LCL shipping?', a: 'FCL (Full Container Load) means you rent an entire 20ft or 40ft container for your cargo only. LCL (Less than Container Load) means your cargo shares container space with other shipments. FCL is more cost-effective for shipments over 15 CBM, while LCL is ideal for smaller volumes.' },
-  { q: 'Do you handle customs clearance at UK ports?', a: 'Yes — as HMRC-authorised customs brokers, we handle all UK customs clearance as part of our sea freight service. We prepare CDS entries, calculate duties and VAT, and ensure compliance. Our 99%+ first-submission success rate minimises delays.' },
+  { q: 'Do you handle customs clearance at UK ports?', a: 'Yes — our customs brokers handle all UK customs clearance as part of our sea freight service. We prepare CDS entries, calculate duties and VAT, and ensure compliance. Our 99%+ first-submission success rate minimises delays.' },
   { q: 'Can you deliver to my warehouse after port clearance?', a: 'Absolutely. Our door-to-door sea freight service includes collection from the origin port, UK customs clearance, and final delivery to your UK warehouse or Amazon FBA centre. One quote covers everything.' },
 ];
 
@@ -96,7 +96,7 @@ export default function SeaFreight() {
                   {[
                     'FCL (20ft & 40ft containers) and LCL groupage options',
                     'Competitive rates from China, India, USA, Europe',
-                    'Customs clearance included — HMRC-authorised brokers',
+                    'Customs clearance included — professional brokers',
                     'Delivery to Felixstowe, Southampton, London Gateway',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-[#4B5563]">
@@ -109,7 +109,7 @@ export default function SeaFreight() {
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
                     Get a Sea Freight Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+442039505050" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
+                  <a href="mailto:info@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
                     Call Our Team
                   </a>
                 </div>
@@ -316,7 +316,7 @@ export default function SeaFreight() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'No hidden fuel surcharges, terminal handling fees, or customs inspection surprises.' },
-                { icon: FileCheck, title: 'Expert Customs Clearance', desc: 'HMRC-authorised brokers with a 99%+ first-submission success rate.' },
+                { icon: FileCheck, title: 'Expert Customs Clearance', desc: 'Professional brokers with a 99%+ first-submission success rate.' },
                 { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive sea freight quote within 2 hours during UK business hours.' },
                 { icon: Globe, title: 'Global Carrier Network', desc: 'Established relationships with leading ocean carriers across 50+ trade routes.' },
               ].map((item, i) => {
