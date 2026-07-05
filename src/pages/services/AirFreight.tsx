@@ -30,7 +30,7 @@ const faqData = [
   { q: 'How long does air freight take to reach the UK?', a: 'Express air freight takes 1–3 days door-to-door, while economy air freight typically takes 3–5 days. Transit times vary by origin — European origins are faster (1–2 days) compared to Asia (3–5 days).' },
   { q: 'Are there any cargo restrictions on air freight?', a: 'Yes — hazardous materials, lithium batteries, liquids, and perishables require special handling and documentation. Some items are restricted by IATA regulations. Contact our team to confirm if your cargo is suitable for air freight.' },
   { q: 'Do you offer real-time tracking for air cargo?', a: 'Absolutely. All air freight shipments include real-time tracking from collection through to final delivery. You will receive updates at every milestone including departure, transit, customs clearance, and delivery.' },
-  { q: 'Is customs clearance included in your air freight service?', a: 'Yes, we handle full UK customs clearance as part of our air freight service. Our HMRC-authorised brokers prepare and submit CDS entries, calculate duties and VAT, and ensure compliance with all UK import regulations.' },
+  { q: 'Is customs clearance included in your air freight service?', a: 'Yes, we handle full UK customs clearance as part of our air freight service. Our customs brokers prepare and submit CDS entries, calculate duties and VAT, and ensure compliance with all UK import regulations.' },
 ];
 
 const faqSchema = {
@@ -109,7 +109,7 @@ export default function AirFreight() {
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
                     Get an Air Freight Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+442039505050" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
+                  <a href="mailto:info@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
                     Call Our Team
                   </a>
                 </div>
@@ -268,7 +268,7 @@ export default function AirFreight() {
                 { icon: Plane, title: 'IATA Accredited', desc: 'Fully accredited air freight agent with direct airline partnerships.' },
                 { icon: Clock, title: '1–5 Day Delivery', desc: 'Express and economy options to match your timeline and budget.' },
                 { icon: Globe, title: 'Global Coverage', desc: 'Air freight from China, USA, UAE, India, and all European countries.' },
-                { icon: FileCheck, title: 'Customs Included', desc: 'Full UK customs clearance handled by our HMRC-authorised brokers.' },
+                { icon: FileCheck, title: 'Customs Included', desc: 'Full UK customs clearance handled by our customs brokers.' },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
