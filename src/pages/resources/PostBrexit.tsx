@@ -120,7 +120,7 @@ export default function PostBrexit() {
                 </li>
               </ul>
               <InfoBox title="Tip" icon={<Info className="w-5 h-5 text-blue-700" />}>
-                If you are VAT registered, HMRC may have already assigned you an EORI number. Check your VAT registration documents or contact HMRC to confirm before applying for a new one.
+                If you are VAT registered, customs authorities may have already assigned you an EORI number. Check your VAT registration documents or contact your tax office to confirm before applying for a new one.
               </InfoBox>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function PostBrexit() {
             </h2>
             <div className="bg-white rounded-xl border p-6">
               <p className="text-gray-600 leading-relaxed mb-4">
-                A customs declaration is the official document submitted to HMRC declaring the details of your imported goods. All UK imports now require a declaration through either CHIEF (being phased out) or the new Customs Declaration Service (CDS).
+                A customs declaration is the official document submitted to customs authorities declaring the details of your imported goods. All UK imports now require a declaration through either CHIEF (being phased out) or the new Customs Declaration Service (CDS).
               </p>
               <h3 className="font-semibold text-gray-900 mb-3">Required Documents</h3>
               <ul className="space-y-2 mb-6">
@@ -256,11 +256,11 @@ export default function PostBrexit() {
                 },
                 {
                   title: 'Undervaluing goods',
-                  desc: 'Declaring a lower value than the actual transaction price is customs fraud. HMRC routinely checks valuations and can issue substantial penalties.',
+                  desc: 'Declaring a lower value than the actual transaction price is customs fraud. Customs authorities routinely check valuations and can issue substantial penalties.',
                 },
                 {
                   title: 'Missing EORI number',
-                  desc: 'Shipments without a valid UK EORI number will be held at the border until one is provided, causing expensive demurrage charges.',
+                  desc: 'Shipments without a valid UK EORI number will be held at the border until one is provided, causing expensive storage and detention charges.',
                 },
                 {
                   title: 'Incomplete documentation',
