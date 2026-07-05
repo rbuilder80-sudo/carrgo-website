@@ -110,7 +110,7 @@ export default function DoorToDoor() {
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
                     Get a Door-to-Door Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+442039505050" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
+                  <a href="mailto:info@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
                     Call Our Team
                   </a>
                 </div>
@@ -141,7 +141,7 @@ export default function DoorToDoor() {
                 { step: '1', title: 'Factory Collection', desc: 'We pick up goods directly from your supplier\'s premises anywhere in the world.' },
                 { step: '2', title: 'Export Customs', desc: 'Origin country customs clearance prepared and submitted by our local agents.' },
                 { step: '3', title: 'International Transit', desc: 'Sea, air, road, or rail — the best mode for your timeline and budget.' },
-                { step: '4', title: 'UK Customs Clearance', desc: 'HMRC-compliant import processing by our in-house customs brokers.' },
+                { step: '4', title: 'UK Customs Clearance', desc: 'Customs-compliant import processing by our in-house customs brokers.' },
                 { step: '5', title: 'UK Delivery', desc: 'Final mile delivery to your warehouse, office, or Amazon FBA centre.' },
               ].map(item => (
                 <li key={item.step} className="text-center relative">
