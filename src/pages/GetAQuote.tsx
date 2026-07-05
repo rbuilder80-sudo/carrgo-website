@@ -35,8 +35,8 @@ const benefits = [
   },
   {
     icon: FileCheck,
-    title: 'HMRC Customs Included',
-    desc: 'Customs clearance built into every quote. Our HMRC-authorised brokers handle everything.',
+    title: 'Customs Clearance Included',
+    desc: 'Customs clearance built into every quote. Our customs brokers handle everything.',
   },
   {
     icon: Shield,
@@ -165,7 +165,7 @@ export default function GetAQuote() {
                 {/* Trust indicators */}
                 <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-5 mb-6">
                   <div className="flex flex-wrap gap-3">
-                    {['BIFA Registered', 'IATA Accredited', 'HMRC Authorised'].map((badge) => (
+                    {['BIFA Registered', 'IATA Accredited', 'AEO Certified'].map((badge) => (
                       <span key={badge} className="inline-flex items-center gap-1 text-xs font-medium text-[#16A34A] bg-[#DCFCE7] px-3 py-1.5 rounded-full">
                         <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" /> {badge}
                       </span>
@@ -178,12 +178,10 @@ export default function GetAQuote() {
                   <h3 className="font-bold text-[#111827] mb-2">Prefer to Talk?</h3>
                   <p className="text-sm text-[#4B5563] mb-3">Speak directly with a freight specialist.</p>
                   <div className="space-y-2">
-                    <a href="tel:+442039505050" className="flex items-center gap-2 text-sm font-medium text-[#1A6DFF] hover:underline">
-                      <Phone className="w-4 h-4" aria-hidden="true" /> +44 (0)20 3950 5050
+                    <a href="mailto:info@carrgo.co.uk" className="flex items-center gap-2 text-sm font-medium text-[#1A6DFF] hover:underline">
+                      <Mail className="w-4 h-4" aria-hidden="true" /> info@carrgo.co.uk
                     </a>
-                    <a href="https://wa.me/447700123456" className="flex items-center gap-2 text-sm font-medium text-[#1A6DFF] hover:underline">
-                      <MessageCircle className="w-4 h-4" aria-hidden="true" /> WhatsApp: +44 7700 123456
-                    </a>
+                    
                   </div>
                 </div>
               </div>
@@ -206,8 +204,8 @@ export default function GetAQuote() {
                         <span className="font-mono font-bold text-[#111827]">{reference}</span>
                       </div>
                       <p className="text-sm text-[#4B5563] mb-6">
-                        Questions? Call us on{' '}
-                        <a href="tel:+442039505050" className="text-[#1A6DFF] font-medium hover:underline">+44 (0)20 3950 5050</a>
+                        Questions? Email us at{' '}
+                        <a href="mailto:info@carrgo.co.uk" className="text-[#1A6DFF] font-medium hover:underline">info@carrgo.co.uk</a>
                       </p>
                       <Link
                         to="/"
@@ -449,14 +447,14 @@ export default function GetAQuote() {
 
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <label htmlFor="qt-phone" className="block text-sm font-medium text-[#111827] mb-1">
-                                  Phone <span className="text-[#DC2626]">*</span>
+                                <label htmlFor="qt-email" className="block text-sm font-medium text-[#111827] mb-1">
+                                  Email <span className="text-[#DC2626]">*</span>
                                 </label>
                                 <input
-                                  id="qt-phone"
-                                  type="tel"
+                                  id="qt-email"
+                                  type="email"
                                   required
-                                  placeholder="+44 (0)20 0000 0000"
+                                  placeholder="Your email address"
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
                                   aria-required="true"
                                 />
@@ -567,14 +565,14 @@ export default function GetAQuote() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl font-extrabold mb-4">Need Help With Your Quote?</h2>
               <p className="text-[#D4E3FF] text-lg mb-8">
-                Not sure about freight mode, Incoterms, or cargo details? Our team is happy to help — call us on +44 (0)20 3950 5050.
+                Not sure about freight mode, Incoterms, or cargo details? Our team is happy to help — email us at info@carrgo.co.uk.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="tel:+442039505050"
+                  href="mailto:info@carrgo.co.uk"
                   className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]"
                 >
-                  <Phone className="w-5 h-5" aria-hidden="true" /> Call Us Now
+                  <Mail className="w-5 h-5" aria-hidden="true" /> Email Us Now
                 </a>
                 <Link
                   to="/contact"
