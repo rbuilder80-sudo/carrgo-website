@@ -112,7 +112,7 @@ export default function RoadFreight() {
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
                     Get a Road Freight Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <a href="tel:+442039505050" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
+                  <a href="mailto:info@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
                     Call Our Team
                   </a>
                 </div>
@@ -278,7 +278,7 @@ export default function RoadFreight() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: FileCheck, title: 'Export Declarations', desc: 'We prepare and submit export declarations in the origin EU country, ensuring compliance with local customs regulations before your goods leave.' },
-                { icon: Shield, title: 'UK Import Declarations', desc: 'Our HMRC-authorised brokers submit CDS (Customs Declaration Service) entries for all UK imports, ensuring fast clearance and compliance.' },
+                { icon: Shield, title: 'UK Import Declarations', desc: 'Our customs brokers submit CDS (Customs Declaration Service) entries for all UK imports, ensuring fast clearance and compliance.' },
                 { icon: AlertCircle, title: 'EORI & Commodity Codes', desc: 'We help you obtain GB and EU EORI numbers and correctly classify your goods with the right HS commodity codes for accurate duty assessment.' },
               ].map((item, i) => {
                 const Icon = item.icon;
