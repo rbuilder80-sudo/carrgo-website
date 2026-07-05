@@ -288,7 +288,7 @@ export default function IndiaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our HMRC-authorised customs brokers handle all UK import declarations for Indian cargo, ensuring efficient clearance.
+              Our experienced customs brokers handle all UK import declarations for Indian cargo, ensuring efficient clearance.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -349,7 +349,7 @@ export default function IndiaToUk() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'India Network', desc: 'Strong partnerships with Indian freight agents across all major ports and airports.' },
-                { icon: FileCheck, title: 'Customs Experts', desc: 'HMRC-authorised brokers experienced in Indian commodity classifications and documentation.' },
+                { icon: FileCheck, title: 'Customs Experts', desc: 'Experienced brokers specialising in Indian commodity classifications and documentation.' },
                 { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive India–UK freight quote within 2 hours during UK business hours.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Track your shipment from Indian port to UK delivery with milestone updates.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'A single point of contact who understands the India-UK trade lane and your business.' },
