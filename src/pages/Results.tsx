@@ -14,8 +14,7 @@ const orgSchema = {
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Proven results for UK importers — Carrgo delivers measurable improvements in freight efficiency, customs clearance success, and cost savings.',
   email: 'info@carrgo.co.uk',
-  telephone: '+44-20-3950-5050',
-};
+  };
 
 /* ── Data ── */
 const metrics = [
@@ -24,7 +23,7 @@ const metrics = [
   { icon: Users, value: '94%', label: 'Client Retention', desc: 'Annual client retention rate — our clients stay with us.' },
   { icon: Clock, value: '1h 42m', label: 'Average Response Time', desc: 'Quote response time during UK business hours.' },
   { icon: PoundSterling, value: '22%', label: 'Average Cost Savings', desc: 'Freight cost reduction for clients switching to Carrgo.' },
-  { icon: TrendingUp, value: '£18k/yr', label: 'Max Demurrage Savings', desc: 'Highest annual demurrage savings for a single client.' },
+  { icon: TrendingUp, value: '£18k/yr', label: 'Max Cost Savings', desc: 'Highest annual cost savings for a single client.' },
 ];
 
 const caseStudies = [
@@ -32,9 +31,9 @@ const caseStudies = [
     icon: Package,
     industry: 'Furniture Import from China',
     client: 'Whitfield Imports Ltd',
-    challenge: '40% of shipments delayed at Felixstowe due to incorrect customs documentation, costing £18,000 annually in demurrage and detention charges.',
-    solution: 'Implemented proactive customs documentation review with pre-submission checks and direct liaison with HMRC. Assigned dedicated account manager for all shipments.',
-    result: '40% reduction in delays. £18,000 annual demurrage savings. 100% first-submission clearance achieved within 3 months.',
+    challenge: '40% of shipments delayed at Felixstowe due to incorrect customs documentation, costing £18,000 annually in detention and storage charges.',
+    solution: 'Implemented proactive customs documentation review with pre-submission checks and direct liaison with customs authorities. Assigned dedicated account manager for all shipments.',
+    result: '40% reduction in delays. £18,000 annual cost savings. 100% first-submission clearance achieved within 3 months.',
     quote: 'No more surprise holds at Felixstowe. Carrgo handles the paperwork before the container even arrives. That proactive approach has transformed our cash flow.',
     author: 'James Whitfield',
     role: 'Managing Director',
@@ -72,33 +71,12 @@ const clientLogos = [
   'Bloom Boutique',
 ];
 
-const testimonials = [
-  {
-    quote: 'We switched to Carrgo after years of hidden fees and poor communication. Best decision we made. Our shipping costs dropped by 18% in the first quarter alone.',
-    author: 'David Whitfield',
-    role: 'Operations Director',
-    company: 'Whitfield Imports Ltd',
-  },
-  {
-    quote: 'The real-time tracking and proactive updates have transformed how we manage inventory. Our warehouse team knows exactly when shipments will arrive.',
-    author: 'Amelia Patel',
-    role: 'Logistics Manager',
-    company: 'Brightline Retail Group',
-  },
-  {
-    quote: 'Carrgo navigated the post-Brexit customs changes seamlessly. While other importers were struggling with delays, our shipments kept moving smoothly.',
-    author: 'Thomas Wright',
-    role: 'Procurement Director',
-    company: 'Apex Construction Supplies',
-  },
-];
-
 export default function Results() {
   return (
     <>
       <Seo
         title="Our Results | Carrgo — Proven Freight Results for UK Importers"
-        description="See real results from Carrgo clients — 40% delay reduction, 99.2% customs success rate, 22% cost savings, and £18,000 demurrage savings. Read case studies from UK importers."
+        description="See real results from Carrgo clients — 40% delay reduction, 99.2% customs success rate, 22% cost savings, and £18,000 cost savings. Read case studies from UK importers."
         structuredData={orgSchema}
       />
 
@@ -113,7 +91,7 @@ export default function Results() {
                 Proven Results for UK Importers
               </h1>
               <p className="text-lg text-[#4B5563] leading-relaxed mb-8">
-                Real numbers, real clients, real results. See the measurable impact Carrgo has made for UK businesses importing goods from around the world. From reducing delays by 40% to saving clients thousands in demurrage charges, our track record speaks for itself.
+                Real numbers, real clients, real results. See the measurable impact Carrgo has made for UK businesses importing goods from around the world. From reducing delays by 40% to saving clients thousands in storage charges, our track record speaks for itself.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
@@ -240,40 +218,6 @@ export default function Results() {
           </div>
         </section>
 
-        {/* ====== TESTIMONIALS ====== */}
-        <section aria-labelledby="testimonials-heading" className="bg-white py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 id="testimonials-heading" className="text-3xl lg:text-4xl font-extrabold text-[#111827] mb-3">
-                What Our Clients Say
-              </h2>
-              <p className="text-[#4B5563] max-w-2xl mx-auto">
-                Do not just take our word for it. Here is what UK importers say about working with Carrgo.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <article key={i} className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-8 relative hover:shadow-md transition-shadow">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-[#1A6DFF] rounded-t-xl" />
-                  <Quote className="w-8 h-8 text-[#1A6DFF] mb-4 opacity-40" aria-hidden="true" />
-                  <blockquote className="text-[#4B5563] leading-relaxed mb-6">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <footer className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#EBF2FF] rounded-full flex items-center justify-center text-[#1A6DFF] font-bold text-sm">
-                      {t.author.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <cite className="not-italic">
-                      <span className="font-semibold text-[#111827] block">{t.author}</span>
-                      <span className="text-sm text-[#4B5563]">{t.role}, {t.company}</span>
-                    </cite>
-                  </footer>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ====== CTA BANNER ====== */}
         <section aria-label="Get started" className="py-16 md:py-24 bg-[#1A6DFF] text-white">
