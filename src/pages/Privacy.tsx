@@ -170,7 +170,7 @@ export default function Privacy() {
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span><strong className="text-[#111827]">To comply with legal obligations:</strong> Fulfilling customs declarations, tax requirements, and other regulatory obligations as required by HMRC and other authorities.</span>
+                          <span><strong className="text-[#111827]">To comply with legal obligations:</strong> Fulfilling customs declarations, tax requirements, and other regulatory obligations as required by customs authorities.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
@@ -206,7 +206,7 @@ export default function Privacy() {
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span><strong className="text-[#111827]">HMRC and customs authorities:</strong> We are legally required to share customs declaration information with HMRC and relevant overseas customs authorities for clearance purposes.</span>
+                          <span><strong className="text-[#111827]">Customs authorities:</strong> We are legally required to share customs declaration information with UK and relevant overseas customs authorities for clearance purposes.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
@@ -356,7 +356,7 @@ export default function Privacy() {
                         </p>
                         <p>
                           Phone:{' '}
-                          <a href="tel:+442039505050" className="text-[#1A6DFF] hover:underline">+44 (0)20 3950 5050</a>
+                          <a href="mailto:info@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">info@carrgo.co.uk</a>
                         </p>
                       </div>
                       <p>
