@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  ArrowRight, Phone, ClipboardList, Package, Globe, FileCheck, Truck
+  ArrowRight, MessageCircle, ClipboardList, Package, Globe, FileCheck, Truck
 } from 'lucide-react';
 
 interface ProcessStep {
@@ -15,7 +15,7 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
   {
     step: 1,
-    icon: <Phone className="w-6 h-6" />,
+    icon: <MessageCircle className="w-6 h-6" />,
     title: 'Initial Consultation',
     description: 'We learn about your business, cargo, routes and requirements. Every shipment starts with understanding your needs.',
     details: [
