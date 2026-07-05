@@ -43,8 +43,19 @@ export default function TurkeyToUk() {
   return (
     <>
       <Seo
-        title="Turkey to UK Freight | Sea, Road & Air Shipping"
-        description="Ship goods from Turkey to the UK with Carrgo. Sea freight 14-20 days, road 5-7 days, air 2-3 days. UK-Turkey FTA benefits. Full customs clearance."
+        title="Turkey to UK Freight | Sea, Road & Air Shipping | Carrgo"
+        description="Ship goods from Turkey to UK — sea freight 14-20 days, road 5-7 days, air 2-3 days. Benefit from UK-Turkey FTA reduced tariffs. Full customs clearance included."
+        keywords="turkey to uk freight, shipping from turkey to uk, turkish freight forwarder, istanbul to uk shipping, ambarli to felixstowe, turkey uk trade"
+        ogUrl="https://carrgo.co.uk/routes/turkey-to-uk"
+        canonical="https://carrgo.co.uk/routes/turkey-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Turkey to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "Turkey"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Sea, road and air freight forwarding from Turkey to the UK with customs clearance and UK-Turkey FTA support."
+        }}
       />
 
       <main id="main-content">

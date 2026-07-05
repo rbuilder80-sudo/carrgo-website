@@ -107,8 +107,11 @@ export default function GetAQuote() {
   return (
     <>
       <Seo
-        title="Get a Quote | Carrgo — Free Freight Quote in 2 Hours"
-        description="Get your free, all-inclusive freight quote from Carrgo within 2 hours. Sea freight, air cargo, road haulage, rail freight, and customs clearance. No hidden fees, no obligation."
+        title="Get a Freight Quote UK | Free Quote in 2 Hours | Carrgo"
+        description="Get your free, all-inclusive freight quote from Carrgo within 2 hours. Sea freight, air cargo, road haulage, rail freight & customs clearance. No hidden fees, no obligation."
+        keywords="freight quote uk, shipping quote uk, freight forwarding quote, sea freight quote, air freight quote, customs clearance quote, freight cost estimate, cheap freight uk"
+        ogUrl="https://carrgo.co.uk/get-a-quote"
+        canonical="https://carrgo.co.uk/get-a-quote"
         structuredData={serviceSchema}
       />
 

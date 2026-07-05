@@ -73,8 +73,11 @@ export default function CustomsClearance() {
   return (
     <>
       <Seo
-        title="Customs Clearance UK | HMRC-Authorised Brokers | Carrgo"
-        description="HMRC-authorised customs brokers handling UK import & export declarations. CDS entries, duty deferment, commodity codes. 99%+ success rate."
+        title="Customs Clearance UK | HMRC-Authorised Customs Brokers | Carrgo"
+        description="HMRC-authorised customs brokers handling UK import & export declarations via CDS. Duty deferment, commodity code classification, T1 transit docs. 99%+ first-submission clearance success."
+        keywords="customs clearance uk, customs broker, import declarations cds, customs clearance northern ireland, irish customs broker, t1 documents, transit documents, customs duty vat"
+        ogUrl="https://carrgo.co.uk/services/customs-clearance"
+        canonical="https://carrgo.co.uk/services/customs-clearance"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">
@@ -185,6 +188,50 @@ export default function CustomsClearance() {
           </div>
         </section>
 
+        {/* ====== NORTHERN IRELAND CUSTOMS ====== */}
+        <section aria-labelledby="ni-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Northern Ireland</span>
+              <h2 id="ni-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                Northern Ireland Customs Clearance
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Northern Ireland's unique trading position requires specialist customs knowledge. Our team are experts in the Windsor Framework, NI Protocol, and Irish customs procedures.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Shield, title: 'Windsor Framework', desc: 'Expert guidance on green lane (NI internal) and red lane (EU-bound) procedures. We classify your goods correctly and ensure the right documentation for each pathway.' },
+                { icon: FileCheck, title: 'T2 Transit Documents', desc: 'T2 transit declarations, Transit Accompanying Documents (TAD), and NCTS submissions for GB–NI movements. Full management of the transit process from start to finish.' },
+                { icon: Globe, title: 'GB–NI Movements', desc: 'Complete customs handling for goods moving between Great Britain and Northern Ireland, including safety & security declarations, supplementary declarations, and UKIMS checks.' },
+                { icon: AlertTriangle, title: 'Irish Customs', desc: 'Customs clearance for goods entering Ireland (ROI) from the UK or beyond. T1 transit documents, Irish import declarations, and Revenue (Irish customs) compliance.' },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
+                    <div className="w-12 h-12 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-[#1A6DFF]" aria-hidden="true" />
+                    </div>
+                    <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
+                    <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ====== POST-BREXIT COMPLIANCE ====== */}
         <section aria-labelledby="brexit-heading" className="py-16 md:py-24 bg-[#EFF6FF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,8 +247,8 @@ export default function CustomsClearance() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'EU to UK Requirements', desc: 'Since Brexit, all goods entering the UK from the EU require a customs declaration, commodity codes, and may be subject to customs checks. We handle every aspect of EU-to-UK customs clearance, ensuring compliance with the new rules.' },
-                { icon: AlertTriangle, title: 'Northern Ireland Protocol', desc: 'Goods moving between Great Britain and Northern Ireland have special arrangements under the Windsor Framework. We understand the complexities and can advise on the correct procedures for NI movements.' },
-                { icon: Users, title: 'EORI & Registration', desc: 'All UK importers and exporters need a valid EORI number starting with GB. We can guide you through the EORI registration process and ensure you have all necessary documentation in place.' },
+                { icon: AlertTriangle, title: 'Northern Ireland Protocol', desc: 'Goods moving between Great Britain and Northern Ireland have special arrangements under the Windsor Framework. We understand the complexities and can advise on the correct procedures for NI movements, including green lane and red lane classifications.' },
+                { icon: Users, title: 'EORI & Registration', desc: 'All UK importers and exporters need a valid EORI number starting with GB. NI traders may need an XI EORI for EU trade. We can guide you through EORI registration and ensure you have all necessary documentation in place.' },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (

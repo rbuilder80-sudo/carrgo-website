@@ -73,8 +73,11 @@ export default function Warehousing() {
   return (
     <>
       <Seo
-        title="Warehousing UK | Midlands Storage & Fulfilment | Carrgo"
-        description="UK warehousing in the Midlands with pick & pack fulfilment, container devanning, bonded storage & UK-wide distribution. 200,000 sq ft secure facility."
+        title="Warehousing UK | Midlands Storage, Pick & Pack & Fulfilment | Carrgo"
+        description="UK warehousing in the Midlands with pick & pack fulfilment, container devanning, bonded storage & UK-wide distribution. Secure facility with real-time inventory management."
+        keywords="warehousing uk, uk warehouse storage, pick and pack uk, fulfilment warehouse, bonded warehouse uk, midlands warehouse"
+        ogUrl="https://carrgo.co.uk/services/warehousing"
+        canonical="https://carrgo.co.uk/services/warehousing"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

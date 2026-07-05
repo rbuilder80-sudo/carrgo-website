@@ -73,8 +73,11 @@ export default function DoorToDoor() {
   return (
     <>
       <Seo
-        title="Door-to-Door Freight UK | Factory to Warehouse | Carrgo"
-        description="Complete door-to-door freight forwarding from factory to UK warehouse. Sea, air, road, or rail — we manage every leg, customs, and delivery. One quote, one invoice."
+        title="Door-to-Door Freight UK | Factory to Warehouse Shipping | Carrgo"
+        description="Complete door-to-door freight forwarding from factory floor to UK warehouse. Sea, air, road, or rail — we manage every leg, customs, and delivery. One all-inclusive quote, one invoice."
+        keywords="door to door freight, door to door shipping uk, factory to warehouse, end to end logistics, door to door delivery"
+        ogUrl="https://carrgo.co.uk/services/door-to-door"
+        canonical="https://carrgo.co.uk/services/door-to-door"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

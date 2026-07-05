@@ -1,12 +1,10 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
-import { inspectAttr } from 'plugin-inspect-react-code'
 
-// https://vite.dev/config/
 export default defineConfig({
   base: './',
-  plugins: [inspectAttr(), react()],
+  plugins: [react()],
   server: {
     port: 3000,
   },
@@ -15,4 +13,32 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+  build: {
+    target: 'es2020',
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // React core - stable, heavily cached
+          'vendor-react': ['react', 'react-dom'],
+          // Router - separate for caching
+          'vendor-router': ['react-router-dom'],
+          // Icons - largest chunk, separate for tree-shaking
+          'vendor-icons': ['lucide-react'],
+        },
+        // Asset naming for better caching
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name || '';
+          if (info.endsWith('.css')) return 'assets/[name]-[hash][extname]';
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+    // Reduce chunk size warnings
+    chunkSizeWarningLimit: 500,
+  },
+})

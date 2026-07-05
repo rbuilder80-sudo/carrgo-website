@@ -35,8 +35,9 @@ export default function Terms() {
   return (
     <>
       <Seo
-        title="Terms of Service | Carrgo — UK Freight Forwarder"
+        title="Terms of Service | Carrgo Freight Solutions Ltd"
         description="Terms and conditions for Carrgo Freight Solutions Ltd freight forwarding services. Read about our booking, payment, liability, and cancellation policies."
+        noindex={true}
         structuredData={legalSchema}
       />
 

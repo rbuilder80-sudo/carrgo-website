@@ -43,8 +43,19 @@ export default function UsaToUk() {
   return (
     <>
       <Seo
-        title="USA to UK Shipping | Sea & Air Freight Forwarder"
-        description="Ship goods from the USA to the UK with Carrgo. East Coast sea 10-15 days, West Coast 25-30 days, air freight 1-3 days. Customs clearance to all UK ports."
+        title="USA to UK Shipping | Sea & Air Freight Forwarder | Carrgo"
+        description="Ship goods from USA to UK — East Coast sea 10-15 days, West Coast 25-30 days, air freight 1-3 days. Customs clearance to all UK ports & airports."
+        keywords="usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
+        ogUrl="https://carrgo.co.uk/routes/usa-to-uk"
+        canonical="https://carrgo.co.uk/routes/usa-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "USA to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Sea and air freight forwarding from the USA to the UK with customs clearance."
+        }}
       />
 
       <main id="main-content">

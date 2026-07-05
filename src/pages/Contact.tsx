@@ -124,9 +124,21 @@ export default function Contact() {
   return (
     <>
       <Seo
-        title="Contact Us | Carrgo — UK Freight Forwarder"
-        description="Contact Carrgo Freight Solutions Ltd for freight quotes, customs questions, or logistics support. Call +44 (0)20 3950 5050 or email info@carrgo.co.uk. We respond within 2 hours."
-        structuredData={localBusinessSchema}
+        title="Contact Carrgo | UK Freight Forwarder | Quotes & Customs Help"
+        description="Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support. Call +44 (0)20 3950 5050 or email info@carrgo.co.uk. We respond within 2 hours."
+        keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
+        ogUrl="https://carrgo.co.uk/contact"
+        canonical="https://carrgo.co.uk/contact"
+        structuredData={[
+          localBusinessSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Carrgo Freight Solutions",
+            "url": "https://carrgo.co.uk/contact",
+            "description": "Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support."
+          }
+        ]}
       />
 
       <main>

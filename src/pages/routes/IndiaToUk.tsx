@@ -43,8 +43,19 @@ export default function IndiaToUk() {
   return (
     <>
       <Seo
-        title="India to UK Shipping | Sea & Air Freight Forwarder"
-        description="Ship goods from India to the UK with Carrgo. Sea freight 20-28 days, air freight 3-5 days. All-inclusive pricing with customs clearance to Felixstowe and Southampton."
+        title="Shipping from India to UK | Sea & Air Freight Forwarder | Carrgo"
+        description="Ship goods from India to UK — sea freight 20-28 days via Nhava Sheva & Mundra, air freight 3-5 days. All-inclusive pricing with customs clearance to Felixstowe & Southampton."
+        keywords="shipping from india to uk, india to uk freight, sea freight india to uk, nhava sheva to felixstowe, mundra to southampton, air cargo india uk"
+        ogUrl="https://carrgo.co.uk/routes/india-to-uk"
+        canonical="https://carrgo.co.uk/routes/india-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "India to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "India"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Sea and air freight forwarding from India to the UK with customs clearance."
+        }}
       />
 
       <main id="main-content">

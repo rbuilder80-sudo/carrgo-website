@@ -18,6 +18,8 @@ const routeLinks = [
   { label: 'China to UK', to: '/routes/china-to-uk' },
   { label: 'Germany to UK', to: '/routes/germany-to-uk' },
   { label: 'Netherlands to UK', to: '/routes/netherlands-to-uk' },
+  { label: 'Ireland (Dublin)', to: '/routes/dublin-ireland' },
+  { label: 'Northern Ireland (Belfast)', to: '/routes/belfast-northern-ireland' },
   { label: 'India to UK', to: '/routes/india-to-uk' },
   { label: 'USA to UK', to: '/routes/usa-to-uk' },
   { label: 'Turkey to UK', to: '/routes/turkey-to-uk' },

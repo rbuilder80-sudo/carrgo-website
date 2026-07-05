@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, TrainFront, Clock, MapPin, ArrowRight,
+  Ship, Plane, TrainFront, Truck, Clock, MapPin, ArrowRight,
   CheckCircle, ChevronDown, FileCheck, Shield, TrendingUp,
   Users, Globe, Anchor, Package
 } from 'lucide-react';
@@ -43,8 +43,19 @@ export default function ChinaToUk() {
   return (
     <>
       <Seo
-        title="China to UK Shipping | Sea, Air & Rail Freight Forwarder"
-        description="Ship goods from China to the UK with Carrgo. Sea freight 25-35 days, air freight 3-5 days, rail freight 14-20 days. All-inclusive pricing with customs clearance."
+        title="Shipping from China to UK | Sea, Air & Rail Freight Forwarder | China to Ireland & NI"
+        description="Ship goods from China to UK, Ireland & Northern Ireland — sea freight 25-35 days, air 3-5 days, rail 14-20 days via New Silk Road. All-inclusive pricing with customs clearance. Onward shipping to Dublin and Belfast available."
+        keywords="shipping from china to uk, china to uk freight, sea freight china to uk, fcl shipping from china, lcl china to uk, rail freight china to uk, new silk road shipping, yiwu to london, china to ireland shipping, china to northern ireland freight, china to dublin, china to belfast"
+        ogUrl="https://carrgo.co.uk/routes/china-to-uk"
+        canonical="https://carrgo.co.uk/routes/china-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "China to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "China"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Sea, air and rail freight forwarding from China to the UK with customs clearance."
+        }}
       />
 
       <main id="main-content">
@@ -387,6 +398,43 @@ export default function ChinaToUk() {
               <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-600 transition-colors min-h-[44px]">
                 Contact Us
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== ONWARD TO IRELAND & NORTHERN IRELAND ====== */}
+        <section className="py-16 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Onward Shipping to Ireland & Northern Ireland</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Goods arriving at UK ports from China can be forwarded onward to Ireland and Northern Ireland via our Irish Sea services. We offer seamless China-to-Ireland shipping with full customs handling at both UK and Irish entry points.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Ship, title: 'China to Ireland Sea Freight', time: '30–40 days total', desc: 'FCL and LCL sea freight from Shanghai, Shenzhen, or Ningbo to Dublin Port via UK transit. Full customs clearance at Dublin Port with T1 transit documentation handled by our Irish customs team.' },
+                { icon: Truck, title: 'China to Northern Ireland', time: '30–40 days total', desc: 'Sea freight to Liverpool or Heysham, then onward RoRo ferry to Belfast Harbour or Larne. Full Northern Ireland Protocol compliance and Windsor Framework documentation included.' },
+                { icon: Plane, title: 'China to Ireland Air Freight', time: '5–8 days total', desc: 'Air freight from any Chinese airport to Dublin Airport via Heathrow or Manchester. Express customs clearance and same-day delivery within Ireland for urgent shipments.' },
+              ].map((mode, i) => {
+                const Icon = mode.icon;
+                return (
+                  <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <Icon className="w-10 h-10 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{mode.title}</h3>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-green-700 bg-green-50 px-2 py-1 rounded mb-3">{mode.time}</span>
+                    <p className="text-gray-600 text-sm leading-relaxed">{mode.desc}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin to UK Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast & Northern Ireland Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

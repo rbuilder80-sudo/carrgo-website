@@ -123,9 +123,22 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Us | Carrgo — UK Freight Forwarder"
-        description="Learn about Carrgo Freight Solutions Ltd — a UK-based freight forwarding company specialising in sea, air, road, and rail freight. HMRC-authorised customs brokers serving 500+ UK importers."
-        structuredData={[orgSchema, localBusinessSchema]}
+        title="About Carrgo | UK & Ireland Freight Forwarder | BIFA & IATA"
+        description="Learn about Carrgo Freight Solutions Ltd — UK & Ireland freight forwarder specialising in sea, air, road, rail freight & customs clearance. HMRC-authorised, BIFA & IATA accredited."
+        keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, bifa member freight, iata accredited cargo, hmrc authorised broker, customs brokerage uk"
+        ogUrl="https://carrgo.co.uk/about"
+        canonical="https://carrgo.co.uk/about"
+        structuredData={[
+          orgSchema,
+          localBusinessSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Carrgo Freight Solutions",
+            "url": "https://carrgo.co.uk/about",
+            "description": "Learn about Carrgo Freight Solutions Ltd, a UK and Ireland freight forwarder specialising in sea, air, road, rail freight and customs clearance."
+          }
+        ]}
       />
 
       <main>

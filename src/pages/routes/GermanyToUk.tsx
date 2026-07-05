@@ -43,8 +43,19 @@ export default function GermanyToUk() {
   return (
     <>
       <Seo
-        title="Germany to UK Freight | Road, Sea & Air Shipping"
-        description="Germany to UK freight forwarding with daily road departures. Road 2-4 days, sea 5-8 days, air 1-2 days. Full post-Brexit customs clearance. Get a quote in 2 hours."
+        title="Germany to UK Freight | Road, Sea & Air Shipping | Carrgo"
+        description="Germany to UK freight forwarding with daily road departures. FTL & LTL road freight 2-4 days, sea 5-8 days, air 1-2 days. Full post-Brexit customs clearance."
+        keywords="germany to uk freight, german road freight uk, shipping from germany to uk, european haulage germany, freight forwarder germany uk"
+        ogUrl="https://carrgo.co.uk/routes/germany-to-uk"
+        canonical="https://carrgo.co.uk/routes/germany-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Germany to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Road, sea and air freight forwarding from Germany to the UK with post-Brexit customs clearance."
+        }}
       />
 
       <main id="main-content">
@@ -390,6 +401,43 @@ export default function GermanyToUk() {
           </div>
         </section>
 
+        {/* ====== ONWARD TO IRELAND & NORTHERN IRELAND ====== */}
+        <section className="py-16 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Germany to Ireland & Northern Ireland</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Our European road freight network extends beyond the UK to offer seamless Germany to Ireland shipping and Germany to Northern Ireland freight services via the UK land bridge or direct ferry connections.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Truck, title: 'Germany to Ireland Road Freight', time: '3–5 days', desc: 'FTL and LTL road freight from Hamburg, Frankfurt, Munich and all German cities to Dublin and Cork via the UK. T1 transit documents for ROI entry, with Irish customs clearance handled at Dublin Port.' },
+                { icon: Truck, title: 'Germany to Northern Ireland', time: '3–5 days', desc: 'Road freight from Germany to Belfast and all Northern Ireland destinations via Heysham or Liverpool ferries. Full Northern Ireland Protocol compliance with T2 transit documents where required.' },
+                { icon: Ship, title: 'Direct Europe to Ireland Sea Freight', time: '5–8 days', desc: 'Alternative sea freight from Hamburg or Bremerhaven to Dublin Port via Rotterdam or direct feeder services. Ideal for larger shipments not requiring road transit via the UK.' },
+              ].map((mode, i) => {
+                const Icon = mode.icon;
+                return (
+                  <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <Icon className="w-10 h-10 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{mode.title}</h3>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-green-700 bg-green-50 px-2 py-1 rounded mb-3">{mode.time}</span>
+                    <p className="text-gray-600 text-sm leading-relaxed">{mode.desc}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ====== OTHER ROUTES ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -398,6 +446,7 @@ export default function GermanyToUk() {
               {[
                 { name: 'China', flag: '🇨🇳', route: '/routes/china-to-uk' },
                 { name: 'Netherlands', flag: '🇳🇱', route: '/routes/netherlands-to-uk' },
+                { name: 'Ireland (Dublin)', flag: '🇮🇪', route: '/routes/dublin-ireland' },
                 { name: 'India', flag: '🇮🇳', route: '/routes/india-to-uk' },
                 { name: 'USA', flag: '🇺🇸', route: '/routes/usa-to-uk' },
                 { name: 'Turkey', flag: '🇹🇷', route: '/routes/turkey-to-uk' },

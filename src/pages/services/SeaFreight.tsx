@@ -73,7 +73,10 @@ export default function SeaFreight() {
     <>
       <Seo
         title="Sea Freight UK | FCL & LCL Container Shipping | Carrgo"
-        description="FCL and LCL sea freight from China, India, USA & Europe to UK ports. All-inclusive container shipping with customs clearance. Get a quote in 2 hours."
+        description="Reliable UK sea freight services — FCL & LCL container shipping to Felixstowe, Southampton & Liverpool. Competitive rates from China, India, USA & Europe. Customs clearance included."
+        keywords="sea freight uk, fcl lcl shipping, container shipping uk, sea freight from china to uk, irish sea freight, belfast port shipping, dublin port freight, shipping to northern ireland, shipping to ireland"
+        ogUrl="https://carrgo.co.uk/services/sea-freight"
+        canonical="https://carrgo.co.uk/services/sea-freight"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">
@@ -232,8 +235,52 @@ export default function SeaFreight() {
           </div>
         </section>
 
+        {/* ====== IRISH SEA ROUTES ====== */}
+        <section aria-labelledby="irish-sea-heading" className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Irish Sea</span>
+              <h2 id="irish-sea-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                Irish Sea Freight Routes
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Fast and reliable ferry services connecting the UK with Ireland and Northern Ireland. The Irish Sea is one of the busiest short-sea shipping routes in Europe.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { route: 'Liverpool ↔ Dublin', time: '8 hours', type: 'RoRo Ferry', freq: 'Twice daily' },
+                { route: 'Holyhead ↔ Dublin', time: '2 hours', type: 'Fast Ferry', freq: 'Multiple daily' },
+                { route: 'Liverpool ↔ Belfast', time: '8–12 hours', type: 'RoRo Ferry', freq: 'Daily' },
+                { route: 'Cairnryan ↔ Larne', time: '2 hours', type: 'Fast Ferry', freq: 'Multiple daily' },
+              ].map((r, i) => (
+                <article key={i} className="bg-[#F8FAFC] rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
+                  <Ship className="w-8 h-8 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                  <h3 className="font-bold text-lg text-[#111827] mb-2">{r.route}</h3>
+                  <div className="flex items-center gap-2 text-[#4B5563] text-sm mb-1">
+                    <Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" />
+                    <span>{r.time}</span>
+                  </div>
+                  <p className="text-xs text-[#9CA3AF] uppercase tracking-wider font-medium mb-1">{r.type}</p>
+                  <p className="text-xs text-green-600 font-medium">{r.freq}</p>
+                </article>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ====== UK PORTS ====== */}
-        <section aria-labelledby="ports-heading" className="py-16 md:py-24 bg-white">
+        <section aria-labelledby="ports-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">UK Ports</span>

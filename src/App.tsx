@@ -34,6 +34,11 @@ const UsaToUk = lazy(() => import('./pages/routes/UsaToUk'));
 const TurkeyToUk = lazy(() => import('./pages/routes/TurkeyToUk'));
 const UaeToUk = lazy(() => import('./pages/routes/UaeToUk'));
 const SpainToUk = lazy(() => import('./pages/routes/SpainToUk'));
+const BelfastToUk = lazy(() => import('./pages/routes/BelfastToUk'));
+const DublinToUk = lazy(() => import('./pages/routes/DublinToUk'));
+
+// Sitemap page
+const AiSitemap = lazy(() => import('./pages/AiSitemap'));
 
 // Resource pages
 const PortCongestion = lazy(() => import('./pages/resources/PortCongestion'));
@@ -53,6 +58,9 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
+
+          {/* Sitemap page */}
+          <Route path="/sitemap" element={<Suspense fallback={<Loading />}><AiSitemap /></Suspense>} />
 
           {/* Company pages */}
           <Route path="/about" element={<Suspense fallback={<Loading />}><About /></Suspense>} />
@@ -83,6 +91,8 @@ export default function App() {
           <Route path="/routes/turkey-to-uk" element={<Suspense fallback={<Loading />}><TurkeyToUk /></Suspense>} />
           <Route path="/routes/uae-to-uk" element={<Suspense fallback={<Loading />}><UaeToUk /></Suspense>} />
           <Route path="/routes/spain-to-uk" element={<Suspense fallback={<Loading />}><SpainToUk /></Suspense>} />
+          <Route path="/routes/belfast-northern-ireland" element={<Suspense fallback={<Loading />}><BelfastToUk /></Suspense>} />
+          <Route path="/routes/dublin-ireland" element={<Suspense fallback={<Loading />}><DublinToUk /></Suspense>} />
 
           {/* Resource pages */}
           <Route path="/resources/port-congestion-tracker" element={<Suspense fallback={<Loading />}><PortCongestion /></Suspense>} />

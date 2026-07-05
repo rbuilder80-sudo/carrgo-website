@@ -43,8 +43,19 @@ export default function UaeToUk() {
   return (
     <>
       <Seo
-        title="UAE to UK Shipping | Sea & Air Freight from Dubai"
-        description="Ship goods from UAE (Dubai, Abu Dhabi) to the UK with Carrgo. Sea freight 18-24 days, air freight 2-3 days. Full customs clearance to Felixstowe and Southampton."
+        title="UAE to UK Shipping | Sea & Air Freight from Dubai | Carrgo"
+        description="Ship goods from UAE (Dubai, Abu Dhabi) to UK — sea freight 18-24 days via Jebel Ali, air freight 2-3 days. Full customs clearance to Felixstowe & Southampton."
+        keywords="uae to uk shipping, dubai to uk freight, jebel ali to felixstowe, shipping from uae to uk, abu dhabi to southampton, middle east freight uk"
+        ogUrl="https://carrgo.co.uk/routes/uae-to-uk"
+        canonical="https://carrgo.co.uk/routes/uae-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "UAE to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "United Arab Emirates"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Sea and air freight forwarding from the UAE to the UK with customs clearance."
+        }}
       />
 
       <main id="main-content">

@@ -34,8 +34,9 @@ export default function Privacy() {
   return (
     <>
       <Seo
-        title="Privacy Policy | Carrgo — UK Freight Forwarder"
+        title="Privacy Policy | Carrgo Freight Solutions Ltd"
         description="Carrgo Freight Solutions Ltd privacy policy. Learn how we collect, use, and protect your personal data. GDPR-compliant data protection for UK freight forwarding."
+        noindex={true}
         structuredData={legalSchema}
       />
 

@@ -43,8 +43,19 @@ export default function NetherlandsToUk() {
   return (
     <>
       <Seo
-        title="Netherlands to UK Freight | Road, Sea & Air Shipping"
-        description="Netherlands to UK freight forwarding. Road freight 1-3 days, sea 3-5 days, air 1 day. Daily departures from Rotterdam and Amsterdam. Full customs clearance."
+        title="Netherlands to UK Freight | Road, Sea & Air Shipping | Carrgo"
+        description="Netherlands to UK freight forwarding — road freight 1-3 days, sea 3-5 days, air 1 day. Daily departures from Rotterdam & Amsterdam. Full post-Brexit customs clearance."
+        keywords="netherlands to uk freight, rotterdam to uk shipping, dutch road freight uk, shipping from holland to uk, freight forwarder netherlands uk"
+        ogUrl="https://carrgo.co.uk/routes/netherlands-to-uk"
+        canonical="https://carrgo.co.uk/routes/netherlands-to-uk"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Netherlands to UK Freight Shipping",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "Netherlands"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Road, sea and air freight forwarding from the Netherlands to the UK with post-Brexit customs clearance."
+        }}
       />
 
       <main id="main-content">
@@ -390,6 +401,43 @@ export default function NetherlandsToUk() {
           </div>
         </section>
 
+        {/* ====== ROTTERDAM–DUBLIN DIRECT CONNECTIONS ====== */}
+        <section className="py-16 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Netherlands to Ireland Direct Connections</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Rotterdam serves as Europe's largest port and offers direct ferry and short-sea connections to Dublin, making it an ideal gateway for Netherlands to Ireland freight. We offer seamless routing from Rotterdam to Dublin and onward to all Irish destinations.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Ship, title: 'Rotterdam to Dublin Ferry', time: '24–36 hours', desc: 'Direct short-sea and feeder services from Rotterdam to Dublin Port. Ideal for containers and RoRo cargo avoiding UK land bridge transit. Weekly sailings with reliable schedules.' },
+                { icon: Truck, title: 'Road Freight NL to Ireland', time: '2–4 days', desc: 'Road freight from Rotterdam, Amsterdam, or any Dutch city to Dublin, Cork, and all Irish destinations. Includes ferry crossing and Irish customs clearance with T1 transit documents.' },
+                { icon: Ship, title: 'Netherlands to Northern Ireland', time: '2–4 days', desc: 'Sea freight from Rotterdam to Belfast via Liverpool or direct feeder services. Full Northern Ireland Protocol documentation and Windsor Framework compliance included.' },
+              ].map((mode, i) => {
+                const Icon = mode.icon;
+                return (
+                  <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <Icon className="w-10 h-10 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{mode.title}</h3>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-green-700 bg-green-50 px-2 py-1 rounded mb-3">{mode.time}</span>
+                    <p className="text-gray-600 text-sm leading-relaxed">{mode.desc}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ====== OTHER ROUTES ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -398,6 +446,7 @@ export default function NetherlandsToUk() {
               {[
                 { name: 'China', flag: '🇨🇳', route: '/routes/china-to-uk' },
                 { name: 'Germany', flag: '🇩🇪', route: '/routes/germany-to-uk' },
+                { name: 'Ireland (Dublin)', flag: '🇮🇪', route: '/routes/dublin-ireland' },
                 { name: 'India', flag: '🇮🇳', route: '/routes/india-to-uk' },
                 { name: 'USA', flag: '🇺🇸', route: '/routes/usa-to-uk' },
                 { name: 'Turkey', flag: '🇹🇷', route: '/routes/turkey-to-uk' },

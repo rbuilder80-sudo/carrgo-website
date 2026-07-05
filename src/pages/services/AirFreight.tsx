@@ -73,7 +73,10 @@ export default function AirFreight() {
     <>
       <Seo
         title="Air Freight UK | Express & Economy Air Cargo | Carrgo"
-        description="Express and economy air freight from China, USA, UAE & Europe to UK airports. Door-to-door air cargo with real-time tracking. Get a quote in 2 hours."
+        description="Express and economy air freight to Heathrow, Manchester & East Midlands. Door-to-door air cargo from China, USA, UAE & Europe. Real-time tracking. Quote in 2 hours."
+        keywords="air freight uk, air cargo uk, express air freight, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
+        ogUrl="https://carrgo.co.uk/services/air-freight"
+        canonical="https://carrgo.co.uk/services/air-freight"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

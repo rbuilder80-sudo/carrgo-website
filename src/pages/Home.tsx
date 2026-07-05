@@ -79,6 +79,8 @@ const routes = [
   { origin: 'China', sea: '25-35 days', air: '3-5 days', rail: '14-20 days' },
   { origin: 'Germany', road: '2-4 days', sea: '5-8 days', air: '1-2 days' },
   { origin: 'Netherlands', road: '1-3 days', sea: '3-5 days', air: '1 day' },
+  { origin: 'Ireland', sea: '8-14 hrs', road: '1-2 days', air: '1 day' },
+  { origin: 'Northern Ireland', sea: '8-14 hrs', road: '1-2 days' },
   { origin: 'India', sea: '20-28 days', air: '3-5 days' },
   { origin: 'USA', sea: '10-15 days', air: '1-3 days' },
   { origin: 'Turkey', sea: '14-20 days', road: '5-7 days' },
@@ -123,23 +125,76 @@ function FaqAccordion() {
 /* ── Main Home Page ── */
 export default function Home() {
   return (
-    <>
+    <main role="main" itemScope itemType="https://schema.org/WebPage" data-page="home">
+      <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
+      <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="Carrgo Freight Solutions | UK Freight Forwarder | Sea, Air, Road, Rail"
-        description="Carrgo is a trusted UK freight forwarding company handling sea freight, air cargo, road haulage, rail freight, and customs clearance. Get all-inclusive door-to-door shipping quotes in 2 hours."
-        structuredData={allSchemas}
+        title="Freight Forwarder UK & Ireland | Sea, Air, Road & Rail Shipping | Carrgo"
+        description="Carrgo is a trusted UK & Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight & customs clearance. All-inclusive door-to-door shipping quotes in 2 hours. BIFA & IATA accredited."
+        keywords="freight forwarder uk, freight forwarding company, sea freight uk, air freight uk, road freight uk, rail freight china to uk, customs clearance broker, shipping from china to uk, fcl lcl shipping, import freight uk, freight forwarder ireland, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
+        ogUrl="https://carrgo.co.uk/"
+        canonical="https://carrgo.co.uk/"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": ["Organization", "LocalBusiness"],
+            "name": "Carrgo Freight Solutions",
+            "legalName": "Carrgo Freight Solutions Ltd",
+            "url": "https://carrgo.co.uk",
+            "logo": "https://carrgo.co.uk/logo.png",
+            "description": "UK & Ireland freight forwarder specialising in sea freight, air freight, customs clearance, and door-to-door logistics.",
+            "email": "info@carrgo.co.uk",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB",
+              "addressRegion": "England"
+            },
+            "areaServed": ["GB", "IE", "Northern Ireland"],
+            "serviceType": ["Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Logistics", "Amazon FBA Shipping", "UK Warehousing"],
+            "memberOf": [
+              {"@type": "Organization", "name": "British International Freight Association", "alternateName": "BIFA"},
+              {"@type": "Organization", "name": "International Air Transport Association", "alternateName": "IATA"}
+            ],
+            "sameAs": ["https://www.linkedin.com/company/carrgo"]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question", "name": "How much does sea freight from China to the UK cost?", "acceptedAnswer": {"@type": "Answer", "text": "LCL sea freight from China starts from GBP 300 per CBM. A 20ft FCL container costs GBP 1,200-2,800 and a 40ft FCL GBP 2,000-4,500 depending on origin port. Carrgo provides all-inclusive quotes within 2 hours."}},
+              {"@type": "Question", "name": "How long does sea freight from China to the UK take?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight from Shanghai or Shenzhen to Felixstowe takes 25-35 days. China-UK rail via the New Silk Road takes 14-20 days. Air freight takes 3-5 days door-to-door."}},
+              {"@type": "Question", "name": "Does Carrgo handle UK and Ireland customs clearance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles UK and Ireland import customs declarations, duty calculations and port release at all major UK and Irish ports including Belfast and Dublin."}},
+              {"@type": "Question", "name": "What is the difference between FCL and LCL shipping?", "acceptedAnswer": {"@type": "Answer", "text": "FCL (Full Container Load) means your cargo uses a full 20ft or 40ft container. LCL (Less than Container Load) means your cargo shares container space with other shipments. LCL is better for smaller consignments under 15 CBM."}},
+              {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
+              {"@type": "Question", "name": "How do I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Submit your origin, destination, cargo type, dimensions, weight and ready date through our online quote form or email info@carrgo.co.uk for a fast all-inclusive freight quote."}},
+              {"@type": "Question", "name": "Does Carrgo ship to Northern Ireland and Ireland?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo provides full freight forwarding services to Northern Ireland via Belfast, Larne and Londonderry ports, and to Ireland via Dublin, Cork, Rosslare and Shannon Foynes ports."}},
+              {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}}
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Carrgo Freight Solutions",
+            "url": "https://carrgo.co.uk",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://carrgo.co.uk/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]}
       />
 
       {/* ====== HERO ====== */}
-      <section aria-labelledby="hero-heading" className="bg-gradient-to-br from-brand-900 to-brand-800 text-white py-16 lg:py-24">
+      <section aria-labelledby="hero-heading" data-section="hero" itemScope itemType="https://schema.org/Organization" className="hero-reserved bg-gradient-to-br from-brand-900 to-brand-800 text-white py-16 lg:py-24">
         <div className="container-carrgo">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                UK Freight Forwarder You Can Trust
+              <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                UK &amp; Ireland Freight Forwarder You Can Trust | Sea, Air, Road &amp; Rail
               </h1>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
-                Sea freight, air cargo, road haulage, rail freight, and customs clearance. All-inclusive door-to-door shipping quotes in 2 hours.
+                <span itemProp="description">Sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
               </p>
               <ul className="space-y-2 mb-8 text-brand-100">
                 <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" aria-hidden="true" /><span>All-inclusive pricing — no hidden fees</span></li>
@@ -196,7 +251,7 @@ export default function Home() {
       </section>
 
       {/* ====== ACCREDITATIONS ====== */}
-      <section aria-label="Accreditations" className="bg-gray-50 py-6 border-b">
+      <section aria-label="Accreditations" data-section="accreditations" className="bg-gray-50 py-6 border-b">
         <div className="container-carrgo">
           <p className="text-center text-sm text-gray-500 mb-3">Trusted by UK importers. Members of leading industry bodies.</p>
           <div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 font-semibold text-sm">
@@ -208,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* ====== STATS (static, not animated) ====== */}
-      <section aria-label="Company statistics" className="py-16 bg-white">
+      <section aria-label="Company statistics" data-section="stats" itemScope itemType="https://schema.org/AboutPage" className="py-16 bg-white">
         <div className="container-carrgo">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <article>
@@ -231,8 +286,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ====== IRELAND & NORTHERN IRELAND ====== */}
+      <section aria-labelledby="ireland-heading" data-section="ireland-coverage" itemScope itemType="https://schema.org/Place" itemProp="areaServed" className="py-16 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white">
+        <div className="container-carrgo">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block text-xs font-semibold tracking-wider uppercase text-emerald-200 mb-3">All-Ireland Coverage</span>
+              <h2 id="ireland-heading" className="text-3xl lg:text-4xl font-extrabold leading-tight mb-4">
+                Freight Forwarding to Ireland &amp; Northern Ireland
+              </h2>
+              <p className="text-lg text-emerald-100 mb-6 leading-relaxed">
+                Carrgo provides full freight forwarding services to both Northern Ireland and the Republic of Ireland. Whether you are shipping to Belfast, Dublin, or any port on the island, we handle customs clearance, transit documentation, and final-mile delivery.
+              </p>
+              <ul className="space-y-3 mb-8 text-emerald-100">
+                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" /><span>Northern Ireland: Belfast, Larne, Londonderry ports</span></li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" /><span>Republic of Ireland: Dublin, Cork, Rosslare, Shannon Foynes</span></li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" /><span>Full customs clearance — GB-NI &amp; GB-IE movements</span></li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" /><span>Sea, road, and air freight options available</span></li>
+              </ul>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-emerald-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]">
+                  Get a Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors min-h-[44px]">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20 text-center">
+                <Globe className="w-16 h-16 text-emerald-200 mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-2xl font-bold mb-2">All-Ireland Service</h3>
+                <p className="text-emerald-200 text-sm mb-4">UK, Northern Ireland &amp; Republic of Ireland</p>
+                <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-white/20">
+                  <div>
+                    <div className="text-2xl font-extrabold">NI</div>
+                    <p className="text-xs text-emerald-200">Belfast, Larne</p>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-extrabold">IE</div>
+                    <p className="text-xs text-emerald-200">Dublin, Cork</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ====== SERVICES ====== */}
-      <section id="services" aria-labelledby="services-heading" className="py-16 bg-gray-50">
+      <section id="services" aria-labelledby="services-heading" data-section="services" itemScope itemType="https://schema.org/ItemList" className="py-16 bg-gray-50">
         <div className="container-carrgo">
           <h2 id="services-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Our Services</h2>
           <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Complete freight forwarding solutions for UK importers, from factory floor to your warehouse door.</p>
@@ -255,7 +358,7 @@ export default function Home() {
       </section>
 
       {/* ====== WHY CHOOSE ====== */}
-      <section aria-labelledby="why-heading" className="py-16 bg-white">
+      <section aria-labelledby="why-heading" data-section="why-choose" className="py-16 bg-white">
         <div className="container-carrgo">
           <h2 id="why-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">Why UK Importers Choose Carrgo</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -285,7 +388,7 @@ export default function Home() {
       </section>
 
       {/* ====== COMPARISON TABLE ====== */}
-      <section aria-labelledby="compare-heading" className="py-16 bg-brand-50">
+      <section aria-labelledby="compare-heading" data-section="comparison" className="py-16 bg-brand-50">
         <div className="container-carrgo">
           <h2 id="compare-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Carrgo vs Traditional Forwarders</h2>
           <p className="text-center text-gray-600 mb-8">See why UK importers are switching to Carrgo.</p>
@@ -320,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* ====== HOW IT WORKS ====== */}
-      <section aria-labelledby="how-heading" className="py-16 bg-white">
+      <section aria-labelledby="how-heading" data-section="how-it-works" itemScope itemType="https://schema.org/HowTo" className="py-16 bg-white">
         <div className="container-carrgo">
           <h2 id="how-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">How It Works</h2>
           <ol className="grid md:grid-cols-5 gap-6">
@@ -344,7 +447,7 @@ export default function Home() {
       </section>
 
       {/* ====== TRADE ROUTES ====== */}
-      <section id="routes" aria-labelledby="routes-heading" className="py-16 bg-gray-50">
+      <section id="routes" aria-labelledby="routes-heading" data-section="trade-routes" itemScope itemType="https://schema.org/ItemList" className="py-16 bg-gray-50">
         <div className="container-carrgo">
           <h2 id="routes-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Popular Trade Routes</h2>
           <p className="text-center text-gray-600 mb-8">Estimated shipping durations to the UK</p>
@@ -365,7 +468,7 @@ export default function Home() {
       </section>
 
       {/* ====== INDUSTRIES ====== */}
-      <section id="industries" aria-labelledby="industries-heading" className="py-16 bg-white">
+      <section id="industries" aria-labelledby="industries-heading" data-section="industries" className="py-16 bg-white">
         <div className="container-carrgo">
           <h2 id="industries-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Industries We Serve</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -380,7 +483,7 @@ export default function Home() {
       </section>
 
       {/* ====== REQUEST A QUOTE ====== */}
-      <section aria-labelledby="quote-heading" className="py-16 bg-brand-900 text-white">
+      <section aria-labelledby="quote-heading" data-section="quote-form" className="py-16 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="quote-heading" className="text-3xl font-bold text-center mb-3">Get Your Free Quote</h2>
           <p className="text-center text-brand-100 mb-8">All-inclusive freight quote within 2 hours. No obligation.</p>
@@ -437,7 +540,7 @@ export default function Home() {
       </section>
 
       {/* ====== FAQ ====== */}
-      <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
+      <section aria-labelledby="faq-heading" data-section="faq" itemScope itemType="https://schema.org/FAQPage" className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
           <FaqAccordion />
@@ -445,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* ====== CTA BANNER ====== */}
-      <section aria-label="Get started" className="py-16 bg-brand-800 text-white">
+      <section aria-label="Get started" data-section="cta-banner" className="py-16 bg-brand-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Ship?</h2>
           <p className="text-brand-100 mb-8 text-lg">Get your all-inclusive freight quote in 2 hours. No hidden fees, no obligation.</p>
@@ -459,6 +562,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

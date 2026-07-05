@@ -76,7 +76,10 @@ export default function RoadFreight() {
     <>
       <Seo
         title="Road Freight UK | European Road Haulage | FTL & LTL | Carrgo"
-        description="FTL and LTL road freight from Germany, Netherlands, Spain, France & all EU countries to the UK. Daily departures with post-Brexit customs clearance."
+        description="FTL & LTL road freight from Germany, Netherlands, Spain, France & all EU countries to the UK. Daily departures with full post-Brexit customs clearance."
+        keywords="road freight uk, european haulage, ftl ltl transport, road freight to ireland, haulage northern ireland, uk trucking, pallet delivery europe"
+        ogUrl="https://carrgo.co.uk/services/road-freight"
+        canonical="https://carrgo.co.uk/services/road-freight"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">
@@ -199,6 +202,63 @@ export default function RoadFreight() {
                   <p className="text-xs text-[#9CA3AF] uppercase tracking-wider font-medium">{c.freq} departures</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== IRELAND ROAD FREIGHT ====== */}
+        <section aria-labelledby="ireland-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Ireland</span>
+              <h2 id="ireland-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                Road Freight to Ireland & Northern Ireland
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Daily road freight services connecting the UK with Ireland and Northern Ireland via the Irish Sea. Full T1 and T2 transit document handling included.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <article className="bg-white rounded-xl p-8 border border-[#E5E7EB] hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
+                  <Truck className="w-7 h-7 text-[#1A6DFF]" aria-hidden="true" />
+                </div>
+                <h3 className="font-bold text-xl text-[#111827] mb-2">UK to Ireland Road Freight</h3>
+                <p className="text-[#4B5563] text-sm mb-4 leading-relaxed">
+                  Road freight from all UK locations to Dublin, Cork, Limerick, Galway and across the Republic of Ireland. Includes Irish Sea ferry crossing, T1 transit documents for ROI customs entry, and Irish customs clearance.
+                </p>
+                <ul className="space-y-2 text-sm text-[#4B5563]">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>Dublin in 1–2 days from UK mainland</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>T1 transit documents handled</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>Irish customs clearance included</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>FTL and LTL options available</span></li>
+                </ul>
+              </article>
+              <article className="bg-white rounded-xl p-8 border border-[#E5E7EB] hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
+                  <Truck className="w-7 h-7 text-[#1A6DFF]" aria-hidden="true" />
+                </div>
+                <h3 className="font-bold text-xl text-[#111827] mb-2">UK to Northern Ireland Road Freight</h3>
+                <p className="text-[#4B5563] text-sm mb-4 leading-relaxed">
+                  Road freight from GB mainland to Belfast, Derry, and all Northern Ireland locations. Full Northern Ireland Protocol compliance with T2 transit documents, UKIMS checks, and Windsor Framework documentation.
+                </p>
+                <ul className="space-y-2 text-sm text-[#4B5563]">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>Belfast in 1–2 days from UK mainland</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>T2 transit documents handled</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>NI Protocol compliance included</span></li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#22C55E]" aria-hidden="true" /><span>Green lane / red lane guidance</span></li>
+                </ul>
+              </article>
+            </div>
+            <div className="text-center mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
+                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
