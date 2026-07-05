@@ -288,7 +288,7 @@ export default function UaeToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our HMRC-authorised customs brokers manage all UK import declarations for UAE-origin cargo, ensuring efficient clearance and compliance.
+              Our experienced customs brokers manage all UK import declarations for UAE-origin cargo, ensuring efficient clearance and compliance.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -349,7 +349,7 @@ export default function UaeToUk() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'UAE Network', desc: 'Strong partnerships with UAE freight agents across all Emirates and free zones.' },
-                { icon: FileCheck, title: 'Customs Experts', desc: 'HMRC-authorised brokers experienced in UAE-origin commodity classifications.' },
+                { icon: FileCheck, title: 'Customs Experts', desc: 'Experienced brokers specialising in UAE-origin commodity classifications.' },
                 { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive UAE–UK freight quote within 2 hours.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full visibility from UAE collection or port to UK delivery.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'Your personal account manager understands Middle East logistics and your needs.' },
