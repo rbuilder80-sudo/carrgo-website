@@ -14,8 +14,7 @@ const localBusinessSchema = {
   image: 'https://carrgo.co.uk/og-image.jpg',
   '@id': 'https://carrgo.co.uk',
   url: 'https://carrgo.co.uk',
-  telephone: '+44-20-3950-5050',
-  email: 'info@carrgo.co.uk',
+    email: 'info@carrgo.co.uk',
   priceRange: '££',
   address: {
     '@type': 'PostalAddress',
@@ -49,10 +48,8 @@ const contactMethods = [
   {
     icon: Phone,
     label: 'Call Us',
-    value: '+44 (0)20 3950 5050',
-    note: 'Monday–Friday, 8:30am–6pm GMT',
-    href: 'tel:+442039505050',
-  },
+        note: 'Monday–Friday, 8:30am–6pm GMT',
+      },
   {
     icon: Mail,
     label: 'Email Us',
@@ -63,8 +60,7 @@ const contactMethods = [
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+44 7700 123456',
-    note: 'Quick questions welcome',
+        note: 'Quick questions welcome',
     href: 'https://wa.me/447700123456',
   },
   {
@@ -100,7 +96,7 @@ const quickLinks = [
     icon: Send,
   },
   {
-    title: 'HMRC Customs Help',
+    title: 'Customs Clearance Help',
     desc: 'Expert customs clearance and documentation support.',
     href: '/services/customs-clearance',
     icon: CheckCircle,
@@ -108,8 +104,7 @@ const quickLinks = [
   {
     title: 'Call Our Team',
     desc: 'Speak directly with a freight specialist.',
-    href: 'tel:+442039505050',
-    icon: Phone,
+        icon: Phone,
   },
 ];
 
@@ -125,7 +120,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact Carrgo | UK Freight Forwarder | Quotes & Customs Help"
-        description="Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support. Call +44 (0)20 3950 5050 or email info@carrgo.co.uk. We respond within 2 hours."
+        description="Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support. Email info@carrgo.co.uk. We respond within 2 hours."
         keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
         ogUrl="https://carrgo.co.uk/contact"
         canonical="https://carrgo.co.uk/contact"
@@ -263,13 +258,13 @@ export default function Contact() {
 
                         <div className="grid md:grid-cols-2 gap-4">
                           <div>
-                            <label htmlFor="contact-phone" className="block text-sm font-medium text-[#111827] mb-1">
+                            <label htmlFor="contact-phone" className="block text-sm font-medium text-[#111827] mb-1 hidden">
                               Phone
                             </label>
                             <input
                               id="contact-phone"
                               type="tel"
-                              placeholder="+44 (0)20 0000 0000"
+                              placeholder="Email address"
                               className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
                             />
                           </div>
