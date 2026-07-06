@@ -107,8 +107,8 @@ export default function GetAQuote() {
   return (
     <>
       <Seo
-        title="Get a Freight Quote UK | Free Quote in 2 Hours | Carrgo"
-        description="Get your free, all-inclusive freight quote from Carrgo within 2 hours. Sea freight, air cargo, road haulage, rail freight & customs clearance. No hidden fees, no obligation."
+        title="Get a Freight Quote UK | Shipping & Air Freight Quotes | Carrgo"
+        description="Get freight quotations in 2 hours. Sea, air, road & rail shipping quotes UK. Tell us your route, cargo & timing — we send all-inclusive pricing."
         keywords="freight quote uk, shipping quote uk, freight forwarding quote, sea freight quote, air freight quote, customs clearance quote, freight cost estimate, cheap freight uk"
         ogUrl="https://carrgo.co.uk/get-a-quote"
         canonical="https://carrgo.co.uk/get-a-quote"
@@ -123,7 +123,7 @@ export default function GetAQuote() {
             <div className="text-center max-w-3xl mx-auto">
               <span className="inline-block text-xs font-semibold tracking-widest text-[#1A6DFF] uppercase mb-4">Get a Quote</span>
               <h1 id="quote-hero-heading" className="text-4xl lg:text-5xl font-extrabold text-[#111827] leading-tight mb-6">
-                Get Your Freight Quote in 2 Hours
+                Get a Freight Quote UK — Shipping Quotes in 2 Hours
               </h1>
               <p className="text-lg text-[#4B5563] leading-relaxed">
                 Complete the form below and our team will respond with a competitive, all-inclusive freight quote. No hidden fees, no obligation. Average response time: 1 hour 42 minutes.
