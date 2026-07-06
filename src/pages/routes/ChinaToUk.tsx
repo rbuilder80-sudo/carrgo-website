@@ -43,8 +43,8 @@ export default function ChinaToUk() {
   return (
     <>
       <Seo
-        title="Shipping from China to UK | Sea, Air & Rail Freight Forwarder | China to Ireland & NI"
-        description="Ship goods from China to UK, Ireland & Northern Ireland — sea freight 25-35 days, air 3-5 days, rail 14-20 days via New Silk Road. All-inclusive pricing with customs clearance. Onward shipping to Dublin and Belfast available."
+        title="Shipping from China to UK | Sea, Air & Rail Freight | Carrgo"
+        description="Shipping from China to UK — sea (25-35 days), air (3-5 days), rail (14-20 days). Shanghai, Shenzhen, Ningbo to Felixstowe, Southampton. Get quotes."
         keywords="shipping from china to uk, china to uk freight, sea freight china to uk, fcl shipping from china, lcl china to uk, rail freight china to uk, new silk road shipping, yiwu to london, china to ireland shipping, china to northern ireland freight, china to dublin, china to belfast"
         ogUrl="https://carrgo.co.uk/routes/china-to-uk"
         canonical="https://carrgo.co.uk/routes/china-to-uk"
@@ -66,7 +66,7 @@ export default function ChinaToUk() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase text-brand-200 mb-3">SHIPPING ROUTE</span>
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  China to UK Freight — Sea, Air & Rail Shipping
+                  Shipping from China to UK — Sea, Air & Rail Freight
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
                   Ship goods from China to the UK with Carrgo. Choose from sea freight (25–35 days), air freight (3–5 days), or rail freight (14–20 days). All-inclusive pricing with HMRC customs clearance included.
