@@ -11,7 +11,7 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Customs Clearance UK — Customs Brokers',
+  name: 'Customs Clearance UK — Import & Export Brokers',
   provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -73,8 +73,8 @@ export default function CustomsClearance() {
   return (
     <>
       <Seo
-        title="Customs Clearance UK | Import Export Brokers | Carrgo"
-        description="Professional customs brokers handling UK import & export declarations via CDS. Duty deferment, commodity code classification, T1 transit docs. 99%+ first-submission clearance success."
+        title="Customs Clearance UK | Import & Export Brokers | Carrgo"
+        description="UK customs clearance & import/export brokerage. CDS declarations, duty calculations, commodity codes. NI Protocol expertise. Belfast & Dublin."
         keywords="customs clearance uk, customs broker, import declarations cds, customs clearance northern ireland, irish customs broker, t1 documents, transit documents, customs duty vat"
         ogUrl="https://carrgo.co.uk/services/customs-clearance"
         canonical="https://carrgo.co.uk/services/customs-clearance"
@@ -88,7 +88,7 @@ export default function CustomsClearance() {
               <div>
                 <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Customs Clearance</span>
                 <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Customs Clearance UK — Customs Brokers
+                  Customs Clearance UK — Import & Export Brokers
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
                   Our customs brokers handle all UK import and export declarations. CDS entries, duty deferment, commodity code classification, and full compliance. 99%+ first-submission success rate.
