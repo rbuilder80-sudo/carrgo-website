@@ -4,6 +4,7 @@ import { Menu, X, Ship } from 'lucide-react';
 import SkipToContent from './SkipToContent';
 
 const serviceLinks = [
+  { label: 'All Services', to: '/services' },
   { label: 'Sea Freight', to: '/services/sea-freight' },
   { label: 'Air Freight', to: '/services/air-freight' },
   { label: 'Road Freight', to: '/services/road-freight' },
@@ -15,6 +16,7 @@ const serviceLinks = [
 ];
 
 const routeLinks = [
+  { label: 'All Routes', to: '/routes' },
   { label: 'China to UK', to: '/routes/china-to-uk' },
   { label: 'Germany to UK', to: '/routes/germany-to-uk' },
   { label: 'Netherlands to UK', to: '/routes/netherlands-to-uk' },
