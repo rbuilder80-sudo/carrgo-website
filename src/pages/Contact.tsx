@@ -119,8 +119,8 @@ export default function Contact() {
   return (
     <>
       <Seo
-        title="Contact Carrgo | UK Freight Forwarder | Quotes & Customs Help"
-        description="Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support. Email info@carrgo.co.uk. We respond within 2 hours."
+        title="Contact Carrgo | UK Freight Forwarder | Carrgo"
+        description="Contact Carrgo freight forwarders. Email info@carrgo.co.uk for shipping quotes, customs queries & freight advice. We reply within 2 hours."
         keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
         ogUrl="https://carrgo.co.uk/contact"
         canonical="https://carrgo.co.uk/contact"
