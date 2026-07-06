@@ -1,0 +1,40 @@
+name: Automated Backup
+
+on:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Create ZIP backup
+        run: |
+          zip -r carrgo-backup.zip . -x "*.git*" -x "*.github*"
+          echo "ZIP size: $(du -h carrgo-backup.zip | cut -f1)"
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: auto-backup-${{ github.run_number }}
+          name: "Auto Backup #${{ github.run_number }}"
+          body: |
+            Automated backup of Carrgo website (www.carrgo.co.uk)
+            
+            **Deploy date:** ${{ github.event.head_commit.timestamp }}
+            **Commit:** ${{ github.sha }}
+            
+            **To restore:**
+            1. Download `carrgo-backup.zip` below
+            2. Go to https://app.netlify.com/drop
+            3. Drag the ZIP file in
+            4. Site is live in 2 minutes
+          files: carrgo-backup.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
