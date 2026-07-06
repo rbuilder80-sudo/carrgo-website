@@ -11,7 +11,7 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Air Freight UK — Express & Economy Air Cargo',
+  name: 'Air Freight UK — Air Cargo Shipping Services',
   provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -72,8 +72,8 @@ export default function AirFreight() {
   return (
     <>
       <Seo
-        title="Air Freight UK | Express & Economy Air Cargo | Carrgo"
-        description="Express and economy air freight to Heathrow, Manchester & East Midlands. Door-to-door air cargo from China, USA, UAE & Europe. Real-time tracking. Quote in 2 hours."
+        title="Air Freight UK | Air Cargo Shipping & Quotes | Carrgo"
+        description="Air freight & air cargo UK — express & economy options. Heathrow, East Midlands, Manchester. Get air freight quotes in 2 hours. 3-5 days worldwide."
         keywords="air freight uk, air cargo uk, express air freight, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
         ogUrl="https://carrgo.co.uk/services/air-freight"
         canonical="https://carrgo.co.uk/services/air-freight"
@@ -87,7 +87,7 @@ export default function AirFreight() {
               <div>
                 <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Air Freight Services</span>
                 <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Air Freight UK — Express & Economy Air Cargo
+                  Air Freight UK — Air Cargo Shipping Services
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
                   Book express and economy air freight from China, USA, UAE, and Europe to Heathrow, Manchester, and Birmingham airports. Door-to-door air cargo with tracking. Time-critical delivery in 1–5 days.
