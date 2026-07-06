@@ -11,7 +11,7 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Sea Freight UK — FCL & LCL Container Shipping',
+  name: 'Sea Freight Services UK — FCL & LCL Container Shipping',
   provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -72,8 +72,8 @@ export default function SeaFreight() {
   return (
     <>
       <Seo
-        title="Sea Freight UK | FCL & LCL Container Shipping | Carrgo"
-        description="Reliable UK sea freight services — FCL & LCL container shipping to Felixstowe, Southampton & Liverpool. Competitive rates from China, India, USA & Europe. Customs clearance included."
+        title="Sea Freight Services UK | FCL & LCL Container Shipping | Carrgo"
+        description="Sea freight services UK — FCL & LCL container shipping worldwide. Competitive container shipping quotes. 25-35 days China to UK. All-inclusive rates."
         keywords="sea freight uk, fcl lcl shipping, container shipping uk, sea freight from china to uk, irish sea freight, belfast port shipping, dublin port freight, shipping to northern ireland, shipping to ireland"
         ogUrl="https://carrgo.co.uk/services/sea-freight"
         canonical="https://carrgo.co.uk/services/sea-freight"
@@ -87,7 +87,7 @@ export default function SeaFreight() {
               <div>
                 <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Sea Freight Services</span>
                 <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Sea Freight UK — FCL & LCL Container Shipping
+                  Sea Freight Services UK — FCL & LCL Container Shipping
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
                   Get sea freight quotes for FCL (Full Container Load) and LCL (Less than Container Load) shipments from China, India, USA, and Europe to Felixstowe, Southampton, and London Gateway. All-inclusive ocean freight with UK customs clearance.
