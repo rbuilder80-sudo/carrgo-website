@@ -43,4 +43,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://carrgo.co.uk/sitemap.xml
-Sitemap: https://carrgo.co.uk/llms.txt
