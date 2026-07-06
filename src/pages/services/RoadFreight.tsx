@@ -11,7 +11,7 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Road Freight UK — European Road Haulage',
+  name: 'Road Freight UK — European Haulage & Transport Company',
   provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
   areaServed: [
     { '@type': 'Country', name: 'United Kingdom' },
@@ -75,8 +75,8 @@ export default function RoadFreight() {
   return (
     <>
       <Seo
-        title="Road Freight UK | European Road Haulage | FTL & LTL | Carrgo"
-        description="FTL & LTL road freight from Germany, Netherlands, Spain, France & all EU countries to the UK. Daily departures with full post-Brexit customs clearance."
+        title="Road Freight UK | European Haulage & Transport | Carrgo"
+        description="UK road freight & European haulage. FTL & LTL transport company. Germany, Netherlands, France, Spain, Italy. Same-day collection available."
         keywords="road freight uk, european haulage, ftl ltl transport, road freight to ireland, haulage northern ireland, uk trucking, pallet delivery europe"
         ogUrl="https://carrgo.co.uk/services/road-freight"
         canonical="https://carrgo.co.uk/services/road-freight"
@@ -90,7 +90,7 @@ export default function RoadFreight() {
               <div>
                 <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Road Freight Services</span>
                 <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Road Freight UK — European Road Haulage
+                  Road Freight UK — European Haulage & Transport Company
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
                   FTL (Full Truck Load) and LTL groupage road freight from Germany, Netherlands, Spain, France, and all EU countries to the UK. Daily departures with full post-Brexit customs clearance and GPS tracking.
