@@ -25,6 +25,13 @@ const DoorToDoor = lazy(() => import('./pages/services/DoorToDoor'));
 const AmazonFba = lazy(() => import('./pages/services/AmazonFba'));
 const Warehousing = lazy(() => import('./pages/services/Warehousing'));
 
+// Hub pages
+const ServicesHub = lazy(() => import('./pages/ServicesHub'));
+const ContainerShipping = lazy(() => import('./pages/ContainerShipping'));
+const AirCargo = lazy(() => import('./pages/AirCargo'));
+const Logistics = lazy(() => import('./pages/Logistics'));
+const RoutesHub = lazy(() => import('./pages/RoutesHub'));
+
 // Route pages
 const ChinaToUk = lazy(() => import('./pages/routes/ChinaToUk'));
 const GermanyToUk = lazy(() => import('./pages/routes/GermanyToUk'));
@@ -92,6 +99,13 @@ export default function App() {
           <Route path="/routes/spain-to-uk" element={<Suspense fallback={<Loading />}><SpainToUk /></Suspense>} />
           <Route path="/routes/belfast-northern-ireland" element={<Suspense fallback={<Loading />}><BelfastToUk /></Suspense>} />
           <Route path="/routes/dublin-ireland" element={<Suspense fallback={<Loading />}><DublinToUk /></Suspense>} />
+
+          {/* Hub pages */}
+          <Route path="/services" element={<Suspense fallback={<Loading />}><ServicesHub /></Suspense>} />
+          <Route path="/services/container-shipping" element={<Suspense fallback={<Loading />}><ContainerShipping /></Suspense>} />
+          <Route path="/services/air-cargo" element={<Suspense fallback={<Loading />}><AirCargo /></Suspense>} />
+          <Route path="/services/logistics" element={<Suspense fallback={<Loading />}><Logistics /></Suspense>} />
+          <Route path="/routes" element={<Suspense fallback={<Loading />}><RoutesHub /></Suspense>} />
 
           {/* Resource pages */}
           <Route path="/resources/port-congestion-tracker" element={<Suspense fallback={<Loading />}><PortCongestion /></Suspense>} />
