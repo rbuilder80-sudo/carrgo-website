@@ -129,9 +129,9 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="Freight Forwarder UK & Ireland | Sea, Air, Road & Rail Shipping | Carrgo"
-        description="Carrgo is a trusted UK & Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight & customs clearance. All-inclusive door-to-door shipping quotes in 2 hours. BIFA & IATA accredited."
-        keywords="freight forwarder uk, freight forwarding company, sea freight uk, air freight uk, road freight uk, rail freight china to uk, customs clearance broker, shipping from china to uk, fcl lcl shipping, import freight uk, freight forwarder ireland, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
+        title="Freight Forwarder UK | Shipping & Logistics Company | Carrgo"
+        description="Trusted UK freight forwarder & logistics company. Sea, air, road & rail freight + customs clearance. All-inclusive shipping quotes in 2 hours. BIFA & IATA accredited."
+        keywords="freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk"ight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
         ogUrl="https://carrgo.co.uk/"
         canonical="https://carrgo.co.uk/"
         structuredData={[
@@ -191,7 +191,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                UK &amp; Ireland Freight Forwarder You Can Trust | Sea, Air, Road &amp; Rail
+                UK Freight Forwarder &amp; Logistics Company You Can Trust
               </h1>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
                 <span itemProp="description">Sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
