@@ -15,6 +15,10 @@ const GetAQuote = lazy(() => import('./pages/GetAQuote'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 
+// Hub pages
+const ServicesHub = lazy(() => import('./pages/ServicesHub'));
+const RoutesHub = lazy(() => import('./pages/RoutesHub'));
+
 // Service pages
 const SeaFreight = lazy(() => import('./pages/services/SeaFreight'));
 const AirFreight = lazy(() => import('./pages/services/AirFreight'));
@@ -24,13 +28,9 @@ const CustomsClearance = lazy(() => import('./pages/services/CustomsClearance'))
 const DoorToDoor = lazy(() => import('./pages/services/DoorToDoor'));
 const AmazonFba = lazy(() => import('./pages/services/AmazonFba'));
 const Warehousing = lazy(() => import('./pages/services/Warehousing'));
-
-// Hub pages
-const ServicesHub = lazy(() => import('./pages/ServicesHub'));
-const ContainerShipping = lazy(() => import('./pages/ContainerShipping'));
-const AirCargo = lazy(() => import('./pages/AirCargo'));
-const Logistics = lazy(() => import('./pages/Logistics'));
-const RoutesHub = lazy(() => import('./pages/RoutesHub'));
+const ContainerShipping = lazy(() => import('./pages/services/ContainerShipping'));
+const AirCargo = lazy(() => import('./pages/services/AirCargo'));
+const Logistics = lazy(() => import('./pages/services/Logistics'));
 
 // Route pages
 const ChinaToUk = lazy(() => import('./pages/routes/ChinaToUk'));
@@ -78,6 +78,10 @@ export default function App() {
           <Route path="/privacy" element={<Suspense fallback={<Loading />}><Privacy /></Suspense>} />
           <Route path="/terms" element={<Suspense fallback={<Loading />}><Terms /></Suspense>} />
 
+          {/* Hub pages */}
+          <Route path="/services" element={<Suspense fallback={<Loading />}><ServicesHub /></Suspense>} />
+          <Route path="/routes" element={<Suspense fallback={<Loading />}><RoutesHub /></Suspense>} />
+
           {/* Service pages */}
           <Route path="/services/sea-freight" element={<Suspense fallback={<Loading />}><SeaFreight /></Suspense>} />
           <Route path="/services/air-freight" element={<Suspense fallback={<Loading />}><AirFreight /></Suspense>} />
@@ -87,6 +91,9 @@ export default function App() {
           <Route path="/services/door-to-door" element={<Suspense fallback={<Loading />}><DoorToDoor /></Suspense>} />
           <Route path="/services/amazon-fba-freight" element={<Suspense fallback={<Loading />}><AmazonFba /></Suspense>} />
           <Route path="/services/warehousing" element={<Suspense fallback={<Loading />}><Warehousing /></Suspense>} />
+          <Route path="/services/container-shipping" element={<Suspense fallback={<Loading />}><ContainerShipping /></Suspense>} />
+          <Route path="/services/air-cargo" element={<Suspense fallback={<Loading />}><AirCargo /></Suspense>} />
+          <Route path="/services/logistics" element={<Suspense fallback={<Loading />}><Logistics /></Suspense>} />
 
           {/* Route pages */}
           <Route path="/routes/china-to-uk" element={<Suspense fallback={<Loading />}><ChinaToUk /></Suspense>} />
@@ -99,13 +106,6 @@ export default function App() {
           <Route path="/routes/spain-to-uk" element={<Suspense fallback={<Loading />}><SpainToUk /></Suspense>} />
           <Route path="/routes/belfast-northern-ireland" element={<Suspense fallback={<Loading />}><BelfastToUk /></Suspense>} />
           <Route path="/routes/dublin-ireland" element={<Suspense fallback={<Loading />}><DublinToUk /></Suspense>} />
-
-          {/* Hub pages */}
-          <Route path="/services" element={<Suspense fallback={<Loading />}><ServicesHub /></Suspense>} />
-          <Route path="/services/container-shipping" element={<Suspense fallback={<Loading />}><ContainerShipping /></Suspense>} />
-          <Route path="/services/air-cargo" element={<Suspense fallback={<Loading />}><AirCargo /></Suspense>} />
-          <Route path="/services/logistics" element={<Suspense fallback={<Loading />}><Logistics /></Suspense>} />
-          <Route path="/routes" element={<Suspense fallback={<Loading />}><RoutesHub /></Suspense>} />
 
           {/* Resource pages */}
           <Route path="/resources/port-congestion-tracker" element={<Suspense fallback={<Loading />}><PortCongestion /></Suspense>} />
