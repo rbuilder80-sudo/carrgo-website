@@ -121,8 +121,8 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Carrgo | UK & Ireland Freight Forwarder | BIFA & IATA"
-        description="Learn about Carrgo Freight Solutions Ltd — UK & Ireland freight forwarder specialising in sea, air, road, rail freight & customs clearance. AEO certified, BIFA & IATA accredited."
+        title="About Carrgo | UK Freight Forwarding Company | Carrgo"
+        description="About Carrgo — a UK freight forwarding company with 30+ years experience. BIFA & IATA accredited. Serving importers & exporters across UK, Ireland & NI."
         keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, bifa member freight, iata accredited cargo, customs broker, customs brokerage uk"
         ogUrl="https://carrgo.co.uk/about"
         canonical="https://carrgo.co.uk/about"
@@ -148,7 +148,7 @@ export default function About() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-widest text-[#1A6DFF] uppercase mb-4">About Carrgo</span>
                 <h1 id="about-hero-heading" className="text-4xl lg:text-5xl font-extrabold text-[#111827] leading-tight mb-6">
-                  UK&apos;s Trusted Freight Forwarding Partner
+                  About Carrgo — UK Freight Forwarding Company
                 </h1>
                 <p className="text-lg text-[#4B5563] leading-relaxed mb-6">
                   Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom. We are certified customs brokers helping UK importers navigate international trade with confidence.
