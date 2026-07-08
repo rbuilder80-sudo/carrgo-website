@@ -264,6 +264,48 @@ export default function ChinaToUk() {
           </div>
         </section>
 
+        {/* ====== TRANSPORT MODE COMPARISON TABLE ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Sea freight vs air freight vs rail freight: which is best for China to UK?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Compare all three transport modes side by side to find the best option for your China to UK shipment based on cost, speed, and cargo type.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th scope="col" className="text-left px-6 py-4 font-semibold text-gray-700">Feature</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-700">Sea Freight</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-700">Air Freight</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-700">Rail Freight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Transit time', '25–35 days', '3–5 days', '14–20 days'],
+                    ['Cost per kg', '£0.50–£1.50', '£4.50–£8.50', '£2.00–£3.50'],
+                    ['Best for', 'Large volumes, non-urgent', 'Urgent, high-value', 'Mid-range budget, regular'],
+                    ['Carbon footprint', 'Medium', 'High', 'Low'],
+                    ['Reliability', 'High (fixed schedules)', 'Very high (daily flights)', 'High (growing network)'],
+                    ['Cargo restrictions', 'Few', 'Many (hazardous, oversized)', 'Some (size limits)'],
+                    ['Tracking', 'Container-level', 'Piece-level', 'Container-level'],
+                    ['Insurance cost', 'Lower', 'Higher', 'Lower'],
+                    ['Frequency', 'Weekly sailings', 'Daily flights', '2–3 trains/week'],
+                    ['UK arrival', 'Felixstowe, Southampton', 'Heathrow, Manchester', 'Dagenham, Daventry'],
+                  ].map(([feat, sea, air, rail], i) => (
+                    <tr key={i} className="border-t">
+                      <td className="px-6 py-3 font-medium text-gray-900">{feat}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{sea}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{air}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{rail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which mode suits your shipment? <Link to="/get-a-quote" className="text-[#1A6DFF] font-medium hover:underline">Get a free quote</Link> and Carrgo will recommend the best option.</p>
+          </div>
+        </section>
+
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
