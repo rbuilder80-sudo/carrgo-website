@@ -40,62 +40,108 @@
     <link rel="modulepreload" crossorigin href="../assets/vendor-icons-Flz4LasR.js">
     <link rel="stylesheet" crossorigin href="../assets/index-CW2C_FTL.css">
   <script type="application/ld+json">{
-"@context":"https://schema.org",
-"@graph":[{
-  "@type":"Organization",
-  "name":"Carrgo Freight Solutions",
-  "url":"https://www.carrgo.co.uk",
-  "logo":"https://www.carrgo.co.uk/assets/logo-DGzP0pL8.png",
-  "description":"UK freight forwarder offering sea freight, air cargo, road haulage, rail freight, customs clearance, and warehousing services.",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"120 Bark Street",
-    "addressLocality":"Bolton",
-    "addressRegion":"Greater Manchester",
-    "postalCode":"BL1 2AX",
-    "addressCountry":"GB"
-  },
-  "contactPoint":{
-    "@type":"ContactPoint",
-    "email":"info@carrgo.co.uk",
-    "contactType":"customer service",
-    "availableLanguage":"English"
-  },
-  "sameAs":[
-    "https://www.linkedin.com/company/carrgo-freight"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Carrgo Freight Solutions",
+      "url": "https://www.carrgo.co.uk",
+      "logo": "https://www.carrgo.co.uk/assets/logo-DGzP0pL8.png",
+      "description": "UK freight forwarder offering sea freight, air cargo, road haulage, rail freight, customs clearance, and warehousing services.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "120 Bark Street",
+        "addressLocality": "Bolton",
+        "addressRegion": "Greater Manchester",
+        "postalCode": "BL1 2AX",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@carrgo.co.uk",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/carrgo-freight",
+        "https://www.reddit.com/user/CarrgoFreight",
+        "https://www.quora.com/profile/Carrgo-Freight",
+        "https://medium.com/@carrgofreight"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Sea Freight UK",
+      "provider": {
+        "@type": "Organization",
+        "name": "Carrgo Freight Solutions",
+        "url": "https://www.carrgo.co.uk"
+      },
+      "areaServed": "United Kingdom",
+      "description": "Full container load (FCL), less than container load (LCL), and bulk cargo sea freight services to and from the United Kingdom. Includes customs clearance, port handling, and door-to-door delivery from major global ports.",
+      "serviceType": "Sea Freight",
+      "offers": {
+        "@type": "Offer",
+        "description": "FCL 20ft/40ft containers, LCL consolidation, bulk cargo, project cargo, and breakbulk shipping"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between FCL and LCL sea freight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FCL (Full Container Load) means you book an entire 20ft or 40ft container for your goods only. LCL (Less than Container Load) means your goods share a container with other shippers' cargo. FCL is typically cheaper per cubic metre for shipments over 15 CBM, while LCL is more economical for smaller volumes. Carrgo offers both with all-inclusive pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does sea freight from China to the UK take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sea freight from Shanghai or Shenzhen to Felixstowe or Southampton takes 25-35 days door-to-door. Transit times vary by origin port, carrier, and whether the service is direct or transshipment. Carrgo provides accurate transit time estimates with every quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents are needed for sea freight to the UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sea freight imports require a commercial invoice, packing list, bill of lading, and UK customs import declaration. Depending on the goods, you may also need a Certificate of Origin, import licence, or inspection certificate. Carrgo prepares and submits all documentation on your behalf."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.carrgo.co.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.carrgo.co.uk/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sea Freight UK",
+          "item": "https://www.carrgo.co.uk/services/sea-freight"
+        }
+      ]
+    }
   ]
-},{
-  "@type":"FAQPage",
-  "mainEntity":[{
-    "@type":"Question",
-    "name":"What is a freight forwarder?",
-    "acceptedAnswer":{
-      "@type":"Answer",
-      "text":"A freight forwarder is a company that arranges the transportation of goods on behalf of shippers. They handle documentation, customs clearance, and coordinate between carriers to move cargo from origin to destination efficiently."
-    }
-  },{
-    "@type":"Question",
-    "name":"How much does freight forwarding cost in the UK?",
-    "acceptedAnswer":{
-      "@type":"Answer",
-      "text":"Freight forwarding costs in the UK vary depending on the shipping method (sea, air, road, rail), cargo volume, origin, and destination. For a tailored quote, contact Carrgo at info@carrgo.co.uk with your shipment details."
-    }
-  },{
-    "@type":"Question",
-    "name":"How long does shipping from China to the UK take?",
-    "acceptedAnswer":{
-      "@type":"Answer",
-      "text":"Sea freight from China to the UK typically takes 25-35 days. Air freight takes 3-7 days. Rail freight via the New Silk Road takes 18-22 days."
-    }
-  },{
-    "@type":"Question",
-    "name":"Do I need customs clearance for imports to the UK?",
-    "acceptedAnswer":{
-      "@type":"Answer",
-      "text":"Yes, all goods imported into the UK require customs clearance. Since Brexit, UK customs procedures have changed. A freight forwarder like Carrgo can handle all customs documentation and clearance on your behalf."
-    }
-  }]
-}]}</script>
+}</script>
 </head>
   <body>
     <noscript>
