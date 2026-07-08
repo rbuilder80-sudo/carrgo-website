@@ -210,10 +210,10 @@ export default function ServicesHub() {
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">What We Offer</span>
               <h2 id="services-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-4">
-                Our Freight Forwarding Services
+                What freight forwarding services does Carrgo offer?
               </h2>
               <p className="text-[#4B5563] max-w-2xl mx-auto">
-                From container shipping to customs clearance, we provide a complete range of international freight services tailored to UK importers and exporters.
+                Carrgo provides a complete range of international freight services for UK importers including sea freight (FCL/LCL), air cargo, road haulage, rail freight, customs clearance, door-to-door delivery, Amazon FBA shipping, and UK warehousing — all managed by dedicated account managers.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -248,10 +248,10 @@ export default function ServicesHub() {
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Why Carrgo</span>
               <h2 id="why-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-4">
-                Why UK Businesses Choose Carrgo
+                Why do UK businesses choose Carrgo for freight forwarding?
               </h2>
               <p className="text-[#4B5563] max-w-2xl mx-auto">
-                We combine industry expertise, cutting-edge technology, and personalised service to deliver freight forwarding that keeps your supply chain moving.
+                UK importers and exporters choose Carrgo because we combine decades of industry expertise, cutting-edge shipment tracking technology, personalised account management, and all-inclusive pricing with no hidden fees — ensuring supply chains keep moving smoothly.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -277,10 +277,10 @@ export default function ServicesHub() {
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Our Process</span>
               <h2 id="how-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-4">
-                How Freight Forwarding Works
+                How does Carrgo's freight forwarding process work?
               </h2>
               <p className="text-[#4B5563] max-w-2xl mx-auto">
-                Shipping freight internationally does not have to be complicated. Our streamlined four-step process gets your cargo from A to B with minimal hassle.
+                Shipping freight internationally with Carrgo follows a simple 4-step process: request a quote with your shipment details, receive your all-inclusive price within 2 hours, we collect and handle all transport and customs, then deliver to your UK warehouse.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -307,10 +307,10 @@ export default function ServicesHub() {
         <section className="py-16 lg:py-24 bg-gradient-to-br from-[#0f4db5] to-[#1A6DFF] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl lg:text-4xl font-extrabold mb-4">
-              Ready to Ship? Get Your Free Quote Today
+              How do I get a free freight quote from Carrgo?
             </h2>
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              Whether you need sea freight, air cargo, road haulage or rail freight, our team is ready to provide a competitive, all-inclusive quote. Tell us about your shipment and we will respond within 2 hours.
+            <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Whether you need sea freight, air cargo, road haulage or rail freight, our team is ready to provide a competitive, all-inclusive quote within 2 hours. Simply tell us about your shipment and we will respond with a no-obligation quote.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

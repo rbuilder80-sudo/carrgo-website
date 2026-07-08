@@ -118,9 +118,9 @@ export default function ChinaToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">The China–UK Trade Lane</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the China to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              The China to UK shipping route is one of the world&apos;s busiest trade corridors. Over £45 billion worth of goods are imported from China to the UK annually, spanning electronics, machinery, textiles, furniture, and consumer products. Carrgo provides comprehensive freight forwarding services across all major transport modes.
+              The China to UK shipping route is one of the world&apos;s busiest trade corridors. Over £45 billion worth of goods are imported from China to the UK annually, spanning electronics, machinery, textiles, furniture, and consumer products. Carrgo provides comprehensive freight forwarding services across all major transport modes including sea, air, and rail freight.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
@@ -142,8 +142,8 @@ export default function ChinaToUk() {
         {/* ====== TRANSIT TIMES TABLE ====== */}
         <section aria-labelledby="transit-heading" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">Transit Times from China to UK</h2>
-            <p className="text-center text-gray-600 mb-8">Estimated port-to-port and door-to-door shipping durations</p>
+            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">How long does shipping from China to UK take?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Sea freight from China to UK takes 25-35 days port-to-port or 35-45 days door-to-door. Air freight takes 3-5 days door-to-door. Rail freight via the New Silk Road takes 14-20 days. Here are the full estimated durations by transport mode.</p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
                 <thead>
@@ -177,8 +177,8 @@ export default function ChinaToUk() {
         {/* ====== KEY PORTS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Key Ports & Airports</h2>
-            <p className="text-center text-gray-600 mb-10">Major origin and destination facilities on the China–UK route</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Which ports and airports are used for China to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Major Chinese origin ports include Shanghai, Shenzhen, Ningbo, Guangzhou, Qingdao, Tianjin, and Xiamen. UK arrival ports include Felixstowe, Southampton, and London Gateway. Air freight routes use London Heathrow, East Midlands, and Manchester airports.</p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -237,7 +237,8 @@ export default function ChinaToUk() {
         {/* ====== SHIPPING OPTIONS ====== */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">How to Ship from China to the UK</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">How do I ship goods from China to the UK?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Shipping from China to the UK involves 5 key steps: choose your transport mode (sea, air, or rail), prepare documentation including commercial invoice and packing list, book freight with a forwarder like Carrgo, clear UK customs with your EORI number, and arrange final delivery to your warehouse.</p>
             <p className="text-center text-gray-600 mb-10">Three transport modes to suit your timeline and budget</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -266,7 +267,8 @@ export default function ChinaToUk() {
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Popular Goods Shipped from China to UK</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are commonly shipped from China to the UK?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">The UK imports over £45 billion annually from China including electronics, machinery, furniture, textiles, toys, automotive parts, and consumer goods. Carrgo handles all categories with specialised packaging and compliance support.</p>
             <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this trade lane</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -292,9 +294,9 @@ export default function ChinaToUk() {
         {/* ====== CUSTOMS & DOCUMENTATION ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What customs clearance and documentation is needed for China to UK imports?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our experienced customs brokers handle all UK import declarations to ensure smooth clearance at the port of entry.
+              UK importers need a valid EORI number, commercial invoice, packing list, bill of lading or airway bill, and sometimes a certificate of origin. Carrgo's experienced customs brokers handle all UK import declarations to ensure smooth clearance at the port of entry.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -351,7 +353,8 @@ export default function ChinaToUk() {
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why Choose Carrgo for China–UK Shipping</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why should I choose Carrgo for China to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Carrgo offers established China expertise, dedicated customs specialists, 2-hour quotes, live shipment tracking, a dedicated account manager, and all-inclusive pricing with no hidden fees — making us the preferred freight forwarder for UK importers sourcing from China.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'China Expertise', desc: 'Established relationships with Chinese freight agents and carriers across all major ports and cities.' },
@@ -381,7 +384,8 @@ export default function ChinaToUk() {
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">What do importers ask about China to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Here are the most common questions we receive about shipping from China to the UK, covering transit times, costs, customs, documentation, and freight modes.</p>
             <FaqAccordion />
           </div>
         </section>
@@ -389,7 +393,8 @@ export default function ChinaToUk() {
         {/* ====== CTA ====== */}
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Get Your China–UK Freight Quote</h2>
+            <h2 className="text-3xl font-bold mb-4">How do I get a China to UK freight quote?</h2>
+            <p className="text-gray-600 mb-6 max-w-xl">Request your all-inclusive China to UK freight quote by filling in our online form with your origin city, cargo details, and preferred transport mode. Carrgo responds within 2 hours with a competitive, no-obligation quote.</p>
             <p className="text-brand-100 mb-8 text-lg">Sea, air, or rail — we&apos;ll find the best shipping solution for your China imports. All-inclusive quote within 2 hours.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
@@ -405,9 +410,9 @@ export default function ChinaToUk() {
         {/* ====== ONWARD TO IRELAND & NORTHERN IRELAND ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Onward Shipping to Ireland & Northern Ireland</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Can Carrgo ship China goods onward to Ireland and Northern Ireland?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Goods arriving at UK ports from China can be forwarded onward to Ireland and Northern Ireland via our Irish Sea services. We offer seamless China-to-Ireland shipping with full customs handling at both UK and Irish entry points.
+              Yes. Goods arriving at UK ports from China can be forwarded onward to Ireland and Northern Ireland via our Irish Sea services. We offer seamless China-to-Ireland shipping with full customs handling at both UK and Irish entry points, including Northern Ireland Protocol compliance.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[

@@ -155,7 +155,7 @@ export default function Home() {
               {"@type": "Organization", "name": "British International Freight Association", "alternateName": "BIFA"},
               {"@type": "Organization", "name": "International Air Transport Association", "alternateName": "IATA"}
             ],
-            "sameAs": ["https://www.linkedin.com/company/carrgo"]
+            "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://www.carrgo.co.uk"]
           },
           {
             "@context": "https://schema.org",
@@ -293,10 +293,10 @@ export default function Home() {
             <div>
               <span className="inline-block text-xs font-semibold tracking-wider uppercase text-emerald-200 mb-3">All-Ireland Coverage</span>
               <h2 id="ireland-heading" className="text-3xl lg:text-4xl font-extrabold leading-tight mb-4">
-                Freight Forwarding to Ireland &amp; Northern Ireland
+                Do you ship freight to Ireland and Northern Ireland?
               </h2>
               <p className="text-lg text-emerald-100 mb-6 leading-relaxed">
-                Carrgo provides full freight forwarding services to both Northern Ireland and the Republic of Ireland. Whether you are shipping to Belfast, Dublin, or any port on the island, we handle customs clearance, transit documentation, and final-mile delivery.
+                Yes. Carrgo provides full freight forwarding services to both Northern Ireland and the Republic of Ireland. Whether you are shipping to Belfast, Dublin, or any port on the island, we handle customs clearance, transit documentation, and final-mile delivery.
               </p>
               <ul className="space-y-3 mb-8 text-emerald-100">
                 <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" /><span>Northern Ireland: Belfast, Larne, Londonderry ports</span></li>
@@ -337,8 +337,8 @@ export default function Home() {
       {/* ====== SERVICES ====== */}
       <section id="services" aria-labelledby="services-heading" data-section="services" itemScope itemType="https://schema.org/ItemList" className="py-16 bg-gray-50">
         <div className="container-carrgo">
-          <h2 id="services-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Our Services</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Complete freight forwarding solutions for UK importers, from factory floor to your warehouse door.</p>
+          <h2 id="services-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">What freight forwarding services does Carrgo offer?</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Carrgo provides complete freight forwarding solutions for UK importers, including sea freight, air cargo, road haulage, rail freight, customs clearance, and door-to-door delivery. Every service is managed by a dedicated account manager with real-time tracking.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map(s => {
               const Icon = s.icon;
@@ -360,7 +360,8 @@ export default function Home() {
       {/* ====== WHY CHOOSE ====== */}
       <section aria-labelledby="why-heading" data-section="why-choose" className="py-16 bg-white">
         <div className="container-carrgo">
-          <h2 id="why-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">Why UK Importers Choose Carrgo</h2>
+          <h2 id="why-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">Why do UK importers choose Carrgo over other freight forwarders?</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">UK businesses choose Carrgo because we offer all-inclusive pricing with no hidden fees, expert in-house customs clearance, quotes within 2 hours, real-time shipment tracking, and a dedicated account manager for every client.</p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               { icon: Shield, title: 'All-Inclusive Pricing', desc: 'One quote covers everything. No hidden fuel surcharges, no terminal handling fees, no customs inspection surprises.' },
@@ -390,8 +391,8 @@ export default function Home() {
       {/* ====== COMPARISON TABLE ====== */}
       <section aria-labelledby="compare-heading" data-section="comparison" className="py-16 bg-brand-50">
         <div className="container-carrgo">
-          <h2 id="compare-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Carrgo vs Traditional Forwarders</h2>
-          <p className="text-center text-gray-600 mb-8">See why UK importers are switching to Carrgo.</p>
+          <h2 id="compare-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">How does Carrgo compare to traditional freight forwarders?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Carrgo differs from traditional freight forwarders by offering transparent all-inclusive pricing, in-house customs experts, real-time tracking, dedicated account managers, and 2-hour quote responses instead of 24-48 hours.</p>
           <div className="overflow-x-auto">
             <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
               <thead>
@@ -425,7 +426,8 @@ export default function Home() {
       {/* ====== HOW IT WORKS ====== */}
       <section aria-labelledby="how-heading" data-section="how-it-works" itemScope itemType="https://schema.org/HowTo" className="py-16 bg-white">
         <div className="container-carrgo">
-          <h2 id="how-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">How It Works</h2>
+          <h2 id="how-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">How does Carrgo's freight forwarding process work?</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Getting your goods from factory to warehouse takes 5 simple steps with Carrgo: request a quote, receive your all-inclusive price within 2 hours, we collect from your supplier, handle all transport and customs, then deliver to your UK warehouse.</p>
           <ol className="grid md:grid-cols-5 gap-6">
             {[
               { step: '1', title: 'Request a Quote', desc: 'Fill in our form with your shipment details' },
@@ -449,8 +451,8 @@ export default function Home() {
       {/* ====== TRADE ROUTES ====== */}
       <section id="routes" aria-labelledby="routes-heading" data-section="trade-routes" itemScope itemType="https://schema.org/ItemList" className="py-16 bg-gray-50">
         <div className="container-carrgo">
-          <h2 id="routes-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">Popular Trade Routes</h2>
-          <p className="text-center text-gray-600 mb-8">Estimated shipping durations to the UK</p>
+          <h2 id="routes-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">What are the most popular shipping routes to the UK?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Carrgo manages freight from 10 major origins to the UK. Sea freight from China takes 25-35 days, air freight 3-5 days, and rail 14-20 days. European routes via road are fastest at 1-3 days from Germany or the Netherlands.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {routes.map(r => (
               <article key={r.origin} className="bg-white rounded-lg p-5 border hover:shadow-md transition-shadow">
@@ -470,7 +472,8 @@ export default function Home() {
       {/* ====== INDUSTRIES ====== */}
       <section id="industries" aria-labelledby="industries-heading" data-section="industries" className="py-16 bg-white">
         <div className="container-carrgo">
-          <h2 id="industries-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Industries We Serve</h2>
+          <h2 id="industries-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Which industries does Carrgo provide freight services for?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Carrgo supports UK importers across 6 key sectors including furniture, e-commerce, automotive, construction, electronics, and fashion textiles — with specialised handling for each industry's unique shipping requirements.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map(ind => (
               <article key={ind.name} className="border rounded-xl p-6 hover:shadow-md transition-shadow">
@@ -485,8 +488,8 @@ export default function Home() {
       {/* ====== REQUEST A QUOTE ====== */}
       <section aria-labelledby="quote-heading" data-section="quote-form" className="py-16 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="quote-heading" className="text-3xl font-bold text-center mb-3">Get Your Free Quote</h2>
-          <p className="text-center text-brand-100 mb-8">All-inclusive freight quote within 2 hours. No obligation.</p>
+          <h2 id="quote-heading" className="text-3xl font-bold text-center mb-3">How do I get a free freight quote from Carrgo?</h2>
+          <p className="text-center text-brand-100 mb-8 max-w-2xl mx-auto">Simply fill in our online form with your shipment details — origin, destination, cargo type, and weight. Carrgo responds with an all-inclusive freight quote within 2 hours during UK business hours, with no obligation.</p>
           <form className="space-y-4" onSubmit={e => e.preventDefault()}>
             <fieldset className="grid md:grid-cols-2 gap-4">
               <legend className="sr-only">Contact Information</legend>
@@ -542,7 +545,8 @@ export default function Home() {
       {/* ====== FAQ ====== */}
       <section aria-labelledby="faq-heading" data-section="faq" itemScope itemType="https://schema.org/FAQPage" className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">What do UK importers ask about freight forwarding?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Here are the most common questions we receive about shipping to the UK, including customs clearance, transit times, documentation, and freight costs. Each answer is written by Carrgo's experienced logistics team.</p>
           <FaqAccordion />
         </div>
       </section>
@@ -550,8 +554,8 @@ export default function Home() {
       {/* ====== CTA BANNER ====== */}
       <section aria-label="Get started" data-section="cta-banner" className="py-16 bg-brand-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Ship?</h2>
-          <p className="text-brand-100 mb-8 text-lg">Get your all-inclusive freight quote in 2 hours. No hidden fees, no obligation.</p>
+          <h2 className="text-3xl font-bold mb-4">Ready to ship your goods to the UK with Carrgo?</h2>
+          <p className="text-brand-100 mb-8 text-lg max-w-2xl mx-auto">Get your all-inclusive freight quote in 2 hours. No hidden fees, no obligation. Our logistics team is ready to handle your shipment from factory to warehouse.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
               Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />
