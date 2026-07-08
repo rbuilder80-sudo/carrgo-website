@@ -13,6 +13,11 @@ const faqData = [
   { q: 'How much does shipping a container from USA to UK cost?', a: 'East Coast to UK FCL containers typically cost £1,200–£3,000 depending on the season. West Coast to UK ranges from £1,800–£4,000. Air freight costs £3–£6 per kilogram. LCL is charged per cubic metre. Contact us for an all-inclusive quote.' },
   { q: 'Do I need an EORI number to import from the USA to UK?', a: 'Yes, a UK EORI number is mandatory for all commercial imports into the UK from the USA. If you don\'t have one, we can guide you through the application process with HMRC. It typically takes 3–5 working days to receive your EORI number.' },
   { q: 'Are there any trade agreements between the USA and UK?', a: 'Currently there is no comprehensive free trade agreement between the USA and UK. Standard UK import tariffs (known as the UK Global Tariff) apply to US goods. Our customs team can help you determine the exact duty rates for your specific HS commodity codes.' },
+  { q: 'What is the cheapest way to ship from USA to UK?', a: 'Sea freight from the US East Coast is the cheapest option for large volumes, with FCL containers costing £1,200–£3,000. For smaller shipments, LCL sea freight at £150–£300 per CBM is cost-effective. Air freight is fastest but costs £3–£6 per kg. Rail is not available on the transatlantic route.' },
+  { q: 'Can I ship Amazon FBA goods from USA to UK?', a: 'Yes, Carrgo handles Amazon FBA shipments from the USA to UK fulfilment centres including BHX4, EMA1, and LBA1. We manage FBA prep, labelling, palletisation, and appointment booking through Amazon Carrier Central. Full customs clearance included.' },
+  { q: 'Do you ship from USA to Northern Ireland and Ireland?', a: 'Yes. USA goods can be shipped to Northern Ireland via Belfast or Larne, and to the Republic of Ireland via Dublin or Cork. We handle all customs requirements including the NI Protocol and Irish customs declarations.' },
+  { q: 'What is the best Incoterm for USA to UK shipping?', a: 'DDP (Delivered Duty Paid) is best for most UK importers as the seller handles all costs and customs. FOB (Free on Board) is common for sea freight — the seller delivers to the US port, and you handle freight and UK customs. Carrgo can advise based on your supplier agreement.' },
+  { q: 'How do I get a freight quote from USA to UK?', a: 'Fill out our online quote form with your US origin city, cargo details, weight, dimensions, and preferred transport mode. We provide an all-inclusive quote within 2 hours covering collection, freight, customs, and UK delivery.' },
 ];
 
 function FaqAccordion() {
@@ -46,8 +51,8 @@ export default function UsaToUk() {
         title="USA to UK Shipping | Sea & Air Freight Forwarder | Carrgo"
         description="Ship goods from USA to UK — East Coast sea 10-15 days, West Coast 25-30 days, air freight 1-3 days. Customs clearance to all UK ports & airports."
         keywords="usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
-        ogUrl="https://carrgo.co.uk/routes/usa-to-uk"
-        canonical="https://carrgo.co.uk/routes/usa-to-uk"
+        ogUrl="https://carrgo.co.uk/routes/usa-to-uk/"
+        canonical="https://carrgo.co.uk/routes/usa-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -113,7 +118,7 @@ export default function UsaToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">The USA–UK Trade Lane</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the USA to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
               The United States is the UK&apos;s largest single trading partner, with bilateral trade exceeding £260 billion annually. This well-established route benefits from frequent sailings, extensive flight networks, and streamlined customs procedures. Carrgo offers comprehensive sea and air freight services from both US coasts to all major UK ports and airports.
             </p>
@@ -137,7 +142,7 @@ export default function UsaToUk() {
         {/* ====== TRANSIT TIMES TABLE ====== */}
         <section aria-labelledby="transit-heading" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">Transit Times from USA to UK</h2>
+            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">How long does shipping from USA to UK take?</h2>
             <p className="text-center text-gray-600 mb-8">Estimated transit times by transport mode and coast</p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
@@ -173,7 +178,7 @@ export default function UsaToUk() {
         {/* ====== KEY PORTS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Key Ports & Airports</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Which ports and airports are used for USA to UK shipping?</h2>
             <p className="text-center text-gray-600 mb-10">Major US origin facilities and UK destinations</p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -250,7 +255,7 @@ export default function UsaToUk() {
         {/* ====== SHIPPING OPTIONS ====== */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Shipping Options from USA to UK</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What are the shipping options from USA to UK?</h2>
             <p className="text-center text-gray-600 mb-10">Sea and air freight covering both US coasts</p>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
@@ -275,10 +280,88 @@ export default function UsaToUk() {
           </div>
         </section>
 
+        {/* ====== COSTS & PRICING ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Pricing</span>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-6">
+                  How much does shipping from the USA to the UK cost?
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  USA to UK shipping costs depend on your origin coast, cargo type, weight, and chosen transport mode. East Coast sea freight is generally the most cost-effective option, while West Coast shipments cost more due to the longer Panama Canal route. Air freight offers speed at a premium.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Carrgo provides all-inclusive quotes that cover US collection, international freight, UK customs clearance, port handling, and final delivery. No hidden fuel surcharges or terminal fees.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Sea Freight — East Coast to UK', price: '£1,200–£3,000 per FCL container', note: 'Best for large volumes — weekly sailings' },
+                    { label: 'Sea Freight — West Coast to UK', price: '£1,800–£4,000 per FCL container', note: 'Via Panama Canal — longer transit' },
+                    { label: 'Air Freight — Express', price: '£4.50–£7.50 per kg', note: '1–2 days — urgent shipments' },
+                    { label: 'Air Freight — Economy', price: '£3.00–£5.00 per kg', note: '2–3 days — standard air cargo' },
+                    { label: 'LCL Sea Freight', price: '£150–£300 per CBM', note: 'Share container space — ideal for smaller loads' },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                      <div className="flex justify-between items-start mb-1">
+                        <span className="font-semibold text-gray-900">{item.label}</span>
+                        <span className="text-[#1A6DFF] font-bold">{item.price}</span>
+                      </div>
+                      <p className="text-gray-500 text-sm">{item.note}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden lg:block">
+                <img
+                  src="/images/usa-uk-shipping.jpg"
+                  alt="Container ship crossing the Atlantic Ocean from USA to UK, loaded with cargo containers"
+                  className="rounded-2xl shadow-lg w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== DOCUMENTS & COMPLIANCE ====== */}
+        <section className="py-16 md:py-24 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Documentation</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
+                What documents do I need to import from the USA to the UK?
+              </h2>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Importing from the USA requires specific documentation for UK customs. Missing or incorrect paperwork causes delays, storage fees, and potential fines. Carrgo ensures every document is correct before your shipment arrives.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {[
+                { doc: 'Commercial Invoice', desc: 'Shows goods value, description, quantity, and Incoterms. Must match the packing list exactly. UK customs uses this to calculate duty and VAT.' },
+                { doc: 'Packing List', desc: 'Detailed breakdown of weights, dimensions, and carton contents per box. Helps customs with physical inspections and risk assessments.' },
+                { doc: 'Bill of Lading / Airway Bill', desc: 'The contract of carriage between shipper and carrier. Original BOL or express release required for cargo release at UK port.' },
+                { doc: 'UK EORI Number', desc: 'Mandatory for all UK commercial imports. Starts with GB. Apply through HMRC — takes 3–5 working days. Carrgo can guide you.' },
+                { doc: 'Certificate of Origin', desc: 'Required for preferential duty claims. USA-UK currently has no FTA, so standard UK Global Tariff applies. Useful for certain product categories.' },
+                { doc: 'Import Licence', desc: 'Required for restricted goods: firearms, chemicals, pharmaceuticals, and certain agricultural products. Check with HMRC before shipping.' },
+              ].map((item, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <div className="flex items-start gap-3 mb-3">
+                    <FileCheck className="w-5 h-5 text-[#1A6DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <h3 className="font-bold text-gray-900">{item.doc}</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Popular Goods Shipped from USA to UK</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are commonly shipped from USA to UK?</h2>
             <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this trade lane</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -304,7 +387,7 @@ export default function UsaToUk() {
         {/* ====== CUSTOMS & DOCUMENTATION ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & Documentation</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What customs clearance and documentation is needed for USA to UK imports?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
               Our experienced customs brokers handle all UK import declarations for US cargo, ensuring efficient clearance at the port of entry.
             </p>
@@ -363,7 +446,7 @@ export default function UsaToUk() {
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why Choose Carrgo for USA–UK Shipping</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why should I choose Carrgo for USA to UK shipping?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'Transatlantic Expertise', desc: 'Deep experience managing USA–UK freight from both East and West Coasts with reliable carrier partnerships.' },
@@ -393,7 +476,7 @@ export default function UsaToUk() {
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">What do importers ask about shipping from USA to UK?</h2>
             <FaqAccordion />
           </div>
         </section>

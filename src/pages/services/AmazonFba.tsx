@@ -4,7 +4,7 @@ import Seo from '../../components/Seo';
 import {
   Ship, Plane, Truck, TrainFront, FileCheck, Package,
   Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
-  Clock, Shield, Barcode, RotateCcw, Search, Boxes
+  Clock, Shield, Barcode, RotateCcw, Search, Boxes, AlertTriangle
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -32,6 +32,11 @@ const faqData = [
   { q: 'How long does it take to ship from China to Amazon FBA UK?', a: 'Total transit times from China to Amazon FBA UK vary by mode: sea freight takes 35–45 days door-to-FC, air freight 7–12 days, and rail freight 20–28 days. These times include collection, transit, customs clearance, FBA prep, and delivery to the fulfilment centre.' },
   { q: 'Do you handle Amazon FNSKU labelling?', a: 'Yes, we provide full FNSKU labelling services. Simply send us your FNSKU barcode files and we\'ll print and apply labels to each unit, carton, or pallet according to Amazon\'s specifications. We also handle suffocation warning labels for polybagged items.' },
   { q: 'Can you process Amazon FBA returns?', a: 'Yes, we offer FBA returns management. We can receive returns at our Midlands facility, inspect products, repackage if resellable, and either return them to Amazon inventory or dispose of them according to your instructions.' },
+  { q: 'What happens if Amazon rejects my shipment?', a: 'Amazon rejects shipments for incorrect labelling, overweight cartons, non-compliant pallets, or missing documentation. Carrgo prevents rejection by pre-checking every shipment against Amazon\'s requirements before delivery. If rejection still occurs, we handle remediation and re-delivery at no extra cost.' },
+  { q: 'Do you ship to all UK Amazon fulfilment centres?', a: 'Yes, we deliver to all UK Amazon fulfilment centres including BHX4 (Coventry), EMA1 (Derby), LBA1 (Doncaster), MAN2 (Manchester), GLA1 (Gourock), and BRS1 (Bristol). We book appointments through Amazon\'s Carrier Central system and provide proof of delivery.' },
+  { q: 'Can you handle FBA shipments from the USA and Europe?', a: 'Absolutely. We handle FBA shipments from the USA, China, India, Turkey, UAE, and all EU countries. Whether you need sea freight from the USA, air freight from China, or road freight from Germany, we manage the entire journey to Amazon UK.' },
+  { q: 'What is the minimum order quantity for FBA prep?', a: 'We have no strict minimum order quantity. Whether you are shipping 50 units or 5,000 units, we can handle your FBA prep. For very small shipments, we may combine prep with other clients to keep costs efficient. Contact us for a tailored quote.' },
+  { q: 'How do I get started with Carrgo FBA services?', a: 'Getting started is simple. Fill out our quote form with your product details, supplier location, and target Amazon FC. We will provide an all-inclusive quote within 2 hours. Once approved, we coordinate collection, shipping, customs, prep, and delivery — you only deal with one contact throughout.' },
 ];
 
 const faqSchema = {
@@ -76,8 +81,8 @@ export default function AmazonFba() {
         title="Amazon FBA Freight UK | FBA Prep & Shipping to Amazon | Carrgo"
         description="FBA freight forwarding for UK Amazon sellers — FBA prep, labelling, inspection & delivery to BHX4, EMA1, LBA1. Ship from China to Amazon FBA UK with customs clearance."
         keywords="amazon fba freight, fba shipping uk, amazon freight forwarder, fba prep uk, ship to amazon uk, fba customs clearance"
-        ogUrl="https://carrgo.co.uk/services/amazon-fba-freight"
-        canonical="https://carrgo.co.uk/services/amazon-fba-freight"
+        ogUrl="https://carrgo.co.uk/services/amazon-fba-freight/"
+        canonical="https://carrgo.co.uk/services/amazon-fba-freight/"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">
@@ -156,6 +161,113 @@ export default function AmazonFba() {
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== WHAT IS AMAZON FBA ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">FBA Explained</span>
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-6">
+                  What is Amazon FBA and why do sellers need a freight forwarder?
+                </h2>
+                <p className="text-[#4B5563] leading-relaxed mb-4">
+                  Amazon FBA (Fulfilment by Amazon) lets sellers store products in Amazon's warehouses. Amazon handles storage, packing, shipping, and customer service. However, getting your goods from your supplier to Amazon's fulfilment centres requires careful preparation, compliance, and logistics expertise.
+                </p>
+                <p className="text-[#4B5563] leading-relaxed mb-4">
+                  A freight forwarder like Carrgo handles the entire journey: collecting goods from your supplier, shipping them to the UK, preparing them for Amazon's strict requirements, and delivering them to the correct fulfilment centre. Without this support, sellers risk shipment rejection, costly delays, and account health issues.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    'Amazon FBA handles storage, packing, and shipping to customers',
+                    'You send inventory to Amazon — we handle the getting it there',
+                    'Amazon has strict prep requirements — non-compliant shipments are rejected',
+                    'A freight forwarder ensures compliance and saves you time and money',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[#4B5563]">
+                      <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="hidden lg:block">
+                <img
+                  src="/images/amazon-fba-process.jpg"
+                  alt="Amazon FBA freight forwarding process from supplier to Amazon fulfilment centre showing collection, shipping, customs, prep, and delivery stages"
+                  className="rounded-2xl shadow-lg w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== FBA PREP PROCESS ====== */}
+        <section className="py-16 md:py-24 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Our Process</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                How does Carrgo's Amazon FBA prep process work?
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Our 6-step FBA prep process takes your goods from supplier to Amazon fulfilment centre with zero hassle. Every step is designed to meet Amazon's strict requirements and protect your seller account health.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { step: '1', title: 'Collection from Supplier', desc: 'We collect goods directly from your supplier in China, USA, EU, or UK. Our team verifies the shipment details and checks the packing list against your purchase order.' },
+                { step: '2', title: 'International Shipping', desc: 'Choose sea, air, or rail freight. We handle all export documentation, customs clearance at origin, and transit tracking so you know exactly where your shipment is.' },
+                { step: '3', title: 'UK Customs Clearance', desc: 'Our customs brokers handle all HMRC declarations, duty calculations, and VAT processing. We ensure 99%+ first-time clearance success at all UK ports.' },
+                { step: '4', title: 'FBA Prep & Inspection', desc: 'At our Midlands facility, we inspect each item, apply FNSKU labels, add suffocation warnings, polybag if needed, and bundle products according to your instructions.' },
+                { step: '5', title: 'Carton & Pallet Prep', desc: 'We create Amazon-compliant cartons (max 23kg, proper labels) and pallets (1200×1000mm, max 1.8m height). Every carton gets the correct Amazon shipment label.' },
+                { step: '6', title: 'Delivery to Amazon FC', desc: 'We book your delivery appointment through Amazon's Carrier Central system and deliver to BHX4, EMA1, LBA1, or any UK fulfilment centre. Proof of delivery provided.' },
+              ].map((item, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 bg-[#1A6DFF] text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
+                  <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== COMMON FBA MISTAKES ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Avoid Rejection</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                What are the most common FBA prep mistakes and how to avoid them?
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Amazon rejects non-compliant shipments, which costs you time, money, and potentially your seller account. Here are the top mistakes we see — and how Carrgo prevents them.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {[
+                { mistake: 'Wrong or Missing FNSKU Labels', solution: 'Every unit must have the correct FNSKU barcode. We verify your barcode files, print on high-quality labels, and apply them in the exact position Amazon requires. No more mislabelled inventory.' },
+                { mistake: 'Overweight Cartons', solution: 'Amazon's limit is 23kg per carton. We weigh every box during prep and redistribute contents if needed. Overweight cartons are rejected at the dock — we prevent this entirely.' },
+                { mistake: 'Non-Compliant Pallets', solution: 'Amazon requires 1200×1000mm UK-standard pallets, max 1.8m height, with stretch wrapping and corner boards. We build every pallet to specification and photograph it before dispatch.' },
+                { mistake: 'Missing Suffocation Warnings', solution: 'Any product in a polybag with a 5-inch opening or larger needs a suffocation warning label. We check every item and apply warnings automatically where required.' },
+                { mistake: 'Incorrect Shipment Plans', solution: 'Your Amazon shipment plan must match exactly what arrives. We cross-check your Seller Central plan against the physical shipment before booking delivery. Mismatches cause instant rejection.' },
+                { mistake: 'Poor Quality Control', solution: 'Damaged or defective products sent to Amazon hurt your seller metrics. Our quality inspection catches defects before delivery, protecting your account health and customer ratings.' },
+              ].map((item, i) => (
+                <article key={i} className="bg-[#F8FAFC] rounded-xl p-6 border border-[#E5E7EB]">
+                  <div className="flex items-start gap-3 mb-3">
+                    <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <h3 className="font-bold text-[#111827]">{item.mistake}</h3>
+                  </div>
+                  <p className="text-[#4B5563] text-sm leading-relaxed">{item.solution}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -320,7 +432,7 @@ export default function AmazonFba() {
             <div className="text-center mb-10">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">FBA FAQ</span>
               <h2 id="faq-heading" className="text-3xl font-bold text-[#111827] mt-3">
-                Amazon FBA Freight FAQs
+                What do Amazon sellers ask about FBA freight forwarding?
               </h2>
             </div>
             <FaqAccordion />
@@ -355,10 +467,10 @@ export default function AmazonFba() {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Ship, title: 'Sea Freight', desc: 'FCL & LCL container shipping worldwide to UK ports', href: '/services/sea-freight' },
-                { icon: Plane, title: 'Air Freight', desc: 'Express & economy air cargo with door-to-door delivery', href: '/services/air-freight' },
-                { icon: Truck, title: 'Road Freight', desc: 'FTL & LTL European haulage to and from the UK', href: '/services/road-freight' },
-                { icon: Warehouse, title: 'Warehousing', desc: 'Midlands storage with pick and pack services', href: '/services/warehousing' },
+                { icon: Ship, title: 'Sea Freight', desc: 'FCL & LCL container shipping worldwide to UK ports', href: '/services/sea-freight/' },
+                { icon: Plane, title: 'Air Freight', desc: 'Express & economy air cargo with door-to-door delivery', href: '/services/air-freight/' },
+                { icon: Truck, title: 'Road Freight', desc: 'FTL & LTL European haulage to and from the UK', href: '/services/road-freight/' },
+                { icon: Warehouse, title: 'Warehousing', desc: 'Midlands storage with pick and pack services', href: '/services/warehousing/' },
               ].map(s => {
                 const Icon = s.icon;
                 return (
