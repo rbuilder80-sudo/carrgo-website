@@ -267,6 +267,53 @@ export default function AmazonFba() {
           </div>
         </section>
 
+        {/* ====== AMAZON FBA VS STANDARD COMPARISON ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Delivery Options</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                Amazon FBA vs Standard Delivery: Which is right for your business?
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Amazon FBA delivery requires compliance with Amazon's packaging, labelling, and pallet specifications. Standard delivery goes to your warehouse with fewer restrictions. Compare both options to find the best fit for your business model.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th scope="col" className="text-left px-6 py-4 font-semibold text-gray-700">Feature</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-600">Standard Delivery</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-[#1A6DFF]">Amazon FBA Delivery</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Destination', 'Your warehouse', 'Amazon fulfilment centre'],
+                    ['Packaging requirements', 'Standard', 'Amazon-compliant (carton labels, pallet specs)'],
+                    ['Labelling', 'Standard', 'FNSKU labels required'],
+                    ['Palletisation', 'Optional', 'Required (unless small parcel)'],
+                    ['Customs clearance', 'Standard', 'FBA-specific documentation'],
+                    ['Delivery appointment', 'Not required', 'Required (Amazon Appointment System)'],
+                    ['Inspection risk', 'Standard', 'Higher (Amazon rejects non-compliant)'],
+                    ['Shipping cost', 'Lower', 'Slightly higher (prep + compliance)'],
+                    ['Carrgo service', '✅ Yes', '✅ Specialised FBA service'],
+                    ['UK centres served', 'Any address', 'BHX4, EMA1, LBA1, MAN2, etc.'],
+                  ].map(([feat, standard, fba], i) => (
+                    <tr key={i} className="border-t">
+                      <td className="px-6 py-3 font-medium text-gray-900">{feat}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{standard}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{fba}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which delivery option suits your business? <Link to="/contact" className="text-[#1A6DFF] font-medium hover:underline">Speak to Carrgo</Link> and our FBA team will recommend the best approach.</p>
+          </div>
+        </section>
+
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 md:py-24 bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,6 +373,18 @@ export default function AmazonFba() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ====== LAST UPDATED ====== */}
+        <section className="py-4 bg-gray-100 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Last Updated: <time dateTime="2026-07-08">July 2026</time> — Amazon FBA requirements and UK fulfilment centre details verified
+              </span>
+            </p>
           </div>
         </section>
       </main>

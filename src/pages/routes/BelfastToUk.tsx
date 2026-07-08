@@ -340,6 +340,48 @@ export default function BelfastToUk() {
           </div>
         </section>
 
+        {/* ====== POST-BREXIT CUSTOMS COMPARISON ====== */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Post-Brexit customs: How do GB, Northern Ireland, and Ireland differ?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Understanding customs requirements for Great Britain, Northern Ireland, and the Republic of Ireland is essential for smooth cross-border trade. Compare the key differences for each jurisdiction.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th scope="col" className="text-left px-4 py-4 font-semibold text-gray-700">Feature</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">Great Britain (GB)</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-[#1A6DFF]">Northern Ireland (NI)</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">Republic of Ireland (IE)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['EORI required', 'GB EORI', 'XI EORI', 'IE EORI'],
+                    ['Customs declarations', 'Full declarations', 'Simplified (Windsor Framework)', 'Full declarations'],
+                    ['Duty liability', 'Full UK duties', 'None (if Windsor Framework applies)', 'EU duties'],
+                    ['VAT', 'UK VAT at 20%', 'UK VAT (Postponed VAT Accounting)', 'Irish VAT at 23%'],
+                    ['Rules of origin', 'UK-EU TCA', 'UK-EU TCA', 'UK-EU TCA'],
+                    ['Documentation', 'Commercial invoice, packing list, EORI', 'Same + NI-specific codes', 'Same + IE customs forms'],
+                    ['Transit time impact', '+1-2 days for customs', 'Minimal (green lane)', '+1-2 days for customs'],
+                    ['Carrgo expertise', '✅ Full service', '✅ Windsor Framework specialists', '✅ Direct Dublin service'],
+                    ['Best practice', 'Prepare early, check HS codes', 'Use TSS for declarations', 'Ensure IE EORI is active'],
+                    ['Common mistake', 'Wrong EORI format', 'Not using XI prefix', 'Confusing GB/IE procedures'],
+                  ].map(([feat, gb, ni, ie], i) => (
+                    <tr key={i} className="border-t">
+                      <td className="px-4 py-3 font-medium text-gray-900">{feat}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{gb}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{ni}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{ie}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Need help navigating post-Brexit customs? <Link to="/contact" className="text-[#1A6DFF] font-medium hover:underline">Contact Carrgo</Link> and our customs team will guide you through the correct procedures.</p>
+          </div>
+        </section>
+
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -440,6 +482,18 @@ export default function BelfastToUk() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ====== LAST UPDATED ====== */}
+        <section className="py-4 bg-gray-100 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Last Updated: <time dateTime="2026-07-08">July 2026</time> — Northern Ireland Protocol and Windsor Framework guidance verified
+              </span>
+            </p>
           </div>
         </section>
       </main>

@@ -304,6 +304,53 @@ export default function SeaFreight() {
           </div>
         </section>
 
+        {/* ====== FCL VS LCL COMPARISON ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Container Options</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                FCL vs LCL: Which container option is right for your shipment?
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                FCL (Full Container Load) means you rent an entire container for your goods only. LCL (Less than Container Load) means your goods share a container with other shipments. Compare both options to find the best fit for your cargo volume and budget.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th scope="col" className="text-left px-6 py-4 font-semibold text-gray-700">Feature</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-[#1A6DFF]">FCL (Full Container Load)</th>
+                    <th scope="col" className="text-center px-6 py-4 font-semibold text-[#1A6DFF]">LCL (Less than Container Load)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Container size', '20ft or 40ft dedicated', 'Shared space in 20ft/40ft'],
+                    ['Best for', '15+ CBM or 10,000+ kg', '1-15 CBM'],
+                    ['Cost per CBM', 'Lower (fixed container cost)', 'Higher (proportional sharing)'],
+                    ['Security', 'Higher (sealed at origin)', 'Lower (handled at consolidation)'],
+                    ['Transit time', 'Faster (no consolidation)', 'Slower (consolidation + deconsolidation)'],
+                    ['Flexibility', 'Less flexible (whole container)', 'More flexible (ship small volumes)'],
+                    ['Damage risk', 'Lower', 'Slightly higher'],
+                    ['Documentation', 'Simpler', 'More complex (consolidation docs)'],
+                    ['Booking lead time', '1-2 weeks', '3-5 days'],
+                    ['Typical cost', '£1,200-£4,500/container', '£300-£600/CBM'],
+                  ].map(([feat, fcl, lcl], i) => (
+                    <tr key={i} className="border-t">
+                      <td className="px-6 py-3 font-medium text-gray-900">{feat}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{fcl}</td>
+                      <td className="px-6 py-3 text-center text-gray-600">{lcl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which option suits your cargo? <Link to="/get-a-quote" className="text-[#1A6DFF] font-medium hover:underline">Get a free quote</Link> and Carrgo will recommend the most cost-effective choice.</p>
+          </div>
+        </section>
+
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section aria-labelledby="why-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -394,6 +441,18 @@ export default function SeaFreight() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ====== LAST UPDATED ====== */}
+        <section className="py-4 bg-gray-100 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Last Updated: <time dateTime="2026-07-08">July 2026</time> — Sea freight rates and transit times verified
+              </span>
+            </p>
           </div>
         </section>
       </main>

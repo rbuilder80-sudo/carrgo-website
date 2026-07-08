@@ -265,6 +265,57 @@ export default function CustomsClearance() {
           </div>
         </section>
 
+        {/* ====== INCOTERMS COMPARISON ====== */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Shipping Terms</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                EXW vs FOB vs CIF vs DDP: Which Incoterm is best for UK importers?
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                Incoterms define who pays for transport, insurance, and customs at each stage. Choosing the right term affects your total cost, risk, and control. Compare the four most common Incoterms for UK imports.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th scope="col" className="text-left px-4 py-4 font-semibold text-gray-700">Feature</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">EXW</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">FOB</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">CIF</th>
+                    <th scope="col" className="text-center px-4 py-4 font-semibold text-[#1A6DFF]">DDP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Seller\'s responsibility', 'Factory gate only', 'Port of origin', 'Port of destination', 'Your door'],
+                    ['Buyer\'s responsibility', 'Everything from factory', 'Freight, insurance, customs', 'Customs, delivery', 'Nothing'],
+                    ['Freight cost', 'Buyer pays', 'Buyer pays', 'Seller pays', 'Seller pays'],
+                    ['Insurance', 'Buyer arranges', 'Buyer arranges', 'Seller arranges', 'Seller arranges'],
+                    ['Customs clearance', 'Buyer handles', 'Buyer handles', 'Buyer handles', 'Seller handles'],
+                    ['Risk transfer point', 'Factory', 'On board vessel', 'On board vessel', 'Your warehouse'],
+                    ['Control', 'Buyer has full control', 'Buyer chooses carrier', 'Buyer chooses carrier', 'Seller controls all'],
+                    ['Best for', 'Experienced importers', 'Standard sea freight', 'Risk-averse buyers', 'Hands-off importers'],
+                    ['Hidden costs', 'Many (pickup, export)', 'Few', 'Some (destination charges)', 'None (all-inclusive)'],
+                    ['Carrgo recommendation', 'Use with caution', 'Most common', 'Good for beginners', 'Best for simplicity'],
+                  ].map(([feat, exw, fob, cif, ddp], i) => (
+                    <tr key={i} className="border-t">
+                      <td className="px-4 py-3 font-medium text-gray-900">{feat}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{exw}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{fob}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{cif}</td>
+                      <td className="px-4 py-3 text-center text-gray-600">{ddp}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which Incoterm suits your shipment? <Link to="/contact" className="text-[#1A6DFF] font-medium hover:underline">Speak to Carrgo</Link> and our customs team will advise the best option.</p>
+          </div>
+        </section>
+
         {/* ====== WHY CUSTOMS ====== */}
         <section aria-labelledby="why-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -351,6 +402,18 @@ export default function CustomsClearance() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ====== LAST UPDATED ====== */}
+        <section className="py-4 bg-gray-100 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Last Updated: <time dateTime="2026-07-08">July 2026</time> — Customs regulations and Incoterms verified for accuracy
+              </span>
+            </p>
           </div>
         </section>
       </main>
