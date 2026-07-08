@@ -9,10 +9,15 @@ import {
 
 const faqData = [
   { q: 'How long does road freight from Spain to the UK take?', a: 'Road freight from Spain to the UK typically takes 4–6 days door-to-door via the European road network. The route passes through France with the Channel crossing at Calais-Dover or Dunkirk-Dover. Regular departures are available from Barcelona, Valencia, Madrid, and other Spanish cities.' },
-  { q: 'What are the main Spanish ports for shipping to the UK?', a: 'Barcelona and Valencia are the two primary container ports for Spain-UK trade. Barcelona serves the industrial northeast including Catalonia, while Valencia is the Mediterranean&apos;s largest port. Other important ports include Bilbao (north), Algeciras (south), and Vigo (northwest).' },
+  { q: 'What are the main Spanish ports for shipping to the UK?', a: 'Barcelona and Valencia are the two primary container ports for Spain-UK trade. Barcelona serves the industrial northeast including Catalonia, while Valencia is the Mediterranean\'s largest port. Other important ports include Bilbao (north), Algeciras (south), and Vigo (northwest).' },
   { q: 'How do post-Brexit rules affect Spain to UK shipping?', a: 'Since Brexit, goods moving from Spain to the UK require customs declarations, a UK EORI number, and commodity codes. However, the UK-EU Trade and Cooperation Agreement (TCA) allows for zero tariffs on goods meeting rules of origin requirements. Our customs team handles all post-Brexit documentation.' },
   { q: 'How much does shipping from Spain to UK cost?', a: 'Road freight from Spain to the UK typically costs £180–£450 per pallet. Sea freight from Barcelona or Valencia ranges from £600–£1,500 per container. Air freight is £2–£5 per kilogram. Contact us for an all-inclusive quote with no hidden fees.' },
   { q: 'Can you handle temperature-controlled shipments from Spain?', a: 'Yes, we offer refrigerated (reefer) road freight and sea freight services from Spain to the UK. This is particularly popular for Spanish food and beverage exports including fresh produce, wines, cheeses, and seafood that require temperature-controlled transport.' },
+  { q: 'What is the cheapest way to ship from Spain to UK?', a: 'Sea freight from Barcelona or Valencia is the cheapest option at £600–£1,500 per container. For smaller loads, groupage road freight at £180–£450 per pallet offers good value. Contact us for the best option based on your volume and delivery timeline.' },
+  { q: 'Can I ship perishable goods from Spain to UK?', a: 'Absolutely. We offer refrigerated road and sea freight for Spanish food and beverages. Temperature-controlled trailers and reefer containers keep produce, wines, cheeses, and seafood at the right temperature throughout the journey from supplier to UK warehouse.' },
+  { q: 'How do I prepare my Spanish supplier for Brexit requirements?', a: 'Your Spanish supplier needs to provide a commercial invoice with HS codes, a packing list, and proof of origin for TCA tariff preference. We can send them a document checklist and guide them through the process in Spanish if needed.' },
+  { q: 'What are the weight limits for road freight from Spain?', a: 'Standard UK road freight limits apply — up to 24 tonnes gross vehicle weight for a full truck. Individual pallet limits are typically 1,000–1,500 kg. We can arrange heavier loads with special permits and vehicles where required.' },
+  { q: 'Does Carrgo offer groupage services from Spain?', a: 'Yes. Our LTL groupage service collects smaller shipments from Barcelona, Valencia, Madrid, and other cities, then consolidates them for the UK journey. It is ideal for businesses that do not have enough cargo for a full truckload.' },
 ];
 
 function FaqAccordion() {
@@ -44,10 +49,10 @@ export default function SpainToUk() {
     <>
       <Seo
         title="Spain to UK Freight | Road, Sea & Air Shipping | Carrgo"
-        description="Ship goods from Spain to UK — road freight 4-6 days, sea 4-9 days, air 1-2 days. Popular for food, automotive parts & textiles. Full post-Brexit customs clearance."
+        description="Ship goods from Spain to UK — road freight 4-6 days, sea 4-9 days, air 1-2 days. Popular for food &amp; automotive parts & textiles. Full post-Brexit customs clearance."
         keywords="spain to uk freight, shipping from spain to uk, spanish road freight uk, barcelona to uk shipping, valencia to southampton"
-        ogUrl="https://carrgo.co.uk/routes/spain-to-uk"
-        canonical="https://carrgo.co.uk/routes/spain-to-uk"
+        ogUrl="https://carrgo.co.uk/routes/spain-to-uk/"
+        canonical="https://carrgo.co.uk/routes/spain-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -118,7 +123,7 @@ export default function SpainToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">The Spain–UK Trade Lane</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the Spain to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
               Spain is one of the UK&apos;s top European trading partners, with bilateral trade exceeding £55 billion annually. Spain&apos;s diverse manufacturing base produces everything from automotive parts and machinery to world-renowned food and beverage products. The well-established transport links between Spain and the UK ensure reliable, efficient shipping across all modes.
             </p>
@@ -139,11 +144,33 @@ export default function SpainToUk() {
           </div>
         </section>
 
-        {/* ====== TRANSIT TIMES TABLE ====== */}
-        <section aria-labelledby="transit-heading" className="py-16 bg-gray-50">
+        {/* ====== IMAGE & CONTEXT ====== */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">Transit Times from Spain to UK</h2>
-            <p className="text-center text-gray-600 mb-8">Estimated transit times by transport mode</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img src="/images/spain-to-uk.jpg" alt="Freight truck crossing the Pyrenees from Barcelona to UK via European motorway network" className="rounded-2xl shadow-lg w-full object-cover" loading="lazy" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Why is Spain a major UK trading partner?</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Spain&apos;s geographic position on the Iberian Peninsula, with direct road access to France and the UK via the Pyrenees, makes it one of the most connected European markets for British importers. Major ports at Barcelona, Valencia, and Bilbao handle millions of tonnes of UK-bound cargo each year.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Carrgo manages regular road, sea, and air freight from all Spanish regions. Whether you are importing wine from La Rioja, automotive parts from Barcelona, or textiles from Madrid, we handle the full journey including Channel crossings and UK customs clearance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== TRANSIT TIMES TABLE ====== */}
+        <section aria-labelledby="transit-heading" className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">How long does shipping from Spain to UK take?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Transit times from Spain to the UK are among the shortest for European freight. Road freight via France offers fast door-to-door delivery, while short sea crossings from Barcelona and Valencia provide a cost-effective alternative. Air freight is available for time-critical shipments.
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
                 <thead>
@@ -176,10 +203,12 @@ export default function SpainToUk() {
         </section>
 
         {/* ====== KEY PORTS ====== */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Key Connections</h2>
-            <p className="text-center text-gray-600 mb-10">Major Spanish origin points and UK destinations</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What are the key ports for Spain to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Spanish exports to the UK depart from major ports and cities across the country. Barcelona and Valencia are the primary container ports, while Bilbao and Algeciras serve northern and southern manufacturers. Madrid provides central air freight and road distribution for the entire Spanish market.
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -187,8 +216,8 @@ export default function SpainToUk() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Barcelona', desc: 'Catalonia&apos;s main port — automotive and manufacturing hub' },
-                    { name: 'Valencia', desc: 'Mediterranean&apos;s largest port — extensive UK connections' },
+                    { name: 'Barcelona', desc: 'Catalonia\'s main port — automotive and manufacturing hub' },
+                    { name: 'Valencia', desc: 'Mediterranean\'s largest port — extensive UK connections' },
                     { name: 'Madrid', desc: 'Central logistics hub — air freight and road distribution' },
                     { name: 'Bilbao', desc: 'Northern port — Basque Country industrial exports' },
                     { name: 'Algeciras', desc: 'Strategic southern port — transshipment hub' },
@@ -212,7 +241,7 @@ export default function SpainToUk() {
                 <ul className="space-y-3">
                   {[
                     { name: 'Southampton', desc: 'Primary UK port for Spain-originating sea freight' },
-                    { name: 'Felixstowe', desc: 'UK&apos;s largest container port — Spanish services available' },
+                    { name: 'Felixstowe', desc: 'UK\'s largest container port — Spanish services available' },
                     { name: 'London Gateway', desc: 'Modern port with Mediterranean connections' },
                     { name: 'Bristol', desc: 'Southwest port — convenient for western UK distribution' },
                     { name: 'Heathrow Airport', desc: 'Primary air cargo gateway from Madrid and Barcelona' },
@@ -234,10 +263,12 @@ export default function SpainToUk() {
         </section>
 
         {/* ====== SHIPPING OPTIONS ====== */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Shipping Options from Spain to UK</h2>
-            <p className="text-center text-gray-600 mb-10">Three modes with regular departures</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What shipping options are available from Spain to UK?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo provides three transport modes for Spain–UK trade, each with distinct advantages. Road freight is popular for its speed and flexibility, sea freight offers value for larger volumes, and air freight handles the most urgent deliveries from Madrid and Barcelona.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Truck, title: 'Road Freight', price: '£180–£450/pallet', time: '4–6 days', best: 'Regular departures, door-to-door', desc: 'Road freight from Spain to the UK via France and the Channel Tunnel or ferry crossings. Regular FTL and LTL departures from Barcelona, Valencia, Madrid, and all major Spanish cities. Temperature-controlled trailers available for food and beverage shipments. Full post-Brexit customs transit documentation included.' },
@@ -262,11 +293,41 @@ export default function SpainToUk() {
           </div>
         </section>
 
+        {/* ====== COSTS & PRICING ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What does shipping from Spain to UK cost?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo offers transparent, all-inclusive pricing for Spain–UK freight. Costs vary by mode, volume, and season. The ranges below are typical market rates — contact us for a tailored quote that includes collection, freight, Channel crossing, customs clearance, and UK delivery.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Sea Freight (FCL)', price: '£600–£1,500', unit: 'per 20ft/40ft container', note: 'Best for 15+ CBM' },
+                { title: 'Sea Freight (LCL)', price: '£55–£100', unit: 'per CBM', note: 'For smaller shipments' },
+                { title: 'Road Freight', price: '£180–£450', unit: 'per pallet', note: 'Door-to-door via France' },
+                { title: 'Air Freight', price: '£2–£5', unit: 'per kg', note: 'Express from Madrid/Barcelona' },
+              ].map((tier, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{tier.title}</h3>
+                  <div className="text-2xl font-extrabold text-[#1A6DFF] mb-1">{tier.price}</div>
+                  <p className="text-sm text-gray-500 mb-3">{tier.unit}</p>
+                  <p className="text-sm text-gray-600">{tier.note}</p>
+                </article>
+              ))}
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
+              All quotes include Spanish collection, freight, Channel crossing, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd — 120 Bark Street, Bolton, BL1 2AX.
+            </p>
+          </div>
+        </section>
+
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Popular Goods Shipped from Spain to UK</h2>
-            <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this route</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are shipped from Spain to UK?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Spain&apos;s exports to the UK cover a wide range of sectors. We regularly handle food and beverages, automotive parts, textiles, ceramics, machinery, and chemicals. Each product type has specific handling requirements, particularly temperature-controlled goods like wines and fresh produce.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { name: 'Food & Beverage', desc: 'Spanish wines, olive oil, cheeses, hams, fresh produce, and seafood.' },
@@ -288,12 +349,38 @@ export default function SpainToUk() {
           </div>
         </section>
 
+        {/* ====== DOCUMENTS & COMPLIANCE ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What documents and compliance are needed for Spain to UK imports?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Post-Brexit shipping from Spain requires accurate documentation for UK customs clearance and TCA tariff preference. Our team prepares and checks all paperwork, ensuring your commercial invoices, packing lists, and origin proofs meet HMRC requirements and avoid border delays.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: 'Commercial Invoice', desc: 'A detailed invoice showing the seller, buyer, goods description, HS codes, quantities, values, and currency. Essential for UK customs valuation and must accurately reflect the goods being imported from Spain.' },
+                { title: 'Packing List', desc: 'Lists the contents of each package with weights, dimensions, and package count. Required for customs verification and warehouse receiving. Must match the commercial invoice exactly to avoid clearance delays.' },
+                { title: 'Bill of Lading / CMR / Airway Bill', desc: 'The transport contract and cargo receipt. Sea freight uses a Bill of Lading, road freight uses a CMR note, and air freight uses an Airway Bill. These documents are required for cargo release at UK ports and airports.' },
+                { title: 'UK EORI Number', desc: 'A UK Economic Operator Registration and Identification number is mandatory for all UK imports from Spain. Without it, HMRC cannot process your customs entry. We can guide you through the free application process.' },
+                { title: 'Proof of Origin (UK-EU TCA)', desc: 'Required to claim zero tariffs under the UK-EU Trade and Cooperation Agreement. This can be a statement on the invoice or a separate certificate. We verify that your Spanish goods meet the rules of origin requirements.' },
+                { title: 'Health Certificate', desc: 'Mandatory for food, plants, and animal products moving from Spain to the UK. Issued by Spanish authorities, these certificates confirm that goods meet UK sanitary and phytosanitary standards. We advise on which products need them.' },
+              ].map((doc, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow">
+                  <FileCheck className="w-8 h-8 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                  <h3 className="font-bold text-gray-900 mb-2">{doc.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{doc.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ====== CUSTOMS & DOCUMENTATION ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Post-Brexit Customs Clearance</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What post-Brexit customs clearance is needed for Spain to UK?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our experienced team manages all post-Brexit customs requirements for Spain to UK shipments, ensuring compliance and zero-tariff eligibility where applicable.
+              Since Brexit, goods from Spain require customs declarations, a UK EORI number, and commodity codes. The UK-EU Trade and Cooperation Agreement allows zero tariffs on goods meeting rules of origin. Our customs team handles all post-Brexit documentation and compliance requirements.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -350,7 +437,10 @@ export default function SpainToUk() {
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why Choose Carrgo for Spain–UK Shipping</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Spain to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo Freight Solutions Ltd, based in Bolton, has served UK importers since 2026. Our team brings over two decades of combined experience in European freight, with particular expertise in post-Brexit customs, Spanish supply chains, and cross-Channel logistics.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Truck, title: 'Regular Departures', desc: 'Road freight departures from Barcelona, Valencia, Madrid and all major Spanish cities.' },
@@ -380,7 +470,10 @@ export default function SpainToUk() {
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">What do importers ask about shipping from Spain to UK?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Our team handles Spain–UK shipping enquiries daily. Here are the questions we hear most often — from choosing the cheapest method and shipping perishables to preparing suppliers and understanding weight limits for road freight.
+            </p>
             <FaqAccordion />
           </div>
         </section>
@@ -388,7 +481,7 @@ export default function SpainToUk() {
         {/* ====== CTA ====== */}
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Get Your Spain–UK Freight Quote</h2>
+            <h2 className="text-3xl font-bold mb-4">How do I get a Spain to UK freight quote?</h2>
             <p className="text-brand-100 mb-8 text-lg">Road, sea, or air — regular departures with full customs clearance. Quote in 2 hours.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
@@ -404,7 +497,10 @@ export default function SpainToUk() {
         {/* ====== OTHER ROUTES ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Other Popular Shipping Routes</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-4">What other shipping routes does Carrgo offer?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Carrgo manages freight from over 20 countries to the UK. Explore our most popular routes below, or contact us for a custom quote from any origin. We can handle multi-country supply chains and complex logistics needs.
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { name: 'China', flag: '🇨🇳', route: '/routes/china-to-uk' },

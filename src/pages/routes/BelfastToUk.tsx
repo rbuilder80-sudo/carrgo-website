@@ -13,6 +13,11 @@ const faqData = [
   { q: 'What ports serve Northern Ireland freight?', a: 'Northern Ireland has three major ports: Belfast Harbour (the largest, handling containers, RoRo, and bulk cargo), Larne (major ferry hub for Cairnryan and Heysham routes), and Londonderry/Foyle Port (northwest gateway for regional trade). Each offers different sailing routes and transit options to GB and beyond.' },
   { q: 'How much does shipping from Belfast to UK mainland cost?', a: 'Road freight from Belfast to GB mainland typically costs £200–£500 per pallet depending on volume and urgency. Sea freight rates range from £400–£800 per container for Belfast–Liverpool routes. Full truckload (FTL) services offer the best value for larger shipments. Contact us for an all-inclusive quote.' },
   { q: 'Do I need T2 transit documents for Northern Ireland shipping?', a: 'T2 transit documents are required for goods moving from Great Britain to Northern Ireland that are considered "at risk" of entering the EU single market. Goods remaining in the UK customs territory do not require T2 transit. Our customs team assesses each shipment and prepares all necessary transit documentation including T2 forms, TAD (Transit Accompanying Documents), and NCTS declarations.' },
+  { q: 'What is the difference between Belfast Harbour and Larne Port?', a: 'Belfast Harbour is the largest port handling containers, RoRo, and bulk cargo with sailings to Liverpool and Heysham. Larne is the main ferry hub for Scotland with the shortest crossing to Cairnryan at just 2 hours, plus services to Heysham.' },
+  { q: 'Do I need a separate EORI for Northern Ireland trade?', a: 'NI traders may need an XI EORI number for EU trade, while GB EORI covers UK-only movements. We assess your trade pattern and advise which EORI you need, then help with the application process if required.' },
+  { q: 'How does the Windsor Framework green lane work?', a: 'The green lane applies to goods staying in Northern Ireland. They face minimal checks and no customs duties. We classify your shipments correctly and prepare the right declarations to ensure they use the green lane where eligible.' },
+  { q: 'Can Carrgo handle emergency shipments from Belfast to London?', a: 'Yes. We offer same-day and next-day options from Belfast to London via road and sea. For urgent deliveries, we can arrange priority ferry crossings and direct driver relay services to meet tight deadlines.' },
+  { q: 'What industries does Carrgo serve in Northern Ireland?', a: 'We work with NI\'s pharmaceutical, agriculture, manufacturing, retail, and renewable energy sectors. Our team understands the specific freight needs of each industry, from temperature-controlled pharma to oversized wind turbine parts.' },
 ];
 
 function FaqAccordion() {
@@ -46,6 +51,16 @@ export default function BelfastToUk() {
         title="Belfast Freight Forwarding | Northern Ireland's Gateway | Carrgo"
         description="Belfast freight forwarding services for Northern Ireland trade. Sea, road & customs clearance. Belfast Harbour, Larne & Foyle Port. NI Protocol & Windsor Framework specialists."
         keywords="belfast freight forwarder, northern ireland customs clearance, freight belfast to uk, northern ireland shipping, belfast port freight, ni protocol freight, irish sea trade, windsor framework, t2 transit documents"
+        ogUrl="https://carrgo.co.uk/routes/belfast-northern-ireland/"
+        canonical="https://carrgo.co.uk/routes/belfast-northern-ireland/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Belfast Freight Forwarding",
+          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "areaServed": [{"@type": "Country", "name": "Northern Ireland"}, {"@type": "Country", "name": "United Kingdom"}],
+          "description": "Freight forwarding services for Northern Ireland via Belfast Harbour, Larne, and Foyle Port. NI Protocol and Windsor Framework specialists."
+        }}
       />
 
       <main id="main-content">
@@ -108,7 +123,7 @@ export default function BelfastToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Northern Ireland — A Unique Trade Position</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What makes Northern Ireland's trade position unique?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
               Northern Ireland occupies a unique position in UK and EU trade. Under the Windsor Framework, NI remains part of the UK customs territory while maintaining access to the EU single market for goods. This creates both opportunities and complexities that require expert freight forwarding knowledge.
             </p>
@@ -129,11 +144,33 @@ export default function BelfastToUk() {
           </div>
         </section>
 
-        {/* ====== TRANSIT TIMES TABLE ====== */}
-        <section aria-labelledby="transit-heading" className="py-16 bg-gray-50">
+        {/* ====== IMAGE & CONTEXT ====== */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">Transit Times from Northern Ireland</h2>
-            <p className="text-center text-gray-600 mb-8">Estimated transit times by route and transport mode</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img src="/images/belfast-to-uk.jpg" alt="Roll-on roll-off ferry departing Belfast Harbour for Liverpool UK mainland" className="rounded-2xl shadow-lg w-full object-cover" loading="lazy" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Why choose Carrgo for Northern Ireland freight?</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Northern Ireland&apos;s unique trading position requires a freight forwarder who understands both UK and EU customs rules. The Windsor Framework creates a dual market access that can benefit NI businesses, but only if the correct documentation is filed every time.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Carrgo&apos;s customs team are Windsor Framework specialists. We manage T2 transit documents, UKIMS registrations, green and red lane classifications, and all supplementary declarations. Whether you are shipping from Belfast to London or from GB to Belfast, we keep your goods moving.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== TRANSIT TIMES TABLE ====== */}
+        <section aria-labelledby="transit-heading" className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">How long does freight from Northern Ireland to UK take?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Freight from Northern Ireland to GB mainland is fast and frequent. Sea crossings from Belfast to Liverpool or Heysham take 8–14 hours with multiple daily sailings. Road freight via the Irish Sea typically reaches GB destinations in 1–2 days door-to-door.
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
                 <thead>
@@ -168,10 +205,12 @@ export default function BelfastToUk() {
         </section>
 
         {/* ====== KEY PORTS ====== */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Northern Ireland Ports & Connections</h2>
-            <p className="text-center text-gray-600 mb-10">The key ports and routes serving Northern Ireland freight</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What ports serve Northern Ireland freight?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Northern Ireland&apos;s freight network centres on three major ports. Belfast Harbour handles containers, RoRo, and bulk cargo. Larne provides the shortest ferry link to Scotland. Londonderry&apos;s Foyle Port serves the northwest with regional connections to GB and Ireland.
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -220,10 +259,12 @@ export default function BelfastToUk() {
         </section>
 
         {/* ====== SHIPPING OPTIONS ====== */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Freight Services for Northern Ireland</h2>
-            <p className="text-center text-gray-600 mb-10">Sea, road, and customs services tailored for NI trade</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What freight services are available for Northern Ireland?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo provides sea, road, and customs services specifically designed for Northern Ireland trade. RoRo sea freight offers fast crossings, road freight provides door-to-door convenience, and our customs team manages the unique NI Protocol requirements.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Ship, title: 'Sea Freight', price: '£400–£800/container', time: '8–14 hours', best: 'Regular sailings to Liverpool & Heysham', desc: 'Roll-on/roll-off (RoRo) and container sea freight from Belfast Harbour and Larne to Liverpool, Heysham, and Cairnryan. Multiple daily sailings with reliable schedules make sea freight a fast and cost-effective option for NI–GB trade. Full trailer and container options available.' },
@@ -248,12 +289,40 @@ export default function BelfastToUk() {
           </div>
         </section>
 
+        {/* ====== COSTS & PRICING ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What does Northern Ireland freight cost?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo offers transparent, all-inclusive pricing for Northern Ireland freight. Rates vary by mode, volume, and route. The ranges below are typical market rates — contact us for a tailored quote covering ferry, transit documents, customs clearance, and delivery.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Sea Freight (RoRo)', price: '£400–£800', unit: 'per container/trailer', note: 'Belfast–Liverpool/Heysham' },
+                { title: 'Road Freight', price: '£200–£500', unit: 'per pallet', note: 'Door-to-door NI to GB' },
+                { title: 'Air Freight', price: '£2.50–£4.50', unit: 'per kg', note: 'Express from Belfast City' },
+                { title: 'LCL Consolidation', price: '£60–£110', unit: 'per CBM', note: 'Shared loads to GB' },
+              ].map((tier, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{tier.title}</h3>
+                  <div className="text-2xl font-extrabold text-[#1A6DFF] mb-1">{tier.price}</div>
+                  <p className="text-sm text-gray-500 mb-3">{tier.unit}</p>
+                  <p className="text-sm text-gray-600">{tier.note}</p>
+                </article>
+              ))}
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
+              All quotes include ferry crossing, transit documentation, customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd — 120 Bark Street, Bolton, BL1 2AX.
+            </p>
+          </div>
+        </section>
+
         {/* ====== NI PROTOCOL SECTION ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Northern Ireland Protocol & Windsor Framework</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the Northern Ireland Protocol and Windsor Framework?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Navigating the complexities of the Northern Ireland Protocol requires specialist knowledge. Our customs team are experts in the Windsor Framework and can guide you through every requirement.
+              The Northern Ireland Protocol, refined by the Windsor Framework, requires specialist knowledge to navigate. Our customs team are experts in green and red lane procedures, T2 transit documents, and UKIMS registration, ensuring your goods move across the Irish Sea without unnecessary delays.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -276,12 +345,38 @@ export default function BelfastToUk() {
           </div>
         </section>
 
+        {/* ====== DOCUMENTS & COMPLIANCE ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What documents and compliance are needed for Northern Ireland trade?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Northern Ireland trade requires specific documentation beyond standard UK imports. Our team prepares and verifies all NI Protocol paperwork, including T2 transit documents, UKIMS authorisations, and XI EORI registrations, ensuring full compliance with Windsor Framework requirements.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: 'Commercial Invoice', desc: 'A detailed invoice showing goods description, HS codes, quantities, values, and currency. Required for all NI–GB and GB–NI movements. Must be accurate to avoid customs queries at the Irish Sea border.' },
+                { title: 'Packing List', desc: 'Lists the contents of each package with weights, dimensions, and package count. Essential for customs verification and warehouse receiving on both sides of the Irish Sea.' },
+                { title: 'Bill of Lading / CMR', desc: 'The transport contract and cargo receipt for sea and road freight. Sea freight uses a Bill of Lading, while road freight between NI and GB uses a CMR note. Required for cargo release.' },
+                { title: 'UK EORI (XI EORI for NI)', desc: 'NI traders may need an XI EORI number for EU trade, while a GB EORI covers UK-only movements. We assess your trade pattern and guide you through the application process.' },
+                { title: 'T2 Transit Document', desc: 'Required for GB-to-NI goods considered "at risk" of entering the EU single market. We prepare T2 declarations, Transit Accompanying Documents (TAD), and manage NCTS submissions on your behalf.' },
+                { title: 'UKIMS Authorisation', desc: 'The UK Internal Market Scheme allows businesses to move "not at risk" goods from GB to NI without customs duties. We assist with applications and ensure your goods qualify for the green lane.' },
+              ].map((doc, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow">
+                  <FileCheck className="w-8 h-8 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                  <h3 className="font-bold text-gray-900 mb-2">{doc.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{doc.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ====== CUSTOMS & DOCUMENTATION ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance for Northern Ireland</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What customs clearance is needed for Northern Ireland trade?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Our experienced customs brokers specialise in Northern Ireland's unique customs arrangements. We handle all NI Protocol documentation to ensure smooth movement across the Irish Sea.
+              Northern Ireland&apos;s unique customs arrangements require specialist brokers who understand the Windsor Framework. We handle all NI Protocol documentation, including T2 transit, safety declarations, and supplementary declarations, ensuring smooth movement across the Irish Sea.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -343,7 +438,7 @@ export default function BelfastToUk() {
         {/* ====== POST-BREXIT CUSTOMS COMPARISON ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Post-Brexit customs: How do GB, Northern Ireland, and Ireland differ?</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">How do post-Brexit customs differ between GB, NI, and Ireland?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Understanding customs requirements for Great Britain, Northern Ireland, and the Republic of Ireland is essential for smooth cross-border trade. Compare the key differences for each jurisdiction.</p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
@@ -385,8 +480,10 @@ export default function BelfastToUk() {
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Popular Goods Shipped from Northern Ireland</h2>
-            <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on NI trade routes</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are shipped from Northern Ireland?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Northern Ireland&apos;s exports to GB include agricultural products, pharmaceuticals, manufactured goods, and construction materials. We handle all these with expertise in temperature-controlled transport, bulk cargo, and the specific customs requirements of NI-origin goods.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { name: 'Agricultural Products', desc: 'Dairy, meat, and produce moving between NI, GB, and ROI markets.' },
@@ -411,7 +508,10 @@ export default function BelfastToUk() {
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why Choose Carrgo for Northern Ireland Freight</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Northern Ireland freight?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo Freight Solutions Ltd, based in Bolton, has served UK and Northern Ireland shippers since 2026. Our team brings over two decades of combined experience, with deep expertise in the Windsor Framework, NI Protocol, and Irish Sea logistics.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'NI Protocol Experts', desc: 'Deep expertise in the Windsor Framework, green/red lane procedures, and all NI customs requirements.' },
@@ -441,7 +541,10 @@ export default function BelfastToUk() {
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">What do shippers ask about Northern Ireland freight?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Our team answers Northern Ireland freight questions every day. Here are the most common ones — from port differences and EORI requirements to green lane procedures, emergency shipments, and the industries we serve across NI.
+            </p>
             <FaqAccordion />
           </div>
         </section>
@@ -449,7 +552,7 @@ export default function BelfastToUk() {
         {/* ====== CTA ====== */}
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Get Your Northern Ireland Freight Quote</h2>
+            <h2 className="text-3xl font-bold mb-4">How do I get a Northern Ireland freight quote?</h2>
             <p className="text-brand-100 mb-8 text-lg">Belfast freight forwarding with full NI Protocol compliance. Sea, road, and customs — all-inclusive quote within 2 hours.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
@@ -465,7 +568,10 @@ export default function BelfastToUk() {
         {/* ====== OTHER ROUTES ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Other Popular Shipping Routes</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-4">What other shipping routes does Carrgo offer?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Carrgo manages freight from over 20 countries to the UK, including direct services from Dublin and all major Irish ports. Explore our most popular routes below, or contact us for a custom quote from any origin.
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { name: 'China', flag: '🇨🇳', route: '/routes/china-to-uk' },

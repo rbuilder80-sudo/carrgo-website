@@ -13,6 +13,11 @@ const faqData = [
   { q: 'What is an ATR movement certificate and do I need one?', a: 'An ATR movement certificate is required for road freight from Turkey to the EU/UK to claim preferential tariff treatment under the Pan-Euro-Mediterranean convention. Our team arranges ATR documentation for all road shipments from Turkey to ensure your goods benefit from reduced duty rates.' },
   { q: 'How much does shipping from Turkey to UK cost?', a: 'Road freight from Turkey to the UK typically costs £200–£500 per pallet. Sea freight ranges from £800–£2,200 per container. Air freight is £2.50–£5 per kilogram. Contact us for an all-inclusive quote tailored to your shipment.' },
   { q: 'What are the main Turkish ports for UK-bound cargo?', a: 'Ambarli (Istanbul) is the primary container port for UK-bound cargo. Mersin on the Mediterranean coast is the second-largest port and offers excellent connections. Izmir on the Aegean coast and Gemlik near Bursa are also important hubs for UK trade.' },
+  { q: 'What is the best shipping method for small shipments from Turkey to UK?', a: 'For small shipments under 15 CBM, LCL sea freight is the most cost-effective at £65–£120 per cubic metre. Air freight works for urgent loads, and our consolidation service helps regular shippers cut costs further.' },
+  { q: 'How does Carrgo handle customs clearance for Turkish imports?', a: 'Our customs team manages the full UK import process for Turkish goods. We prepare CDS declarations, verify origin documents, calculate duties and VAT, and deal with HMRC directly. Most clearances finish within 24 hours of arrival.' },
+  { q: 'What goods are most commonly shipped from Turkey to the UK?', a: 'Turkish exports to the UK include textiles, automotive parts, steel, machinery, ceramics, food, and furniture. We handle all these with tailored packaging and customs requirements for each commodity type.' },
+  { q: 'Can Carrgo arrange collection from anywhere in Turkey?', a: 'Yes. We collect from Istanbul, Ankara, Izmir, Bursa, Mersin, and all major Turkish hubs. Our network covers industrial zones, free trade zones, and supplier warehouses with road and intermodal options.' },
+  { q: 'What should I do if my Turkish goods are held at UK customs?', a: 'Contact us straight away. Our customs team will find the issue — usually missing paperwork, wrong commodity codes, or duty queries. We resolve most holds within 24–48 hours by working directly with Border Force.' },
 ];
 
 function FaqAccordion() {
@@ -46,8 +51,8 @@ export default function TurkeyToUk() {
         title="Turkey to UK Freight | Sea, Road & Air Shipping | Carrgo"
         description="Ship goods from Turkey to UK — sea freight 14-20 days, road 5-7 days, air 2-3 days. Benefit from UK-Turkey FTA reduced tariffs. Full customs clearance included."
         keywords="turkey to uk freight, shipping from turkey to uk, turkish freight forwarder, istanbul to uk shipping, ambarli to felixstowe, turkey uk trade"
-        ogUrl="https://carrgo.co.uk/routes/turkey-to-uk"
-        canonical="https://carrgo.co.uk/routes/turkey-to-uk"
+        ogUrl="https://carrgo.co.uk/routes/turkey-to-uk/"
+        canonical="https://carrgo.co.uk/routes/turkey-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -118,9 +123,9 @@ export default function TurkeyToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">The Turkey–UK Trade Lane</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the Turkey to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              Turkey is an increasingly important trade partner for the UK, with bilateral trade valued at over £18 billion annually. Turkish manufacturing spans textiles, automotive parts, steel, machinery, and food products. The UK-Turkey Free Trade Agreement provides tariff advantages on qualifying goods. Carrgo leverages all three transport modes to keep your Turkey–UK supply chain moving efficiently.
+              Turkey is an increasingly important trade partner for the UK, with bilateral trade valued at over £18 billion annually. Turkish manufacturing spans textiles, automotive parts, steel, machinery, and food products. The UK-Turkey Free Trade Agreement provides tariff advantages on qualifying goods, making this route increasingly attractive for UK importers.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
@@ -139,11 +144,33 @@ export default function TurkeyToUk() {
           </div>
         </section>
 
-        {/* ====== TRANSIT TIMES TABLE ====== */}
-        <section aria-labelledby="transit-heading" className="py-16 bg-gray-50">
+        {/* ====== IMAGE & CONTEXT ====== */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">Transit Times from Turkey to UK</h2>
-            <p className="text-center text-gray-600 mb-8">Estimated transit times by transport mode</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img src="/images/turkey-to-uk.jpg" alt="Container ship departing Istanbul port bound for UK freight terminals" className="rounded-2xl shadow-lg w-full object-cover" loading="lazy" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Why is Turkey a key UK trading partner?</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Turkey's strategic location bridging Europe and Asia makes it a natural manufacturing hub for UK businesses. With modern ports at Ambarli, Mersin, and Izmir, plus extensive road connections through Bulgaria and Romania, Turkish goods reach UK warehouses efficiently.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Carrgo's team has deep experience managing Turkey–UK supply chains. We're familiar with Turkish customs procedures, ATR documentation, and the UK-Turkey FTA rules of origin. Whether you're importing textiles from Bursa or automotive parts from Istanbul, we'll handle the logistics from collection through to UK delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== TRANSIT TIMES TABLE ====== */}
+        <section aria-labelledby="transit-heading" className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="transit-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">How long does shipping from Turkey to UK take?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Transit times from Turkey to the UK depend on your chosen transport mode, departure port, and final UK destination. Sea freight offers the best value for larger shipments, while road and air provide faster alternatives for time-sensitive cargo.
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
                 <thead>
@@ -175,10 +202,12 @@ export default function TurkeyToUk() {
         </section>
 
         {/* ====== KEY PORTS ====== */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Key Connections</h2>
-            <p className="text-center text-gray-600 mb-10">Major Turkish origin points and UK destinations</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What are the key ports for Turkey to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Turkish exports to the UK depart from major ports across the country. Istanbul's Ambarli port handles the bulk of container traffic, while Mersin and Izmir serve Mediterranean and Aegean manufacturers. UK-bound cargo arrives primarily at Felixstowe and Immingham.
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -186,11 +215,11 @@ export default function TurkeyToUk() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Ambarli (Istanbul)', desc: 'Turkey&apos;s largest container port — primary UK gateway' },
+                    { name: 'Ambarli (Istanbul)', desc: 'Turkey\'s largest container port — primary UK gateway' },
                     { name: 'Mersin', desc: 'Major Mediterranean port with excellent UK connections' },
                     { name: 'Izmir (Aliaga)', desc: 'Aegean coast port — strong European trade links' },
                     { name: 'Gemlik', desc: 'Bursa industrial zone port — automotive and textile exports' },
-                    { name: 'Istanbul Airport', desc: 'World&apos;s largest airport — extensive cargo facilities' },
+                    { name: 'Istanbul Airport', desc: 'World\'s largest airport — extensive cargo facilities' },
                     { name: 'Ankara', desc: 'Central Turkey — growing manufacturing and export hub' },
                     { name: 'Bursa', desc: 'Automotive capital of Turkey — major export centre' },
                   ].map((port, i) => (
@@ -210,7 +239,7 @@ export default function TurkeyToUk() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Felixstowe', desc: 'UK&apos;s largest container port — direct Turkey services' },
+                    { name: 'Felixstowe', desc: 'UK\'s largest container port — direct Turkey services' },
                     { name: 'Immingham', desc: 'Eastern port — regular Mediterranean and Turkey sailings' },
                     { name: 'Southampton', desc: 'South coast port with Turkey shipping connections' },
                     { name: 'Tilbury', desc: 'London port handling growing Turkey trade volumes' },
@@ -233,15 +262,17 @@ export default function TurkeyToUk() {
         </section>
 
         {/* ====== SHIPPING OPTIONS ====== */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Shipping Options from Turkey to UK</h2>
-            <p className="text-center text-gray-600 mb-10">Three transport modes with FTA benefits</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What shipping options are available from Turkey to UK?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo offers three transport modes for Turkey–UK trade, each suited to different cargo types, budgets, and delivery deadlines. Sea freight suits large volumes, road freight balances cost and speed, and air freight handles urgent shipments.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Ship, title: 'Sea Freight', price: '£800–£2,200/container', time: '14–20 days', best: 'FCL & LCL, weekly sailings', desc: 'Sea freight from Turkey to the UK is a cost-effective option with weekly sailings from Ambarli (Istanbul), Mersin, and Izmir. FCL containers suit larger shipments over 15 CBM. LCL consolidations are available for smaller loads. The route typically transits through Mediterranean hubs to Felixstowe or Immingham.' },
                 { icon: Truck, title: 'Road Freight', price: '£200–£500/pallet', time: '5–7 days', best: 'Fast overland delivery', desc: 'Road freight from Turkey travels via Bulgaria, Romania, and Hungary through the European road network to the UK. ATR movement certificates are arranged for customs transit. Ideal for palletised goods, automotive parts, textiles, and food products that need faster delivery than sea freight.' },
-                { icon: Plane, title: 'Air Freight', price: '£2.50–£5/kg', time: '2–3 days', best: 'Express from Istanbul Airport', desc: 'Air freight from Istanbul Airport — one of the world&apos;s busiest — delivers to Heathrow, Manchester, or East Midlands in 2–3 days. Multiple daily flights with Turkish Airlines and British Airways cargo services. Ideal for urgent shipments, samples, and high-value goods.' },
+                { icon: Plane, title: 'Air Freight', price: '£2.50–£5/kg', time: '2–3 days', best: 'Express from Istanbul Airport', desc: 'Air freight from Istanbul Airport — one of the world\'s busiest — delivers to Heathrow, Manchester, or East Midlands in 2–3 days. Multiple daily flights with Turkish Airlines and British Airways cargo services. Ideal for urgent shipments, samples, and high-value goods.' },
               ].map((mode, i) => {
                 const Icon = mode.icon;
                 return (
@@ -261,11 +292,41 @@ export default function TurkeyToUk() {
           </div>
         </section>
 
+        {/* ====== COSTS & PRICING ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What does shipping from Turkey to UK cost?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo provides transparent, all-inclusive pricing for Turkey–UK freight. Costs vary by mode, volume, and seasonality. Below are typical rate ranges — contact us for a tailored quote that includes freight, customs clearance, and UK delivery.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Sea Freight (FCL)', price: '£800–£2,200', unit: 'per 20ft/40ft container', note: 'Best for 15+ CBM' },
+                { title: 'Sea Freight (LCL)', price: '£65–£120', unit: 'per CBM', note: 'For smaller shipments' },
+                { title: 'Road Freight', price: '£200–£500', unit: 'per pallet', note: 'Door-to-door via Europe' },
+                { title: 'Air Freight', price: '£2.50–£5', unit: 'per kg', note: 'Express from Istanbul' },
+              ].map((tier, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{tier.title}</h3>
+                  <div className="text-2xl font-extrabold text-[#1A6DFF] mb-1">{tier.price}</div>
+                  <p className="text-sm text-gray-500 mb-3">{tier.unit}</p>
+                  <p className="text-sm text-gray-600">{tier.note}</p>
+                </article>
+              ))}
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
+              All quotes include Turkish collection, freight, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd — 120 Bark Street, Bolton, BL1 2AX.
+            </p>
+          </div>
+        </section>
+
         {/* ====== POPULAR GOODS ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Popular Goods Shipped from Turkey to UK</h2>
-            <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this route</p>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are shipped from Turkey to UK?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Turkish manufacturing is diverse and globally competitive. We regularly handle textiles, automotive parts, steel, machinery, ceramics, and food products on this route. Each commodity has specific packaging and customs requirements that our team manages.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { name: 'Textiles & Clothing', desc: 'Cotton garments, knitwear, home textiles, towels, and fashion items.' },
@@ -287,12 +348,38 @@ export default function TurkeyToUk() {
           </div>
         </section>
 
-        {/* ====== CUSTOMS & DOCUMENTATION ====== */}
+        {/* ====== DOCUMENTS & COMPLIANCE ====== */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What documents and compliance are needed for Turkey to UK imports?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Importing from Turkey requires correct documentation to ensure smooth UK customs clearance and to claim UK-Turkey FTA tariff reductions. Our team prepares, checks, and submits all paperwork on your behalf.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: 'Commercial Invoice', desc: 'A detailed invoice showing the seller, buyer, goods description, HS codes, quantities, values, and currency. This is the primary document for UK customs valuation and must match the packing list exactly.' },
+                { title: 'Packing List', desc: 'Lists the contents of each package with weights, dimensions, and package count. Helps customs verify the shipment and is essential for warehouse receiving and inventory management.' },
+                { title: 'Bill of Lading / CMR / Airway Bill', desc: 'The transport contract and receipt. Sea freight uses a Bill of Lading, road freight uses a CMR note, and air freight uses an Airway Bill. These are needed for cargo release and title transfer.' },
+                { title: 'UK EORI Number', desc: 'A UK Economic Operator Registration and Identification number is mandatory for all UK imports. Without it, customs cannot process your entry. We can advise on how to apply if you don\'t have one yet.' },
+                { title: 'Certificate of Origin / EUR.1', desc: 'Required to claim preferential tariffs under the UK-Turkey FTA. The EUR.1 movement certificate or an origin declaration on the invoice proves the goods meet rules of origin requirements.' },
+                { title: 'ATR Movement Certificate', desc: 'Essential for road freight from Turkey transiting the EU. The ATR certificate allows preferential tariff treatment under the Pan-Euro-Mediterranean convention. We arrange this for all Turkey road shipments.' },
+              ].map((doc, i) => (
+                <article key={i} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow">
+                  <FileCheck className="w-8 h-8 text-[#1A6DFF] mb-3" aria-hidden="true" />
+                  <h3 className="font-bold text-gray-900 mb-2">{doc.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{doc.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== CUSTOMS & FTA DOCUMENTATION ====== */}
         <section className="py-16 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Customs Clearance & FTA Documentation</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What customs clearance and FTA documentation is needed for Turkey to UK imports?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              The UK-Turkey Free Trade Agreement can significantly reduce your import costs. Our team ensures all documentation is correct to maximise your FTA benefits.
+              The UK-Turkey Free Trade Agreement can significantly reduce your import costs when goods originate in Turkey and the correct paperwork is filed. Our customs team ensures all documentation is accurate to maximise your FTA benefits and avoid delays.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -349,7 +436,10 @@ export default function TurkeyToUk() {
         {/* ====== WHY CHOOSE CARRGO ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why Choose Carrgo for Turkey–UK Shipping</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Turkey to UK shipping?</h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Carrgo Freight Solutions Ltd, based in Bolton, has been serving UK importers since 2026. Our team brings over two decades of combined freight experience, with particular expertise in Turkish trade lanes, FTA documentation, and UK customs procedures.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'Turkey Expertise', desc: 'Established carrier relationships across Turkish ports, airports, and road networks.' },
@@ -379,7 +469,10 @@ export default function TurkeyToUk() {
         {/* ====== FAQ ====== */}
         <section aria-labelledby="faq-heading" className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-3xl font-bold text-center text-gray-900 mb-4">What do importers ask about shipping from Turkey to UK?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Our team answers questions about Turkey–UK shipping every day. Here are the most common ones — from transit times and costs to documentation, customs procedures, and what to do if your goods are held at the border.
+            </p>
             <FaqAccordion />
           </div>
         </section>
@@ -387,7 +480,7 @@ export default function TurkeyToUk() {
         {/* ====== CTA ====== */}
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Get Your Turkey–UK Freight Quote</h2>
+            <h2 className="text-3xl font-bold mb-4">How do I get a Turkey to UK freight quote?</h2>
             <p className="text-brand-100 mb-8 text-lg">Sea, road, or air — with full UK-Turkey FTA support. All-inclusive quote within 2 hours.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
@@ -403,7 +496,10 @@ export default function TurkeyToUk() {
         {/* ====== OTHER ROUTES ====== */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Other Popular Shipping Routes</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-4">What other shipping routes does Carrgo offer?</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Carrgo handles freight from over 20 countries to the UK. Explore our most popular routes or contact us for a custom quote from any origin worldwide.
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { name: 'China', flag: '🇨🇳', route: '/routes/china-to-uk' },
