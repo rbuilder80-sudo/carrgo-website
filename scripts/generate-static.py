@@ -239,11 +239,11 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
     },
     "/resources/port-congestion-tracker": {
-        "title": "UK Port Congestion Tracker | Live Delays | Rotterdam, Felixstowe | Carrgo",
-        "description": "Worried about port delays ruining your delivery schedule? Carrgo's UK Port Congestion Tracker shows live delay estimates for Rotterdam, Felixstowe, Southampton, and Tilbury. Plan ahead. Avoid costly surprises.",
-        "keywords": "uk port congestion tracker, port delays uk, felixstowe delays, rotterdam congestion",
+        "title": "Carrgo Port Intelligence | UK Port Congestion Tracker, Predictions & Health Scores",
+        "description": "Live UK & Ireland port intelligence with Port Health Scores™, 24h/7d forecasts, congestion predictions, and importer risk assessments. Track Felixstowe, Southampton, Dublin, Belfast & all 18 major ports. Free, no subscription.",
+        "keywords": "uk port intelligence, port congestion tracker, port health score, felixstowe delays, dublin port congestion, belfast port status, liverpool port status, uk container port delays, port predictions",
         "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
-        "h1": "UK Port Congestion Tracker — Live Delay Estimates",
+        "h1": "Carrgo Port Intelligence — UK &amp; Ireland Port Congestion Tracker",
         "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
     },
     "/resources/shipping-guides": {
@@ -308,6 +308,158 @@ ROUTES = {
         "keywords": "post brexit customs guide, uk import rules 2026, eori number, customs declaration, ni protocol",
         "canonical": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide",
         "h1": "Post-Brexit Customs Guide — UK Import Rules 2026",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/tools/cost-calculator": {
+        "title": "Importer Cost Calculator | Port Delay Costs | Demurrage & Detention | Carrgo",
+        "description": "Calculate the real cost of port delays — demurrage, detention, storage & lost sales. Free importer cost calculator for UK container ports. No subscription required.",
+        "keywords": "importer cost calculator, demurrage calculator, port delay costs, detention costs, container storage costs",
+        "canonical": "https://www.carrgo.co.uk/tools/cost-calculator",
+        "h1": "Importer Cost Calculator — Port Delay Cost Estimator",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/tools/port-comparison": {
+        "title": "Port Comparison Tool | UK & Ireland Port Health Scores | Carrgo",
+        "description": "Compare health scores, wait times, forecasts and capacity across all 18 UK & Ireland ports. Free port comparison tool. No subscription required.",
+        "keywords": "port comparison, uk port comparison, compare port health scores, port congestion comparison",
+        "canonical": "https://www.carrgo.co.uk/tools/port-comparison",
+        "h1": "Port Comparison Tool — UK &amp; Ireland Port Intelligence",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/felixstowe": {
+        "title": "Felixstowe Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Felixstowe port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. UK's busiest container port — track congestion in real time.",
+        "keywords": "felixstowe port intelligence, felixstowe port congestion, felixstowe delays, port health score felixstowe",
+        "canonical": "https://www.carrgo.co.uk/ports/felixstowe",
+        "h1": "Felixstowe Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/southampton": {
+        "title": "Southampton Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Southampton port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Deep-water container port tracking.",
+        "keywords": "southampton port intelligence, southampton port congestion, southampton delays, port health score southampton",
+        "canonical": "https://www.carrgo.co.uk/ports/southampton",
+        "h1": "Southampton Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/london-gateway": {
+        "title": "London Gateway Port Intelligence | Health Score & Forecasts | Carrgo",
+        "description": "Live London Gateway port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. DP World automated port tracking.",
+        "keywords": "london gateway port intelligence, london gateway port congestion, london gateway delays",
+        "canonical": "https://www.carrgo.co.uk/ports/london-gateway",
+        "h1": "London Gateway Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/liverpool": {
+        "title": "Liverpool Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Liverpool port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Mersey container port tracking.",
+        "keywords": "liverpool port intelligence, liverpool port congestion, liverpool delays, port health score liverpool",
+        "canonical": "https://www.carrgo.co.uk/ports/liverpool",
+        "h1": "Liverpool Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/bristol": {
+        "title": "Bristol Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Bristol port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Avonmouth port tracking.",
+        "keywords": "bristol port intelligence, bristol port congestion, bristol delays, avonmouth port status",
+        "canonical": "https://www.carrgo.co.uk/ports/bristol",
+        "h1": "Bristol Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/tilbury": {
+        "title": "Tilbury Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Tilbury port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Thames river port tracking.",
+        "keywords": "tilbury port intelligence, tilbury port congestion, tilbury delays, thames port status",
+        "canonical": "https://www.carrgo.co.uk/ports/tilbury",
+        "h1": "Tilbury Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/immingham": {
+        "title": "Immingham Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Immingham port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Humber estuary port tracking.",
+        "keywords": "immingham port intelligence, immingham port congestion, humber port delays, port health score immingham",
+        "canonical": "https://www.carrgo.co.uk/ports/immingham",
+        "h1": "Immingham Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/grangemouth": {
+        "title": "Grangemouth Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Grangemouth port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Scotland's largest container port tracking.",
+        "keywords": "grangemouth port intelligence, grangemouth port congestion, scotland port delays, port health score grangemouth",
+        "canonical": "https://www.carrgo.co.uk/ports/grangemouth",
+        "h1": "Grangemouth Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/holyhead": {
+        "title": "Holyhead Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Holyhead port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Irish Sea ferry & cargo port tracking.",
+        "keywords": "holyhead port intelligence, holyhead port congestion, irish sea port delays, holyhead ferry status",
+        "canonical": "https://www.carrgo.co.uk/ports/holyhead",
+        "h1": "Holyhead Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/belfast": {
+        "title": "Belfast Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Belfast port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Northern Ireland's largest port tracking.",
+        "keywords": "belfast port intelligence, belfast port congestion, northern ireland port delays, port health score belfast",
+        "canonical": "https://www.carrgo.co.uk/ports/belfast",
+        "h1": "Belfast Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/larne": {
+        "title": "Larne Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Larne port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Larne Harbour ferry port tracking.",
+        "keywords": "larne port intelligence, larne port congestion, larne harbour status, northern ireland ferry delays",
+        "canonical": "https://www.carrgo.co.uk/ports/larne",
+        "h1": "Larne Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/londonderry": {
+        "title": "Londonderry Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Londonderry port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Foyle Port, Derry tracking.",
+        "keywords": "londonderry port intelligence, derry port congestion, foyle port status, northern ireland port delays",
+        "canonical": "https://www.carrgo.co.uk/ports/londonderry",
+        "h1": "Londonderry Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/dublin": {
+        "title": "Dublin Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Dublin port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Ireland's largest port tracking.",
+        "keywords": "dublin port intelligence, dublin port congestion, ireland port delays, port health score dublin",
+        "canonical": "https://www.carrgo.co.uk/ports/dublin",
+        "h1": "Dublin Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/cork": {
+        "title": "Cork Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Cork port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Southern Ireland major port tracking.",
+        "keywords": "cork port intelligence, cork port congestion, ireland port delays, ringaskiddy port status",
+        "canonical": "https://www.carrgo.co.uk/ports/cork",
+        "h1": "Cork Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/rosslare-europort": {
+        "title": "Rosslare Europort Intelligence | Health Score & Forecasts | Carrgo",
+        "description": "Live Rosslare Europort intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Wexford ferry & cargo port tracking.",
+        "keywords": "rosslare europort intelligence, rosslare port congestion, ireland ferry delays, brexit bypass routes",
+        "canonical": "https://www.carrgo.co.uk/ports/rosslare-europort",
+        "h1": "Rosslare Europort Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/shannon-foynes": {
+        "title": "Shannon Foynes Port Intelligence | Health Score & Forecasts | Carrgo",
+        "description": "Live Shannon Foynes port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Limerick deepwater port tracking.",
+        "keywords": "shannon foynes port intelligence, limerick port congestion, ireland port delays, foynes port status",
+        "canonical": "https://www.carrgo.co.uk/ports/shannon-foynes",
+        "h1": "Shannon Foynes Port Intelligence — Health Score &amp; Forecasts",
+        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+    },
+    "/ports/waterford": {
+        "title": "Waterford Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
+        "description": "Live Waterford port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Southeast Ireland port tracking.",
+        "keywords": "waterford port intelligence, waterford port congestion, ireland port delays, belview port status",
+        "canonical": "https://www.carrgo.co.uk/ports/waterford",
+        "h1": "Waterford Port Intelligence — Health Score &amp; Forecasts",
         "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
     },
     "/about": {

@@ -47,6 +47,11 @@ const DublinToUk = lazy(() => import('./pages/routes/DublinToUk'));
 // Sitemap page
 const AiSitemap = lazy(() => import('./pages/AiSitemap'));
 
+// Port Intelligence pages
+const PortDetail = lazy(() => import('./pages/ports/PortDetail'));
+const CostCalculator = lazy(() => import('./pages/tools/CostCalculator'));
+const PortComparison = lazy(() => import('./pages/tools/PortComparison'));
+
 // Resource pages
 const PortCongestion = lazy(() => import('./pages/resources/PortCongestion'));
 const ShippingGuides = lazy(() => import('./pages/resources/ShippingGuides'));
@@ -117,6 +122,13 @@ export default function App() {
           <Route path="/resources/industries" element={<Suspense fallback={<Loading />}><Industries /></Suspense>} />
           <Route path="/resources/our-process" element={<Suspense fallback={<Loading />}><OurProcess /></Suspense>} />
           <Route path="/resources/post-brexit-customs-guide" element={<Suspense fallback={<Loading />}><PostBrexit /></Suspense>} />
+
+          {/* Port Intelligence detail pages */}
+          <Route path="/ports/:slug" element={<Suspense fallback={<Loading />}><PortDetail /></Suspense>} />
+
+          {/* Tools */}
+          <Route path="/tools/cost-calculator" element={<Suspense fallback={<Loading />}><CostCalculator /></Suspense>} />
+          <Route path="/tools/port-comparison" element={<Suspense fallback={<Loading />}><PortComparison /></Suspense>} />
         </Route>
       </Routes>
     </HashRouter>

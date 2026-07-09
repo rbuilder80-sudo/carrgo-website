@@ -2,6 +2,19 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
+  allPorts,
+  calculateNationalIndex,
+  getPortRankings,
+  laneData,
+  getImporterRisk,
+  type PortDetail,
+  type Forecast,
+  type CongestionReason,
+  type ImporterImpact,
+  type Trend,
+  type CongestionLevel,
+} from '../../data/portData';
+import {
   Ship,
   Clock,
   AlertTriangle,
@@ -16,227 +29,22 @@ import {
   ChevronDown,
   ChevronUp,
   HelpCircle,
+  Gauge,
+  Eye,
+  Route,
+  BarChart3,
+  Calculator,
+  ArrowUpRight,
+  Activity,
+  Zap,
+  CheckCircle2,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
 
-type Status = 'Normal' | 'Moderate' | 'Congested';
-type Trend = 'Improving' | 'Stable' | 'Worsening';
-type Region = 'England' | 'Scotland' | 'Wales' | 'Northern Ireland' | 'Ireland';
 type Tab = 'All Ports' | 'England' | 'Scotland & Wales' | 'Northern Ireland' | 'Ireland';
-
-interface PortStatus {
-  port: string;
-  slug: string;
-  description: string;
-  region: Region;
-  country: string;
-  status: Status;
-  waitTime: string;
-  trend: Trend;
-  lastUpdated: string;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Data — 18 ports across UK, NI & ROI                                */
-/* ------------------------------------------------------------------ */
-
-const ports: PortStatus[] = [
-  /* England */
-  {
-    port: 'Felixstowe',
-    slug: 'felixstowe',
-    description: 'Major container port',
-    region: 'England',
-    country: 'England',
-    status: 'Moderate',
-    waitTime: '2-4 days',
-    trend: 'Stable',
-    lastUpdated: '2h ago',
-  },
-  {
-    port: 'Southampton',
-    slug: 'southampton',
-    description: 'Deep-water container port',
-    region: 'England',
-    country: 'England',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Stable',
-    lastUpdated: '1h ago',
-  },
-  {
-    port: 'London Gateway',
-    slug: 'london-gateway',
-    description: 'DP World automated port',
-    region: 'England',
-    country: 'England',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Improving',
-    lastUpdated: '3h ago',
-  },
-  {
-    port: 'Liverpool',
-    slug: 'liverpool',
-    description: 'Mersey container port',
-    region: 'England',
-    country: 'England',
-    status: 'Moderate',
-    waitTime: '2-3 days',
-    trend: 'Worsening',
-    lastUpdated: '4h ago',
-  },
-  {
-    port: 'Bristol',
-    slug: 'bristol',
-    description: 'Avonmouth port',
-    region: 'England',
-    country: 'England',
-    status: 'Normal',
-    waitTime: '1 day',
-    trend: 'Stable',
-    lastUpdated: '5h ago',
-  },
-  {
-    port: 'Tilbury',
-    slug: 'tilbury',
-    description: 'Thames river port',
-    region: 'England',
-    country: 'England',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Improving',
-    lastUpdated: '3h ago',
-  },
-  {
-    port: 'Immingham',
-    slug: 'immingham',
-    description: 'Humber estuary port',
-    region: 'England',
-    country: 'England',
-    status: 'Moderate',
-    waitTime: '2-3 days',
-    trend: 'Stable',
-    lastUpdated: '2h ago',
-  },
-  /* Scotland */
-  {
-    port: 'Grangemouth',
-    slug: 'grangemouth',
-    description: "Scotland's largest container port",
-    region: 'Scotland',
-    country: 'Scotland',
-    status: 'Congested',
-    waitTime: '4-6 days',
-    trend: 'Worsening',
-    lastUpdated: '1h ago',
-  },
-  /* Wales */
-  {
-    port: 'Holyhead',
-    slug: 'holyhead',
-    description: 'Irish Sea ferry & cargo port',
-    region: 'Wales',
-    country: 'Wales',
-    status: 'Normal',
-    waitTime: '0-1 days',
-    trend: 'Stable',
-    lastUpdated: '4h ago',
-  },
-  /* Northern Ireland */
-  {
-    port: 'Belfast',
-    slug: 'belfast',
-    description: "Northern Ireland's largest port",
-    region: 'Northern Ireland',
-    country: 'Northern Ireland',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Stable',
-    lastUpdated: '6h ago',
-  },
-  {
-    port: 'Larne',
-    slug: 'larne',
-    description: 'Larne Harbour, busy ferry port',
-    region: 'Northern Ireland',
-    country: 'Northern Ireland',
-    status: 'Normal',
-    waitTime: '0-1 days',
-    trend: 'Improving',
-    lastUpdated: '5h ago',
-  },
-  {
-    port: 'Londonderry',
-    slug: 'londonderry',
-    description: 'Foyle Port, Derry',
-    region: 'Northern Ireland',
-    country: 'Northern Ireland',
-    status: 'Normal',
-    waitTime: '1 day',
-    trend: 'Stable',
-    lastUpdated: '7h ago',
-  },
-  /* Republic of Ireland */
-  {
-    port: 'Dublin',
-    slug: 'dublin',
-    description: "Ireland's largest port",
-    region: 'Ireland',
-    country: 'Ireland (ROI)',
-    status: 'Moderate',
-    waitTime: '2-4 days',
-    trend: 'Worsening',
-    lastUpdated: '2h ago',
-  },
-  {
-    port: 'Cork',
-    slug: 'cork',
-    description: 'Southern Ireland major port',
-    region: 'Ireland',
-    country: 'Ireland (ROI)',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Stable',
-    lastUpdated: '3h ago',
-  },
-  {
-    port: 'Rosslare Europort',
-    slug: 'rosslare-europort',
-    description: 'Wexford ferry & cargo port',
-    region: 'Ireland',
-    country: 'Ireland (ROI)',
-    status: 'Normal',
-    waitTime: '1 day',
-    trend: 'Improving',
-    lastUpdated: '4h ago',
-  },
-  {
-    port: 'Shannon Foynes',
-    slug: 'shannon-foynes',
-    description: 'Limerick deepwater port',
-    region: 'Ireland',
-    country: 'Ireland (ROI)',
-    status: 'Normal',
-    waitTime: '1-2 days',
-    trend: 'Stable',
-    lastUpdated: '5h ago',
-  },
-  {
-    port: 'Waterford',
-    slug: 'waterford',
-    description: 'Southeast Ireland port',
-    region: 'Ireland',
-    country: 'Ireland (ROI)',
-    status: 'Normal',
-    waitTime: '1 day',
-    trend: 'Stable',
-    lastUpdated: '6h ago',
-  },
-];
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -279,16 +87,18 @@ function useNow(): Date {
 /*  Sub-components                                                     */
 /* ------------------------------------------------------------------ */
 
-function StatusBadge({ status }: { status: Status }) {
-  const styles: Record<Status, string> = {
+function StatusBadge({ status }: { status: CongestionLevel }) {
+  const styles: Record<CongestionLevel, string> = {
     Normal: 'bg-emerald-50 text-emerald-700 border-emerald-200',
     Moderate: 'bg-amber-50 text-amber-700 border-amber-200',
     Congested: 'bg-red-50 text-red-700 border-red-200',
+    Severe: 'bg-red-100 text-red-800 border-red-300',
   };
   const icons = {
     Normal: <Clock className="w-3.5 h-3.5 mr-1.5" />,
     Moderate: <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />,
     Congested: <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />,
+    Severe: <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />,
   };
   return (
     <span
@@ -312,6 +122,27 @@ function TrendIndicator({ trend }: { trend: Trend }) {
       {t.icon}
       {t.label}
     </span>
+  );
+}
+
+function HealthScoreBar({ score }: { score: number }) {
+  const color =
+    score >= 80 ? 'bg-emerald-500' :
+    score >= 60 ? 'bg-amber-500' :
+    score >= 40 ? 'bg-orange-500' : 'bg-red-500';
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-xs font-semibold text-gray-700">{score}</span>
+        <span className="text-xs text-gray-400">/ 100</span>
+      </div>
+      <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+        <div
+          className={`h-full rounded-full ${color} transition-all`}
+          style={{ width: `${score}%` }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -340,10 +171,6 @@ function StatCard({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  FAQ Section                                                        */
-/* ------------------------------------------------------------------ */
-
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -368,6 +195,49 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
+function SparklineChart({ history, color }: { history: PortDetail['history']; color: string }) {
+  const data = history.slice(-30);
+  if (data.length < 2) return null;
+  const width = 300;
+  const height = 80;
+  const padding = 8;
+  const minScore = 30;
+  const maxScore = 100;
+  const xStep = (width - 2 * padding) / (data.length - 1);
+  const points = data.map((d, i) => {
+    const x = padding + i * xStep;
+    const y = height - padding - ((d.score - minScore) / (maxScore - minScore)) * (height - 2 * padding);
+    return `${x},${y}`;
+  }).join(' ');
+  const labelIndices = [0, Math.floor(data.length / 4), Math.floor(data.length / 2), Math.floor((3 * data.length) / 4), data.length - 1].filter(
+    (v, i, a) => a.indexOf(v) === i
+  );
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-20">
+      <polyline
+        fill="none"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        points={points}
+      />
+      {labelIndices.map((i) => {
+        const x = padding + i * xStep;
+        return (
+          <text key={i} x={x} y={height - 2} fontSize="7" fill="#9CA3AF" textAnchor="middle">
+            {data[i].date.slice(5)}
+          </text>
+        );
+      })}
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  FAQ Section Data                                                   */
+/* ------------------------------------------------------------------ */
+
 const faqs = [
   {
     q: 'How often is the UK & Ireland Port Congestion Tracker updated?',
@@ -379,7 +249,7 @@ const faqs = [
   },
   {
     q: 'What do the congestion status levels mean?',
-    a: 'Normal means standard operations with minimal delays. Moderate indicates some congestion with wait times of 2-4 days. Congested means significant vessel queues with 4+ day wait times. We recommend booking alternative ports during congested periods.',
+    a: 'Normal means standard operations with minimal delays. Moderate indicates some congestion with wait times of 2-4 days. Congested means significant vessel queues with 4+ day wait times. Severe indicates critical delays of 6+ days. We recommend booking alternative ports during congested or severe periods.',
   },
   {
     q: 'How can I avoid delays at congested UK container ports?',
@@ -400,13 +270,16 @@ export default function PortCongestion() {
   const [activeTab, setActiveTab] = useState<Tab>('All Ports');
   const [search, setSearch] = useState('');
 
+  /* ---- National index ---- */
+  const nationalIndex = useMemo(() => calculateNationalIndex(), []);
+
   /* ---- tabs ---- */
   const tabs: { key: Tab; count: number }[] = useMemo(() => {
-    const all = ports.length;
-    const eng = ports.filter((p) => p.region === 'England').length;
-    const sw = ports.filter((p) => p.region === 'Scotland' || p.region === 'Wales').length;
-    const ni = ports.filter((p) => p.region === 'Northern Ireland').length;
-    const ie = ports.filter((p) => p.region === 'Ireland').length;
+    const all = allPorts.length;
+    const eng = allPorts.filter((p) => p.region === 'England').length;
+    const sw = allPorts.filter((p) => p.region === 'Scotland' || p.region === 'Wales').length;
+    const ni = allPorts.filter((p) => p.region === 'Northern Ireland').length;
+    const ie = allPorts.filter((p) => p.region === 'Ireland').length;
     return [
       { key: 'All Ports', count: all },
       { key: 'England', count: eng },
@@ -418,11 +291,11 @@ export default function PortCongestion() {
 
   /* ---- filtered list ---- */
   const filtered = useMemo(() => {
-    let list = ports;
-    if (activeTab === 'England') list = ports.filter((p) => p.region === 'England');
-    if (activeTab === 'Scotland & Wales') list = ports.filter((p) => p.region === 'Scotland' || p.region === 'Wales');
-    if (activeTab === 'Northern Ireland') list = ports.filter((p) => p.region === 'Northern Ireland');
-    if (activeTab === 'Ireland') list = ports.filter((p) => p.region === 'Ireland');
+    let list = allPorts;
+    if (activeTab === 'England') list = allPorts.filter((p) => p.region === 'England');
+    if (activeTab === 'Scotland & Wales') list = allPorts.filter((p) => p.region === 'Scotland' || p.region === 'Wales');
+    if (activeTab === 'Northern Ireland') list = allPorts.filter((p) => p.region === 'Northern Ireland');
+    if (activeTab === 'Ireland') list = allPorts.filter((p) => p.region === 'Ireland');
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -438,18 +311,64 @@ export default function PortCongestion() {
 
   /* ---- summary stats ---- */
   const stats = useMemo(() => {
-    const normal = ports.filter((p) => p.status === 'Normal').length;
-    const moderate = ports.filter((p) => p.status === 'Moderate').length;
-    const congested = ports.filter((p) => p.status === 'Congested').length;
-    return { normal, moderate, congested, total: ports.length };
+    const normal = allPorts.filter((p) => p.status === 'Normal').length;
+    const moderate = allPorts.filter((p) => p.status === 'Moderate').length;
+    const congested = allPorts.filter((p) => p.status === 'Congested').length;
+    const severe = allPorts.filter((p) => p.status === 'Severe').length;
+    const fastest = [...allPorts].sort((a, b) => b.healthScore - a.healthScore)[0];
+    const slowest = [...allPorts].sort((a, b) => a.healthScore - b.healthScore)[0];
+    return { normal, moderate, congested, severe, total: allPorts.length, fastest, slowest };
   }, []);
 
   /* ---- status sort order ---- */
-  const statusOrder: Record<Status, number> = { Congested: 0, Moderate: 1, Normal: 2 };
+  const statusOrder: Record<CongestionLevel, number> = { Severe: 0, Congested: 1, Moderate: 2, Normal: 3 };
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => statusOrder[a.status] - statusOrder[b.status]),
     [filtered]
   );
+
+  /* ---- congested ports for alerts ---- */
+  const congestedPorts = useMemo(() => getPortRankings().congested, []);
+
+  /* ---- weekly intelligence ---- */
+  const weeklyStats = useMemo(() => {
+    const improving = allPorts.filter((p) => p.scoreTrend > 0).length;
+    const worsening = allPorts.filter((p) => p.scoreTrend < 0).length;
+    const stable = allPorts.filter((p) => p.scoreTrend === 0).length;
+    const mostImproved = [...allPorts].sort((a, b) => b.scoreTrend - a.scoreTrend)[0];
+    const mostDeclined = [...allPorts].sort((a, b) => a.scoreTrend - b.scoreTrend)[0];
+    return { improving, worsening, stable, mostImproved, mostDeclined };
+  }, []);
+
+  /* ---- rankings for section 9 ---- */
+  const rankings = useMemo(() => {
+    const fastest = [...allPorts].sort((a, b) => b.healthScore - a.healthScore).slice(0, 5);
+    const slowest = [...allPorts].sort((a, b) => a.healthScore - b.healthScore).slice(0, 5);
+    const mostImproved = [...allPorts].sort((a, b) => b.scoreTrend - a.scoreTrend).slice(0, 5);
+    const mostDeclined = [...allPorts].sort((a, b) => a.scoreTrend - b.scoreTrend).slice(0, 5);
+    return { fastest, slowest, mostImproved, mostDeclined };
+  }, []);
+
+  /* ---- top 3 congested for sparklines ---- */
+  const topCongested = useMemo(() => {
+    return [...allPorts]
+      .sort((a, b) => statusOrder[a.status] - statusOrder[b.status])
+      .slice(0, 3);
+  }, []);
+
+  /* ---- lane risk colors ---- */
+  const laneRiskColor = (risk: string) => {
+    if (risk === 'Low') return 'text-emerald-600 bg-emerald-50';
+    if (risk === 'Medium') return 'text-amber-600 bg-amber-50';
+    return 'text-red-600 bg-red-50';
+  };
+
+  const importerRiskColor = (risk: string) => {
+    if (risk === 'Low') return 'text-emerald-600 bg-emerald-50';
+    if (risk === 'Medium') return 'text-amber-600 bg-amber-50';
+    if (risk === 'High') return 'text-orange-600 bg-orange-50';
+    return 'text-red-600 bg-red-50';
+  };
 
   const dateStr = formatDateUK(now);
   const timeStr = formatTime24(now);
@@ -458,15 +377,13 @@ export default function PortCongestion() {
   return (
     <>
       <Seo
-        title="UK & Ireland Port Congestion Tracker 2025 | Live Port Status | Carrgo"
+        title="UK & Ireland Port Congestion Tracker 2026 | Live Port Status | Carrgo"
         description="Live UK & Ireland port congestion tracker covering Felixstowe, Southampton, Liverpool, Dublin, Belfast, Grangemouth and all major UK, NI and ROI container ports. Real-time wait times, status updates and trends."
         keywords="uk port congestion tracker, port congestion felixstowe, port congestion southampton, belfast port status, dublin port congestion, irish sea ports, northern ireland port delays, liverpool port status, uk container port delays, port congestion today"
       />
 
       {/* ====== Hero ====== */}
-      <section aria-label="Port congestion hero" className="relative py-20 lg:py-28 overflow-hidden"
-        style={{ backgroundColor: '#1A6DFF' }}
-      >
+      <section aria-label="Port congestion hero" className="relative py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: '#1A6DFF' }}>
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -482,15 +399,51 @@ export default function PortCongestion() {
               <Ship className="w-4 h-4" />
               Live Status
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              UK &amp; Ireland Port Congestion Tracker
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+              Carrgo Port Intelligence
             </h1>
             <p className="text-lg text-white/90 leading-relaxed max-w-2xl mb-8">
-              Real-time congestion status, wait times and operational conditions for all major UK,
-              Northern Ireland and Republic of Ireland container and ferry ports. Plan your
-              shipments with up-to-date port congestion data for Felixstowe, Southampton, Dublin,
-              Belfast and more.
+              UK &amp; Ireland Port Congestion Tracker, Predictions &amp; Importer Tools
             </p>
+
+            {/* National Port Health Index */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 px-6 py-5 mb-8 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+              <div>
+                <p className="text-sm text-white/80 font-medium mb-1">National Port Health Index™</p>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-5xl font-bold text-white">{nationalIndex.index}</span>
+                  <span className="text-white/70 text-sm">/ 100</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                {nationalIndex.trend === 'Improving' ? (
+                  <TrendingUp className="w-5 h-5 text-emerald-300" />
+                ) : nationalIndex.trend === 'Worsening' ? (
+                  <TrendingDown className="w-5 h-5 text-red-300" />
+                ) : (
+                  <Minus className="w-5 h-5 text-gray-300" />
+                )}
+                <span
+                  className={`text-sm font-semibold ${
+                    nationalIndex.trend === 'Improving'
+                      ? 'text-emerald-300'
+                      : nationalIndex.trend === 'Worsening'
+                      ? 'text-red-300'
+                      : 'text-gray-300'
+                  }`}
+                >
+                  {nationalIndex.trend} ({nationalIndex.change > 0 ? '+' : ''}
+                  {nationalIndex.change})
+                </span>
+              </div>
+              <div className="hidden sm:block w-px h-10 bg-white/20" />
+              <div className="text-sm text-white/70">
+                <p>UK Average</p>
+                <p className="text-white/50 text-xs mt-0.5">
+                  Updated {dateStr} {timeStr} GMT
+                </p>
+              </div>
+            </div>
 
             {/* Timestamp banner */}
             <div className="inline-flex flex-wrap items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
@@ -511,7 +464,7 @@ export default function PortCongestion() {
       {/* ====== Stats Bar ====== */}
       <section aria-label="Port statistics" className="py-8" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="container-carrgo">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
             <StatCard
               label="Total Ports Tracked"
               value={stats.total}
@@ -534,18 +487,32 @@ export default function PortCongestion() {
               accent="bg-amber-50"
             />
             <StatCard
-              label="Congested"
-              value={stats.congested}
+              label="Severe / Congested"
+              value={stats.congested + stats.severe}
               sub="Significant delays likely"
               icon={<AlertTriangle className="w-5 h-5 text-red-600" />}
+              accent="bg-red-50"
+            />
+            <StatCard
+              label="Fastest Port"
+              value={stats.fastest?.port ?? '—'}
+              sub={`Score: ${stats.fastest?.healthScore ?? '—'}`}
+              icon={<Gauge className="w-5 h-5 text-emerald-600" />}
+              accent="bg-emerald-50"
+            />
+            <StatCard
+              label="Slowest Port"
+              value={stats.slowest?.port ?? '—'}
+              sub={`Score: ${stats.slowest?.healthScore ?? '—'}`}
+              icon={<Gauge className="w-5 h-5 text-red-600" />}
               accent="bg-red-50"
             />
           </div>
         </div>
       </section>
 
-      {/* ====== Main Tracker ====== */}
-      <section aria-label="Port congestion table" className="py-12 lg:py-16 bg-white">
+      {/* ====== Port Intelligence Table ====== */}
+      <section aria-label="Port intelligence table" className="py-12 lg:py-16 bg-white">
         <div className="container-carrgo">
           {/* Tabs */}
           <div className="flex flex-wrap gap-2 mb-6">
@@ -592,7 +559,7 @@ export default function PortCongestion() {
                     Port
                   </th>
                   <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    Country
+                    Health Score
                   </th>
                   <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Status
@@ -603,15 +570,21 @@ export default function PortCongestion() {
                   <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Trend
                   </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    24h Forecast
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Importer Risk
+                  </th>
                   <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">
-                    Updated
+                    Details
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {sorted.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center text-gray-400">
+                    <td colSpan={8} className="px-6 py-12 text-center text-gray-400">
                       <Search className="w-8 h-8 mx-auto mb-3 opacity-40" />
                       <p className="text-sm">No ports match your search.</p>
                     </td>
@@ -633,11 +606,8 @@ export default function PortCongestion() {
                           </div>
                         </div>
                       </td>
-                      <td className="px-5 py-4">
-                        <span className="inline-flex items-center gap-1.5 text-xs text-gray-600">
-                          <MapPin className="w-3.5 h-3.5 text-gray-400" />
-                          {p.country}
-                        </span>
+                      <td className="px-5 py-4 w-32">
+                        <HealthScoreBar score={p.healthScore} />
                       </td>
                       <td className="px-5 py-4">
                         <StatusBadge status={p.status} />
@@ -646,7 +616,31 @@ export default function PortCongestion() {
                       <td className="px-5 py-4">
                         <TrendIndicator trend={p.trend} />
                       </td>
-                      <td className="px-5 py-4 text-right text-xs text-gray-400">{p.lastUpdated}</td>
+                      <td className="px-5 py-4">
+                        {p.forecasts[0] ? (
+                          <StatusBadge status={p.forecasts[0].congestion} />
+                        ) : (
+                          <span className="text-xs text-gray-400">—</span>
+                        )}
+                      </td>
+                      <td className="px-5 py-4">
+                        <span
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${importerRiskColor(
+                            getImporterRisk(p.healthScore)
+                          )}`}
+                        >
+                          {getImporterRisk(p.healthScore)}
+                        </span>
+                      </td>
+                      <td className="px-5 py-4 text-right">
+                        <Link
+                          to={`/ports/${p.slug}`}
+                          className="inline-flex items-center gap-1 text-xs font-medium text-[#1A6DFF] hover:underline"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          View
+                        </Link>
+                      </td>
                     </tr>
                   ))
                 )}
@@ -665,8 +659,12 @@ export default function PortCongestion() {
               Moderate — Expect minor delays
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-red-500" />
-              Congested — Significant delays likely
+              <span className="w-3 h-3 rounded-full bg-orange-500" />
+              Congested — Significant delays
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-red-700" />
+              Severe — Critical delays
             </div>
           </div>
 
@@ -677,35 +675,375 @@ export default function PortCongestion() {
         </div>
       </section>
 
-      {/* ====== Info Cards ====== */}
-      <section aria-label="How to use tracker" className="py-16" style={{ backgroundColor: '#F8FAFC' }}>
+      {/* ====== Importer Alert Section ====== */}
+      <section aria-label="Importer alerts" className="py-12 lg:py-16" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="container-carrgo">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
-            <article className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-              <Clock className="w-8 h-8 text-[#1A6DFF] mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Wait Times</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Average vessel waiting time at anchorage before berth assignment across all major UK
-                container ports including Felixstowe, Southampton, Liverpool and London Gateway.
+          <div className="flex items-center gap-3 mb-8">
+            <AlertTriangle className="w-7 h-7 text-red-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Importer Alerts</h2>
+          </div>
+          {congestedPorts.length === 0 ? (
+            <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
+              <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto mb-3" />
+              <p className="text-lg font-semibold text-gray-900">All ports operating normally</p>
+              <p className="text-sm text-gray-500 mt-1">No congestion alerts at this time.</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {congestedPorts.map((p) => (
+                <div key={p.port} className="bg-white rounded-xl border border-red-200 p-6 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <AlertTriangle className="w-5 h-5 text-red-600" />
+                      <h3 className="font-semibold text-gray-900">{p.port}</h3>
+                    </div>
+                    <StatusBadge status={p.status} />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">Health Score</span>
+                      <span className="text-sm font-bold text-red-600">{p.healthScore}/100</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">Expected Delay</span>
+                      <span className="text-sm font-semibold text-gray-900">
+                        {p.importerImpact.expectedDelay}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">Demurrage Risk</span>
+                      <span
+                        className={`text-sm font-semibold ${
+                          p.importerImpact.demurrageRisk === 'Low'
+                            ? 'text-emerald-600'
+                            : p.importerImpact.demurrageRisk === 'Medium'
+                            ? 'text-amber-600'
+                            : 'text-red-600'
+                        }`}
+                      >
+                        {p.importerImpact.demurrageRisk}
+                      </span>
+                    </div>
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs text-gray-500 uppercase font-semibold mb-1">
+                        Recommended Action
+                      </p>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {p.importerImpact.recommendedAction}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ====== Lane Health Map ====== */}
+      <section aria-label="Lane health map" className="py-12 lg:py-16 bg-white">
+        <div className="container-carrgo">
+          <div className="flex items-center gap-3 mb-8">
+            <Route className="w-7 h-7 text-[#1A6DFF]" />
+            <h2 className="text-2xl font-bold text-gray-900">International Lane Health</h2>
+          </div>
+          <div className="overflow-x-auto rounded-xl border border-gray-200">
+            <table className="w-full text-left">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Route
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Health Score
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Normal ETA
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Current ETA
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Difference
+                  </th>
+                  <th className="px-5 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Risk
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {laneData.map((lane) => (
+                  <tr
+                    key={`${lane.origin}-${lane.destination}`}
+                    className="hover:bg-blue-50/40 transition-colors"
+                  >
+                    <td className="px-5 py-4">
+                      <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
+                        <MapPin className="w-3.5 h-3.5 text-gray-400" />
+                        {lane.origin}
+                        <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
+                        {lane.destination}
+                      </div>
+                    </td>
+                    <td className="px-5 py-4 w-32">
+                      <HealthScoreBar score={lane.health} />
+                    </td>
+                    <td className="px-5 py-4 text-sm text-gray-700">{lane.normalEta}</td>
+                    <td className="px-5 py-4 text-sm text-gray-700 font-medium">
+                      {lane.currentEta}
+                    </td>
+                    <td className="px-5 py-4 text-sm text-red-600 font-medium">
+                      {lane.difference}
+                    </td>
+                    <td className="px-5 py-4">
+                      <span
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${laneRiskColor(
+                          lane.risk
+                        )}`}
+                      >
+                        {lane.risk}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== Weekly Intelligence Preview ====== */}
+      <section aria-label="Weekly intelligence" className="py-12 lg:py-16" style={{ backgroundColor: '#F8FAFC' }}>
+        <div className="container-carrgo">
+          <div className="flex items-center gap-3 mb-8">
+            <BarChart3 className="w-7 h-7 text-[#1A6DFF]" />
+            <h2 className="text-2xl font-bold text-gray-900">Weekly Port Intelligence</h2>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
+            <p className="text-lg text-gray-700">
+              This week:{' '}
+              <span className="font-bold text-emerald-600">
+                {weeklyStats.improving} ports improving
+              </span>
+              ,{' '}
+              <span className="font-bold text-red-600">
+                {weeklyStats.worsening} ports worsening
+              </span>
+              , <span className="font-bold text-gray-600">{weeklyStats.stable} stable</span>
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Zap className="w-5 h-5 text-emerald-600" />
+                <h3 className="font-semibold text-gray-900">Most Improved This Week</h3>
+              </div>
+              {weeklyStats.mostImproved ? (
+                <div>
+                  <p className="text-2xl font-bold text-gray-900">{weeklyStats.mostImproved.port}</p>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Health score trend:{' '}
+                    <span className="font-bold text-emerald-600">
+                      +{weeklyStats.mostImproved.scoreTrend}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-500">Current score: {weeklyStats.mostImproved.healthScore}</p>
+                </div>
+              ) : (
+                <p className="text-sm text-gray-400">No data available</p>
+              )}
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <TrendingDown className="w-5 h-5 text-red-600" />
+                <h3 className="font-semibold text-gray-900">Most Declined This Week</h3>
+              </div>
+              {weeklyStats.mostDeclined ? (
+                <div>
+                  <p className="text-2xl font-bold text-gray-900">{weeklyStats.mostDeclined.port}</p>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Health score trend:{' '}
+                    <span className="font-bold text-red-600">
+                      {weeklyStats.mostDeclined.scoreTrend}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-500">Current score: {weeklyStats.mostDeclined.healthScore}</p>
+                </div>
+              ) : (
+                <p className="text-sm text-gray-400">No data available</p>
+              )}
+            </div>
+          </div>
+          <div className="text-right">
+            <Link
+              to="/resources/weekly-report"
+              className="inline-flex items-center gap-2 text-[#1A6DFF] font-medium hover:underline"
+            >
+              View full weekly report
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== Tools CTA Section ====== */}
+      <section aria-label="Importer tools" className="py-12 lg:py-16 bg-white">
+        <div className="container-carrgo">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <Calculator className="w-8 h-8 text-[#1A6DFF] mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2 text-lg">Importer Cost Calculator</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Calculate demurrage, detention, storage and lost sales costs for delayed cargo.
               </p>
-            </article>
-            <article className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-              <AlertTriangle className="w-8 h-8 text-[#1A6DFF] mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Status Alerts</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Congested ports such as Grangemouth may impact your supply chain. Consider
-                alternative Irish Sea ports or Northern Ireland routes during peak congestion.
+              <Link
+                to="/tools/cost-calculator"
+                className="inline-flex items-center gap-2 text-[#1A6DFF] font-medium text-sm hover:underline"
+              >
+                Open calculator
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <Activity className="w-8 h-8 text-[#1A6DFF] mb-4" />
+              <h3 className="font-semibold text-gray-900 mb-2 text-lg">Port Comparison</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Compare health scores, wait times and forecasts across multiple ports.
               </p>
-            </article>
-            <article className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-              <Ship className="w-8 h-8 text-[#1A6DFF] mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Planning Ahead</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Use this UK port congestion tracker data to plan shipment timing and select the best
-                arrival port for your cargo — whether shipping to England, Scotland, Wales, Northern
-                Ireland or the Republic of Ireland.
-              </p>
-            </article>
+              <Link
+                to="/tools/port-comparison"
+                className="inline-flex items-center gap-2 text-[#1A6DFF] font-medium text-sm hover:underline"
+              >
+                Compare ports
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== Historical Charts Section ====== */}
+      <section aria-label="Historical charts" className="py-12 lg:py-16" style={{ backgroundColor: '#F8FAFC' }}>
+        <div className="container-carrgo">
+          <div className="flex items-center gap-3 mb-8">
+            <Activity className="w-7 h-7 text-[#1A6DFF]" />
+            <h2 className="text-2xl font-bold text-gray-900">30-Day Port Health Trends</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {topCongested.map((p) => {
+              const lineColor =
+                p.healthScore >= 80
+                  ? '#10B981'
+                  : p.healthScore >= 60
+                  ? '#F59E0B'
+                  : p.healthScore >= 40
+                  ? '#F97316'
+                  : '#EF4444';
+              return (
+                <div key={p.port} className="bg-white rounded-xl border border-gray-200 p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{p.port}</h3>
+                      <p className="text-xs text-gray-400">Score: {p.healthScore}</p>
+                    </div>
+                    <StatusBadge status={p.status} />
+                  </div>
+                  <SparklineChart history={p.history} color={lineColor} />
+                  <p className="text-xs text-gray-400 mt-2 text-center">
+                    Last 30 days of health scores
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== Port Rankings Section ====== */}
+      <section aria-label="Port rankings" className="py-12 lg:py-16 bg-white">
+        <div className="container-carrgo">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Port Rankings</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Fastest Ports */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-emerald-600" />
+                Fastest Ports
+              </h3>
+              <table className="w-full text-left">
+                <tbody>
+                  {rankings.fastest.map((p, i) => (
+                    <tr key={p.port} className="border-b border-gray-50 last:border-0">
+                      <td className="py-2 text-xs text-gray-400 w-6">#{i + 1}</td>
+                      <td className="py-2 text-sm font-medium text-gray-900">{p.port}</td>
+                      <td className="py-2 text-sm font-bold text-emerald-600 text-right">
+                        {p.healthScore}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Slowest Ports */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <TrendingDown className="w-4 h-4 text-red-600" />
+                Slowest Ports
+              </h3>
+              <table className="w-full text-left">
+                <tbody>
+                  {rankings.slowest.map((p, i) => (
+                    <tr key={p.port} className="border-b border-gray-50 last:border-0">
+                      <td className="py-2 text-xs text-gray-400 w-6">#{i + 1}</td>
+                      <td className="py-2 text-sm font-medium text-gray-900">{p.port}</td>
+                      <td className="py-2 text-sm font-bold text-red-600 text-right">
+                        {p.healthScore}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Most Improved */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <Zap className="w-4 h-4 text-emerald-600" />
+                Most Improved
+              </h3>
+              <table className="w-full text-left">
+                <tbody>
+                  {rankings.mostImproved.map((p, i) => (
+                    <tr key={p.port} className="border-b border-gray-50 last:border-0">
+                      <td className="py-2 text-xs text-gray-400 w-6">#{i + 1}</td>
+                      <td className="py-2 text-sm font-medium text-gray-900">{p.port}</td>
+                      <td className="py-2 text-sm font-bold text-emerald-600 text-right">
+                        +{p.scoreTrend}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Most Declined */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <TrendingDown className="w-4 h-4 text-red-600" />
+                Most Declined
+              </h3>
+              <table className="w-full text-left">
+                <tbody>
+                  {rankings.mostDeclined.map((p, i) => (
+                    <tr key={p.port} className="border-b border-gray-50 last:border-0">
+                      <td className="py-2 text-xs text-gray-400 w-6">#{i + 1}</td>
+                      <td className="py-2 text-sm font-medium text-gray-900">{p.port}</td>
+                      <td className="py-2 text-sm font-bold text-red-600 text-right">
+                        {p.scoreTrend}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
