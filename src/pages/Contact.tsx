@@ -362,12 +362,8 @@ export default function Contact() {
             <div className="grid md:grid-cols-3 gap-6">
               {quickLinks.map((link, i) => {
                 const Icon = link.icon;
-                return (
-                  <Link
-                    key={i}
-                    to={link.href}
-                    className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6 hover:shadow-md transition-shadow flex items-start gap-4 group"
-                  >
+                const content = (
+                  <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6 hover:shadow-md transition-shadow flex items-start gap-4 group cursor-pointer">
                     <div className="flex-shrink-0 w-12 h-12 bg-[#EBF2FF] rounded-lg flex items-center justify-center group-hover:bg-[#1A6DFF] transition-colors">
                       <Icon className="w-6 h-6 text-[#1A6DFF] group-hover:text-white transition-colors" aria-hidden="true" />
                     </div>
@@ -375,7 +371,14 @@ export default function Contact() {
                       <h3 className="font-bold text-[#111827] group-hover:text-[#1A6DFF] transition-colors">{link.title}</h3>
                       <p className="text-sm text-[#4B5563] mt-1">{link.desc}</p>
                     </div>
+                  </div>
+                );
+                return link.href ? (
+                  <Link key={i} to={link.href} className="block">
+                    {content}
                   </Link>
+                ) : (
+                  <div key={i}>{content}</div>
                 );
               })}
             </div>

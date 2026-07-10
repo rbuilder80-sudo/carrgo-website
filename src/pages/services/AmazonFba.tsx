@@ -225,7 +225,7 @@ export default function AmazonFba() {
                 { step: '3', title: 'UK Customs Clearance', desc: 'Our customs brokers handle all HMRC declarations, duty calculations, and VAT processing. We ensure 99%+ first-time clearance success at all UK ports.' },
                 { step: '4', title: 'FBA Prep & Inspection', desc: 'At our Midlands facility, we inspect each item, apply FNSKU labels, add suffocation warnings, polybag if needed, and bundle products according to your instructions.' },
                 { step: '5', title: 'Carton & Pallet Prep', desc: 'We create Amazon-compliant cartons (max 23kg, proper labels) and pallets (1200×1000mm, max 1.8m height). Every carton gets the correct Amazon shipment label.' },
-                { step: '6', title: 'Delivery to Amazon FC', desc: 'We book your delivery appointment through Amazon's Carrier Central system and deliver to BHX4, EMA1, LBA1, or any UK fulfilment centre. Proof of delivery provided.' },
+                { step: '6', title: 'Delivery to Amazon FC', desc: 'We book your delivery appointment through Amazon\'s Carrier Central system and deliver to BHX4, EMA1, LBA1, or any UK fulfilment centre. Proof of delivery provided.' },
               ].map((item, i) => (
                 <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
                   <div className="w-10 h-10 bg-[#1A6DFF] text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
@@ -254,7 +254,7 @@ export default function AmazonFba() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { mistake: 'Wrong or Missing FNSKU Labels', solution: 'Every unit must have the correct FNSKU barcode. We verify your barcode files, print on high-quality labels, and apply them in the exact position Amazon requires. No more mislabelled inventory.' },
-                { mistake: 'Overweight Cartons', solution: 'Amazon's limit is 23kg per carton. We weigh every box during prep and redistribute contents if needed. Overweight cartons are rejected at the dock — we prevent this entirely.' },
+                { mistake: 'Overweight Cartons', solution: 'Amazon\'s limit is 23kg per carton. We weigh every box during prep and redistribute contents if needed. Overweight cartons are rejected at the dock — we prevent this entirely.' },
                 { mistake: 'Non-Compliant Pallets', solution: 'Amazon requires 1200×1000mm UK-standard pallets, max 1.8m height, with stretch wrapping and corner boards. We build every pallet to specification and photograph it before dispatch.' },
                 { mistake: 'Missing Suffocation Warnings', solution: 'Any product in a polybag with a 5-inch opening or larger needs a suffocation warning label. We check every item and apply warnings automatically where required.' },
                 { mistake: 'Incorrect Shipment Plans', solution: 'Your Amazon shipment plan must match exactly what arrives. We cross-check your Seller Central plan against the physical shipment before booking delivery. Mismatches cause instant rejection.' },

@@ -38,7 +38,7 @@ const legal = [
 ];
 
 const resources = [
-  { label: 'Port Congestion Tracker', to: '/resources/port-congestion-tracker' },
+  { label: 'Port Intelligence', to: '/resources/port-congestion-tracker' },
   { label: 'Shipping Guides', to: '/resources/shipping-guides' },
   { label: 'Container Size Guide', to: '/resources/container-size-guide' },
   { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
@@ -50,6 +50,21 @@ const resources = [
   { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },
 ];
 
+const portIntelligence = [
+  { label: 'Port Intelligence Dashboard', to: '/resources/port-congestion-tracker' },
+  { label: 'Cost Calculator', to: '/tools/cost-calculator' },
+  { label: 'Port Comparison', to: '/tools/port-comparison' },
+  { label: 'Felixstowe', to: '/ports/felixstowe' },
+  { label: 'Southampton', to: '/ports/southampton' },
+  { label: 'London Gateway', to: '/ports/london-gateway' },
+  { label: 'Liverpool', to: '/ports/liverpool' },
+  { label: 'Grangemouth', to: '/ports/grangemouth' },
+  { label: 'Belfast', to: '/ports/belfast' },
+  { label: 'Dublin', to: '/ports/dublin' },
+  { label: 'Cork', to: '/ports/cork' },
+  { label: 'Rosslare Europort', to: '/ports/rosslare-europort' },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -57,7 +72,7 @@ export default function Footer() {
       <meta itemProp="@id" content="https://carrgo.co.uk/#organization" />
       <link itemProp="url" href="https://carrgo.co.uk" />
       <div className="container-carrgo py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 text-white font-bold text-xl mb-4">
               <Ship className="w-8 h-8" aria-hidden="true" />
@@ -100,6 +115,15 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {resources.map(r => (
                 <li key={r.to}><Link to={r.to} className="hover:text-white transition-colors">{r.label}</Link></li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Port Intelligence">
+            <h2 className="text-white font-semibold mb-4 text-base">Port Intelligence</h2>
+            <ul className="space-y-2 text-sm">
+              {portIntelligence.map(p => (
+                <li key={p.to}><Link to={p.to} className="hover:text-white transition-colors">{p.label}</Link></li>
               ))}
             </ul>
           </nav>

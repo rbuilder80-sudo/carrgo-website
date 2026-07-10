@@ -131,7 +131,7 @@ export default function Home() {
       <Seo
         title="Freight Forwarder UK | Shipping & Logistics Company | Carrgo"
         description="Trusted UK freight forwarder & logistics company. Sea, air, road & rail freight + customs clearance. All-inclusive shipping quotes in 2 hours. BIFA & IATA accredited."
-        keywords="freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk"ight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
+        keywords="freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
         ogUrl="https://carrgo.co.uk/"
         canonical="https://carrgo.co.uk/"
         structuredData={[

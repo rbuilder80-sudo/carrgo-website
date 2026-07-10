@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
   CheckCircle, ArrowRight, ArrowLeft, Send,
-  Clock, FileCheck, TrendingUp, Shield, Phone, MessageCircle
+  Clock, FileCheck, TrendingUp, Shield, Phone, MessageCircle, Mail
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */

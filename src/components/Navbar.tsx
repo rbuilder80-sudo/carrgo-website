@@ -30,7 +30,7 @@ const routeLinks = [
 ];
 
 const resourceLinks = [
-  { label: 'Port Congestion Tracker', to: '/resources/port-congestion-tracker' },
+  { label: 'Port Intelligence', to: '/resources/port-congestion-tracker' },
   { label: 'Shipping Guides', to: '/resources/shipping-guides' },
   { label: 'Container Size Guide', to: '/resources/container-size-guide' },
   { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
@@ -40,6 +40,32 @@ const resourceLinks = [
   { label: 'Industries', to: '/resources/industries' },
   { label: 'Our Process', to: '/resources/our-process' },
   { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },
+];
+
+const portLinks = [
+  { label: 'Port Intelligence Dashboard', to: '/resources/port-congestion-tracker' },
+  { label: 'Cost Calculator', to: '/tools/cost-calculator' },
+  { label: 'Port Comparison', to: '/tools/port-comparison' },
+  { label: '— UK Ports —', to: '', header: true },
+  { label: 'Felixstowe', to: '/ports/felixstowe' },
+  { label: 'Southampton', to: '/ports/southampton' },
+  { label: 'London Gateway', to: '/ports/london-gateway' },
+  { label: 'Liverpool', to: '/ports/liverpool' },
+  { label: 'Bristol', to: '/ports/bristol' },
+  { label: 'Tilbury', to: '/ports/tilbury' },
+  { label: 'Immingham', to: '/ports/immingham' },
+  { label: 'Grangemouth', to: '/ports/grangemouth' },
+  { label: 'Holyhead', to: '/ports/holyhead' },
+  { label: '— Northern Ireland —', to: '', header: true },
+  { label: 'Belfast', to: '/ports/belfast' },
+  { label: 'Larne', to: '/ports/larne' },
+  { label: 'Londonderry', to: '/ports/londonderry' },
+  { label: '— Republic of Ireland —', to: '', header: true },
+  { label: 'Dublin', to: '/ports/dublin' },
+  { label: 'Cork', to: '/ports/cork' },
+  { label: 'Rosslare Europort', to: '/ports/rosslare-europort' },
+  { label: 'Shannon Foynes', to: '/ports/shannon-foynes' },
+  { label: 'Waterford', to: '/ports/waterford' },
 ];
 
 /* ── Dropdown component (desktop hover) ── */
@@ -173,6 +199,29 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             </div>
           </div>
 
+          {/* Port Intelligence */}
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Port Intelligence</p>
+            <div className="space-y-1">
+              {portLinks.map((p, i) =>
+                p.header ? (
+                  <div key={i} className="py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-t border-gray-100 mt-2 pt-2">
+                    {p.label}
+                  </div>
+                ) : (
+                  <Link
+                    key={p.to}
+                    to={p.to}
+                    className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors"
+                    onClick={onClose}
+                  >
+                    {p.label}
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+
           {/* Pages */}
           <div className="border-t border-gray-100 pt-4 space-y-1">
             <Link to="/about" className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors" onClick={onClose}>About</Link>
@@ -254,6 +303,24 @@ export default function Navbar() {
                     {r.label}
                   </Link>
                 ))}
+              </Dropdown>
+
+              <Dropdown label="Port Intelligence">
+                {portLinks.map((p, i) =>
+                  p.header ? (
+                    <div key={i} className="px-4 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-t border-gray-100 mt-1 pt-2">
+                      {p.label}
+                    </div>
+                  ) : (
+                    <Link
+                      key={p.to}
+                      to={p.to}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1A6DFF] transition-colors"
+                    >
+                      {p.label}
+                    </Link>
+                  )
+                )}
               </Dropdown>
 
               <Link
