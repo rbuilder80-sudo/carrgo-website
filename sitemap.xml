@@ -24,6 +24,14 @@
   <url><loc>https://www.carrgo.co.uk/resources/freight-faqs</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/resources/case-studies</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.carrgo.co.uk/resources/industries</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/ecommerce</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/manufacturing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/retail</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/automotive</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/construction</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/electronics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/medical</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/industries/furniture</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.carrgo.co.uk/resources/our-process</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/resources/post-brexit-customs-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
