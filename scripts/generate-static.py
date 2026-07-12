@@ -66,6 +66,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/sea-freight",
         "h1": "Sea Freight Services UK — FCL &amp; LCL Container Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Sea Freight Services UK — FCL &amp; LCL Container Shipping",
+                "serviceType": "Sea Freight",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Need affordable container shipping from China, Europe, or USA? Carrgo's sea freight UK service handles FCL, LCL, and bulk cargo with full customs clearance. Get your sea freight quote in 2 hours. Reliable, tracked, HMRC-compliant.",
+                "url": "https://www.carrgo.co.uk/services/sea-freight"
+            }
+        ]
     },
     "/services/air-freight": {
         "title": "Air Freight UK | Express Cargo Shipping | Urgent Delivery | Carrgo",
@@ -74,6 +91,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Air Freight UK — Express &amp; Economy Cargo Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Air Freight UK — Express &amp; Economy Cargo Shipping",
+                "serviceType": "Air Freight",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Urgent shipment stuck? Carrgo's air freight UK service delivers time-critical cargo in 3-7 days worldwide. Express air freight with customs clearance included. Get your quote in 30 minutes. Same-day pickup available.",
+                "url": "https://www.carrgo.co.uk/services/air-freight"
+            }
+        ]
     },
     "/services/road-freight": {
         "title": "Road Freight UK to Europe | Pallet & Groupage Shipping | Carrgo",
@@ -82,6 +116,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/road-freight",
         "h1": "Road Freight UK to Europe — FTL, LTL &amp; Pallet Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Road Freight UK to Europe — FTL, LTL &amp; Pallet Shipping",
+                "serviceType": "Road Freight",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping pallets to Germany, France, Netherlands, or Spain? Carrgo's road freight UK service handles groupage, full loads, and express European delivery. Door-to-door with tracking. Quote in 2 hours.",
+                "url": "https://www.carrgo.co.uk/services/road-freight"
+            }
+        ]
     },
     "/services/rail-freight-china-uk": {
         "title": "Rail Freight China to UK | New Silk Road Shipping | Carrgo",
@@ -90,6 +141,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/rail-freight-china-uk",
         "h1": "Rail Freight China to UK — New Silk Road Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Rail Freight China to UK — New Silk Road Shipping",
+                "serviceType": "Rail Freight China Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Need faster than sea, cheaper than air? Carrgo's rail freight China to UK service via the New Silk Road delivers in 14-20 days. Full customs clearance. Track your cargo. Get your quote.",
+                "url": "https://www.carrgo.co.uk/services/rail-freight-china-uk"
+            }
+        ]
     },
     "/services/customs-clearance": {
         "title": "Customs Clearance UK | Import & Export Broker | HMRC Compliant | Carrgo",
@@ -98,6 +166,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/customs-clearance",
         "h1": "Customs Clearance UK — Import &amp; Export Broker Services",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Customs Clearance UK — Import &amp; Export Broker Services",
+                "serviceType": "Customs Clearance",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Brexit customs paperwork confusing you? Carrgo's customs clearance UK service handles all HMRC documentation, duty checks, and port release. 100% compliance. Don't let customs delay your shipment — get expert support now.",
+                "url": "https://www.carrgo.co.uk/services/customs-clearance"
+            }
+        ]
     },
     "/services/door-to-door": {
         "title": "Door-to-Door Freight UK | Factory to Warehouse | Carrgo",
@@ -106,6 +191,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Door-to-Door Freight — Factory to Warehouse Delivery",
+                "serviceType": "Door To Door",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Tired of coordinating multiple logistics providers? Carrgo's door-to-door freight service handles everything from factory pickup to warehouse delivery. One quote, one contact, zero hassle.",
+                "url": "https://www.carrgo.co.uk/services/door-to-door"
+            }
+        ]
     },
     "/services/amazon-fba-freight": {
         "title": "Amazon FBA Freight UK | FBA Prep & Delivery | Carrgo",
@@ -114,6 +216,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/amazon-fba-freight",
         "h1": "Amazon FBA Freight UK — Prep &amp; Delivery to Fulfilment Centres",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Amazon FBA Freight UK — Prep &amp; Delivery to Fulfilment Centres",
+                "serviceType": "Amazon Fba Freight",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Amazon FBA sellers — struggling with inbound logistics? Carrgo handles FBA prep, labelling, palletisation, and delivery to all UK fulfilment centres. BHX4, EMA1, LBA1. Get your FBA freight quote.",
+                "url": "https://www.carrgo.co.uk/services/amazon-fba-freight"
+            }
+        ]
     },
     "/services/warehousing": {
         "title": "Warehousing UK | Midlands Storage | Pick & Pack | Carrgo",
@@ -122,6 +241,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/warehousing",
         "h1": "Warehousing UK — Midlands Storage &amp; Pick &amp; Pack Services",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Warehousing UK — Midlands Storage &amp; Pick &amp; Pack Services",
+                "serviceType": "Warehousing",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Need flexible UK storage with pick and pack? Carrgo's Midlands warehousing offers short and long-term storage, inventory management, and fulfilment services. Get your warehousing quote.",
+                "url": "https://www.carrgo.co.uk/services/warehousing"
+            }
+        ]
     },
     "/services/container-shipping": {
         "title": "Container Shipping UK | FCL & LCL | 20ft & 40ft | Carrgo",
@@ -130,6 +266,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/container-shipping",
         "h1": "Container Shipping UK — FCL &amp; LCL Container Services",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Container Shipping UK — FCL &amp; LCL Container Services",
+                "serviceType": "Container Shipping",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Need container shipping for your imports? Carrgo handles 20ft, 40ft, and 40ft HC containers with FCL and LCL options. Full customs clearance. Get your container shipping quote in 2 hours.",
+                "url": "https://www.carrgo.co.uk/services/container-shipping"
+            }
+        ]
     },
     "/services/air-cargo": {
         "title": "Air Cargo UK | Express & Charter Freight | Carrgo",
@@ -138,6 +291,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/air-cargo",
         "h1": "Air Cargo UK — Express &amp; Charter Freight Services",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Air Cargo UK — Express &amp; Charter Freight Services",
+                "serviceType": "Air Cargo",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Time-sensitive cargo needs air freight. Carrgo's air cargo service handles express, charter, and standard air freight with customs clearance. Get your air cargo quote in 30 minutes.",
+                "url": "https://www.carrgo.co.uk/services/air-cargo"
+            }
+        ]
     },
     "/services/logistics": {
         "title": "Logistics UK | Supply Chain Solutions | Carrgo",
@@ -146,6 +316,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/services/logistics",
         "h1": "Logistics UK — End-to-End Supply Chain Solutions",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Logistics UK — End-to-End Supply Chain Solutions",
+                "serviceType": "Logistics",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Need end-to-end logistics management? Carrgo provides supply chain solutions, freight consolidation, and multi-modal transport. Reduce costs and improve delivery times. Get your logistics quote.",
+                "url": "https://www.carrgo.co.uk/services/logistics"
+            }
+        ]
     },
     "/routes/china-to-uk": {
         "title": "Shipping from China to UK | Sea, Air & Rail Freight | Carrgo",
@@ -154,6 +341,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/china-to-uk",
         "h1": "Shipping from China to UK — Sea, Air &amp; Rail Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from China to UK — Sea, Air &amp; Rail Freight",
+                "serviceType": "China To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Importing from China? Carrgo handles China to UK shipping with sea freight (25-35 days), air freight (3-7 days), and rail (14-22 days). Full customs clearance included. Avoid delays and hidden costs — get your China import quote today.",
+                "url": "https://www.carrgo.co.uk/routes/china-to-uk"
+            }
+        ]
     },
     "/routes/germany-to-uk": {
         "title": "Shipping from Germany to UK | Road & Sea Freight | Carrgo",
@@ -162,6 +366,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/germany-to-uk",
         "h1": "Shipping from Germany to UK — Road &amp; Sea Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from Germany to UK — Road &amp; Sea Freight",
+                "serviceType": "Germany To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from Germany to UK? Carrgo offers road freight (2-4 days) and sea freight (5-8 days) with full customs clearance. Get your Germany-UK freight quote in 2 hours.",
+                "url": "https://www.carrgo.co.uk/routes/germany-to-uk"
+            }
+        ]
     },
     "/routes/netherlands-to-uk": {
         "title": "Shipping from Netherlands to UK | Road & Sea Freight | Carrgo",
@@ -170,6 +391,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/netherlands-to-uk",
         "h1": "Shipping from Netherlands to UK — Road &amp; Sea Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from Netherlands to UK — Road &amp; Sea Freight",
+                "serviceType": "Netherlands To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from Netherlands to UK? Carrgo offers road freight (1-3 days) and sea freight (3-5 days) with full customs clearance. Rotterdam to UK in 24 hours by road. Get your quote.",
+                "url": "https://www.carrgo.co.uk/routes/netherlands-to-uk"
+            }
+        ]
     },
     "/routes/india-to-uk": {
         "title": "Shipping from India to UK | Sea & Air Freight | Carrgo",
@@ -178,6 +416,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/india-to-uk",
         "h1": "Shipping from India to UK — Sea &amp; Air Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from India to UK — Sea &amp; Air Freight",
+                "serviceType": "India To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Importing from India? Carrgo handles India to UK shipping with sea freight (20-28 days) and air freight (3-5 days). Mumbai, Chennai, Delhi to UK. Full customs clearance. Get your quote.",
+                "url": "https://www.carrgo.co.uk/routes/india-to-uk"
+            }
+        ]
     },
     "/routes/usa-to-uk": {
         "title": "Shipping from USA to UK | Freight Forwarder | Sea & Air | Carrgo",
@@ -186,6 +441,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/usa-to-uk",
         "h1": "Shipping from USA to UK — Sea &amp; Air Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from USA to UK — Sea &amp; Air Freight",
+                "serviceType": "Usa To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Importing from USA? Carrgo handles USA to UK shipping with sea freight (14-21 days) and air freight (3-7 days). Full customs clearance, FDA checks, and HMRC compliance. Get your transatlantic freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/usa-to-uk"
+            }
+        ]
     },
     "/routes/turkey-to-uk": {
         "title": "Shipping from Turkey to UK | Freight Forwarder | Customs | Carrgo",
@@ -194,6 +466,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
         "h1": "Shipping from Turkey to UK — Sea, Air &amp; Road Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from Turkey to UK — Sea, Air &amp; Road Freight",
+                "serviceType": "Turkey To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Turkish suppliers unreliable on delivery? Carrgo's Turkey to UK shipping service handles sea, air, and road freight with full Turkish and UK customs clearance. Track your cargo. Quote in 2 hours.",
+                "url": "https://www.carrgo.co.uk/routes/turkey-to-uk"
+            }
+        ]
     },
     "/routes/uae-to-uk": {
         "title": "Shipping from UAE to UK | Dubai Freight | Sea & Air | Carrgo",
@@ -202,6 +491,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/uae-to-uk",
         "h1": "Shipping from UAE to UK — Dubai Freight Services",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from UAE to UK — Dubai Freight Services",
+                "serviceType": "Uae To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from UAE to UK? Carrgo handles Dubai and Abu Dhabi freight with sea freight (18-24 days) and air freight (2-4 days). Full customs clearance. Get your UAE-UK freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/uae-to-uk"
+            }
+        ]
     },
     "/routes/spain-to-uk": {
         "title": "Shipping from Spain to UK | Road & Sea Freight | Carrgo",
@@ -210,6 +516,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/spain-to-uk",
         "h1": "Shipping from Spain to UK — Road &amp; Sea Freight",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from Spain to UK — Road &amp; Sea Freight",
+                "serviceType": "Spain To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from Spain to UK? Carrgo offers road freight (4-9 days) and sea freight (7-12 days) with full customs clearance. Barcelona, Madrid to UK. Get your Spain-UK freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/spain-to-uk"
+            }
+        ]
     },
     "/routes/belfast-northern-ireland": {
         "title": "Shipping to Belfast & Northern Ireland | Freight | Customs | Carrgo",
@@ -218,6 +541,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/belfast-northern-ireland",
         "h1": "Shipping to Belfast &amp; Northern Ireland — NI Protocol Compliant",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping to Belfast &amp; Northern Ireland — NI Protocol Compliant",
+                "serviceType": "Belfast Northern Ireland",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping to Northern Ireland? Carrgo handles Belfast, Larne, and Londonderry freight with full NI Protocol compliance. Sea, road, and air options. Windsor Framework documentation included.",
+                "url": "https://www.carrgo.co.uk/routes/belfast-northern-ireland"
+            }
+        ]
     },
     "/routes/dublin-ireland": {
         "title": "Shipping to Dublin & Ireland | Freight | Customs | Carrgo",
@@ -226,6 +566,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/routes/dublin-ireland",
         "h1": "Shipping to Dublin &amp; Ireland — Full Customs Clearance",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping to Dublin &amp; Ireland — Full Customs Clearance",
+                "serviceType": "Dublin Ireland",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping to Ireland? Carrgo handles Dublin, Cork, Rosslare, and Shannon Foynes freight with full Irish customs clearance. Sea, road, and air options. Get your Ireland freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/dublin-ireland"
+            }
+        ]
     },
     "/resources/port-congestion-tracker": {
         "title": "Carrgo Port Intelligence | UK Port Congestion Tracker, Predictions & Health Scores",
@@ -234,6 +591,23 @@ ROUTES = {
         "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
         "h1": "Carrgo Port Intelligence — UK &amp; Ireland Port Congestion Tracker",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "Carrgo Port Intelligence",
+                "applicationCategory": "FreightTool",
+                "operatingSystem": "Any",
+                "description": "Live UK & Ireland port intelligence with Port Health Scores, 24h/7d forecasts, congestion predictions, and importer risk assessments.",
+                "url": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
     },
     "/resources/shipping-guides": {
         "title": "Shipping Guides | UK Import & Export Documentation | Carrgo",
