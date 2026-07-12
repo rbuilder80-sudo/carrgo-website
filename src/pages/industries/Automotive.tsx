@@ -27,7 +27,7 @@ const serviceSchema = {
 };
 
 const faqData = [
-  { q: 'How do you ship car batteries internationally?', a: 'Car batteries are classified as dangerous goods (UN 2794 / Class 8). We handle all required dangerous goods documentation, proper packaging to UN standards, and carrier approval. Our team ensures IATA/IMDG compliance for air and sea shipments.' },
+  { q: 'How do you ship car batteries internationally?', a: 'Car batteries are classified as dangerous goods (UN 2794 / Class 8). We handle all required dangerous goods documentation, proper packaging to UN standards, and carrier approval. Our team ensures air and sea dangerous goods compliance for all shipments.' },
   { q: 'Can you handle urgent parts shipments?', a: 'Yes — our air freight and express road services are designed for urgent automotive parts. We offer same-day collection, next-flight-out options, and dedicated van deliveries for critical production or repair deadlines.' },
   { q: 'What documentation is needed for automotive parts?', a: 'Standard documentation includes commercial invoice, packing list, and EUR.1 or origin certificate where applicable. For OEM parts, we may need manufacturer certificates and conformity documentation. We prepare everything for you.' },
 ];

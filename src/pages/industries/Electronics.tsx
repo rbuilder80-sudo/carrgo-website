@@ -27,7 +27,7 @@ const serviceSchema = {
 };
 
 const faqData = [
-  { q: 'How do I ship lithium batteries internationally?', a: 'Lithium batteries must be shipped in compliance with UN 38.3 testing requirements and IATA/IMDG regulations. We provide proper packaging, labelling, and documentation for lithium-ion and lithium-metal batteries by air, sea, and road. Our team ensures your shipment meets all carrier and customs requirements.' },
+  { q: 'How do I ship lithium batteries internationally?', a: 'Lithium batteries must be shipped in compliance with UN 38.3 testing requirements and air and sea dangerous goods regulations. We provide proper packaging, labelling, and documentation for lithium-ion and lithium-metal batteries by air, sea, and road. Our team ensures your shipment meets all carrier and customs requirements.' },
   { q: 'What is UN 38.3 testing?', a: 'UN 38.3 is a United Nations testing standard that lithium batteries must pass before they can be transported. It covers eight tests including altitude simulation, thermal cycling, vibration, shock, and short circuit. We guide you through compliance and work with certified labs when testing is required.' },
   { q: 'Is air freight better for electronics?', a: 'Air freight is ideal for high-value, time-sensitive electronics such as smartphones, laptops, and PCBs. It offers faster transit (3–7 days), lower inventory holding costs, and reduced theft risk. For volume shipments or less urgent stock, sea freight or rail can cut costs significantly.' },
 ];
@@ -138,7 +138,7 @@ export default function Electronics() {
               {[
                 { icon: Cpu, title: 'PCBs & Components', desc: 'Anti-static packaging and careful handling for printed circuit boards, semiconductors, and delicate electronic parts.' },
                 { icon: Zap, title: 'LED Lighting', desc: 'Bulk LED shipments with custom crating to prevent damage to fragile lenses and housings.' },
-                { icon: Battery, title: 'Batteries (UN 38.3)', desc: 'Full compliance with UN 38.3, IATA, and IMDG codes for lithium-ion and lithium-metal batteries.' },
+                { icon: Battery, title: 'Batteries (UN 38.3)', desc: 'Full compliance with UN 38.3 and international dangerous goods codes for lithium-ion and lithium-metal batteries.' },
                 { icon: Package, title: 'Consumer Electronics', desc: 'Phones, laptops, tablets, and accessories shipped with shock protection and tracking.' },
                 { icon: Shield, title: 'Secure Handling', desc: 'Tamper-evident seals, GPS tracking, and restricted access handling for high-value tech cargo.' },
                 { icon: Clock, title: 'Fast Turnaround', desc: 'Express air freight options with 3–7 day transit for urgent product launches and restocks.' },

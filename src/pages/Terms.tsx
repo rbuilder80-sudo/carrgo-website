@@ -365,7 +365,7 @@ export default function Terms() {
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span>If the dispute cannot be resolved through negotiation within 30 days, either party may refer the dispute to mediation through the British International Freight Association (BIFA) mediation services.</span>
+                          <span>If the dispute cannot be resolved through negotiation within 30 days, either party may refer the dispute to mediation through recognised industry mediation services.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>

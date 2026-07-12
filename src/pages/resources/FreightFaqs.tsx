@@ -55,7 +55,7 @@ const categories: FaqCategory[] = [
       },
       {
         question: 'Are there restrictions on what can be shipped by air?',
-        answer: 'Yes, prohibited items include lithium batteries (unless properly declared and packaged), explosives, flammable gases, toxic substances, and certain magnetic materials. Some items require IATA Dangerous Goods documentation. We can advise on your specific cargo.',
+        answer: 'Yes, prohibited items include lithium batteries (unless properly declared and packaged), explosives, flammable gases, toxic substances, and certain magnetic materials. Some items require aviation dangerous goods documentation. We can advise on your specific cargo.',
       },
     ],
   },

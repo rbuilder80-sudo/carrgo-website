@@ -44,7 +44,7 @@ const faqData = [
   },
   {
     q: 'What cargo types can you ship by air?',
-    a: 'We handle general cargo, e-commerce goods, electronics, textiles, pharmaceuticals, automotive parts, perishables, and dangerous goods (subject to IATA regulations). Restricted items include hazardous materials without proper documentation, lithium batteries (subject to limits), and items prohibited by destination countries.',
+    a: 'We handle general cargo, e-commerce goods, electronics, textiles, pharmaceuticals, automotive parts, perishables, and dangerous goods (subject to aviation industry regulations). Restricted items include hazardous materials without proper documentation, lithium batteries (subject to limits), and items prohibited by destination countries.',
   },
 ];
 
