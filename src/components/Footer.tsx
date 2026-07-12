@@ -128,7 +128,7 @@ export default function Footer() {
               <div className="not-italic space-y-2.5 text-sm">
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-brand-400 shrink-0" aria-hidden="true" />
-                  <a href="mailto:info@carrgo.co.uk" className="hover:text-white transition-colors">info@carrgo.co.uk</a>
+                  <a href="mailto:support@carrgo.co.uk" className="hover:text-white transition-colors">support@carrgo.co.uk</a>
                 </div>
               </div>
               {/* Social */}

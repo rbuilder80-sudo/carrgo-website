@@ -13,7 +13,7 @@ const orgSchema = {
   url: 'https://carrgo.co.uk',
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom.',
-  email: 'info@carrgo.co.uk',
+  email: 'support@carrgo.co.uk',
     address: {
     '@type': 'PostalAddress',
     streetAddress: 'Suite 12, International Trade Centre',

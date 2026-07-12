@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitToFormspree } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -15,7 +16,7 @@ const orgSchema = {
   url: 'https://carrgo.co.uk',
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Trusted UK freight forwarding company handling sea freight, air cargo, road haulage, rail freight, and customs clearance.',
-  email: 'info@carrgo.co.uk',
+  email: 'support@carrgo.co.uk',
   // address removed per privacy policy
 };
 
@@ -42,7 +43,7 @@ const faqData = [
   { q: 'How long does sea freight from China to UK take?', a: 'Sea freight from China to UK typically takes 25-35 days port-to-port, or 35-45 days door-to-door depending on the origin city and UK destination port.' },
   { q: 'What is the difference between FCL and LCL shipping?', a: 'FCL (Full Container Load) means you rent an entire container for your goods only. LCL (Less than Container Load) means your goods share a container with other shipments. FCL is typically more cost-effective for larger volumes.' },
   { q: 'Do you handle customs clearance?', a: 'Yes, our experienced customs brokers handle all UK import and export declarations with a high first-submission success rate, ensuring smooth clearance at all UK ports.' },
-  { q: 'How quickly can I get a freight quote?', a: 'We provide all-inclusive freight quotes within 2 hours during UK business hours. Simply fill out our quote form or email us at info@carrgo.co.uk.' },
+  { q: 'How quickly can I get a freight quote?', a: 'We provide all-inclusive freight quotes within 2 hours during UK business hours. Simply fill out our quote form or email us at support@carrgo.co.uk.' },
   { q: 'What are Incoterms and which should I use?', a: 'Incoterms define who is responsible for costs and risks at each stage of shipping. EXW, FOB, and DDP are the most common. Our team can advise on the best option for your shipment.' },
   { q: 'Can you ship to Amazon FBA warehouses?', a: 'Yes, we specialise in Amazon FBA freight including FBA prep, labelling, palletisation, and delivery to all UK fulfilment centres including BHX4, EMA1, and LBA1.' },
   { q: 'What is rail freight from China to UK?', a: 'Rail freight via the New Silk Road is a middle-ground option: faster than sea (14-20 days) and cheaper than air (approximately 40% savings). It runs from major Chinese cities to the UK.' },
@@ -124,6 +125,47 @@ function FaqAccordion() {
 
 /* ── Main Home Page ── */
 export default function Home() {
+  const [heroSubmitted, setHeroSubmitted] = useState(false);
+  const [heroLoading, setHeroLoading] = useState(false);
+  const [quoteSubmitted, setQuoteSubmitted] = useState(false);
+  const [quoteLoading, setQuoteLoading] = useState(false);
+  const [quoteError, setQuoteError] = useState<string | null>(null);
+
+  const handleHeroSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setHeroLoading(true);
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const fields: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      fields[key] = String(value);
+    });
+    const result = await submitToFormspree('Quote Request', fields);
+    if (result.success) {
+      setHeroSubmitted(true);
+    }
+    setHeroLoading(false);
+  };
+
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setQuoteLoading(true);
+    setQuoteError(null);
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const fields: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      fields[key] = String(value);
+    });
+    const result = await submitToFormspree('Quote Request', fields);
+    if (result.success) {
+      setQuoteSubmitted(true);
+    } else {
+      setQuoteError(result.error || 'Something went wrong. Please try again.');
+    }
+    setQuoteLoading(false);
+  };
+
   return (
     <main role="main" itemScope itemType="https://schema.org/WebPage" data-page="home">
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
@@ -143,7 +185,7 @@ export default function Home() {
             "url": "https://carrgo.co.uk",
             "logo": "https://carrgo.co.uk/logo.png",
             "description": "UK & Ireland freight forwarder specialising in sea freight, air freight, customs clearance, and door-to-door logistics.",
-            "email": "info@carrgo.co.uk",
+            "email": "support@carrgo.co.uk",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "GB",
@@ -163,7 +205,7 @@ export default function Home() {
               {"@type": "Question", "name": "Does Carrgo handle UK and Ireland customs clearance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles UK and Ireland import customs declarations, duty calculations and port release at all major UK and Irish ports including Belfast and Dublin."}},
               {"@type": "Question", "name": "What is the difference between FCL and LCL shipping?", "acceptedAnswer": {"@type": "Answer", "text": "FCL (Full Container Load) means your cargo uses a full 20ft or 40ft container. LCL (Less than Container Load) means your cargo shares container space with other shipments. LCL is better for smaller consignments under 15 CBM."}},
               {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
-              {"@type": "Question", "name": "How do I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Submit your origin, destination, cargo type, dimensions, weight and ready date through our online quote form or email info@carrgo.co.uk for a fast all-inclusive freight quote."}},
+              {"@type": "Question", "name": "How do I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Submit your origin, destination, cargo type, dimensions, weight and ready date through our online quote form or email support@carrgo.co.uk for a fast all-inclusive freight quote."}},
               {"@type": "Question", "name": "Does Carrgo ship to Northern Ireland and Ireland?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo provides full freight forwarding services to Northern Ireland via Belfast, Larne and Londonderry ports, and to Ireland via Dublin, Cork, Rosslare and Shannon Foynes ports."}},
               {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}}
             ]
@@ -212,35 +254,57 @@ export default function Home() {
               <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
                 <h2 className="text-2xl font-bold mb-2">Get Your Quote</h2>
                 <p className="text-brand-100 mb-6 text-sm">Fill in your details and we will respond within 2 hours.</p>
-                <form className="space-y-4" onSubmit={e => e.preventDefault()}>
-                  <div>
-                    <label htmlFor="hero-name" className="block text-sm font-medium mb-1">Full Name</label>
-                    <input id="hero-name" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" aria-required="true" />
+                {heroSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">Quote Request Sent!</h3>
+                    <p className="text-brand-100 text-sm">We will respond within 2 hours.</p>
                   </div>
-                  <div>
-                    <label htmlFor="hero-email" className="block text-sm font-medium mb-1">Email</label>
-                    <input id="hero-email" type="email" required className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" aria-required="true" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
+                ) : (
+                  <form className="space-y-4" onSubmit={handleHeroSubmit}>
                     <div>
-                      <label htmlFor="hero-origin" className="block text-sm font-medium mb-1">Origin</label>
-                      <input id="hero-origin" type="text" placeholder="e.g. Shanghai" className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" />
+                      <label htmlFor="hero-name" className="block text-sm font-medium mb-1">Full Name</label>
+                      <input id="hero-name" name="name" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" aria-required="true" />
                     </div>
                     <div>
-                      <label htmlFor="hero-mode" className="block text-sm font-medium mb-1">Mode</label>
-                      <select id="hero-mode" className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white">
-                        <option value="">Select...</option>
-                        <option value="sea">Sea</option>
-                        <option value="air">Air</option>
-                        <option value="road">Road</option>
-                        <option value="rail">Rail</option>
-                      </select>
+                      <label htmlFor="hero-email" className="block text-sm font-medium mb-1">Email</label>
+                      <input id="hero-email" name="email" type="email" required className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" aria-required="true" />
                     </div>
-                  </div>
-                  <button type="submit" className="w-full bg-white text-brand-900 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px]">
-                    Get My Quote
-                  </button>
-                </form>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label htmlFor="hero-origin" className="block text-sm font-medium mb-1">Origin</label>
+                        <input id="hero-origin" name="origin" type="text" placeholder="e.g. Shanghai" className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" />
+                      </div>
+                      <div>
+                        <label htmlFor="hero-mode" className="block text-sm font-medium mb-1">Mode</label>
+                        <select id="hero-mode" name="mode" className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white">
+                          <option value="">Select...</option>
+                          <option value="sea">Sea</option>
+                          <option value="air">Air</option>
+                          <option value="road">Road</option>
+                          <option value="rail">Rail</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button type="submit" disabled={heroLoading} className="w-full bg-white text-brand-900 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed">
+                      {heroLoading ? (
+                        <span className="inline-flex items-center justify-center gap-2">
+                          <svg className="animate-spin h-5 w-5 text-brand-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        'Get My Quote'
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
@@ -487,55 +551,82 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="quote-heading" className="text-3xl font-bold text-center mb-3">How do I get a free freight quote from Carrgo?</h2>
           <p className="text-center text-brand-100 mb-8 max-w-2xl mx-auto">Simply fill in our online form with your shipment details — origin, destination, cargo type, and weight. Carrgo responds with an all-inclusive freight quote within 2 hours during UK business hours, with no obligation.</p>
-          <form className="space-y-4" onSubmit={e => e.preventDefault()}>
-            <fieldset className="grid md:grid-cols-2 gap-4">
-              <legend className="sr-only">Contact Information</legend>
-              <div>
-                <label htmlFor="qt-name" className="block text-sm font-medium mb-1">Full Name</label>
-                <input id="qt-name" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
+          {quoteSubmitted ? (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
               </div>
-              <div>
-                <label htmlFor="qt-email" className="block text-sm font-medium mb-1">Email</label>
-                <input id="qt-email" type="email" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
-              </div>
-            </fieldset>
-            <div>
-              <label htmlFor="qt-company" className="block text-sm font-medium mb-1">Company Name</label>
-              <input id="qt-company" type="text" className="w-full px-4 py-2.5 rounded-lg text-gray-900" />
+              <h3 className="text-2xl font-bold text-white mb-2">Quote Request Sent!</h3>
+              <p className="text-brand-100">We will respond within 2 hours with your all-inclusive quote.</p>
             </div>
-            <fieldset>
-              <legend className="block text-sm font-medium mb-2">Shipment Details</legend>
-              <div className="grid md:grid-cols-2 gap-4">
+          ) : (
+            <form className="space-y-4" onSubmit={handleQuoteSubmit}>
+              <fieldset className="grid md:grid-cols-2 gap-4">
+                <legend className="sr-only">Contact Information</legend>
                 <div>
-                  <label htmlFor="qt-origin" className="block text-sm font-medium mb-1">Origin Country/City</label>
-                  <input id="qt-origin" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
+                  <label htmlFor="qt-name" className="block text-sm font-medium mb-1">Full Name</label>
+                  <input id="qt-name" name="name" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
                 </div>
                 <div>
-                  <label htmlFor="qt-dest" className="block text-sm font-medium mb-1">UK Destination</label>
-                  <input id="qt-dest" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
+                  <label htmlFor="qt-email" className="block text-sm font-medium mb-1">Email</label>
+                  <input id="qt-email" name="email" type="email" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
                 </div>
+              </fieldset>
+              <div>
+                <label htmlFor="qt-company" className="block text-sm font-medium mb-1">Company Name</label>
+                <input id="qt-company" name="company" type="text" className="w-full px-4 py-2.5 rounded-lg text-gray-900" />
               </div>
-            </fieldset>
-            <div>
-              <label htmlFor="qt-mode" className="block text-sm font-medium mb-1">Transport Mode</label>
-              <select id="qt-mode" className="w-full px-4 py-2.5 rounded-lg text-gray-900">
-                <option value="">Select mode...</option>
-                <option value="sea">Sea Freight</option>
-                <option value="air">Air Freight</option>
-                <option value="road">Road Freight</option>
-                <option value="rail">Rail Freight</option>
-                <option value="not-sure">Not Sure — Advise Me</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="qt-details" className="block text-sm font-medium mb-1">Additional Details</label>
-              <textarea id="qt-details" rows={3} className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-describedby="qt-help" />
-              <p id="qt-help" className="text-xs text-brand-200 mt-1">Include cargo type, weight, dimensions, and Incoterm if known.</p>
-            </div>
-            <button type="submit" className="w-full bg-white text-brand-900 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px]">
-              Get My Free Quote
-            </button>
-          </form>
+              <fieldset>
+                <legend className="block text-sm font-medium mb-2">Shipment Details</legend>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="qt-origin" className="block text-sm font-medium mb-1">Origin Country/City</label>
+                    <input id="qt-origin" name="origin" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
+                  </div>
+                  <div>
+                    <label htmlFor="qt-dest" className="block text-sm font-medium mb-1">UK Destination</label>
+                    <input id="qt-dest" name="dest" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-required="true" />
+                  </div>
+                </div>
+              </fieldset>
+              <div>
+                <label htmlFor="qt-mode" className="block text-sm font-medium mb-1">Transport Mode</label>
+                <select id="qt-mode" name="mode" className="w-full px-4 py-2.5 rounded-lg text-gray-900">
+                  <option value="">Select mode...</option>
+                  <option value="sea">Sea Freight</option>
+                  <option value="air">Air Freight</option>
+                  <option value="road">Road Freight</option>
+                  <option value="rail">Rail Freight</option>
+                  <option value="not-sure">Not Sure — Advise Me</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="qt-details" className="block text-sm font-medium mb-1">Additional Details</label>
+                <textarea id="qt-details" name="details" rows={3} className="w-full px-4 py-2.5 rounded-lg text-gray-900" aria-describedby="qt-help" />
+                <p id="qt-help" className="text-xs text-brand-200 mt-1">Include cargo type, weight, dimensions, and Incoterm if known.</p>
+              </div>
+              {quoteError && (
+                <div className="bg-red-500/20 border border-red-400/30 text-white rounded-lg p-3 text-sm">
+                  {quoteError}
+                </div>
+              )}
+              <button type="submit" disabled={quoteLoading} className="w-full bg-white text-brand-900 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed">
+                {quoteLoading ? (
+                  <span className="inline-flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-brand-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  'Get My Free Quote'
+                )}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 

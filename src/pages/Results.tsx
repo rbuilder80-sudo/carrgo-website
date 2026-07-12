@@ -13,7 +13,7 @@ const orgSchema = {
   url: 'https://carrgo.co.uk',
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Proven results for UK importers — Carrgo delivers measurable improvements in freight efficiency, customs clearance success, and cost savings.',
-  email: 'info@carrgo.co.uk',
+  email: 'support@carrgo.co.uk',
   };
 
 /* ── Data ── */

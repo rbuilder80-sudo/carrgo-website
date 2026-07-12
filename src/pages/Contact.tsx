@@ -137,9 +137,6 @@ export default function Contact() {
         });
       }
     } else {
-    if (result.success) {
-      setSubmitted(true);
-    } else {
       setError(result.error || 'Something went wrong. Please try again.');
     }
     setLoading(false);

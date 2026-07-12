@@ -12,7 +12,7 @@ export default function Placeholder({ title, description }: PlaceholderProps) {
       <section aria-label={title} className="py-24 bg-gray-50">
         <div className="container-carrgo text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
-          <p className="text-gray-600 max-w-xl mx-auto">{description || 'Page coming soon. Contact us at info@carrgo.co.uk for more information.'}</p>
+          <p className="text-gray-600 max-w-xl mx-auto">{description || 'Page coming soon. Contact us at support@carrgo.co.uk for more information.'}</p>
         </div>
       </section>
     </>

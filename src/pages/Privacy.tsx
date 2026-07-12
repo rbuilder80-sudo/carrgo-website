@@ -352,11 +352,11 @@ export default function Privacy() {
                         <p>London, EC2A 4BX</p>
                         <p className="mt-2">
                           Email:{' '}
-                          <a href="mailto:info@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">info@carrgo.co.uk</a>
+                          <a href="mailto:support@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">support@carrgo.co.uk</a>
                         </p>
                         <p>
                           Phone:{' '}
-                          <a href="mailto:info@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">info@carrgo.co.uk</a>
+                          <a href="mailto:support@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">support@carrgo.co.uk</a>
                         </p>
                       </div>
                       <p>
