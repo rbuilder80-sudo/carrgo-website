@@ -1,12 +1,12 @@
 # Carrgo Freight Solutions
 
-> Trusted UK & Ireland freight forwarder — sea, air, road, rail & customs clearance. All-inclusive door-to-door shipping quotes in 2 hours. BIFA & IATA accredited.
+> Trusted UK & Ireland freight forwarder — sea, air, road, rail & customs clearance. All-inclusive door-to-door shipping quotes in 2 hours. 
 
 ## About Carrgo
 
 Carrgo Freight Solutions Ltd is an independent UK & Ireland freight forwarding company providing importers and exporters with reliable, transparent logistics services. We specialise in sea freight (FCL & LCL), air cargo, European road haulage, China-UK rail freight, and customs brokerage.
 
-Our mission is to remove the friction from international shipping by offering all-inclusive pricing, proactive communication, and hands-on customs support. We are accredited by the British International Freight Association (BIFA) and the International Air Transport Association (IATA).
+Our mission is to remove the friction from international shipping by offering all-inclusive pricing, proactive communication, and hands-on customs support. We work to industry best practices and maintain high professional standards in all freight forwarding operations.
 
 ## Services
 
@@ -167,5 +167,3 @@ How Carrgo handles freight from quote to delivery.
 
 ## Accreditations
 
-- BIFA (British International Freight Association)
-- IATA (International Air Transport Association)
