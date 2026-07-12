@@ -1,7 +1,20 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Ship } from 'lucide-react';
+import { Ship, X, ChevronRight } from 'lucide-react';
 import SkipToContent from './SkipToContent';
+
+/* ── Data ── */
+const industryLinks = [
+  { label: 'All Industries', to: '/resources/industries' },
+  { label: 'Ecommerce & Amazon', to: '/industries/ecommerce' },
+  { label: 'Manufacturing', to: '/industries/manufacturing' },
+  { label: 'Retail & Wholesale', to: '/industries/retail' },
+  { label: 'Automotive', to: '/industries/automotive' },
+  { label: 'Construction', to: '/industries/construction' },
+  { label: 'Electronics', to: '/industries/electronics' },
+  { label: 'Medical & Pharma', to: '/industries/medical' },
+  { label: 'Furniture', to: '/industries/furniture' },
+];
 
 const serviceLinks = [
   { label: 'All Services', to: '/services' },
@@ -46,7 +59,6 @@ const portLinks = [
   { label: 'Port Intelligence Dashboard', to: '/resources/port-congestion-tracker' },
   { label: 'Cost Calculator', to: '/tools/cost-calculator' },
   { label: 'Port Comparison', to: '/tools/port-comparison' },
-  { label: '— UK Ports —', to: '', header: true },
   { label: 'Felixstowe', to: '/ports/felixstowe' },
   { label: 'Southampton', to: '/ports/southampton' },
   { label: 'London Gateway', to: '/ports/london-gateway' },
@@ -56,11 +68,9 @@ const portLinks = [
   { label: 'Immingham', to: '/ports/immingham' },
   { label: 'Grangemouth', to: '/ports/grangemouth' },
   { label: 'Holyhead', to: '/ports/holyhead' },
-  { label: '— Northern Ireland —', to: '', header: true },
   { label: 'Belfast', to: '/ports/belfast' },
   { label: 'Larne', to: '/ports/larne' },
   { label: 'Londonderry', to: '/ports/londonderry' },
-  { label: '— Republic of Ireland —', to: '', header: true },
   { label: 'Dublin', to: '/ports/dublin' },
   { label: 'Cork', to: '/ports/cork' },
   { label: 'Rosslare Europort', to: '/ports/rosslare-europort' },
@@ -68,174 +78,331 @@ const portLinks = [
   { label: 'Waterford', to: '/ports/waterford' },
 ];
 
-/* ── Dropdown component (desktop hover) ── */
+const topLevel = [
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+];
+
+/* ── Hooks ── */
+function useScrolled(threshold = 10) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > threshold);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [threshold]);
+  return scrolled;
+}
+
+/* ── Dropdown ── */
 function Dropdown({
   label,
   children,
+  wide = false,
 }: {
   label: string;
   children: React.ReactNode;
+  wide?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const clearTimer = () => {
+  const clearTimer = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
     }
-  };
+  }, []);
 
-  const handleEnter = () => {
+  const enter = useCallback(() => {
     clearTimer();
     setOpen(true);
-  };
+  }, [clearTimer]);
 
-  const handleLeave = () => {
-    timerRef.current = setTimeout(() => setOpen(false), 150);
-  };
+  const leave = useCallback(() => {
+    timerRef.current = setTimeout(() => setOpen(false), 180);
+  }, []);
 
-  useEffect(() => clearTimer, []);
+  useEffect(() => clearTimer, [clearTimer]);
+
+  /* Close on Escape and click outside */
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    const onClick = (e: MouseEvent) => {
+      if (!containerRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onClick);
+    };
+  }, [open]);
 
   return (
     <div
       ref={containerRef}
       className="relative"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onMouseEnter={enter}
+      onMouseLeave={leave}
     >
       <button
         type="button"
-        className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#1A6DFF] transition-colors"
-        onClick={() => setOpen(!open)}
+        className="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]"
+        onClick={() => setOpen((p) => !p)}
         aria-expanded={open}
       >
         {label}
+        {/* Animated underline */}
+        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4" />
       </button>
-      {open && (
+
+      {/* Dropdown panel with animation */}
+      <div
+        className={`absolute top-full left-0 mt-2 z-50 transition-all duration-200 ease-out ${
+          open
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={enter}
+        onMouseLeave={leave}
+      >
         <div
-          className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-100 py-2 w-56 z-50"
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
+          className={`bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.18)] border border-gray-100/80 overflow-hidden ${
+            wide ? 'w-[640px]' : 'w-56'
+          }`}
         >
           {children}
         </div>
-      )}
+      </div>
     </div>
   );
 }
 
-/* ── Mobile overlay menu ── */
+/* ── NavLink with active indicator ── */
+function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
+  const location = useLocation();
+  const active = location.pathname === to;
+  return (
+    <Link
+      to={to}
+      className={`group relative px-3 py-2 text-[13px] font-medium transition-colors tracking-[-0.01em] ${
+        active ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+      }`}
+    >
+      {children}
+      <span
+        className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-brand-700 rounded-full transition-all duration-300 ${
+          active ? 'w-4' : 'w-0 group-hover:w-4'
+        }`}
+      />
+    </Link>
+  );
+}
+
+/* ── Dropdown link ── */
+function DDLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <Link
+      to={to}
+      className="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50/60 rounded-md transition-colors"
+    >
+      {children}
+    </Link>
+  );
+}
+
+/* ── Mega-menu port columns ── */
+function PortMegaMenu() {
+  return (
+    <div className="grid grid-cols-3 gap-1 p-4">
+      <div className="col-span-3 mb-1">
+        <p className="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Port Intelligence</p>
+      </div>
+      {portLinks.slice(0, 3).map((p) => (
+        <DDLink key={p.to} to={p.to}>{p.label}</DDLink>
+      ))}
+      <div className="col-span-3 mt-2 mb-1">
+        <p className="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">UK Ports</p>
+      </div>
+      {portLinks.slice(3, 12).map((p) => (
+        <DDLink key={p.to} to={p.to}>{p.label}</DDLink>
+      ))}
+      <div className="col-span-3 mt-2 mb-1">
+        <p className="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Northern Ireland</p>
+      </div>
+      {portLinks.slice(12, 15).map((p) => (
+        <DDLink key={p.to} to={p.to}>{p.label}</DDLink>
+      ))}
+      <div className="col-span-3 mt-2 mb-1">
+        <p className="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Republic of Ireland</p>
+      </div>
+      {portLinks.slice(15).map((p) => (
+        <DDLink key={p.to} to={p.to}>{p.label}</DDLink>
+      ))}
+    </div>
+  );
+}
+
+/* ── Hamburger icon ── */
+function Hamburger({ open, onClick }: { open: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-gray-50 transition-colors"
+      aria-label={open ? 'Close menu' : 'Open menu'}
+      onClick={onClick}
+      aria-expanded={open}
+    >
+      <span
+        className={`block w-5 h-[1.5px] bg-gray-700 rounded-full transition-all duration-300 ${
+          open ? 'rotate-45 translate-y-[4.5px]' : ''
+        }`}
+      />
+      <span
+        className={`block w-5 h-[1.5px] bg-gray-700 rounded-full transition-all duration-300 ${
+          open ? 'opacity-0' : ''
+        }`}
+      />
+      <span
+        className={`block w-5 h-[1.5px] bg-gray-700 rounded-full transition-all duration-300 ${
+          open ? '-rotate-45 -translate-y-[4.5px]' : ''
+        }`}
+      />
+    </button>
+  );
+}
+
+/* ── Mobile menu ── */
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveSection(null);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [open, onClose]);
+
   if (!open) return null;
+
+  const sections: { key: string; label: string; links: { label: string; to: string }[] }[] = [
+    { key: 'services', label: 'Services', links: serviceLinks },
+    { key: 'routes', label: 'Trade Routes', links: routeLinks },
+    { key: 'industries', label: 'Industries', links: industryLinks },
+    { key: 'resources', label: 'Resources', links: resourceLinks },
+    { key: 'ports', label: 'Port Intelligence', links: portLinks },
+  ];
+
   return (
     <div className="fixed inset-0 z-50 lg:hidden">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/30" onClick={onClose} />
-      {/* Slide-out panel */}
-      <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-xl overflow-y-auto">
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <span className="font-semibold text-gray-900">Menu</span>
+      {/* Dark backdrop */}
+      <div
+        className="absolute inset-0 bg-gray-950/40 backdrop-blur-sm transition-opacity duration-300"
+        onClick={onClose}
+      />
+
+      {/* Full-screen white panel */}
+      <div className="absolute inset-x-0 top-0 bottom-0 bg-white overflow-y-auto">
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 h-16 border-b border-gray-100">
+          <Link
+            to="/"
+            className="flex items-center gap-2.5 text-gray-900 font-bold text-lg tracking-tight"
+            onClick={onClose}
+          >
+            <Ship className="w-7 h-7 text-brand-700" aria-hidden="true" />
+            <span>Carrgo</span>
+          </Link>
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 transition-colors"
             aria-label="Close menu"
           >
             <X className="w-5 h-5 text-gray-600" />
           </button>
         </div>
 
-        <nav className="p-4 space-y-6" aria-label="Mobile navigation">
-          {/* Services */}
-          <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Services</p>
-            <div className="space-y-1">
-              {serviceLinks.map(s => (
-                <Link
-                  key={s.to}
-                  to={s.to}
-                  className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors"
-                  onClick={onClose}
-                >
-                  {s.label}
-                </Link>
-              ))}
+        {/* Content */}
+        <nav className="px-5 py-6 pb-28" aria-label="Mobile navigation">
+          {sections.map((section) => (
+            <div key={section.key} className="mb-5">
+              <button
+                type="button"
+                className="w-full flex items-center justify-between py-3 text-left border-b border-gray-100"
+                onClick={() => setActiveSection(activeSection === section.key ? null : section.key)}
+                aria-expanded={activeSection === section.key}
+              >
+                <span className="text-base font-semibold text-gray-900">{section.label}</span>
+                <ChevronRight
+                  className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                    activeSection === section.key ? 'rotate-90' : ''
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  activeSection === section.key ? 'max-h-[600px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="space-y-0.5 pl-2">
+                  {section.links.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors"
+                      onClick={onClose}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
 
-          {/* Routes */}
-          <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Trade Routes</p>
-            <div className="space-y-1">
-              {routeLinks.map(r => (
-                <Link
-                  key={r.to}
-                  to={r.to}
-                  className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors"
-                  onClick={onClose}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
+          {/* Top-level pages */}
+          <div className="space-y-0.5 mt-2 border-t border-gray-100 pt-4">
+            {topLevel.map((t) => (
+              <Link
+                key={t.to}
+                to={t.to}
+                className="block py-3 text-base font-semibold text-gray-900 hover:text-brand-700 transition-colors"
+                onClick={onClose}
+              >
+                {t.label}
+              </Link>
+            ))}
           </div>
+        </nav>
 
-          {/* Resources */}
-          <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Resources</p>
-            <div className="space-y-1">
-              {resourceLinks.map(r => (
-                <Link
-                  key={r.to}
-                  to={r.to}
-                  className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors"
-                  onClick={onClose}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Port Intelligence */}
-          <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Port Intelligence</p>
-            <div className="space-y-1">
-              {portLinks.map((p, i) =>
-                p.header ? (
-                  <div key={i} className="py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-t border-gray-100 mt-2 pt-2">
-                    {p.label}
-                  </div>
-                ) : (
-                  <Link
-                    key={p.to}
-                    to={p.to}
-                    className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors"
-                    onClick={onClose}
-                  >
-                    {p.label}
-                  </Link>
-                )
-              )}
-            </div>
-          </div>
-
-          {/* Pages */}
-          <div className="border-t border-gray-100 pt-4 space-y-1">
-            <Link to="/about" className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors" onClick={onClose}>About</Link>
-            <Link to="/contact" className="block py-2 text-sm text-gray-700 hover:text-[#1A6DFF] transition-colors" onClick={onClose}>Contact</Link>
-          </div>
-
+        {/* Sticky CTA at bottom */}
+        <div className="fixed bottom-0 inset-x-0 bg-white border-t border-gray-100 px-5 py-4">
           <Link
             to="/get-a-quote"
-            className="block w-full text-center bg-[#1A6DFF] hover:bg-[#1557CC] text-white text-sm font-medium py-2.5 rounded-full transition-colors"
+            className="block w-full text-center bg-brand-700 hover:bg-brand-800 text-white text-[15px] font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-700/20 transition-colors"
             onClick={onClose}
           >
-            Get a Quote
+            Get a Free Quote
           </Link>
-        </nav>
+        </div>
       </div>
     </div>
   );
@@ -244,9 +411,9 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 /* ── Main Navbar ── */
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const scrolled = useScrolled(8);
   const location = useLocation();
 
-  /* Close mobile menu on route change */
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
@@ -254,116 +421,88 @@ export default function Navbar() {
   return (
     <>
       <SkipToContent />
-      <header className="bg-white sticky top-0 z-40">
+      <header
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/85 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] border-b border-gray-200/50'
+            : 'bg-white border-b border-gray-100'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link
               to="/"
-              className="flex items-center gap-2 text-[#111827] font-bold text-lg shrink-0"
+              className="flex items-center gap-2.5 text-gray-900 font-bold text-lg tracking-tight shrink-0"
               aria-label="Carrgo home"
             >
-              <Ship className="w-7 h-7 text-[#1A6DFF]" aria-hidden="true" />
-              <span>Carrgo</span>
+              <div className="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center shadow-sm shadow-brand-700/20">
+                <Ship className="w-[18px] h-[18px] text-white" aria-hidden="true" />
+              </div>
+              <span className="hidden sm:inline">Carrgo</span>
             </Link>
 
-            {/* Desktop navigation */}
-            <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
               <Dropdown label="Services">
-                {serviceLinks.map(s => (
-                  <Link
-                    key={s.to}
-                    to={s.to}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1A6DFF] transition-colors"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
+                <div className="py-2 px-1">
+                  {serviceLinks.map((s) => (
+                    <DDLink key={s.to} to={s.to}>{s.label}</DDLink>
+                  ))}
+                </div>
               </Dropdown>
 
               <Dropdown label="Routes">
-                {routeLinks.map(r => (
-                  <Link
-                    key={r.to}
-                    to={r.to}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1A6DFF] transition-colors"
-                  >
-                    {r.label}
-                  </Link>
-                ))}
+                <div className="py-2 px-1">
+                  {routeLinks.map((r) => (
+                    <DDLink key={r.to} to={r.to}>{r.label}</DDLink>
+                  ))}
+                </div>
+              </Dropdown>
+
+              <Dropdown label="Industries">
+                <div className="py-2 px-1">
+                  {industryLinks.map((i) => (
+                    <DDLink key={i.to} to={i.to}>{i.label}</DDLink>
+                  ))}
+                </div>
               </Dropdown>
 
               <Dropdown label="Resources">
-                {resourceLinks.map(r => (
-                  <Link
-                    key={r.to}
-                    to={r.to}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1A6DFF] transition-colors"
-                  >
-                    {r.label}
-                  </Link>
-                ))}
+                <div className="py-2 px-1">
+                  {resourceLinks.map((r) => (
+                    <DDLink key={r.to} to={r.to}>{r.label}</DDLink>
+                  ))}
+                </div>
               </Dropdown>
 
-              <Dropdown label="Port Intelligence">
-                {portLinks.map((p, i) =>
-                  p.header ? (
-                    <div key={i} className="px-4 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-t border-gray-100 mt-1 pt-2">
-                      {p.label}
-                    </div>
-                  ) : (
-                    <Link
-                      key={p.to}
-                      to={p.to}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1A6DFF] transition-colors"
-                    >
-                      {p.label}
-                    </Link>
-                  )
-                )}
+              <Dropdown label="Port Intelligence" wide>
+                <PortMegaMenu />
               </Dropdown>
 
-              <Link
-                to="/about"
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#1A6DFF] transition-colors"
-              >
-                About
-              </Link>
-
-              <Link
-                to="/contact"
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#1A6DFF] transition-colors"
-              >
-                Contact
-              </Link>
+              {topLevel.map((t) => (
+                <NavLink key={t.to} to={t.to}>{t.label}</NavLink>
+              ))}
             </nav>
 
             {/* Right side */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               {/* Desktop CTA */}
               <Link
                 to="/get-a-quote"
-                className="hidden lg:inline-flex items-center px-5 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 text-[13px] font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-sm shadow-brand-700/15 transition-all hover:shadow-md hover:shadow-brand-700/20 active:scale-[0.98]"
               >
                 Get a Quote
               </Link>
 
-              {/* Mobile hamburger */}
-              <button
-                type="button"
-                className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-                aria-label="Open menu"
-                onClick={() => setMobileOpen(true)}
-              >
-                <Menu className="w-5 h-5" />
-              </button>
+              <Hamburger open={mobileOpen} onClick={() => setMobileOpen((p) => !p)} />
             </div>
           </div>
         </div>
-
-        {/* Subtle bottom border */}
-        <div className="border-b border-gray-100" />
       </header>
+
+      {/* Spacer to prevent content from hiding under fixed header */}
+      <div className="h-16" />
 
       {/* Mobile menu overlay */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />

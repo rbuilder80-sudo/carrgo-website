@@ -165,7 +165,7 @@ export default function GetAQuote() {
                 {/* Trust indicators */}
                 <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-5 mb-6">
                   <div className="flex flex-wrap gap-3">
-                    {['BIFA Registered', 'IATA Accredited', 'AEO Certified'].map((badge) => (
+                    {['Industry Compliant', 'HMRC Registered', 'Experienced Team'].map((badge) => (
                       <span key={badge} className="inline-flex items-center gap-1 text-xs font-medium text-[#16A34A] bg-[#DCFCE7] px-3 py-1.5 rounded-full">
                         <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" /> {badge}
                       </span>

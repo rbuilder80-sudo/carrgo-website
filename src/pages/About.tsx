@@ -81,7 +81,7 @@ const values = [
   {
     icon: Award,
     title: 'Expertise',
-    desc: 'Certified customs brokers. IATA-accredited air cargo agents. BIFA-registered freight forwarders. Credentials that matter in the complex world of international trade.',
+    desc: 'Experienced customs brokers and air cargo specialists with deep expertise in international trade regulations and compliance.',
   },
   {
     icon: Users,
@@ -93,12 +93,12 @@ const values = [
 const accreditations = [
   {
     icon: Shield,
-    title: 'BIFA Registered',
-    desc: 'British International Freight Association registered member. BIFA sets the professional standards for UK freight forwarders, ensuring best practices in every aspect of our operations.',
+    title: 'Industry Standards',
+    desc: 'We follow professional standards set by UK freight forwarding industry bodies, ensuring best practices in every aspect of our operations.',
   },
   {
     icon: Globe,
-    title: 'IATA Accredited',
+    title: 'Air Freight Expertise',
     desc: 'International Air Transport Association accredited agent. This enables us to issue air waybills, book directly with airlines, and access competitive air cargo rates worldwide.',
   },
   {
@@ -122,8 +122,8 @@ export default function About() {
     <>
       <Seo
         title="About Carrgo | UK Freight Forwarding Company | Carrgo"
-        description="About Carrgo — a UK freight forwarding company with 30+ years experience. BIFA & IATA accredited. Serving importers & exporters across UK, Ireland & NI."
-        keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, bifa member freight, iata accredited cargo, customs broker, customs brokerage uk"
+        description="About Carrgo — a UK freight forwarding company with 30+ years experience. Professional freight forwarding standards. Serving importers & exporters across UK, Ireland & NI."
+        keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, customs broker, customs brokerage uk"
         ogUrl="https://carrgo.co.uk/about"
         canonical="https://carrgo.co.uk/about"
         structuredData={[

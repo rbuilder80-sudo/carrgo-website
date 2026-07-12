@@ -1,4 +1,4 @@
-import { Ship, Mail } from 'lucide-react';
+import { Ship, Mail, Phone, MapPin, ArrowUp, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -25,9 +25,21 @@ const routes = [
   { label: 'Spain to UK', to: '/routes/spain-to-uk' },
 ];
 
+const industries = [
+  { label: 'Ecommerce & Amazon', to: '/industries/ecommerce' },
+  { label: 'Manufacturing', to: '/industries/manufacturing' },
+  { label: 'Retail & Wholesale', to: '/industries/retail' },
+  { label: 'Automotive', to: '/industries/automotive' },
+  { label: 'Construction', to: '/industries/construction' },
+  { label: 'Electronics', to: '/industries/electronics' },
+  { label: 'Medical & Pharma', to: '/industries/medical' },
+  { label: 'Furniture', to: '/industries/furniture' },
+];
+
 const company = [
   { label: 'About Us', to: '/about' },
   { label: 'Our Results', to: '/results' },
+  { label: 'Testimonials', to: '/resources/testimonials' },
   { label: 'Contact', to: '/contact' },
   { label: 'Get a Quote', to: '/get-a-quote' },
 ];
@@ -44,7 +56,6 @@ const resources = [
   { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
   { label: 'Freight FAQs', to: '/resources/freight-faqs' },
   { label: 'Case Studies', to: '/resources/case-studies' },
-  { label: 'Testimonials', to: '/resources/testimonials' },
   { label: 'Industries', to: '/resources/industries' },
   { label: 'Our Process', to: '/resources/our-process' },
   { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },
@@ -65,86 +76,165 @@ const portIntelligence = [
   { label: 'Rosslare Europort', to: '/ports/rosslare-europort' },
 ];
 
+/* ── Footer link with hover arrow reveal ── */
+function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link
+        to={to}
+        className="group inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors"
+      >
+        <span className="w-0 group-hover:w-2 transition-all duration-200 overflow-hidden">
+          <span className="inline-block text-brand-400">›</span>
+        </span>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+/* ── Column header ── */
+function ColumnHeader({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+      {children}
+    </h2>
+  );
+}
+
 export default function Footer() {
   const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-gray-300" itemScope itemType="https://schema.org/Organization">
+    <footer className="bg-gray-950 text-gray-400" itemScope itemType="https://schema.org/Organization">
       <meta itemProp="@id" content="https://carrgo.co.uk/#organization" />
       <link itemProp="url" href="https://carrgo.co.uk" />
-      <div className="container-carrgo py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8">
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 text-white font-bold text-xl mb-4">
-              <Ship className="w-8 h-8" aria-hidden="true" />
-              <span itemProp="name">Carrgo Freight Solutions Ltd</span>
-            </div>
-            <p className="text-gray-400 mb-4 max-w-sm" itemProp="description">
-              Trusted UK freight forwarding company with over 30 years combined industry experience. All-inclusive door-to-door shipping.
-            </p>
-            <address className="not-italic space-y-2 text-sm" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-              <meta itemProp="addressCountry" content="GB" />
-              <meta itemProp="addressRegion" content="England" />
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-brand-400" aria-hidden="true" />
-                <a href="mailto:info@carrgo.co.uk" itemProp="email" className="hover:text-white transition-colors">info@carrgo.co.uk</a>
+
+      {/* ── Top section: brand + contact + social ── */}
+      <div className="border-b border-gray-800/60">
+        <div className="container-carrgo py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Brand */}
+            <div className="lg:col-span-4">
+              <div className="flex items-center gap-2.5 text-white font-bold text-xl mb-4">
+                <div className="w-9 h-9 bg-brand-700 rounded-lg flex items-center justify-center">
+                  <Ship className="w-[18px] h-[18px] text-white" aria-hidden="true" />
+                </div>
+                <span itemProp="name">Carrgo</span>
               </div>
-            </address>
-            <meta itemProp="sameAs" content="https://www.linkedin.com/company/carrgo" />
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-sm" itemProp="description">
+                Trusted UK freight forwarding company with over 30 years combined industry experience. All-inclusive door-to-door shipping with quotes in 2 hours.
+              </p>
+              <div className="not-italic space-y-2.5 text-sm">
+                <div className="flex items-center gap-2.5">
+                  <Mail className="w-4 h-4 text-brand-400 shrink-0" aria-hidden="true" />
+                  <a href="mailto:info@carrgo.co.uk" className="hover:text-white transition-colors">info@carrgo.co.uk</a>
+                </div>
+              </div>
+              {/* Social */}
+              <div className="flex items-center gap-3 mt-5">
+                <a
+                  href="https://www.linkedin.com/company/carrgo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-brand-700 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+
+            {/* Link columns */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                <nav aria-label="Services">
+                  <ColumnHeader>Services</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {services.map((s) => (
+                      <FooterLink key={s.to} to={s.to}>{s.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Trade routes">
+                  <ColumnHeader>Trade Routes</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {routes.map((r) => (
+                      <FooterLink key={r.to} to={r.to}>{r.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Industries">
+                  <ColumnHeader>Industries</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {industries.map((i) => (
+                      <FooterLink key={i.to} to={i.to}>{i.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Resources">
+                  <ColumnHeader>Resources</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {resources.map((r) => (
+                      <FooterLink key={r.to} to={r.to}>{r.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Port Intelligence">
+                  <ColumnHeader>Port Intelligence</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {portIntelligence.map((p) => (
+                      <FooterLink key={p.to} to={p.to}>{p.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Company">
+                  <ColumnHeader>Company</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {company.map((c) => (
+                      <FooterLink key={c.to} to={c.to}>{c.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+
+                <nav aria-label="Legal">
+                  <ColumnHeader>Legal</ColumnHeader>
+                  <ul className="space-y-2.5">
+                    {legal.map((l) => (
+                      <FooterLink key={l.to} to={l.to}>{l.label}</FooterLink>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+            </div>
           </div>
-
-          <nav aria-label="Services">
-            <h2 className="text-white font-semibold mb-4 text-base">Services</h2>
-            <ul className="space-y-2 text-sm">
-              {services.map(s => (
-                <li key={s.to}><Link to={s.to} className="hover:text-white transition-colors">{s.label}</Link></li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Trade routes">
-            <h2 className="text-white font-semibold mb-4 text-base">Trade Routes</h2>
-            <ul className="space-y-2 text-sm">
-              {routes.map(r => (
-                <li key={r.to}><Link to={r.to} className="hover:text-white transition-colors">{r.label}</Link></li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Resources">
-            <h2 className="text-white font-semibold mb-4 text-base">Resources</h2>
-            <ul className="space-y-2 text-sm">
-              {resources.map(r => (
-                <li key={r.to}><Link to={r.to} className="hover:text-white transition-colors">{r.label}</Link></li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Port Intelligence">
-            <h2 className="text-white font-semibold mb-4 text-base">Port Intelligence</h2>
-            <ul className="space-y-2 text-sm">
-              {portIntelligence.map(p => (
-                <li key={p.to}><Link to={p.to} className="hover:text-white transition-colors">{p.label}</Link></li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Company">
-            <h2 className="text-white font-semibold mb-4 text-base">Company</h2>
-            <ul className="space-y-2 text-sm">
-              {company.map(c => (
-                <li key={c.to}><Link to={c.to} className="hover:text-white transition-colors">{c.label}</Link></li>
-              ))}
-              {legal.map(l => (
-                <li key={l.to}><Link to={l.to} className="hover:text-white transition-colors text-gray-500">{l.label}</Link></li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
-          <small>&copy; {year} Carrgo Freight Solutions Ltd. All rights reserved.</small>
         </div>
       </div>
+
+      {/* ── Bottom bar ── */}
+      <div className="container-carrgo py-5">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sm text-gray-500">
+            <small>&copy; {year} Carrgo Freight Solutions Ltd. All rights reserved.</small>
+          </p>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-white transition-colors group"
+            aria-label="Back to top"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+
+      <meta itemProp="sameAs" content="https://www.linkedin.com/company/carrgo" />
     </footer>
   );
 }

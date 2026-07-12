@@ -4,26 +4,35 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
 
-# AI Crawlers - Explicit Allow
+# OpenAI Search Bot — for ChatGPT search visibility
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI GPTBot — for model training access
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT User Agent
 User-agent: ChatGPT-User
 Allow: /
 
+# Anthropic Claude
 User-agent: Claude-Web
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+# Google AI/Extended
 User-agent: Google-Extended
 Allow: /
 
-User-agent: BingBot
+# Standard Search Crawlers
+User-agent: Googlebot
 Allow: /
 
-User-agent: Googlebot
+User-agent: BingBot
 Allow: /
 
 User-agent: Slurp
@@ -42,5 +51,4 @@ User-agent: Amazonbot
 Allow: /
 
 # Sitemap
-Sitemap: https://carrgo.co.uk/sitemap.xml
-Sitemap: https://carrgo.co.uk/llms.txt
+Sitemap: https://www.carrgo.co.uk/sitemap.xml

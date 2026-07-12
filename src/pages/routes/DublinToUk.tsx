@@ -313,7 +313,7 @@ export default function DublinToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include ferry, fuel, Irish and UK customs clearance, and delivery. No hidden fees. Carrgo Freight Solutions Ltd — 120 Bark Street, Bolton, BL1 2AX.
+              All quotes include ferry, fuel, Irish and UK customs clearance, and delivery. No hidden fees. Carrgo Freight Solutions Ltd.
             </p>
           </div>
         </section>

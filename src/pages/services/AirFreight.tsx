@@ -96,7 +96,7 @@ export default function AirFreight() {
                   {[
                     'Express (1–3 days) and Economy (3–5 days) options',
                     'All major UK airports: Heathrow, Manchester, Birmingham',
-                    'IATA-accredited air freight agent',
+                    'Experienced air freight agent',
                     'Real-time cargo tracking included',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-[#4B5563]">
@@ -265,7 +265,7 @@ export default function AirFreight() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Plane, title: 'IATA Accredited', desc: 'Fully accredited air freight agent with direct airline partnerships.' },
+                { icon: Plane, title: 'Air Freight Expertise', desc: 'Experienced air freight agent with direct airline partnerships.' },
                 { icon: Clock, title: '1–5 Day Delivery', desc: 'Express and economy options to match your timeline and budget.' },
                 { icon: Globe, title: 'Global Coverage', desc: 'Air freight from China, USA, UAE, India, and all European countries.' },
                 { icon: FileCheck, title: 'Customs Included', desc: 'Full UK customs clearance handled by our customs brokers.' },

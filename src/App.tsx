@@ -47,8 +47,20 @@ const DublinToUk = lazy(() => import('./pages/routes/DublinToUk'));
 // Sitemap page
 const AiSitemap = lazy(() => import('./pages/AiSitemap'));
 
+// Industry pages
+const IndustryEcommerce = lazy(() => import('./pages/industries/Ecommerce'));
+const IndustryManufacturing = lazy(() => import('./pages/industries/Manufacturing'));
+const IndustryRetail = lazy(() => import('./pages/industries/Retail'));
+const IndustryAutomotive = lazy(() => import('./pages/industries/Automotive'));
+const IndustryConstruction = lazy(() => import('./pages/industries/Construction'));
+const IndustryElectronics = lazy(() => import('./pages/industries/Electronics'));
+const IndustryMedical = lazy(() => import('./pages/industries/Medical'));
+const IndustryFurniture = lazy(() => import('./pages/industries/Furniture'));
+
 // Port Intelligence pages
 const PortDetail = lazy(() => import('./pages/ports/PortDetail'));
+
+// Tools pages
 const CostCalculator = lazy(() => import('./pages/tools/CostCalculator'));
 const PortComparison = lazy(() => import('./pages/tools/PortComparison'));
 
@@ -62,6 +74,7 @@ const CaseStudies = lazy(() => import('./pages/resources/CaseStudies'));
 const Industries = lazy(() => import('./pages/resources/Industries'));
 const OurProcess = lazy(() => import('./pages/resources/OurProcess'));
 const PostBrexit = lazy(() => import('./pages/resources/PostBrexit'));
+const Testimonials = lazy(() => import('./pages/resources/Testimonials'));
 
 export default function App() {
   return (
@@ -122,6 +135,17 @@ export default function App() {
           <Route path="/resources/industries" element={<Suspense fallback={<Loading />}><Industries /></Suspense>} />
           <Route path="/resources/our-process" element={<Suspense fallback={<Loading />}><OurProcess /></Suspense>} />
           <Route path="/resources/post-brexit-customs-guide" element={<Suspense fallback={<Loading />}><PostBrexit /></Suspense>} />
+          <Route path="/resources/testimonials" element={<Suspense fallback={<Loading />}><Testimonials /></Suspense>} />
+
+          {/* Industry pages */}
+          <Route path="/industries/ecommerce" element={<Suspense fallback={<Loading />}><IndustryEcommerce /></Suspense>} />
+          <Route path="/industries/manufacturing" element={<Suspense fallback={<Loading />}><IndustryManufacturing /></Suspense>} />
+          <Route path="/industries/retail" element={<Suspense fallback={<Loading />}><IndustryRetail /></Suspense>} />
+          <Route path="/industries/automotive" element={<Suspense fallback={<Loading />}><IndustryAutomotive /></Suspense>} />
+          <Route path="/industries/construction" element={<Suspense fallback={<Loading />}><IndustryConstruction /></Suspense>} />
+          <Route path="/industries/electronics" element={<Suspense fallback={<Loading />}><IndustryElectronics /></Suspense>} />
+          <Route path="/industries/medical" element={<Suspense fallback={<Loading />}><IndustryMedical /></Suspense>} />
+          <Route path="/industries/furniture" element={<Suspense fallback={<Loading />}><IndustryFurniture /></Suspense>} />
 
           {/* Port Intelligence detail pages */}
           <Route path="/ports/:slug" element={<Suspense fallback={<Loading />}><PortDetail /></Suspense>} />

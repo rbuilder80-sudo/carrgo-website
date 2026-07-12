@@ -97,7 +97,7 @@ const whyChoose = [
   {
     icon: Shield,
     title: 'Fully Licensed & Accredited',
-    description: 'Carrgo is a fully licensed freight forwarder with AEO accreditation, BIFA membership, and direct HMRC customs broker status. Your cargo is always in safe, regulated hands.',
+    description: 'Carrgo is a fully licensed freight forwarder with direct HMRC customs broker status. Your cargo is always in safe, regulated hands.',
   },
   {
     icon: Clock,

@@ -16,7 +16,7 @@ const orgSchema = {
   logo: 'https://carrgo.co.uk/favicon.ico',
   description: 'Trusted UK freight forwarding company handling sea freight, air cargo, road haulage, rail freight, and customs clearance.',
   email: 'info@carrgo.co.uk',
-  address: { '@type': 'PostalAddress', addressLocality: 'London', addressCountry: 'GB' },
+  // address removed per privacy policy
 };
 
 const serviceSchema = {
@@ -129,8 +129,8 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="Freight Forwarder UK | Shipping & Logistics Company | Carrgo"
-        description="Trusted UK freight forwarder & logistics company. Sea, air, road & rail freight + customs clearance. All-inclusive shipping quotes in 2 hours. BIFA & IATA accredited."
+        title="UK Freight Forwarder | Sea, Air, Road & Customs | Carrgo"
+        description="Trusted UK freight forwarder & logistics company. Sea, air, road & rail freight + customs clearance. All-inclusive shipping quotes in 2 hours."
         keywords="freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
         ogUrl="https://carrgo.co.uk/"
         canonical="https://carrgo.co.uk/"
@@ -151,10 +151,7 @@ export default function Home() {
             },
             "areaServed": ["GB", "IE", "Northern Ireland"],
             "serviceType": ["Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Logistics", "Amazon FBA Shipping", "UK Warehousing"],
-            "memberOf": [
-              {"@type": "Organization", "name": "British International Freight Association", "alternateName": "BIFA"},
-              {"@type": "Organization", "name": "International Air Transport Association", "alternateName": "IATA"}
-            ],
+            // memberOf removed pending verification
             "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://www.carrgo.co.uk"]
           },
           {
@@ -191,7 +188,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                UK Freight Forwarder &amp; Logistics Company You Can Trust
+                UK Freight Forwarding for Importers and Exporters
               </h1>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
                 <span itemProp="description">Sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.

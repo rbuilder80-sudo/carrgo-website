@@ -6,7 +6,7 @@ export default function Logistics() {
     <main role="main" className="min-h-screen">
       <Seo
         title="Logistics Company UK | Freight & Supply Chain | Carrgo"
-        description="UK logistics company — freight forwarding, warehousing & supply chain solutions. Sea, air, road & rail. BIFA & IATA accredited. Get logistics quotes."
+        description="UK logistics company — freight forwarding, warehousing & supply chain solutions. Sea, air, road & rail. Professional UK freight forwarding. Get logistics quotes."
         keywords="logistics company uk, freight logistics, supply chain uk, warehousing, freight forwarding, logistics services"
         ogUrl="https://carrgo.co.uk/services/logistics"
         canonical="https://carrgo.co.uk/services/logistics"
@@ -17,7 +17,7 @@ export default function Logistics() {
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">Logistics Company UK</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             End-to-end logistics solutions — freight forwarding, warehousing & supply chain management.
-            BIFA & IATA accredited.
+            Professional UK freight forwarding.
           </p>
         </div>
       </section>

@@ -315,7 +315,7 @@ export default function TurkeyToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include Turkish collection, freight, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd — 120 Bark Street, Bolton, BL1 2AX.
+              All quotes include Turkish collection, freight, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd.
             </p>
           </div>
         </section>

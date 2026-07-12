@@ -9,11 +9,11 @@ from pathlib import Path
 ROUTES = {
     "/": {
         "title": "UK Freight Forwarder | Import & Export Shipping | Customs Clearance Bolton | Carrgo",
-        "description": "Struggling with customs delays, lost shipments, or high freight costs? Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Get your all-inclusive quote in 2 hours — no hidden fees. Sea, air, road & rail freight. Based in Bolton, serving Manchester & UK nationwide. HMRC compliant, BIFA accredited.",
+        "description": "Struggling with customs delays, lost shipments, or high freight costs? Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Get your all-inclusive quote in 2 hours — no hidden fees. Sea, air, road & rail freight.",
         "keywords": "freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, bolton freight forwarder, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Freight Forwarder &amp; Logistics Company You Can Trust",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
             {
                 "@context": "https://schema.org",
@@ -21,17 +21,9 @@ ROUTES = {
                 "name": "Carrgo Freight Solutions",
                 "legalName": "Carrgo Freight Solutions Ltd",
                 "url": "https://www.carrgo.co.uk",
-                "logo": "https://www.carrgo.co.uk/og-image.jpg",
-                "description": "UK freight forwarder specialising in sea freight, air freight, customs clearance, and door-to-door logistics.",
+                "logo": "https://www.carrgo.co.uk/logo-192x192.png",
+                "image": "https://www.carrgo.co.uk/og-image.png",
                 "email": "info@carrgo.co.uk",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "120 Bark Street",
-                    "addressLocality": "Bolton",
-                    "addressRegion": "Greater Manchester",
-                    "postalCode": "BL1 2AX",
-                    "addressCountry": "GB"
-                },
                 "contactPoint": {
                     "@type": "ContactPoint",
                     "email": "info@carrgo.co.uk",
@@ -40,10 +32,7 @@ ROUTES = {
                 },
                 "areaServed": ["GB", "IE", "Northern Ireland"],
                 "serviceType": ["Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Logistics", "Amazon FBA Shipping", "UK Warehousing"],
-                "memberOf": [
-                    {"@type": "Organization", "name": "British International Freight Association", "alternateName": "BIFA"},
-                    {"@type": "Organization", "name": "International Air Transport Association", "alternateName": "IATA"}
-                ],
+                "memberOf": [],
                 "sameAs": ["https://www.linkedin.com/company/carrgo-freight", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://www.carrgo.co.uk"]
             },
             {
@@ -76,7 +65,7 @@ ROUTES = {
         "keywords": "sea freight uk, fcl lcl shipping, container shipping uk, sea freight from china to uk, freight forwarder uk",
         "canonical": "https://www.carrgo.co.uk/services/sea-freight",
         "h1": "Sea Freight Services UK — FCL &amp; LCL Container Shipping",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/air-freight": {
         "title": "Air Freight UK | Express Cargo Shipping | Urgent Delivery | Carrgo",
@@ -84,7 +73,7 @@ ROUTES = {
         "keywords": "air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Air Freight UK — Express &amp; Economy Cargo Shipping",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/road-freight": {
         "title": "Road Freight UK to Europe | Pallet & Groupage Shipping | Carrgo",
@@ -92,7 +81,7 @@ ROUTES = {
         "keywords": "road freight uk, european haulage, pallet shipping, groupage freight, ftl ltl uk",
         "canonical": "https://www.carrgo.co.uk/services/road-freight",
         "h1": "Road Freight UK to Europe — FTL, LTL &amp; Pallet Shipping",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/rail-freight-china-uk": {
         "title": "Rail Freight China to UK | New Silk Road Shipping | Carrgo",
@@ -100,7 +89,7 @@ ROUTES = {
         "keywords": "rail freight china to uk, new silk road shipping, china rail freight, intermodal shipping",
         "canonical": "https://www.carrgo.co.uk/services/rail-freight-china-uk",
         "h1": "Rail Freight China to UK — New Silk Road Shipping",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/customs-clearance": {
         "title": "Customs Clearance UK | Import & Export Broker | HMRC Compliant | Carrgo",
@@ -108,7 +97,7 @@ ROUTES = {
         "keywords": "customs clearance uk, import broker, export broker, hmrc customs, uk customs agent",
         "canonical": "https://www.carrgo.co.uk/services/customs-clearance",
         "h1": "Customs Clearance UK — Import &amp; Export Broker Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/door-to-door": {
         "title": "Door-to-Door Freight UK | Factory to Warehouse | Carrgo",
@@ -116,7 +105,7 @@ ROUTES = {
         "keywords": "door to door freight, factory to warehouse shipping, complete logistics uk",
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/amazon-fba-freight": {
         "title": "Amazon FBA Freight UK | FBA Prep & Delivery | Carrgo",
@@ -124,7 +113,7 @@ ROUTES = {
         "keywords": "amazon fba freight uk, fba prep services, fba delivery, amazon fulfilment shipping",
         "canonical": "https://www.carrgo.co.uk/services/amazon-fba-freight",
         "h1": "Amazon FBA Freight UK — Prep &amp; Delivery to Fulfilment Centres",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/warehousing": {
         "title": "Warehousing UK | Midlands Storage | Pick & Pack | Carrgo",
@@ -132,7 +121,7 @@ ROUTES = {
         "keywords": "warehousing uk, midlands storage, pick and pack uk, fulfilment warehouse",
         "canonical": "https://www.carrgo.co.uk/services/warehousing",
         "h1": "Warehousing UK — Midlands Storage &amp; Pick &amp; Pack Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/container-shipping": {
         "title": "Container Shipping UK | FCL & LCL | 20ft & 40ft | Carrgo",
@@ -140,7 +129,7 @@ ROUTES = {
         "keywords": "container shipping uk, fcl lcl containers, 20ft container, 40ft container",
         "canonical": "https://www.carrgo.co.uk/services/container-shipping",
         "h1": "Container Shipping UK — FCL &amp; LCL Container Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/air-cargo": {
         "title": "Air Cargo UK | Express & Charter Freight | Carrgo",
@@ -148,7 +137,7 @@ ROUTES = {
         "keywords": "air cargo uk, express air freight, charter freight, air cargo quotes",
         "canonical": "https://www.carrgo.co.uk/services/air-cargo",
         "h1": "Air Cargo UK — Express &amp; Charter Freight Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/logistics": {
         "title": "Logistics UK | Supply Chain Solutions | Carrgo",
@@ -156,7 +145,7 @@ ROUTES = {
         "keywords": "logistics uk, supply chain solutions, freight consolidation, multi modal transport",
         "canonical": "https://www.carrgo.co.uk/services/logistics",
         "h1": "Logistics UK — End-to-End Supply Chain Solutions",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/china-to-uk": {
         "title": "Shipping from China to UK | Sea, Air & Rail Freight | Carrgo",
@@ -164,7 +153,7 @@ ROUTES = {
         "keywords": "shipping from china to uk, china to uk freight, sea freight china to uk, import from china",
         "canonical": "https://www.carrgo.co.uk/routes/china-to-uk",
         "h1": "Shipping from China to UK — Sea, Air &amp; Rail Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/germany-to-uk": {
         "title": "Shipping from Germany to UK | Road & Sea Freight | Carrgo",
@@ -172,7 +161,7 @@ ROUTES = {
         "keywords": "shipping from germany to uk, germany to uk freight, road freight germany uk",
         "canonical": "https://www.carrgo.co.uk/routes/germany-to-uk",
         "h1": "Shipping from Germany to UK — Road &amp; Sea Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/netherlands-to-uk": {
         "title": "Shipping from Netherlands to UK | Road & Sea Freight | Carrgo",
@@ -180,7 +169,7 @@ ROUTES = {
         "keywords": "shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk",
         "canonical": "https://www.carrgo.co.uk/routes/netherlands-to-uk",
         "h1": "Shipping from Netherlands to UK — Road &amp; Sea Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/india-to-uk": {
         "title": "Shipping from India to UK | Sea & Air Freight | Carrgo",
@@ -188,7 +177,7 @@ ROUTES = {
         "keywords": "shipping from india to uk, india to uk freight, sea freight india to uk, import from india",
         "canonical": "https://www.carrgo.co.uk/routes/india-to-uk",
         "h1": "Shipping from India to UK — Sea &amp; Air Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/usa-to-uk": {
         "title": "Shipping from USA to UK | Freight Forwarder | Sea & Air | Carrgo",
@@ -196,7 +185,7 @@ ROUTES = {
         "keywords": "shipping from usa to uk, usa to uk freight, transatlantic shipping, import from usa",
         "canonical": "https://www.carrgo.co.uk/routes/usa-to-uk",
         "h1": "Shipping from USA to UK — Sea &amp; Air Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/turkey-to-uk": {
         "title": "Shipping from Turkey to UK | Freight Forwarder | Customs | Carrgo",
@@ -204,7 +193,7 @@ ROUTES = {
         "keywords": "shipping from turkey to uk, turkey to uk freight, turkish customs clearance",
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
         "h1": "Shipping from Turkey to UK — Sea, Air &amp; Road Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/uae-to-uk": {
         "title": "Shipping from UAE to UK | Dubai Freight | Sea & Air | Carrgo",
@@ -212,7 +201,7 @@ ROUTES = {
         "keywords": "shipping from uae to uk, dubai to uk freight, uae freight forwarding",
         "canonical": "https://www.carrgo.co.uk/routes/uae-to-uk",
         "h1": "Shipping from UAE to UK — Dubai Freight Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/spain-to-uk": {
         "title": "Shipping from Spain to UK | Road & Sea Freight | Carrgo",
@@ -220,7 +209,7 @@ ROUTES = {
         "keywords": "shipping from spain to uk, spain to uk freight, road freight spain uk",
         "canonical": "https://www.carrgo.co.uk/routes/spain-to-uk",
         "h1": "Shipping from Spain to UK — Road &amp; Sea Freight",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/belfast-northern-ireland": {
         "title": "Shipping to Belfast & Northern Ireland | Freight | Customs | Carrgo",
@@ -228,7 +217,7 @@ ROUTES = {
         "keywords": "shipping to northern ireland, belfast freight, ni protocol shipping, windsor framework",
         "canonical": "https://www.carrgo.co.uk/routes/belfast-northern-ireland",
         "h1": "Shipping to Belfast &amp; Northern Ireland — NI Protocol Compliant",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes/dublin-ireland": {
         "title": "Shipping to Dublin & Ireland | Freight | Customs | Carrgo",
@@ -236,7 +225,7 @@ ROUTES = {
         "keywords": "shipping to ireland, dublin freight, ireland customs clearance, cork shipping",
         "canonical": "https://www.carrgo.co.uk/routes/dublin-ireland",
         "h1": "Shipping to Dublin &amp; Ireland — Full Customs Clearance",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/port-congestion-tracker": {
         "title": "Carrgo Port Intelligence | UK Port Congestion Tracker, Predictions & Health Scores",
@@ -244,7 +233,7 @@ ROUTES = {
         "keywords": "uk port intelligence, port congestion tracker, port health score, felixstowe delays, dublin port congestion, belfast port status, liverpool port status, uk container port delays, port predictions",
         "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
         "h1": "Carrgo Port Intelligence — UK &amp; Ireland Port Congestion Tracker",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/shipping-guides": {
         "title": "Shipping Guides | UK Import & Export Documentation | Carrgo",
@@ -252,7 +241,7 @@ ROUTES = {
         "keywords": "shipping guides uk, import export documentation, shipping paperwork, freight documentation",
         "canonical": "https://www.carrgo.co.uk/resources/shipping-guides",
         "h1": "Shipping Guides — UK Import &amp; Export Documentation",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/container-size-guide": {
         "title": "Container Size Guide | 20ft, 40ft, HC | FCL & LCL | Carrgo",
@@ -260,7 +249,7 @@ ROUTES = {
         "keywords": "container size guide, 20ft container, 40ft container, fcl vs lcl, container dimensions",
         "canonical": "https://www.carrgo.co.uk/resources/container-size-guide",
         "h1": "Container Size Guide — 20ft, 40ft &amp; High Cube Containers",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/incoterms-guide": {
         "title": "Incoterms Guide 2020 | EXW, FOB, CIF, DDP Explained | Carrgo",
@@ -268,7 +257,7 @@ ROUTES = {
         "keywords": "incoterms guide, exw fob cif ddp, incoterms 2020 explained, shipping terms",
         "canonical": "https://www.carrgo.co.uk/resources/incoterms-guide",
         "h1": "Incoterms Guide 2020 — EXW, FOB, CIF, DDP Explained",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/freight-faqs": {
         "title": "Freight FAQs | Common Shipping Questions Answered | Carrgo",
@@ -276,7 +265,7 @@ ROUTES = {
         "keywords": "freight faqs, shipping questions, common freight questions, freight forwarding faq",
         "canonical": "https://www.carrgo.co.uk/resources/freight-faqs",
         "h1": "Freight FAQs — Common Shipping Questions Answered",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/case-studies": {
         "title": "Case Studies | UK Freight Success Stories | Carrgo",
@@ -284,7 +273,7 @@ ROUTES = {
         "keywords": "freight case studies, shipping success stories, uk freight examples, carrgo clients",
         "canonical": "https://www.carrgo.co.uk/resources/case-studies",
         "h1": "Case Studies — UK Freight Success Stories",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/industries": {
         "title": "Industries We Serve | Freight Solutions by Sector | Carrgo",
@@ -292,7 +281,71 @@ ROUTES = {
         "keywords": "industries served freight, freight by sector, shipping solutions industry",
         "canonical": "https://www.carrgo.co.uk/resources/industries",
         "h1": "Industries We Serve — Freight Solutions by Sector",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/ecommerce": {
+        "title": "Ecommerce Freight UK | Amazon FBA Shipping | Online Retail | Carrgo",
+        "description": "Ecommerce sellers — struggling with shipping to Amazon FBA or direct-to-consumer fulfilment? Carrgo handles ecommerce freight including FBA prep, labelling, and delivery to UK fulfilment centres. Fast quotes.",
+        "keywords": "ecommerce freight uk, amazon fba shipping, online retail logistics, ecommerce delivery uk",
+        "canonical": "https://www.carrgo.co.uk/industries/ecommerce",
+        "h1": "Ecommerce Freight UK — Amazon FBA &amp; Online Retail Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/manufacturing": {
+        "title": "Manufacturing Freight UK | Raw Materials & Machinery Shipping | Carrgo",
+        "description": "Manufacturers — need reliable shipping for raw materials, machinery, and components? Carrgo handles manufacturing freight with sea, air, and road options. Full customs clearance. Get your quote in 2 hours.",
+        "keywords": "manufacturing freight uk, raw materials shipping, machinery freight, factory logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/manufacturing",
+        "h1": "Manufacturing Freight UK — Raw Materials &amp; Machinery Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/retail": {
+        "title": "Retail Freight UK | Wholesale & Distribution Shipping | Carrgo",
+        "description": "Retailers — struggling with stock replenishment and wholesale distribution? Carrgo handles retail freight with pallet shipping, container loads, and express delivery. Seasonal surges handled. Get your quote.",
+        "keywords": "retail freight uk, wholesale shipping, distribution logistics, retail logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/retail",
+        "h1": "Retail Freight UK — Wholesale &amp; Distribution Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/automotive": {
+        "title": "Automotive Freight UK | Car Parts & Vehicle Shipping | Carrgo",
+        "description": "Automotive suppliers — need reliable parts shipping and vehicle logistics? Carrgo handles automotive freight including car parts, tyres, accessories, and vehicle components. Full customs clearance. Get your quote.",
+        "keywords": "automotive freight uk, car parts shipping, vehicle logistics, automotive logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/automotive",
+        "h1": "Automotive Freight UK — Car Parts &amp; Vehicle Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/construction": {
+        "title": "Construction Freight UK | Building Materials & Equipment | Carrgo",
+        "description": "Construction companies — need heavy materials and equipment shipped to site? Carrgo handles construction freight including building materials, machinery, and tools. Flatbed and heavy haul available. Get your quote.",
+        "keywords": "construction freight uk, building materials shipping, construction logistics, heavy haul",
+        "canonical": "https://www.carrgo.co.uk/industries/construction",
+        "h1": "Construction Freight UK — Building Materials &amp; Equipment Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/electronics": {
+        "title": "Electronics Freight UK | Tech & Gadget Shipping | Carrgo",
+        "description": "Electronics importers — need safe shipping for fragile tech products? Carrgo handles electronics freight with anti-static packaging, shock protection, and climate-controlled options. Insurance included. Get your quote.",
+        "keywords": "electronics freight uk, tech shipping, gadget logistics, electronics logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/electronics",
+        "h1": "Electronics Freight UK — Tech &amp; Gadget Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/medical": {
+        "title": "Medical Freight UK | Pharma & Healthcare Shipping | Carrgo",
+        "description": "Healthcare suppliers — need temperature-controlled shipping for medical and pharmaceutical products? Carrgo handles medical freight with cold chain, GDP compliance, and secure handling. Get your quote.",
+        "keywords": "medical freight uk, pharmaceutical shipping, healthcare logistics, cold chain logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/medical",
+        "h1": "Medical Freight UK — Pharmaceutical &amp; Healthcare Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/furniture": {
+        "title": "Furniture Freight UK | Flat-Pack & Upholstered Shipping | Carrgo",
+        "description": "Furniture importers — worried about damage to flat-pack and upholstered goods? Carrgo handles furniture freight with custom crating, protective wrapping, and white-glove delivery. Get your quote.",
+        "keywords": "furniture freight uk, flat pack shipping, upholstered furniture shipping, furniture logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/furniture",
+        "h1": "Furniture Freight UK — Flat-Pack &amp; Upholstered Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/our-process": {
         "title": "Our Process | How Carrgo Works | Step-by-Step | Carrgo",
@@ -300,7 +353,7 @@ ROUTES = {
         "keywords": "freight process, how freight forwarding works, shipping process steps, carrgo process",
         "canonical": "https://www.carrgo.co.uk/resources/our-process",
         "h1": "Our Process — How Carrgo Works Step-by-Step",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/post-brexit-customs-guide": {
         "title": "Post-Brexit Customs Guide | UK Import Rules 2026 | Carrgo",
@@ -308,7 +361,15 @@ ROUTES = {
         "keywords": "post brexit customs guide, uk import rules 2026, eori number, customs declaration, ni protocol",
         "canonical": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide",
         "h1": "Post-Brexit Customs Guide — UK Import Rules 2026",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/testimonials": {
+        "title": "Client Testimonials | Carrgo Freight Solutions Reviews",
+        "description": "Read reviews from UK importers using Carrgo freight forwarding. 500+ businesses trust us with sea freight, customs clearance, and door-to-door logistics. 4.9/5 client satisfaction.",
+        "keywords": "carrgo reviews, freight forwarder testimonials, shipping company reviews uk, carrgo feedback, importer testimonials",
+        "canonical": "https://www.carrgo.co.uk/resources/testimonials",
+        "h1": "What UK Importers Say About Carrgo",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/tools/cost-calculator": {
         "title": "Importer Cost Calculator | Port Delay Costs | Demurrage & Detention | Carrgo",
@@ -316,7 +377,7 @@ ROUTES = {
         "keywords": "importer cost calculator, demurrage calculator, port delay costs, detention costs, container storage costs",
         "canonical": "https://www.carrgo.co.uk/tools/cost-calculator",
         "h1": "Importer Cost Calculator — Port Delay Cost Estimator",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/tools/port-comparison": {
         "title": "Port Comparison Tool | UK & Ireland Port Health Scores | Carrgo",
@@ -324,7 +385,7 @@ ROUTES = {
         "keywords": "port comparison, uk port comparison, compare port health scores, port congestion comparison",
         "canonical": "https://www.carrgo.co.uk/tools/port-comparison",
         "h1": "Port Comparison Tool — UK &amp; Ireland Port Intelligence",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/felixstowe": {
         "title": "Felixstowe Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -332,7 +393,7 @@ ROUTES = {
         "keywords": "felixstowe port intelligence, felixstowe port congestion, felixstowe delays, port health score felixstowe",
         "canonical": "https://www.carrgo.co.uk/ports/felixstowe",
         "h1": "Felixstowe Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/southampton": {
         "title": "Southampton Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -340,7 +401,7 @@ ROUTES = {
         "keywords": "southampton port intelligence, southampton port congestion, southampton delays, port health score southampton",
         "canonical": "https://www.carrgo.co.uk/ports/southampton",
         "h1": "Southampton Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/london-gateway": {
         "title": "London Gateway Port Intelligence | Health Score & Forecasts | Carrgo",
@@ -348,7 +409,7 @@ ROUTES = {
         "keywords": "london gateway port intelligence, london gateway port congestion, london gateway delays",
         "canonical": "https://www.carrgo.co.uk/ports/london-gateway",
         "h1": "London Gateway Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/liverpool": {
         "title": "Liverpool Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -356,7 +417,7 @@ ROUTES = {
         "keywords": "liverpool port intelligence, liverpool port congestion, liverpool delays, port health score liverpool",
         "canonical": "https://www.carrgo.co.uk/ports/liverpool",
         "h1": "Liverpool Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/bristol": {
         "title": "Bristol Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -364,7 +425,7 @@ ROUTES = {
         "keywords": "bristol port intelligence, bristol port congestion, bristol delays, avonmouth port status",
         "canonical": "https://www.carrgo.co.uk/ports/bristol",
         "h1": "Bristol Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/tilbury": {
         "title": "Tilbury Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -372,7 +433,7 @@ ROUTES = {
         "keywords": "tilbury port intelligence, tilbury port congestion, tilbury delays, thames port status",
         "canonical": "https://www.carrgo.co.uk/ports/tilbury",
         "h1": "Tilbury Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/immingham": {
         "title": "Immingham Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -380,7 +441,7 @@ ROUTES = {
         "keywords": "immingham port intelligence, immingham port congestion, humber port delays, port health score immingham",
         "canonical": "https://www.carrgo.co.uk/ports/immingham",
         "h1": "Immingham Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/grangemouth": {
         "title": "Grangemouth Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -388,7 +449,7 @@ ROUTES = {
         "keywords": "grangemouth port intelligence, grangemouth port congestion, scotland port delays, port health score grangemouth",
         "canonical": "https://www.carrgo.co.uk/ports/grangemouth",
         "h1": "Grangemouth Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/holyhead": {
         "title": "Holyhead Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -396,7 +457,7 @@ ROUTES = {
         "keywords": "holyhead port intelligence, holyhead port congestion, irish sea port delays, holyhead ferry status",
         "canonical": "https://www.carrgo.co.uk/ports/holyhead",
         "h1": "Holyhead Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/belfast": {
         "title": "Belfast Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -404,7 +465,7 @@ ROUTES = {
         "keywords": "belfast port intelligence, belfast port congestion, northern ireland port delays, port health score belfast",
         "canonical": "https://www.carrgo.co.uk/ports/belfast",
         "h1": "Belfast Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/larne": {
         "title": "Larne Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -412,7 +473,7 @@ ROUTES = {
         "keywords": "larne port intelligence, larne port congestion, larne harbour status, northern ireland ferry delays",
         "canonical": "https://www.carrgo.co.uk/ports/larne",
         "h1": "Larne Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/londonderry": {
         "title": "Londonderry Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -420,7 +481,7 @@ ROUTES = {
         "keywords": "londonderry port intelligence, derry port congestion, foyle port status, northern ireland port delays",
         "canonical": "https://www.carrgo.co.uk/ports/londonderry",
         "h1": "Londonderry Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/dublin": {
         "title": "Dublin Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -428,7 +489,7 @@ ROUTES = {
         "keywords": "dublin port intelligence, dublin port congestion, ireland port delays, port health score dublin",
         "canonical": "https://www.carrgo.co.uk/ports/dublin",
         "h1": "Dublin Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/cork": {
         "title": "Cork Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -436,7 +497,7 @@ ROUTES = {
         "keywords": "cork port intelligence, cork port congestion, ireland port delays, ringaskiddy port status",
         "canonical": "https://www.carrgo.co.uk/ports/cork",
         "h1": "Cork Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/rosslare-europort": {
         "title": "Rosslare Europort Intelligence | Health Score & Forecasts | Carrgo",
@@ -444,7 +505,7 @@ ROUTES = {
         "keywords": "rosslare europort intelligence, rosslare port congestion, ireland ferry delays, brexit bypass routes",
         "canonical": "https://www.carrgo.co.uk/ports/rosslare-europort",
         "h1": "Rosslare Europort Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/shannon-foynes": {
         "title": "Shannon Foynes Port Intelligence | Health Score & Forecasts | Carrgo",
@@ -452,7 +513,7 @@ ROUTES = {
         "keywords": "shannon foynes port intelligence, limerick port congestion, ireland port delays, foynes port status",
         "canonical": "https://www.carrgo.co.uk/ports/shannon-foynes",
         "h1": "Shannon Foynes Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/ports/waterford": {
         "title": "Waterford Port Intelligence | Health Score, Forecasts & Delays | Carrgo",
@@ -460,7 +521,7 @@ ROUTES = {
         "keywords": "waterford port intelligence, waterford port congestion, ireland port delays, belview port status",
         "canonical": "https://www.carrgo.co.uk/ports/waterford",
         "h1": "Waterford Port Intelligence — Health Score &amp; Forecasts",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/about": {
         "title": "About Carrgo | UK Freight Forwarder | Bolton, Manchester | Carrgo",
@@ -468,7 +529,7 @@ ROUTES = {
         "keywords": "about carrgo, freight forwarder bolton, manchester logistics company, carrgo team",
         "canonical": "https://www.carrgo.co.uk/about",
         "h1": "About Carrgo — UK Freight Forwarder Based in Bolton",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/results": {
         "title": "Results & Testimonials | Carrgo Freight Success | Carrgo",
@@ -476,7 +537,7 @@ ROUTES = {
         "keywords": "carrgo results, freight testimonials, client reviews carrgo, shipping success",
         "canonical": "https://www.carrgo.co.uk/results",
         "h1": "Results &amp; Testimonials — Carrgo Freight Success",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/contact": {
         "title": "Contact Carrgo | Freight Forwarding Support | Bolton, Manchester | Carrgo",
@@ -484,7 +545,7 @@ ROUTES = {
         "keywords": "contact carrgo, freight quote uk, bolton freight contact, manchester shipping company",
         "canonical": "https://www.carrgo.co.uk/contact",
         "h1": "Contact Carrgo — Freight Forwarding Support",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/get-a-quote": {
         "title": "Get a Freight Quote UK | Import & Export Shipping | Carrgo Bolton",
@@ -492,7 +553,7 @@ ROUTES = {
         "keywords": "freight quote uk, shipping quote, get a freight quote, import quote uk, export quote",
         "canonical": "https://www.carrgo.co.uk/get-a-quote",
         "h1": "Get a Freight Quote — UK Import &amp; Export Shipping",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/sitemap": {
         "title": "Sitemap | Carrgo Freight Solutions | All Pages",
@@ -500,7 +561,7 @@ ROUTES = {
         "keywords": "carrgo sitemap, freight forwarder pages, website map carrgo",
         "canonical": "https://www.carrgo.co.uk/sitemap",
         "h1": "Sitemap — Carrgo Freight Solutions",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/privacy": {
         "title": "Privacy Policy | Carrgo Freight Solutions | Data Protection",
@@ -508,7 +569,7 @@ ROUTES = {
         "keywords": "privacy policy carrgo, data protection, gdpr freight",
         "canonical": "https://www.carrgo.co.uk/privacy",
         "h1": "Privacy Policy — Carrgo Freight Solutions",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "noindex": True
     },
     "/terms": {
@@ -517,7 +578,7 @@ ROUTES = {
         "keywords": "terms of service carrgo, shipping terms, freight terms conditions",
         "canonical": "https://www.carrgo.co.uk/terms",
         "h1": "Terms of Service — Carrgo Freight Solutions",
-        "ogImage": "https://www.carrgo.co.uk/og-image.jpg",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "noindex": True
     }
 }
@@ -531,7 +592,7 @@ def build_html(route, meta, base_html, is_404=False):
     keywords = meta.get("keywords", "")
     canonical = meta["canonical"]
     h1 = meta.get("h1", title.split("|")[0].strip())
-    og_image = meta.get("ogImage", "https://www.carrgo.co.uk/og-image.jpg")
+    og_image = meta.get("ogImage", "https://www.carrgo.co.uk/og-image.png")
     noindex = meta.get("noindex", False)
     structured_data = meta.get("structuredData", [])
     
@@ -566,7 +627,10 @@ def build_html(route, meta, base_html, is_404=False):
 <meta name="twitter:title" content="{title}" />
 <meta name="twitter:description" content="{description}" />
 <meta name="twitter:image" content="{og_image}" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E&#x1F6A2;%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="theme-color" content="#1A6DFF" />
 {sd_scripts}"""
     
@@ -603,8 +667,8 @@ def build_html(route, meta, base_html, is_404=False):
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>{h1}</h1>
 <p>{description}</p>
-<p><strong>Carrgo Freight Solutions</strong> — UK freight forwarder based in Bolton, Greater Manchester. We handle sea freight, air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters.</p>
-<p><a href="https://www.carrgo.co.uk/get-a-quote">Get a free quote in 2 hours</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a> | Phone: <a href="tel:01204392091">01204 392091</a></p>
+<p><strong>Carrgo Freight Solutions</strong> — UK freight forwarder handling sea freight, air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters.</p>
+<p><a href="https://www.carrgo.co.uk/get-a-quote">Get a free quote in 2 hours</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a></p>
 </div>
 </noscript>
 '''
