@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { submitToFormspree, SUPPORT_EMAIL } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -94,14 +95,32 @@ export default function GetAQuote() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [submitted, setSubmitted] = useState(false);
   const [reference, setReference] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleNext = useCallback(() => setStep(2), []);
   const handleBack = useCallback(() => setStep(1), []);
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    setReference(generateReference());
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const fields: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      fields[key] = String(value);
+    });
+
+    const result = await submitToFormspree('Quote Request', fields);
+    if (result.success) {
+      setReference(generateReference());
+      setSubmitted(true);
+    } else {
+      setError(result.error || 'Something went wrong. Please try again.');
+    }
+    setLoading(false);
   }, []);
 
   return (
@@ -178,8 +197,8 @@ export default function GetAQuote() {
                   <h3 className="font-bold text-[#111827] mb-2">Prefer to Talk?</h3>
                   <p className="text-sm text-[#4B5563] mb-3">Speak directly with a freight specialist.</p>
                   <div className="space-y-2">
-                    <a href="mailto:info@carrgo.co.uk" className="flex items-center gap-2 text-sm font-medium text-[#1A6DFF] hover:underline">
-                      <Mail className="w-4 h-4" aria-hidden="true" /> info@carrgo.co.uk
+                    <a href="mailto:support@carrgo.co.uk" className="flex items-center gap-2 text-sm font-medium text-[#1A6DFF] hover:underline">
+                      <Mail className="w-4 h-4" aria-hidden="true" /> support@carrgo.co.uk
                     </a>
                     
                   </div>
@@ -205,7 +224,7 @@ export default function GetAQuote() {
                       </div>
                       <p className="text-sm text-[#4B5563] mb-6">
                         Questions? Email us at{' '}
-                        <a href="mailto:info@carrgo.co.uk" className="text-[#1A6DFF] font-medium hover:underline">info@carrgo.co.uk</a>
+                        <a href="mailto:support@carrgo.co.uk" className="text-[#1A6DFF] font-medium hover:underline">support@carrgo.co.uk</a>
                       </p>
                       <Link
                         to="/"
@@ -262,6 +281,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-origin-country"
+                                  name="origin-country"
                                   type="text"
                                   required
                                   placeholder="e.g. China, Germany, USA"
@@ -275,6 +295,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-origin-city"
+                                  name="origin-city"
                                   type="text"
                                   required
                                   placeholder="e.g. Shanghai, Rotterdam, Hamburg"
@@ -291,6 +312,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-dest-country"
+                                  name="dest-country"
                                   type="text"
                                   defaultValue="United Kingdom"
                                   readOnly
@@ -303,6 +325,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-dest-city"
+                                  name="dest-city"
                                   type="text"
                                   required
                                   placeholder="e.g. Felixstowe, London, Birmingham"
@@ -319,6 +342,7 @@ export default function GetAQuote() {
                                 </label>
                                 <select
                                   id="qt-freight-mode"
+                                  name="freight-mode"
                                   required
                                   defaultValue=""
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all bg-white"
@@ -335,6 +359,7 @@ export default function GetAQuote() {
                                 </label>
                                 <select
                                   id="qt-incoterms"
+                                  name="incoterms"
                                   defaultValue=""
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all bg-white"
                                 >
@@ -351,6 +376,7 @@ export default function GetAQuote() {
                               </label>
                               <textarea
                                 id="qt-cargo"
+                                name="cargo"
                                 rows={3}
                                 required
                                 placeholder="Describe your cargo — type, quantity, packaging, HS code if known..."
@@ -366,6 +392,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-weight"
+                                  name="weight"
                                   type="number"
                                   required
                                   min="0"
@@ -380,6 +407,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-volume"
+                                  name="volume"
                                   type="number"
                                   min="0"
                                   step="0.01"
@@ -393,6 +421,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-pallets"
+                                  name="pallets"
                                   type="number"
                                   min="0"
                                   placeholder="Number of pallets"
@@ -407,6 +436,7 @@ export default function GetAQuote() {
                               </label>
                               <textarea
                                 id="qt-special"
+                                name="special"
                                 rows={2}
                                 placeholder="Temperature control, fragile goods, hazardous materials, or any other special requirements..."
                                 className="w-full px-4 py-3 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all resize-vertical"
@@ -423,6 +453,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-name"
+                                  name="name"
                                   type="text"
                                   required
                                   placeholder="Your full name"
@@ -436,6 +467,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-email"
+                                  name="email"
                                   type="email"
                                   required
                                   placeholder="your@email.com"
@@ -452,6 +484,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-email"
+                                  name="email"
                                   type="email"
                                   required
                                   placeholder="Your email address"
@@ -465,6 +498,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-company"
+                                  name="company"
                                   type="text"
                                   placeholder="Your Company Ltd"
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
@@ -479,6 +513,7 @@ export default function GetAQuote() {
                                 </label>
                                 <input
                                   id="qt-eori"
+                                  name="eori"
                                   type="text"
                                   placeholder="GB EORI number (if known)"
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
@@ -490,6 +525,7 @@ export default function GetAQuote() {
                                 </label>
                                 <select
                                   id="qt-hear"
+                                  name="hear"
                                   defaultValue=""
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all bg-white"
                                 >
@@ -500,6 +536,12 @@ export default function GetAQuote() {
                               </div>
                             </div>
                           </>
+                        )}
+
+                        {error && (
+                          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-3 text-sm">
+                            {error}
+                          </div>
                         )}
 
                         {/* Navigation buttons */}
@@ -515,10 +557,19 @@ export default function GetAQuote() {
                           )}
                           <button
                             type="submit"
-                            className={`inline-flex items-center justify-center gap-2 bg-[#1A6DFF] hover:bg-[#1557CC] text-white px-6 py-3 rounded-lg font-bold transition-colors min-h-[44px] ${step === 1 ? 'w-full' : 'flex-1'}`}
+                            disabled={loading}
+                            className={`inline-flex items-center justify-center gap-2 bg-[#1A6DFF] hover:bg-[#1557CC] text-white px-6 py-3 rounded-lg font-bold transition-colors min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed ${step === 1 ? 'w-full' : 'flex-1'}`}
                           >
                             {step === 1 ? (
                               <>Next Step <ArrowRight className="w-4 h-4" aria-hidden="true" /></>
+                            ) : loading ? (
+                              <span className="inline-flex items-center gap-2">
+                                <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Sending...
+                              </span>
                             ) : (
                               <><Send className="w-4 h-4" aria-hidden="true" /> Submit Quote Request</>
                             )}
@@ -565,11 +616,11 @@ export default function GetAQuote() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl font-extrabold mb-4">Need Help With Your Quote?</h2>
               <p className="text-[#D4E3FF] text-lg mb-8">
-                Not sure about freight mode, Incoterms, or cargo details? Our team is happy to help — email us at info@carrgo.co.uk.
+                Not sure about freight mode, Incoterms, or cargo details? Our team is happy to help — email us at support@carrgo.co.uk.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="mailto:info@carrgo.co.uk"
+                  href="mailto:support@carrgo.co.uk"
                   className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]"
                 >
                   <Mail className="w-5 h-5" aria-hidden="true" /> Email Us Now

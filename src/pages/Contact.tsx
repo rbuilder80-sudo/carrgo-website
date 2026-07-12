@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitToFormspree, SUPPORT_EMAIL } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -14,7 +15,7 @@ const localBusinessSchema = {
   image: 'https://carrgo.co.uk/og-image.jpg',
   '@id': 'https://carrgo.co.uk',
   url: 'https://carrgo.co.uk',
-    email: 'info@carrgo.co.uk',
+    email: SUPPORT_EMAIL,
   priceRange: '££',
   address: {
     '@type': 'PostalAddress',
@@ -53,9 +54,9 @@ const contactMethods = [
   {
     icon: Mail,
     label: 'Email Us',
-    value: 'info@carrgo.co.uk',
+    value: SUPPORT_EMAIL,
     note: 'We respond within 2 hours',
-    href: 'mailto:info@carrgo.co.uk',
+    href: 'mailto:support@carrgo.co.uk',
   },
   {
     icon: MessageCircle,
@@ -110,17 +111,45 @@ const quickLinks = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const fields: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      fields[key] = String(value);
+    });
+
+    const result = await submitToFormspree('Contact Enquiry', fields);
+    if (result.success) {
+      setSubmitted(true);
+      // GA4 conversion tracking
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'generate_lead', {
+          'event_category': 'form',
+          'event_label': 'contact_form',
+          'value': 1
+        });
+      }
+    } else {
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(result.error || 'Something went wrong. Please try again.');
+    }
+    setLoading(false);
   };
 
   return (
     <>
       <Seo
         title="Contact Carrgo | UK Freight Forwarder | Carrgo"
-        description="Contact Carrgo freight forwarders. Email info@carrgo.co.uk for shipping quotes, customs queries & freight advice. We reply within 2 hours."
+        description="Contact Carrgo freight forwarders. Email support@carrgo.co.uk for shipping quotes, customs queries & freight advice. We reply within 2 hours."
         keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
         ogUrl="https://carrgo.co.uk/contact"
         canonical="https://carrgo.co.uk/contact"
@@ -234,6 +263,7 @@ export default function Contact() {
                             </label>
                             <input
                               id="contact-name"
+                              name="from_name"
                               type="text"
                               required
                               placeholder="John Smith"
@@ -247,6 +277,7 @@ export default function Contact() {
                             </label>
                             <input
                               id="contact-email"
+                              name="from_email"
                               type="email"
                               required
                               placeholder="john@company.co.uk"
@@ -263,6 +294,7 @@ export default function Contact() {
                             </label>
                             <input
                               id="contact-phone"
+                              name="phone"
                               type="tel"
                               placeholder="Email address"
                               className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
@@ -274,6 +306,7 @@ export default function Contact() {
                             </label>
                             <input
                               id="contact-company"
+                              name="company"
                               type="text"
                               placeholder="Your Company Ltd"
                               className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
@@ -287,6 +320,7 @@ export default function Contact() {
                           </label>
                           <select
                             id="contact-subject"
+                            name="subject"
                             required
                             defaultValue=""
                             className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all bg-white"
@@ -304,6 +338,7 @@ export default function Contact() {
                           </label>
                           <textarea
                             id="contact-message"
+                            name="message"
                             rows={5}
                             required
                             placeholder="Tell us about your freight requirements, customs questions, or any other enquiries..."
@@ -312,11 +347,28 @@ export default function Contact() {
                           />
                         </div>
 
+                        {error && (
+                          <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-3 text-sm">
+                            {error}
+                          </div>
+                        )}
+
                         <button
                           type="submit"
-                          className="w-full inline-flex items-center justify-center gap-2 bg-[#1A6DFF] hover:bg-[#1557CC] text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors min-h-[44px]"
+                          disabled={loading}
+                          className="w-full inline-flex items-center justify-center gap-2 bg-[#1A6DFF] hover:bg-[#1557CC] text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                          <Send className="w-5 h-5" aria-hidden="true" /> Send Message
+                          {loading ? (
+                            <span className="inline-flex items-center gap-2">
+                              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Sending...
+                            </span>
+                          ) : (
+                            <><Send className="w-5 h-5" aria-hidden="true" /> Send Message</>
+                          )}
                         </button>
 
                         <p className="text-xs text-[#9CA3AF] text-center">
