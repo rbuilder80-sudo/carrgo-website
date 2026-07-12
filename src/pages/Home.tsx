@@ -252,8 +252,8 @@ export default function Home() {
         <div className="container-carrgo">
           <p className="text-center text-sm text-gray-500 mb-3">Trusted by UK importers. Members of leading industry bodies.</p>
           <div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 font-semibold text-sm">
-            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" /> BIFA Member</span>
-            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" /> IATA Accredited</span>
+            
+            
             <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" /> AEO Certified</span>
           </div>
         </div>

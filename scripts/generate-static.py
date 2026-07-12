@@ -8,9 +8,9 @@ from pathlib import Path
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "UK Freight Forwarder | Import & Export Shipping | Customs Clearance Bolton | Carrgo",
+        "title": "UK Freight Forwarder | Import & Export Shipping | Customs Clearance | Carrgo",
         "description": "Struggling with customs delays, lost shipments, or high freight costs? Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Get your all-inclusive quote in 2 hours — no hidden fees. Sea, air, road & rail freight.",
-        "keywords": "freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, bolton freight forwarder, manchester freight",
+        "keywords": "freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Freight Forwarder &amp; Logistics Company You Can Trust",
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
@@ -524,7 +524,7 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/about": {
-        "title": "About Carrgo | UK Freight Forwarder | Bolton, Manchester | Carrgo",
+        "title": "About Carrgo | UK Freight Forwarder | Carrgo",
         "description": "Learn about Carrgo Freight Solutions — a UK freight forwarder based in Bolton, Greater Manchester. 30+ years experience, BIFA & IATA accredited. Serving UK importers and exporters nationwide.",
         "keywords": "about carrgo, freight forwarder bolton, manchester logistics company, carrgo team",
         "canonical": "https://www.carrgo.co.uk/about",
@@ -540,7 +540,7 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/contact": {
-        "title": "Contact Carrgo | Freight Forwarding Support | Bolton, Manchester | Carrgo",
+        "title": "Contact Carrgo | Freight Forwarding Support | Carrgo",
         "description": "Ready to ship? Get your all-inclusive freight quote in 2 hours. Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Call or email us today.",
         "keywords": "contact carrgo, freight quote uk, bolton freight contact, manchester shipping company",
         "canonical": "https://www.carrgo.co.uk/contact",
@@ -548,7 +548,7 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/get-a-quote": {
-        "title": "Get a Freight Quote UK | Import & Export Shipping | Carrgo Bolton",
+        "title": "Get a Freight Quote UK | Import & Export Shipping | Carrgo",
         "description": "Ready to ship? Get your all-inclusive freight quote in 2 hours. Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. No hidden fees. Start now.",
         "keywords": "freight quote uk, shipping quote, get a freight quote, import quote uk, export quote",
         "canonical": "https://www.carrgo.co.uk/get-a-quote",
