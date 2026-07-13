@@ -38,6 +38,7 @@ import {
   Activity,
   Zap,
   CheckCircle2,
+  Info,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -241,7 +242,7 @@ function SparklineChart({ history, color }: { history: PortDetail['history']; co
 const faqs = [
   {
     q: 'How often is the UK & Ireland Port Congestion Tracker updated?',
-    a: 'Our port congestion tracker updates twice daily at 06:00 GMT and 18:00 GMT, giving you reliable data on port congestion at Felixstowe, Southampton, Liverpool, Dublin, Belfast and all other monitored ports.',
+    a: 'This port congestion overview is based on representative example data for demonstration purposes. In a production environment, data would be sourced from real-time AIS vessel tracking, port authority reports, and berth scheduling systems, typically updated twice daily.',
   },
   {
     q: 'Which ports are included in the congestion tracker?',
@@ -253,7 +254,7 @@ const faqs = [
   },
   {
     q: 'How can I avoid delays at congested UK container ports?',
-    a: 'Carrgo recommends monitoring our live port congestion tracker regularly, booking ahead during peak seasons, and considering alternative ports such as London Gateway or Tilbury when Felixstowe is congested. Contact our team for tailored routing advice.',
+    a: 'Carrgo recommends monitoring port congestion indicators regularly, booking ahead during peak seasons, and considering alternative ports such as London Gateway or Tilbury when Felixstowe is congested. Contact our team for tailored routing advice based on current conditions.',
   },
   {
     q: 'Does port congestion affect freight forwarding costs?',
@@ -377,9 +378,10 @@ export default function PortCongestion() {
   return (
     <>
       <Seo
-        title="UK & Ireland Port Congestion Tracker 2026 | Live Port Status | Carrgo"
-        description="Live UK & Ireland port congestion tracker covering Felixstowe, Southampton, Liverpool, Dublin, Belfast, Grangemouth and all major UK, NI and ROI container ports. Real-time wait times, status updates and trends."
+        title="UK & Ireland Port Congestion Overview 2026 | Port Status | Carrgo"
+        description="UK & Ireland port congestion overview covering Felixstowe, Southampton, Liverpool, Dublin, Belfast, Grangemouth and all major UK, NI and ROI container ports. Example wait times, status indicators and trend simulations."
         keywords="uk port congestion tracker, port congestion felixstowe, port congestion southampton, belfast port status, dublin port congestion, irish sea ports, northern ireland port delays, liverpool port status, uk container port delays, port congestion today"
+        canonical="https://carrgo.co.uk/resources/port-congestion-tracker"
       />
 
       {/* ====== Hero ====== */}
@@ -397,7 +399,7 @@ export default function PortCongestion() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white/90 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               <Ship className="w-4 h-4" />
-              Live Status
+              Port Status Overview
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
               Carrgo Port Intelligence
@@ -409,7 +411,7 @@ export default function PortCongestion() {
             {/* National Port Health Index */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 px-6 py-5 mb-8 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
               <div>
-                <p className="text-sm text-white/80 font-medium mb-1">National Port Health Index™</p>
+                <p className="text-sm text-white/80 font-medium mb-1">National Port Health Index</p>
                 <div className="flex items-baseline gap-3">
                   <span className="text-5xl font-bold text-white">{nationalIndex.index}</span>
                   <span className="text-white/70 text-sm">/ 100</span>
@@ -669,8 +671,9 @@ export default function PortCongestion() {
           </div>
 
           <p className="mt-4 text-xs text-gray-400">
-            Updates every 12 hours at 06:00 GMT and 18:00 GMT. Wait times are averages and may
-            vary depending on vessel size, cargo type and berth availability.
+            Data shown is representative example data for demonstration purposes. Wait times are
+            illustrative and may vary depending on vessel size, cargo type and berth availability.
+            For live port conditions, contact the relevant port authority or your freight forwarder.
           </p>
         </div>
       </section>
@@ -1059,9 +1062,9 @@ export default function PortCongestion() {
               <p>
                 Port congestion at major UK container ports including{' '}
                 <strong>Felixstowe</strong> and <strong>Southampton</strong> can cause significant
-                disruption to supply chains. Our live UK port congestion tracker monitors vessel
-                queues, berth availability and average wait times across 18 ports in England,
-                Scotland, Wales, Northern Ireland and the Republic of Ireland.
+                disruption to supply chains. This port congestion overview provides representative
+                example data on vessel queues, berth availability and illustrative wait times across
+                18 ports in England, Scotland, Wales, Northern Ireland and the Republic of Ireland.
               </p>
               <p>
                 <strong>Belfast port status</strong> and <strong>Dublin port congestion</strong> are
@@ -1069,13 +1072,13 @@ export default function PortCongestion() {
                 <strong>Northern Ireland port delays</strong> at Larne and Londonderry can impact
                 ferry services and Ro-Ro cargo, while <strong>Liverpool port status</strong> affects
                 trade flows in the north-west of England. For the latest{' '}
-                <strong>port congestion today</strong>, bookmark this page and check back at our
-                twice-daily update schedule.
+                <strong>port congestion conditions</strong>, bookmark this page or contact our team
+                for current routing advice.
               </p>
               <p>
                 Whether you are tracking <strong>port congestion at Felixstowe</strong> or
                 monitoring <strong>UK container port delays</strong> more broadly, Carrgo provides
-                the real-time visibility you need to keep your freight moving.
+                the visibility you need to keep your freight moving.
               </p>
             </div>
           </div>
@@ -1096,6 +1099,62 @@ export default function PortCongestion() {
               {faqs.map((f, i) => (
                 <FaqItem key={i} q={f.q} a={f.a} />
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== Methodology & Disclaimer ====== */}
+      <section aria-label="Methodology and data disclaimer" className="py-12 lg:py-16 bg-white border-t border-gray-100">
+        <div className="container-carrgo">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <Info className="w-6 h-6 text-[#1A6DFF]" />
+              <h2 className="text-xl font-bold text-gray-900">Methodology &amp; Data Disclaimer</h2>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-6">
+              <p className="text-sm text-amber-800 font-medium mb-2">
+                Important: This page displays representative example data for demonstration purposes.
+              </p>
+              <p className="text-sm text-amber-700 leading-relaxed">
+                The port congestion indicators, health scores, wait times, forecasts and historical
+                trends shown on this page are simulated example data — not live or real-time port
+                conditions. In a production environment, this dashboard would integrate with live data
+                feeds such as AIS vessel tracking, port authority berth schedules, and marine
+                traffic APIs. For current port conditions, always contact the relevant port authority
+                or your freight forwarder.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
+              <p>
+                <strong>Data Sources (Planned):</strong> In a fully operational deployment, this
+                dashboard would source data from: (1) Automatic Identification System (AIS) vessel
+                tracking for real-time vessel positions and queue lengths; (2) Port authority berth
+                scheduling and capacity reports; (3) MarineTraffic and VesselFinder APIs for vessel
+                movements; (4) UK Major Ports Group and British Ports Association publications; (5)
+                Local port operator reports (e.g., Peel Ports, DP World, ABP); (6) Weather and
+                maritime condition feeds from the Met Office and Met Éireann.
+              </p>
+              <p>
+                <strong>Health Score Methodology:</strong> The Port Health Score (0–100) is a composite
+                metric combining illustrative factors: berth utilisation rate, average vessel waiting
+                time, truck turnaround time, customs clearance speed, and rail/road connectivity. In a
+                production system, these would be weighted dynamically based on historical correlation
+                with actual delay incidents. Currently shown scores are representative placeholders.
+              </p>
+              <p>
+                <strong>Forecasting:</strong> The 24-hour, 3-day and 7-day congestion forecasts shown
+                are static scenario descriptions for demonstration. A production system would use
+                predictive models combining scheduled vessel arrivals, weather forecasts, historical
+                congestion patterns, and known infrastructure events (e.g., crane maintenance, berth
+                closures) to generate probability-weighted congestion predictions.
+              </p>
+              <p>
+                <strong>Importer Impact:</strong> Demurrage risk assessments and recommended actions
+                are illustrative guidance based on typical industry patterns. Actual detention and
+                demurrage costs vary by shipping line, container type, and contractual terms. Always
+                verify with your carrier and freight forwarder before making routing decisions.
+              </p>
             </div>
           </div>
         </div>
