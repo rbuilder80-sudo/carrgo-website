@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, TrainFront, Truck, Clock, MapPin, ArrowRight,
+  Ship, Plane, TrainFront, Truck, Clock, MapPin, ArrowRight, ArrowUpRight,
   CheckCircle, ChevronDown, FileCheck, Shield, TrendingUp,
   Users, Globe, Anchor, Package
 } from 'lucide-react';
@@ -48,14 +48,64 @@ export default function ChinaToUk() {
         keywords="shipping from china to uk, china to uk freight, sea freight china to uk, fcl shipping from china, lcl china to uk, rail freight china to uk, new silk road shipping, yiwu to london, china to ireland shipping, china to northern ireland freight, china to dublin, china to belfast"
         ogUrl="https://carrgo.co.uk/routes/china-to-uk"
         canonical="https://carrgo.co.uk/routes/china-to-uk"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "China to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
-          "areaServed": [{"@type": "Country", "name": "China"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Sea, air and rail freight forwarding from China to the UK with customs clearance."
-        }}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "China to UK Freight Shipping",
+            "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+            "areaServed": [{"@type": "Country", "name": "China"}, {"@type": "Country", "name": "United Kingdom"}],
+            "description": "Sea, air and rail freight forwarding from China to the UK with customs clearance."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a }
+            }))
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Ship Goods from China to the UK",
+            "description": "A step-by-step guide for UK importers shipping goods from China by sea, air, or rail freight.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Choose Your Transport Mode",
+                "text": "Select sea freight (25–35 days, most economical), air freight (3–5 days, fastest), or rail freight (14–20 days, best balance). Consider your cargo volume, budget, and delivery deadline.",
+                "url": "https://carrgo.co.uk/routes/china-to-uk"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Prepare Export Documentation",
+                "text": "Ensure your supplier provides a commercial invoice, packing list, and bill of lading (sea) or airway bill (air). Obtain a Certificate of Origin if claiming preferential tariff rates.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Book Freight with a Forwarder",
+                "text": "Contact Carrgo with your cargo details (weight, dimensions, HS code, origin port). We provide an all-inclusive quote covering freight, fuel, documentation, and UK customs clearance.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Obtain a UK EORI Number",
+                "text": "Register for an EORI number with HMRC if you don't already have one. This is mandatory for all UK import declarations.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Customs Clearance at UK Port",
+                "text": "Carrgo's customs brokers submit your import declaration to HMRC, calculate duty and VAT (20% standard), and arrange for cargo release once payment is confirmed.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Arrange UK Inland Delivery",
+                "text": "Once cleared, we arrange haulage from the port (Felixstowe, Southampton, etc.) to your UK warehouse or onward to Ireland or Northern Ireland via Irish Sea ferry.",
+              }
+            ]
+          }
+        ]}
       />
 
       <main id="main-content">
@@ -505,6 +555,117 @@ export default function ChinaToUk() {
                   <span className="font-medium text-gray-900 text-sm">{r.name} to UK</span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SOURCES, DISCLAIMER & CROSS-LINKS ====== */}
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Left: Disclaimer + What this does not include */}
+              <div>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Cost &amp; Timing Disclaimer</h2>
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+                  <p className="text-sm text-amber-800 font-medium mb-2">
+                    The rates and transit times shown are representative industry ranges for guidance only.
+                  </p>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Actual freight costs depend on fuel surcharges (BAF), peak-season demand, currency fluctuations, cargo type, and carrier availability. Always request a current all-inclusive quote for accurate pricing.
+                  </p>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">What these estimates do not include</h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>Import Duty</strong> — varies by HS commodity code (0%–25%+). Use the <a href="https://www.trade-tariff.service.gov.uk/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline">UK Trade Tariff</a> to check your rate.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>VAT</strong> — charged at 20% on most goods (CIF value + duty + shipping).</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>Port congestion delays</strong> — check our <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link> for current wait times at Felixstowe, Southampton, and other UK ports.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>Demurrage &amp; detention</strong> — charges apply if containers are not collected within free time.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>Inland haulage</strong> beyond standard port-to-warehouse delivery quoted.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-0.5">•</span>
+                    <span><strong>Insurance</strong> — cargo insurance is recommended but quoted separately.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right: Sources & References */}
+              <div>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Sources &amp; References</h2>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">1</span>
+                    <div>
+                      <span className="font-medium text-gray-900">Drewry World Container Index</span>
+                      <p className="text-gray-500">Global container freight rate benchmarking.</p>
+                      <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                        drewry.co.uk <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">2</span>
+                    <div>
+                      <span className="font-medium text-gray-900">Freightos Baltic Index (FBX)</span>
+                      <p className="text-gray-500">Daily container freight rate index.</p>
+                      <a href="https://fbx.freightos.com/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                        fbx.freightos.com <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">3</span>
+                    <div>
+                      <span className="font-medium text-gray-900">HMRC UK Trade Statistics</span>
+                      <p className="text-gray-500">Official UK import volumes by country and commodity.</p>
+                      <a href="https://www.gov.uk/government/collections/uk-trade-statistics" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                        gov.uk/trade-statistics <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">4</span>
+                    <div>
+                      <span className="font-medium text-gray-900">GOV.UK — UK Trade Tariff</span>
+                      <p className="text-gray-500">Look up duty rates and commodity codes for China-origin goods.</p>
+                      <a href="https://www.trade-tariff.service.gov.uk/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                        trade-tariff.service.gov.uk <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">5</span>
+                    <div>
+                      <span className="font-medium text-gray-900">MarineTraffic — AIS Tracking</span>
+                      <p className="text-gray-500">Real-time vessel positions and port arrival data.</p>
+                      <a href="https://www.marinetraffic.com/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                          marinetraffic.com <ArrowUpRight className="w-3 h-3" />
+                        </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Reviewer byline */}
+            <div className="mt-10 pt-6 border-t border-gray-100">
+              <p className="text-sm text-gray-500">
+                <span className="font-medium text-gray-700">Reviewed by Carrgo Operations Team</span> — Last reviewed <time dateTime="2026-07-08">July 2026</time>. Transit times and rates are based on industry benchmarks from Drewry and Freightos. For live port conditions, see our <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link>.
+              </p>
             </div>
           </div>
         </section>

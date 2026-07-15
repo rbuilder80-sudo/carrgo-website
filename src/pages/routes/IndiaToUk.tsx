@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, Clock, MapPin, ArrowRight,
+  Ship, Plane, Clock, MapPin, ArrowRight, ArrowUpRight,
   CheckCircle, ChevronDown, FileCheck, Shield, TrendingUp,
-  Users, Globe, Anchor, Package
+  Users, Globe, Anchor, Package, AlertTriangle, FileText
 } from 'lucide-react';
 
 const faqData = [
   { q: 'How long does sea freight from India to UK take?', a: 'Sea freight from India to the UK typically takes 20–28 days port-to-port. Mumbai (Nhava Sheva) to Felixstowe averages 22–25 days, while Chennai to Southampton takes approximately 24–28 days depending on the shipping line and route taken via the Suez Canal.' },
   { q: 'What are the main India ports for UK-bound shipments?', a: 'Nhava Sheva (Mumbai) is India&apos;s largest container port and the primary departure point for UK cargo. Other major ports include Chennai, Mundra, Cochin, Kolkata (Haldia), Visakhapatnam, and Hazira. Your choice depends on your supplier&apos;s location and cargo type.' },
-  { q: 'Is there a Free Trade Agreement between India and the UK?', a: 'A UK-India Free Trade Agreement (FTA) is under negotiation. Currently, standard UK import duties and tariffs apply. Our customs team stays updated on any developments and can advise on the most cost-effective shipping strategy for your goods.' },
+  { q: 'Is there a Free Trade Agreement between India and the UK?', a: 'Yes. The UK-India Free Trade Agreement entered into force on 15 July 2026. Eligible goods imported from India can now benefit from reduced or zero tariffs provided they meet the rules of origin. Importers must obtain a valid origin declaration dated on or after 15 July 2026, confirm the correct commodity code and applicable rule of origin, and ensure supplier evidence is consistent with invoice, EORI and Incoterms data. Contact Carrgo for customs readiness support.' },
   { q: 'How much does air freight from India to UK cost?', a: 'Air freight from India to the UK typically ranges from £3.50 to £7 per kilogram depending on cargo weight, dimensions, and urgency. Express services from Mumbai and Delhi to Heathrow are available with 3–5 day transit times.' },
   { q: 'What documents do I need for importing from India to the UK?', a: 'You will need a commercial invoice, packing list, bill of lading or airway bill, and a UK EORI number. Depending on your goods, certificates of origin, GSP Form A, import licences, or product conformity certificates may also be required.' },
 ];
@@ -44,8 +44,8 @@ export default function IndiaToUk() {
     <>
       <Seo
         title="Shipping from India to UK | Sea & Air Freight Forwarder | Carrgo"
-        description="Ship goods from India to UK — sea freight 20-28 days via Nhava Sheva & Mundra, air freight 3-5 days. All-inclusive pricing with customs clearance to Felixstowe & Southampton."
-        keywords="shipping from india to uk, india to uk freight, sea freight india to uk, nhava sheva to felixstowe, mundra to southampton, air cargo india uk"
+        description="Ship goods from India to UK — sea freight 20-28 days via Nhava Sheva & Mundra, air freight 3-5 days. UK-India FTA in force from 15 July 2026. All-inclusive pricing with customs clearance."
+        keywords="shipping from india to uk, india to uk freight, sea freight india to uk, nhava sheva to felixstowe, mundra to southampton, air cargo india uk, uk india trade agreement, uk india fta, rules of origin india uk"
         ogUrl="https://carrgo.co.uk/routes/india-to-uk"
         canonical="https://carrgo.co.uk/routes/india-to-uk"
         structuredData={{
@@ -54,7 +54,7 @@ export default function IndiaToUk() {
           "name": "India to UK Freight Shipping",
           "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
           "areaServed": [{"@type": "Country", "name": "India"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Sea and air freight forwarding from India to the UK with customs clearance."
+          "description": "Sea and air freight forwarding from India to the UK with customs clearance. UK-India FTA compliant."
         }}
       />
 
@@ -105,6 +105,72 @@ export default function IndiaToUk() {
                     <p className="text-brand-200 text-xs">Sea freight via Suez Canal</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== UK-INDIA TRADE AGREEMENT ALERT ====== */}
+        <section className="py-8 bg-amber-50 border-y border-amber-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full text-sm font-semibold">
+                  <AlertTriangle className="w-4 h-4" />
+                  Effective 15 July 2026
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  UK–India Trade Agreement Now in Force
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  The UK–India Free Trade Agreement entered into force on <strong>15 July 2026</strong>. Eligible goods imported from India can now benefit from <strong>reduced or zero tariffs</strong> — but only if the shipment meets the rules of origin and the documentation supports the claim at clearance.
+                </p>
+                <div className="bg-white rounded-xl border border-amber-200 p-5 mb-4">
+                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-amber-600" />
+                    Origin Checklist — Confirm Before You Ship
+                  </h3>
+                  <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Correct commodity (HS) code for your goods</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Applicable rule of origin for that HS code</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Supplier evidence of origin (materials, processing)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Origin declaration dated on or after 15 July 2026</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Consistent invoice, EORI and Incoterms data</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Valid UK EORI number registered with HMRC</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">
+                  <strong>The practical risk:</strong> pricing a shipment as preferential, then finding the documents do not support it at clearance. Freight planning and customs readiness need to move together.
+                </p>
+                <a
+                  href="https://www.business.gov.uk/campaign/alive-with-opportunity/the-uk-india-trade-deal/rules-of-origin/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[#1A6DFF] font-medium text-sm hover:underline"
+                >
+                  UK Government rules-of-origin guidance
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           </div>
@@ -334,7 +400,7 @@ export default function IndiaToUk() {
                   </li>
                   <li className="flex justify-between">
                     <span>UK-India FTA Status</span>
-                    <span className="font-medium">Under negotiation — duty rates apply</span>
+                    <span className="font-medium text-emerald-700">In force from 15 July 2026</span>
                   </li>
                 </ul>
               </div>

@@ -382,6 +382,69 @@ export default function PortCongestion() {
         description="UK & Ireland port congestion overview covering Felixstowe, Southampton, Liverpool, Dublin, Belfast, Grangemouth and all major UK, NI and ROI container ports. Example wait times, status indicators and trend simulations."
         keywords="uk port congestion tracker, port congestion felixstowe, port congestion southampton, belfast port status, dublin port congestion, irish sea ports, northern ireland port delays, liverpool port status, uk container port delays, port congestion today"
         canonical="https://carrgo.co.uk/resources/port-congestion-tracker"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.a,
+              },
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Avoid Delays at UK Container Ports",
+            "description": "A step-by-step guide for UK importers to minimise delays when shipping through congested UK and Irish Sea ports.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Monitor Port Congestion Before Booking",
+                "text": "Check port health scores and congestion status for your destination port (e.g., Felixstowe, Southampton, Liverpool) before confirming your shipment. Consider alternative ports such as London Gateway or Tilbury if your primary port is congested.",
+                "url": "https://carrgo.co.uk/resources/port-congestion-tracker",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Book Haulage in Advance",
+                "text": "During congested periods, book haulage at least 48 hours before your vessel's estimated arrival. This reduces the risk of detention charges and ensures your cargo moves promptly from port to warehouse.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Prepare Customs Documentation Early",
+                "text": "Ensure your commercial invoice, packing list, and customs declaration are complete and accurate before the vessel arrives. Incomplete documentation is a leading cause of port-side delays.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Build Contingency Time Into Your Schedule",
+                "text": "Add 2–4 days of buffer time to your delivery schedule during peak seasons (pre-Christmas, Chinese New Year) or when your destination port shows Moderate or Congested status.",
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Consider Alternative Transport Modes",
+                "text": "If sea freight delays are critical, evaluate rail freight via the New Silk Road (14–20 days) or air freight (3–5 days) as faster alternatives for time-sensitive cargo.",
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "UK & Ireland Port Congestion Overview",
+            "provider": {
+              "@type": "Organization",
+              "name": "Carrgo Freight Solutions Ltd",
+              "url": "https://carrgo.co.uk",
+            },
+            "areaServed": [
+              { "@type": "Country", "name": "United Kingdom" },
+              { "@type": "Country", "name": "Ireland" },
+            ],
+            "description": "Port congestion overview and importer guidance for 18 major UK, NI and ROI container ports.",
+          },
+        ]}
       />
 
       {/* ====== Hero ====== */}
@@ -1155,6 +1218,84 @@ export default function PortCongestion() {
                 demurrage costs vary by shipping line, container type, and contractual terms. Always
                 verify with your carrier and freight forwarder before making routing decisions.
               </p>
+            </div>
+
+            {/* ====== Sources & References ====== */}
+            <div className="mt-10 pt-8 border-t border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Sources &amp; References</h3>
+              <p className="text-sm text-gray-500 mb-4">
+                The following sources are used to inform our port intelligence methodology and industry context. Where this page shows simulated data, these are the authoritative sources a production system would integrate.
+              </p>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">1</span>
+                  <div>
+                    <span className="font-medium text-gray-900">Drewry World Container Index</span>
+                    <p className="text-gray-500">Global container freight rate benchmarking and port congestion indicators.</p>
+                    <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      drewry.co.uk <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">2</span>
+                  <div>
+                    <span className="font-medium text-gray-900">Freightos Baltic Index (FBX)</span>
+                    <p className="text-gray-500">Daily container freight rate index for Asia–Europe and transatlantic lanes.</p>
+                    <a href="https://fbx.freightos.com/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      fbx.freightos.com <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">3</span>
+                  <div>
+                    <span className="font-medium text-gray-900">HMRC UK Trade Statistics</span>
+                    <p className="text-gray-500">Official UK import/export volumes by port and commodity code.</p>
+                    <a href="https://www.gov.uk/government/collections/uk-trade-statistics" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      gov.uk/trade-statistics <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">4</span>
+                  <div>
+                    <span className="font-medium text-gray-900">Department for Transport — Port Freight Statistics</span>
+                    <p className="text-gray-500">Annual and quarterly port freight traffic data for UK major ports.</p>
+                    <a href="https://www.gov.uk/government/collections/port-freight-statistics" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      gov.uk/port-freight-statistics <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">5</span>
+                  <div>
+                    <span className="font-medium text-gray-900">MarineTraffic — AIS Vessel Tracking</span>
+                    <p className="text-gray-500">Real-time vessel positions, port arrivals, and anchorage queue data.</p>
+                    <a href="https://www.marinetraffic.com/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      marinetraffic.com <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">6</span>
+                  <div>
+                    <span className="font-medium text-gray-900">British Ports Association</span>
+                    <p className="text-gray-500">Industry reports, policy updates and port performance data for UK ports.</p>
+                    <a href="https://www.britishports.org.uk/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline inline-flex items-center gap-1 mt-0.5">
+                      britishports.org.uk <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-[#1A6DFF] text-xs font-bold flex-shrink-0">7</span>
+                  <div>
+                    <span className="font-medium text-gray-900">Port Authority Sources</span>
+                    <p className="text-gray-500">Individual port operators and harbour authorities (e.g., Peel Ports, DP World, ABP, Port of London Authority) publish operational notices and capacity data.</p>
+                    <span className="text-gray-400 text-xs mt-0.5">Links vary by port — contact the relevant port authority for current conditions.</span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

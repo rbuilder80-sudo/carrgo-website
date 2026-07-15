@@ -19,6 +19,7 @@ interface SeoProps {
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
   preload?: PreloadResource[];
+  gscVerification?: string;
 }
 
 export default function Seo({
@@ -33,6 +34,7 @@ export default function Seo({
   structuredData,
   noindex = false,
   preload = [],
+  gscVerification,
 }: SeoProps) {
   useEffect(() => {
     // Title
@@ -112,6 +114,17 @@ export default function Seo({
       document.head.appendChild(metaRobots);
     }
     metaRobots.setAttribute('content', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+
+    // Google Search Console verification
+    if (gscVerification) {
+      let metaGsc = document.querySelector('meta[name="google-site-verification"]') as HTMLMetaElement | null;
+      if (!metaGsc) {
+        metaGsc = document.createElement('meta');
+        metaGsc.setAttribute('name', 'google-site-verification');
+        document.head.appendChild(metaGsc);
+      }
+      metaGsc.setAttribute('content', gscVerification);
+    }
 
     // Structured Data
     if (structuredData) {

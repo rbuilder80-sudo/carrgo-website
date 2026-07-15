@@ -972,10 +972,156 @@ def build_html(route, meta, base_html, is_404=False):
     
     robots = "noindex, nofollow" if noindex else "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     
+    # Build breadcrumb schema for all pages except homepage
+    breadcrumb_sd = ""
+    if route != "/":
+        parts = route.strip("/").split("/")
+        if len(parts) >= 1:
+            item_list = []
+            # Home
+            item_list.append({
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.carrgo.co.uk/"
+            })
+            # Build cumulative path
+            cumulative = ""
+            for i, part in enumerate(parts, start=2):
+                cumulative += "/" + part
+                # Clean up name
+                name = part.replace("-", " ").title()
+                # Special name mappings
+                if part == "sea-freight":
+                    name = "Sea Freight"
+                elif part == "air-freight":
+                    name = "Air Freight"
+                elif part == "road-freight":
+                    name = "Road Freight"
+                elif part == "rail-freight-china-uk":
+                    name = "Rail Freight China to UK"
+                elif part == "customs-clearance":
+                    name = "Customs Clearance"
+                elif part == "door-to-door":
+                    name = "Door-to-Door"
+                elif part == "amazon-fba-freight":
+                    name = "Amazon FBA Freight"
+                elif part == "container-shipping":
+                    name = "Container Shipping"
+                elif part == "air-cargo":
+                    name = "Air Cargo"
+                elif part == "china-to-uk":
+                    name = "China to UK"
+                elif part == "germany-to-uk":
+                    name = "Germany to UK"
+                elif part == "netherlands-to-uk":
+                    name = "Netherlands to UK"
+                elif part == "india-to-uk":
+                    name = "India to UK"
+                elif part == "usa-to-uk":
+                    name = "USA to UK"
+                elif part == "turkey-to-uk":
+                    name = "Turkey to UK"
+                elif part == "uae-to-uk":
+                    name = "UAE to UK"
+                elif part == "spain-to-uk":
+                    name = "Spain to UK"
+                elif part == "belfast-northern-ireland":
+                    name = "Belfast & Northern Ireland"
+                elif part == "dublin-ireland":
+                    name = "Dublin & Ireland"
+                elif part == "port-congestion-tracker":
+                    name = "Port Congestion Tracker"
+                elif part == "shipping-guides":
+                    name = "Shipping Guides"
+                elif part == "container-size-guide":
+                    name = "Container Size Guide"
+                elif part == "incoterms-guide":
+                    name = "Incoterms Guide"
+                elif part == "freight-faqs":
+                    name = "Freight FAQs"
+                elif part == "case-studies":
+                    name = "Case Studies"
+                elif part == "our-process":
+                    name = "Our Process"
+                elif part == "post-brexit-customs-guide":
+                    name = "Post-Brexit Customs Guide"
+                elif part == "testimonials":
+                    name = "Testimonials"
+                elif part == "cost-calculator":
+                    name = "Cost Calculator"
+                elif part == "port-comparison":
+                    name = "Port Comparison"
+                elif part == "ecommerce":
+                    name = "Ecommerce"
+                elif part == "manufacturing":
+                    name = "Manufacturing"
+                elif part == "retail":
+                    name = "Retail"
+                elif part == "automotive":
+                    name = "Automotive"
+                elif part == "construction":
+                    name = "Construction"
+                elif part == "electronics":
+                    name = "Electronics"
+                elif part == "medical":
+                    name = "Medical"
+                elif part == "furniture":
+                    name = "Furniture"
+                elif part == "felixstowe":
+                    name = "Felixstowe Port"
+                elif part == "southampton":
+                    name = "Southampton Port"
+                elif part == "london-gateway":
+                    name = "London Gateway"
+                elif part == "liverpool":
+                    name = "Liverpool Port"
+                elif part == "bristol":
+                    name = "Bristol Port"
+                elif part == "tilbury":
+                    name = "Tilbury Port"
+                elif part == "immingham":
+                    name = "Immingham Port"
+                elif part == "grangemouth":
+                    name = "Grangemouth Port"
+                elif part == "holyhead":
+                    name = "Holyhead Port"
+                elif part == "belfast":
+                    name = "Belfast Port"
+                elif part == "larne":
+                    name = "Larne Port"
+                elif part == "londonderry":
+                    name = "Londonderry Port"
+                elif part == "dublin":
+                    name = "Dublin Port"
+                elif part == "cork":
+                    name = "Cork Port"
+                elif part == "rosslare-europort":
+                    name = "Rosslare Europort"
+                elif part == "shannon-foynes":
+                    name = "Shannon Foynes"
+                elif part == "waterford":
+                    name = "Waterford Port"
+                
+                item_list.append({
+                    "@type": "ListItem",
+                    "position": i,
+                    "name": name,
+                    "item": f"https://www.carrgo.co.uk{cumulative}/"
+                })
+            
+            breadcrumb_schema = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": item_list
+            }
+            breadcrumb_sd = f'<script type="application/ld+json">{json.dumps(breadcrumb_schema, ensure_ascii=False)}</script>\n'
+    
     # Build structured data scripts
     sd_scripts = ""
     for sd in structured_data:
         sd_scripts += f'<script type="application/ld+json">{json.dumps(sd, ensure_ascii=False)}</script>\n'
+    sd_scripts += breadcrumb_sd
     
     # Build the <head> meta block
     meta_block = f"""<title>{title}</title>
