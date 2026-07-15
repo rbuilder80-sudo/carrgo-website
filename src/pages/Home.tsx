@@ -229,26 +229,19 @@ export default function Home() {
         <div className="container-carrgo">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+              <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
                 UK Freight Forwarding for Importers and Exporters
               </h1>
+              {/* Direct answer block for AI search readiness */}
+              <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
+                <p className="text-lg text-white leading-relaxed" itemProp="text">
+                  <strong className="text-green-300">Carrgo is a UK freight forwarder</strong> specialising in sea freight (FCL/LCL), air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters. We provide all-inclusive door-to-door shipping quotes within 2 hours, with real-time tracking and dedicated account managers.
+                </p>
+              </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
                 <span itemProp="description">Sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
               </p>
-              <ul className="space-y-2 mb-8 text-brand-100">
-                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" aria-hidden="true" /><span>All-inclusive pricing — no hidden fees</span></li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" aria-hidden="true" /><span>Dedicated account manager</span></li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" aria-hidden="true" /><span>Real-time shipment tracking</span></li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" aria-hidden="true" /><span>Expert customs clearance team</span></li>
-              </ul>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]">
-                  Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-600 transition-colors min-h-[44px]">
-                  Contact Us
-                </Link>
-              </div>
+
             </div>
             <div className="hidden lg:block">
               <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
@@ -307,6 +300,31 @@ export default function Home() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      /* ====== WHO WE HELP (buyer personas) ====== */
+      <section aria-labelledby="who-we-help-heading" data-section="who-we-help" className="py-12 bg-white border-b">
+        <div className="container-carrgo">
+          <h2 id="who-we-help-heading" className="text-2xl font-bold text-center text-gray-900 mb-3">Who does Carrgo help?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">We provide freight forwarding and customs clearance for UK businesses importing and exporting goods worldwide.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: 'UK Importers', href: '/services/sea-freight', desc: 'Sea, air, road & rail freight' },
+              { label: 'UK Exporters', href: '/services/sea-freight', desc: 'Global shipping solutions' },
+              { label: 'Procurement Managers', href: '/services/door-to-door', desc: 'End-to-end supply chain' },
+              { label: 'Logistics Managers', href: '/services/logistics', desc: 'Multi-modal coordination' },
+              { label: 'Manufacturers', href: '/industries/manufacturing', desc: 'Raw materials & finished goods' },
+              { label: 'E-commerce Businesses', href: '/industries/ecommerce', desc: 'B2C fulfilment & FBA' },
+              { label: 'Amazon FBA Sellers', href: '/services/amazon-fba-freight', desc: 'FBA prep & UK delivery' },
+              { label: 'Wholesalers & Retailers', href: '/industries/retail', desc: 'Bulk imports & distribution' },
+            ].map(p => (
+              <Link key={p.label} to={p.href} className="block bg-gray-50 rounded-lg p-4 border hover:shadow-md transition-shadow hover:bg-brand-50">
+                <h3 className="font-semibold text-gray-900">{p.label}</h3>
+                <p className="text-sm text-gray-600 mt-1">{p.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -414,6 +432,12 @@ export default function Home() {
                 </article>
               );
             })}
+          </div>
+          <div className="mt-10 text-center">
+            <p className="text-gray-600 mb-4">Need help choosing the right service? Compare our <Link to="/tools/port-comparison" className="text-brand-700 font-medium hover:underline">port comparison tool</Link> or read our <Link to="/resources/shipping-guides" className="text-brand-700 font-medium hover:underline">shipping guides</Link>.</p>
+            <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-brand-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors min-h-[44px]">
+              Get a Free Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
@@ -524,8 +548,16 @@ export default function Home() {
                   {r.rail && <div className="flex justify-between"><dt className="text-gray-500">Rail:</dt><dd className="font-medium">{r.rail}</dd></div>}
                   {r.road && <div className="flex justify-between"><dt className="text-gray-500">Road:</dt><dd className="font-medium">{r.road}</dd></div>}
                 </dl>
+                <div className="mt-3 pt-3 border-t">
+                  <Link to={`/routes/${r.origin.toLowerCase().replace(/\s+/g, '-')}-to-uk`} className="text-brand-700 text-sm font-medium inline-flex items-center gap-1 hover:underline">
+                    Route details <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                  </Link>
+                </div>
               </article>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-gray-600">Not sure which route is best for your shipment? Use our <Link to="/tools/cost-calculator" className="text-brand-700 font-medium hover:underline">cost calculator</Link> or <Link to="/get-a-quote" className="text-brand-700 font-medium hover:underline">request a quote</Link> and we will recommend the optimal mode.</p>
           </div>
         </div>
       </section>
@@ -542,6 +574,12 @@ export default function Home() {
                 <p className="text-gray-600 text-sm mt-1">{ind.desc}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-gray-600 mb-4">See how Carrgo handles <Link to="/industries/ecommerce" className="text-brand-700 font-medium hover:underline">e-commerce logistics</Link>, <Link to="/industries/automotive" className="text-brand-700 font-medium hover:underline">automotive parts shipping</Link>, and <Link to="/industries/construction" className="text-brand-700 font-medium hover:underline">construction materials</Link>.</p>
+            <Link to="/resources/industries" className="inline-flex items-center gap-2 text-brand-700 font-medium hover:underline">
+              View all industries <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
@@ -656,14 +694,19 @@ export default function Home() {
       </section>
 
       {/* ====== LAST UPDATED ====== */}
-      <section className="py-4 bg-gray-100 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-500">
-            <span className="inline-flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Last Updated: <time dateTime="2026-07-08">July 2026</time> — Rates and information verified for accuracy
-            </span>
-          </p>
+      <section className="py-6 bg-gray-100 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-600">
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <strong>Page verified and updated:</strong> <time dateTime="2026-07-15">15 July 2026</time>
+              </span>
+            </p>
+            <p className="text-sm text-gray-500">
+              Rates, transit times and customs information are reviewed weekly. <Link to="/resources/freight-faqs" className="text-brand-700 hover:underline">View all FAQs</Link> · <Link to="/resources/shipping-guides" className="text-brand-700 hover:underline">Shipping guides</Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>
