@@ -43,7 +43,12 @@ ROUTES = {
                     {"@type": "Question", "name": "How long does sea freight from China to the UK take?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight from Shanghai or Shenzhen to Felixstowe takes 25-35 days. China-UK rail via the New Silk Road takes 14-20 days. Air freight takes 3-5 days door-to-door."}},
                     {"@type": "Question", "name": "Does Carrgo handle UK and Ireland customs clearance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles UK and Ireland import customs declarations, duty calculations and port release at all major UK and Irish ports including Belfast and Dublin."}},
                     {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
-                    {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}}
+                    {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}},
+                    {"@type": "Question", "name": "What is the cheapest way to ship from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight (FCL or LCL) is the cheapest option for most China-to-UK shipments. A 20ft container costs GBP 1,200-2,800 and a 40ft container GBP 2,000-4,500. For smaller consignments under 15 CBM, LCL sharing starts from GBP 300 per CBM. Rail freight via the New Silk Road is faster than sea and cheaper than air."}},
+                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive freight quotes within 2 hours during UK business hours. Simply submit your origin, destination, cargo details and ready date through the online quote form or email info@carrgo.co.uk."}},
+                    {"@type": "Question", "name": "Which freight forwarder is best for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "The best freight forwarder for UK imports from China offers clear all-inclusive pricing, proactive customs support, and reliable transit times. Carrgo specialises in China-to-UK sea, air and rail freight with customs clearance included, quotes in 2 hours, and tracking throughout."}},
+                    {"@type": "Question", "name": "What documents do I need to import goods into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "You need a commercial invoice, packing list, bill of lading or airway bill, and a UK EORI number starting with GB. Depending on the goods, you may also need certificates of origin, import licences or health certificates. Carrgo prepares all documentation for you."}},
+                    {"@type": "Question", "name": "Does Carrgo offer door-to-door shipping from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles door-to-door freight from China to the UK, including supplier collection, freight booking, export customs, UK import customs clearance, duty and VAT calculation, and final delivery to your warehouse or Amazon FBA centre."}}
                 ]
             },
             {
@@ -1130,6 +1135,8 @@ def build_html(route, meta, base_html, is_404=False):
 <meta name="description" content="{description}" />
 <meta name="keywords" content="{keywords}" />
 <meta name="author" content="Carrgo Freight Solutions Ltd" />
+<meta name="last-modified" content="2026-07-15" />
+<meta name="date" content="2026-07-15" />
 <meta name="robots" content="{robots}" />
 <link rel="canonical" href="{canonical}" />
 <link rel="alternate" hreflang="en-gb" href="{canonical}" />
@@ -1189,6 +1196,8 @@ def build_html(route, meta, base_html, is_404=False):
 <p>{description}</p>
 <p><strong>Carrgo Freight Solutions</strong> — UK freight forwarder handling sea freight, air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters.</p>
 <p><a href="https://www.carrgo.co.uk/get-a-quote">Get a free quote in 2 hours</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a></p>
+<p><strong>Who we help:</strong> UK importers, exporters, procurement managers, logistics managers, manufacturers, ecommerce businesses, Amazon FBA sellers, wholesalers, retailers, and customs-clearance customers.</p>
+<p><strong>Services:</strong> <a href="https://www.carrgo.co.uk/services/sea-freight">Sea Freight</a> | <a href="https://www.carrgo.co.uk/services/air-freight">Air Freight</a> | <a href="https://www.carrgo.co.uk/services/road-freight">Road Freight</a> | <a href="https://www.carrgo.co.uk/services/customs-clearance">Customs Clearance</a> | <a href="https://www.carrgo.co.uk/resources/port-congestion-tracker">Port Tracker</a></p>
 </div>
 </noscript>
 '''
