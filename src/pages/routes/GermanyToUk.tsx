@@ -68,6 +68,12 @@ export default function GermanyToUk() {
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
                   Germany to UK Freight — Road, Sea & Air Shipping
                 </h1>
+                {/* Direct answer block for AI search readiness */}
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
+                  <p className="text-lg text-white leading-relaxed" itemProp="text">
+                    <strong className="text-green-300">Carrgo ships freight from Germany to the UK</strong> by road (2–4 days), sea (5–8 days), and air (1–2 days). Daily road departures from Hamburg, Frankfurt, Munich, and all major German cities. Full post-Brexit customs clearance included with every shipment.
+                  </p>
+                </div>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
                   Road freight from Germany to the UK takes 2–4 days with daily departures. Sea and air options also available for larger or urgent shipments. Full post-Brexit customs clearance included.
                 </p>
@@ -458,6 +464,22 @@ export default function GermanyToUk() {
                   <span className="font-medium text-gray-900 text-sm">{r.name} to UK</span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+        {/* ====== LAST UPDATED ====== */}
+        <section className="py-6 bg-gray-100 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-gray-600">
+                <span className="inline-flex items-center gap-1.5">
+                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <strong>Page verified and updated:</strong> <time dateTime="2026-07-15">15 July 2026</time>
+                </span>
+              </p>
+              <p className="text-sm text-gray-500">
+                Transit times and customs information reviewed weekly. <a href="/resources/freight-faqs" className="text-[#1A6DFF] hover:underline">View FAQs</a> · <a href="/resources/shipping-guides" className="text-[#1A6DFF] hover:underline">Shipping guides</a>
+              </p>
             </div>
           </div>
         </section>
