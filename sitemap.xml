@@ -79,13 +79,11 @@
   <url><loc>https://www.carrgo.co.uk/ports/rosslare-europort</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/ports/shannon-foynes</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/ports/waterford</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <!-- Import guides & free tools (added 16 July 2026) -->
-  <url><loc>https://www.carrgo.co.uk/tools/uk-import-cost-tracker</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/tools/woocommerce-uk-import-readiness-plugin</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/eori-number</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/commodity-codes</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/import-vat</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/customs-clearance</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/woocommerce-importing</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/guides/</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Guide landing pages -->
+  <url><loc>https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/shipstation-uk-customs-delay-check</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/salesforce-freight-quote-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
