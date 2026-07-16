@@ -38,6 +38,11 @@ const resourcePages = [
   { path: '/resources/industries', title: 'Industries', desc: 'Freight solutions tailored for furniture, e-commerce, automotive, construction, electronics, and fashion.', modified: '2025-01-15' },
   { path: '/resources/our-process', title: 'Our Process', desc: '5-step freight forwarding process from quote request to final delivery.', modified: '2025-01-15' },
   { path: '/resources/post-brexit-customs-guide', title: 'Post-Brexit Customs Guide', desc: 'Navigating UK customs after Brexit: EORI numbers, rules of origin, NI Protocol, Windsor Framework.', modified: '2025-01-15' },
+  { path: '/squarespace-import-duties-ddp-tariff-uk-sellers', title: 'Squarespace Import Duties & DDP Guide', desc: 'Import duties, DDP/DDU choices and HS codes for UK Squarespace sellers, with practical tariff workarounds.', modified: '2026-07-16' },
+  { path: '/shipstation-uk-customs-delay-check', title: 'ShipStation UK Customs-Delay Check', desc: 'Send your ShipStation export for a UK customs-delay risk check covering HS codes, origin, values and documents.', modified: '2026-07-16' },
+  { path: '/business-central-import-duty-landed-cost-readiness', title: 'Business Central Landed Cost Readiness', desc: 'Import duty and landed-cost readiness review for Dynamics 365 Business Central users.', modified: '2026-07-16' },
+  { path: '/salesforce-freight-quote-readiness', title: 'Salesforce Freight Quote Readiness', desc: 'Readiness review scoring freight enquiries on nine fields for Salesforce teams.', modified: '2026-07-16' },
+  { path: '/sap-business-one-import-duty-landed-cost-readiness', title: 'SAP Business One Landed Cost Readiness', desc: 'Import duty and landed-cost readiness review for SAP Business One users.', modified: '2026-07-16' },
 ];
 
 const companyPages = [

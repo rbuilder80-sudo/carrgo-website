@@ -64,6 +64,13 @@ const PortDetail = lazy(() => import('./pages/ports/PortDetail'));
 const CostCalculator = lazy(() => import('./pages/tools/CostCalculator'));
 const PortComparison = lazy(() => import('./pages/tools/PortComparison'));
 
+// Guide landing pages
+const SquarespaceImportDuties = lazy(() => import('./pages/guides/SquarespaceImportDuties'));
+const ShipStationCustomsDelay = lazy(() => import('./pages/guides/ShipStationCustomsDelay'));
+const BusinessCentralLandedCost = lazy(() => import('./pages/guides/BusinessCentralLandedCost'));
+const SalesforceQuoteReadiness = lazy(() => import('./pages/guides/SalesforceQuoteReadiness'));
+const SapBusinessOneReadiness = lazy(() => import('./pages/guides/SapBusinessOneReadiness'));
+
 // Resource pages
 const PortCongestion = lazy(() => import('./pages/resources/PortCongestion'));
 const ShippingGuides = lazy(() => import('./pages/resources/ShippingGuides'));
@@ -149,6 +156,13 @@ export default function App() {
 
           {/* Port Intelligence detail pages */}
           <Route path="/ports/:slug" element={<Suspense fallback={<Loading />}><PortDetail /></Suspense>} />
+
+          {/* Guide landing pages (standalone — not in header/footer nav) */}
+          <Route path="/squarespace-import-duties-ddp-tariff-uk-sellers" element={<Suspense fallback={<Loading />}><SquarespaceImportDuties /></Suspense>} />
+          <Route path="/shipstation-uk-customs-delay-check" element={<Suspense fallback={<Loading />}><ShipStationCustomsDelay /></Suspense>} />
+          <Route path="/business-central-import-duty-landed-cost-readiness" element={<Suspense fallback={<Loading />}><BusinessCentralLandedCost /></Suspense>} />
+          <Route path="/salesforce-freight-quote-readiness" element={<Suspense fallback={<Loading />}><SalesforceQuoteReadiness /></Suspense>} />
+          <Route path="/sap-business-one-import-duty-landed-cost-readiness" element={<Suspense fallback={<Loading />}><SapBusinessOneReadiness /></Suspense>} />
 
           {/* Tools */}
           <Route path="/tools/cost-calculator" element={<Suspense fallback={<Loading />}><CostCalculator /></Suspense>} />

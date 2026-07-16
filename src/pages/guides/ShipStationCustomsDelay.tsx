@@ -1,0 +1,102 @@
+import { Link } from 'react-router-dom';
+import Seo from '../../components/Seo';
+import { ArrowRight, FileDown, Mail, ClipboardCheck } from 'lucide-react';
+
+/* ── JSON-LD Structured Data ── */
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'ShipStation sellers shipping to the UK: check customs-delay risk before you print the label',
+  url: 'https://carrgo.co.uk/shipstation-uk-customs-delay-check',
+  description:
+    'Shipping into the UK via ShipStation? Send Carrgo your ShipStation export and we check destination, HS codes, country of origin, declared values, weights and documents for UK customs-delay risk.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Carrgo Freight Solutions Ltd',
+    url: 'https://carrgo.co.uk',
+  },
+};
+
+const steps = [
+  { icon: FileDown, text: 'Export your orders from ShipStation.' },
+  { icon: Mail, text: 'Email the file to support@carrgo.co.uk.' },
+  { icon: ClipboardCheck, text: 'Get a clear risk report within one working day.' },
+];
+
+export default function ShipStationCustomsDelay() {
+  return (
+    <>
+      <Seo
+        title="ShipStation UK Customs-Delay Check for Sellers | Carrgo"
+        description="Shipping into the UK via ShipStation? One missing HS code can park your parcel at the border. Send Carrgo your export for a customs-delay risk check."
+        keywords="shipstation uk customs, shipstation customs delay, uk import hs code check, shipstation uk sellers, uk customs clearance check"
+        ogUrl="https://carrgo.co.uk/shipstation-uk-customs-delay-check"
+        canonical="https://carrgo.co.uk/shipstation-uk-customs-delay-check"
+        structuredData={pageSchema}
+      />
+
+      <main id="main-content" role="main">
+        {/* ====== HERO ====== */}
+        <section aria-labelledby="hero-heading" className="bg-white border-b border-[#E5E7EB]">
+          <div className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div className="max-w-3xl">
+              <span className="inline-block text-xs font-semibold tracking-widest text-[#1A6DFF] uppercase mb-4">Customs-Delay Risk Check</span>
+              <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold text-[#111827] leading-tight mb-4">
+                ShipStation sellers shipping to the UK: check customs-delay risk before you print the label
+              </h1>
+              <p className="text-lg text-[#4B5563] leading-relaxed">
+                Shipping into the UK from outside the UK/EU? One missing HS code or wrong origin can park your parcel at the border. Send Carrgo your ShipStation export and we&apos;ll check destination, HS codes, country of origin, declared values, weights and documents — and flag UK import delay risks before you ship.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== HOW IT WORKS ====== */}
+        <section aria-labelledby="how-it-works-heading" className="bg-[#F8FAFC] py-16 md:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="how-it-works-heading" className="text-2xl font-bold text-[#111827] mb-8 text-center">How it works:</h2>
+            <ol className="space-y-4">
+              {steps.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <li key={i} className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6 flex items-center gap-4">
+                    <span className="flex-shrink-0 w-10 h-10 bg-[#EBF2FF] text-[#1A6DFF] rounded-full flex items-center justify-center text-lg font-bold">{i + 1}</span>
+                    <Icon className="w-5 h-5 text-[#1A6DFF] flex-shrink-0" aria-hidden="true" />
+                    <p className="text-[#4B5563] leading-relaxed font-medium">{step.text}</p>
+                  </li>
+                );
+              })}
+            </ol>
+            <p className="text-sm text-[#9CA3AF] mt-10 text-center">
+              Guidance only — not legal or tax advice; duty rates always verified on GOV.UK Trade Tariff.
+            </p>
+          </div>
+        </section>
+
+        {/* ====== CTA BANNER ====== */}
+        <section aria-label="ShipStation customs-delay check" className="py-16 bg-[#1A6DFF] text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-extrabold mb-4">Ready to Check Your Shipments?</h2>
+            <p className="text-[#D4E3FF] text-lg mb-8">
+              Send us your ShipStation export and we&apos;ll check customs-delay risk before you ship.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="mailto:support@carrgo.co.uk"
+                className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]"
+              >
+                Email support@carrgo.co.uk <ArrowRight className="w-5 h-5" aria-hidden="true" />
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-[#1557CC] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1149AD] transition-colors min-h-[44px]"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

@@ -79,4 +79,11 @@
   <url><loc>https://carrgo.co.uk/ports/rosslare-europort</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://carrgo.co.uk/ports/shannon-foynes</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://carrgo.co.uk/ports/waterford</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+
+  <!-- Guide landing pages -->
+  <url><loc>https://carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://carrgo.co.uk/shipstation-uk-customs-delay-check</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://carrgo.co.uk/business-central-import-duty-landed-cost-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://carrgo.co.uk/salesforce-freight-quote-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
