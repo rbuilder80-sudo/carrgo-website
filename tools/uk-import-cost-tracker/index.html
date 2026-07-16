@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Search Console — replace with your verification code after adding property at search.google.com/search-console -->
+    <meta name="google-site-verification" content="GSC_VERIFICATION_CODE_REPLACE_ME" />
+    <title>Free UK Import Cost Tracker (Excel & Google Sheets) | Carrgo</title>
+    <meta name="description" content="Download our free UK import cost calculator spreadsheet. Track product cost, freight, duty, VAT and total landed cost. Works in Excel and Google Sheets." />
+    <meta name="keywords" content="uk import cost calculator, import cost tracker, landed cost calculator uk, import duty and vat calculator, google sheets import template, excel import cost template" />
+    <meta name="author" content="Carrgo Freight Solutions Ltd" />
+    <meta name="last-modified" content="2026-07-16" />
+    <meta name="date" content="2026-07-16" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.carrgo.co.uk/tools/uk-import-cost-tracker" />
+    <link rel="alternate" hreflang="en-gb" href="https://www.carrgo.co.uk/tools/uk-import-cost-tracker" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <meta property="og:title" content="Free UK Import Cost Tracker (Excel & Google Sheets) | Carrgo" />
+    <meta property="og:description" content="Download our free UK import cost calculator spreadsheet. Track product cost, freight, duty, VAT and total landed cost. Works in Excel and Google Sheets." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.carrgo.co.uk/tools/uk-import-cost-tracker" />
+    <meta property="og:image" content="https://www.carrgo.co.uk/og-image.png" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Carrgo Freight Solutions" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free UK Import Cost Tracker (Excel & Google Sheets) | Carrgo" />
+    <meta name="twitter:description" content="Download our free UK import cost calculator spreadsheet. Track product cost, freight, duty, VAT and total landed cost. Works in Excel and Google Sheets." />
+    <meta name="twitter:image" content="https://www.carrgo.co.uk/og-image.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1A6DFF" />
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carrgo.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.carrgo.co.uk/tools/"}, {"@type": "ListItem", "position": 3, "name": "UK Import Cost Tracker", "item": "https://www.carrgo.co.uk/tools/uk-import-cost-tracker/"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this template really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The spreadsheet is 100% free to download and use. We offer freight and customs services if you choose to request a quote, but the template itself costs nothing."}}, {"@type": "Question", "name": "Do I need Excel, or can I use Google Sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Either. The file is a standard .xlsx workbook that opens directly in Microsoft Excel. To use it in Google Sheets, open Google Sheets and go to File \u2192 Import \u2192 Upload, then select the downloaded file. The formulas and dropdowns work in both."}}, {"@type": "Question", "name": "Does it convert currencies automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 by design. You enter your supplier's currency and your exchange rate in a single cell, and the template converts the total to GBP. There are no macros and no external data connections, so the file is safe to open anywhere."}}, {"@type": "Question", "name": "Does this calculate duty and VAT for me?", "acceptedAnswer": {"@type": "Answer", "text": "It calculates duty and VAT based on the rates you enter. You need to look up your commodity code and duty rate on the GOV.UK Trade Tariff (https://www.gov.uk/trade-tariff) first. If you need help, request a Carrgo quote and our customs team can assist."}}, {"@type": "Question", "name": "Is this tax or legal advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. This template is for guidance only. Duty rates, VAT rules and freight costs change regularly. Always verify with the GOV.UK Trade Tariff and your freight forwarder."}}, {"@type": "Question", "name": "Can I share this with my team?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Once you have downloaded it, it is your spreadsheet. Share it with colleagues, your accountant, or your freight forwarder."}}, {"@type": "Question", "name": "Can I remove the Carrgo branding?", "acceptedAnswer": {"@type": "Answer", "text": "We ask that you keep the Carrgo header, footer and quote link in place. The template is free because it helps us reach UK sellers who might need freight services."}}]}</script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TTZSDB45');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" crossorigin href="/assets/index-C0NcZTMg.css">
+    <style>
+      /* Page-local styles: static dropdown behaviour + article typography (React bundle not loaded on these pages) */
+      .dd-panel{opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease-out,transform .2s ease-out}
+      [data-dropdown].open .dd-panel{opacity:1;transform:translateY(0);pointer-events:auto}
+      .article-body h2{font-size:1.5rem;line-height:2rem;font-weight:700;color:#111827;letter-spacing:-0.01em;margin:2.5rem 0 1rem}
+      .article-body h3{font-size:1.125rem;line-height:1.75rem;font-weight:600;color:#111827;margin:2rem 0 .75rem}
+      .article-body p{color:#4b5563;line-height:1.7;margin-bottom:1rem}
+      .article-body ul,.article-body ol{color:#4b5563;line-height:1.7;margin:0 0 1rem;padding-left:1.5rem}
+      .article-body ul{list-style:disc}
+      .article-body ol{list-style:decimal}
+      .article-body li{margin-bottom:.5rem}
+      .article-body a{color:#1A6DFF;text-decoration:underline}
+      .article-body strong{color:#111827}
+      .article-body table{width:100%;font-size:.875rem;text-align:left;border-collapse:collapse;margin:0 0 1.5rem}
+      .article-body th{padding:.625rem 1rem;font-weight:600;color:#111827;border-bottom:2px solid #e5e7eb;white-space:nowrap}
+      .article-body td{padding:.625rem 1rem;color:#4b5563;border-bottom:1px solid #f3f4f6;vertical-align:top}
+      .article-body .table-wrap{overflow-x:auto;margin-bottom:1.5rem}
+      .article-body .table-wrap table{margin-bottom:0}
+      details.faq{border:1px solid #e5e7eb;border-radius:.75rem;padding:1rem 1.25rem;margin-bottom:.75rem;background:#fff}
+      details.faq summary{font-weight:600;color:#111827;cursor:pointer;list-style:none}
+      details.faq summary::-webkit-details-marker{display:none}
+      details.faq summary::before{content:"+";color:#1A6DFF;font-weight:700;margin-right:.5rem}
+      details.faq[open] summary::before{content:"3"}
+      /* utilities not present in the compiled site CSS */
+      .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      .hover\:bg-brand-100:hover{background-color:#BBDEFB}
+      .mb-0{margin-bottom:0}
+      .first\:mt-0:first-child{margin-top:0}
+      details.faq p{margin:.75rem 0 0}
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTZSDB45"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="fixed top-0 inset-x-0 z-40 bg-white border-b border-gray-100 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2.5 text-gray-900 font-bold text-lg tracking-tight shrink-0" aria-label="Carrgo home">
+        <div class="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center shadow-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px] text-white" aria-hidden="true"><path d="M12 10.189V14"/><path d="M12 2v3"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
+        <span class="hidden sm:inline">Carrgo</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
+        <div class="relative" data-dropdown><button type="button" aria-expanded="false" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Services<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></button><div class="dd-panel absolute top-full left-0 mt-2 z-50"><div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden w-56"><div class="py-2 px-1"><a href="/services" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">All Services</a><a href="/services/sea-freight" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Sea Freight</a><a href="/services/air-freight" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Air Freight</a><a href="/services/road-freight" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Road Freight</a><a href="/services/rail-freight-china-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Rail Freight</a><a href="/services/customs-clearance" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Customs Clearance</a><a href="/services/door-to-door" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Door-to-Door</a><a href="/services/amazon-fba-freight" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Amazon FBA</a><a href="/services/warehousing" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Warehousing</a></div></div></div></div><div class="relative" data-dropdown><button type="button" aria-expanded="false" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Routes<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></button><div class="dd-panel absolute top-full left-0 mt-2 z-50"><div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden w-56"><div class="py-2 px-1"><a href="/routes" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">All Routes</a><a href="/routes/china-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">China to UK</a><a href="/routes/germany-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Germany to UK</a><a href="/routes/netherlands-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Netherlands to UK</a><a href="/routes/dublin-ireland" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Ireland (Dublin)</a><a href="/routes/belfast-northern-ireland" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Northern Ireland (Belfast)</a><a href="/routes/india-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">India to UK</a><a href="/routes/usa-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">USA to UK</a><a href="/routes/turkey-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Turkey to UK</a><a href="/routes/uae-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">UAE to UK</a><a href="/routes/spain-to-uk" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Spain to UK</a></div></div></div></div><div class="relative" data-dropdown><button type="button" aria-expanded="false" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Industries<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></button><div class="dd-panel absolute top-full left-0 mt-2 z-50"><div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden w-56"><div class="py-2 px-1"><a href="/resources/industries" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">All Industries</a><a href="/industries/ecommerce" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Ecommerce & Amazon</a><a href="/industries/manufacturing" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Manufacturing</a><a href="/industries/retail" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Retail & Wholesale</a><a href="/industries/automotive" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Automotive</a><a href="/industries/construction" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Construction</a><a href="/industries/electronics" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Electronics</a><a href="/industries/medical" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Medical & Pharma</a><a href="/industries/furniture" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Furniture</a></div></div></div></div><div class="relative" data-dropdown><button type="button" aria-expanded="false" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Resources<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></button><div class="dd-panel absolute top-full left-0 mt-2 z-50"><div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden w-56"><div class="py-2 px-1"><a href="/resources/port-congestion-tracker" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Port Intelligence</a><a href="/resources/shipping-guides" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Shipping Guides</a><a href="/resources/container-size-guide" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Container Size Guide</a><a href="/resources/incoterms-guide" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Incoterms Guide</a><a href="/resources/freight-faqs" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Freight FAQs</a><a href="/resources/case-studies" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Case Studies</a><a href="/resources/testimonials" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Testimonials</a><a href="/resources/industries" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Industries</a><a href="/resources/our-process" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Our Process</a><a href="/resources/post-brexit-customs-guide" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Post-Brexit Guide</a></div></div></div></div><div class="relative" data-dropdown><button type="button" aria-expanded="false" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Port Intelligence<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></button><div class="dd-panel absolute top-full left-0 mt-2 z-50"><div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden w-[640px]"><div class="grid grid-cols-3 gap-1 p-4"><div class="col-span-3 mb-1 mt-2 first:mt-0"><p class="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Port Intelligence</p></div><a href="/resources/port-congestion-tracker" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Port Intelligence Dashboard</a><a href="/tools/cost-calculator" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Cost Calculator</a><a href="/tools/port-comparison" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Port Comparison</a><div class="col-span-3 mb-1 mt-2 first:mt-0"><p class="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">UK Ports</p></div><a href="/ports/felixstowe" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Felixstowe</a><a href="/ports/southampton" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Southampton</a><a href="/ports/london-gateway" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">London Gateway</a><a href="/ports/liverpool" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Liverpool</a><a href="/ports/bristol" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Bristol</a><a href="/ports/tilbury" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Tilbury</a><a href="/ports/immingham" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Immingham</a><a href="/ports/grangemouth" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Grangemouth</a><a href="/ports/holyhead" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Holyhead</a><div class="col-span-3 mb-1 mt-2 first:mt-0"><p class="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Northern Ireland</p></div><a href="/ports/belfast" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Belfast</a><a href="/ports/larne" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Larne</a><a href="/ports/londonderry" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Londonderry</a><div class="col-span-3 mb-1 mt-2 first:mt-0"><p class="px-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Republic of Ireland</p></div><a href="/ports/dublin" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Dublin</a><a href="/ports/cork" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Cork</a><a href="/ports/rosslare-europort" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Rosslare Europort</a><a href="/ports/shannon-foynes" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Shannon Foynes</a><a href="/ports/waterford" class="block px-4 py-1.5 text-[13px] text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-md transition-colors">Waterford</a></div></div></div></div>
+        <a href="/about" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">About<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></a>
+        <a href="/contact" class="group relative px-3 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors tracking-[-0.01em]">Contact<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-700 rounded-full transition-all duration-300 group-hover:w-4"></span></a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="/get-a-quote/" class="hidden lg:inline-flex items-center px-5 py-2.5 text-[13px] font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-sm transition-colors">Get a Quote</a>
+        <button type="button" id="menu-btn" class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-gray-50 transition-colors" aria-label="Open menu" aria-expanded="false">
+          <span class="block w-5 h-[1.5px] bg-gray-700 rounded-full"></span>
+          <span class="block w-5 h-[1.5px] bg-gray-700 rounded-full"></span>
+          <span class="block w-5 h-[1.5px] bg-gray-700 rounded-full"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="h-16"></div>
+<div id="mobile-menu" class="fixed inset-0 z-50 lg:hidden" hidden>
+  <div class="absolute inset-0 bg-gray-950/40" data-close-menu></div>
+  <div class="absolute inset-x-0 top-0 bottom-0 bg-white overflow-y-auto">
+    <div class="flex items-center justify-between px-5 h-16 border-b border-gray-100">
+      <a href="/" class="flex items-center gap-2.5 text-gray-900 font-bold text-lg tracking-tight">
+        <div class="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center shadow-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px] text-white" aria-hidden="true"><path d="M12 10.189V14"/><path d="M12 2v3"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div><span>Carrgo</span>
+      </a>
+      <button type="button" data-close-menu class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 transition-colors text-gray-600 text-2xl leading-none" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="px-5 py-6 pb-28" aria-label="Mobile navigation">
+      <details class="mb-5"><summary class="w-full flex items-center justify-between py-3 text-left border-b border-gray-100 cursor-pointer list-none"><span class="text-base font-semibold text-gray-900">Services</span><span class="text-gray-400">&#8250;</span></summary><div class="space-y-0.5 pl-2 mt-2"><a href="/services" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">All Services</a><a href="/services/sea-freight" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Sea Freight</a><a href="/services/air-freight" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Air Freight</a><a href="/services/road-freight" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Road Freight</a><a href="/services/rail-freight-china-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Rail Freight</a><a href="/services/customs-clearance" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Customs Clearance</a><a href="/services/door-to-door" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Door-to-Door</a><a href="/services/amazon-fba-freight" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Amazon FBA</a><a href="/services/warehousing" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Warehousing</a></div></details><details class="mb-5"><summary class="w-full flex items-center justify-between py-3 text-left border-b border-gray-100 cursor-pointer list-none"><span class="text-base font-semibold text-gray-900">Trade Routes</span><span class="text-gray-400">&#8250;</span></summary><div class="space-y-0.5 pl-2 mt-2"><a href="/routes" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">All Routes</a><a href="/routes/china-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">China to UK</a><a href="/routes/germany-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Germany to UK</a><a href="/routes/netherlands-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Netherlands to UK</a><a href="/routes/dublin-ireland" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Ireland (Dublin)</a><a href="/routes/belfast-northern-ireland" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Northern Ireland (Belfast)</a><a href="/routes/india-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">India to UK</a><a href="/routes/usa-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">USA to UK</a><a href="/routes/turkey-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Turkey to UK</a><a href="/routes/uae-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">UAE to UK</a><a href="/routes/spain-to-uk" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Spain to UK</a></div></details><details class="mb-5"><summary class="w-full flex items-center justify-between py-3 text-left border-b border-gray-100 cursor-pointer list-none"><span class="text-base font-semibold text-gray-900">Industries</span><span class="text-gray-400">&#8250;</span></summary><div class="space-y-0.5 pl-2 mt-2"><a href="/resources/industries" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">All Industries</a><a href="/industries/ecommerce" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Ecommerce & Amazon</a><a href="/industries/manufacturing" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Manufacturing</a><a href="/industries/retail" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Retail & Wholesale</a><a href="/industries/automotive" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Automotive</a><a href="/industries/construction" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Construction</a><a href="/industries/electronics" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Electronics</a><a href="/industries/medical" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Medical & Pharma</a><a href="/industries/furniture" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Furniture</a></div></details><details class="mb-5"><summary class="w-full flex items-center justify-between py-3 text-left border-b border-gray-100 cursor-pointer list-none"><span class="text-base font-semibold text-gray-900">Resources</span><span class="text-gray-400">&#8250;</span></summary><div class="space-y-0.5 pl-2 mt-2"><a href="/resources/port-congestion-tracker" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Port Intelligence</a><a href="/resources/shipping-guides" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Shipping Guides</a><a href="/resources/container-size-guide" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Container Size Guide</a><a href="/resources/incoterms-guide" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Incoterms Guide</a><a href="/resources/freight-faqs" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Freight FAQs</a><a href="/resources/case-studies" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Case Studies</a><a href="/resources/testimonials" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Testimonials</a><a href="/resources/industries" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Industries</a><a href="/resources/our-process" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Our Process</a><a href="/resources/post-brexit-customs-guide" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Post-Brexit Guide</a></div></details><details class="mb-5"><summary class="w-full flex items-center justify-between py-3 text-left border-b border-gray-100 cursor-pointer list-none"><span class="text-base font-semibold text-gray-900">Port Intelligence</span><span class="text-gray-400">&#8250;</span></summary><div class="space-y-0.5 pl-2 mt-2"><a href="/resources/port-congestion-tracker" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Port Intelligence Dashboard</a><a href="/tools/cost-calculator" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Cost Calculator</a><a href="/tools/port-comparison" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Port Comparison</a><a href="/ports/felixstowe" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Felixstowe</a><a href="/ports/southampton" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Southampton</a><a href="/ports/london-gateway" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">London Gateway</a><a href="/ports/liverpool" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Liverpool</a><a href="/ports/bristol" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Bristol</a><a href="/ports/tilbury" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Tilbury</a><a href="/ports/immingham" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Immingham</a><a href="/ports/grangemouth" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Grangemouth</a><a href="/ports/holyhead" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Holyhead</a><a href="/ports/belfast" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Belfast</a><a href="/ports/larne" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Larne</a><a href="/ports/londonderry" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Londonderry</a><a href="/ports/dublin" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Dublin</a><a href="/ports/cork" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Cork</a><a href="/ports/rosslare-europort" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Rosslare Europort</a><a href="/ports/shannon-foynes" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Shannon Foynes</a><a href="/ports/waterford" class="block py-2.5 text-[15px] text-gray-600 hover:text-brand-700 transition-colors">Waterford</a></div></details>
+      <div class="space-y-0.5 mt-2 border-t border-gray-100 pt-4">
+        <a href="/about" class="block py-3 text-base font-semibold text-gray-900 hover:text-brand-700 transition-colors">About</a>
+        <a href="/contact" class="block py-3 text-base font-semibold text-gray-900 hover:text-brand-700 transition-colors">Contact</a>
+      </div>
+    </nav>
+    <div class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-100 px-5 py-4">
+      <a href="/get-a-quote/" class="block w-full text-center bg-brand-700 hover:bg-brand-800 text-white text-[15px] font-semibold py-3.5 rounded-xl shadow-lg transition-colors">Get a Free Quote</a>
+    </div>
+  </div>
+</div>
+<main id="main-content">
+    <section class="bg-gray-50 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-3xl">
+          <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-6"><a href="/" class="hover:text-brand-700 hover:underline">Home</a><span class="mx-2 text-gray-300">/</span><span class="text-gray-700">Tools</span><span class="mx-2 text-gray-300">/</span><span class="text-gray-700">UK Import Cost Tracker</span></nav>
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 mb-4">Free UK Import Cost Tracker (Excel &amp; Google Sheets)</h1>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8"><strong>Stop guessing what your imports actually cost.</strong> Our free spreadsheet helps UK ecommerce sellers calculate the true landed cost of imported stock &mdash; from supplier invoice to warehouse delivery. Includes built-in duty/VAT estimates, an import readiness checklist and a direct link to request a Carrgo quote.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/assets/downloads/carrgo-uk-import-cost-tracker.xlsx" download class="inline-flex items-center justify-center px-5 py-3 text-[15px] font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-sm transition-colors">Get the Free Template</a>
+            <a href="#how-it-works" class="inline-flex items-center justify-center px-5 py-3 text-[15px] font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 rounded-xl transition-colors">See How It Works</a>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">Free download. Opens in Excel &mdash; or use in Google Sheets via File &rarr; Import &rarr; Upload. No signup. No macros.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 article-body">
+
+      <h2>What the Tracker Does</h2>
+
+      <h3>1. Complete Cost Breakdown</h3>
+      <p>Enter your costs and watch the template calculate:</p>
+      <ul>
+        <li>Product cost (in any currency)</li>
+        <li>Freight estimate (sea, air or courier)</li>
+        <li>Insurance</li>
+        <li>Import duty (based on your rate)</li>
+        <li>Import VAT</li>
+        <li>Customs clearance fees</li>
+        <li>Port handling and other charges</li>
+        <li><strong>Total landed cost</strong> in GBP</li>
+      </ul>
+
+      <h3>2. Unit Cost &amp; Margin Calculator</h3>
+      <p>Add your expected selling price and quantity. The template shows:</p>
+      <ul>
+        <li>Cost per unit</li>
+        <li>Gross margin percentage</li>
+        <li>Break-even analysis</li>
+      </ul>
+
+      <h3>3. Import Readiness Checklist</h3>
+      <p>A built-in checklist covering the seven things every UK importer needs before shipping:</p>
+      <ul>
+        <li>EORI number</li>
+        <li>Commodity code</li>
+        <li>Duty &amp; VAT rates checked on the GOV.UK Trade Tariff</li>
+        <li>Commercial invoice</li>
+        <li>Packing list</li>
+        <li>Incoterms agreed</li>
+        <li>Freight &amp; customs clearance booking</li>
+      </ul>
+
+      <h3>4. Request a Carrgo Quote from Inside the Sheet</h3>
+      <p>When you&rsquo;re ready, the template includes a direct link to our quote form, so you can get a freight and customs clearance estimate without re-entering your details.</p>
+
+      <h2>Who This Is For</h2>
+      <ul>
+        <li>WooCommerce, Shopify and Amazon FBA sellers importing stock</li>
+        <li>Small UK businesses buying from China, India, USA, EU or Vietnam</li>
+        <li>Buyers who want to know their true margin before placing a large order</li>
+        <li>Anyone who finds customs calculators confusing and wants a simple spreadsheet</li>
+      </ul>
+
+      <h2 id="how-it-works">How to Use the Template</h2>
+
+      <h3>Step 1: Download and Open the File</h3>
+      <ol>
+        <li>Click the <strong>&ldquo;Get the Free Template&rdquo;</strong> button above to download the .xlsx file.</li>
+        <li>Open it in Microsoft Excel &mdash; it works straight away.</li>
+        <li>Prefer Google Sheets? Open <a href="https://sheets.google.com" target="_blank" rel="noopener">Google Sheets</a>, then go to <strong>File &rarr; Import &rarr; Upload</strong> and select the downloaded file.</li>
+      </ol>
+
+      <h3>Step 2: Fill In Your Shipment Details</h3>
+      <ul>
+        <li>Supplier name and product description</li>
+        <li>Country of origin</li>
+        <li>Incoterms (dropdown)</li>
+        <li>Freight mode (dropdown)</li>
+        <li>Currency and your exchange rate to GBP</li>
+      </ul>
+
+      <h3>Step 3: Enter Your Costs</h3>
+      <ul>
+        <li>Product cost</li>
+        <li>Freight estimate</li>
+        <li>Insurance</li>
+        <li>Duty rate (%)</li>
+        <li>VAT rate (commonly 20%)</li>
+        <li>Customs clearance fee</li>
+        <li>Port handling fees</li>
+      </ul>
+      <p>The template calculates your <strong>total landed cost automatically</strong>.</p>
+
+      <h3>Step 4: Check Your Readiness</h3>
+      <p>Work through the checklist sheet and mark each item as you complete it. The sheet tracks how many items are done and shows your readiness status.</p>
+
+      <h3>Step 5: Request a Carrgo Quote</h3>
+      <p>Use the quote link in the sheet (or on this page) to get a freight and customs clearance estimate in under 2 minutes.</p>
+
+      <h2>What&rsquo;s Inside the File</h2>
+      <ul>
+        <li><strong>Cost Tracker</strong> &mdash; shipment details, full cost breakdown, total landed cost in GBP, cost per unit, gross margin and break-even units.</li>
+        <li><strong>Import Readiness Checklist</strong> &mdash; the 7-point pre-shipment checklist with Yes/No dropdowns, guidance notes and a readiness score.</li>
+        <li><strong>Read Me &amp; Disclaimer</strong> &mdash; how to use the template, where to verify duty and VAT rates, and the full disclaimer.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq"><summary>Is this template really free?</summary><p>Yes. The spreadsheet is 100% free to download and use. We offer freight and customs services if you choose to request a quote, but the template itself costs nothing.</p></details><details class="faq"><summary>Do I need Excel, or can I use Google Sheets?</summary><p>Either. The file is a standard .xlsx workbook that opens directly in Microsoft Excel. To use it in Google Sheets, open Google Sheets and go to File → Import → Upload, then select the downloaded file. The formulas and dropdowns work in both.</p></details><details class="faq"><summary>Does it convert currencies automatically?</summary><p>No — by design. You enter your supplier's currency and your exchange rate in a single cell, and the template converts the total to GBP. There are no macros and no external data connections, so the file is safe to open anywhere.</p></details><details class="faq"><summary>Does this calculate duty and VAT for me?</summary><p>It calculates duty and VAT based on the rates you enter. You need to look up your commodity code and duty rate on the GOV.UK Trade Tariff (https://www.gov.uk/trade-tariff) first. If you need help, request a Carrgo quote and our customs team can assist.</p></details><details class="faq"><summary>Is this tax or legal advice?</summary><p>No. This template is for guidance only. Duty rates, VAT rules and freight costs change regularly. Always verify with the GOV.UK Trade Tariff and your freight forwarder.</p></details><details class="faq"><summary>Can I share this with my team?</summary><p>Yes. Once you have downloaded it, it is your spreadsheet. Share it with colleagues, your accountant, or your freight forwarder.</p></details><details class="faq"><summary>Can I remove the Carrgo branding?</summary><p>We ask that you keep the Carrgo header, footer and quote link in place. The template is free because it helps us reach UK sellers who might need freight services.</p></details>
+
+      <h2>Related Resources</h2>
+      <ul>
+        <li><a href="/guides/eori-number/">What is an EORI Number?</a></li>
+        <li><a href="/guides/commodity-codes/">How to Find Your Commodity Code</a></li>
+        <li><a href="/guides/import-vat/">Import VAT Guide for UK Businesses</a></li>
+        <li><a href="/guides/customs-clearance/">UK Customs Clearance Explained</a></li>
+        <li><a href="/tools/woocommerce-uk-import-readiness-plugin/">WooCommerce Import Readiness Plugin</a></li>
+        <li><a href="/get-a-quote/">Get a Freight Quote</a></li>
+      </ul>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mt-8">
+        <p class="text-amber-800 text-sm mb-0"><strong>Disclaimer:</strong> This spreadsheet is for guidance only. Duty rates, VAT rules and freight costs change regularly. Always verify with the <a href="https://www.gov.uk/trade-tariff" target="_blank" rel="noopener">GOV.UK Trade Tariff</a> and your freight forwarder. Carrgo does not provide tax or legal advice.</p>
+      </div>
+
+      <h2>Support</h2>
+      <p><strong>Email:</strong> <a href="mailto:support@carrgo.co.uk">support@carrgo.co.uk</a><br /><strong>Response time:</strong> Within 24 hours on business days</p>
+    </div>
+
+        <section class="py-6 bg-gray-100 border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p class="text-sm text-gray-600">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <strong>Last Updated:</strong> <time datetime="2026-07-16">16 July 2026</time>
+                </span>
+              </p>
+              <p class="text-sm text-gray-500">Free template for UK importers. <a href="/get-a-quote/" class="text-[#1A6DFF] hover:underline">Get a quote</a> &middot; <a href="/resources/freight-faqs" class="text-[#1A6DFF] hover:underline">View FAQs</a></p>
+            </div>
+          </div>
+        </section>
+
+</main>
+<footer class="bg-gray-950 text-gray-400" itemscope itemtype="https://schema.org/Organization">
+  <meta itemprop="@id" content="https://carrgo.co.uk/#organization" />
+  <link itemprop="url" href="https://carrgo.co.uk" />
+  <div class="border-b border-gray-800">
+    <div class="container-carrgo py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-2.5 text-white font-bold text-xl mb-4">
+            <div class="w-9 h-9 bg-brand-700 rounded-lg flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px] text-white" aria-hidden="true"><path d="M12 10.189V14"/><path d="M12 2v3"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
+            <span itemprop="name">Carrgo</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5 max-w-sm" itemprop="description">Trusted UK freight forwarding company with over 30 years combined industry experience. All-inclusive door-to-door shipping with quotes in 2 hours.</p>
+          <div class="not-italic space-y-2.5 text-sm">
+            <div class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-brand-400 shrink-0" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:support@carrgo.co.uk" class="hover:text-white transition-colors">support@carrgo.co.uk</a></div>
+          </div>
+          <div class="flex items-center gap-3 mt-5">
+            <a href="https://www.linkedin.com/company/carrgo" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-brand-700 flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div class="lg:col-span-8">
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            <nav aria-label="Services"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Services</h2><ul class="space-y-2.5"><li><a href="/services/sea-freight" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Sea Freight</a></li><li><a href="/services/air-freight" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Air Freight</a></li><li><a href="/services/road-freight" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Road Freight</a></li><li><a href="/services/rail-freight-china-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Rail Freight</a></li><li><a href="/services/customs-clearance" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Customs Clearance</a></li><li><a href="/services/door-to-door" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Door-to-Door</a></li><li><a href="/services/amazon-fba-freight" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Amazon FBA</a></li><li><a href="/services/warehousing" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Warehousing</a></li></ul></nav><nav aria-label="Trade routes"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Trade Routes</h2><ul class="space-y-2.5"><li><a href="/routes/china-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">China to UK</a></li><li><a href="/routes/germany-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Germany to UK</a></li><li><a href="/routes/netherlands-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Netherlands to UK</a></li><li><a href="/routes/dublin-ireland" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Ireland (Dublin)</a></li><li><a href="/routes/belfast-northern-ireland" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Northern Ireland (Belfast)</a></li><li><a href="/routes/india-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">India to UK</a></li><li><a href="/routes/usa-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">USA to UK</a></li><li><a href="/routes/turkey-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Turkey to UK</a></li><li><a href="/routes/uae-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">UAE to UK</a></li><li><a href="/routes/spain-to-uk" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Spain to UK</a></li></ul></nav><nav aria-label="Industries"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Industries</h2><ul class="space-y-2.5"><li><a href="/industries/ecommerce" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Ecommerce & Amazon</a></li><li><a href="/industries/manufacturing" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Manufacturing</a></li><li><a href="/industries/retail" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Retail & Wholesale</a></li><li><a href="/industries/automotive" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Automotive</a></li><li><a href="/industries/construction" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Construction</a></li><li><a href="/industries/electronics" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Electronics</a></li><li><a href="/industries/medical" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Medical & Pharma</a></li><li><a href="/industries/furniture" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Furniture</a></li></ul></nav><nav aria-label="Resources"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Resources</h2><ul class="space-y-2.5"><li><a href="/resources/port-congestion-tracker" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Port Intelligence</a></li><li><a href="/resources/shipping-guides" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Shipping Guides</a></li><li><a href="/resources/container-size-guide" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Container Size Guide</a></li><li><a href="/resources/incoterms-guide" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Incoterms Guide</a></li><li><a href="/resources/freight-faqs" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Freight FAQs</a></li><li><a href="/resources/case-studies" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li><li><a href="/resources/testimonials" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Testimonials</a></li><li><a href="/resources/industries" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Industries</a></li><li><a href="/resources/our-process" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Our Process</a></li></ul></nav><nav aria-label="Port Intelligence"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Port Intelligence</h2><ul class="space-y-2.5"><li><a href="/resources/port-congestion-tracker" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Port Intelligence Dashboard</a></li><li><a href="/tools/cost-calculator" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Cost Calculator</a></li><li><a href="/tools/port-comparison" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Port Comparison</a></li><li><a href="/ports/felixstowe" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Felixstowe</a></li><li><a href="/ports/southampton" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Southampton</a></li><li><a href="/ports/london-gateway" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">London Gateway</a></li><li><a href="/ports/liverpool" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Liverpool</a></li><li><a href="/ports/grangemouth" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Grangemouth</a></li><li><a href="/ports/belfast" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Belfast</a></li><li><a href="/ports/dublin" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Dublin</a></li><li><a href="/ports/cork" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Cork</a></li><li><a href="/ports/rosslare-europort" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Rosslare Europort</a></li></ul></nav><nav aria-label="Company"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</h2><ul class="space-y-2.5"><li><a href="/about" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li><li><a href="/results" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Our Results</a></li><li><a href="/resources/testimonials" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Testimonials</a></li><li><a href="/contact" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li><li><a href="/get-a-quote/" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Get a Quote</a></li></ul></nav><nav aria-label="Legal"><h2 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal</h2><ul class="space-y-2.5"><li><a href="/privacy" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li><li><a href="/terms" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li></ul></nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-carrgo py-5">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-sm text-gray-500"><small>&copy; 2026 Carrgo Freight Solutions Ltd. All rights reserved.</small></p>
+      <button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-white transition-colors" aria-label="Back to top"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 transition-transform" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+    </div>
+  </div>
+  <meta itemprop="sameAs" content="https://www.linkedin.com/company/carrgo" />
+</footer>
+
+<script>
+(function(){
+  var openDd=null;
+  function closeAll(){document.querySelectorAll('[data-dropdown].open').forEach(function(d){d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false');});openDd=null;}
+  document.querySelectorAll('[data-dropdown]').forEach(function(d){
+    var t;
+    var open=function(){clearTimeout(t);if(openDd&&openDd!==d){openDd.classList.remove('open');openDd.querySelector('button').setAttribute('aria-expanded','false');}d.classList.add('open');d.querySelector('button').setAttribute('aria-expanded','true');openDd=d;};
+    var close=function(){t=setTimeout(function(){d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false');if(openDd===d)openDd=null;},180);};
+    d.addEventListener('mouseenter',open);
+    d.addEventListener('mouseleave',close);
+    d.querySelector('button').addEventListener('click',function(e){e.stopPropagation();if(d.classList.contains('open')){close();}else{open();}});
+  });
+  document.addEventListener('mousedown',function(e){if(openDd&&!openDd.contains(e.target)){closeAll();}});
+  var mm=document.getElementById('mobile-menu'),btn=document.getElementById('menu-btn');
+  function setMenu(o){if(o){mm.removeAttribute('hidden');document.body.style.overflow='hidden';btn.setAttribute('aria-expanded','true');}else{mm.setAttribute('hidden','');document.body.style.overflow='';btn.setAttribute('aria-expanded','false');}}
+  btn.addEventListener('click',function(){setMenu(mm.hasAttribute('hidden'));});
+  mm.querySelectorAll('[data-close-menu]').forEach(function(el){el.addEventListener('click',function(){setMenu(false);});});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();setMenu(false);}});
+})();
+</script>
+  </body>
+</html>
