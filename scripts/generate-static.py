@@ -934,6 +934,116 @@ ROUTES = {
         "h1": "Get a Freight Quote — UK Import &amp; Export Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
+    "/squarespace-import-duties-ddp-tariff-uk-sellers": {
+        "title": "Squarespace Import Duties & DDP for UK Sellers | Carrgo",
+        "description": "Squarespace doesn't clear UK customs for you. Learn how import duties, DDP/DDU choices and HS codes work for UK sellers — plus the practical workarounds.",
+        "keywords": "squarespace import duties uk, squarespace ddp ddu, uk import duty squarespace, hs codes squarespace, uk customs ecommerce sellers",
+        "canonical": "https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers",
+        "h1": "Squarespace Import Duties, DDP and Tariff Workarounds for UK Sellers",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Squarespace Import Duties, DDP and Tariff Workarounds for UK Sellers",
+                "url": "https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers",
+                "description": "Squarespace handles your storefront — it doesn't clear UK customs for you. Guide to import duties, DDP/DDU choices and HS codes for UK Squarespace sellers.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
+    "/shipstation-uk-customs-delay-check": {
+        "title": "ShipStation UK Customs-Delay Check for Sellers | Carrgo",
+        "description": "Shipping into the UK via ShipStation? One missing HS code can park your parcel at the border. Send Carrgo your export for a customs-delay risk check.",
+        "keywords": "shipstation uk customs, shipstation customs delay, uk import hs code check, shipstation uk sellers, uk customs clearance check",
+        "canonical": "https://www.carrgo.co.uk/shipstation-uk-customs-delay-check",
+        "h1": "ShipStation sellers shipping to the UK: check customs-delay risk before you print the label",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "ShipStation sellers shipping to the UK: check customs-delay risk before you print the label",
+                "url": "https://www.carrgo.co.uk/shipstation-uk-customs-delay-check",
+                "description": "Shipping into the UK via ShipStation? Send Carrgo your ShipStation export and we check destination, HS codes, country of origin, declared values, weights and documents for UK customs-delay risk.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
+    "/business-central-import-duty-landed-cost-readiness": {
+        "title": "Import Duty & Landed Cost for Business Central | Carrgo",
+        "description": "If purchase invoices live in Business Central but customs data doesn't, margins are guessing. Carrgo reviews the nine inputs behind your UK landed cost.",
+        "keywords": "business central import duty, dynamics 365 landed cost, uk landed cost readiness, business central customs data, uk import duty review",
+        "canonical": "https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness",
+        "h1": "Import Duty &amp; Landed Cost Readiness for Business Central Users",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Import Duty & Landed Cost Readiness for Business Central Users",
+                "url": "https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness",
+                "description": "If your purchase invoices live in Dynamics 365 Business Central but your customs data doesn't, your margins are guessing. Carrgo reviews the nine inputs that decide your UK landed cost.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
+    "/salesforce-freight-quote-readiness": {
+        "title": "Freight Quote Readiness for Salesforce Teams | Carrgo",
+        "description": "Half of freight enquiries can't be quoted on first touch. Carrgo scores each Salesforce enquiry on nine fields and hands reps a missing-data checklist.",
+        "keywords": "salesforce freight quote, freight quote readiness, uk freight enquiries salesforce, customs risk check, freight forwarder uk",
+        "canonical": "https://www.carrgo.co.uk/salesforce-freight-quote-readiness",
+        "h1": "Freight Quote Readiness for Salesforce Teams",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Freight Quote Readiness for Salesforce Teams",
+                "url": "https://www.carrgo.co.uk/salesforce-freight-quote-readiness",
+                "description": "Half of freight enquiries can't be quoted on first touch. Carrgo's readiness review scores each enquiry on nine fields and hands your reps a missing-data checklist, a customs-risk flag and the next best action.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
+    "/sap-business-one-import-duty-landed-cost-readiness": {
+        "title": "Import Duty & Landed Cost for SAP Business One | Carrgo",
+        "description": "SAP Business One runs your purchasing — but missing HS codes and Incoterms break landed cost. Carrgo reviews your import data readiness and flags gaps.",
+        "keywords": "sap business one import duty, sap b1 landed cost, uk landed cost readiness, sap business one customs data, uk import duty review",
+        "canonical": "https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness",
+        "h1": "Import Duty &amp; Landed Cost Readiness for SAP Business One",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Import Duty & Landed Cost Readiness for SAP Business One",
+                "url": "https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness",
+                "description": "SAP Business One runs your purchasing — but if HS codes, Incoterms and freight costs aren't captured cleanly, your landed cost is wrong. Carrgo reviews your import data readiness.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
     "/sitemap": {
         "title": "Sitemap | Carrgo Freight Solutions | All Pages",
         "description": "Full sitemap of Carrgo Freight Solutions website. Browse all services, routes, resources, and company pages. Find the freight forwarding information you need.",
