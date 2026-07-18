@@ -47,6 +47,8 @@
   <url><loc>https://www.carrgo.co.uk/resources/testimonials</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.carrgo.co.uk/resources/uk-import-customs-clearance-guide</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
+  <url><loc>https://www.carrgo.co.uk/resources/china-uk-rates-july-2026</loc><lastmod>2026-07-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
   <!-- Industries -->
   <url><loc>https://www.carrgo.co.uk/industries/ecommerce</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.carrgo.co.uk/industries/manufacturing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
