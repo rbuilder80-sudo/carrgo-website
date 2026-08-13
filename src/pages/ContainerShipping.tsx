@@ -26,8 +26,8 @@ export default function ContainerShipping() {
         <Ship className="w-16 h-16 text-[#1A6DFF] mx-auto mb-6" />
         <p className="text-gray-600 text-lg">
           Full page coming soon. For container shipping quotes, please visit our 
-          <a href="#/services/sea-freight" className="text-[#1A6DFF] hover:underline">Sea Freight page</a> or 
-          <a href="#/get-a-quote" className="text-[#1A6DFF] hover:underline">get a quote</a>.
+          <a href="/services/sea-freight" className="text-[#1A6DFF] hover:underline">Sea Freight page</a> or 
+          <a href="/get-a-quote" className="text-[#1A6DFF] hover:underline">get a quote</a>.
         </p>
       </section>
     </main>

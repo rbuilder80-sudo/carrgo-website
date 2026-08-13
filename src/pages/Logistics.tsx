@@ -26,8 +26,8 @@ export default function Logistics() {
         <Warehouse className="w-16 h-16 text-[#1A6DFF] mx-auto mb-6" />
         <p className="text-gray-600 text-lg">
           Full page coming soon. For logistics quotes, please 
-          <a href="#/get-a-quote" className="text-[#1A6DFF] hover:underline">get a quote</a> or 
-          <a href="#/contact" className="text-[#1A6DFF] hover:underline">contact us</a>.
+          <a href="/get-a-quote" className="text-[#1A6DFF] hover:underline">get a quote</a> or 
+          <a href="/contact" className="text-[#1A6DFF] hover:underline">contact us</a>.
         </p>
       </section>
     </main>

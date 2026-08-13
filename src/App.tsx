@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Loading from './components/Loading';
 
@@ -85,7 +85,7 @@ const Testimonials = lazy(() => import('./pages/resources/Testimonials'));
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
@@ -169,6 +169,6 @@ export default function App() {
           <Route path="/tools/port-comparison" element={<Suspense fallback={<Loading />}><PortComparison /></Suspense>} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
