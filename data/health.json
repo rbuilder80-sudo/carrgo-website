@@ -1,0 +1,69 @@
+{
+  "updatedAt": "2026-08-14T23:57:36.223Z",
+  "engine": "online",
+  "overall": "healthy",
+  "heartbeat": {
+    "lastPoll": "2026-08-14T23:47:55Z",
+    "ageSec": 581
+  },
+  "tasks": {
+    "pending": 0,
+    "done": 4
+  },
+  "checks": [
+    {
+      "name": "homepage",
+      "status": "ok",
+      "detail": "200 + GA4 tag",
+      "latencyMs": 324
+    },
+    {
+      "name": "blog article #1",
+      "status": "ok",
+      "detail": "200 (25469 bytes)",
+      "latencyMs": 172
+    },
+    {
+      "name": "blog article #2",
+      "status": "ok",
+      "detail": "200 (15231 bytes)",
+      "latencyMs": 120
+    },
+    {
+      "name": "sitemap.xml",
+      "status": "ok",
+      "detail": "200 (74 URLs)",
+      "latencyMs": 102
+    },
+    {
+      "name": "llms.txt",
+      "status": "ok",
+      "detail": "200 (8631 chars)",
+      "latencyMs": 85
+    },
+    {
+      "name": "IndexNow key file",
+      "status": "ok",
+      "detail": "200",
+      "latencyMs": 73
+    },
+    {
+      "name": "rankings.json feed",
+      "status": "ok",
+      "detail": "200",
+      "latencyMs": 65
+    },
+    {
+      "name": "engine heartbeat",
+      "status": "ok",
+      "detail": "last poll 581s ago",
+      "latencyMs": 59
+    },
+    {
+      "name": "client dashboard",
+      "status": "ok",
+      "detail": "200",
+      "latencyMs": 62
+    }
+  ]
+}
