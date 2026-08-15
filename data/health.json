@@ -1,0 +1,29 @@
+{
+    "updatedAt":  "2026-08-15T00:06:30.2050053Z",
+    "engine":  "online",
+    "heartbeat":  {
+                      "lastPoll":  "2026-08-15T00:06:30.2050053Z"
+                  },
+    "tasks":  {
+                  "done":  "n/a",
+                  "pending":  0
+              },
+    "checks":  [
+                   {
+                       "name":  "homepage",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "sitemap",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "llms.txt",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "engine heartbeat",
+                       "status":  "ok"
+                   }
+               ]
+}
