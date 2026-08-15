@@ -1,1 +1,29 @@
-{"updatedAt":"2026-08-15T18:48:11Z","engine":"online","heartbeat":{"lastPoll":"2026-08-15T18:48:11Z"},"tasks":{"done":6,"pending":0},"checks":[{"name":"homepage","status":"ok"},{"name":"sitemap","status":"ok"},{"name":"llms.txt","status":"ok"},{"name":"engine heartbeat","status":"ok"}]}
+{
+    "updatedAt":  "2026-08-15T19:08:37Z",
+    "engine":  "online",
+    "heartbeat":  {
+                      "lastPoll":  "2026-08-15T19:08:37Z"
+                  },
+    "tasks":  {
+                  "done":  6,
+                  "pending":  0
+              },
+    "checks":  [
+                   {
+                       "name":  "homepage",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "sitemap",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "llms.txt",
+                       "status":  "ok"
+                   },
+                   {
+                       "name":  "engine heartbeat",
+                       "status":  "ok"
+                   }
+               ]
+}
