@@ -1,1 +1,1 @@
-{"updatedAt":"2026-08-16T14:49:10Z","engine":"online","heartbeat":{"lastPoll":"2026-08-16T14:47:00Z"},"tasks":{"done":0,"pending":0},"checks":[{"name":"homepage","status":"ok"},{"name":"sitemap","status":"ok"},{"name":"llms.txt","status":"ok"},{"name":"engine heartbeat","status":"ok"}]}
+{"updatedAt":"2026-08-16T15:14:44Z","engine":"online","heartbeat":{"lastPoll":"2026-08-16T15:09:53Z"},"tasks":{"pending":0,"done":5},"checks":[{"name":"homepage","status":"ok"},{"name":"sitemap","status":"ok"},{"name":"llms.txt","status":"ok"},{"name":"engine heartbeat","status":"ok"}]}
