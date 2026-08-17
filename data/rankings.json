@@ -1,0 +1,32 @@
+{
+    "method":  "Google UK SERP via visible browser (personalised mobile viewport)",
+    "generatedAt":  "2026-08-17T13:16:00+01:00",
+    "note":  "W2 KPI check. 0/15 pages in top-3. All Tier-1 KWs position \u003e10. 1 third-party mention (LinkedIn). DDG + web_search tools broken. RED ALERT — tactic change required per playbook.",
+    "keywords":  [
+                     {
+                         "keyword":  "freight forwarder uk",
+                         "topOrganic":  "freight-forwarder.uk, barringtonfreight.co.uk, freightos.com",
+                         "position":  "\u003e10"
+                     },
+                     {
+                         "keyword":  "sea freight china to uk",
+                         "topOrganic":  "freightos.com, p4d.co.uk, barringtonfreight.co.uk, plexusfreight.com",
+                         "position":  "\u003e10"
+                     },
+                     {
+                         "keyword":  "customs clearance uk",
+                         "topOrganic":  "gov.uk, universalcustomsclearance.co.uk, globalcust.co.uk, cla-uk.com",
+                         "position":  "\u003e10"
+                     },
+                     {
+                         "keyword":  "amazon fba shipping uk",
+                         "topOrganic":  "sell.amazon.co.uk, fbashipuk.com, dfsworldwide.com, unicargo.com",
+                         "position":  "\u003e10"
+                     },
+                     {
+                         "keyword":  "door to door shipping china to uk",
+                         "topOrganic":  "freightos.com, cargonaija.com, ddpchain.com, p4d.co.uk",
+                         "position":  "\u003e10"
+                     }
+                 ]
+}
