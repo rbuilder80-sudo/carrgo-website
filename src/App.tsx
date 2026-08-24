@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Loading from './components/Loading';
 
@@ -98,6 +98,7 @@ export default function App() {
           <Route path="/results" element={<Suspense fallback={<Loading />}><Results /></Suspense>} />
           <Route path="/contact" element={<Suspense fallback={<Loading />}><Contact /></Suspense>} />
           <Route path="/get-a-quote" element={<Suspense fallback={<Loading />}><GetAQuote /></Suspense>} />
+          <Route path="/freight-quote" element={<Navigate to="/get-a-quote" replace />} />
 
           {/* Legal pages */}
           <Route path="/privacy" element={<Suspense fallback={<Loading />}><Privacy /></Suspense>} />
@@ -105,11 +106,15 @@ export default function App() {
 
           {/* Hub pages */}
           <Route path="/services" element={<Suspense fallback={<Loading />}><ServicesHub /></Suspense>} />
+          <Route path="/freight-forwarding" element={<Navigate to="/services" replace />} />
+          <Route path="/services/freight-forwarding" element={<Navigate to="/services" replace />} />
           <Route path="/routes" element={<Suspense fallback={<Loading />}><RoutesHub /></Suspense>} />
 
           {/* Service pages */}
           <Route path="/services/sea-freight" element={<Suspense fallback={<Loading />}><SeaFreight /></Suspense>} />
+          <Route path="/sea-freight" element={<Navigate to="/services/sea-freight" replace />} />
           <Route path="/services/air-freight" element={<Suspense fallback={<Loading />}><AirFreight /></Suspense>} />
+          <Route path="/air-freight" element={<Navigate to="/services/air-freight" replace />} />
           <Route path="/services/road-freight" element={<Suspense fallback={<Loading />}><RoadFreight /></Suspense>} />
           <Route path="/services/rail-freight-china-uk" element={<Suspense fallback={<Loading />}><RailFreight /></Suspense>} />
           <Route path="/services/customs-clearance" element={<Suspense fallback={<Loading />}><CustomsClearance /></Suspense>} />
@@ -134,6 +139,7 @@ export default function App() {
 
           {/* Resource pages */}
           <Route path="/resources/port-congestion-tracker" element={<Suspense fallback={<Loading />}><PortCongestion /></Suspense>} />
+          <Route path="/port-intelligence" element={<Navigate to="/resources/port-congestion-tracker" replace />} />
           <Route path="/resources/shipping-guides" element={<Suspense fallback={<Loading />}><ShippingGuides /></Suspense>} />
           <Route path="/resources/container-size-guide" element={<Suspense fallback={<Loading />}><ContainerGuide /></Suspense>} />
           <Route path="/resources/incoterms-guide" element={<Suspense fallback={<Loading />}><Incoterms /></Suspense>} />
@@ -166,7 +172,9 @@ export default function App() {
 
           {/* Tools */}
           <Route path="/tools/cost-calculator" element={<Suspense fallback={<Loading />}><CostCalculator /></Suspense>} />
+          <Route path="/cost-calculator" element={<Navigate to="/tools/cost-calculator" replace />} />
           <Route path="/tools/port-comparison" element={<Suspense fallback={<Loading />}><PortComparison /></Suspense>} />
+          <Route path="/port-comparison" element={<Navigate to="/tools/port-comparison" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -96,6 +96,7 @@ export default function CostCalculator() {
         title="Importer Cost Calculator | Port Delay Costs | Carrgo"
         description="Calculate the real cost of port delays including demurrage, detention, storage and lost sales for UK and Ireland ports. Free importer cost calculator from Carrgo."
         keywords="importer cost calculator, demurrage calculator, port delay costs, container detention cost, storage cost calculator, uk port costs"
+        canonical="https://carrgo.co.uk/tools/cost-calculator"
       />
 
       {/* ====== Hero ====== */}

@@ -427,6 +427,7 @@ export default function PortComparison() {
         title="Port Comparison Tool | UK & Ireland Port Health | Carrgo"
         description="Compare health scores, wait times, forecasts and capacity across UK & Ireland ports. Free port comparison tool from Carrgo."
         keywords="port comparison, uk port comparison, compare container ports, port health score, port capacity comparison, best uk port for imports"
+        canonical="https://carrgo.co.uk/tools/port-comparison"
       />
 
       {/* ====== Hero ====== */}
