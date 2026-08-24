@@ -253,6 +253,7 @@ export default function Contact() {
                       <p className="text-sm text-[#4B5563] mb-6">Fill in the form below and our team will get back to you shortly.</p>
 
                       <form onSubmit={handleSubmit} className="space-y-4">
+                        <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                         <div className="grid md:grid-cols-2 gap-4">
                           <div>
                             <label htmlFor="contact-name" className="block text-sm font-medium text-[#111827] mb-1">

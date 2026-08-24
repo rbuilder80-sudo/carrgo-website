@@ -271,6 +271,7 @@ export default function GetAQuote() {
                       </h3>
 
                       <form onSubmit={step === 1 ? (e => { e.preventDefault(); handleNext(); }) : handleSubmit} className="space-y-4">
+                        <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                         {step === 1 ? (
                           /* Step 1: Shipment Details */
                           <>

@@ -259,6 +259,7 @@ export default function Home() {
                   </div>
                 ) : (
                   <form className="space-y-4" onSubmit={handleHeroSubmit}>
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                     <div>
                       <label htmlFor="hero-name" className="block text-sm font-medium mb-1">Full Name</label>
                       <input id="hero-name" name="name" type="text" required className="w-full px-4 py-2.5 rounded-lg text-gray-900 bg-white" aria-required="true" />
@@ -601,6 +602,7 @@ export default function Home() {
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleQuoteSubmit}>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
               <fieldset className="grid md:grid-cols-2 gap-4">
                 <legend className="sr-only">Contact Information</legend>
                 <div>
