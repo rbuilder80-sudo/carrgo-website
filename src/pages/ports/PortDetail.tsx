@@ -431,6 +431,7 @@ export default function PortDetail() {
         title={`${port.port} Port Status & Health Score | Live Congestion | Carrgo`}
         description={`Live ${port.port} port status, health score, congestion forecasts and importer intelligence. Current status: ${port.status}. Wait time: ${port.waitTime}. Updated ${port.lastUpdated}.`}
         keywords={seoKeywords}
+        canonical={`https://carrgo.co.uk/ports/${port.slug}`}
       />
 
       {/* ====== 1. Hero Section ====== */}

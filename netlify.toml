@@ -49,6 +49,78 @@
   status = 301
   force = true
 
+# Priority Zero clean-up redirects
+[[redirects]]
+  from = "/port-intelligence"
+  to = "/resources/port-congestion-tracker"
+  status = 301
+
+[[redirects]]
+  from = "/port-comparison"
+  to = "/tools/port-comparison"
+  status = 301
+
+[[redirects]]
+  from = "/cost-calculator"
+  to = "/tools/cost-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/freight-quote"
+  to = "/get-a-quote"
+  status = 301
+
+[[redirects]]
+  from = "/air-freight"
+  to = "/services/air-freight"
+  status = 301
+
+[[redirects]]
+  from = "/sea-freight"
+  to = "/services/sea-freight"
+  status = 301
+
+[[redirects]]
+  from = "/freight-forwarding"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services/freight-forwarding"
+  to = "/services"
+  status = 301
+
+# Search Console legacy 404 examples
+[[redirects]]
+  from = "/ports/bristolport.html"
+  to = "/ports/bristol"
+  status = 301
+
+[[redirects]]
+  from = "/ports/shenzhenport"
+  to = "/routes/china-to-uk"
+  status = 301
+
+[[redirects]]
+  from = "/routes/germanytolondon.html"
+  to = "/routes/germany-to-uk"
+  status = 301
+
+[[redirects]]
+  from = "/route-support/spainshippingtime.html"
+  to = "/routes/spain-to-uk"
+  status = 301
+
+[[redirects]]
+  from = "/ports/dublin-port"
+  to = "/ports/dublin"
+  status = 301
+
+[[redirects]]
+  from = "/ports/busan-port"
+  to = "/routes/china-to-uk"
+  status = 301
+
 # SPA fallback
 [[redirects]]
   from = "/*"
