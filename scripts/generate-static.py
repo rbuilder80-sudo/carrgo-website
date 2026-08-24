@@ -89,6 +89,14 @@ ROUTES = {
             }
         ]
     },
+    "/services": {
+        "title": "Freight Forwarding Services UK | Sea, Air, Road & Rail | Carrgo",
+        "description": "Full-service freight forwarding from the UK. FCL/LCL sea freight, air cargo, European road haulage, China-UK rail, customs clearance & warehousing. Get quotes in 2 hours.",
+        "keywords": "freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
+        "canonical": "https://www.carrgo.co.uk/services",
+        "h1": "UK Freight Forwarding Services",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
     "/services/air-freight": {
         "title": "Air Freight UK | Express Cargo Shipping | Urgent Delivery | Carrgo",
         "description": "Urgent shipment stuck? Carrgo's air freight UK service delivers time-critical cargo in 3-7 days worldwide. Express air freight with customs clearance included. Get your quote in 30 minutes. Same-day pickup available.",
@@ -1072,6 +1080,70 @@ ROUTES = {
     }
 }
 
+STATIC_REDIRECTS = {
+    "/port-intelligence": "/resources/port-congestion-tracker",
+    "/port-comparison": "/tools/port-comparison",
+    "/cost-calculator": "/tools/cost-calculator",
+    "/freight-quote": "/get-a-quote",
+    "/air-freight": "/services/air-freight",
+    "/sea-freight": "/services/sea-freight",
+    "/freight-forwarding": "/services",
+    "/services/freight-forwarding": "/services",
+    "/ports/bristolport.html": "/ports/bristol",
+    "/ports/shenzhenport": "/routes/china-to-uk",
+    "/routes/germanytolondon.html": "/routes/germany-to-uk",
+    "/route-support/spainshippingtime.html": "/routes/spain-to-uk",
+    "/ports/dublin-port": "/ports/dublin",
+    "/ports/busan-port": "/routes/china-to-uk",
+}
+
+
+def write_route_file(gh_pages_dir, route, html):
+    """Write either /path/index.html or an exact .html file for GitHub Pages."""
+
+    cleaned = route.lstrip("/")
+    if route == "/":
+        output = gh_pages_dir / "index.html"
+    elif cleaned.endswith(".html"):
+        output = gh_pages_dir / cleaned
+        output.parent.mkdir(parents=True, exist_ok=True)
+    else:
+        output = gh_pages_dir / cleaned / "index.html"
+        output.parent.mkdir(parents=True, exist_ok=True)
+
+    output.write_text(html, encoding="utf-8")
+    return output
+
+
+def build_redirect_html(source_route, target_route, target_meta):
+    """Create a GitHub Pages-compatible redirect page for legacy URLs."""
+
+    target_url = f"https://www.carrgo.co.uk{target_route}"
+    title = f"Redirecting to {target_meta.get('h1', 'Carrgo Freight Solutions')}"
+    description = target_meta.get("description", "Carrgo Freight Solutions")
+
+    return f"""<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content="{description}" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="{target_url}" />
+  <meta http-equiv="refresh" content="0; url={target_url}" />
+  <script>location.replace("{target_url}");</script>
+</head>
+<body>
+  <main style="max-width:720px;margin:48px auto;padding:24px;font-family:system-ui,sans-serif;line-height:1.6">
+    <h1>Redirecting</h1>
+    <p>The page <code>{source_route}</code> has moved.</p>
+    <p><a href="{target_url}">Continue to {target_url}</a></p>
+  </main>
+</body>
+</html>
+"""
+
 
 def build_html(route, meta, base_html, is_404=False):
     """Build a static HTML page for a given route."""
@@ -1320,7 +1392,7 @@ def build_html(route, meta, base_html, is_404=False):
 def main():
     """Generate all static files and push to gh-pages."""
     
-    gh_pages_dir = Path(r"C:\Users\44786\Documents\kimi\workspace\carrgo-gh-pages")
+    gh_pages_dir = Path(os.environ.get("CARRGO_GH_PAGES_DIR", r"C:\Users\44786\Documents\kimi\workspace\carrgo-gh-pages"))
     
     if not gh_pages_dir.exists():
         print(f"ERROR: {gh_pages_dir} not found.")
@@ -1351,16 +1423,24 @@ def main():
     for route, meta in ROUTES.items():
         html = build_html(route, meta, base_html)
         
-        if route == "/":
-            output = gh_pages_dir / "index.html"
-        else:
-            route_dir = gh_pages_dir / route.lstrip("/")
-            route_dir.mkdir(parents=True, exist_ok=True)
-            output = route_dir / "index.html"
-        
+        output = write_route_file(gh_pages_dir, route, html)
         output.write_text(html, encoding="utf-8")
         generated += 1
         print(f"Generated: {output}")
+
+    # Generate GitHub Pages-compatible redirect files for legacy and shorthand URLs.
+    # GitHub Pages does not support Netlify _redirects, so these prevent old URLs
+    # from returning hard 404 responses while pointing crawlers to the canonical page.
+    for source_route, target_route in STATIC_REDIRECTS.items():
+        target_meta = ROUTES.get(target_route)
+        if not target_meta:
+            print(f"WARNING: missing redirect target metadata for {source_route} -> {target_route}")
+            continue
+
+        redirect_html = build_redirect_html(source_route, target_route, target_meta)
+        output = write_route_file(gh_pages_dir, source_route, redirect_html)
+        generated += 1
+        print(f"Generated redirect: {output} -> {target_route}")
     
     # Generate 404.html (copy of index.html with redirect for any unmatched path)
     not_found_html = base_html.replace(
