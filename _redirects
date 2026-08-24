@@ -7,5 +7,23 @@ http://www.carrgo.co.uk/* https://carrgo.co.uk/:splat 301!
 https://carrgo-uk-website.netlify.app/* https://carrgo.co.uk/:splat 301!
 http://carrgo-uk-website.netlify.app/* https://carrgo.co.uk/:splat 301!
 
+# Priority Zero clean-up redirects
+/port-intelligence /resources/port-congestion-tracker 301
+/port-comparison /tools/port-comparison 301
+/cost-calculator /tools/cost-calculator 301
+/freight-quote /get-a-quote 301
+/air-freight /services/air-freight 301
+/sea-freight /services/sea-freight 301
+/freight-forwarding /services 301
+/services/freight-forwarding /services 301
+
+# Search Console legacy 404 examples
+/ports/bristolport.html /ports/bristol 301
+/ports/shenzhenport /routes/china-to-uk 301
+/routes/germanytolondon.html /routes/germany-to-uk 301
+/route-support/spainshippingtime.html /routes/spain-to-uk 301
+/ports/dublin-port /ports/dublin 301
+/ports/busan-port /routes/china-to-uk 301
+
 # SPA fallback for client-side routing
 /* /index.html 200
