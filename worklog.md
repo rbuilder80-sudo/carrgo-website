@@ -64,3 +64,19 @@ Work Log:
 Stage Summary:
 - BLOCKED ON: GitHub Personal Access Token from user (fine-grained, scoped to rbuilder80-sudo/carrgo-website, Contents: Read+write; or classic with repo scope)
 - Once token received: git push origin main:seo-saas (never main:main), then optional auto-deploy wiring
+
+---
+Task ID: 4
+Agent: Super Z (main)
+Task: Push SaaS to GitHub with working token + answer GA/GSC access question
+
+Work Log:
+- Token #1 denied push (fine-grained, metadata=read only). Token #2 worked: pushed main -> seo-saas branch. Verified via API: seo-saas exists, main/gh-pages/codex branches untouched
+- Discovery: sandbox restart had WIPED the DB (0 keywords, no sprint settings, autopilot off) and stale Prisma client. Regenerated client, db:push, re-ran live audit (carrgo.co.uk 94/100 A), re-scraped 40 keywords, restored sprint settings (start 2026-08-31, 10/day) + marked all priority/targeting, re-enabled aggressive autopilot @20min
+- Manual autopilot cycle verified post-restore: 22s, 2 live rank checks, article 'Freight Forwarding Meaning: A Complete Guide for UK Business' drafted, correctly awaiting destination permission
+- GA/GSC status: browserSites=[], gscQueries=0, ga4Batches=0 -> extension NEVER paired with this fresh instance. User must re-install + pair extension v3
+
+Stage Summary:
+- GitHub: SaaS live on seo-saas branch of rbuilder80-sudo/carrgo-website; future updates = git push
+- Sprint armed day 1/30; autopilot aggressive autonomous cycles every 20 min
+- GA/GSC NOT connected yet: needs extension pair (Bridge tab) or API credentials (Credentials tab)
