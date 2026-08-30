@@ -48,3 +48,19 @@ Stage Summary:
 - Sprint tracker armed: 2026-08-31 start, 10/day target, public POST /api/leads webhook for carrgo.co.uk forms
 - Preview URL: https://preview-chat-c46c3703-d4ac-4d6c-a0d1-a2d73fe2157e.space-z.ai/ ; Extension v3 zip at /downloads/seo-master-chrome-extension.zip
 - Next for user: install extension v3 in Chrome (chrome://extensions → Load unpacked from unzipped folder), pair via Extension Bridge tab, keep GA4/GSC tabs open for auto-sync, point carrgo.co.uk contact form at POST {preview-url}/api/leads, grant permission to destinations in Publisher Hub
+
+---
+Task ID: 3
+Agent: Super Z (main)
+Task: Connect SaaS repo to GitHub (user provided https://github.com/rbuilder80-sudo/carrgo-website.git)
+
+Work Log:
+- Answered user Q: repo was NOT connected to GitHub (no remote). Found .env + db/custom.db tracked in git → untracked both, hardened .gitignore, committed (secret-leak prevention before any push)
+- Added scripts/github-connect.sh (one-command connect: create-repo-or-use-existing + push)
+- User supplied existing repo URL. Verified via GitHub API: repo exists, PUBLIC, default branch main, contains their LIVE carrgo website (CNAME, netlify.toml, index.html, GH Actions) + branches carrgo-gh-pages, codex/*
+- Decision: DO NOT touch origin/main (live site). SaaS will be pushed as separate branch `seo-saas` via `git push origin main:seo-saas`
+- Wired remote origin, fetched origin/main for reference. Push test confirmed auth required (no token in env, no gh CLI, no ssh keys)
+
+Stage Summary:
+- BLOCKED ON: GitHub Personal Access Token from user (fine-grained, scoped to rbuilder80-sudo/carrgo-website, Contents: Read+write; or classic with repo scope)
+- Once token received: git push origin main:seo-saas (never main:main), then optional auto-deploy wiring
