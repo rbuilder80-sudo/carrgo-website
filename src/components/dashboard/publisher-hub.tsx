@@ -6,13 +6,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { api, SectionHeader, StatusBadge, fmtTime } from './shared';
-import { Loader2, ExternalLink, RefreshCw } from 'lucide-react';
+import { Loader2, ExternalLink, RefreshCw, Chrome, ShieldCheck, ShieldOff, Globe, Plus } from 'lucide-react';
 
 type Job = {
   id: string; platform: string; channel: string; status: string; approval: string;
   title: string; tags?: string; publishedUrl?: string | null; evidence?: string | null;
   error?: string | null; attempts?: number; deviceName?: string | null; queuedAt: string; verifiedAt?: string | null;
 };
+
+type BrowserSite = { id: string; host: string; title: string; added: boolean; lastSeen: string; deviceName: string };
 
 const PLATFORM_LIST = [
   { key: 'medium', name: 'Medium (extension)' },
@@ -33,14 +35,20 @@ const PLATFORM_LIST = [
 
 export function PublisherHub({ drafts, reloadDrafts }: { drafts: Array<{ id: string; title: string }>; reloadDrafts?: () => void }) {
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [sites, setSites] = useState<BrowserSite[]>([]);
+  const [perms, setPerms] = useState<Record<string, { status: string; at: string }>>({});
   const [draftId, setDraftId] = useState('');
   const [platform, setPlatform] = useState('medium');
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState('');
   const [msg, setMsg] = useState('');
 
   const load = useCallback(async () => {
-    const data = await api<{ ok: boolean; jobs: Job[] }>('/api/publish');
-    if (data.ok) setJobs(data.jobs);
+    const [j, b] = await Promise.all([
+      api<{ ok: boolean; jobs: Job[] }>('/api/publish'),
+      api<{ ok: boolean; sites: BrowserSite[]; permissions: Record<string, { status: string; at: string }> }>('/api/bridge-sites'),
+    ]);
+    if (j.ok) setJobs(j.jobs);
+    if (b.ok) { setSites(b.sites); setPerms(b.permissions || {}); }
   }, []);
 
   useEffect(() => {
@@ -51,20 +59,18 @@ export function PublisherHub({ drafts, reloadDrafts }: { drafts: Array<{ id: str
 
   const queue = async () => {
     if (!draftId) { setMsg('Select a draft first'); return; }
-    setBusy(true); setMsg('');
+    setBusy('queue'); setMsg('');
     try {
-      const res = await api<{ ok: boolean; error?: string }>('/api/publish', {
+      const res = await api<{ ok: boolean; error?: string; note?: string }>('/api/publish', {
         method: 'POST',
         body: JSON.stringify({ draftId, platform }),
       });
       if (res.ok) {
-        setMsg('Queued — approve it in the Approval Queue to send it live.');
+        setMsg(res.note || 'Queued.');
         reloadDrafts?.();
       } else setMsg(res.error || 'Failed to queue');
       load();
-    } finally {
-      setBusy(false);
-    }
+    } finally { setBusy(''); }
   };
 
   const cancel = async (id: string) => {
@@ -72,14 +78,98 @@ export function PublisherHub({ drafts, reloadDrafts }: { drafts: Array<{ id: str
     load();
   };
 
+  const siteAction = async (host: string, action: string) => {
+    setBusy('site:' + host);
+    try {
+      const res = await api<{ ok: boolean; note?: string; error?: string }>('/api/bridge-sites', { method: 'POST', body: JSON.stringify({ host, action }) });
+      setMsg(res.note || res.error || '');
+      load();
+    } finally { setBusy(''); }
+  };
+
+  const permAction = async (key: string, action: string) => {
+    setBusy('perm:' + key);
+    try {
+      const res = await api<{ ok: boolean; note?: string; error?: string }>('/api/permissions', { method: 'POST', body: JSON.stringify({ platform: key, action }) });
+      setMsg(res.note || res.error || '');
+      load();
+    } finally { setBusy(''); }
+  };
+
+  const permBadge = (key: string) => {
+    const p = perms[key]?.status;
+    if (p === 'granted') return <StatusBadge status="verified" />;
+    if (p === 'denied') return <StatusBadge status="rejected" />;
+    return <StatusBadge status="unverified" />;
+  };
+
+  const destOptions = [
+    ...PLATFORM_LIST,
+    ...sites.filter(s => s.added).map(s => ({ key: 'site:' + s.host, name: `${s.host} (your Chrome)` })),
+  ];
+
   return (
     <div>
       <SectionHeader
         title="Publisher Hub"
-        desc="Queue drafts to any platform. Extension-channel jobs are executed by your paired Chrome (logged-in as you). API-channel jobs publish directly via connected credentials. Every published URL is verified over HTTP before it counts as live."
+        desc="Queue drafts to any platform — or to any site open in your Chrome. Grant one-time permission to a destination and every future article publishes automatically without asking again. Extension jobs execute in your real logged-in browser; API jobs publish via connected credentials. Every URL is verified over HTTP before it counts."
         right={<Button variant="outline" size="sm" className="border-[#2a353d] text-slate-300" onClick={load}><RefreshCw className="h-3.5 w-3.5 mr-1" /> Refresh</Button>}
       />
 
+      {/* Browser sites detected in Chrome */}
+      <Card className="bg-[#12181d] border-[#232d35] mb-5">
+        <CardContent className="p-4">
+          <div className="flex items-center gap-2 mb-1">
+            <Chrome className="h-4 w-4 text-amber-400" />
+            <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">Sites detected open in your Chrome</div>
+            <span className="text-[10px] text-slate-600 ml-auto">reported live by the extension heartbeat — any site works, no API keys needed</span>
+          </div>
+          <p className="text-[11px] text-slate-500 mb-3">Add a site to the hub, then grant it one-time permission. The extension opens the site in your browser, loads the article into the editor, and you (or the auto-publisher for known platforms) hit publish — live on the real site.</p>
+          {sites.length === 0 ? (
+            <div className="text-xs text-slate-500 py-3 text-center bg-[#0f1417] rounded-md border border-dashed border-[#232d35]">
+              No sites detected yet — pair the Chrome extension (Extension Bridge tab) and keep it running. Every site you browse shows up here automatically.
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+              {sites.map(s => (
+                <div key={s.id} className="bg-[#0f1417] border border-[#232d35] rounded-lg p-3">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <Globe className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                    <span className="text-xs text-slate-200 font-medium truncate">{s.host}</span>
+                    {s.added && <span className="ml-auto"><StatusBadge status="ok" /></span>}
+                  </div>
+                  <div className="text-[10px] text-slate-600 truncate mb-2">{s.title || '—'} · seen {fmtTime(s.lastSeen)}</div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {!s.added && (
+                      <Button size="sm" variant="outline" className="h-6.5 text-[11px] border-amber-500/40 text-amber-300" onClick={() => siteAction(s.host, 'add')} disabled={busy !== ''}>
+                        <Plus className="h-3 w-3 mr-0.5" /> Add to hub
+                      </Button>
+                    )}
+                    {s.added && (
+                      <>
+                        {perms['site:' + s.host]?.status === 'granted' ? (
+                          <Button size="sm" variant="outline" className="h-6.5 text-[11px] border-red-500/40 text-red-300" onClick={() => siteAction(s.host, 'revoke')} disabled={busy !== ''}>
+                            <ShieldOff className="h-3 w-3 mr-0.5" /> Revoke permission
+                          </Button>
+                        ) : (
+                          <Button size="sm" variant="outline" className="h-6.5 text-[11px] border-emerald-500/40 text-emerald-300" onClick={() => siteAction(s.host, 'grant')} disabled={busy !== ''}>
+                            <ShieldCheck className="h-3 w-3 mr-0.5" /> Grant permission
+                          </Button>
+                        )}
+                        <a href={`https://${s.host}`} target="_blank" rel="noreferrer" className="h-6.5 px-2 inline-flex items-center text-[11px] text-slate-400 border border-[#2a353d] rounded-md hover:text-slate-200">
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Queue form */}
       <Card className="bg-[#12181d] border-[#232d35] mb-5">
         <CardContent className="p-4 flex flex-wrap items-end gap-3">
           <div className="min-w-[260px] flex-1">
@@ -96,24 +186,50 @@ export function PublisherHub({ drafts, reloadDrafts }: { drafts: Array<{ id: str
             <Select value={platform} onValueChange={setPlatform}>
               <SelectTrigger className="mt-1 bg-[#0f1417] border-[#2a353d] text-slate-100"><SelectValue /></SelectTrigger>
               <SelectContent className="bg-[#171e24] border-[#2a353d] text-slate-100">
-                {PLATFORM_LIST.map(p => <SelectItem key={p.key} value={p.key}>{p.name}</SelectItem>)}
+                {destOptions.map(p => <SelectItem key={p.key} value={p.key}>{p.name}</SelectItem>)}
               </SelectContent>
             </Select>
           </div>
-          <Button onClick={queue} disabled={busy} className="bg-amber-500 hover:bg-amber-400 text-black font-semibold">
-            {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Queue publish job'}
+          <Button onClick={queue} disabled={busy === 'queue'} className="bg-amber-500 hover:bg-amber-400 text-black font-semibold">
+            {busy === 'queue' ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Publish'}
           </Button>
         </CardContent>
       </Card>
       {msg && <div className="text-xs text-amber-300 mb-3">{msg}</div>}
 
+      {/* One-time permissions */}
+      <Card className="bg-[#12181d] border-[#232d35] mb-5">
+        <CardContent className="p-4">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-2">
+            <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> One-time publishing permissions
+          </div>
+          <p className="text-[11px] text-slate-500 mb-3">Grant once per platform — after that, articles (including autopilot ones) publish straight away, no per-article approval. Revoke anytime.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {PLATFORM_LIST.map(p => (
+              <div key={p.key} className="flex items-center justify-between gap-2 bg-[#0f1417] border border-[#232d35] rounded-md px-2.5 py-2">
+                <div className="min-w-0">
+                  <div className="text-[11px] text-slate-300 truncate">{p.name}</div>
+                  {permBadge(p.key)}
+                </div>
+                {perms[p.key]?.status === 'granted' ? (
+                  <Button size="sm" variant="ghost" className="h-6 text-[10px] text-red-300 hover:text-red-200" onClick={() => permAction(p.key, 'revoke')} disabled={busy !== ''}>Revoke</Button>
+                ) : (
+                  <Button size="sm" variant="outline" className="h-6 text-[10px] border-emerald-500/40 text-emerald-300" onClick={() => permAction(p.key, 'grant')} disabled={busy !== ''}>Grant</Button>
+                )}
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Jobs */}
       <Card className="bg-[#12181d] border-[#232d35]">
         <CardContent className="p-0">
           <Table>
             <TableHeader>
               <TableRow className="border-[#232d35]">
                 <TableHead className="text-slate-400">Title</TableHead>
-                <TableHead className="text-slate-400">Platform</TableHead>
+                <TableHead className="text-slate-400">Destination</TableHead>
                 <TableHead className="text-slate-400">Channel</TableHead>
                 <TableHead className="text-slate-400">Status</TableHead>
                 <TableHead className="text-slate-400">Evidence / URL</TableHead>
@@ -128,7 +244,7 @@ export function PublisherHub({ drafts, reloadDrafts }: { drafts: Array<{ id: str
               {jobs.map(j => (
                 <TableRow key={j.id} className="border-[#232d35]">
                   <TableCell className="text-slate-200 text-xs max-w-[220px] truncate">{j.title}</TableCell>
-                  <TableCell className="text-slate-300 text-xs">{j.platform}</TableCell>
+                  <TableCell className="text-slate-300 text-xs">{j.platform.startsWith('site:') ? <span className="text-amber-300">{j.platform.slice(5)} (Chrome)</span> : j.platform}</TableCell>
                   <TableCell className="text-slate-400 text-xs">{j.channel}</TableCell>
                   <TableCell><StatusBadge status={j.status} /></TableCell>
                   <TableCell className="text-xs max-w-[240px]">

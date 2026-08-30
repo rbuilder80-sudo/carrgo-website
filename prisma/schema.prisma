@@ -20,10 +20,56 @@ model PlatformCredential {
   secretEnc     String
   metaJson      String    @default("{}")
   status        String    @default("unverified") // unverified | ok | invalid
+  permission    String    @default("none") // none | granted | denied — one-time publish permission
+  permissionAt  DateTime?
   lastCheckOk   Boolean?
   lastCheckedAt DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+}
+
+model BrowserSite {
+  id         String   @id @default(cuid())
+  host       String   @unique
+  title      String   @default("")
+  deviceName String   @default("")
+  added      Boolean  @default(false)
+  lastSeen   DateTime @default(now())
+  firstSeen  DateTime @default(now())
+}
+
+model RankCheck {
+  id        String   @id @default(cuid())
+  term      String
+  domain    String
+  position  Int? // 1-based Google position; null = not found in scanned depth
+  found     Boolean  @default(false)
+  url       String?
+  topJson   String   @default("[]")
+  source    String   @default("manual") // manual | autopilot
+  checkedAt DateTime @default(now())
+}
+
+model Enquiry {
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @default("")
+  phone      String   @default("")
+  company    String   @default("")
+  message    String   @default("")
+  source     String   @default("webhook") // webhook | manual | import
+  page       String   @default("")
+  status     String   @default("new") // new | contacted | quoted | won | lost
+  receivedAt DateTime @default(now())
+}
+
+model AutopilotLog {
+  id        String   @id @default(cuid())
+  step      String // think | act | result
+  message   String
+  detail    String   @default("")
+  ok        Boolean  @default(true)
+  createdAt DateTime @default(now())
 }
 
 model PairedDevice {
@@ -41,42 +87,42 @@ model PairedDevice {
 }
 
 model ContentDraft {
-  id         String   @id @default(cuid())
-  title      String
-  bodyMd     String
-  tags       String   @default("")
-  keywords   String   @default("")
-  status     String   @default("draft") // draft | approved | published
-  wordCount  Int      @default(0)
-  seoScore   Int?
-  source     String   @default("ai") // ai | manual | agent
-  metaJson   String   @default("{}")
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  jobs       PublishJob[]
+  id        String       @id @default(cuid())
+  title     String
+  bodyMd    String
+  tags      String       @default("")
+  keywords  String       @default("")
+  status    String       @default("draft") // draft | approved | published
+  wordCount Int          @default(0)
+  seoScore  Int?
+  source    String       @default("ai") // ai | manual | agent
+  metaJson  String       @default("{}")
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  jobs      PublishJob[]
 }
 
 model PublishJob {
-  id             String    @id @default(cuid())
-  draftId        String?
-  draft          ContentDraft? @relation(fields: [draftId], references: [id])
-  platform       String
-  channel        String    @default("extension") // extension | api
-  status         String    @default("queued") // queued | awaiting_approval | claimed | running | published | verified | failed | awaiting_auth
-  approval       String    @default("pending") // pending | approved | rejected | deferred
-  title          String
-  bodyMd         String
-  tags           String    @default("")
-  targetUrl      String?
-  publishedUrl   String?
-  evidence       String?
-  error          String?
-  attempts       Int       @default(0)
-  deviceName     String?
-  queuedAt       DateTime  @default(now())
-  startedAt      DateTime?
-  finishedAt     DateTime?
-  verifiedAt     DateTime?
+  id           String        @id @default(cuid())
+  draftId      String?
+  draft        ContentDraft? @relation(fields: [draftId], references: [id])
+  platform     String
+  channel      String        @default("extension") // extension | api
+  status       String        @default("queued") // queued | awaiting_approval | claimed | running | published | verified | failed | awaiting_auth
+  approval     String        @default("pending") // pending | approved | rejected | deferred
+  title        String
+  bodyMd       String
+  tags         String        @default("")
+  targetUrl    String?
+  publishedUrl String?
+  evidence     String?
+  error        String?
+  attempts     Int           @default(0)
+  deviceName   String?
+  queuedAt     DateTime      @default(now())
+  startedAt    DateTime?
+  finishedAt   DateTime?
+  verifiedAt   DateTime?
 }
 
 model AgentTask {
@@ -93,24 +139,26 @@ model AgentTask {
 }
 
 model AuditRun {
-  id         String   @id @default(cuid())
-  url        String
-  score      Int
-  grade      String
+  id          String   @id @default(cuid())
+  url         String
+  score       Int
+  grade       String
   summaryJson String
-  createdAt  DateTime @default(now())
+  createdAt   DateTime @default(now())
 }
 
 model Keyword {
   id         String   @id @default(cuid())
   term       String
-  source     String   @default("suggest") // suggest | search | manual
+  source     String   @default("suggest") // suggest | search | manual | priority
+  priority   Boolean  @default(false)
   estVolume  Int?
   difficulty Int?
   intent     String?
   status     String   @default("new") // new | targeting | tracked
   notes      String?
   createdAt  DateTime @default(now())
+
   @@unique([term])
 }
 
@@ -118,25 +166,26 @@ model Competitor {
   id          String   @id @default(cuid())
   domain      String
   angle       String?
-  metricsJson String  @default("{}")
+  metricsJson String   @default("{}")
   createdAt   DateTime @default(now())
+
   @@unique([domain])
 }
 
 model Suggestion {
-  id         String   @id @default(cuid())
-  category   String // site | ranking | authority
-  title      String
-  detail     String
-  priority   String   @default("medium") // high | medium | low
-  status     String   @default("open") // open | approved | rejected | done
-  source     String   @default("ai")
-  dataJson   String   @default("{}")
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  category  String // site | ranking | authority
+  title     String
+  detail    String
+  priority  String   @default("medium") // high | medium | low
+  status    String   @default("open") // open | approved | rejected | done
+  source    String   @default("ai")
+  dataJson  String   @default("{}")
+  createdAt DateTime @default(now())
 }
 
 model GscQuery {
-  id          String @id @default(cuid())
+  id          String   @id @default(cuid())
   query       String
   clicks      Float
   impressions Float
@@ -147,7 +196,7 @@ model GscQuery {
 }
 
 model GscPage {
-  id          String @id @default(cuid())
+  id          String   @id @default(cuid())
   page        String
   clicks      Float
   impressions Float
@@ -158,23 +207,23 @@ model GscPage {
 }
 
 model Ga4Page {
-  id          String @id @default(cuid())
-  path        String
-  sessions    Float
-  users       Float
-  engagement  Float
-  batch       String
-  createdAt   DateTime @default(now())
+  id         String   @id @default(cuid())
+  path       String
+  sessions   Float
+  users      Float
+  engagement Float
+  batch      String
+  createdAt  DateTime @default(now())
 }
 
 model Ga4Summary {
-  id            String @id @default(cuid())
-  sessions      Float
-  users         Float
-  pageviews     Float
+  id             String   @id @default(cuid())
+  sessions       Float
+  users          Float
+  pageviews      Float
   engagementRate Float
-  batch         String
-  createdAt     DateTime @default(now())
+  batch          String
+  createdAt      DateTime @default(now())
 }
 
 model ActivityLog {
@@ -194,5 +243,6 @@ model Backlink {
   httpStatus  Int?
   lastChecked DateTime?
   createdAt   DateTime  @default(now())
+
   @@unique([sourceUrl, targetUrl])
 }

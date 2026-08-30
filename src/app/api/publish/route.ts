@@ -1,6 +1,7 @@
 import { db } from '@/lib/db';
 import { logActivity } from '@/lib/log';
 import { ensureWorker } from '@/lib/worker';
+import { getPermission } from '@/lib/autopilot';
 
 export const PLATFORMS: Record<string, { channel: 'api' | 'extension'; name: string }> = {
   medium: { channel: 'extension', name: 'Medium' },
@@ -40,9 +41,24 @@ export async function GET() {
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  const platform = String(body.platform || '');
-  const spec = PLATFORMS[platform];
-  if (!spec) return Response.json({ ok: false, error: `Unknown platform: ${platform}` }, { status: 400 });
+  let platform = String(body.platform || '');
+
+  // Dynamic destination: a site open in the user's Chrome ("site:example.com")
+  let siteHost = '';
+  if (platform.startsWith('site:')) {
+    siteHost = platform.slice(5).toLowerCase().replace(/^www\./, '');
+    if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(siteHost)) {
+      return Response.json({ ok: false, error: `Invalid site host: ${siteHost}` }, { status: 400 });
+    }
+    const site = await db.browserSite.findUnique({ where: { host: siteHost } });
+    if (!site) {
+      return Response.json({ ok: false, error: `Site ${siteHost} is not in the Publisher Hub. Open it in Chrome with the extension running, or add it from Publisher Hub → Browser Sites.` }, { status: 400 });
+    }
+  } else if (!PLATFORMS[platform]) {
+    return Response.json({ ok: false, error: `Unknown platform: ${platform}` }, { status: 400 });
+  }
+  const channel: 'api' | 'extension' = siteHost ? 'extension' : PLATFORMS[platform].channel;
+  const displayName = siteHost ? `${siteHost} (your Chrome)` : PLATFORMS[platform].name;
 
   let title = String(body.title || '');
   let bodyMd = String(body.bodyMd || '');
@@ -57,16 +73,25 @@ export async function POST(req: Request) {
   if (!title || !bodyMd) return Response.json({ ok: false, error: 'Title and body required (or provide draftId)' }, { status: 400 });
 
   // API-channel jobs need a verified credential before queueing
-  if (spec.channel === 'api') {
+  if (channel === 'api') {
     const cred = await db.platformCredential.findFirst({ where: { platform, status: 'ok' } });
     if (!cred) {
       return Response.json({ ok: false, error: `No verified ${platform} credential. Connect and test it in Credentials Manager first (extension channel works without API credentials).` }, { status: 400 });
     }
   }
 
+  // One-time permission: if already granted for this destination, the job skips the approval queue.
+  const permKey = siteHost ? 'site:' + siteHost : platform;
+  const permission = await getPermission(permKey);
+  const approval = permission === 'granted' ? 'approved' : 'pending';
+
   const job = await db.publishJob.create({
-    data: { draftId, title, bodyMd, tags, platform, channel: spec.channel, status: 'queued', approval: 'pending' },
+    data: { draftId, title, bodyMd, tags, platform, channel, status: 'queued', approval },
   });
-  await logActivity('publish', `Queued publish job → ${spec.name} (${spec.channel} channel), awaiting approval`, { jobId: job.id });
-  return Response.json({ ok: true, jobId: job.id, channel: spec.channel, approval: 'pending' });
+  await logActivity('publish', approval === 'approved'
+    ? `Queued publish job → ${displayName} — permission previously granted, executing without asking again`
+    : `Queued publish job → ${displayName} (${channel} channel), awaiting approval`, { jobId: job.id });
+  return Response.json({ ok: true, jobId: job.id, channel, approval, note: approval === 'approved'
+    ? `Executing — one-time permission for ${displayName} is already granted.`
+    : 'Queued — approve it once in the Approval Queue, or grant standing permission in Publisher Hub.' });
 }

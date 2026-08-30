@@ -18,5 +18,19 @@ export async function POST(req: Request) {
     data: { status: 'queued', startedAt: null, deviceName: null, error: 'Requeued: previous claim timed out' },
   });
 
+  // Register every site the user has open in Chrome → surfaced in Publisher Hub
+  const tabs = Array.isArray(body.tabs) ? body.tabs.slice(0, 40) : [];
+  for (const t of tabs) {
+    const raw = String(t?.host || '').toLowerCase();
+    if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(raw)) continue;
+    const host = raw.replace(/^www\./, '');
+    if (/(^|\.)google\.com$/.test(host) || /(^|\.)chrome\.com$/.test(host) || raw === 'newtab' || host.endsWith('.z.ai')) continue;
+    await db.browserSite.upsert({
+      where: { host },
+      create: { host, title: String(t?.title || '').slice(0, 200), deviceName: auth.device!.name },
+      update: { lastSeen: new Date(), title: String(t?.title || '').slice(0, 200), deviceName: auth.device!.name },
+    });
+  }
+
   return Response.json({ ok: true, serverTime: new Date().toISOString() });
 }

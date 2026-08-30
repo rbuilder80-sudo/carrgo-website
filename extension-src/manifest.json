@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "CARRGO SEO Master — Publishing Bridge",
-  "version": "2.0.0",
-  "description": "Bridge between the CARRGO SEO SaaS and your real Chrome session: claims publishing jobs, posts to platforms while you are logged in, and imports GSC/GA4 performance data.",
-  "permissions": ["storage", "tabs", "scripting", "notifications", "clipboardWrite"],
+  "version": "3.0.0",
+  "description": "Bridge between the CARRGO SEO SaaS and your real Chrome session: publishes articles to any site open in your browser, reports open tabs to the Publisher Hub, and auto-syncs GSC/GA4 performance data.",
+  "permissions": ["storage", "tabs", "scripting", "notifications", "clipboardWrite", "alarms"],
   "host_permissions": [
     "https://medium.com/*",
     "https://*.medium.com/*",

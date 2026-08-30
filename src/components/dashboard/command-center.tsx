@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { api, SectionHeader, StatCard, StatusBadge, fmtTime } from './shared';
+import { AutopilotPanel } from './autopilot-panel';
 import { Send, Loader2, Bot, CheckCircle2, XCircle } from 'lucide-react';
 
 type Overview = {
@@ -140,6 +141,8 @@ export function CommandCenter() {
         </Card>
 
         <div className="space-y-3">
+          <AutopilotPanel />
+
           <Card className="bg-[#12181d] border-[#232d35]">
             <CardContent className="p-4">
               <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Publishing pipeline</div>

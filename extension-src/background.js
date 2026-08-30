@@ -1,10 +1,19 @@
-// CARRGO SEO Bridge — background service worker (MV3)
+// CARRGO SEO Bridge v3 — background service worker (MV3, alarm-driven)
+//
+// - Heartbeat every 30s: keeps device online + reports every site open in Chrome
+//   (the SaaS Publisher Hub surfaces them as publishable destinations).
+// - Claim loop every 15s: pulls approved publishing jobs:
+//     * medium      → full auto-publish (content/medium.js)
+//     * site:<host> → opens/focuses that site, loads content/generic.js which
+//                     fills the editor and asks you to confirm publish
+// - GSC/GA4 auto-sync every 20 min: if Search Console / GA4 tabs are open,
+//   silently extracts performance data into the SaaS.
 
-const HEARTBEAT_MS = 30000;
-const CLAIM_MS = 12000;
+const HEARTBEAT_MIN = 0.5;   // 30s
+const CLAIM_MIN = 0.25;      // 15s
+const SYNC_MIN = 20;         // 20 min
 
-let claimTimer = null;
-let heartbeatTimer = null;
+let loopsStarted = false;
 
 async function cfg() {
   const { saasUrl, deviceId, deviceKey, deviceName, paired } = await chrome.storage.local.get(['saasUrl', 'deviceId', 'deviceKey', 'deviceName', 'paired']);
@@ -31,14 +40,35 @@ function notify(message) {
   } catch (e) { /* notifications may be unavailable */ }
 }
 
-// ---------- heartbeat + claim loop ----------
+// ---------- open tabs → SaaS (Publisher Hub discovery) ----------
+
+async function collectTabs() {
+  const tabs = await chrome.tabs.query({ url: ['http://*/*', 'https://*/*'] });
+  const seen = new Set();
+  const out = [];
+  for (const t of tabs) {
+    try {
+      const u = new URL(t.url);
+      if (!/^https?:$/.test(u.protocol)) continue;
+      const host = u.hostname;
+      if (seen.has(host)) continue;
+      seen.add(host);
+      out.push({ host, title: (t.title || '').slice(0, 200) });
+      if (out.length >= 40) break;
+    } catch (e) { /* ignore bad urls */ }
+  }
+  return out;
+}
+
+// ---------- heartbeat + claim + sync ----------
 
 async function heartbeat() {
   const c = await cfg();
   if (!c.paired) return;
   try {
-    await api('/api/bridge/heartbeat', { deviceId: c.deviceId, version: chrome.runtime.getManifest().version });
-  } catch (e) { /* offline, retry next tick */ }
+    const tabs = await collectTabs();
+    await api('/api/bridge/heartbeat', { deviceId: c.deviceId, version: chrome.runtime.getManifest().version, tabs });
+  } catch (e) { /* offline, retry next alarm */ }
 }
 
 async function claimLoop() {
@@ -53,18 +83,39 @@ async function claimLoop() {
   } catch (e) { /* server unreachable */ }
 }
 
+async function autoSyncGoogle() {
+  const c = await cfg();
+  if (!c.paired) return;
+  const tabs = await chrome.tabs.query({ url: ['https://search.google.com/*search-console*', 'https://analytics.google.com/*'] });
+  for (const t of tabs) {
+    const type = /search-console/.test(t.url || '') ? 'EXTRACT_GSC' : 'EXTRACT_GA4';
+    try {
+      const res = await chrome.tabs.sendMessage(t.id, { type, auto: true });
+      if (res && res.ok) console.log('[bridge] auto-sync ok:', type);
+    } catch (e) { /* tab not showing the report — skip */ }
+  }
+}
+
 function startLoops() {
-  if (!heartbeatTimer) heartbeatTimer = setInterval(heartbeat, HEARTBEAT_MS);
-  if (!claimTimer) claimTimer = setInterval(claimLoop, CLAIM_MS);
+  if (loopsStarted) return;
+  loopsStarted = true;
+  chrome.alarms.create('heartbeat', { periodInMinutes: HEARTBEAT_MIN });
+  chrome.alarms.create('claim', { periodInMinutes: CLAIM_MIN });
+  chrome.alarms.create('googlesync', { periodInMinutes: SYNC_MIN });
   heartbeat();
   claimLoop();
 }
 
 chrome.runtime.onStartup.addListener(startLoops);
 chrome.runtime.onInstalled.addListener(startLoops);
+chrome.alarms.onAlarm.addListener(al => {
+  if (al.name === 'heartbeat') heartbeat();
+  else if (al.name === 'claim') claimLoop();
+  else if (al.name === 'googlesync') autoSyncGoogle();
+});
 
 // kick off when service worker wakes
-startLoops();
+setTimeout(startLoops, 300);
 
 // ---------- message hub ----------
 
@@ -78,6 +129,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         const r = await api('/api/bridge/pair', { deviceId, name: name || 'Chrome', pairingCode: code }, false);
         if (r.json && r.json.ok) {
           await chrome.storage.local.set({ paired: true, deviceKey: r.json.deviceKey });
+          loopsStarted = false;
           startLoops();
           sendResponse({ ok: true, deviceName: r.json.deviceName });
         } else {
@@ -145,28 +197,35 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
 // ---------- job dispatch ----------
 
+function jobTitle(job) {
+  return job.title || 'New from CARRGO';
+}
+
 async function dispatchJob(job) {
+  // site:<host> → publish into the user's own open site
+  if (String(job.platform).startsWith('site:')) {
+    await dispatchSiteJob(job);
+    return;
+  }
+  if (job.platform === 'medium') {
+    const tab = await chrome.tabs.create({ url: 'https://medium.com/new-story', active: false });
+    await chrome.storage.local.set({ ['job_' + job.id]: { ...job, tabId: tab.id, startedAt: Date.now() } });
+    return;
+  }
+
   const platformUrls = {
-    medium: 'https://medium.com/new-story',
     linkedin: 'https://www.linkedin.com/feed/?shareActive=true&textForShare=' + encodeURIComponent(jobTitle(job)),
     x: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(jobTitle(job)),
     reddit: 'https://www.reddit.com/submit',
     quora: 'https://www.quora.com/board',
     facebook: 'https://www.facebook.com/',
     pinterest: 'https://www.pinterest.com/pin-builder/',
+    blogger: 'https://www.blogger.com/blog/post/preview',
   };
-
-  const url = platformUrls[job.platform] || platformUrls.medium;
+  const url = platformUrls[job.platform] || platformUrls.linkedin;
   const tab = await chrome.tabs.create({ url, active: false });
   await chrome.storage.local.set({ ['job_' + job.id]: { ...job, tabId: tab.id, startedAt: Date.now() } });
 
-  if (job.platform === 'medium') {
-    // content script does full automation; nothing else to do here
-    return;
-  }
-
-  // For non-Medium platforms we copy the content to the clipboard and open the composer;
-  // the content is also stored so platform content scripts (if present) can auto-fill.
   const plain = `${jobTitle(job)}\n\n${stripMd(job.bodyMd).slice(0, 1800)}`;
   try {
     await chrome.scripting.executeScript({
@@ -177,8 +236,40 @@ async function dispatchJob(job) {
   } catch (e) { /* clipboard may need focus */ }
 }
 
-function jobTitle(job) {
-  return job.title || 'New from CARRGO';
+// ---------- generic site publishing (site:<host>) ----------
+
+async function dispatchSiteJob(job) {
+  const host = job.platform.slice(5);
+  // 1. Reuse an existing open tab on that host (so we publish inside the user's real logged-in session)
+  let tab = null;
+  const tabs = await chrome.tabs.query({ url: [`http://${host}/*`, `https://${host}/*`, `http://*.${host}/*`, `https://*.${host}/*`] });
+  if (tabs.length) {
+    tab = tabs.find(t => t.active) || tabs[0];
+    await chrome.tabs.update(tab.id, { active: true });
+  } else {
+    // look for an editor route first on their own site
+    const guess = /wordpress|wp-admin/i.test(host) ? `https://${host}/wp-admin/post-new.php` : `https://${host}/`;
+    tab = await chrome.tabs.create({ url: guess, active: false });
+  }
+
+  await chrome.storage.local.set({ ['job_' + job.id]: { ...job, tabId: tab.id, startedAt: Date.now() } });
+
+  // 2. Wait for the tab to finish loading, then inject the generic publisher
+  const waitAndInject = async (tabId, attempt = 0) => {
+    if (attempt > 30) {
+      await api('/api/bridge/complete', { deviceId: (await cfg()).deviceId, jobId: job.id, ok: false, error: 'Timed out loading the site tab' }).catch(() => {});
+      return;
+    }
+    try {
+      const t = await chrome.tabs.get(tabId);
+      if (t.status !== 'complete') { setTimeout(() => waitAndInject(tabId, attempt + 1), 1000); return; }
+      await chrome.scripting.executeScript({ target: { tabId }, files: ['content/generic.js'] });
+      await chrome.tabs.sendMessage(tabId, { type: 'CARRGO_SITE_JOB', job: { id: job.id, title: job.title, bodyMd: job.bodyMd, tags: job.tags || '' } }).catch(() => {});
+    } catch (e) {
+      setTimeout(() => waitAndInject(tabId, attempt + 1), 1000);
+    }
+  };
+  waitAndInject(tab.id);
 }
 
 function stripMd(md) {
@@ -189,7 +280,7 @@ function stripMd(md) {
     .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '$1 ($2)');
 }
 
-// ---------- medium automation helpers ----------
+// ---------- medium automation: capture published URL ----------
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
   if (changeInfo.status !== 'complete') return;

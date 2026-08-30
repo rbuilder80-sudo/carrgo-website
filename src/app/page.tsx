@@ -12,15 +12,17 @@ import { Competitors } from '@/components/dashboard/competitors';
 import { Intel } from '@/components/dashboard/intel';
 import { AnalyticsRoi } from '@/components/dashboard/analytics';
 import { Bridge } from '@/components/dashboard/bridge';
+import { SprintBoard } from '@/components/dashboard/sprint';
 import { api } from '@/components/dashboard/shared';
 import { cn } from '@/lib/utils';
 import {
   Bot, FileText, Rocket, ClipboardCheck, KeyRound, Radar, Search, Swords,
-  Brain, BarChart3, Usb, Menu, X, Globe,
+  Brain, BarChart3, Usb, Menu, X, Globe, Trophy,
 } from 'lucide-react';
 
 const NAV = [
   { key: 'command', label: 'Command Center', icon: Bot },
+  { key: 'sprint', label: 'Sprint & Enquiries', icon: Trophy },
   { key: 'content', label: 'Content Studio', icon: FileText },
   { key: 'publisher', label: 'Publisher Hub', icon: Rocket },
   { key: 'approvals', label: 'Approval Queue', icon: ClipboardCheck },
@@ -130,6 +132,7 @@ export default function Home() {
         {/* Main */}
         <main className="flex-1 min-w-0 p-4 lg:p-6">
           {view === 'command' && <CommandCenter />}
+          {view === 'sprint' && <SprintBoard baseUrl={baseUrl} />}
           {view === 'content' && <ContentStudio onSentToPublisher={refreshAll} />}
           {view === 'publisher' && <PublisherHub drafts={drafts} reloadDrafts={loadDrafts} />}
           {view === 'approvals' && <ApprovalQueue onChanged={refreshAll} />}

@@ -35,18 +35,29 @@ Reply protocol — output STRICT JSON only:
 Include actions only when the user's request needs them. If the user just asks a question, reply with no actions. You may include up to 3 actions per turn.`;
 
 async function siteSnapshot(): Promise<string> {
-  const [drafts, jobs, keywords, audits, devices, creds, suggestions, gscQ] = await Promise.all([
+  const [drafts, jobs, keywords, audits, devices, creds, suggestions, gscQ, enquiriesToday, rankChecks, autopilotLast, browserSites] = await Promise.all([
     db.contentDraft.count(), db.publishJob.findMany({ orderBy: { queuedAt: 'desc' }, take: 5, select: { platform: true, status: true, title: true, publishedUrl: true } }),
     db.keyword.count(), db.auditRun.findFirst({ orderBy: { createdAt: 'desc' }, select: { score: true, grade: true, createdAt: true } }),
     db.pairedDevice.findMany({ select: { name: true, status: true } }), db.platformCredential.findMany({ select: { platform: true, status: true } }),
     db.suggestion.count({ where: { status: 'open' } }), db.gscQuery.count(),
+    db.enquiry.count({ where: { receivedAt: { gte: new Date(new Date().toISOString().slice(0, 10)) } } }),
+    db.rankCheck.findMany({ orderBy: { checkedAt: 'desc' }, take: 300 }),
+    db.setting.findUnique({ where: { key: 'autopilot_last_run' } }),
+    db.browserSite.count(),
   ]);
+  const latestByTerm = new Map<string, number | null>();
+  for (const c of rankChecks) if (!latestByTerm.has(c.term)) latestByTerm.set(c.term, c.position);
+  const positions = [...latestByTerm.values()];
   return JSON.stringify({
     drafts, keywords, openSuggestions: suggestions, gscQueries: gscQ,
     latestAudit: audits,
     devices: devices.map(d => `${d.name}=${d.status}`),
     credentials: creds.map(c => `${c.platform}=${c.status}`),
     recentJobs: jobs.map(j => ({ platform: j.platform, status: j.status, title: j.title.slice(0, 60), url: j.publishedUrl })),
+    enquiriesToday,
+    priorityRankData: { checked: positions.length, top10: positions.filter(p => p !== null && p <= 10).length, top20: positions.filter(p => p !== null && p <= 20).length, notRanking: positions.filter(p => p === null).length },
+    autopilotLastRun: autopilotLast?.value || null,
+    browserSitesInHub: browserSites,
   });
 }
 

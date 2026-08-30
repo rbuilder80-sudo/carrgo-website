@@ -3,6 +3,7 @@ import { decryptSecret } from './crypto';
 import { publishViaApi } from './platforms';
 import { verifyPublishedUrl } from './verify';
 import { logActivity } from './log';
+import { maybeAutopilot } from './autopilot';
 
 const TICK_MS = 15000;
 const DEVICE_STALE_MS = 95000;
@@ -29,7 +30,7 @@ async function tick() {
     await markStaleDevices();
     await processApiJobs();
     await verifyUnverified();
-    await retryQueuedApiJobs();
+    await maybeAutopilot(); // master agent: thinks + acts on its own schedule
   } catch (e) {
     console.error('[worker] tick error', e);
   }

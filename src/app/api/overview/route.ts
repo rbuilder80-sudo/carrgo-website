@@ -16,6 +16,18 @@ export async function GET() {
     db.ga4Summary.count(),
   ]);
 
+  const [autopilotLast, autopilotEnabled, autopilotCycles, browserSites, enquiriesToday, rankChecks] = await Promise.all([
+    db.setting.findUnique({ where: { key: 'autopilot_last_run' } }),
+    db.setting.findUnique({ where: { key: 'autopilot_enabled' } }),
+    db.setting.findUnique({ where: { key: 'autopilot_cycles' } }),
+    db.browserSite.findMany({ orderBy: { lastSeen: 'desc' }, take: 12 }),
+    db.enquiry.count({ where: { receivedAt: { gte: new Date(new Date().toISOString().slice(0, 10)) } } }),
+    db.rankCheck.findMany({ orderBy: { checkedAt: 'desc' }, take: 300 }),
+  ]);
+  const latestByTerm = new Map<string, number | null>();
+  for (const c of rankChecks) if (!latestByTerm.has(c.term)) latestByTerm.set(c.term, c.position);
+  const positions = [...latestByTerm.values()];
+
   return Response.json({
     ok: true,
     site: 'carrgo.co.uk',
@@ -27,5 +39,17 @@ export async function GET() {
       id: j.id, platform: j.platform, channel: j.channel, status: j.status, approval: j.approval,
       title: j.title || j.draft?.title || '', publishedUrl: j.publishedUrl, queuedAt: j.queuedAt,
     })),
+    autopilot: {
+      enabled: autopilotEnabled?.value === 'true',
+      lastRun: autopilotLast?.value || null,
+      cycles: Number(autopilotCycles?.value || '0'),
+    },
+    browserSites: browserSites.map(s => ({ host: s.host, title: s.title, added: s.added, lastSeen: s.lastSeen })),
+    enquiriesToday,
+    ranks: {
+      checked: positions.length,
+      top10: positions.filter(p => p !== null && p <= 10).length,
+      top3: positions.filter(p => p !== null && p <= 3).length,
+    },
   });
 }
