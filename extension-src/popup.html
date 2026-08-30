@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; width: 320px; margin: 0; padding: 16px; background: #0f1417; color: #e8edf1; }
+    h1 { font-size: 15px; margin: 0 0 4px; color: #fbbf24; }
+    .sub { font-size: 11px; color: #94a3b8; margin-bottom: 12px; }
+    .row { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px solid #263038; font-size: 12px; }
+    .badge { padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+    .on { background: #14351f; color: #4ade80; }
+    .off { background: #3a1a1a; color: #f87171; }
+    button { width: 100%; margin-top: 8px; padding: 9px; border: 0; border-radius: 8px; font-weight: 600; font-size: 12px; cursor: pointer; background: #fbbf24; color: #1a1200; }
+    button.ghost { background: #263038; color: #e8edf1; }
+    .msg { font-size: 11px; color: #94a3b8; margin-top: 8px; min-height: 14px; }
+  </style>
+</head>
+<body>
+  <h1>CARRGO SEO Bridge</h1>
+  <div class="sub">Live publishing &amp; intelligence bridge</div>
+  <div class="row"><span>Status</span><span id="status" class="badge off">Checking…</span></div>
+  <div class="row"><span>Device</span><span id="dname">—</span></div>
+  <div class="row"><span>Version</span><span id="ver">—</span></div>
+  <button id="gsc">Pull GSC data (open Search Console tab)</button>
+  <button id="ga4">Pull GA4 data (open Analytics tab)</button>
+  <button class="ghost" id="options">Open settings / pairing</button>
+  <div class="msg" id="msg"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

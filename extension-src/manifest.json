@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "CARRGO SEO Master — Publishing Bridge",
+  "version": "2.0.0",
+  "description": "Bridge between the CARRGO SEO SaaS and your real Chrome session: claims publishing jobs, posts to platforms while you are logged in, and imports GSC/GA4 performance data.",
+  "permissions": ["storage", "tabs", "scripting", "notifications", "clipboardWrite"],
+  "host_permissions": [
+    "https://medium.com/*",
+    "https://*.medium.com/*",
+    "https://www.linkedin.com/*",
+    "https://twitter.com/*",
+    "https://x.com/*",
+    "https://www.facebook.com/*",
+    "https://www.reddit.com/*",
+    "https://www.quora.com/*",
+    "https://www.pinterest.com/*",
+    "https://search.google.com/*",
+    "https://analytics.google.com/*",
+    "http://localhost/*",
+    "https://*/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "options_page": "options.html",
+  "action": { "default_popup": "popup.html", "default_title": "CARRGO SEO Bridge" },
+  "icons": { "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["https://medium.com/*", "https://*.medium.com/*"],
+      "js": ["content/medium.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://search.google.com/*/search-console*"],
+      "js": ["content/gsc.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://analytics.google.com/*"],
+      "js": ["content/ga4.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Worklog — CARRGO SEO SaaS (rebuilt, live-functional)
+
+Task ID: 1 (single-agent build)
+Agent: Super Z (main)
+Task: Rebuild CARRGO.CO.UK SEO SaaS from prior session (transcript at chat.z.ai/s/92c16818) and make every page/function operate on REAL live data + real publishing (direct platform APIs + Chrome extension bridge with evidence verification). No mock data.
+
+Work Log:
+- Read prior session transcript via agent-browser
+- Initialized fullstack scaffold (Next.js 16, Prisma/SQLite, shadcn/ui, z-ai-web-dev-sdk)
+- Building: schema → libs → worker → APIs → dashboard UI → Chrome extension → E2E verification
+
+Stage Summary:
+- In progress

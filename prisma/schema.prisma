@@ -1,0 +1,198 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model PlatformCredential {
+  id            String    @id @default(cuid())
+  platform      String
+  label         String
+  secretEnc     String
+  metaJson      String    @default("{}")
+  status        String    @default("unverified") // unverified | ok | invalid
+  lastCheckOk   Boolean?
+  lastCheckedAt DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model PairedDevice {
+  id            String    @id @default(cuid())
+  deviceId      String    @unique
+  name          String
+  keyEnc        String
+  pairingCode   String?
+  pairingExpiry DateTime?
+  status        String    @default("offline") // online | offline
+  version       String?
+  lastHeartbeat DateTime?
+  pairedAt      DateTime?
+  createdAt     DateTime  @default(now())
+}
+
+model ContentDraft {
+  id         String   @id @default(cuid())
+  title      String
+  bodyMd     String
+  tags       String   @default("")
+  keywords   String   @default("")
+  status     String   @default("draft") // draft | approved | published
+  wordCount  Int      @default(0)
+  seoScore   Int?
+  source     String   @default("ai") // ai | manual | agent
+  metaJson   String   @default("{}")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  jobs       PublishJob[]
+}
+
+model PublishJob {
+  id             String    @id @default(cuid())
+  draftId        String?
+  draft          ContentDraft? @relation(fields: [draftId], references: [id])
+  platform       String
+  channel        String    @default("extension") // extension | api
+  status         String    @default("queued") // queued | awaiting_approval | claimed | running | published | verified | failed | awaiting_auth
+  approval       String    @default("pending") // pending | approved | rejected | deferred
+  title          String
+  bodyMd         String
+  tags           String    @default("")
+  targetUrl      String?
+  publishedUrl   String?
+  evidence       String?
+  error          String?
+  attempts       Int       @default(0)
+  deviceName     String?
+  queuedAt       DateTime  @default(now())
+  startedAt      DateTime?
+  finishedAt     DateTime?
+  verifiedAt     DateTime?
+}
+
+model AgentTask {
+  id           String    @id @default(cuid())
+  type         String
+  title        String
+  payloadJson  String    @default("{}")
+  status       String    @default("queued") // queued | running | done | failed
+  resultJson   String?
+  error        String?
+  autoExecuted Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  finishedAt   DateTime?
+}
+
+model AuditRun {
+  id         String   @id @default(cuid())
+  url        String
+  score      Int
+  grade      String
+  summaryJson String
+  createdAt  DateTime @default(now())
+}
+
+model Keyword {
+  id         String   @id @default(cuid())
+  term       String
+  source     String   @default("suggest") // suggest | search | manual
+  estVolume  Int?
+  difficulty Int?
+  intent     String?
+  status     String   @default("new") // new | targeting | tracked
+  notes      String?
+  createdAt  DateTime @default(now())
+  @@unique([term])
+}
+
+model Competitor {
+  id          String   @id @default(cuid())
+  domain      String
+  angle       String?
+  metricsJson String  @default("{}")
+  createdAt   DateTime @default(now())
+  @@unique([domain])
+}
+
+model Suggestion {
+  id         String   @id @default(cuid())
+  category   String // site | ranking | authority
+  title      String
+  detail     String
+  priority   String   @default("medium") // high | medium | low
+  status     String   @default("open") // open | approved | rejected | done
+  source     String   @default("ai")
+  dataJson   String   @default("{}")
+  createdAt  DateTime @default(now())
+}
+
+model GscQuery {
+  id          String @id @default(cuid())
+  query       String
+  clicks      Float
+  impressions Float
+  ctr         Float
+  position    Float
+  batch       String
+  createdAt   DateTime @default(now())
+}
+
+model GscPage {
+  id          String @id @default(cuid())
+  page        String
+  clicks      Float
+  impressions Float
+  ctr         Float
+  position    Float
+  batch       String
+  createdAt   DateTime @default(now())
+}
+
+model Ga4Page {
+  id          String @id @default(cuid())
+  path        String
+  sessions    Float
+  users       Float
+  engagement  Float
+  batch       String
+  createdAt   DateTime @default(now())
+}
+
+model Ga4Summary {
+  id            String @id @default(cuid())
+  sessions      Float
+  users         Float
+  pageviews     Float
+  engagementRate Float
+  batch         String
+  createdAt     DateTime @default(now())
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  type      String
+  message   String
+  metaJson  String   @default("{}")
+  createdAt DateTime @default(now())
+}
+
+model Backlink {
+  id          String    @id @default(cuid())
+  sourceUrl   String
+  targetUrl   String
+  anchor      String?
+  status      String    @default("pending") // pending | live | dead
+  httpStatus  Int?
+  lastChecked DateTime?
+  createdAt   DateTime  @default(now())
+  @@unique([sourceUrl, targetUrl])
+}
