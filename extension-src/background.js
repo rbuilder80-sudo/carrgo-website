@@ -13,7 +13,26 @@ const HEARTBEAT_MIN = 0.5;   // 30s
 const CLAIM_MIN = 0.25;      // 15s
 const SYNC_MIN = 20;         // 20 min
 
+// ---- pre-configured install (zero-typing): auto-pairs on first load ----
+const DEFAULT_SAAS_URL = 'https://preview-chat-c46c3703-d4ac-4d6c-a0d1-a2d73fe2157e.space-z.ai';
+const DEFAULT_PAIRING_CODE = 'CARRGO-BE40C12C';
+
 let loopsStarted = false;
+
+// Auto-pair using the baked-in defaults when this Chrome has never paired.
+async function ensurePaired() {
+  const c = await cfg();
+  if (c.paired || !DEFAULT_SAAS_URL || !DEFAULT_PAIRING_CODE) return;
+  try {
+    const deviceId = (await chrome.storage.local.get('deviceId')).deviceId || crypto.randomUUID();
+    await chrome.storage.local.set({ saasUrl: DEFAULT_SAAS_URL, deviceId, deviceName: 'My Chrome' });
+    const r = await api('/api/bridge/pair', { deviceId, name: 'My Chrome', pairingCode: DEFAULT_PAIRING_CODE }, false);
+    if (r.json && r.json.ok) {
+      await chrome.storage.local.set({ paired: true, deviceKey: r.json.deviceKey });
+      notify('CARRGO SEO Bridge connected! Live data sync is now active.');
+    }
+  } catch (e) { /* retry on next loop tick */ }
+}
 
 async function cfg() {
   const { saasUrl, deviceId, deviceKey, deviceName, paired } = await chrome.storage.local.get(['saasUrl', 'deviceId', 'deviceKey', 'deviceName', 'paired']);
@@ -96,8 +115,11 @@ async function autoSyncGoogle() {
   }
 }
 
-function startLoops() {
+async function startLoops() {
   if (loopsStarted) return;
+  await ensurePaired();
+  const c = await cfg();
+  if (!c.paired) return; // auto-pair failed; retried on next alarm/startup
   loopsStarted = true;
   chrome.alarms.create('heartbeat', { periodInMinutes: HEARTBEAT_MIN });
   chrome.alarms.create('claim', { periodInMinutes: CLAIM_MIN });
@@ -109,13 +131,16 @@ function startLoops() {
 chrome.runtime.onStartup.addListener(startLoops);
 chrome.runtime.onInstalled.addListener(startLoops);
 chrome.alarms.onAlarm.addListener(al => {
-  if (al.name === 'heartbeat') heartbeat();
+  if (al.name === 'autopair') startLoops();
+  else if (al.name === 'heartbeat') heartbeat();
   else if (al.name === 'claim') claimLoop();
   else if (al.name === 'googlesync') autoSyncGoogle();
 });
 
 // kick off when service worker wakes
 setTimeout(startLoops, 300);
+// fresh-install retry: keeps attempting auto-pair every minute until paired
+chrome.alarms.create('autopair', { periodInMinutes: 1 });
 
 // ---------- message hub ----------
 

@@ -80,3 +80,18 @@ Stage Summary:
 - GitHub: SaaS live on seo-saas branch of rbuilder80-sudo/carrgo-website; future updates = git push
 - Sprint armed day 1/30; autopilot aggressive autonomous cycles every 20 min
 - GA/GSC NOT connected yet: needs extension pair (Bridge tab) or API credentials (Credentials tab)
+
+---
+Task ID: 5
+Agent: Super Z (main)
+Task: Zero-typing extension install for non-coder user (Path A)
+
+Work Log:
+- Read bridge pair/claim flow + extension source; pairing normally needs URL + 10-min code typed into options page
+- Minted 30-day pairing code CARRGO-BE40C12C (expires 2026-09-29) via scripts/mint-pairing-code.cjs
+- Extension v3.1.0: baked DEFAULT_SAAS_URL + DEFAULT_PAIRING_CODE into background.js; ensurePaired() auto-pairs on install/startup, autopair alarm retries every 1 min until paired, desktop notification on success; options.js pre-filled + 'Auto-connecting…' status
+- Rebuilt zip (public/downloads/seo-master-chrome-extension.zip); E2E self-test: pair with baked code OK (deviceKey returned), heartbeat with key OK; test device cleaned up
+
+Stage Summary:
+- User now does 3 clicks: download zip → unzip → chrome://extensions → Load unpacked → auto-pairs with zero typing
+- Once loaded: heartbeat tabs → Publisher Hub discovery; GA/GSC tabs open → 20-min auto-sync

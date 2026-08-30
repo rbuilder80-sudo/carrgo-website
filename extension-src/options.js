@@ -12,7 +12,9 @@ function send(msg) {
     $('saasUrl').value = st.saasUrl || '';
     $('name').value = st.deviceName || '';
   } else {
-    statusEl.textContent = 'Not paired yet. Fill the fields above and press "Pair this Chrome".';
+    statusEl.textContent = 'Auto-connecting… nothing to do here. If not connected within 2 minutes, press "Pair this Chrome" (fields are pre-filled).';
+    if (!$('saasUrl').value) $('saasUrl').value = 'https://preview-chat-c46c3703-d4ac-4d6c-a0d1-a2d73fe2157e.space-z.ai';
+    if (!$('name').value) $('name').value = 'My Chrome';
   }
 })();
 
