@@ -1,11 +1,11 @@
 # Netlify redirects - force canonical domain
-# Redirect www to non-www
-https://www.carrgo.co.uk/* https://carrgo.co.uk/:splat 301!
-http://www.carrgo.co.uk/* https://carrgo.co.uk/:splat 301!
+# Enforce the preferred www canonical host
+https://carrgo.co.uk/* https://www.carrgo.co.uk/:splat 301!
+http://carrgo.co.uk/* https://www.carrgo.co.uk/:splat 301!
 
 # Redirect netlify.app to custom domain
-https://carrgo-uk-website.netlify.app/* https://carrgo.co.uk/:splat 301!
-http://carrgo-uk-website.netlify.app/* https://carrgo.co.uk/:splat 301!
+https://carrgo-uk-website.netlify.app/* https://www.carrgo.co.uk/:splat 301!
+http://carrgo-uk-website.netlify.app/* https://www.carrgo.co.uk/:splat 301!
 
 # Priority Zero clean-up redirects
 /port-intelligence /resources/port-congestion-tracker 301
@@ -16,6 +16,8 @@ http://carrgo-uk-website.netlify.app/* https://carrgo.co.uk/:splat 301!
 /sea-freight /services/sea-freight 301
 /freight-forwarding /services 301
 /services/freight-forwarding /services 301
+/services/air-cargo /services/air-freight/ 301!
+/services/air-cargo/ /services/air-freight/ 301!
 
 # Search Console legacy 404 examples
 /ports/bristolport.html /ports/bristol 301
