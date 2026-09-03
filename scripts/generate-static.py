@@ -297,31 +297,6 @@ ROUTES = {
             }
         ]
     },
-    "/services/air-cargo": {
-        "title": "Air Cargo UK | Express & Charter Freight | Carrgo",
-        "description": "Time-sensitive cargo needs air freight. Carrgo's air cargo service handles express, charter, and standard air freight with customs clearance. Get your air cargo quote in 30 minutes.",
-        "keywords": "air cargo uk, express air freight, charter freight, air cargo quotes",
-        "canonical": "https://www.carrgo.co.uk/services/air-cargo",
-        "h1": "Air Cargo UK — Express &amp; Charter Freight Services",
-        "ogImage": "https://www.carrgo.co.uk/og-image.png"
-    ,
-        "structuredData": [
-            {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Air Cargo UK — Express &amp; Charter Freight Services",
-                "serviceType": "Air Cargo",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "Carrgo Freight Solutions",
-                    "url": "https://www.carrgo.co.uk"
-                },
-                "areaServed": "GB",
-                "description": "Time-sensitive cargo needs air freight. Carrgo's air cargo service handles express, charter, and standard air freight with customs clearance. Get your air cargo quote in 30 minutes.",
-                "url": "https://www.carrgo.co.uk/services/air-cargo"
-            }
-        ]
-    },
     "/services/logistics": {
         "title": "Logistics UK | Supply Chain Solutions | Carrgo",
         "description": "Need end-to-end logistics management? Carrgo provides supply chain solutions, freight consolidation, and multi-modal transport. Reduce costs and improve delivery times. Get your logistics quote.",
@@ -1195,8 +1170,6 @@ def build_html(route, meta, base_html, is_404=False):
                     name = "Amazon FBA Freight"
                 elif part == "container-shipping":
                     name = "Container Shipping"
-                elif part == "air-cargo":
-                    name = "Air Cargo"
                 elif part == "china-to-uk":
                     name = "China to UK"
                 elif part == "germany-to-uk":

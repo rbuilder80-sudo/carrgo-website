@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
   Ship, Plane, Truck, TrainFront, FileCheck, Package,
-  Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
+  Globe, ArrowRight, CheckCircle, ChevronDown,
   Clock, Shield, MapPin, TrendingUp
 } from 'lucide-react';
 
@@ -12,22 +12,24 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Air Freight UK — Air Cargo Shipping Services',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  description: 'Door-to-door air freight and air cargo to the UK typically takes 3–7 days, including collection, customs clearance, and final delivery.',
+  url: 'https://www.carrgo.co.uk/services/air-freight/',
+  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd', url: 'https://www.carrgo.co.uk/' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Air Freight Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Express Air Freight (1–3 days)' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Economy Air Freight (3–5 days)' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Door-to-Door Air Cargo' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Express Air Freight (airport-to-airport: 1–3 days)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Economy Air Freight (airport-to-airport: 3–5 days)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Door-to-Door Air Cargo (3–7 days)' } },
     ],
   },
 };
 
 const faqData = [
   { q: 'How much does air freight to the UK cost?', a: 'Air freight costs depend on chargeable weight (actual or volumetric, whichever is higher). Typical rates from China to the UK range from £3.50–£7.00 per kg for economy and £6.00–£12.00 per kg for express. We provide all-inclusive quotes with no hidden fees.' },
-  { q: 'How long does air freight take to reach the UK?', a: 'Express air freight takes 1–3 days door-to-door, while economy air freight typically takes 3–5 days. Transit times vary by origin — European origins are faster (1–2 days) compared to Asia (3–5 days).' },
+  { q: 'How long does air freight take to reach the UK?', a: 'Door-to-door air freight typically takes 3–7 days, including collection, export clearance, the flight, UK customs clearance, and final delivery. Airport-to-airport services are deliberately quoted separately: express is typically 1–3 days and economy 3–5 days, depending on the route.' },
   { q: 'Are there any cargo restrictions on air freight?', a: 'Yes — hazardous materials, lithium batteries, liquids, and perishables require special handling and documentation. Some items are restricted by aviation industry regulations. Contact our team to confirm if your cargo is suitable for air freight.' },
   { q: 'Do you offer real-time tracking for air cargo?', a: 'Absolutely. All air freight shipments include real-time tracking from collection through to final delivery. You will receive updates at every milestone including departure, transit, customs clearance, and delivery.' },
   { q: 'Is customs clearance included in your air freight service?', a: 'Yes, we handle full UK customs clearance as part of our air freight service. Our customs brokers prepare and submit CDS entries, calculate duties and VAT, and ensure compliance with all UK import regulations.' },
@@ -73,10 +75,10 @@ export default function AirFreight() {
     <>
       <Seo
         title="Air Freight UK | Air Cargo Shipping & Quotes | Carrgo"
-        description="Air freight & air cargo UK — express & economy options. Heathrow, East Midlands, Manchester. Get air freight quotes in 2 hours. 3-5 days worldwide."
+        description="Air freight & air cargo UK with 3–7 day door-to-door transit. Express and economy options via Heathrow, East Midlands and Manchester."
         keywords="air freight uk, air cargo uk, express air freight, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
-        ogUrl="https://carrgo.co.uk/services/air-freight"
-        canonical="https://carrgo.co.uk/services/air-freight"
+        ogUrl="https://www.carrgo.co.uk/services/air-freight/"
+        canonical="https://www.carrgo.co.uk/services/air-freight/"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">
@@ -90,11 +92,11 @@ export default function AirFreight() {
                   Air Freight UK — Air Cargo Shipping Services
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Book express and economy air freight from China, USA, UAE, and Europe to Heathrow, Manchester, and Birmingham airports. Door-to-door air cargo with tracking. Time-critical delivery in 1–5 days.
+                  Book express and economy air freight from China, USA, UAE, and Europe to Heathrow, Manchester, and Birmingham airports. Door-to-door air cargo with tracking and typical transit of 3–7 days.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    'Express (1–3 days) and Economy (3–5 days) options',
+                    'Door-to-door air freight typically takes 3–7 days',
                     'All major UK airports: Heathrow, Manchester, Birmingham',
                     'Experienced air freight agent',
                     'Real-time cargo tracking included',
@@ -145,7 +147,7 @@ export default function AirFreight() {
                   The fastest way to move cargo by air. Ideal for time-critical shipments, perishable goods, and high-value items that need immediate delivery.
                 </p>
                 <ul className="space-y-2 text-sm text-[#4B5563]">
-                  <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Transit:</strong> 1–3 days</span></li>
+                  <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Airport-to-airport transit:</strong> 1–3 days</span></li>
                   <li className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Best for:</strong> Urgent, perishables, high-value</span></li>
                   <li className="flex items-center gap-2"><Globe className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Tracking:</strong> Real-time GPS</span></li>
                 </ul>
@@ -159,7 +161,7 @@ export default function AirFreight() {
                   A cost-effective air cargo option for regular shipments that do not require immediate delivery. Still significantly faster than sea or rail freight.
                 </p>
                 <ul className="space-y-2 text-sm text-[#4B5563]">
-                  <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Transit:</strong> 3–5 days</span></li>
+                  <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Airport-to-airport transit:</strong> 3–5 days</span></li>
                   <li className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Best for:</strong> Regular, non-urgent cargo</span></li>
                   <li className="flex items-center gap-2"><Globe className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" /><span><strong>Tracking:</strong> Real-time GPS</span></li>
                 </ul>
@@ -246,7 +248,7 @@ export default function AirFreight() {
                   </div>
                   <div className="flex items-center gap-2 text-[#4B5563] text-sm">
                     <Clock className="w-4 h-4 text-[#1A6DFF]" aria-hidden="true" />
-                    <span>{route.time}</span>
+                    <span>Airport-to-airport: {route.time}</span>
                   </div>
                 </article>
               ))}
@@ -266,7 +268,7 @@ export default function AirFreight() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { icon: Plane, title: 'Air Freight Expertise', desc: 'Experienced air freight agent with direct airline partnerships.' },
-                { icon: Clock, title: '1–5 Day Delivery', desc: 'Express and economy options to match your timeline and budget.' },
+                { icon: Clock, title: '3–7 Day Door-to-Door', desc: 'Typical end-to-end transit including collection, customs clearance, and final delivery.' },
                 { icon: Globe, title: 'Global Coverage', desc: 'Air freight from China, USA, UAE, India, and all European countries.' },
                 { icon: FileCheck, title: 'Customs Included', desc: 'Full UK customs clearance handled by our customs brokers.' },
               ].map((item, i) => {

@@ -29,7 +29,6 @@ const DoorToDoor = lazy(() => import('./pages/services/DoorToDoor'));
 const AmazonFba = lazy(() => import('./pages/services/AmazonFba'));
 const Warehousing = lazy(() => import('./pages/services/Warehousing'));
 const ContainerShipping = lazy(() => import('./pages/services/ContainerShipping'));
-const AirCargo = lazy(() => import('./pages/services/AirCargo'));
 const Logistics = lazy(() => import('./pages/services/Logistics'));
 
 // Route pages
@@ -122,7 +121,7 @@ export default function App() {
           <Route path="/services/amazon-fba-freight" element={<Suspense fallback={<Loading />}><AmazonFba /></Suspense>} />
           <Route path="/services/warehousing" element={<Suspense fallback={<Loading />}><Warehousing /></Suspense>} />
           <Route path="/services/container-shipping" element={<Suspense fallback={<Loading />}><ContainerShipping /></Suspense>} />
-          <Route path="/services/air-cargo" element={<Suspense fallback={<Loading />}><AirCargo /></Suspense>} />
+          <Route path="/services/air-cargo" element={<Navigate to="/services/air-freight" replace />} />
           <Route path="/services/logistics" element={<Suspense fallback={<Loading />}><Logistics /></Suspense>} />
 
           {/* Route pages */}
