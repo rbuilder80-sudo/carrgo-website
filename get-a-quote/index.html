@@ -41,10 +41,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="theme-color" content="#1A6DFF" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carrgo.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Get A Quote", "item": "https://www.carrgo.co.uk/get-a-quote/"}]}</script>
-<script type="module" crossorigin src="/assets/index-B5Wi-L4d.js"></script>
+<script type="module" crossorigin src="/assets/index-BXZye8kZ.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-router-C4jbCL5F.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-icons-qou1LEyK.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DlVyA_sU.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-TnHOgrHk.css">
   <script type="application/ld+json" data-carrgo-faq>{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What do you need to get a freight quote?", "acceptedAnswer": {"@type": "Answer", "text": "Four things are enough to price almost any shipment:"}}, {"@type": "Question", "name": "How long does a quote take?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo aims to come back within 2 working hours on standard sea and air lanes. Complex movements \u2014 project cargo, out-of-gauge, dangerous goods, multi-leg routings \u2014 can take longer because they need carrier confirmation, and we will tell you if that is the case rather than leaving you waiting."}}, {"@type": "Question", "name": "Is the quote free, and am I committing to anything?", "acceptedAnswer": {"@type": "Answer", "text": "Quotes are free and carry no obligation. You are asking a price, not placing a booking. Many enquiries come from businesses comparing options or costing a project that has not been approved yet \u2014 that is a normal and welcome use of a quote."}}, {"@type": "Question", "name": "Will the quote include duty, VAT and all charges?", "acceptedAnswer": {"@type": "Answer", "text": "Ask for the landed cost and Carrgo will break out the freight, surcharges, handling, customs entry, and estimated duty and VAT separately, so you can see the true total rather than a freight-only headline. Duty and VAT are government charges set by your commodity code \u2014 they are payable on import whoever moves the goods, so any quote that omits them is not the real cost."}}, {"@type": "Question", "name": "What should a freight shipping quote include?", "acceptedAnswer": {"@type": "Answer", "text": "A complete freight shipping quote itemises the freight leg, fuel and currency surcharges, origin and destination handling, the customs entry, and estimated duty and VAT. A quote that shows only the freight rate is hiding the charges that appear later, so always ask for the landed total before you compare providers."}}, {"@type": "Question", "name": "What if you have never imported before?", "acceptedAnswer": {"@type": "Answer", "text": "That is fine and it is common. You do not need to know your Incoterms, commodity code or clearance process before making contact \u2014 those are things Carrgo works out with you. If you want to read up first, the Incoterms guide and the customs clearance guide cover the basics in plain English."}}, {"@type": "Question", "name": "Want to sanity-check the numbers first?", "acceptedAnswer": {"@type": "Answer", "text": "Use the freight cost calculator for an indicative figure before you enquire, check current port congestion if your cargo is time-sensitive, and compare arrival options with the port comparison tool . These are free and need no sign-up."}}, {"@type": "Question", "name": "What happens after you send the form?", "acceptedAnswer": {"@type": "Answer", "text": "A member of the team reads the enquiry, checks live rates on your lane, and replies by email with the price and the transit time. If anything essential is missing we will ask one short question rather than sending a vague number. There is no call centre and no automated sales sequence."}}, {"@type": "Question", "name": "Prefer to ask a question instead of requesting a price?", "acceptedAnswer": {"@type": "Answer", "text": "Use the contact page . General questions about routes, timings, customs or paperwork are welcome and do not need to turn into a quote."}}]}</script>
 </head>
   <body>
@@ -129,32 +129,77 @@ timings, customs or paperwork are welcome and do not need to turn into a quote.<
 <!-- carrgo-seo-content -->
 </div>
 </noscript>
-<section id="quick-quote-static" aria-labelledby="quick-quote-static-heading" style="background:#fff;border-top:1px solid #e5e7eb;padding:36px 16px">
-  <div style="max-width:1100px;margin:0 auto;display:grid;gap:20px">
-    <div>
-      <p style="margin:0 0 8px;color:#1A6DFF;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Quick enquiry</p>
-      <h2 id="quick-quote-static-heading" style="margin:0;color:#111827;font-size:28px;line-height:1.15">Get a quick freight quote</h2>
-      <p style="margin:12px 0 0;color:#4b5563">Send the basics now. Carrgo will ask for extra shipment details after your enquiry arrives.</p>
-    </div>
-    <form action="https://formsubmit.co/support@carrgo.co.uk" method="POST" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:16px">
+<!-- carrgo-quick-quote-start -->
+<style id="carrgo-quick-quote-style">
+  @media (min-width:1280px){main,footer{padding-right:360px!important}}
+  .carrgo-qq-card{box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827}
+  .carrgo-qq-card *{box-sizing:border-box}
+  .carrgo-qq-kicker{margin:0 0 4px;color:#1A6DFF;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .carrgo-qq-title{margin:0;color:#111827;font-size:20px;line-height:1.15;font-weight:800}
+  .carrgo-qq-copy{margin:8px 0 14px;color:#4b5563;font-size:12px;line-height:1.45}
+  .carrgo-qq-form{display:grid;gap:10px}
+  .carrgo-qq-label{display:grid;gap:4px;font-size:12px;font-weight:700;color:#1f2937}
+  .carrgo-qq-label input{min-height:42px;width:100%;border:1px solid #d1d5db;border-radius:7px;padding:9px 10px;font:16px system-ui;background:#fff;color:#111827}
+  .carrgo-qq-submit{min-height:46px;border:0;border-radius:9px;background:#1A6DFF;color:#fff;padding:11px 14px;font:800 16px system-ui;cursor:pointer}
+  #quick-quote-static{position:fixed;right:16px;top:96px;z-index:40;width:320px;max-height:calc(100vh - 112px);overflow:auto;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 24px 60px rgba(15,23,42,.20);padding:16px}
+  #quick-quote-mobile-static{display:none}
+  @media (max-width:1279px){
+    main,footer{padding-right:0!important}
+    #quick-quote-static{display:none}
+    #quick-quote-mobile-static{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 20px 55px rgba(15,23,42,.24);max-height:82vh;overflow:auto}
+    #quick-quote-mobile-static summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 14px;background:#1A6DFF;color:#fff;border-radius:18px;cursor:pointer}
+    #quick-quote-mobile-static summary::-webkit-details-marker{display:none}
+    .carrgo-qq-mobile-open{background:#fff;color:#1A6DFF;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:800}
+    .carrgo-qq-mobile-body{padding:14px}
+  }
+</style>
+<aside id="quick-quote-static" class="carrgo-qq-card" data-static-quick-quote data-quick-quote-placement="sticky-sidebar" aria-labelledby="quick-quote-static-heading">
+  <p class="carrgo-qq-kicker">2-minute quote</p>
+  <h2 id="quick-quote-static-heading" class="carrgo-qq-title">Get a quick freight quote</h2>
+  <p class="carrgo-qq-copy">Send the basics now. Carrgo will ask for extra shipment details after your enquiry arrives.</p>
+  <form class="carrgo-qq-form" action="https://formsubmit.co/support@carrgo.co.uk" method="POST">
       <input type="hidden" name="_subject" value="New Quick Quote Enquiry - Carrgo Website">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="quote_invitation" value="Get a quick freight quote">
       <input type="hidden" name="source_page" value="/get-a-quote">
       <input type="hidden" name="follow_up_note" value="Initial quick quote enquiry. Ask for shipment dates, Incoterms, HS code, packing list and customs details after this enquiry arrives.">
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Origin<input name="origin" required value="" placeholder="City, country or supplier location" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Destination<input name="destination" required value="" placeholder="UK address, city or port" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Goods<input name="goods" required placeholder="Furniture, cartons, machinery" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Approx weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Dimensions<input name="dimensions" placeholder="Pallet/carton size or I'm not sure" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Name<input name="name" required autocomplete="name" placeholder="Your name" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <label style="display:grid;gap:5px;font-weight:600;color:#1f2937">Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="Best number to contact you" style="min-height:46px;border:1px solid #d1d5db;border-radius:8px;padding:10px;font:16px system-ui;background:white"></label>
-      <button type="submit" style="min-height:48px;border:0;border-radius:8px;background:#1A6DFF;color:white;padding:12px 18px;font:700 16px system-ui;cursor:pointer">Send quick quote enquiry</button>
+      <label class="carrgo-qq-label">Origin<input name="origin" required value="" placeholder="City, country or supplier"></label>
+      <label class="carrgo-qq-label">Destination<input name="destination" required value="" placeholder="UK address, city or port"></label>
+      <label class="carrgo-qq-label">Goods<input name="goods" required placeholder="Furniture, cartons, machinery"></label>
+      <label class="carrgo-qq-label">Approx weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM"></label>
+      <label class="carrgo-qq-label">Dimensions<input name="dimensions" placeholder="Pallet/carton size or I'm not sure"></label>
+      <label class="carrgo-qq-label">Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label class="carrgo-qq-label">Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="carrgo-qq-label">Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="Best number to contact you"></label>
+      <button type="submit" class="carrgo-qq-submit">Get instant quote</button>
+  </form>
+</aside>
+<details id="quick-quote-mobile-static" class="carrgo-qq-card" data-static-quick-quote data-quick-quote-placement="mobile-sticky">
+  <summary><span><span class="carrgo-qq-kicker" style="color:rgba(255,255,255,.8)">Quick enquiry</span><strong>Get a quick freight quote</strong></span><span class="carrgo-qq-mobile-open">Open</span></summary>
+  <div class="carrgo-qq-mobile-body">
+    <p class="carrgo-qq-copy">Send origin, destination, goods and contact details now. Extra shipment details can come later.</p>
+    <form class="carrgo-qq-form" action="https://formsubmit.co/support@carrgo.co.uk" method="POST">
+      <input type="hidden" name="_subject" value="New Quick Quote Enquiry - Carrgo Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="quote_invitation" value="Get a quick freight quote">
+      <input type="hidden" name="source_page" value="/get-a-quote">
+      <input type="hidden" name="follow_up_note" value="Initial quick quote enquiry. Ask for shipment dates, Incoterms, HS code, packing list and customs details after this enquiry arrives.">
+      <label class="carrgo-qq-label">Origin<input name="origin" required value="" placeholder="City, country or supplier"></label>
+      <label class="carrgo-qq-label">Destination<input name="destination" required value="" placeholder="UK address, city or port"></label>
+      <label class="carrgo-qq-label">Goods<input name="goods" required placeholder="Furniture, cartons, machinery"></label>
+      <label class="carrgo-qq-label">Approx weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM"></label>
+      <label class="carrgo-qq-label">Dimensions<input name="dimensions" placeholder="Pallet/carton size or I'm not sure"></label>
+      <label class="carrgo-qq-label">Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label class="carrgo-qq-label">Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="carrgo-qq-label">Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="Best number to contact you"></label>
+      <button type="submit" class="carrgo-qq-submit">Get instant quote</button>
     </form>
   </div>
-</section>
+</details>
+<script>(function(){setTimeout(function(){if(document.getElementById('quick-quote')){document.querySelectorAll('[data-static-quick-quote],#carrgo-quick-quote-style').forEach(function(el){el.remove();});}},1200);})();</script>
+<!-- carrgo-quick-quote-end -->
 <div id="root"></div>
 
   </body>
