@@ -127,9 +127,12 @@ def main() -> int:
         text = file.read_text()
         text = re.sub(r'<section id="quick-quote-static"[\s\S]*?</section>\s*', "", text, count=1)
         marker = "<div id=\"root\""
-        if marker not in text:
-            continue
-        text = text.replace(marker, form_html(route) + "\n" + marker, 1)
+        if marker in text:
+            text = text.replace(marker, form_html(route) + "\n" + marker, 1)
+        elif "</body>" in text:
+            text = text.replace("</body>", form_html(route) + "\n</body>", 1)
+        else:
+            text = text + "\n" + form_html(route) + "\n"
         file.write_text(text)
         changed += 1
     print(f"Injected static quick quote forms into {changed} pages.")
