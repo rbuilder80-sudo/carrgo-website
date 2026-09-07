@@ -4,7 +4,6 @@ import Seo from '../../components/Seo';
 import {
   allPorts,
   calculateNationalIndex,
-  getPortRankings,
   laneData,
   getImporterRisk,
   type PortDetail,
@@ -46,6 +45,19 @@ import {
 /* ------------------------------------------------------------------ */
 
 type Tab = 'All Ports' | 'England' | 'Scotland & Wales' | 'Northern Ireland' | 'Ireland';
+type LivePort = Partial<Pick<PortDetail, 'status' | 'healthScore' | 'waitTime' | 'vesselsWaiting' | 'vesselsAtBerth'>> & {
+  slug: string;
+  lastUpdated?: string;
+  source?: string;
+};
+
+interface LivePortResponse {
+  ok: boolean;
+  source?: string;
+  generatedAt?: string;
+  ports?: LivePort[];
+  partial?: boolean;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -82,6 +94,35 @@ function useNow(): Date {
     return () => clearInterval(t);
   }, []);
   return now;
+}
+
+function formatLiveUpdate(value?: string): string | undefined {
+  if (!value) return undefined;
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return undefined;
+  return `${formatDateUK(d)} ${formatTime24(d)} GMT`;
+}
+
+function mergeLivePortData(port: PortDetail, live?: LivePort): PortDetail {
+  if (!live) return port;
+  const healthScore = live.healthScore ?? port.healthScore;
+  const status = live.status ?? port.status;
+  return {
+    ...port,
+    status,
+    healthScore,
+    waitTime: live.waitTime ?? port.waitTime,
+    vesselsWaiting: live.vesselsWaiting ?? port.vesselsWaiting,
+    vesselsAtBerth: live.vesselsAtBerth ?? port.vesselsAtBerth,
+    lastUpdated: live.lastUpdated ? 'Live' : port.lastUpdated,
+    forecasts: port.forecasts.map((forecast, index) => (
+      index === 0 ? { ...forecast, congestion: status } : forecast
+    )),
+    importerImpact: {
+      ...port.importerImpact,
+      expectedDelay: live.waitTime ?? port.importerImpact.expectedDelay,
+    },
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -270,17 +311,64 @@ export default function PortCongestion() {
   const now = useNow();
   const [activeTab, setActiveTab] = useState<Tab>('All Ports');
   const [search, setSearch] = useState('');
+  const [liveData, setLiveData] = useState<LivePortResponse | null>(null);
+  const [liveError, setLiveError] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadLivePortData() {
+      try {
+        const response = await fetch('/.netlify/functions/port-intelligence', {
+          headers: { accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error(`Live data unavailable: ${response.status}`);
+        const data = (await response.json()) as LivePortResponse;
+        if (!cancelled) {
+          setLiveData(data);
+          setLiveError(!data.ok);
+        }
+      } catch {
+        if (!cancelled) setLiveError(true);
+      }
+    }
+
+    loadLivePortData();
+    const timer = window.setInterval(loadLivePortData, 15 * 60 * 1000);
+    return () => {
+      cancelled = true;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  const livePortMap = useMemo(() => {
+    return new Map((liveData?.ports ?? []).map((port) => [port.slug, port]));
+  }, [liveData]);
+
+  const ports = useMemo(() => {
+    return allPorts.map((port) => mergeLivePortData(port, livePortMap.get(port.slug)));
+  }, [livePortMap]);
+
+  const liveUpdateLabel = formatLiveUpdate(liveData?.generatedAt);
+  const hasLiveData = liveData?.ok && (liveData.ports?.length ?? 0) > 0;
 
   /* ---- National index ---- */
-  const nationalIndex = useMemo(() => calculateNationalIndex(), []);
+  const nationalIndex = useMemo(() => {
+    if (!hasLiveData) return calculateNationalIndex();
+    const avg = Math.round(ports.reduce((total, port) => total + port.healthScore, 0) / ports.length);
+    const prevAvg = Math.round(ports.reduce((total, port) => total + port.scoreYesterday, 0) / ports.length);
+    const change = avg - prevAvg;
+    const trend: 'Improving' | 'Stable' | 'Worsening' = change > 2 ? 'Improving' : change < -2 ? 'Worsening' : 'Stable';
+    return { index: avg, trend, change };
+  }, [hasLiveData, ports]);
 
   /* ---- tabs ---- */
   const tabs: { key: Tab; count: number }[] = useMemo(() => {
-    const all = allPorts.length;
-    const eng = allPorts.filter((p) => p.region === 'England').length;
-    const sw = allPorts.filter((p) => p.region === 'Scotland' || p.region === 'Wales').length;
-    const ni = allPorts.filter((p) => p.region === 'Northern Ireland').length;
-    const ie = allPorts.filter((p) => p.region === 'Ireland').length;
+    const all = ports.length;
+    const eng = ports.filter((p) => p.region === 'England').length;
+    const sw = ports.filter((p) => p.region === 'Scotland' || p.region === 'Wales').length;
+    const ni = ports.filter((p) => p.region === 'Northern Ireland').length;
+    const ie = ports.filter((p) => p.region === 'Ireland').length;
     return [
       { key: 'All Ports', count: all },
       { key: 'England', count: eng },
@@ -288,15 +376,15 @@ export default function PortCongestion() {
       { key: 'Northern Ireland', count: ni },
       { key: 'Ireland', count: ie },
     ];
-  }, []);
+  }, [ports]);
 
   /* ---- filtered list ---- */
   const filtered = useMemo(() => {
-    let list = allPorts;
-    if (activeTab === 'England') list = allPorts.filter((p) => p.region === 'England');
-    if (activeTab === 'Scotland & Wales') list = allPorts.filter((p) => p.region === 'Scotland' || p.region === 'Wales');
-    if (activeTab === 'Northern Ireland') list = allPorts.filter((p) => p.region === 'Northern Ireland');
-    if (activeTab === 'Ireland') list = allPorts.filter((p) => p.region === 'Ireland');
+    let list = ports;
+    if (activeTab === 'England') list = ports.filter((p) => p.region === 'England');
+    if (activeTab === 'Scotland & Wales') list = ports.filter((p) => p.region === 'Scotland' || p.region === 'Wales');
+    if (activeTab === 'Northern Ireland') list = ports.filter((p) => p.region === 'Northern Ireland');
+    if (activeTab === 'Ireland') list = ports.filter((p) => p.region === 'Ireland');
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -308,18 +396,18 @@ export default function PortCongestion() {
       );
     }
     return list;
-  }, [activeTab, search]);
+  }, [activeTab, ports, search]);
 
   /* ---- summary stats ---- */
   const stats = useMemo(() => {
-    const normal = allPorts.filter((p) => p.status === 'Normal').length;
-    const moderate = allPorts.filter((p) => p.status === 'Moderate').length;
-    const congested = allPorts.filter((p) => p.status === 'Congested').length;
-    const severe = allPorts.filter((p) => p.status === 'Severe').length;
-    const fastest = [...allPorts].sort((a, b) => b.healthScore - a.healthScore)[0];
-    const slowest = [...allPorts].sort((a, b) => a.healthScore - b.healthScore)[0];
-    return { normal, moderate, congested, severe, total: allPorts.length, fastest, slowest };
-  }, []);
+    const normal = ports.filter((p) => p.status === 'Normal').length;
+    const moderate = ports.filter((p) => p.status === 'Moderate').length;
+    const congested = ports.filter((p) => p.status === 'Congested').length;
+    const severe = ports.filter((p) => p.status === 'Severe').length;
+    const fastest = [...ports].sort((a, b) => b.healthScore - a.healthScore)[0];
+    const slowest = [...ports].sort((a, b) => a.healthScore - b.healthScore)[0];
+    return { normal, moderate, congested, severe, total: ports.length, fastest, slowest };
+  }, [ports]);
 
   /* ---- status sort order ---- */
   const statusOrder: Record<CongestionLevel, number> = { Severe: 0, Congested: 1, Moderate: 2, Normal: 3 };
@@ -329,33 +417,33 @@ export default function PortCongestion() {
   );
 
   /* ---- congested ports for alerts ---- */
-  const congestedPorts = useMemo(() => getPortRankings().congested, []);
+  const congestedPorts = useMemo(() => ports.filter((p) => p.status === 'Congested' || p.status === 'Severe'), [ports]);
 
   /* ---- weekly intelligence ---- */
   const weeklyStats = useMemo(() => {
-    const improving = allPorts.filter((p) => p.scoreTrend > 0).length;
-    const worsening = allPorts.filter((p) => p.scoreTrend < 0).length;
-    const stable = allPorts.filter((p) => p.scoreTrend === 0).length;
-    const mostImproved = [...allPorts].sort((a, b) => b.scoreTrend - a.scoreTrend)[0];
-    const mostDeclined = [...allPorts].sort((a, b) => a.scoreTrend - b.scoreTrend)[0];
+    const improving = ports.filter((p) => p.scoreTrend > 0).length;
+    const worsening = ports.filter((p) => p.scoreTrend < 0).length;
+    const stable = ports.filter((p) => p.scoreTrend === 0).length;
+    const mostImproved = [...ports].sort((a, b) => b.scoreTrend - a.scoreTrend)[0];
+    const mostDeclined = [...ports].sort((a, b) => a.scoreTrend - b.scoreTrend)[0];
     return { improving, worsening, stable, mostImproved, mostDeclined };
-  }, []);
+  }, [ports]);
 
   /* ---- rankings for section 9 ---- */
   const rankings = useMemo(() => {
-    const fastest = [...allPorts].sort((a, b) => b.healthScore - a.healthScore).slice(0, 5);
-    const slowest = [...allPorts].sort((a, b) => a.healthScore - b.healthScore).slice(0, 5);
-    const mostImproved = [...allPorts].sort((a, b) => b.scoreTrend - a.scoreTrend).slice(0, 5);
-    const mostDeclined = [...allPorts].sort((a, b) => a.scoreTrend - b.scoreTrend).slice(0, 5);
+    const fastest = [...ports].sort((a, b) => b.healthScore - a.healthScore).slice(0, 5);
+    const slowest = [...ports].sort((a, b) => a.healthScore - b.healthScore).slice(0, 5);
+    const mostImproved = [...ports].sort((a, b) => b.scoreTrend - a.scoreTrend).slice(0, 5);
+    const mostDeclined = [...ports].sort((a, b) => a.scoreTrend - b.scoreTrend).slice(0, 5);
     return { fastest, slowest, mostImproved, mostDeclined };
-  }, []);
+  }, [ports]);
 
   /* ---- top 3 congested for sparklines ---- */
   const topCongested = useMemo(() => {
-    return [...allPorts]
+    return [...ports]
       .sort((a, b) => statusOrder[a.status] - statusOrder[b.status])
       .slice(0, 3);
-  }, []);
+  }, [ports, statusOrder]);
 
   /* ---- lane risk colors ---- */
   const laneRiskColor = (risk: string) => {
@@ -505,7 +593,7 @@ export default function PortCongestion() {
               <div className="text-sm text-white/70">
                 <p>UK Average</p>
                 <p className="text-white/50 text-xs mt-0.5">
-                  Updated {dateStr} {timeStr} GMT
+                  {hasLiveData && liveUpdateLabel ? `Live update ${liveUpdateLabel}` : `Updated ${dateStr} ${timeStr} GMT`}
                 </p>
               </div>
             </div>
@@ -514,12 +602,20 @@ export default function PortCongestion() {
             <div className="inline-flex flex-wrap items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
               <RefreshCw className="w-4 h-4 text-white/80" />
               <span className="text-sm text-white/90">
-                Last updated: <span className="font-semibold text-white">{dateStr}</span> at{' '}
-                <span className="font-semibold text-white">{timeStr} GMT</span>
+                {hasLiveData && liveUpdateLabel ? (
+                  <>Live VesselAPI data: <span className="font-semibold text-white">{liveUpdateLabel}</span></>
+                ) : (
+                  <>Fallback data: <span className="font-semibold text-white">{dateStr}</span> at{' '}
+                  <span className="font-semibold text-white">{timeStr} GMT</span></>
+                )}
               </span>
               <span className="hidden sm:inline text-white/40">|</span>
               <span className="text-sm text-white/80">
-                Next update: <span className="font-semibold text-white">{nextUpdate}</span>
+                {liveError ? (
+                  <>Live feed unavailable; showing saved data</>
+                ) : (
+                  <>Next update: <span className="font-semibold text-white">{nextUpdate}</span></>
+                )}
               </span>
             </div>
           </div>
