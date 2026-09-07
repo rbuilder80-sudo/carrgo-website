@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+export { default } from './PortEvidence';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
@@ -266,7 +267,8 @@ const faqs = [
 /*  Main Component                                                     */
 /* ------------------------------------------------------------------ */
 
-export default function PortCongestion() {
+// Retained for recovery only; synthetic metrics must not be the public tracker.
+export function UnverifiedLegacyPortCongestion() {
   const now = useNow();
   const [activeTab, setActiveTab] = useState<Tab>('All Ports');
   const [search, setSearch] = useState('');
