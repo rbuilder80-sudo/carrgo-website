@@ -16,6 +16,10 @@ function assert(condition, message) {
 
 assert(layout.includes("import QuickQuoteForm from './QuickQuoteForm';"), 'Layout must import the shared quick quote form.');
 assert(layout.includes('<QuickQuoteForm />'), 'Layout must render the quick quote form so new pages inherit it.');
+assert(form.includes('data-quick-quote-placement="sticky-sidebar"'), 'Desktop quote form must use the persistent sticky sidebar placement.');
+assert(form.includes('data-quick-quote-placement="mobile-sticky"'), 'Mobile quote form must use the sticky mobile quote entry placement.');
+assert(form.includes('position: 1280') === false, 'Quote form CSS must not contain malformed media output.');
+assert(form.includes('padding-right: 360px'), 'Desktop layout must reserve right-side space so the sidebar does not cover the main text.');
 
 [
   'Origin',
@@ -38,5 +42,6 @@ assert(form.includes('Ask about your shipment through ${port}'), 'Port pages mus
 assert(form.includes('Ask about your shipment through this port'), 'Port delay resources must use the requested port-delay invitation.');
 assert(form.includes('follow_up_note'), 'Form must say extra shipment details are requested after the enquiry arrives.');
 assert(form.includes("submitToFormspree('Quick Quote Enquiry'"), 'Form must submit via the existing Carrgo enquiry backend.');
+assert(form.includes('Get instant quote'), 'Primary quote button should be immediate and action-led.');
 
 console.log('Quick quote form checks passed.');
