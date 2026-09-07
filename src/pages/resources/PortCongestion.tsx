@@ -45,6 +45,8 @@ import {
 /* ------------------------------------------------------------------ */
 
 type Tab = 'All Ports' | 'England' | 'Scotland & Wales' | 'Northern Ireland' | 'Ireland';
+const LIVE_DATA_REFRESH_MS = 12 * 60 * 60 * 1000;
+
 type LivePort = Partial<Pick<PortDetail, 'status' | 'healthScore' | 'waitTime' | 'vesselsWaiting' | 'vesselsAtBerth'>> & {
   slug: string;
   lastUpdated?: string;
@@ -55,6 +57,7 @@ interface LivePortResponse {
   ok: boolean;
   source?: string;
   generatedAt?: string;
+  refreshSchedule?: string;
   ports?: LivePort[];
   partial?: boolean;
 }
@@ -334,7 +337,7 @@ export default function PortCongestion() {
     }
 
     loadLivePortData();
-    const timer = window.setInterval(loadLivePortData, 15 * 60 * 1000);
+    const timer = window.setInterval(loadLivePortData, LIVE_DATA_REFRESH_MS);
     return () => {
       cancelled = true;
       window.clearInterval(timer);

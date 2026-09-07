@@ -1,4 +1,8 @@
 const VESSEL_API_BASE_URL = 'https://api.vesselapi.com';
+const REFRESH_TIMES_UK = [
+  { hour: 6, minute: 15 },
+  { hour: 18, minute: 15 },
+];
 
 const PORTS = [
   { slug: 'felixstowe', name: 'Felixstowe', unlocode: 'GBFXT' },
@@ -21,15 +25,39 @@ const PORTS = [
 ];
 
 function json(statusCode, body, extraHeaders = {}) {
+  const cacheControl = body?.ok
+    ? `public, max-age=${secondsUntilNextRefresh()}, stale-while-revalidate=3600`
+    : 'no-store';
   return {
     statusCode,
     headers: {
       'content-type': 'application/json; charset=utf-8',
-      'cache-control': 'public, max-age=900, stale-while-revalidate=1800',
+      'cache-control': cacheControl,
       ...extraHeaders,
     },
     body: JSON.stringify(body),
   };
+}
+
+function ukTimeParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+  const get = (type) => Number(parts.find((part) => part.type === type)?.value || 0);
+  return { hour: get('hour'), minute: get('minute'), second: get('second') };
+}
+
+function secondsUntilNextRefresh(date = new Date()) {
+  const { hour, minute, second } = ukTimeParts(date);
+  const currentMinute = hour * 60 + minute;
+  const refreshMinutes = REFRESH_TIMES_UK.map((time) => time.hour * 60 + time.minute);
+  const nextMinute = refreshMinutes.find((refreshMinute) => refreshMinute > currentMinute)
+    ?? refreshMinutes[0] + 24 * 60;
+  return Math.max(60, (nextMinute - currentMinute) * 60 - second);
 }
 
 function buildUrl(path, params = {}) {
@@ -169,6 +197,7 @@ export async function handler() {
       ok: true,
       source: 'vesselapi',
       generatedAt: now.toISOString(),
+      refreshSchedule: '06:15 and 18:15 Europe/London',
       ports,
       partial: ports.length !== PORTS.length,
     });
