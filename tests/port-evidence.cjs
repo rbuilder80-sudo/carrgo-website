@@ -1,0 +1,30 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = process.argv[2];
+const data = JSON.parse(fs.readFileSync(path.join(root, 'data/port-evidence/latest.json'), 'utf8'));
+assert.equal(data.coverage, 17);
+assert.equal(data.ports.length, data.coverage);
+assert.equal(new Set(data.ports.map(p => p.slug)).size, 17);
+for (const [key, value] of Object.entries(data.metricsForAllPorts)) {
+  if (!['confidence', 'missingEvidence'].includes(key)) assert.equal(value, null, key);
+}
+for (const port of data.ports) for (const id of port.sources) assert(data.sources.some(s => s.id === id));
+assert.equal(data.previousComparableObservation, null);
+assert.deepEqual(data, JSON.parse(fs.readFileSync(path.join(root, 'data/port-evidence/' + data.checkedOn + '.json'), 'utf8')));
+const page = fs.readFileSync(path.join(root, 'resources/port-congestion-tracker/index.html'), 'utf8');
+assert(page.includes('Current congestion measurements are unverified'));
+assert(!page.includes('18 major ports'));
+assert(!page.includes('Live UK & Ireland port intelligence'));
+const entry = page.match(/src="\/(assets\/index-[^"]+\.js)"/)[1];
+const entryContent = fs.readFileSync(path.join(root, entry), 'utf8');
+const chunk = entryContent.match(/PortCongestion-[\w-]+\.js/)[0];
+const content = fs.readFileSync(path.join(root, 'assets', chunk), 'utf8');
+assert(content.includes('Current congestion measurements are unverified'));
+assert(content.includes('/data/port-evidence/latest.json'));
+assert(content.includes('Evidence could not be loaded'));
+const report = fs.readFileSync(path.join(root, 'resources/uk-port-congestion-report/index.html'), 'utf8');
+assert(report.includes('Data warning added 7 September 2026'));
+assert(report.includes('2026-09-02'));
+assert(!report.includes('"@type": "Dataset"'));
+console.log('Port evidence integrity checks passed.');
