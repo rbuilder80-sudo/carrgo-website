@@ -200,95 +200,136 @@ export default function QuickQuoteForm() {
     setLoading(false);
   }
 
-  return (
-    <section id="quick-quote" className="bg-white py-10 sm:py-12 border-t border-gray-200" aria-labelledby="quick-quote-heading">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 lg:gap-8 items-start">
+  const formBody = (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      {success ? (
+        <div className="flex gap-3 rounded-lg bg-green-50 border border-green-200 p-4 text-green-800">
+          <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
           <div>
-            <p className="text-xs font-semibold tracking-wider uppercase text-[#1A6DFF] mb-2">Quick enquiry</p>
-            <h2 id="quick-quote-heading" className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
-              {context.heading}
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
-              Send the basics now. We will ask for the extra shipment details after your enquiry arrives.
-            </p>
+            <p className="font-semibold">Enquiry sent.</p>
+            <p className="text-sm">Carrgo will review the route, goods and contact details, then ask for anything else needed.</p>
           </div>
-
-          <form onSubmit={handleSubmit} className="bg-gray-50 border border-gray-200 rounded-xl p-4 sm:p-5 shadow-sm">
-            {success ? (
-              <div className="flex gap-3 rounded-lg bg-green-50 border border-green-200 p-4 text-green-800">
-                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <p className="font-semibold">Enquiry sent.</p>
-                  <p className="text-sm">Carrgo will review the route, goods and contact details, then ask for anything else needed.</p>
-                </div>
-              </div>
-            ) : (
-              <>
-                <input type="hidden" name="quote_invitation" value={context.heading} />
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Origin</span>
-                    <input name="origin" defaultValue={context.origin} required className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="City, country or supplier location" />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Destination</span>
-                    <input name="destination" defaultValue={context.destination} required className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="UK address, city or port" />
-                  </label>
-                  <label className="block sm:col-span-2">
-                    <span className="text-sm font-medium text-gray-800">Goods</span>
-                    <input name="goods" required className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Example: furniture, cartons, machinery" />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Approx weight / volume</span>
-                    <input name="weight_volume" required className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Example: 600 kg / 4 CBM" />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Dimensions</span>
-                    <input name="dimensions" disabled={dimensionsUnknown} className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 disabled:bg-gray-100 disabled:text-gray-500 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Pallet/carton size or CBM" />
-                  </label>
-                  <label className="sm:col-span-2 flex items-center gap-2 text-sm text-gray-700">
-                    <input
-                      type="checkbox"
-                      name="dimensions_not_sure"
-                      value="Yes"
-                      checked={dimensionsUnknown}
-                      onChange={(e) => setDimensionsUnknown(e.target.checked)}
-                      className="h-4 w-4 rounded border-gray-300 text-[#1A6DFF] focus:ring-[#1A6DFF]"
-                    />
-                    I'm not sure about dimensions yet
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Name</span>
-                    <input name="name" required autoComplete="name" className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Your name" />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium text-gray-800">Email</span>
-                    <input name="email" type="email" required autoComplete="email" className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="you@example.com" />
-                  </label>
-                  <label className="block sm:col-span-2">
-                    <span className="text-sm font-medium text-gray-800">Phone / WhatsApp</span>
-                    <input name="phone" type="tel" autoComplete="tel" className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Best number to contact you" />
-                  </label>
-                </div>
-                {error && (
-                  <p className="mt-3 rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-sm text-red-700">
-                    {error} You can also email {SUPPORT_EMAIL}.
-                  </p>
-                )}
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="mt-4 w-full sm:w-auto inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg bg-[#1A6DFF] px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-[#1557CC] disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  {loading ? 'Sending...' : 'Send quick quote enquiry'}
-                  <Send className="w-4 h-4" aria-hidden="true" />
-                </button>
-              </>
-            )}
-          </form>
         </div>
-      </div>
-    </section>
+      ) : (
+        <>
+          <input type="hidden" name="quote_invitation" value={context.heading} />
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Origin</span>
+            <input name="origin" defaultValue={context.origin} required className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="City, country or supplier" />
+          </label>
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Destination</span>
+            <input name="destination" defaultValue={context.destination} required className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="UK address, city or port" />
+          </label>
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Goods</span>
+            <input name="goods" required className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Furniture, cartons, machinery" />
+          </label>
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Approx weight / volume</span>
+            <input name="weight_volume" required className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="600 kg / 4 CBM" />
+          </label>
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Dimensions</span>
+            <input name="dimensions" disabled={dimensionsUnknown} className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 disabled:bg-gray-100 disabled:text-gray-500 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Pallet/carton size or CBM" />
+          </label>
+          <label className="flex items-center gap-2 text-xs text-gray-700">
+            <input
+              type="checkbox"
+              name="dimensions_not_sure"
+              value="Yes"
+              checked={dimensionsUnknown}
+              onChange={(e) => setDimensionsUnknown(e.target.checked)}
+              className="h-4 w-4 rounded border-gray-300 text-[#1A6DFF] focus:ring-[#1A6DFF]"
+            />
+            I'm not sure about dimensions yet
+          </label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-3">
+            <label className="block">
+              <span className="text-xs font-semibold text-gray-800">Name</span>
+              <input name="name" required autoComplete="name" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Your name" />
+            </label>
+            <label className="block">
+              <span className="text-xs font-semibold text-gray-800">Email</span>
+              <input name="email" type="email" required autoComplete="email" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="you@example.com" />
+            </label>
+          </div>
+          <label className="block">
+            <span className="text-xs font-semibold text-gray-800">Phone / WhatsApp</span>
+            <input name="phone" type="tel" autoComplete="tel" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-gray-900 focus:border-[#1A6DFF] focus:outline-none focus:ring-2 focus:ring-[#1A6DFF]/20" placeholder="Best number to contact you" />
+          </label>
+          {error && (
+            <p className="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-sm text-red-700">
+              {error} You can also email {SUPPORT_EMAIL}.
+            </p>
+          )}
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full inline-flex min-h-[46px] items-center justify-center gap-2 rounded-lg bg-[#1A6DFF] px-4 py-3 text-base font-bold text-white transition-colors hover:bg-[#1557CC] disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            {loading ? 'Sending...' : 'Get instant quote'}
+            <Send className="w-4 h-4" aria-hidden="true" />
+          </button>
+        </>
+      )}
+    </form>
+  );
+
+  return (
+    <>
+      <style>{`
+        @media (min-width: 1280px) {
+          #main-content,
+          footer {
+            padding-right: 360px;
+          }
+        }
+      `}</style>
+
+      <aside
+        id="quick-quote"
+        data-quick-quote-placement="sticky-sidebar"
+        className="hidden xl:block fixed right-4 top-24 z-40 w-[320px] max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl"
+        aria-labelledby="quick-quote-heading"
+      >
+        <p className="mb-1 text-xs font-bold tracking-wider uppercase text-[#1A6DFF]">2-minute quote</p>
+        <h2 id="quick-quote-heading" className="text-xl font-extrabold text-gray-900 leading-tight">
+          {context.heading}
+        </h2>
+        <p className="mt-2 mb-4 text-xs text-gray-600 leading-relaxed">
+          Send the basics now. We will ask for the extra shipment details after your enquiry arrives.
+        </p>
+        {formBody}
+      </aside>
+
+      <details
+        className="xl:hidden fixed inset-x-3 bottom-3 z-40 rounded-2xl border border-gray-200 bg-white shadow-2xl open:max-h-[82vh] open:overflow-y-auto"
+        data-quick-quote-placement="mobile-sticky"
+      >
+        <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-3 rounded-2xl bg-[#1A6DFF] px-4 py-3 text-white [&::-webkit-details-marker]:hidden">
+          <span>
+            <span className="block text-[11px] font-bold uppercase tracking-wider text-white/80">Quick enquiry</span>
+            <span className="block text-base font-extrabold">{context.heading}</span>
+          </span>
+          <span className="shrink-0 rounded-lg bg-white px-3 py-2 text-sm font-bold text-[#1A6DFF]">Open</span>
+        </summary>
+        <div className="p-4">
+          <p className="mb-3 text-sm text-gray-600">
+            Send origin, destination, goods and contact details now. Extra shipment details can come later.
+          </p>
+          {formBody}
+        </div>
+      </details>
+
+      <section className="sr-only" aria-labelledby="quick-quote-inline-heading">
+        <h2 id="quick-quote-inline-heading">
+          {context.heading}
+        </h2>
+        <p>
+          Quick quote form available as a sticky sidebar on desktop and a sticky quote button on mobile.
+        </p>
+      </section>
+    </>
   );
 }
