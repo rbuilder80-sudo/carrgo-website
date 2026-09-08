@@ -96,8 +96,8 @@ export default function Testimonials() {
         title="Client Testimonials | Carrgo Freight Solutions Reviews"
         description="Read reviews from UK importers using Carrgo freight forwarding. 500+ businesses trust us with sea freight, customs clearance, and door-to-door logistics. 4.9/5 client satisfaction."
         keywords="carrgo reviews, freight forwarder testimonials, shipping company reviews uk, carrgo feedback, importer testimonials"
-        ogUrl="https://www.carrgo.co.uk/resources/testimonials"
-        canonical="https://www.carrgo.co.uk/resources/testimonials"
+        ogUrl="https://carrgo.co.uk/resources/testimonials"
+        canonical="https://carrgo.co.uk/resources/testimonials"
         structuredData={[
           {
             '@context': 'https://schema.org',

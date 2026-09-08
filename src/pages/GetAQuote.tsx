@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
-import { submitToFormspree, SUPPORT_EMAIL } from '../lib/formConfig';
+import { submitToFormspree, trackLead } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
   CheckCircle, ArrowRight, ArrowLeft, Send,
-  Clock, FileCheck, TrendingUp, Shield, Phone, MessageCircle, Mail
+  Clock, FileCheck, TrendingUp, Shield, Mail
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -117,6 +117,7 @@ export default function GetAQuote() {
     if (result.success) {
       setReference(generateReference());
       setSubmitted(true);
+      trackLead('quote_form');
     } else {
       setError(result.error || 'Something went wrong. Please try again.');
     }
@@ -479,17 +480,15 @@ export default function GetAQuote() {
 
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <label htmlFor="qt-email" className="block text-sm font-medium text-[#111827] mb-1">
-                                  Email <span className="text-[#DC2626]">*</span>
+                                <label htmlFor="qt-phone" className="block text-sm font-medium text-[#111827] mb-1">
+                                  Phone
                                 </label>
                                 <input
-                                  id="qt-email"
-                                  name="email"
-                                  type="email"
-                                  required
-                                  placeholder="Your email address"
+                                  id="qt-phone"
+                                  name="phone"
+                                  type="tel"
+                                  placeholder="Best phone number"
                                   className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
-                                  aria-required="true"
                                 />
                               </div>
                               <div>

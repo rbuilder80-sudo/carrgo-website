@@ -36,3 +36,17 @@ export async function submitToFormspree(
     };
   }
 }
+
+export function trackLead(formLabel: string) {
+  const gtag = typeof window !== 'undefined'
+    ? (window as Window & { gtag?: (...args: unknown[]) => void }).gtag
+    : undefined;
+
+  if (gtag) {
+    gtag('event', 'generate_lead', {
+      event_category: 'form',
+      event_label: formLabel,
+      value: 1,
+    });
+  }
+}

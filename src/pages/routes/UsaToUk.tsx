@@ -48,9 +48,9 @@ export default function UsaToUk() {
   return (
     <>
       <Seo
-        title="USA to UK Shipping | Sea & Air Freight Forwarder | Carrgo"
-        description="Ship goods from USA to UK — East Coast sea 10-15 days, West Coast 25-30 days, air freight 1-3 days. Customs clearance to all UK ports & airports."
-        keywords="usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
+        title="Sea Freight USA to UK | USA to UK Shipping | Carrgo"
+        description="Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included."
+        keywords="sea freight usa to uk, usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
         ogUrl="https://carrgo.co.uk/routes/usa-to-uk/"
         canonical="https://carrgo.co.uk/routes/usa-to-uk/"
         structuredData={{
@@ -74,7 +74,7 @@ export default function UsaToUk() {
                   USA to UK Freight — Sea & Air Shipping
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
-                  Ship goods from the USA to the UK with Carrgo. Sea freight takes 10–15 days from the East Coast or 25–30 days from the West Coast. Air freight 1–3 days. Customs clearance to all UK ports.
+                  Ship goods from the USA to the UK with Carrgo. Sea freight USA to UK takes 10–15 days from the East Coast or 25–30 days from the West Coast. Air freight takes 1–3 days. Customs clearance to all UK ports and airports is included.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8 max-w-sm">
                   <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
@@ -118,9 +118,9 @@ export default function UsaToUk() {
         {/* ====== ROUTE OVERVIEW ====== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the USA to UK trade lane?</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the sea freight USA to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              The United States is the UK&apos;s largest single trading partner, with bilateral trade exceeding £260 billion annually. This well-established route benefits from frequent sailings, extensive flight networks, and streamlined customs procedures. Carrgo offers comprehensive sea and air freight services from both US coasts to all major UK ports and airports.
+              The United States is the UK&apos;s largest single trading partner, with bilateral trade exceeding £260 billion annually. Sea freight USA to UK is a well-established route with frequent sailings from East Coast, Gulf Coast and West Coast ports, supported by extensive flight networks for urgent cargo. Carrgo offers comprehensive sea and air freight services from both US coasts to all major UK ports and airports.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>

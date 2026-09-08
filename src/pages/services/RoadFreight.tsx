@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
   Ship, Plane, Truck, TrainFront, FileCheck, Package,
-  Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
-  Clock, Shield, MapPin, AlertCircle
+  Globe, ArrowRight, CheckCircle, ChevronDown,
+  Clock, Shield, AlertCircle
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -75,9 +75,9 @@ export default function RoadFreight() {
   return (
     <>
       <Seo
-        title="Road Freight UK | European Haulage & Transport | Carrgo"
-        description="UK road freight & European haulage. FTL & LTL transport company. Germany, Netherlands, France, Spain, Italy. Same-day collection available."
-        keywords="road freight uk, european haulage, ftl ltl transport, road freight to ireland, haulage northern ireland, uk trucking, pallet delivery europe"
+        title="Road Freight Forwarder UK | European Haulage | Carrgo"
+        description="Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland."
+        keywords="road freight forwarder, road freight uk, european haulage, ftl ltl transport, road freight to ireland, haulage northern ireland, uk trucking, pallet delivery europe"
         ogUrl="https://carrgo.co.uk/services/road-freight"
         canonical="https://carrgo.co.uk/services/road-freight"
         structuredData={[serviceSchema, faqSchema]}
@@ -93,7 +93,7 @@ export default function RoadFreight() {
                   Road Freight UK — European Haulage & Transport Company
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  FTL (Full Truck Load) and LTL groupage road freight from Germany, Netherlands, Spain, France, and all EU countries to the UK. Daily departures with full post-Brexit customs clearance and GPS tracking.
+                  Carrgo is a road freight forwarder for FTL (Full Truck Load) and LTL groupage from Germany, Netherlands, Spain, France, Ireland and all EU countries to the UK. Daily departures with full post-Brexit customs clearance and GPS tracking.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
   Ship, Plane, Truck, TrainFront, FileCheck, Package,
-  Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
+  Globe, ArrowRight, CheckCircle, ChevronDown,
   Clock, Shield, MapPin, TrendingUp
 } from 'lucide-react';
 
@@ -28,6 +28,8 @@ const serviceSchema = {
 const faqData = [
   { q: 'How much does air freight to the UK cost?', a: 'Air freight costs depend on chargeable weight (actual or volumetric, whichever is higher). Typical rates from China to the UK range from £3.50–£7.00 per kg for economy and £6.00–£12.00 per kg for express. We provide all-inclusive quotes with no hidden fees.' },
   { q: 'How long does air freight take to reach the UK?', a: 'Express air freight takes 1–3 days door-to-door, while economy air freight typically takes 3–5 days. Transit times vary by origin — European origins are faster (1–2 days) compared to Asia (3–5 days).' },
+  { q: 'Do you offer door-to-door air freight?', a: 'Yes. Carrgo handles door-to-door air freight including collection from the supplier, airport handling, airway bill documentation, UK customs clearance, and final delivery to your warehouse or fulfilment centre.' },
+  { q: 'Can you arrange air freight to Northern Ireland and Ireland?', a: 'Yes. We arrange air freight to Northern Ireland through Belfast and other suitable UK airports, and air freight to Ireland through Dublin, Shannon and Cork, including customs and final delivery planning.' },
   { q: 'Are there any cargo restrictions on air freight?', a: 'Yes — hazardous materials, lithium batteries, liquids, and perishables require special handling and documentation. Some items are restricted by aviation industry regulations. Contact our team to confirm if your cargo is suitable for air freight.' },
   { q: 'Do you offer real-time tracking for air cargo?', a: 'Absolutely. All air freight shipments include real-time tracking from collection through to final delivery. You will receive updates at every milestone including departure, transit, customs clearance, and delivery.' },
   { q: 'Is customs clearance included in your air freight service?', a: 'Yes, we handle full UK customs clearance as part of our air freight service. Our customs brokers prepare and submit CDS entries, calculate duties and VAT, and ensure compliance with all UK import regulations.' },
@@ -72,9 +74,9 @@ export default function AirFreight() {
   return (
     <>
       <Seo
-        title="Air Freight UK | Air Cargo Shipping & Quotes | Carrgo"
-        description="Air freight & air cargo UK — express & economy options. Heathrow, East Midlands, Manchester. Get air freight quotes in 2 hours. 3-5 days worldwide."
-        keywords="air freight uk, air cargo uk, express air freight, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
+        title="Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo"
+        description="Door-to-door air freight UK, Northern Ireland and Ireland. Express and economy air cargo via Heathrow, Manchester, Birmingham and Dublin. Quotes in 2 hours."
+        keywords="door to door air freight, air freight uk, air cargo uk, express air freight, air freight northern ireland, air freight from ireland, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
         ogUrl="https://carrgo.co.uk/services/air-freight"
         canonical="https://carrgo.co.uk/services/air-freight"
         structuredData={[serviceSchema, faqSchema]}
@@ -90,12 +92,12 @@ export default function AirFreight() {
                   Air Freight UK — Air Cargo Shipping Services
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Book express and economy air freight from China, USA, UAE, and Europe to Heathrow, Manchester, and Birmingham airports. Door-to-door air cargo with tracking. Time-critical delivery in 1–5 days.
+                  Book express and economy door-to-door air freight from China, USA, UAE, Ireland, Northern Ireland, and Europe to Heathrow, Manchester, Birmingham, Belfast and Dublin. Air cargo includes collection, airway bill documentation, customs clearance, tracking and final delivery in 1–5 days.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
                     'Express (1–3 days) and Economy (3–5 days) options',
-                    'All major UK airports: Heathrow, Manchester, Birmingham',
+                    'All major UK and Ireland gateways: Heathrow, Manchester, Birmingham, Belfast, Dublin',
                     'Experienced air freight agent',
                     'Real-time cargo tracking included',
                   ].map((item, i) => (
@@ -190,6 +192,76 @@ export default function AirFreight() {
                   <p className="text-[#4B5563] text-sm leading-relaxed mt-3">{airport.desc}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ====== DOOR-TO-DOOR AIR FREIGHT ====== */}
+        <section aria-labelledby="door-air-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
+              <div>
+                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Door-to-Door Air Freight</span>
+                <h2 id="door-air-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-5">
+                  Door-to-door air freight for urgent cargo
+                </h2>
+                <p className="text-[#4B5563] leading-relaxed mb-4">
+                  Carrgo manages door-to-door air freight from supplier collection through to final delivery. One quote covers pickup, airline booking, airway bill documentation, export handling, UK customs clearance, airport release and delivery to your warehouse.
+                </p>
+                <p className="text-[#4B5563] leading-relaxed">
+                  This is the best option when your cargo needs air speed but you do not want to coordinate separate collection agents, customs brokers and delivery companies.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  'Supplier collection arranged at origin',
+                  'Airline space booked on express or economy service',
+                  'Customs clearance handled before final delivery',
+                  'Delivery to UK, Northern Ireland or Ireland address',
+                ].map((item) => (
+                  <div key={item} className="bg-white rounded-xl border border-[#E5E7EB] p-5 flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <p className="text-sm text-[#4B5563]">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== IRELAND AIR FREIGHT ====== */}
+        <section aria-labelledby="ireland-air-heading" className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Ireland & Northern Ireland</span>
+              <h2 id="ireland-air-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
+                Air freight to Northern Ireland and Ireland
+              </h2>
+              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
+                We arrange air freight to Northern Ireland and Ireland for urgent commercial shipments, samples, e-commerce inventory and time-sensitive parts.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <article className="bg-white rounded-xl p-8 border border-[#E5E7EB] hover:shadow-lg transition-shadow">
+                <MapPin className="w-8 h-8 text-[#1A6DFF] mb-4" aria-hidden="true" />
+                <h3 className="font-bold text-xl text-[#111827] mb-3">Air freight Northern Ireland</h3>
+                <p className="text-[#4B5563] text-sm leading-relaxed mb-4">
+                  Ship urgent cargo to Belfast and across Northern Ireland using suitable UK airport routings, with onward delivery and Windsor Framework documentation support where needed.
+                </p>
+                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
+                  View Belfast route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </article>
+              <article className="bg-white rounded-xl p-8 border border-[#E5E7EB] hover:shadow-lg transition-shadow">
+                <MapPin className="w-8 h-8 text-[#1A6DFF] mb-4" aria-hidden="true" />
+                <h3 className="font-bold text-xl text-[#111827] mb-3">Air freight from Ireland</h3>
+                <p className="text-[#4B5563] text-sm leading-relaxed mb-4">
+                  Move air cargo from Dublin, Shannon or Cork to the UK, or arrange UK-to-Ireland air freight with collection, customs paperwork and final-mile delivery included.
+                </p>
+                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
+                  View Dublin route <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </article>
             </div>
           </div>
         </section>

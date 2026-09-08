@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitToFormspree, SUPPORT_EMAIL } from '../lib/formConfig';
+import { submitToFormspree, SUPPORT_EMAIL, trackLead } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -128,14 +128,7 @@ export default function Contact() {
     const result = await submitToFormspree('Contact Enquiry', fields);
     if (result.success) {
       setSubmitted(true);
-      // GA4 conversion tracking
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'generate_lead', {
-          'event_category': 'form',
-          'event_label': 'contact_form',
-          'value': 1
-        });
-      }
+      trackLead('contact_form');
     } else {
       setError(result.error || 'Something went wrong. Please try again.');
     }
@@ -293,7 +286,7 @@ export default function Contact() {
                               id="contact-phone"
                               name="phone"
                               type="tel"
-                              placeholder="Email address"
+                              placeholder="Phone number"
                               className="w-full h-12 px-4 rounded-lg border border-[#E5E7EB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#1A6DFF] focus:ring-2 focus:ring-[#D4E3FF] outline-none transition-all"
                             />
                           </div>

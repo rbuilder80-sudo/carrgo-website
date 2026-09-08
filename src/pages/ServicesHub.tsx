@@ -148,9 +148,9 @@ export default function ServicesHub() {
   return (
     <>
       <Seo
-        title="Freight Forwarding Services UK | Sea, Air, Road & Rail | Carrgo"
-        description="Full-service freight forwarding from the UK. FCL/LCL sea freight, air cargo, European road haulage, China-UK rail, customs clearance & warehousing. Get quotes in 2 hours."
-        keywords="freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
+        title="Cargo Services UK | Freight Forwarding Services | Carrgo"
+        description="UK cargo services and freight forwarding. FCL/LCL sea freight, air cargo, European road freight, rail, customs clearance and warehousing. Quotes in 2 hours."
+        keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://carrgo.co.uk/services"
         canonical="https://carrgo.co.uk/services"
         structuredData={serviceSchema}
@@ -163,10 +163,10 @@ export default function ServicesHub() {
             <div className="text-center max-w-3xl mx-auto">
               <span className="inline-block text-xs font-semibold tracking-wider uppercase text-blue-200 mb-3">Complete Freight Solutions</span>
               <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                UK Freight Forwarding Services
+                UK Cargo Services & Freight Forwarding
               </h1>
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-                Carrgo provides comprehensive freight forwarding services from the UK — sea freight, air cargo, road haulage, rail freight, customs clearance, warehousing and door-to-door delivery. Whatever you are shipping, wherever it is going, we get it there on time and on budget.
+                Carrgo provides comprehensive cargo services from the UK — sea freight, air cargo, road freight, rail freight, customs clearance, warehousing and door-to-door delivery. If you need a cargo forwarder to move commercial goods internationally, our team manages the transport, paperwork and final delivery.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
@@ -210,10 +210,10 @@ export default function ServicesHub() {
             <div className="text-center mb-12">
               <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">What We Offer</span>
               <h2 id="services-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3 mb-4">
-                What freight forwarding services does Carrgo offer?
+                What cargo services does Carrgo offer?
               </h2>
               <p className="text-[#4B5563] max-w-2xl mx-auto">
-                Carrgo provides a complete range of international freight services for UK importers including sea freight (FCL/LCL), air cargo, road haulage, rail freight, customs clearance, door-to-door delivery, Amazon FBA shipping, and UK warehousing — all managed by dedicated account managers.
+                Carrgo provides shipping and cargo services for UK importers including sea freight (FCL/LCL), air cargo, road freight, rail freight, customs clearance, door-to-door delivery, Amazon FBA shipping, and UK warehousing. Every cargo transportation job is managed by a dedicated account manager.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

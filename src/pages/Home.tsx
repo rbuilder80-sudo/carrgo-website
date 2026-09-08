@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitToFormspree } from '../lib/formConfig';
+import { submitToFormspree, trackLead } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -7,37 +7,6 @@ import {
   Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
   Clock, Shield, TrendingUp, Users
 } from 'lucide-react';
-
-/* ── JSON-LD Structured Data ── */
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Carrgo Freight Solutions Ltd',
-  url: 'https://carrgo.co.uk',
-  logo: 'https://carrgo.co.uk/favicon.ico',
-  description: 'Trusted UK freight forwarding company handling sea freight, air cargo, road haulage, rail freight, and customs clearance.',
-  email: 'support@carrgo.co.uk',
-  // address removed per privacy policy
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'UK Freight Forwarding Services',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
-  areaServed: { '@type': 'Country', name: 'United Kingdom' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Freight Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sea Freight (FCL & LCL)' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Air Freight' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Road Freight' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rail Freight China to UK' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Customs Clearance' } },
-    ],
-  },
-};
 
 const faqData = [
   { q: 'How long does sea freight from China to UK take?', a: 'Sea freight from China to UK typically takes 25-35 days port-to-port, or 35-45 days door-to-door depending on the origin city and UK destination port.' },
@@ -51,18 +20,6 @@ const faqData = [
   { q: 'What documents do I need for importing?', a: 'Required documents typically include: commercial invoice, packing list, bill of lading or airway bill, EORI number, and sometimes certificates of origin or import licences depending on the goods.' },
   { q: 'What are your payment terms?', a: 'We typically require payment before shipping for new clients. For established clients, we offer 30-day credit terms subject to credit checks.' },
 ];
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqData.map(faq => ({
-    '@type': 'Question',
-    name: faq.q,
-    acceptedAnswer: { '@type': 'Answer', text: faq.a },
-  })),
-};
-
-const allSchemas = [orgSchema, serviceSchema, faqSchema];
 
 /* ── Data ── */
 const services = [
@@ -143,6 +100,7 @@ export default function Home() {
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setHeroSubmitted(true);
+      trackLead('homepage_hero_quote_form');
     }
     setHeroLoading(false);
   };
@@ -160,6 +118,7 @@ export default function Home() {
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setQuoteSubmitted(true);
+      trackLead('homepage_quote_form');
     } else {
       setQuoteError(result.error || 'Something went wrong. Please try again.');
     }
@@ -171,9 +130,9 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="UK Freight Forwarder | Sea, Air, Road & Customs | Carrgo"
-        description="Trusted UK freight forwarder & logistics company. Sea, air, road & rail freight + customs clearance. All-inclusive shipping quotes in 2 hours."
-        keywords="freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight, freight broker manchester, freight broker birmingham"
+        title="Cargo Services UK | Freight Forwarder for Sea, Air & Road | Carrgo"
+        description="UK cargo services and freight forwarding for importers. Sea, air, road, rail, customs clearance and door-to-door delivery with quotes in 2 hours."
+        keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://carrgo.co.uk/"
         canonical="https://carrgo.co.uk/"
         structuredData={[
@@ -194,7 +153,7 @@ export default function Home() {
             "areaServed": ["GB", "IE", "Northern Ireland"],
             "serviceType": ["Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Logistics", "Amazon FBA Shipping", "UK Warehousing"],
             // memberOf removed pending verification
-            "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://www.carrgo.co.uk"]
+            "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://carrgo.co.uk"]
           },
           {
             "@context": "https://schema.org",
@@ -235,11 +194,11 @@ export default function Home() {
               {/* Direct answer block for AI search readiness */}
               <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
                 <p className="text-lg text-white leading-relaxed" itemProp="text">
-                  <strong className="text-green-300">Carrgo is a UK freight forwarder</strong> specialising in sea freight (FCL/LCL), air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters. We provide all-inclusive door-to-door shipping quotes within 2 hours, with real-time tracking and dedicated account managers.
+                  <strong className="text-green-300">Carrgo provides UK cargo services</strong> and freight forwarding for importers and exporters, covering sea freight (FCL/LCL), air cargo, road haulage, rail freight, customs clearance, and door-to-door delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
                 </p>
               </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
-                <span itemProp="description">Sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
+                <span itemProp="description">Cargo services for sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
               </p>
 
             </div>

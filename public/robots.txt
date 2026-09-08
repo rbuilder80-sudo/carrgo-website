@@ -51,4 +51,4 @@ User-agent: Amazonbot
 Allow: /
 
 # Sitemap
-Sitemap: https://www.carrgo.co.uk/sitemap.xml
+Sitemap: https://carrgo.co.uk/sitemap.xml
