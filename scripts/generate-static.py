@@ -475,18 +475,18 @@ ROUTES = {
         ]
     },
     "/routes/usa-to-uk": {
-        "title": "Sea Freight USA to UK | USA to UK Shipping | Carrgo",
-        "description": "Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included.",
-        "keywords": "sea freight usa to uk, usa to uk shipping, shipping from usa to uk, us freight forwarder uk, transatlantic freight, import from usa",
+        "title": "USA to UK Freight Forwarder | Sea & Air Cargo Shipping | Carrgo",
+        "description": "USA to UK freight forwarding for commercial cargo. Sea freight from New York, Savannah, Houston and LA, air freight in 1-3 days, customs and UK delivery included.",
+        "keywords": "usa to uk freight forwarder, sea freight usa to uk, usa to uk shipping, shipping from usa to uk, cargo from usa to uk, air freight usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight",
         "canonical": "https://www.carrgo.co.uk/routes/usa-to-uk",
-        "h1": "Sea Freight USA to UK",
+        "h1": "USA to UK Freight Forwarder for Sea &amp; Air Cargo",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Sea Freight USA to UK",
+                "name": "USA to UK Freight Forwarding",
                 "serviceType": "Usa To Uk",
                 "provider": {
                     "@type": "Organization",
@@ -494,7 +494,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included.",
+                "description": "Sea and air freight forwarding from the USA to the UK, including US collection, UK customs clearance and final delivery.",
                 "url": "https://www.carrgo.co.uk/routes/usa-to-uk"
             }
         ]

@@ -19,7 +19,7 @@ const routePages = [
   { path: '/routes/germany-to-uk', title: 'Germany to UK', desc: 'Road 2-4 days, Sea 5-8 days, Air 1-2 days. Daily departures from major German cities.', modified: '2025-01-15' },
   { path: '/routes/netherlands-to-uk', title: 'Netherlands to UK', desc: 'Road 1-3 days, Sea 3-5 days, Air 1 day. Short-sea and road freight via Rotterdam.', modified: '2025-01-15' },
   { path: '/routes/india-to-uk', title: 'India to UK', desc: 'Sea 20-28 days, Air 3-5 days. Regular sailings from Mumbai, Chennai, and Mundra.', modified: '2025-01-15' },
-  { path: '/routes/usa-to-uk', title: 'USA to UK', desc: 'Sea 10-15 days (east coast), Air 1-3 days. Transatlantic shipping from major US ports.', modified: '2025-01-15' },
+  { path: '/routes/usa-to-uk', title: 'USA to UK', desc: 'USA to UK freight forwarding for commercial cargo, with sea and air options, customs clearance and UK delivery.', modified: '2026-09-08' },
   { path: '/routes/turkey-to-uk', title: 'Turkey to UK', desc: 'Road freight, sea freight and air cargo from Istanbul, Bursa, Izmir and Mersin to UK delivery with customs handled.', modified: '2026-09-08' },
   { path: '/routes/uae-to-uk', title: 'UAE to UK', desc: 'Sea 18-24 days, Air 2-4 days. Middle East shipping via Jebel Ali and Abu Dhabi.', modified: '2025-01-15' },
   { path: '/routes/spain-to-uk', title: 'Spain to UK', desc: 'Road 4-9 days, Sea 7-12 days. Road freight and short sea from Barcelona, Madrid, Valencia.', modified: '2025-01-15' },

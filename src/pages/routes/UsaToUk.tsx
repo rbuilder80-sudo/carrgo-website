@@ -48,18 +48,18 @@ export default function UsaToUk() {
   return (
     <>
       <Seo
-        title="Sea Freight USA to UK | USA to UK Shipping | Carrgo"
-        description="Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included."
-        keywords="sea freight usa to uk, usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
-        ogUrl="https://www.carrgo.co.uk/routes/usa-to-uk/"
-        canonical="https://www.carrgo.co.uk/routes/usa-to-uk/"
+        title="USA to UK Freight Forwarder | Sea & Air Cargo Shipping | Carrgo"
+        description="USA to UK freight forwarding for commercial cargo. Sea freight from New York, Savannah, Houston and LA, air freight in 1-3 days, customs and UK delivery included."
+        keywords="usa to uk freight forwarder, sea freight usa to uk, usa to uk shipping, shipping from usa to uk, cargo from usa to uk, air freight usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
+        ogUrl="https://www.carrgo.co.uk/routes/usa-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/usa-to-uk"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "USA to UK Freight Shipping",
+          "name": "USA to UK Freight Forwarding",
           "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
           "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Sea and air freight forwarding from the USA to the UK with customs clearance."
+          "description": "Sea and air freight forwarding from the USA to the UK, including US collection, UK customs clearance and final delivery."
         }}
       />
 
@@ -71,10 +71,10 @@ export default function UsaToUk() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase text-brand-200 mb-3">SHIPPING ROUTE</span>
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  USA to UK Freight — Sea & Air Shipping
+                  USA to UK Freight Forwarder for Sea & Air Cargo
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
-                  Ship goods from the USA to the UK with Carrgo. Sea freight USA to UK takes 10–15 days from the East Coast or 25–30 days from the West Coast. Air freight takes 1–3 days. Customs clearance to all UK ports and airports is included.
+                  Ship commercial cargo from the USA to the UK with Carrgo. We handle US collection, sea freight from New York, Savannah, Houston, Los Angeles and Long Beach, air freight from major US airports, UK customs clearance and final delivery.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8 max-w-sm">
                   <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
@@ -110,6 +110,35 @@ export default function UsaToUk() {
                     <p className="text-brand-200 text-xs">East Coast sea freight</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SEARCH INTENT ANSWER ====== */}
+        <section className="py-12 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-start">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">USA to UK freight forwarding with customs included</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  For importers comparing USA to UK shipping options, the best route depends on coast, cargo size and urgency. East Coast sea freight is usually fastest by ocean, West Coast cargo normally takes longer via the Panama Canal, and air freight is the right option for urgent stock, samples and high-value goods.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Carrgo gives one quote covering freight, customs clearance and UK delivery, so you can compare sea freight USA to UK against air freight without chasing separate port, customs and haulage costs.
+                </p>
+              </div>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                <h3 className="font-bold text-gray-900 mb-3">Quick answer</h3>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li><strong>East Coast sea:</strong> 10–15 days to UK ports.</li>
+                  <li><strong>West Coast sea:</strong> 25–30 days via Panama.</li>
+                  <li><strong>Air freight:</strong> 1–3 days from major US airports.</li>
+                  <li><strong>Included:</strong> US collection, UK customs and delivery.</li>
+                </ul>
+                <Link to="/get-a-quote" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1A6DFF] hover:underline">
+                  Get a USA to UK freight quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </div>
