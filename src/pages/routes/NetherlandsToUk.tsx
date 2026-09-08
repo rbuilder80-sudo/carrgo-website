@@ -13,7 +13,32 @@ const faqData = [
   { q: 'Do I need special documentation for post-Brexit Netherlands to UK shipping?', a: 'Yes — since Brexit, all goods require a UK customs import declaration. You need a UK EORI number, commercial invoice, packing list, and potentially a proof of origin for UK-EU TCA tariff preferences. Our team handles all documentation for you.' },
   { q: 'How much does it cost to ship from Netherlands to UK?', a: 'Road freight starts from £120 per pallet. Sea freight from Rotterdam to UK ports ranges from £400–£1,000 per container. Air freight is £2–£5 per kilogram. Contact us for a tailored all-inclusive quote.' },
   { q: 'Can you handle hazardous goods from Netherlands to UK?', a: 'Yes, we are fully licensed to handle ADR-classified hazardous goods by road from the Netherlands to the UK, including chemicals, batteries, and flammable materials. All shipments comply with EU and UK dangerous goods regulations.' },
+  { q: 'What is the best way to ship pallets from Rotterdam to the UK?', a: 'For most commercial pallets from Rotterdam to the UK, road freight is the best balance of speed and cost because it gives daily departures, 1–3 day delivery and direct warehouse-to-warehouse control. Sea freight is better for larger container loads or less urgent cargo.' },
+  { q: 'Can Carrgo arrange door-to-door freight from Amsterdam or Rotterdam?', a: 'Yes. Carrgo arranges supplier collection from Amsterdam, Rotterdam, Eindhoven, Utrecht, Venlo and other Dutch logistics hubs, then manages ferry or tunnel routing, UK customs clearance and final delivery to your warehouse or fulfilment centre.' },
 ];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Shipping from Netherlands to UK',
+  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  areaServed: [{ '@type': 'Country', name: 'Netherlands' }, { '@type': 'Country', name: 'United Kingdom' }],
+  description: 'Door-to-door road, sea and air freight from the Netherlands to the UK, including Rotterdam and Amsterdam collections, customs clearance and final UK delivery.',
+  url: 'https://www.carrgo.co.uk/routes/netherlands-to-uk',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 
 function FaqAccordion() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -43,19 +68,12 @@ export default function NetherlandsToUk() {
   return (
     <>
       <Seo
-        title="Netherlands to UK Freight | Road, Sea & Air Shipping | Carrgo"
-        description="Netherlands to UK freight forwarding — road freight 1-3 days, sea 3-5 days, air 1 day. Daily departures from Rotterdam & Amsterdam. Full post-Brexit customs clearance."
-        keywords="netherlands to uk freight, rotterdam to uk shipping, dutch road freight uk, shipping from holland to uk, freight forwarder netherlands uk"
+        title="Shipping from Netherlands to UK | Rotterdam Freight Forwarder | Carrgo"
+        description="Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a quote in 2 hours."
+        keywords="shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk freight, rotterdam to uk shipping, shipping from holland to uk, dutch road freight uk, freight forwarder netherlands uk"
         ogUrl="https://www.carrgo.co.uk/routes/netherlands-to-uk"
         canonical="https://www.carrgo.co.uk/routes/netherlands-to-uk"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Netherlands to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
-          "areaServed": [{"@type": "Country", "name": "Netherlands"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Road, sea and air freight forwarding from the Netherlands to the UK with post-Brexit customs clearance."
-        }}
+        structuredData={[serviceSchema, faqSchema]}
       />
 
       <main id="main-content">
@@ -110,6 +128,35 @@ export default function NetherlandsToUk() {
                     <p className="text-brand-200 text-xs">By road freight</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SEARCH INTENT ANSWER ====== */}
+        <section className="py-12 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-start">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Shipping from Netherlands to UK with customs included</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  For most Dutch exports and UK imports, road freight from the Netherlands to the UK is the fastest practical option. Carrgo arranges collection from Rotterdam, Amsterdam, Eindhoven, Utrecht and Venlo, then manages ferry or tunnel routing, import paperwork and final UK delivery.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  If you are comparing Rotterdam to UK freight, Dutch road freight and shipping from Holland to the UK, the right mode depends on shipment size and deadline. Use road freight for pallets and urgent commercial cargo, sea freight for container loads, and air freight for time-critical stock.
+                </p>
+              </div>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                <h3 className="font-bold text-gray-900 mb-3">Quick answer</h3>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li><strong>Fastest for pallets:</strong> Road freight, 1–3 days.</li>
+                  <li><strong>Best for containers:</strong> Rotterdam sea freight, 3–5 days.</li>
+                  <li><strong>Urgent stock:</strong> Amsterdam air freight, usually 1 day.</li>
+                  <li><strong>Included:</strong> Dutch collection, UK customs and delivery.</li>
+                </ul>
+                <Link to="/get-a-quote" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1A6DFF] hover:underline">
+                  Get a Netherlands to UK freight quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </div>

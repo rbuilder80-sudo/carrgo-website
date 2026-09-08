@@ -697,18 +697,29 @@ ROUTES = {
         ]
     },
     "/routes/netherlands-to-uk": {
-        "title": "Shipping from Netherlands to UK | Road & Sea Freight | Carrgo",
-        "description": "Shipping from Netherlands to UK? Carrgo offers road freight (1-3 days) and sea freight (3-5 days) with full customs clearance. Rotterdam to UK in 24 hours by road. Get your quote.",
-        "keywords": "shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk",
+        "title": "Shipping from Netherlands to UK | Rotterdam Freight Forwarder | Carrgo",
+        "description": "Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a quote in 2 hours.",
+        "keywords": "shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk freight, rotterdam to uk shipping, shipping from holland to uk, dutch road freight uk, freight forwarder netherlands uk",
         "canonical": "https://www.carrgo.co.uk/routes/netherlands-to-uk",
-        "h1": "Shipping from Netherlands to UK — Road &amp; Sea Freight",
+        "h1": "Shipping from Netherlands to UK — Rotterdam Freight Forwarder",
+        "staticBody": """
+<h2>Shipping from Netherlands to UK with customs included</h2>
+<p>For most Dutch exports and UK imports, road freight from the Netherlands to the UK is the fastest practical option. Carrgo arranges collection from Rotterdam, Amsterdam, Eindhoven, Utrecht and Venlo, then manages ferry or tunnel routing, import paperwork and final UK delivery.</p>
+<p>If you are comparing Rotterdam to UK freight, Dutch road freight and shipping from Holland to the UK, the right mode depends on shipment size and deadline. Use road freight for pallets and urgent commercial cargo, sea freight for container loads, and air freight for time-critical stock.</p>
+<ul>
+<li><strong>Fastest for pallets:</strong> Road freight, 1-3 days.</li>
+<li><strong>Best for containers:</strong> Rotterdam sea freight, 3-5 days.</li>
+<li><strong>Urgent stock:</strong> Amsterdam air freight, usually 1 day.</li>
+<li><strong>Included:</strong> Dutch collection, UK customs and delivery.</li>
+</ul>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Shipping from Netherlands to UK — Road &amp; Sea Freight",
+                "name": "Shipping from Netherlands to UK",
                 "serviceType": "Netherlands To Uk",
                 "provider": {
                     "@type": "Organization",
@@ -716,8 +727,38 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Shipping from Netherlands to UK? Carrgo offers road freight (1-3 days) and sea freight (3-5 days) with full customs clearance. Rotterdam to UK in 24 hours by road. Get your quote.",
+                "description": "Door-to-door road, sea and air freight from the Netherlands to the UK, including Rotterdam and Amsterdam collections, customs clearance and final UK delivery.",
                 "url": "https://www.carrgo.co.uk/routes/netherlands-to-uk"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long does road freight from Netherlands to UK take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Road freight from the Netherlands to the UK takes 1 to 3 days door-to-door, with daily departures from Rotterdam, Amsterdam and other Dutch logistics hubs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the best way to ship pallets from Rotterdam to the UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "For most commercial pallets from Rotterdam to the UK, road freight is the best balance of speed and cost because it gives daily departures, 1 to 3 day delivery and direct warehouse-to-warehouse control."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo arrange door-to-door freight from Amsterdam or Rotterdam?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo arranges supplier collection from Amsterdam, Rotterdam, Eindhoven, Utrecht, Venlo and other Dutch logistics hubs, then manages ferry or tunnel routing, UK customs clearance and final UK delivery."
+                        }
+                    }
+                ]
             }
         ]
     },
