@@ -1548,6 +1548,15 @@ def main():
     
     # Read the base HTML
     base_html = index_path.read_text(encoding="utf-8")
+
+    canonical_index_script = """<script>
+  if (window.location.pathname === '/index.html') {
+    window.location.replace('/' + window.location.search + window.location.hash);
+  }
+</script>
+"""
+    if "window.location.pathname === '/index.html'" not in base_html:
+        base_html = base_html.replace("<head>", "<head>\n" + canonical_index_script, 1)
     
     # Remove the www-stripping script
     base_html = base_html.replace(
