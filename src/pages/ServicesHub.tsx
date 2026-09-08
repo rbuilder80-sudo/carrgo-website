@@ -9,7 +9,10 @@ import {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'UK Freight Forwarding Services',
+  name: 'Cargo Services UK',
+  serviceType: ['Cargo Services', 'Freight Forwarding', 'Sea Freight', 'Air Freight', 'Road Freight', 'Rail Freight', 'Customs Clearance', 'Door-to-Door Delivery'],
+  url: 'https://www.carrgo.co.uk/services',
+  description: 'Cargo services for UK businesses including sea freight, air cargo, road freight, rail freight, customs clearance, warehousing and door-to-door delivery.',
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
@@ -38,6 +41,34 @@ const serviceSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Warehousing — UK Storage & Distribution' } },
     ],
   },
+};
+
+const faqData = [
+  {
+    question: 'What cargo services does Carrgo offer?',
+    answer: 'Carrgo offers sea freight, air freight, road freight, rail freight, customs clearance, door-to-door delivery, Amazon FBA freight and UK warehousing for commercial cargo.',
+  },
+  {
+    question: 'Can Carrgo handle customs and delivery as one service?',
+    answer: 'Yes. Carrgo can include supplier collection, freight booking, UK customs clearance, tracking and final delivery in one all-inclusive cargo quote.',
+  },
+  {
+    question: 'How quickly can I get a cargo services quote?',
+    answer: 'Carrgo aims to send freight and cargo quotes within 2 business hours when the shipment details are complete.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
 };
 
 /* ── Service Cards Data ── */
@@ -89,6 +120,29 @@ const services = [
     title: 'Warehousing',
     description: 'Secure UK warehousing and distribution centres offering short-term and long-term storage, inventory management, pick-and-pack, and fulfilment services for businesses of all sizes.',
     link: '/services/warehousing',
+  },
+];
+
+const serviceMatch = [
+  {
+    need: 'Lowest cost for pallets or containers',
+    service: 'Sea freight',
+    link: '/services/sea-freight',
+  },
+  {
+    need: 'Urgent cargo or supplier samples',
+    service: 'Door-to-door air freight',
+    link: '/services/air-freight',
+  },
+  {
+    need: 'European pallets or full loads',
+    service: 'Road freight',
+    link: '/services/road-freight',
+  },
+  {
+    need: 'Factory-to-warehouse delivery',
+    service: 'Door-to-door shipping',
+    link: '/services/door-to-door',
   },
 ];
 
@@ -148,12 +202,12 @@ export default function ServicesHub() {
   return (
     <>
       <Seo
-        title="Cargo Services UK | Sea, Air, Road Freight Quotes | Carrgo"
-        description="Cargo services for UK businesses: sea freight, air cargo, road freight, rail, customs clearance and door-to-door delivery. Quote in 2 hours."
+        title="Cargo Services UK | Freight Forwarder Quote in 2 Hours | Carrgo"
+        description="Cargo services for UK businesses: sea, air, road and rail freight with customs clearance, tracking and door-to-door delivery. Get a quote in 2 hours."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://www.carrgo.co.uk/services"
         canonical="https://www.carrgo.co.uk/services"
-        structuredData={serviceSchema}
+        structuredData={[serviceSchema, faqSchema]}
       />
 
       <main id="main-content">
@@ -200,6 +254,33 @@ export default function ServicesHub() {
                   <div className="text-xs text-blue-200">Customs Success</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SERVICE MATCH ====== */}
+        <section aria-labelledby="match-heading" className="py-14 bg-[#F8FAFC]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-8">
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Choose the right cargo service</span>
+              <h2 id="match-heading" className="text-3xl font-bold text-[#111827] mt-3 mb-4">
+                Which cargo service should I use?
+              </h2>
+              <p className="text-[#4B5563] leading-relaxed">
+                If you are comparing cargo shippers or a freight forwarder near you, start with the shipment goal. Carrgo can quote the right mode and include customs clearance and final delivery in one price.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {serviceMatch.map((item) => (
+                <Link
+                  key={item.need}
+                  to={item.link}
+                  className="bg-white rounded-lg border border-[#E5E7EB] p-5 hover:shadow-md transition-shadow group"
+                >
+                  <p className="text-sm text-[#4B5563] mb-3">{item.need}</p>
+                  <p className="font-bold text-[#111827] group-hover:text-[#1A6DFF] transition-colors">{item.service}</p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

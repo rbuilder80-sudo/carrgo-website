@@ -110,17 +110,65 @@ ROUTES = {
         ]
     },
     "/services": {
-        "title": "Cargo Services UK | Sea, Air, Road Freight Quotes | Carrgo",
-        "description": "Cargo services for UK businesses: sea freight, air cargo, road freight, rail, customs clearance and door-to-door delivery. Quote in 2 hours.",
+        "title": "Cargo Services UK | Freight Forwarder Quote in 2 Hours | Carrgo",
+        "description": "Cargo services for UK businesses: sea, air, road and rail freight with customs clearance, tracking and door-to-door delivery. Get a quote in 2 hours.",
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
         "staticBody": """
 <h2>Shipping and cargo services from one UK freight team</h2>
 <p>Carrgo provides cargo services for sea freight, air freight, road freight, rail freight, customs clearance, Amazon FBA delivery and door-to-door logistics.</p>
+<h2>Which cargo service should I use?</h2>
+<p>Use sea freight for lower-cost pallets and containers, door-to-door air freight for urgent cargo, road freight for European loads, and customs-backed door-to-door shipping when you need one team to manage collection, paperwork and final delivery.</p>
 <p>For UK businesses, that means one freight quote covering the movement, paperwork and final delivery instead of separate suppliers for shipping, customs and haulage.</p>
 """,
-        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Cargo Services UK",
+                "serviceType": ["Cargo Services", "Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Delivery"],
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Cargo services for UK businesses including sea freight, air cargo, road freight, rail freight, customs clearance, warehousing and door-to-door delivery.",
+                "url": "https://www.carrgo.co.uk/services"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What cargo services does Carrgo offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Carrgo offers sea freight, air freight, road freight, rail freight, customs clearance, door-to-door delivery, Amazon FBA freight and UK warehousing for commercial cargo."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo handle customs and delivery as one service?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo can include supplier collection, freight booking, UK customs clearance, tracking and final delivery in one all-inclusive cargo quote."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can I get a cargo services quote?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Carrgo aims to send freight and cargo quotes within 2 business hours when the shipment details are complete."
+                        }
+                    }
+                ]
+            }
+        ]
     },
     "/routes": {
         "title": "International Freight Routes to the UK | Carrgo",
