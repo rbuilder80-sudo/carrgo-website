@@ -148,8 +148,8 @@ export default function ServicesHub() {
   return (
     <>
       <Seo
-        title="Cargo Services UK | Freight Forwarding Services | Carrgo"
-        description="UK cargo services from a freight forwarder and cargo shipping company. Sea, air, road, rail, customs clearance, door-to-door freight and quotes in 2 hours."
+        title="Cargo Services UK | Sea, Air, Road Freight Quotes | Carrgo"
+        description="Cargo services for UK businesses: sea freight, air cargo, road freight, rail, customs clearance and door-to-door delivery. Quote in 2 hours."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://www.carrgo.co.uk/services"
         canonical="https://www.carrgo.co.uk/services"

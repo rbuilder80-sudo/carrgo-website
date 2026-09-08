@@ -134,8 +134,8 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="UK Freight Forwarder | Cargo Services & Quotes in 2 Hours | Carrgo"
-        description="Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours."
+        title="Cargo Services UK | Freight Forwarder Quotes in 2 Hours | Carrgo"
+        description="Cargo services for UK importers and exporters. Carrgo handles sea, air, road, rail, customs and door-to-door delivery with quotes in 2 hours."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://www.carrgo.co.uk/"
         canonical="https://www.carrgo.co.uk/"
@@ -304,7 +304,7 @@ export default function Home() {
         </div>
       </section>
 
-      /* ====== WHO WE HELP (buyer personas) ====== */
+      {/* ====== WHO WE HELP (buyer personas) ====== */}
       <section aria-labelledby="who-we-help-heading" data-section="who-we-help" className="py-12 bg-white border-b">
         <div className="container-carrgo">
           <h2 id="who-we-help-heading" className="text-2xl font-bold text-center text-gray-900 mb-3">Who does Carrgo help?</h2>

@@ -22,8 +22,8 @@ def normalize_page_url(url):
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "UK Freight Forwarder | Cargo Services & Quotes in 2 Hours | Carrgo",
-        "description": "Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours.",
+        "title": "Cargo Services UK | Freight Forwarder Quotes in 2 Hours | Carrgo",
+        "description": "Cargo services for UK importers and exporters. Carrgo handles sea, air, road, rail, customs and door-to-door delivery with quotes in 2 hours.",
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
@@ -109,8 +109,8 @@ ROUTES = {
         ]
     },
     "/services": {
-        "title": "Cargo Services UK | Freight Forwarding Services | Carrgo",
-        "description": "UK cargo services from a freight forwarder and cargo shipping company. Sea, air, road, rail, customs clearance, door-to-door freight and quotes in 2 hours.",
+        "title": "Cargo Services UK | Sea, Air, Road Freight Quotes | Carrgo",
+        "description": "Cargo services for UK businesses: sea freight, air cargo, road freight, rail, customs clearance and door-to-door delivery. Quote in 2 hours.",
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
