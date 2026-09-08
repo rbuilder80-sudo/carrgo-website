@@ -46,8 +46,8 @@ export default function NetherlandsToUk() {
         title="Netherlands to UK Freight | Road, Sea & Air Shipping | Carrgo"
         description="Netherlands to UK freight forwarding — road freight 1-3 days, sea 3-5 days, air 1 day. Daily departures from Rotterdam & Amsterdam. Full post-Brexit customs clearance."
         keywords="netherlands to uk freight, rotterdam to uk shipping, dutch road freight uk, shipping from holland to uk, freight forwarder netherlands uk"
-        ogUrl="https://carrgo.co.uk/routes/netherlands-to-uk"
-        canonical="https://carrgo.co.uk/routes/netherlands-to-uk"
+        ogUrl="https://www.carrgo.co.uk/routes/netherlands-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/netherlands-to-uk"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

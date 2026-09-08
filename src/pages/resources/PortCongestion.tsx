@@ -472,7 +472,7 @@ export default function PortCongestion() {
         title="UK & Ireland Port Congestion Overview 2026 | Port Status | Carrgo"
         description="UK & Ireland port congestion overview covering Felixstowe, Southampton, Liverpool, Dublin, Belfast, Grangemouth and all major UK, NI and ROI container ports. Example wait times, status indicators and trend simulations."
         keywords="uk port congestion tracker, port congestion felixstowe, port congestion southampton, belfast port status, dublin port congestion, irish sea ports, northern ireland port delays, liverpool port status, uk container port delays, port congestion today"
-        canonical="https://carrgo.co.uk/resources/port-congestion-tracker"
+        canonical="https://www.carrgo.co.uk/resources/port-congestion-tracker"
         structuredData={[
           {
             "@context": "https://schema.org",
@@ -496,7 +496,7 @@ export default function PortCongestion() {
                 "@type": "HowToStep",
                 "name": "Monitor Port Congestion Before Booking",
                 "text": "Check port health scores and congestion status for your destination port (e.g., Felixstowe, Southampton, Liverpool) before confirming your shipment. Consider alternative ports such as London Gateway or Tilbury if your primary port is congested.",
-                "url": "https://carrgo.co.uk/resources/port-congestion-tracker",
+                "url": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
               },
               {
                 "@type": "HowToStep",
@@ -527,7 +527,7 @@ export default function PortCongestion() {
             "provider": {
               "@type": "Organization",
               "name": "Carrgo Freight Solutions Ltd",
-              "url": "https://carrgo.co.uk",
+              "url": "https://www.carrgo.co.uk",
             },
             "areaServed": [
               { "@type": "Country", "name": "United Kingdom" },

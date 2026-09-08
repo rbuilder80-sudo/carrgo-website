@@ -10,12 +10,12 @@ const legalSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Terms of Service — Carrgo Freight Solutions Ltd',
-  url: 'https://carrgo.co.uk/terms',
+  url: 'https://www.carrgo.co.uk/terms',
   description: 'Terms and conditions for Carrgo Freight Solutions Ltd freight forwarding services.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 

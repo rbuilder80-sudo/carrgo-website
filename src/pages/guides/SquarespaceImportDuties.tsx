@@ -7,13 +7,13 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Squarespace Import Duties, DDP and Tariff Workarounds for UK Sellers',
-  url: 'https://carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers',
+  url: 'https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers',
   description:
     'Squarespace handles your storefront — it doesn\u2019t clear UK customs for you. Guide to import duties, DDP/DDU choices and HS codes for UK Squarespace sellers.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 
@@ -70,8 +70,8 @@ export default function SquarespaceImportDuties() {
         title="Squarespace Import Duties & DDP for UK Sellers | Carrgo"
         description="Squarespace doesn't clear UK customs for you. Learn how import duties, DDP/DDU choices and HS codes work for UK sellers — plus the practical workarounds."
         keywords="squarespace import duties uk, squarespace ddp ddu, uk import duty squarespace, hs codes squarespace, uk customs ecommerce sellers"
-        ogUrl="https://carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers"
-        canonical="https://carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers"
+        ogUrl="https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers"
+        canonical="https://www.carrgo.co.uk/squarespace-import-duties-ddp-tariff-uk-sellers"
         structuredData={pageSchema}
       />
 

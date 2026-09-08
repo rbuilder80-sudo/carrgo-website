@@ -28,7 +28,7 @@ export default function Seo({
   keywords,
   ogTitle,
   ogDescription,
-  ogImage = 'https://carrgo.co.uk/og-image.jpg',
+  ogImage = 'https://www.carrgo.co.uk/og-image.jpg',
   ogUrl,
   canonical,
   structuredData,
@@ -67,14 +67,14 @@ export default function Seo({
       linkCan.setAttribute('rel', 'canonical');
       document.head.appendChild(linkCan);
     }
-    linkCan.setAttribute('href', canonical || ogUrl || 'https://carrgo.co.uk/');
+    linkCan.setAttribute('href', canonical || ogUrl || 'https://www.carrgo.co.uk/');
 
     // OG Tags
     const ogTags: Record<string, string> = {
       'og:title': ogTitle || title,
       'og:description': ogDescription || description,
       'og:type': 'website',
-      'og:url': ogUrl || 'https://carrgo.co.uk/',
+      'og:url': ogUrl || 'https://www.carrgo.co.uk/',
       'og:image': ogImage,
       'og:locale': 'en_GB',
       'og:site_name': 'Carrgo Freight Solutions',
@@ -146,7 +146,7 @@ export default function Seo({
       hreflang.setAttribute('hreflang', 'en-gb');
       document.head.appendChild(hreflang);
     }
-    hreflang.setAttribute('href', canonical || ogUrl || 'https://carrgo.co.uk/');
+    hreflang.setAttribute('href', canonical || ogUrl || 'https://www.carrgo.co.uk/');
 
     // Preload critical route-specific resources
     const preloadLinks: HTMLLinkElement[] = [];
@@ -166,7 +166,7 @@ export default function Seo({
       // Clean up preload links on unmount
       preloadLinks.forEach(link => link.remove());
     };
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, canonical, structuredData, noindex, preload]);
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, canonical, structuredData, noindex, preload, gscVerification]);
 
   return null;
 }

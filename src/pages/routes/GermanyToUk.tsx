@@ -46,8 +46,8 @@ export default function GermanyToUk() {
         title="Germany to UK Freight | Road, Sea & Air Shipping | Carrgo"
         description="Germany to UK freight forwarding with daily road departures. FTL & LTL road freight 2-4 days, sea 5-8 days, air 1-2 days. Full post-Brexit customs clearance."
         keywords="germany to uk freight, german road freight uk, shipping from germany to uk, european haulage germany, freight forwarder germany uk"
-        ogUrl="https://carrgo.co.uk/routes/germany-to-uk"
-        canonical="https://carrgo.co.uk/routes/germany-to-uk"
+        ogUrl="https://www.carrgo.co.uk/routes/germany-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/germany-to-uk"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

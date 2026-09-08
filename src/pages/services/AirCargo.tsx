@@ -14,7 +14,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -167,8 +167,8 @@ export default function AirCargo() {
         title="Air Cargo UK | International Air Freight Shipping | Carrgo"
         description="International air cargo from the UK. Express & economy air freight to 200+ destinations. Heathrow, East Midlands, Manchester airports."
         keywords="air cargo uk, air cargo shipping, international air cargo, air freight cargo, cargo shipping uk, air freight uk, express air cargo, economy air freight, heathrow cargo"
-        ogUrl="https://carrgo.co.uk/services/air-cargo"
-        canonical="https://carrgo.co.uk/services/air-cargo"
+        ogUrl="https://www.carrgo.co.uk/services/air-cargo"
+        canonical="https://www.carrgo.co.uk/services/air-cargo"
         structuredData={[serviceSchema, faqSchema]}
       />
 

@@ -51,8 +51,8 @@ export default function DublinToUk() {
         title="Dublin to UK Freight Forwarding | Ireland's Trade Route | Carrgo"
         description="Dublin to UK freight forwarding via Irish Sea. Dublin-Liverpool 8hrs, Dublin-Holyhead 2hrs. Full Irish customs clearance. Sea, road & air shipping options."
         keywords="freight forwarder dublin, dublin to uk shipping, ireland freight forwarding, dublin port customs clearance, shipping from ireland to uk, irish customs broker, road freight ireland to uk, dublin port freight, t1 transit documents"
-        ogUrl="https://carrgo.co.uk/routes/dublin-ireland/"
-        canonical="https://carrgo.co.uk/routes/dublin-ireland/"
+        ogUrl="https://www.carrgo.co.uk/routes/dublin-ireland/"
+        canonical="https://www.carrgo.co.uk/routes/dublin-ireland/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

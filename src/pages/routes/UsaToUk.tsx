@@ -51,8 +51,8 @@ export default function UsaToUk() {
         title="Sea Freight USA to UK | USA to UK Shipping | Carrgo"
         description="Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included."
         keywords="sea freight usa to uk, usa to uk shipping, shipping from usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
-        ogUrl="https://carrgo.co.uk/routes/usa-to-uk/"
-        canonical="https://carrgo.co.uk/routes/usa-to-uk/"
+        ogUrl="https://www.carrgo.co.uk/routes/usa-to-uk/"
+        canonical="https://www.carrgo.co.uk/routes/usa-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

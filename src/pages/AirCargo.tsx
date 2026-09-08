@@ -8,8 +8,8 @@ export default function AirCargo() {
         title="Air Cargo UK | Express & Economy Air Freight | Carrgo"
         description="Air cargo UK — express and economy air freight services. Heathrow, Manchester & East Midlands airports. 3-5 days worldwide. Get air cargo quotes."
         keywords="air cargo uk, air freight, express air cargo, economy air freight, airport freight, heathrow cargo"
-        ogUrl="https://carrgo.co.uk/services/air-cargo"
-        canonical="https://carrgo.co.uk/services/air-cargo"
+        ogUrl="https://www.carrgo.co.uk/services/air-cargo"
+        canonical="https://www.carrgo.co.uk/services/air-cargo"
       />
 
       <section className="bg-gradient-to-br from-[#1A6DFF] to-[#1557CC] text-white py-20 px-4">

@@ -74,8 +74,8 @@ export default function Automotive() {
         title="Automotive Freight Forwarding UK | Parts & Components | Carrgo"
         description="Automotive freight forwarding UK — OEM parts, aftermarket components, tyres, and batteries. Just-in-time delivery, urgent air freight, and European road haulage."
         keywords="automotive freight forwarding, car parts shipping uk, oem logistics, aftermarket parts freight, just in time automotive, tyre shipping, battery transport"
-        ogUrl="https://carrgo.co.uk/industries/automotive"
-        canonical="https://carrgo.co.uk/industries/automotive"
+        ogUrl="https://www.carrgo.co.uk/industries/automotive"
+        canonical="https://www.carrgo.co.uk/industries/automotive"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

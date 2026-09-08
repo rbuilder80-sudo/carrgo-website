@@ -81,8 +81,8 @@ export default function AmazonFba() {
         title="Amazon FBA Freight UK | FBA Prep & Shipping to Amazon | Carrgo"
         description="FBA freight forwarding for UK Amazon sellers — FBA prep, labelling, inspection & delivery to BHX4, EMA1, LBA1. Ship from China to Amazon FBA UK with customs clearance."
         keywords="amazon fba freight, fba shipping uk, amazon freight forwarder, fba prep uk, ship to amazon uk, fba customs clearance"
-        ogUrl="https://carrgo.co.uk/services/amazon-fba-freight/"
-        canonical="https://carrgo.co.uk/services/amazon-fba-freight/"
+        ogUrl="https://www.carrgo.co.uk/services/amazon-fba-freight/"
+        canonical="https://www.carrgo.co.uk/services/amazon-fba-freight/"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

@@ -64,30 +64,30 @@ const sitemapSchema = {
   '@type': 'CollectionPage',
   name: 'Sitemap - Carrgo Freight Solutions',
   description: 'Complete sitemap of Carrgo Freight Solutions website. Browse all services, trade routes, resources, and company pages.',
-  url: 'https://carrgo.co.uk/sitemap',
+  url: 'https://www.carrgo.co.uk/sitemap',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Carrgo Freight Solutions',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
   hasPart: [
     ...servicePages.map(p => ({
       '@type': 'WebPage',
       name: p.title,
       description: p.desc,
-      url: `https://carrgo.co.uk${p.path}`,
+      url: `https://www.carrgo.co.uk${p.path}`,
     })),
     ...routePages.map(p => ({
       '@type': 'WebPage',
       name: p.title,
       description: p.desc,
-      url: `https://carrgo.co.uk${p.path}`,
+      url: `https://www.carrgo.co.uk${p.path}`,
     })),
     ...resourcePages.map(p => ({
       '@type': 'WebPage',
       name: p.title,
       description: p.desc,
-      url: `https://carrgo.co.uk${p.path}`,
+      url: `https://www.carrgo.co.uk${p.path}`,
     })),
   ],
 };
@@ -133,8 +133,8 @@ export default function AiSitemap() {
       <Seo
         title="Sitemap | Carrgo Freight Solutions"
         description={`Complete sitemap of Carrgo Freight Solutions. Browse all ${totalPages} pages including services, trade routes, resources, and company information.`}
-        ogUrl="https://carrgo.co.uk/sitemap"
-        canonical="https://carrgo.co.uk/sitemap"
+        ogUrl="https://www.carrgo.co.uk/sitemap"
+        canonical="https://www.carrgo.co.uk/sitemap"
         structuredData={sitemapSchema}
       />
 

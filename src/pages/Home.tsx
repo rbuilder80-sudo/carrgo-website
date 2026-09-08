@@ -133,16 +133,16 @@ export default function Home() {
         title="Cargo Services UK | Freight Forwarder for Sea, Air & Road | Carrgo"
         description="UK cargo services and freight forwarding for importers. Sea, air, road, rail, customs clearance and door-to-door delivery with quotes in 2 hours."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
-        ogUrl="https://carrgo.co.uk/"
-        canonical="https://carrgo.co.uk/"
+        ogUrl="https://www.carrgo.co.uk/"
+        canonical="https://www.carrgo.co.uk/"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": ["Organization", "LocalBusiness"],
             "name": "Carrgo Freight Solutions",
             "legalName": "Carrgo Freight Solutions Ltd",
-            "url": "https://carrgo.co.uk",
-            "logo": "https://carrgo.co.uk/logo.png",
+            "url": "https://www.carrgo.co.uk",
+            "logo": "https://www.carrgo.co.uk/logo.png",
             "description": "UK & Ireland freight forwarder specialising in sea freight, air freight, customs clearance, and door-to-door logistics.",
             "email": "support@carrgo.co.uk",
             "address": {
@@ -153,7 +153,7 @@ export default function Home() {
             "areaServed": ["GB", "IE", "Northern Ireland"],
             "serviceType": ["Freight Forwarding", "Sea Freight", "Air Freight", "Road Freight", "Rail Freight", "Customs Clearance", "Door-to-Door Logistics", "Amazon FBA Shipping", "UK Warehousing"],
             // memberOf removed pending verification
-            "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://carrgo.co.uk"]
+            "sameAs": ["https://www.linkedin.com/company/carrgo", "https://www.reddit.com/user/CarrgoFreight", "https://www.quora.com/profile/Carrgo-Freight", "https://medium.com/@carrgo-freight", "https://www.carrgo.co.uk"]
           },
           {
             "@context": "https://schema.org",
@@ -173,10 +173,10 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Carrgo Freight Solutions",
-            "url": "https://carrgo.co.uk",
+            "url": "https://www.carrgo.co.uk",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://carrgo.co.uk/?q={search_term_string}",
+              "target": "https://www.carrgo.co.uk/?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           }

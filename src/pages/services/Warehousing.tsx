@@ -76,8 +76,8 @@ export default function Warehousing() {
         title="Warehousing UK | Midlands Storage, Pick & Pack & Fulfilment | Carrgo"
         description="UK warehousing in the Midlands with pick & pack fulfilment, container devanning, bonded storage & UK-wide distribution. Secure facility with real-time inventory management."
         keywords="warehousing uk, uk warehouse storage, pick and pack uk, fulfilment warehouse, bonded warehouse uk, midlands warehouse"
-        ogUrl="https://carrgo.co.uk/services/warehousing"
-        canonical="https://carrgo.co.uk/services/warehousing"
+        ogUrl="https://www.carrgo.co.uk/services/warehousing"
+        canonical="https://www.carrgo.co.uk/services/warehousing"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

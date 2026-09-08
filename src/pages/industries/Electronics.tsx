@@ -74,8 +74,8 @@ export default function Electronics() {
         title="Electronics Freight Forwarding UK | Tech & Components | Carrgo"
         description="Freight forwarding for electronics — consumer tech, PCBs, LEDs, batteries (UN 38.3). Air, sea, and rail shipping with anti-static packaging. Get a quote."
         keywords="electronics freight forwarding, PCB shipping, lithium battery shipping, UN 38.3, tech cargo UK"
-        ogUrl="https://carrgo.co.uk/industries/electronics"
-        canonical="https://carrgo.co.uk/industries/electronics"
+        ogUrl="https://www.carrgo.co.uk/industries/electronics"
+        canonical="https://www.carrgo.co.uk/industries/electronics"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

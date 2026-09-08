@@ -73,8 +73,8 @@ export default function Medical() {
         title="Medical & Pharmaceutical Freight Forwarding UK | GDP Compliant | Carrgo"
         description="GDP-compliant freight forwarding for medical devices, pharmaceuticals, and cold chain products. Air, road, and sea shipping with full regulatory documentation."
         keywords="medical freight forwarding, pharmaceutical shipping, GDP compliant, cold chain logistics, medical device import UK"
-        ogUrl="https://carrgo.co.uk/industries/medical"
-        canonical="https://carrgo.co.uk/industries/medical"
+        ogUrl="https://www.carrgo.co.uk/industries/medical"
+        canonical="https://www.carrgo.co.uk/industries/medical"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

@@ -14,7 +14,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -182,8 +182,8 @@ export default function ContainerShipping() {
         title="Container Shipping UK | FCL, LCL & Sea Freight Containers | Carrgo"
         description="UK container shipping — 20ft, 40ft, FCL & LCL. Get container shipping quotes in 2 hours. Full load and part load sea freight to 150+ countries."
         keywords="container shipping uk, fcl shipping, lcl shipping, container shipping quote, sea freight containers, 20ft container, 40ft container, container freight uk, full container load, less than container load"
-        ogUrl="https://carrgo.co.uk/services/container-shipping"
-        canonical="https://carrgo.co.uk/services/container-shipping"
+        ogUrl="https://www.carrgo.co.uk/services/container-shipping"
+        canonical="https://www.carrgo.co.uk/services/container-shipping"
         structuredData={[serviceSchema, faqSchema]}
       />
 

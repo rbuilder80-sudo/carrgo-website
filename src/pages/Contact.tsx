@@ -12,9 +12,9 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Carrgo Freight Solutions Ltd',
-  image: 'https://carrgo.co.uk/og-image.jpg',
-  '@id': 'https://carrgo.co.uk',
-  url: 'https://carrgo.co.uk',
+  image: 'https://www.carrgo.co.uk/og-image.jpg',
+  '@id': 'https://www.carrgo.co.uk',
+  url: 'https://www.carrgo.co.uk',
     email: SUPPORT_EMAIL,
   priceRange: '££',
   address: {
@@ -141,15 +141,15 @@ export default function Contact() {
         title="Contact Carrgo | UK Freight Forwarder | Carrgo"
         description="Contact Carrgo freight forwarders. Email support@carrgo.co.uk for shipping quotes, customs queries & freight advice. We reply within 2 hours."
         keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
-        ogUrl="https://carrgo.co.uk/contact"
-        canonical="https://carrgo.co.uk/contact"
+        ogUrl="https://www.carrgo.co.uk/contact"
+        canonical="https://www.carrgo.co.uk/contact"
         structuredData={[
           localBusinessSchema,
           {
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact Carrgo Freight Solutions",
-            "url": "https://carrgo.co.uk/contact",
+            "url": "https://www.carrgo.co.uk/contact",
             "description": "Contact Carrgo Freight Solutions for freight quotes, customs questions or logistics support."
           }
         ]}

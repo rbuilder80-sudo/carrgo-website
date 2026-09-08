@@ -7,13 +7,13 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Freight Quote Readiness for Salesforce Teams',
-  url: 'https://carrgo.co.uk/salesforce-freight-quote-readiness',
+  url: 'https://www.carrgo.co.uk/salesforce-freight-quote-readiness',
   description:
     'Half of freight enquiries can\u2019t be quoted on first touch. Carrgo\u2019s readiness review scores each enquiry on nine fields and hands your reps a missing-data checklist, a customs-risk flag and the next best action.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 
@@ -42,8 +42,8 @@ export default function SalesforceQuoteReadiness() {
         title="Freight Quote Readiness for Salesforce Teams | Carrgo"
         description="Half of freight enquiries can't be quoted on first touch. Carrgo scores each Salesforce enquiry on nine fields and hands reps a missing-data checklist."
         keywords="salesforce freight quote, freight quote readiness, uk freight enquiries salesforce, customs risk check, freight forwarder uk"
-        ogUrl="https://carrgo.co.uk/salesforce-freight-quote-readiness"
-        canonical="https://carrgo.co.uk/salesforce-freight-quote-readiness"
+        ogUrl="https://www.carrgo.co.uk/salesforce-freight-quote-readiness"
+        canonical="https://www.carrgo.co.uk/salesforce-freight-quote-readiness"
         structuredData={pageSchema}
       />
 

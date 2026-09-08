@@ -78,8 +78,8 @@ export default function RailFreight() {
         title="Rail Freight China to UK | New Silk Road Shipping | Carrgo"
         description="China-UK rail freight via the New Silk Road — 14-20 days transit, 40% cheaper than air. FCL & LCL from Shanghai, Yiwu, Chengdu & Shenzhen to UK."
         keywords="rail freight china to uk, new silk road, yiwu to london train, china rail freight, rail shipping uk, train freight europe"
-        ogUrl="https://carrgo.co.uk/services/rail-freight-china-uk"
-        canonical="https://carrgo.co.uk/services/rail-freight-china-uk"
+        ogUrl="https://www.carrgo.co.uk/services/rail-freight-china-uk"
+        canonical="https://www.carrgo.co.uk/services/rail-freight-china-uk"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

@@ -10,8 +10,8 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Carrgo Freight Solutions Ltd',
-  url: 'https://carrgo.co.uk',
-  logo: 'https://carrgo.co.uk/favicon.ico',
+  url: 'https://www.carrgo.co.uk',
+  logo: 'https://www.carrgo.co.uk/favicon.ico',
   description: 'Proven results for UK importers — Carrgo delivers measurable improvements in freight efficiency, customs clearance success, and cost savings.',
   email: 'support@carrgo.co.uk',
   };

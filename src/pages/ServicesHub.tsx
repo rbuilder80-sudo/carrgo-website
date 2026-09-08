@@ -13,8 +13,8 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
-    logo: { '@type': 'ImageObject', url: 'https://carrgo.co.uk/logo.png' },
+    url: 'https://www.carrgo.co.uk',
+    logo: { '@type': 'ImageObject', url: 'https://www.carrgo.co.uk/logo.png' },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+44-20-4582-7588',
@@ -151,8 +151,8 @@ export default function ServicesHub() {
         title="Cargo Services UK | Freight Forwarding Services | Carrgo"
         description="UK cargo services and freight forwarding. FCL/LCL sea freight, air cargo, European road freight, rail, customs clearance and warehousing. Quotes in 2 hours."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
-        ogUrl="https://carrgo.co.uk/services"
-        canonical="https://carrgo.co.uk/services"
+        ogUrl="https://www.carrgo.co.uk/services"
+        canonical="https://www.carrgo.co.uk/services"
         structuredData={serviceSchema}
       />
 

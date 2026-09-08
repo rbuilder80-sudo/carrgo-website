@@ -15,7 +15,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com;"
 
 # Cache static assets
 [[headers]]
@@ -23,29 +23,29 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Redirect www to non-www
+# Redirect apex to www
 [[redirects]]
-  from = "https://www.carrgo.co.uk/*"
-  to = "https://carrgo.co.uk/:splat"
+  from = "https://carrgo.co.uk/*"
+  to = "https://www.carrgo.co.uk/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://www.carrgo.co.uk/*"
-  to = "https://carrgo.co.uk/:splat"
+  from = "http://carrgo.co.uk/*"
+  to = "https://www.carrgo.co.uk/:splat"
   status = 301
   force = true
 
 # Redirect netlify.app to custom domain
 [[redirects]]
   from = "https://carrgo-uk-website.netlify.app/*"
-  to = "https://carrgo.co.uk/:splat"
+  to = "https://www.carrgo.co.uk/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://carrgo-uk-website.netlify.app/*"
-  to = "https://carrgo.co.uk/:splat"
+  to = "https://www.carrgo.co.uk/:splat"
   status = 301
   force = true
 
@@ -119,6 +119,71 @@
 [[redirects]]
   from = "/ports/busan-port"
   to = "/routes/china-to-uk"
+  status = 301
+
+[[redirects]]
+  from = "/route-support/turkey-shipping-cost.html"
+  to = "/routes/turkey-to-uk"
+  status = 301
+
+[[redirects]]
+  from = "/results.html"
+  to = "/results"
+  status = 301
+
+[[redirects]]
+  from = "/industries"
+  to = "/resources/industries"
+  status = 301
+
+[[redirects]]
+  from = "/industries/"
+  to = "/resources/industries"
+  status = 301
+
+[[redirects]]
+  from = "/assets/downloads/carrgo-uk-import-cost-tracker.xlsx/"
+  to = "/tools/cost-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/routes/ireland-to-uk"
+  to = "/routes/dublin-ireland"
+  status = 301
+
+[[redirects]]
+  from = "/industries/startupimportlogistics.html"
+  to = "/services/door-to-door"
+  status = 301
+
+[[redirects]]
+  from = "/authors/adam-hayes"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/tools"
+  to = "/tools/cost-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/tools/"
+  to = "/tools/cost-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/leads/requestcallback"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/problems/importdutyexplained.html"
+  to = "/resources/post-brexit-customs-guide"
+  status = 301
+
+[[redirects]]
+  from = "/resources/uk-import-customs-clearance-guide"
+  to = "/resources/post-brexit-customs-guide"
   status = 301
 
 # SPA fallback

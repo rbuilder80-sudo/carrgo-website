@@ -9,12 +9,12 @@ const legalSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Privacy Policy — Carrgo Freight Solutions Ltd',
-  url: 'https://carrgo.co.uk/privacy',
+  url: 'https://www.carrgo.co.uk/privacy',
   description: 'Carrgo Freight Solutions Ltd privacy policy. GDPR-compliant data protection policy for UK freight forwarding services.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 

@@ -8,8 +8,8 @@ export default function ContainerShipping() {
         title="Container Shipping UK | FCL & LCL Sea Freight | Carrgo"
         description="Container shipping UK — FCL & LCL services from China, India, USA & Europe. 20ft, 40ft & 40ft HC containers. Competitive rates. Get quotes in 2 hours."
         keywords="container shipping uk, fcl shipping, lcl shipping, sea freight containers, shipping containers, 20ft container, 40ft container"
-        ogUrl="https://carrgo.co.uk/services/container-shipping"
-        canonical="https://carrgo.co.uk/services/container-shipping"
+        ogUrl="https://www.carrgo.co.uk/services/container-shipping"
+        canonical="https://www.carrgo.co.uk/services/container-shipping"
       />
 
       <section className="bg-gradient-to-br from-[#1A6DFF] to-[#1557CC] text-white py-20 px-4">

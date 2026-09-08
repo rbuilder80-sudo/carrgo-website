@@ -76,8 +76,8 @@ export default function CustomsClearance() {
         title="Customs Clearance UK | Import & Export Brokers | Carrgo"
         description="UK customs clearance & import/export brokerage. CDS declarations, duty calculations, commodity codes. NI Protocol expertise. Belfast & Dublin."
         keywords="customs clearance uk, customs broker, import declarations cds, customs clearance northern ireland, irish customs broker, t1 documents, transit documents, customs duty vat"
-        ogUrl="https://carrgo.co.uk/services/customs-clearance"
-        canonical="https://carrgo.co.uk/services/customs-clearance"
+        ogUrl="https://www.carrgo.co.uk/services/customs-clearance"
+        canonical="https://www.carrgo.co.uk/services/customs-clearance"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

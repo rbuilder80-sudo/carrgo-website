@@ -130,8 +130,8 @@ export default function GetAQuote() {
         title="Get a Freight Quote UK | Shipping & Air Freight Quotes | Carrgo"
         description="Get freight quotations in 2 hours. Sea, air, road & rail shipping quotes UK. Tell us your route, cargo & timing — we send all-inclusive pricing."
         keywords="freight quote uk, shipping quote uk, freight forwarding quote, sea freight quote, air freight quote, customs clearance quote, freight cost estimate, cheap freight uk"
-        ogUrl="https://carrgo.co.uk/get-a-quote"
-        canonical="https://carrgo.co.uk/get-a-quote"
+        ogUrl="https://www.carrgo.co.uk/get-a-quote"
+        canonical="https://www.carrgo.co.uk/get-a-quote"
         structuredData={serviceSchema}
       />
 

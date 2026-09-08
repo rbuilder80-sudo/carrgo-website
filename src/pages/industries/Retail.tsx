@@ -74,8 +74,8 @@ export default function Retail() {
         title="Retail Freight Forwarding UK | Seasonal Stock & Wholesale Imports | Carrgo"
         description="Retail freight forwarding UK — seasonal stock, wholesale imports, and store replenishment. Sea, air & road freight for fashion, homeware, and toys. Split shipments available."
         keywords="retail freight forwarding, seasonal stock shipping, wholesale imports uk, fashion logistics, store replenishment, christmas stock freight"
-        ogUrl="https://carrgo.co.uk/industries/retail"
-        canonical="https://carrgo.co.uk/industries/retail"
+        ogUrl="https://www.carrgo.co.uk/industries/retail"
+        canonical="https://www.carrgo.co.uk/industries/retail"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

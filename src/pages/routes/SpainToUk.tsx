@@ -51,8 +51,8 @@ export default function SpainToUk() {
         title="Spain to UK Freight | Road, Sea & Air Shipping | Carrgo"
         description="Ship goods from Spain to UK — road freight 4-6 days, sea 4-9 days, air 1-2 days. Popular for food &amp; automotive parts & textiles. Full post-Brexit customs clearance."
         keywords="spain to uk freight, shipping from spain to uk, spanish road freight uk, barcelona to uk shipping, valencia to southampton"
-        ogUrl="https://carrgo.co.uk/routes/spain-to-uk/"
-        canonical="https://carrgo.co.uk/routes/spain-to-uk/"
+        ogUrl="https://www.carrgo.co.uk/routes/spain-to-uk/"
+        canonical="https://www.carrgo.co.uk/routes/spain-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

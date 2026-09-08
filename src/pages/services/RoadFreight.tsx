@@ -78,8 +78,8 @@ export default function RoadFreight() {
         title="Road Freight Forwarder UK | European Haulage | Carrgo"
         description="Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland."
         keywords="road freight forwarder, road freight uk, european haulage, ftl ltl transport, road freight to ireland, haulage northern ireland, uk trucking, pallet delivery europe"
-        ogUrl="https://carrgo.co.uk/services/road-freight"
-        canonical="https://carrgo.co.uk/services/road-freight"
+        ogUrl="https://www.carrgo.co.uk/services/road-freight"
+        canonical="https://www.carrgo.co.uk/services/road-freight"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

@@ -73,8 +73,8 @@ export default function Construction() {
         title="Construction Materials Freight Forwarding UK | Building Supplies | Carrgo"
         description="Freight forwarding for construction materials — steel, tiles, ceramics, fixtures, tools. FCL, road and rail shipping to UK sites. Get a quote."
         keywords="construction freight forwarding, building materials shipping, steel import UK, tile freight Turkey, construction cargo"
-        ogUrl="https://carrgo.co.uk/industries/construction"
-        canonical="https://carrgo.co.uk/industries/construction"
+        ogUrl="https://www.carrgo.co.uk/industries/construction"
+        canonical="https://www.carrgo.co.uk/industries/construction"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

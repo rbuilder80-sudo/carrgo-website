@@ -7,13 +7,13 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Import Duty & Landed Cost Readiness for SAP Business One',
-  url: 'https://carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness',
+  url: 'https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness',
   description:
     'SAP Business One runs your purchasing — but if HS codes, Incoterms and freight costs aren\u2019t captured cleanly, your landed cost is wrong. Carrgo reviews your import data readiness.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 
@@ -34,8 +34,8 @@ export default function SapBusinessOneReadiness() {
         title="Import Duty & Landed Cost for SAP Business One | Carrgo"
         description="SAP Business One runs your purchasing — but missing HS codes and Incoterms break landed cost. Carrgo reviews your import data readiness and flags gaps."
         keywords="sap business one import duty, sap b1 landed cost, uk landed cost readiness, sap business one customs data, uk import duty review"
-        ogUrl="https://carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness"
-        canonical="https://carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness"
+        ogUrl="https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness"
+        canonical="https://www.carrgo.co.uk/sap-business-one-import-duty-landed-cost-readiness"
         structuredData={pageSchema}
       />
 

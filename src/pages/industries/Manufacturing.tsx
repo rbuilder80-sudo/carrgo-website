@@ -74,8 +74,8 @@ export default function Manufacturing() {
         title="Manufacturing Freight Forwarding UK | Raw Materials & Components | Carrgo"
         description="Manufacturing freight forwarding UK — raw materials, components, machinery, and spare parts. Just-in-time delivery, sea, air, road & rail. Keep your production line moving."
         keywords="manufacturing freight forwarding, raw materials shipping uk, component logistics, just in time delivery, factory supply chain, machinery transport uk"
-        ogUrl="https://carrgo.co.uk/industries/manufacturing"
-        canonical="https://carrgo.co.uk/industries/manufacturing"
+        ogUrl="https://www.carrgo.co.uk/industries/manufacturing"
+        canonical="https://www.carrgo.co.uk/industries/manufacturing"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

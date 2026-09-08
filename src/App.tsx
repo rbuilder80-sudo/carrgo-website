@@ -148,6 +148,7 @@ export default function App() {
           <Route path="/resources/industries" element={<Suspense fallback={<Loading />}><Industries /></Suspense>} />
           <Route path="/resources/our-process" element={<Suspense fallback={<Loading />}><OurProcess /></Suspense>} />
           <Route path="/resources/post-brexit-customs-guide" element={<Suspense fallback={<Loading />}><PostBrexit /></Suspense>} />
+          <Route path="/resources/uk-import-customs-clearance-guide" element={<Navigate to="/resources/post-brexit-customs-guide" replace />} />
           <Route path="/resources/testimonials" element={<Suspense fallback={<Loading />}><Testimonials /></Suspense>} />
 
           {/* Industry pages */}

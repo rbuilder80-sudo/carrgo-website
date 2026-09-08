@@ -46,8 +46,8 @@ export default function UaeToUk() {
         title="UAE to UK Shipping | Sea & Air Freight from Dubai | Carrgo"
         description="Ship goods from UAE (Dubai, Abu Dhabi) to UK — sea freight 18-24 days via Jebel Ali, air freight 2-3 days. Full customs clearance to Felixstowe & Southampton."
         keywords="uae to uk shipping, dubai to uk freight, jebel ali to felixstowe, shipping from uae to uk, abu dhabi to southampton, middle east freight uk"
-        ogUrl="https://carrgo.co.uk/routes/uae-to-uk"
-        canonical="https://carrgo.co.uk/routes/uae-to-uk"
+        ogUrl="https://www.carrgo.co.uk/routes/uae-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/uae-to-uk"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

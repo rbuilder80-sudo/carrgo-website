@@ -74,8 +74,8 @@ export default function Ecommerce() {
         title="Ecommerce Freight Forwarding UK | Amazon FBA & Online Retail | Carrgo"
         description="Ecommerce freight forwarding UK — Amazon FBA prep, multi-channel fulfilment, and online retail shipping. FBA delivery to BHX4, EMA1, LBA1. Sea, air & rail from China."
         keywords="ecommerce freight forwarding, amazon fba freight, fba prep uk, ship to amazon uk, china to amazon fba, ecommerce shipping uk, online retail logistics"
-        ogUrl="https://carrgo.co.uk/industries/ecommerce"
-        canonical="https://carrgo.co.uk/industries/ecommerce"
+        ogUrl="https://www.carrgo.co.uk/industries/ecommerce"
+        canonical="https://www.carrgo.co.uk/industries/ecommerce"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

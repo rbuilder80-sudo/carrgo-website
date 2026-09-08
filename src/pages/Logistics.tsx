@@ -8,8 +8,8 @@ export default function Logistics() {
         title="Logistics Company UK | Freight & Supply Chain | Carrgo"
         description="UK logistics company — freight forwarding, warehousing & supply chain solutions. Sea, air, road & rail. Professional UK freight forwarding. Get logistics quotes."
         keywords="logistics company uk, freight logistics, supply chain uk, warehousing, freight forwarding, logistics services"
-        ogUrl="https://carrgo.co.uk/services/logistics"
-        canonical="https://carrgo.co.uk/services/logistics"
+        ogUrl="https://www.carrgo.co.uk/services/logistics"
+        canonical="https://www.carrgo.co.uk/services/logistics"
       />
 
       <section className="bg-gradient-to-br from-[#1A6DFF] to-[#1557CC] text-white py-20 px-4">

@@ -73,8 +73,8 @@ export default function Furniture() {
         title="Furniture Freight Forwarding UK | Flat-Pack & Upholstered | Carrgo"
         description="Freight forwarding for furniture — flat-pack, upholstered, office, and bespoke. Sea, road, and rail shipping with careful handling. Get a quote."
         keywords="furniture freight forwarding, flat pack shipping, furniture import UK, sofa shipping, China furniture freight"
-        ogUrl="https://carrgo.co.uk/industries/furniture"
-        canonical="https://carrgo.co.uk/industries/furniture"
+        ogUrl="https://www.carrgo.co.uk/industries/furniture"
+        canonical="https://www.carrgo.co.uk/industries/furniture"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content" role="main">

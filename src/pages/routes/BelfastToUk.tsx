@@ -51,8 +51,8 @@ export default function BelfastToUk() {
         title="Belfast Freight Forwarding | Northern Ireland's Gateway | Carrgo"
         description="Belfast freight forwarding services for Northern Ireland trade. Sea, road & customs clearance. Belfast Harbour, Larne & Foyle Port. NI Protocol & Windsor Framework specialists."
         keywords="belfast freight forwarder, northern ireland customs clearance, freight belfast to uk, northern ireland shipping, belfast port freight, ni protocol freight, irish sea trade, windsor framework, t2 transit documents"
-        ogUrl="https://carrgo.co.uk/routes/belfast-northern-ireland/"
-        canonical="https://carrgo.co.uk/routes/belfast-northern-ireland/"
+        ogUrl="https://www.carrgo.co.uk/routes/belfast-northern-ireland/"
+        canonical="https://www.carrgo.co.uk/routes/belfast-northern-ireland/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

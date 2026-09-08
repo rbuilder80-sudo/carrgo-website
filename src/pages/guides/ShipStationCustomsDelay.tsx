@@ -7,13 +7,13 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'ShipStation sellers shipping to the UK: check customs-delay risk before you print the label',
-  url: 'https://carrgo.co.uk/shipstation-uk-customs-delay-check',
+  url: 'https://www.carrgo.co.uk/shipstation-uk-customs-delay-check',
   description:
     'Shipping into the UK via ShipStation? Send Carrgo your ShipStation export and we check destination, HS codes, country of origin, declared values, weights and documents for UK customs-delay risk.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 
@@ -30,8 +30,8 @@ export default function ShipStationCustomsDelay() {
         title="ShipStation UK Customs-Delay Check for Sellers | Carrgo"
         description="Shipping into the UK via ShipStation? One missing HS code can park your parcel at the border. Send Carrgo your export for a customs-delay risk check."
         keywords="shipstation uk customs, shipstation customs delay, uk import hs code check, shipstation uk sellers, uk customs clearance check"
-        ogUrl="https://carrgo.co.uk/shipstation-uk-customs-delay-check"
-        canonical="https://carrgo.co.uk/shipstation-uk-customs-delay-check"
+        ogUrl="https://www.carrgo.co.uk/shipstation-uk-customs-delay-check"
+        canonical="https://www.carrgo.co.uk/shipstation-uk-customs-delay-check"
         structuredData={pageSchema}
       />
 

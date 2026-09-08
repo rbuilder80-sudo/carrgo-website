@@ -75,8 +75,8 @@ export default function SeaFreight() {
         title="Sea Freight Services UK | FCL & LCL Container Shipping | Carrgo"
         description="Sea freight services UK — FCL & LCL container shipping worldwide. Competitive container shipping quotes. 25-35 days China to UK. All-inclusive rates."
         keywords="sea freight uk, fcl lcl shipping, container shipping uk, sea freight from china to uk, irish sea freight, belfast port shipping, dublin port freight, shipping to northern ireland, shipping to ireland"
-        ogUrl="https://carrgo.co.uk/services/sea-freight"
-        canonical="https://carrgo.co.uk/services/sea-freight"
+        ogUrl="https://www.carrgo.co.uk/services/sea-freight"
+        canonical="https://www.carrgo.co.uk/services/sea-freight"
         structuredData={[serviceSchema, faqSchema]}
       />
       <main id="main-content">

@@ -14,7 +14,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
@@ -170,8 +170,8 @@ export default function Logistics() {
         title="UK Logistics Provider | Freight & Supply Chain Services | Carrgo"
         description="UK logistics provider offering end-to-end supply chain services. Freight forwarding, warehousing, distribution & customs. Tailored logistics for importers & exporters."
         keywords="logistics provider uk, logistics company, logistics services, supply chain services, freight logistics, uk logistics, 3pl uk, warehousing uk, distribution services, supply chain management"
-        ogUrl="https://carrgo.co.uk/services/logistics"
-        canonical="https://carrgo.co.uk/services/logistics"
+        ogUrl="https://www.carrgo.co.uk/services/logistics"
+        canonical="https://www.carrgo.co.uk/services/logistics"
         structuredData={serviceSchema}
       />
 

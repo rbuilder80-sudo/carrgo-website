@@ -13,7 +13,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
   areaServed: [
     { '@type': 'Country', name: 'United Kingdom' },
@@ -201,8 +201,8 @@ export default function RoutesHub() {
         title="International Shipping UK | Global Freight Routes | Carrgo"
         description="International shipping from the UK to 150+ countries. Sea, air, road & rail routes. China, USA, India, Germany, UAE, Turkey & more. Get route quotes."
         keywords="international shipping uk, shipping from uk, global freight routes, uk shipping routes, freight routes, shipping routes from uk, uk to china shipping, uk to usa freight, uk to india cargo, uk to europe haulage"
-        ogUrl="https://carrgo.co.uk/routes"
-        canonical="https://carrgo.co.uk/routes"
+        ogUrl="https://www.carrgo.co.uk/routes"
+        canonical="https://www.carrgo.co.uk/routes"
         structuredData={serviceSchema}
       />
 

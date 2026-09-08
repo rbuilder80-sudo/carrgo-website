@@ -107,8 +107,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-950 text-gray-400" itemScope itemType="https://schema.org/Organization">
-      <meta itemProp="@id" content="https://carrgo.co.uk/#organization" />
-      <link itemProp="url" href="https://carrgo.co.uk" />
+      <meta itemProp="@id" content="https://www.carrgo.co.uk/#organization" />
+      <link itemProp="url" href="https://www.carrgo.co.uk" />
 
       {/* ── Top section: brand + contact + social ── */}
       <div className="border-b border-gray-800/60">

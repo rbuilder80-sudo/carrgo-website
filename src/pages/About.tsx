@@ -10,8 +10,8 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Carrgo Freight Solutions Ltd',
-  url: 'https://carrgo.co.uk',
-  logo: 'https://carrgo.co.uk/favicon.ico',
+  url: 'https://www.carrgo.co.uk',
+  logo: 'https://www.carrgo.co.uk/favicon.ico',
   description: 'Carrgo Freight Solutions Ltd is a UK-based freight forwarding company specialising in sea, air, road, and rail freight to and from the United Kingdom.',
   email: 'support@carrgo.co.uk',
     address: {
@@ -29,9 +29,9 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Carrgo Freight Solutions Ltd',
-  image: 'https://carrgo.co.uk/og-image.jpg',
-  '@id': 'https://carrgo.co.uk',
-  url: 'https://carrgo.co.uk',
+  image: 'https://www.carrgo.co.uk/og-image.jpg',
+  '@id': 'https://www.carrgo.co.uk',
+  url: 'https://www.carrgo.co.uk',
     priceRange: '££',
   address: {
     '@type': 'PostalAddress',
@@ -124,8 +124,8 @@ export default function About() {
         title="About Carrgo | UK Freight Forwarding Company | Carrgo"
         description="About Carrgo — a UK freight forwarding company with 30+ years experience. Professional freight forwarding standards. Serving importers & exporters across UK, Ireland & NI."
         keywords="about carrgo freight, uk freight forwarder company, freight forwarding business, customs broker, customs brokerage uk"
-        ogUrl="https://carrgo.co.uk/about"
-        canonical="https://carrgo.co.uk/about"
+        ogUrl="https://www.carrgo.co.uk/about"
+        canonical="https://www.carrgo.co.uk/about"
         structuredData={[
           orgSchema,
           localBusinessSchema,
@@ -133,7 +133,7 @@ export default function About() {
             "@context": "https://schema.org",
             "@type": "AboutPage",
             "name": "About Carrgo Freight Solutions",
-            "url": "https://carrgo.co.uk/about",
+            "url": "https://www.carrgo.co.uk/about",
             "description": "Learn about Carrgo Freight Solutions Ltd, a UK and Ireland freight forwarder specialising in sea, air, road, rail freight and customs clearance."
           }
         ]}

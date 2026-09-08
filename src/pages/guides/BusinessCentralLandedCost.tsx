@@ -7,13 +7,13 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Import Duty & Landed Cost Readiness for Business Central Users',
-  url: 'https://carrgo.co.uk/business-central-import-duty-landed-cost-readiness',
+  url: 'https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness',
   description:
     'If your purchase invoices live in Dynamics 365 Business Central but your customs data doesn\u2019t, your margins are guessing. Carrgo reviews the nine inputs that decide your UK landed cost.',
   publisher: {
     '@type': 'Organization',
     name: 'Carrgo Freight Solutions Ltd',
-    url: 'https://carrgo.co.uk',
+    url: 'https://www.carrgo.co.uk',
   },
 };
 
@@ -42,8 +42,8 @@ export default function BusinessCentralLandedCost() {
         title="Import Duty & Landed Cost for Business Central | Carrgo"
         description="If purchase invoices live in Business Central but customs data doesn't, margins are guessing. Carrgo reviews the nine inputs behind your UK landed cost."
         keywords="business central import duty, dynamics 365 landed cost, uk landed cost readiness, business central customs data, uk import duty review"
-        ogUrl="https://carrgo.co.uk/business-central-import-duty-landed-cost-readiness"
-        canonical="https://carrgo.co.uk/business-central-import-duty-landed-cost-readiness"
+        ogUrl="https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness"
+        canonical="https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness"
         structuredData={pageSchema}
       />
 

@@ -46,8 +46,8 @@ export default function IndiaToUk() {
         title="Shipping from India to UK | Sea & Air Freight Forwarder | Carrgo"
         description="Ship goods from India to UK — sea freight 20-28 days via Nhava Sheva & Mundra, air freight 3-5 days. UK-India FTA in force from 15 July 2026. All-inclusive pricing with customs clearance."
         keywords="shipping from india to uk, india to uk freight, sea freight india to uk, nhava sheva to felixstowe, mundra to southampton, air cargo india uk, uk india trade agreement, uk india fta, rules of origin india uk"
-        ogUrl="https://carrgo.co.uk/routes/india-to-uk"
-        canonical="https://carrgo.co.uk/routes/india-to-uk"
+        ogUrl="https://www.carrgo.co.uk/routes/india-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/india-to-uk"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

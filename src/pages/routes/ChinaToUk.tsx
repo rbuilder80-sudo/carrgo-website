@@ -46,8 +46,8 @@ export default function ChinaToUk() {
         title="Shipping from China to UK | Sea, Air & Rail Freight | Carrgo"
         description="Shipping from China to UK — sea (25-35 days), air (3-5 days), rail (14-20 days). Shanghai, Shenzhen, Ningbo to Felixstowe, Southampton. Get quotes."
         keywords="shipping from china to uk, china to uk freight, sea freight china to uk, fcl shipping from china, lcl china to uk, rail freight china to uk, new silk road shipping, yiwu to london, china to ireland shipping, china to northern ireland freight, china to dublin, china to belfast"
-        ogUrl="https://carrgo.co.uk/routes/china-to-uk"
-        canonical="https://carrgo.co.uk/routes/china-to-uk"
+        ogUrl="https://www.carrgo.co.uk/routes/china-to-uk"
+        canonical="https://www.carrgo.co.uk/routes/china-to-uk"
         structuredData={[
           {
             "@context": "https://schema.org",
@@ -76,7 +76,7 @@ export default function ChinaToUk() {
                 "@type": "HowToStep",
                 "name": "Choose Your Transport Mode",
                 "text": "Select sea freight (25–35 days, most economical), air freight (3–5 days, fastest), or rail freight (14–20 days, best balance). Consider your cargo volume, budget, and delivery deadline.",
-                "url": "https://carrgo.co.uk/routes/china-to-uk"
+                "url": "https://www.carrgo.co.uk/routes/china-to-uk"
               },
               {
                 "@type": "HowToStep",
