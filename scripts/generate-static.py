@@ -13,6 +13,11 @@ ROUTES = {
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
+        "staticBody": """
+<h2>Cargo services for UK importers and exporters</h2>
+<p>Carrgo is a UK freight forwarder for businesses that need cargo services by sea, air, road or rail. We handle collection, freight booking, customs clearance, tracking and final delivery in one quote.</p>
+<p>Use Carrgo when you are comparing cargo shippers, cargo freight forwarding, a cargo shipping company or a freight forwarder near you for UK imports and exports.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
             {
@@ -95,6 +100,11 @@ ROUTES = {
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
+        "staticBody": """
+<h2>Shipping and cargo services from one UK freight team</h2>
+<p>Carrgo provides cargo services for sea freight, air freight, road freight, rail freight, customs clearance, Amazon FBA delivery and door-to-door logistics.</p>
+<p>For UK businesses, that means one freight quote covering the movement, paperwork and final delivery instead of separate suppliers for shipping, customs and haulage.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/routes": {
@@ -111,6 +121,11 @@ ROUTES = {
         "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Door-to-Door Air Freight UK",
+        "staticBody": """
+<h2>Door-to-door air freight for urgent cargo</h2>
+<p>Carrgo arranges air freight to the UK with collection, airline booking, customs clearance and delivery to your warehouse, office, site or fulfilment centre.</p>
+<p>Choose door-to-door air freight when stock, samples, spare parts or high-value cargo need a faster option than sea or road freight.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
@@ -211,6 +226,11 @@ ROUTES = {
         "keywords": "door to door freight, door to door cargo, door to door shipping uk, factory to warehouse shipping, complete logistics uk, cargo shippers uk",
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
+        "staticBody": """
+<h2>Door-to-door freight from collection to delivery</h2>
+<p>Carrgo manages door-to-door cargo and freight for UK importers, from supplier collection through export, international freight, UK customs clearance and final delivery.</p>
+<p>This is the right option when you want one freight forwarder to manage the whole shipment instead of coordinating a cargo shipper, customs broker and haulier separately.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
