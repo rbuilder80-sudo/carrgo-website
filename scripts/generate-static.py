@@ -480,6 +480,17 @@ ROUTES = {
         "keywords": "usa to uk freight forwarder, sea freight usa to uk, usa to uk shipping, shipping from usa to uk, cargo from usa to uk, air freight usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight",
         "canonical": "https://www.carrgo.co.uk/routes/usa-to-uk",
         "h1": "USA to UK Freight Forwarder for Sea &amp; Air Cargo",
+        "staticBody": """
+<h2>USA to UK freight forwarding with customs included</h2>
+<p>For importers comparing USA to UK shipping options, the best route depends on coast, cargo size and urgency. East Coast sea freight is usually fastest by ocean, West Coast cargo normally takes longer via the Panama Canal, and air freight is the right option for urgent stock, samples and high-value goods.</p>
+<p>Carrgo gives one quote covering freight, customs clearance and UK delivery, so you can compare sea freight USA to UK against air freight without chasing separate port, customs and haulage costs.</p>
+<ul>
+<li><strong>East Coast sea:</strong> 10-15 days to UK ports.</li>
+<li><strong>West Coast sea:</strong> 25-30 days via Panama.</li>
+<li><strong>Air freight:</strong> 1-3 days from major US airports.</li>
+<li><strong>Included:</strong> US collection, UK customs and delivery.</li>
+</ul>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
@@ -1315,6 +1326,7 @@ def build_html(route, meta, base_html, is_404=False):
     keywords = meta.get("keywords", "")
     canonical = meta["canonical"]
     h1 = meta.get("h1", title.split("|")[0].strip())
+    static_body = meta.get("staticBody", "")
     og_image = meta.get("ogImage", "https://www.carrgo.co.uk/og-image.png")
     noindex = meta.get("noindex", False)
     structured_data = meta.get("structuredData", [])
@@ -1523,6 +1535,7 @@ def build_html(route, meta, base_html, is_404=False):
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>{h1}</h1>
 <p>{description}</p>
+{static_body}
 <p><strong>Carrgo Freight Solutions</strong> — UK freight forwarder handling sea freight, air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters.</p>
 <p><a href="https://www.carrgo.co.uk/get-a-quote">Get a free quote in 2 hours</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a></p>
 <p><strong>Who we help:</strong> UK importers, exporters, procurement managers, logistics managers, manufacturers, ecommerce businesses, Amazon FBA sellers, wholesalers, retailers, and customs-clearance customers.</p>
