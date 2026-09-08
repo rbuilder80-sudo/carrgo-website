@@ -84,12 +84,18 @@ export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod 
 
   if (!isCarrgoHost) return;
 
-  const gtag = typeof window !== 'undefined'
-    ? (window as Window & { gtag?: (...args: unknown[]) => void }).gtag
-    : undefined;
+  const analyticsWindow = window as Window & {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
 
-  if (gtag) {
-    gtag('event', 'generate_lead', {
+  analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+  analyticsWindow.gtag = analyticsWindow.gtag || ((...args: unknown[]) => {
+    analyticsWindow.dataLayer?.push(args);
+  });
+
+  if (analyticsWindow.gtag) {
+    analyticsWindow.gtag('event', 'generate_lead', {
       event_category: 'form',
       event_label: formLabel,
       method: deliveryMethod,
@@ -97,7 +103,7 @@ export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod 
     });
 
     if (deliveryMethod === 'email_client') {
-      gtag('event', 'email_fallback_opened', {
+      analyticsWindow.gtag('event', 'email_fallback_opened', {
         event_category: 'form',
         event_label: formLabel,
       });
