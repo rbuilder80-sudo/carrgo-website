@@ -8,11 +8,11 @@ from pathlib import Path
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "UK Freight Forwarder | Import & Export Shipping | Customs Clearance | Carrgo",
-        "description": "Struggling with customs delays, lost shipments, or high freight costs? Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Get your all-inclusive quote in 2 hours — no hidden fees. Sea, air, road & rail freight.",
-        "keywords": "freight forwarder uk, freight forwarding company uk, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
+        "title": "Cargo Services UK | Freight Forwarder for Sea, Air & Road | Carrgo",
+        "description": "UK cargo services and freight forwarding for importers. Sea, air, road, rail, customs clearance and door-to-door delivery with all-inclusive quotes in 2 hours.",
+        "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
-        "h1": "UK Freight Forwarder &amp; Logistics Company You Can Trust",
+        "h1": "UK Cargo Services &amp; Freight Forwarding",
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
             {
@@ -90,26 +90,34 @@ ROUTES = {
         ]
     },
     "/services": {
-        "title": "Freight Forwarding Services UK | Sea, Air, Road & Rail | Carrgo",
-        "description": "Full-service freight forwarding from the UK. FCL/LCL sea freight, air cargo, European road haulage, China-UK rail, customs clearance & warehousing. Get quotes in 2 hours.",
-        "keywords": "freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
+        "title": "Cargo Services UK | Freight Forwarding Services | Carrgo",
+        "description": "UK cargo services and freight forwarding. FCL/LCL sea freight, door-to-door air freight, European road freight, rail, customs clearance and warehousing. Quotes in 2 hours.",
+        "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
-        "h1": "UK Freight Forwarding Services",
+        "h1": "UK Cargo Services &amp; Freight Forwarding",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/routes": {
+        "title": "International Freight Routes to the UK | Carrgo",
+        "description": "Freight routes to the UK from China, Europe, USA, India, Turkey, UAE, Spain, Ireland and Northern Ireland. Compare sea, air, road and rail options and get a quote in 2 hours.",
+        "keywords": "freight routes uk, shipping routes to uk, international freight routes, uk import routes, cargo routes uk",
+        "canonical": "https://www.carrgo.co.uk/routes",
+        "h1": "Freight Routes to the UK",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/services/air-freight": {
-        "title": "Air Freight UK | Express Cargo Shipping | Urgent Delivery | Carrgo",
-        "description": "Urgent shipment stuck? Carrgo's air freight UK service delivers time-critical cargo in 3-7 days worldwide. Express air freight with customs clearance included. Get your quote in 30 minutes. Same-day pickup available.",
-        "keywords": "air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
+        "title": "Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo",
+        "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air freight with customs clearance, collection and final delivery. Quote in 2 hours.",
+        "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
-        "h1": "Air Freight UK — Express &amp; Economy Cargo Shipping",
+        "h1": "Door-to-Door Air Freight UK",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Air Freight UK — Express &amp; Economy Cargo Shipping",
+                "name": "Door-to-Door Air Freight UK",
                 "serviceType": "Air Freight",
                 "provider": {
                     "@type": "Organization",
@@ -117,24 +125,24 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Urgent shipment stuck? Carrgo's air freight UK service delivers time-critical cargo in 3-7 days worldwide. Express air freight with customs clearance included. Get your quote in 30 minutes. Same-day pickup available.",
+                "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air freight with customs clearance, collection and final delivery. Quote in 2 hours.",
                 "url": "https://www.carrgo.co.uk/services/air-freight"
             }
         ]
     },
     "/services/road-freight": {
-        "title": "Road Freight UK to Europe | Pallet & Groupage Shipping | Carrgo",
-        "description": "Shipping pallets to Germany, France, Netherlands, or Spain? Carrgo's road freight UK service handles groupage, full loads, and express European delivery. Door-to-door with tracking. Quote in 2 hours.",
-        "keywords": "road freight uk, european haulage, pallet shipping, groupage freight, ftl ltl uk",
+        "title": "Road Freight Forwarder UK | European Haulage | Carrgo",
+        "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Quote in 2 hours.",
+        "keywords": "road freight forwarder, road freight uk, european haulage, pallet shipping, groupage freight, ftl ltl uk",
         "canonical": "https://www.carrgo.co.uk/services/road-freight",
-        "h1": "Road Freight UK to Europe — FTL, LTL &amp; Pallet Shipping",
+        "h1": "Road Freight Forwarder for UK &amp; Europe",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Road Freight UK to Europe — FTL, LTL &amp; Pallet Shipping",
+                "name": "Road Freight Forwarder for UK &amp; Europe",
                 "serviceType": "Road Freight",
                 "provider": {
                     "@type": "Organization",
@@ -142,7 +150,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Shipping pallets to Germany, France, Netherlands, or Spain? Carrgo's road freight UK service handles groupage, full loads, and express European delivery. Door-to-door with tracking. Quote in 2 hours.",
+                "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Quote in 2 hours.",
                 "url": "https://www.carrgo.co.uk/services/road-freight"
             }
         ]
@@ -448,18 +456,18 @@ ROUTES = {
         ]
     },
     "/routes/usa-to-uk": {
-        "title": "Shipping from USA to UK | Freight Forwarder | Sea & Air | Carrgo",
-        "description": "Importing from USA? Carrgo handles USA to UK shipping with sea freight (14-21 days) and air freight (3-7 days). Full customs clearance, FDA checks, and HMRC compliance. Get your transatlantic freight quote.",
-        "keywords": "shipping from usa to uk, usa to uk freight, transatlantic shipping, import from usa",
+        "title": "Sea Freight USA to UK | USA to UK Shipping | Carrgo",
+        "description": "Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included.",
+        "keywords": "sea freight usa to uk, usa to uk shipping, shipping from usa to uk, us freight forwarder uk, transatlantic freight, import from usa",
         "canonical": "https://www.carrgo.co.uk/routes/usa-to-uk",
-        "h1": "Shipping from USA to UK — Sea &amp; Air Freight",
+        "h1": "Sea Freight USA to UK",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Shipping from USA to UK — Sea &amp; Air Freight",
+                "name": "Sea Freight USA to UK",
                 "serviceType": "Usa To Uk",
                 "provider": {
                     "@type": "Organization",
@@ -467,7 +475,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Importing from USA? Carrgo handles USA to UK shipping with sea freight (14-21 days) and air freight (3-7 days). Full customs clearance, FDA checks, and HMRC compliance. Get your transatlantic freight quote.",
+                "description": "Sea freight USA to UK and air freight from US ports and airports. East Coast sea 10-15 days, West Coast 25-30 days, air 1-3 days, customs included.",
                 "url": "https://www.carrgo.co.uk/routes/usa-to-uk"
             }
         ]
@@ -1095,8 +1103,143 @@ STATIC_REDIRECTS = {
     "/route-support/spainshippingtime.html": "/routes/spain-to-uk",
     "/ports/dublin-port": "/ports/dublin",
     "/ports/busan-port": "/routes/china-to-uk",
+    "/route-support/turkey-shipping-cost.html": "/routes/turkey-to-uk",
+    "/results.html": "/results",
+    "/industries": "/resources/industries",
+    "/industries/": "/resources/industries",
+    "/assets/downloads/carrgo-uk-import-cost-tracker.xlsx/": "/tools/cost-calculator",
+    "/routes/ireland-to-uk": "/routes/dublin-ireland",
+    "/industries/startupimportlogistics.html": "/services/door-to-door",
+    "/authors/adam-hayes": "/about",
+    "/tools": "/tools/cost-calculator",
+    "/tools/": "/tools/cost-calculator",
+    "/leads/requestcallback": "/contact",
+    "/problems/importdutyexplained.html": "/resources/post-brexit-customs-guide",
+    "/resources/uk-import-customs-clearance-guide": "/resources/post-brexit-customs-guide",
+    "/route-support/polandshippingtime.html": "/routes/germany-to-uk",
+    "/services/expressfreight": "/services/air-freight",
+    "/ports/hamburgport": "/routes/germany-to-uk",
+    "/leads/palletquote": "/get-a-quote",
+    "/route-support/uaeshippingtime.html": "/routes/uae-to-uk",
+    "/services/seaandwarehousing.html": "/services/sea-freight",
+    "/blog/china-uk-shipping-time-2026.html/": "/routes/china-to-uk",
+    "/routes/northern-ireland-to-uk": "/routes/belfast-northern-ireland",
+    "/ourprocess": "/resources/our-process",
+    "/services/railandwarehousing.html": "/services/rail-freight-china-uk",
+    "/leads/container-release": "/get-a-quote",
+    "/ports/marseilleport": "/routes",
+    "/route-support/polandshippingcost": "/routes/germany-to-uk",
+    "/routes/polandtomanchester": "/routes/germany-to-uk",
+    "/ports/dubaitolondon": "/routes/uae-to-uk",
+    "/services/roadandcustoms": "/services/road-freight",
+    "/services/doortodoor": "/services/door-to-door",
+    "/leads/containerquote": "/get-a-quote",
+    "/ports/bangkoktolondon": "/routes",
+    "/ports/shanghaitofelixstowe": "/routes/china-to-uk",
+    "/routes/chinatomanchester": "/routes/china-to-uk",
+    "/ports/barcelonaport": "/routes/spain-to-uk",
+    "/freightforwarderuk": "/services",
+    "/keywords/cheapseafreight": "/services/sea-freight",
+    "/guides/freightdocuments": "/resources/shipping-guides",
+    "/trust/whyswitch": "/results",
+    "/route-support/usacustomsclearance": "/routes/usa-to-uk",
+    "/services/amazonfba": "/services/amazon-fba-freight",
+    "/ports/jebelaliport": "/routes/uae-to-uk",
+    "/routes/vietnamtomanchester": "/routes",
+    "/route-support/netherlandsshippingcost": "/routes/netherlands-to-uk",
+    "/ports/shenzhentolondon": "/routes/china-to-uk",
+    "/ports/amsterdamport": "/routes/netherlands-to-uk",
+    "/routes/netherlandstomanchester": "/routes/netherlands-to-uk",
+    "/freightfaqs": "/resources/freight-faqs",
+    "/services/seaandwarehousing": "/services/sea-freight",
+    "/services/expressandcustoms": "/services/air-freight",
+    "/routes/spaintolondon": "/routes/spain-to-uk",
+    "/routes/chinatosouthampton": "/routes/china-to-uk",
+    "/keywords/containershippingcost": "/services/sea-freight",
+    "/ports/singaporeport": "/routes",
+    "/ports/shanghaiport": "/routes/china-to-uk",
+    "/ports/antwerpport": "/routes/netherlands-to-uk",
+    "/services/seaandcustoms": "/services/sea-freight",
+    "/ports/gdanskport": "/routes/germany-to-uk",
+    "/leads/samedayquote": "/get-a-quote",
+    "/route-support/turkeyshippingcost": "/routes/turkey-to-uk",
+    "/routes/belgiumtomanchester": "/routes/netherlands-to-uk",
+    "/industries/b2bbulkfreight": "/resources/industries",
+    "/ports/veniceport": "/routes",
+    "/routes/francetomanchester": "/routes",
+    "/route-support/chinashippingtime": "/routes/china-to-uk",
+    "/services/airandroad": "/services/road-freight",
+    "/routes/polandtolondon": "/routes/germany-to-uk",
+    "/routes/netherlandstolondon": "/routes/netherlands-to-uk",
+    "/routes/uaetouk": "/routes/uae-to-uk",
+    "/industries/automotivepartsshipping": "/resources/industries",
+    "/industries/consumergoods": "/resources/industries",
+    "/services/containerdevanning": "/services/warehousing",
+    "/servicesoverview": "/services",
+    "/ports/london-port": "/ports/london-gateway",
+    "/ports/valenciaport": "/routes/spain-to-uk",
+    "/routes/indiatouk": "/routes/india-to-uk",
+    "/routes/belgiumtouk": "/routes/netherlands-to-uk",
+    "/routes/turkeytolondon": "/routes/turkey-to-uk",
+    "/route-support/usashippingcost": "/routes/usa-to-uk",
+    "/route-support/belgiumshippingtime": "/routes/netherlands-to-uk",
+    "/ports/southamptonport": "/ports/southampton",
+    "/tasks": "/contact",
+    "/routes/belgium-to-uk": "/routes/netherlands-to-uk",
+    "/industries/packaging.html": "/resources/industries",
+    "/ports/dublinport": "/ports/dublin",
+    "/routes/chinatoliverpool.html": "/routes/china-to-uk",
+    "/routes/chinatoliverpool": "/routes/china-to-uk",
+    "/services/seaandhaulage": "/services/sea-freight",
+    "/services/seafreight": "/services/sea-freight",
+    "/ports/rotterdamtolondon": "/routes/netherlands-to-uk",
+    "/keywords/fastairshipping": "/services/air-freight",
+    "/services/airandwarehousing": "/services/air-freight",
+    "/trust/freightsupport": "/results",
+    "/ports/tilburyport.html": "/ports/tilbury",
+    "/services/railfreight": "/services/rail-freight-china-uk",
+    "/services/railandwarehousing": "/services/rail-freight-china-uk",
+    "/ports/grimsbyport.html": "/ports/immingham",
+    "/problems/lostcargo": "/contact",
+    "/whyswitch": "/results",
+    "/industries/textilesfabricshipping": "/resources/industries",
+    "/ports/hongkongport": "/routes/china-to-uk",
+    "/ports/istanbultolondon": "/routes/turkey-to-uk",
+    "/routes/spaintomanchester": "/routes/spain-to-uk",
+    "/routes/germanytobirmingham": "/routes/germany-to-uk",
+    "/routes/chinatobirmingham": "/routes/china-to-uk",
+    "/ports/imminghamport": "/ports/immingham",
+    "/industries/fmcgdistribution": "/resources/industries",
+    "/route-support/belgiumcustomsclearance": "/routes/netherlands-to-uk",
+    "/services/roadandwarehousing": "/services/road-freight",
+    "/ports/bangkokport": "/routes",
+    "/guides/shippingcosts": "/tools/cost-calculator",
+    "/route-support/germanyshippingcost": "/routes/germany-to-uk",
+    "/route-support/chinashippingcost": "/routes/china-to-uk",
+    "/routes/indiatolondon": "/routes/india-to-uk",
+    "/keywords/expresscourieruk": "/services/air-freight",
+    "/route-support/polandcustomsclearance": "/routes/germany-to-uk",
+    "/route-support/indiashippingcost": "/routes/india-to-uk",
+    "/industries/constructionmaterialsimport": "/resources/industries",
+    "/route-support/spainshippingtime": "/routes/spain-to-uk",
+    "/keywords/affordableroadfreight": "/services/road-freight",
+    "/keywords/customsclearancecost": "/tools/cost-calculator",
+    "/ports/hochiminhport": "/routes",
+    "/routes/turkeytouk": "/routes/turkey-to-uk",
+    "/casestudies": "/resources/case-studies",
+    "/route-support/netherlandscustomsclearance": "/routes/netherlands-to-uk",
+    "/services/railandcustoms": "/services/rail-freight-china-uk",
+    "/ports/dubaitouk": "/routes/uae-to-uk",
+    "/route-support/spaincustomsclearance": "/routes/spain-to-uk",
+    "/leads/containerrelease": "/get-a-quote",
+    "/problems/importdutyexplained": "/resources/post-brexit-customs-guide",
+    "/industries/dropshippinglogistics": "/resources/industries",
+    "/route-support/uaecustomsclearance": "/routes/uae-to-uk",
+    "/industries/furnitureimportgermany": "/routes/germany-to-uk",
+    "/routes/vietnamtouk": "/routes",
+    "/routes/spaintouk": "/routes/spain-to-uk",
+    "/portsoverview": "/resources/port-congestion-tracker",
 }
-
 
 def write_route_file(gh_pages_dir, route, html):
     """Write either /path/index.html or an exact .html file for GitHub Pages."""
@@ -1432,6 +1575,10 @@ def main():
     # GitHub Pages does not support Netlify _redirects, so these prevent old URLs
     # from returning hard 404 responses while pointing crawlers to the canonical page.
     for source_route, target_route in STATIC_REDIRECTS.items():
+        # Avoid overwriting real pages or Windows paths where a .html/.xlsx file and directory collide.
+        if source_route.rstrip("/") == target_route.rstrip("/") or source_route.endswith(".html/") or source_route.endswith(".xlsx/"):
+            continue
+
         target_meta = ROUTES.get(target_route)
         if not target_meta:
             print(f"WARNING: missing redirect target metadata for {source_route} -> {target_route}")
@@ -1442,20 +1589,32 @@ def main():
         generated += 1
         print(f"Generated redirect: {output} -> {target_route}")
     
-    # Generate 404.html (copy of index.html with redirect for any unmatched path)
-    not_found_html = base_html.replace(
-        '<title>Freight Forwarder UK | Shipping &amp; Logistics Company | Carrgo</title>',
-        '<title>Page Not Found | Carrgo Freight Solutions</title>'
-    )
-    not_found_html = not_found_html.replace(
-        '<meta name="description" content="Trusted UK freight forwarder &amp; logistics company. Sea, air, road &amp; rail freight + customs clearance. All-inclusive shipping quotes in 2 hours. BIFA &amp; IATA accredited." />',
-        '<meta name="description" content="Page not found. Carrgo Freight Solutions — UK freight forwarder for sea, air, road &amp; rail freight + customs clearance." />'
-    )
-    not_found_html = not_found_html.replace(
-        '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />',
-        '<meta name="robots" content="noindex, follow" />'
-    )
-    
+    # Generate 404.html with a JavaScript redirect map for unmatched legacy paths.
+    redirect_map_json = json.dumps(STATIC_REDIRECTS, indent=4)
+    not_found_html = f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | Carrgo</title>
+  <meta name="robots" content="noindex, follow">
+  <script>
+    const redirects = {redirect_map_json};
+    const path = window.location.pathname;
+    const target = redirects[path] || redirects[path.replace(/\\/$/, '')] || redirects[path + '/'];
+    if (target) window.location.replace(target + window.location.search + window.location.hash);
+  </script>
+</head>
+<body>
+  <main style="font-family: Arial, sans-serif; max-width: 680px; margin: 80px auto; padding: 0 20px; line-height: 1.5;">
+    <h1>Page not found</h1>
+    <p>The page you requested has moved. Use the links below to continue.</p>
+    <p><a href="/get-a-quote">Get a quote</a> · <a href="/services">Services</a> · <a href="/contact">Contact Carrgo</a></p>
+  </main>
+</body>
+</html>
+'''
+
     (gh_pages_dir / "404.html").write_text(not_found_html, encoding="utf-8")
     print(f"Generated: {gh_pages_dir / '404.html'}")
     generated += 1
