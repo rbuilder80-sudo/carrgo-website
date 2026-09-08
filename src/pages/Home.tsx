@@ -24,7 +24,7 @@ const faqData = [
 /* ── Data ── */
 const services = [
   { icon: Ship, title: 'Sea Freight', desc: 'FCL & LCL container shipping worldwide to UK ports', href: '/services/sea-freight' },
-  { icon: Plane, title: 'Air Freight', desc: 'Express & economy air cargo with door-to-door delivery', href: '/services/air-freight' },
+  { icon: Plane, title: 'Door-to-Door Air Freight', desc: 'Express & economy air cargo with customs and final delivery', href: '/services/air-freight' },
   { icon: Truck, title: 'Road Freight', desc: 'FTL & LTL European haulage to and from the UK', href: '/services/road-freight' },
   { icon: TrainFront, title: 'Rail Freight', desc: 'China to UK via New Silk Road — 14-20 days', href: '/services/rail-freight-china-uk' },
   { icon: FileCheck, title: 'Customs Clearance', desc: 'Expert customs brokers for smooth UK clearance', href: '/services/customs-clearance' },
@@ -134,8 +134,8 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="Cargo Services UK | Freight Forwarder for Sea, Air & Road | Carrgo"
-        description="UK cargo services and freight forwarding for importers. Sea, air, road, rail, customs clearance and door-to-door delivery with quotes in 2 hours."
+        title="UK Freight Forwarder | Cargo Services & Quotes in 2 Hours | Carrgo"
+        description="Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://www.carrgo.co.uk/"
         canonical="https://www.carrgo.co.uk/"
@@ -193,16 +193,16 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 id="hero-heading" itemProp="name" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
-                UK Freight Forwarding for Importers and Exporters
+                UK Freight Forwarder for Cargo Services and Fast Quotes
               </h1>
               {/* Direct answer block for AI search readiness */}
               <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
                 <p className="text-lg text-white leading-relaxed" itemProp="text">
-                  <strong className="text-green-300">Carrgo provides UK cargo services</strong> and freight forwarding for importers and exporters, covering sea freight (FCL/LCL), air cargo, road haulage, rail freight, customs clearance, and door-to-door delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
+                  <strong className="text-green-300">Carrgo is a UK freight forwarder for cargo services</strong>, covering sea freight (FCL/LCL), door-to-door air freight, road haulage, rail freight, customs clearance, and final delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
                 </p>
               </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
-                <span itemProp="description">Cargo services for sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> All-inclusive door-to-door shipping quotes in 2 hours.
+                <span itemProp="description">Cargo services for sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> Get an all-inclusive door-to-door shipping quote in 2 hours.
               </p>
 
             </div>
@@ -269,6 +269,37 @@ export default function Home() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== SEARCH DEMAND ROUTES ====== */}
+      <section aria-labelledby="search-demand-heading" data-section="search-demand" className="py-12 bg-brand-50 border-b">
+        <div className="container-carrgo">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <span className="text-brand-700 font-semibold text-sm uppercase tracking-wider">Popular Freight Searches</span>
+            <h2 id="search-demand-heading" className="text-2xl lg:text-3xl font-bold text-gray-900 mt-3">
+              Find the cargo service you searched for
+            </h2>
+            <p className="text-gray-600 mt-3">
+              Compare UK cargo services, door-to-door air freight, sea freight quotes and customs-backed shipping routes before you request a price.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { title: 'Cargo Services UK', desc: 'Sea, air, road, rail and customs in one managed freight service.', href: '/services' },
+              { title: 'Door-to-Door Air Freight', desc: 'Urgent cargo with collection, airport handling, customs and delivery.', href: '/services/air-freight' },
+              { title: 'Door-to-Door Sea Freight Quote', desc: 'FCL and LCL shipping with UK customs clearance and final delivery.', href: '/services/sea-freight' },
+              { title: 'Shipping and Cargo Services', desc: 'International cargo forwarding for UK importers and exporters.', href: '/get-a-quote' },
+            ].map(item => (
+              <Link key={item.title} to={item.href} className="block bg-white rounded-lg border border-brand-100 p-5 hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-gray-900">{item.title}</h3>
+                <p className="text-sm text-gray-600 mt-2">{item.desc}</p>
+                <span className="text-brand-700 font-medium text-sm inline-flex items-center gap-1 mt-4">
+                  View option <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

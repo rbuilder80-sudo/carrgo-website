@@ -51,7 +51,7 @@ const services = [
   {
     icon: Plane,
     title: 'Air Freight',
-    description: 'Express and economy air cargo services from Heathrow, East Midlands and Manchester airports. Fast international air freight to 200+ destinations worldwide with full documentation handling.',
+    description: 'Door-to-door air freight and air cargo services through Heathrow, Manchester, Birmingham, Belfast and Dublin. Express and economy options with collection, customs clearance and final delivery.',
     link: '/services/air-freight',
   },
   {
@@ -149,7 +149,7 @@ export default function ServicesHub() {
     <>
       <Seo
         title="Cargo Services UK | Freight Forwarding Services | Carrgo"
-        description="UK cargo services and freight forwarding. FCL/LCL sea freight, air cargo, European road freight, rail, customs clearance and warehousing. Quotes in 2 hours."
+        description="UK cargo services and freight forwarding for commercial goods. Compare sea freight, door-to-door air freight, road, rail, customs clearance and warehousing. Quotes in 2 hours."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://www.carrgo.co.uk/services"
         canonical="https://www.carrgo.co.uk/services"

@@ -8,8 +8,8 @@ from pathlib import Path
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "Cargo Services UK | Freight Forwarder for Sea, Air & Road | Carrgo",
-        "description": "UK cargo services and freight forwarding for importers. Sea, air, road, rail, customs clearance and door-to-door delivery with all-inclusive quotes in 2 hours.",
+        "title": "UK Freight Forwarder | Cargo Services & Quotes in 2 Hours | Carrgo",
+        "description": "Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours.",
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
@@ -91,7 +91,7 @@ ROUTES = {
     },
     "/services": {
         "title": "Cargo Services UK | Freight Forwarding Services | Carrgo",
-        "description": "UK cargo services and freight forwarding. FCL/LCL sea freight, door-to-door air freight, European road freight, rail, customs clearance and warehousing. Quotes in 2 hours.",
+        "description": "UK cargo services and freight forwarding for commercial goods. Compare sea freight, door-to-door air freight, road, rail, customs clearance and warehousing. Quotes in 2 hours.",
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
@@ -107,7 +107,7 @@ ROUTES = {
     },
     "/services/air-freight": {
         "title": "Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo",
-        "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air freight with customs clearance, collection and final delivery. Quote in 2 hours.",
+        "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
         "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Door-to-Door Air Freight UK",
@@ -125,7 +125,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air freight with customs clearance, collection and final delivery. Quote in 2 hours.",
+                "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
                 "url": "https://www.carrgo.co.uk/services/air-freight"
             }
         ]
@@ -1548,6 +1548,21 @@ def main():
     
     # Read the base HTML
     base_html = index_path.read_text(encoding="utf-8")
+
+    # Make repeated generator runs idempotent when using an already-generated
+    # GitHub Pages checkout as the base.
+    base_html = re.sub(
+        r'\s*<script>\s*\(function\(\)\{\s*var p = location\.pathname;.*?history\.replaceState\(null, \'\', \'/#\' \+ p\);.*?\}\)\(\);\s*</script>\s*',
+        "\n",
+        base_html,
+        flags=re.DOTALL,
+    )
+    base_html = re.sub(
+        r'\s*<noscript>\s*<div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1\.6">.*?</div>\s*</noscript>\s*',
+        "\n",
+        base_html,
+        flags=re.DOTALL,
+    )
 
     canonical_index_script = """<script>
   if (window.location.pathname === '/index.html') {
