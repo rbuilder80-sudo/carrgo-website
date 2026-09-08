@@ -8,6 +8,7 @@ https://carrgo-uk-website.netlify.app/* https://www.carrgo.co.uk/:splat 301!
 http://carrgo-uk-website.netlify.app/* https://www.carrgo.co.uk/:splat 301!
 
 # Priority Zero clean-up redirects
+/index.html / 301!
 /port-intelligence /resources/port-congestion-tracker 301
 /port-comparison /tools/port-comparison 301
 /cost-calculator /tools/cost-calculator 301
