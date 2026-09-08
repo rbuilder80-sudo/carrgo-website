@@ -100,7 +100,7 @@ export default function Home() {
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setHeroSubmitted(true);
-      trackLead('homepage_hero_quote_form');
+      trackLead('homepage_hero_quote_form', result.deliveryMethod);
     }
     setHeroLoading(false);
   };
@@ -118,7 +118,7 @@ export default function Home() {
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setQuoteSubmitted(true);
-      trackLead('homepage_quote_form');
+      trackLead('homepage_quote_form', result.deliveryMethod);
     } else {
       setQuoteError(result.error || 'Something went wrong. Please try again.');
     }

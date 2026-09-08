@@ -117,7 +117,7 @@ export default function GetAQuote() {
     if (result.success) {
       setReference(generateReference());
       setSubmitted(true);
-      trackLead('quote_form');
+      trackLead('quote_form', result.deliveryMethod);
     } else {
       setError(result.error || 'Something went wrong. Please try again.');
     }

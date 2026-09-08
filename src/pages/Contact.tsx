@@ -128,7 +128,7 @@ export default function Contact() {
     const result = await submitToFormspree('Contact Enquiry', fields);
     if (result.success) {
       setSubmitted(true);
-      trackLead('contact_form');
+      trackLead('contact_form', result.deliveryMethod);
     } else {
       setError(result.error || 'Something went wrong. Please try again.');
     }
