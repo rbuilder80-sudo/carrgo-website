@@ -4,6 +4,20 @@
 
 import json, os, re, shutil
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
+
+
+def normalize_page_url(url):
+    """Use the canonical form GitHub Pages serves for directory-backed pages."""
+    parsed = urlsplit(url)
+    if (
+        parsed.netloc == "www.carrgo.co.uk"
+        and parsed.path != "/"
+        and not parsed.path.endswith("/")
+        and not re.search(r"\.[a-z0-9]+$", parsed.path, re.IGNORECASE)
+    ):
+        parsed = parsed._replace(path=parsed.path + "/")
+    return urlunsplit(parsed)
 
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
@@ -1344,7 +1358,7 @@ def build_html(route, meta, base_html, is_404=False):
     title = meta["title"]
     description = meta["description"]
     keywords = meta.get("keywords", "")
-    canonical = meta["canonical"]
+    canonical = normalize_page_url(meta["canonical"])
     h1 = meta.get("h1", title.split("|")[0].strip())
     static_body = meta.get("staticBody", "")
     og_image = meta.get("ogImage", "https://www.carrgo.co.uk/og-image.png")
@@ -1488,7 +1502,7 @@ def build_html(route, meta, base_html, is_404=False):
                     "@type": "ListItem",
                     "position": i,
                     "name": name,
-                    "item": f"https://www.carrgo.co.uk{cumulative}/"
+                    "item": normalize_page_url(f"https://www.carrgo.co.uk{cumulative}")
                 })
             
             breadcrumb_schema = {
@@ -1689,6 +1703,11 @@ def main():
     if sitemap_path.exists():
         sitemap = sitemap_path.read_text(encoding="utf-8")
         sitemap = sitemap.replace('https://carrgo.co.uk/', 'https://www.carrgo.co.uk/')
+        sitemap = re.sub(
+            r"<loc>(https://www\.carrgo\.co\.uk[^<]+)</loc>",
+            lambda match: f"<loc>{normalize_page_url(match.group(1))}</loc>",
+            sitemap,
+        )
         sitemap_path.write_text(sitemap, encoding="utf-8")
         print(f"Updated: {sitemap_path}")
 

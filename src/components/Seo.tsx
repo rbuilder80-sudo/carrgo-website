@@ -22,6 +22,23 @@ interface SeoProps {
   gscVerification?: string;
 }
 
+const normalizePageUrl = (url: string) => {
+  try {
+    const parsed = new URL(url);
+    const isCarrgoPage = parsed.hostname === 'www.carrgo.co.uk'
+      && parsed.pathname !== '/'
+      && !/\.[a-z0-9]+$/i.test(parsed.pathname);
+
+    if (isCarrgoPage && !parsed.pathname.endsWith('/')) {
+      parsed.pathname = `${parsed.pathname}/`;
+    }
+
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+};
+
 export default function Seo({
   title,
   description,
@@ -37,6 +54,9 @@ export default function Seo({
   gscVerification,
 }: SeoProps) {
   useEffect(() => {
+    const canonicalUrl = normalizePageUrl(canonical || ogUrl || 'https://www.carrgo.co.uk/');
+    const ogPageUrl = normalizePageUrl(ogUrl || canonical || 'https://www.carrgo.co.uk/');
+
     // Title
     document.title = title;
 
@@ -67,14 +87,14 @@ export default function Seo({
       linkCan.setAttribute('rel', 'canonical');
       document.head.appendChild(linkCan);
     }
-    linkCan.setAttribute('href', canonical || ogUrl || 'https://www.carrgo.co.uk/');
+    linkCan.setAttribute('href', canonicalUrl);
 
     // OG Tags
     const ogTags: Record<string, string> = {
       'og:title': ogTitle || title,
       'og:description': ogDescription || description,
       'og:type': 'website',
-      'og:url': ogUrl || 'https://www.carrgo.co.uk/',
+      'og:url': ogPageUrl,
       'og:image': ogImage,
       'og:locale': 'en_GB',
       'og:site_name': 'Carrgo Freight Solutions',
@@ -146,7 +166,7 @@ export default function Seo({
       hreflang.setAttribute('hreflang', 'en-gb');
       document.head.appendChild(hreflang);
     }
-    hreflang.setAttribute('href', canonical || ogUrl || 'https://www.carrgo.co.uk/');
+    hreflang.setAttribute('href', canonicalUrl);
 
     // Preload critical route-specific resources
     const preloadLinks: HTMLLinkElement[] = [];
