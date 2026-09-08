@@ -70,6 +70,7 @@ const ShipStationCustomsDelay = lazy(() => import('./pages/guides/ShipStationCus
 const BusinessCentralLandedCost = lazy(() => import('./pages/guides/BusinessCentralLandedCost'));
 const SalesforceQuoteReadiness = lazy(() => import('./pages/guides/SalesforceQuoteReadiness'));
 const SapBusinessOneReadiness = lazy(() => import('./pages/guides/SapBusinessOneReadiness'));
+const CommodityCodes = lazy(() => import('./pages/guides/CommodityCodes'));
 
 // Resource pages
 const PortCongestion = lazy(() => import('./pages/resources/PortCongestion'));
@@ -170,6 +171,7 @@ export default function App() {
           <Route path="/business-central-import-duty-landed-cost-readiness" element={<Suspense fallback={<Loading />}><BusinessCentralLandedCost /></Suspense>} />
           <Route path="/salesforce-freight-quote-readiness" element={<Suspense fallback={<Loading />}><SalesforceQuoteReadiness /></Suspense>} />
           <Route path="/sap-business-one-import-duty-landed-cost-readiness" element={<Suspense fallback={<Loading />}><SapBusinessOneReadiness /></Suspense>} />
+          <Route path="/guides/commodity-codes" element={<Suspense fallback={<Loading />}><CommodityCodes /></Suspense>} />
 
           {/* Tools */}
           <Route path="/tools/cost-calculator" element={<Suspense fallback={<Loading />}><CostCalculator /></Suspense>} />

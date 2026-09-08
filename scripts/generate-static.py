@@ -230,6 +230,25 @@ ROUTES = {
             }
         ]
     },
+    "/guides/commodity-codes": {
+        "title": "How to Find a Commodity Code for UK Imports | HS Code Guide | Carrgo",
+        "description": "Find the right commodity code or HS code for UK imports. Learn how codes affect duty, VAT, licences and customs delays, with Carrgo support for freight quotes.",
+        "keywords": "commodity code, HS code UK, trade tariff, import classification, customs commodity code, UK import duty code",
+        "canonical": "https://www.carrgo.co.uk/guides/commodity-codes",
+        "h1": "How to Find a Commodity Code for UK Imports",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "How to Find a Commodity Code for UK Imports",
+                "description": "Find the right commodity code or HS code for UK imports and understand how it affects duty, VAT, licences and customs clearance.",
+                "author": {"@type": "Organization", "name": "Carrgo Freight Solutions"},
+                "publisher": {"@type": "Organization", "name": "Carrgo Freight Solutions", "url": "https://www.carrgo.co.uk"},
+                "mainEntityOfPage": "https://www.carrgo.co.uk/guides/commodity-codes"
+            }
+        ]
+    },
     "/services/amazon-fba-freight": {
         "title": "Amazon FBA Freight UK | FBA Prep & Delivery | Carrgo",
         "description": "Amazon FBA sellers — struggling with inbound logistics? Carrgo handles FBA prep, labelling, palletisation, and delivery to all UK fulfilment centres. BHX4, EMA1, LBA1. Get your FBA freight quote.",
