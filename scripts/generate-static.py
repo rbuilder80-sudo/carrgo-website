@@ -1691,6 +1691,18 @@ def main():
         sitemap = sitemap.replace('https://carrgo.co.uk/', 'https://www.carrgo.co.uk/')
         sitemap_path.write_text(sitemap, encoding="utf-8")
         print(f"Updated: {sitemap_path}")
+
+    # Fix crawl traps in preserved static pages that are not generated from the
+    # React app. GitHub Pages cannot serve both a file and folder at the same
+    # .xlsx path, so links must point to the actual file without a trailing slash.
+    bad_download = "/assets/downloads/carrgo-uk-import-cost-tracker.xlsx/"
+    good_download = "/assets/downloads/carrgo-uk-import-cost-tracker.xlsx"
+    for html_path in gh_pages_dir.rglob("*.html"):
+        page = html_path.read_text(encoding="utf-8")
+        updated = page.replace(bad_download, good_download)
+        if updated != page:
+            html_path.write_text(updated, encoding="utf-8")
+            print(f"Fixed download link: {html_path}")
     
     print(f"\n=== SUCCESS: Generated {generated} static HTML files ===")
     print(f"Every route now has proper SEO meta tags and static content.")
