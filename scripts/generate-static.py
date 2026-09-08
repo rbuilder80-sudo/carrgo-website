@@ -3,6 +3,7 @@
 # Each route gets: proper meta tags, H1, structured data, and React app hydration
 
 import json, os, re, shutil
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
@@ -1357,6 +1358,59 @@ def sync_app_asset_references(gh_pages_dir, base_html):
     print(f"Updated app asset references in {changed} HTML files")
 
 
+def published_path_to_url(html_path, gh_pages_dir):
+    rel = html_path.relative_to(gh_pages_dir).as_posix()
+    if rel == "index.html":
+        return "https://www.carrgo.co.uk/"
+    if rel.endswith("/index.html"):
+        return f"https://www.carrgo.co.uk/{rel[:-11]}/"
+    if rel.endswith(".html"):
+        return f"https://www.carrgo.co.uk/{rel[:-5]}"
+    return None
+
+
+def update_sitemap_with_indexable_pages(gh_pages_dir):
+    sitemap_path = gh_pages_dir / "sitemap.xml"
+    if not sitemap_path.exists():
+        return
+
+    sitemap = sitemap_path.read_text(encoding="utf-8")
+    sitemap = sitemap.replace("https://carrgo.co.uk/", "https://www.carrgo.co.uk/")
+    existing_entries = {
+        normalize_page_url(match.group(1)): match.group(0)
+        for match in re.finditer(r"<url><loc>(https://www\.carrgo\.co\.uk[^<]+)</loc>.*?</url>", sitemap)
+    }
+
+    for html_path in gh_pages_dir.rglob("*.html"):
+        if html_path.name == "404.html":
+            continue
+
+        html = html_path.read_text(encoding="utf-8")
+        robots = re.search(r'<meta name="robots" content="([^"]*)"', html, re.IGNORECASE)
+        if robots and "noindex" in robots.group(1).lower():
+            continue
+        if re.search(r'<meta http-equiv="refresh"|<h1>Redirecting</h1>', html, re.IGNORECASE):
+            continue
+
+        canonical = re.search(r'<link rel="canonical" href="([^"]+)"', html, re.IGNORECASE)
+        loc = canonical.group(1) if canonical else published_path_to_url(html_path, gh_pages_dir)
+        if not loc:
+            continue
+
+        loc = normalize_page_url(loc)
+        if not loc.startswith("https://www.carrgo.co.uk/"):
+            continue
+
+        existing_entries.setdefault(
+            loc,
+            f"<url><loc>{loc}</loc><lastmod>{date.today().isoformat()}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>",
+        )
+
+    ordered = "\n  ".join(existing_entries[loc] for loc in sorted(existing_entries))
+    sitemap_path.write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  {ordered}\n</urlset>\n', encoding="utf-8")
+    print(f"Updated sitemap with {len(existing_entries)} indexable URLs")
+
+
 def build_redirect_html(source_route, target_route, target_meta):
     """Create a GitHub Pages-compatible redirect page for legacy URLs."""
 
@@ -1733,18 +1787,7 @@ def main():
     (gh_pages_dir / "CNAME").write_text("www.carrgo.co.uk\n", encoding="utf-8")
     print(f"Updated: {gh_pages_dir / 'CNAME'} -> www.carrgo.co.uk")
     
-    # Update sitemap.xml to use www
-    sitemap_path = gh_pages_dir / "sitemap.xml"
-    if sitemap_path.exists():
-        sitemap = sitemap_path.read_text(encoding="utf-8")
-        sitemap = sitemap.replace('https://carrgo.co.uk/', 'https://www.carrgo.co.uk/')
-        sitemap = re.sub(
-            r"<loc>(https://www\.carrgo\.co\.uk[^<]+)</loc>",
-            lambda match: f"<loc>{normalize_page_url(match.group(1))}</loc>",
-            sitemap,
-        )
-        sitemap_path.write_text(sitemap, encoding="utf-8")
-        print(f"Updated: {sitemap_path}")
+    update_sitemap_with_indexable_pages(gh_pages_dir)
 
     sync_app_asset_references(gh_pages_dir, base_html)
 
