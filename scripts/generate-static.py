@@ -500,18 +500,18 @@ ROUTES = {
         ]
     },
     "/routes/turkey-to-uk": {
-        "title": "Shipping from Turkey to UK | Freight Forwarder | Customs | Carrgo",
-        "description": "Turkish suppliers unreliable on delivery? Carrgo's Turkey to UK shipping service handles sea, air, and road freight with full Turkish and UK customs clearance. Track your cargo. Quote in 2 hours.",
-        "keywords": "shipping from turkey to uk, turkey to uk freight, turkish customs clearance",
+        "title": "Turkey to UK Road Freight & Cargo Shipping | Istanbul to UK | Carrgo",
+        "description": "Cargo from Turkey to UK by road, sea or air. Istanbul to UK collections, customs clearance, ATR support, delivery in 5-7 days by road and quotes in 2 hours.",
+        "keywords": "turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade",
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
-        "h1": "Shipping from Turkey to UK — Sea, Air &amp; Road Freight",
+        "h1": "Turkey to UK Road Freight &amp; Cargo Shipping",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Shipping from Turkey to UK — Sea, Air &amp; Road Freight",
+                "name": "Turkey to UK Road Freight & Cargo Shipping",
                 "serviceType": "Turkey To Uk",
                 "provider": {
                     "@type": "Organization",
@@ -519,7 +519,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Turkish suppliers unreliable on delivery? Carrgo's Turkey to UK shipping service handles sea, air, and road freight with full Turkish and UK customs clearance. Track your cargo. Quote in 2 hours.",
+                "description": "Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery.",
                 "url": "https://www.carrgo.co.uk/routes/turkey-to-uk"
             }
         ]

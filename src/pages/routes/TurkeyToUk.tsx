@@ -48,18 +48,18 @@ export default function TurkeyToUk() {
   return (
     <>
       <Seo
-        title="Turkey to UK Freight | Sea, Road & Air Shipping | Carrgo"
-        description="Ship goods from Turkey to UK — sea freight 14-20 days, road 5-7 days, air 2-3 days. Benefit from UK-Turkey FTA reduced tariffs. Full customs clearance included."
-        keywords="turkey to uk freight, shipping from turkey to uk, turkish freight forwarder, istanbul to uk shipping, ambarli to felixstowe, turkey uk trade"
+        title="Turkey to UK Road Freight & Cargo Shipping | Istanbul to UK | Carrgo"
+        description="Cargo from Turkey to UK by road, sea or air. Istanbul to UK collections, customs clearance, ATR support, delivery in 5-7 days by road and quotes in 2 hours."
+        keywords="turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade"
         ogUrl="https://www.carrgo.co.uk/routes/turkey-to-uk/"
         canonical="https://www.carrgo.co.uk/routes/turkey-to-uk/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Turkey to UK Freight Shipping",
+          "name": "Turkey to UK Road Freight and Cargo Shipping",
           "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
           "areaServed": [{"@type": "Country", "name": "Turkey"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Sea, road and air freight forwarding from Turkey to the UK with customs clearance and UK-Turkey FTA support."
+          "description": "Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery."
         }}
       />
 
@@ -71,10 +71,10 @@ export default function TurkeyToUk() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase text-brand-200 mb-3">SHIPPING ROUTE</span>
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  Turkey to UK Freight — Sea, Road & Air Shipping
+                  Turkey to UK Road Freight & Cargo Shipping
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
-                  Ship goods from Turkey to the UK with Carrgo. Sea freight takes 14–20 days, road freight 5–7 days, air freight 2–3 days. Growing trade route with strong manufacturing links.
+                  Ship cargo from Turkey to the UK with Carrgo. We collect from Istanbul, Bursa, Izmir, Mersin and Ankara, then move goods by road freight in 5–7 days, sea freight in 14–20 days or air freight in 2–3 days with customs clearance included.
                 </p>
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
@@ -115,6 +115,35 @@ export default function TurkeyToUk() {
                     <p className="text-brand-200 text-xs">By road freight</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ====== SEARCH INTENT ANSWER ====== */}
+        <section className="py-12 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-start">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Best road freight from Turkey to UK for commercial cargo</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR movement certificate support, UK customs clearance and delivery to your warehouse or fulfilment centre.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Popular searches such as cargo from Istanbul to UK, cargo from Turkey to UK and cheapest way to ship from Turkey to UK usually come down to shipment size and urgency. Use road freight for fast pallets, sea freight for larger container loads, and air freight for samples or urgent stock.
+                </p>
+              </div>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                <h3 className="font-bold text-gray-900 mb-3">Quick answer</h3>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li><strong>Fastest:</strong> Air freight from Istanbul, 2–3 days.</li>
+                  <li><strong>Best value for pallets:</strong> Road freight, 5–7 days.</li>
+                  <li><strong>Best value for containers:</strong> Sea freight, 14–20 days.</li>
+                  <li><strong>Quote route:</strong> Turkey collection to UK delivery with customs handled.</li>
+                </ul>
+                <Link to="/get-a-quote" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1A6DFF] hover:underline">
+                  Get a Turkey to UK cargo quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </div>
