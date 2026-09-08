@@ -53,14 +53,29 @@ export default function UsaToUk() {
         keywords="usa to uk freight forwarder, sea freight usa to uk, usa to uk shipping, shipping from usa to uk, cargo from usa to uk, air freight usa to uk, us freight forwarder uk, new york to felixstowe, los angeles to southampton, transatlantic freight"
         ogUrl="https://www.carrgo.co.uk/routes/usa-to-uk"
         canonical="https://www.carrgo.co.uk/routes/usa-to-uk"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "USA to UK Freight Forwarding",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
-          "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Sea and air freight forwarding from the USA to the UK, including US collection, UK customs clearance and final delivery."
-        }}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "USA to UK Freight Forwarding",
+            "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+            "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}],
+            "description": "Sea and air freight forwarding from the USA to the UK, including US collection, UK customs clearance and final delivery.",
+            "url": "https://www.carrgo.co.uk/routes/usa-to-uk"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map((faq) => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a,
+              },
+            })),
+          },
+        ]}
       />
 
       <main id="main-content">
@@ -372,7 +387,7 @@ export default function UsaToUk() {
                 { doc: 'Packing List', desc: 'Detailed breakdown of weights, dimensions, and carton contents per box. Helps customs with physical inspections and risk assessments.' },
                 { doc: 'Bill of Lading / Airway Bill', desc: 'The contract of carriage between shipper and carrier. Original BOL or express release required for cargo release at UK port.' },
                 { doc: 'UK EORI Number', desc: 'Mandatory for all UK commercial imports. Starts with GB. Apply through HMRC — takes 3–5 working days. Carrgo can guide you.' },
-                { doc: 'Certificate of Origin', desc: 'Required for preferential duty claims. USA-UK currently has no FTA, so standard UK Global Tariff applies. Useful for certain product categories.' },
+                { doc: 'Certificate of Origin', desc: 'Useful for some product categories and origin checks. Duty treatment depends on the exact commodity code, origin evidence and current UK tariff rules.' },
                 { doc: 'Import Licence', desc: 'Required for restricted goods: firearms, chemicals, pharmaceuticals, and certain agricultural products. Check with HMRC before shipping.' },
               ].map((item, i) => (
                 <article key={i} className="bg-white rounded-xl p-6 border border-gray-200">
@@ -463,8 +478,8 @@ export default function UsaToUk() {
                     <span className="font-medium">Included in Carrgo quote</span>
                   </li>
                   <li className="flex justify-between">
-                    <span>USA-UK Trade Deal</span>
-                    <span className="font-medium">Under negotiation — standard rates apply</span>
+                    <span>Duty check</span>
+                    <span className="font-medium">Checked by HS code before shipping</span>
                   </li>
                 </ul>
               </div>
