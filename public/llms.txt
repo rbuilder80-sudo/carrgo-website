@@ -154,7 +154,7 @@ How Carrgo handles freight from quote to delivery.
 
 ## Contact
 
-- **Email:** info@carrgo.co.uk
+- **Email:** support@carrgo.co.uk
 - **Quote form:** https://www.carrgo.co.uk/get-a-quote
 - **Contact page:** https://www.carrgo.co.uk/contact
 - **About page:** https://www.carrgo.co.uk/about
