@@ -79,6 +79,11 @@ export async function submitToFormspree(
 }
 
 export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod = 'api') {
+  const isCarrgoHost = typeof window !== 'undefined'
+    && /(^|\.)carrgo\.co\.uk$/i.test(window.location.hostname);
+
+  if (!isCarrgoHost) return;
+
   const gtag = typeof window !== 'undefined'
     ? (window as Window & { gtag?: (...args: unknown[]) => void }).gtag
     : undefined;

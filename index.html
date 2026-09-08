@@ -6,12 +6,18 @@
     window.location.replace('/' + window.location.search + window.location.hash);
   }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QS3BEJ5G6K"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QS3BEJ5G6K');
+  (function(){
+    if (!/(^|\.)carrgo\.co\.uk$/i.test(window.location.hostname)) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QS3BEJ5G6K';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QS3BEJ5G6K');
+  })();
 </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,18 +42,14 @@
     <!-- Google Search Console — replace with your verification code after adding property at search.google.com/search-console -->
     <meta name="google-site-verification" content="EBgfodQOzbXjMmcYqwxFn7usGkGbRBiNf-JQt4cpp50" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>if (/(^|\.)carrgo\.co\.uk$/i.test(window.location.hostname)) {(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TTZSDB45');</script>
+    })(window,document,'script','dataLayer','GTM-TTZSDB45');}</script>
     <!-- End Google Tag Manager -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTZSDB45"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
