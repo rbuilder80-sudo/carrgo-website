@@ -1499,21 +1499,6 @@ def build_html(route, meta, base_html, is_404=False):
         html = html.replace('src="./assets/', f'src="{prefix}assets/')
         html = html.replace('href="./assets/', f'href="{prefix}assets/')
     
-    # Add the hash-router redirect script BEFORE the first script tag
-    # This silently converts /path to /#/path for HashRouter compatibility
-    redirect_script = '''<script>
-(function(){
-  var p = location.pathname.replace(/\\/+$/, '') || '/';
-  if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p + location.search);
-  }
-})();
-</script>
-'''
-    
-    # Insert redirect script before the first <script type="module">
-    html = html.replace('<script type="module"', redirect_script + '<script type="module"', 1)
-    
     # Add noscript static content for SEO
     noscript = f'''<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
