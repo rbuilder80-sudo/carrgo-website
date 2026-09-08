@@ -11,6 +11,7 @@ const Results = lazy(() => import('./pages/Results'));
 const Contact = lazy(() => import('./pages/Contact'));
 const GetAQuote = lazy(() => import('./pages/GetAQuote'));
 const FreightForwarderManchester = lazy(() => import('./pages/FreightForwarderManchester'));
+const CargoShippingCompany = lazy(() => import('./pages/CargoShippingCompany'));
 
 // Legal pages
 const Privacy = lazy(() => import('./pages/Privacy'));
@@ -101,6 +102,8 @@ export default function App() {
           <Route path="/contact" element={<Suspense fallback={<Loading />}><Contact /></Suspense>} />
           <Route path="/get-a-quote" element={<Suspense fallback={<Loading />}><GetAQuote /></Suspense>} />
           <Route path="/freight-forwarder-manchester" element={<Suspense fallback={<Loading />}><FreightForwarderManchester /></Suspense>} />
+          <Route path="/cargo-shipping-company" element={<Suspense fallback={<Loading />}><CargoShippingCompany /></Suspense>} />
+          <Route path="/cargo-shippers" element={<Navigate to="/cargo-shipping-company" replace />} />
           <Route path="/freight-quote" element={<Navigate to="/get-a-quote" replace />} />
 
           {/* Legal pages */}

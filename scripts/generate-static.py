@@ -232,6 +232,68 @@ ROUTES = {
             }
         ]
     },
+    "/cargo-shipping-company": {
+        "title": "Cargo Shipping Company UK | Sea, Air & Road Cargo | Carrgo",
+        "description": "UK cargo shipping company for importers and exporters. Sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery. Quote in 2 hours.",
+        "keywords": "cargo shipping company, cargo shippers, cargo services uk, cargo freight forwarding, shipping and cargo services, cargo forwarder, freight forwarding company uk, cargo shipping quote",
+        "canonical": "https://www.carrgo.co.uk/cargo-shipping-company",
+        "h1": "Cargo Shipping Company UK",
+        "staticBody": """
+<h2>Cargo shipping and freight forwarding from one UK team</h2>
+<p>Carrgo arranges cargo shipping for UK importers and exporters by sea, air and road. One team handles carrier booking, supplier collection, customs clearance, tracking and final delivery.</p>
+<h2>Cargo shippers vs freight forwarder</h2>
+<p>Cargo shippers often move goods on one leg of the journey. A freight forwarder coordinates the full movement, including carrier booking, documents, customs clearance, tracking and final delivery.</p>
+<p>Use Carrgo when you want one quote covering freight, paperwork and delivery instead of managing separate carriers, customs brokers and hauliers.</p>
+""",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Cargo Shipping Company UK",
+                "serviceType": ["Cargo Shipping", "Freight Forwarding", "Sea Freight", "Air Cargo", "Road Freight", "Customs Clearance"],
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk",
+                    "email": "support@carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "UK cargo shipping company for sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery.",
+                "url": "https://www.carrgo.co.uk/cargo-shipping-company"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is Carrgo a cargo shipping company?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo is a UK cargo shipping and freight forwarding company arranging sea freight, air cargo, road freight, customs clearance, tracking and final delivery for importers and exporters."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the difference between cargo shippers and a freight forwarder?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Cargo shippers often move goods on one leg of the journey. A freight forwarder coordinates the full movement, including carrier booking, documents, customs clearance, tracking and final delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can I get a cargo shipping quote?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Carrgo aims to provide all-inclusive cargo shipping quotes within 2 business hours when shipment details are complete."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     "/routes": {
         "title": "International Freight Routes to the UK | Carrgo",
         "description": "Freight routes to the UK from China, Europe, USA, India, Turkey, UAE, Spain, Ireland and Northern Ireland. Compare sea, air, road and rail options and get a quote in 2 hours.",
@@ -1381,6 +1443,7 @@ STATIC_REDIRECTS = {
     "/sea-freight": "/services/sea-freight",
     "/freight-forwarding": "/services",
     "/services/freight-forwarding": "/services",
+    "/cargo-shippers": "/cargo-shipping-company",
     "/ports/bristolport.html": "/ports/bristol",
     "/ports/shenzhenport": "/routes/china-to-uk",
     "/routes/germanytolondon.html": "/routes/germany-to-uk",

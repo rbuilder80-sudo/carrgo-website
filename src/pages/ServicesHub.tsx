@@ -272,6 +272,9 @@ export default function ServicesHub() {
               <Link to="/freight-forwarder-manchester" className="mt-4 inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
                 Need a freight forwarder near Manchester? <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
+              <Link to="/cargo-shipping-company" className="mt-3 inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
+                Comparing cargo shippers? <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {serviceMatch.map((item) => (
