@@ -269,6 +269,9 @@ export default function ServicesHub() {
               <p className="text-[#4B5563] leading-relaxed">
                 If you are comparing cargo shippers or a freight forwarder near you, start with the shipment goal. Carrgo can quote the right mode and include customs clearance and final delivery in one price.
               </p>
+              <Link to="/freight-forwarder-manchester" className="mt-4 inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
+                Need a freight forwarder near Manchester? <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {serviceMatch.map((item) => (

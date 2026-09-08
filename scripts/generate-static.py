@@ -170,6 +170,68 @@ ROUTES = {
             }
         ]
     },
+    "/freight-forwarder-manchester": {
+        "title": "Freight Forwarder Manchester | Cargo Quotes in 2 Hours | Carrgo",
+        "description": "Freight forwarder for Manchester and North West businesses. Sea, air and road cargo with customs clearance, tracking and door-to-door delivery. Quote in 2 hours.",
+        "keywords": "freight forwarder manchester, freight forwarder near me, manchester freight forwarder, cargo services manchester, shipping company manchester, customs clearance manchester, manchester air freight, north west freight forwarder",
+        "canonical": "https://www.carrgo.co.uk/freight-forwarder-manchester",
+        "h1": "Freight Forwarder Manchester",
+        "staticBody": """
+<h2>Freight forwarder near Manchester for commercial cargo</h2>
+<p>Carrgo supports Manchester, Greater Manchester and North West businesses with sea freight, air freight, road freight, customs clearance, tracking and door-to-door delivery.</p>
+<h2>What services are available?</h2>
+<p>Manchester importers and exporters can use Carrgo for supplier collection, Manchester Airport air freight, sea freight through UK ports, European road freight, customs clearance and delivery to warehouses, shops, sites or fulfilment centres.</p>
+<p>Use Carrgo when you want one freight forwarder to quote the full movement instead of managing separate carriers, customs brokers and delivery companies.</p>
+""",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Freight Forwarder Manchester",
+                "serviceType": ["Freight Forwarding", "Cargo Services", "Customs Clearance", "Air Freight", "Sea Freight", "Road Freight"],
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk",
+                    "email": "support@carrgo.co.uk"
+                },
+                "areaServed": ["Manchester", "Greater Manchester", "North West England"],
+                "description": "Freight forwarding and cargo services for Manchester and North West businesses, including sea freight, air freight, road freight, customs clearance and door-to-door delivery.",
+                "url": "https://www.carrgo.co.uk/freight-forwarder-manchester"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is Carrgo a freight forwarder near Manchester?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo supports importers and exporters across Manchester, Greater Manchester and the North West with sea freight, air freight, road freight, customs clearance and door-to-door delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo collect cargo from Manchester and the North West?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo can arrange collection from warehouses, suppliers, factories, shops and fulfilment centres across Manchester, Bolton, Salford, Trafford Park, Stockport and the wider North West."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can I get a Manchester freight quote?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Carrgo aims to send all-inclusive freight quotes within 2 business hours when shipment details are complete."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     "/routes": {
         "title": "International Freight Routes to the UK | Carrgo",
         "description": "Freight routes to the UK from China, Europe, USA, India, Turkey, UAE, Spain, Ireland and Northern Ireland. Compare sea, air, road and rail options and get a quote in 2 hours.",
