@@ -27,6 +27,8 @@ const serviceSchema = {
 };
 
 const faqData = [
+  { q: 'Do you offer door-to-door cargo services?', a: 'Yes. Carrgo offers door-to-door cargo services for UK importers, covering supplier collection, sea, air, road or rail freight, customs clearance, tracking and final delivery to your warehouse, shop, site or fulfilment centre.' },
+  { q: 'What is included in a door-to-door freight quote?', a: 'A door-to-door freight quote can include collection, export paperwork, international freight, UK customs clearance, duty and VAT guidance, cargo tracking and final delivery. We confirm exactly what is included before you book.' },
   { q: 'Which Incoterms work best with door-to-door freight?', a: 'For true door-to-door service, DDP (Delivered Duty Paid) or DAP (Delivered at Place) work best. With DDP, we handle everything including duties and VAT. With EXW, we collect from your supplier\'s factory. Our team can advise on the best Incoterm for your shipment.' },
   { q: 'How do I track my shipment from factory to warehouse?', a: 'All door-to-door shipments include full tracking at every stage. You will receive updates at collection, departure, transit milestones, customs clearance, and final delivery. Your dedicated account manager is also available by phone and email.' },
   { q: 'Is cargo insurance included in door-to-door quotes?', a: 'Cargo insurance is available as an add-on to all door-to-door quotes. We recommend comprehensive all-risk insurance for all shipments, covering theft, damage, and loss during transit. Ask your account manager to include insurance in your quote.' },
@@ -73,8 +75,8 @@ export default function DoorToDoor() {
   return (
     <>
       <Seo
-        title="Door-to-Door Freight UK | Factory to Warehouse Shipping | Carrgo"
-        description="Door-to-door freight for UK importers from factory collection to warehouse delivery. Sea, air, road or rail with customs handled and quotes in 2 hours."
+        title="Door-to-Door Freight & Cargo UK | Factory to Warehouse | Carrgo"
+        description="Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours."
         keywords="door to door freight, door to door cargo, door to door shipping uk, factory to warehouse, end to end logistics, door to door delivery, cargo shippers uk"
         ogUrl="https://www.carrgo.co.uk/services/door-to-door"
         canonical="https://www.carrgo.co.uk/services/door-to-door"
@@ -153,6 +155,35 @@ export default function DoorToDoor() {
                 </li>
               ))}
             </ol>
+          </div>
+        </section>
+
+        {/* ====== QUICK ANSWER ====== */}
+        <section aria-labelledby="quick-answer-heading" className="py-14 bg-white border-b border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+              <div>
+                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Door-to-door cargo</span>
+                <h2 id="quick-answer-heading" className="text-3xl font-bold text-[#111827] mt-3 mb-4">
+                  What does door-to-door freight include?
+                </h2>
+                <p className="text-[#4B5563] leading-relaxed mb-4">
+                  Door-to-door freight means one logistics team manages the shipment from supplier pickup to final UK delivery. Carrgo quotes the full route, books the right transport mode, handles customs and keeps the shipment moving through each handover.
+                </p>
+                <p className="text-[#4B5563] leading-relaxed">
+                  It is useful when you want a cargo shipper, customs broker and delivery provider in one service instead of managing separate suppliers yourself.
+                </p>
+              </div>
+              <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-lg p-5">
+                <h3 className="font-bold text-[#111827] mb-3">Best fit</h3>
+                <ul className="space-y-3 text-sm text-[#4B5563]">
+                  <li><strong>Small urgent cargo:</strong> door-to-door air freight.</li>
+                  <li><strong>Large imports:</strong> door-to-door sea freight.</li>
+                  <li><strong>European pallets:</strong> door-to-door road freight.</li>
+                  <li><strong>China stock:</strong> sea, rail or air with UK customs handled.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 

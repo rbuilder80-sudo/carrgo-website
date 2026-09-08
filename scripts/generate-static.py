@@ -284,14 +284,16 @@ ROUTES = {
         ]
     },
     "/services/door-to-door": {
-        "title": "Door-to-Door Freight UK | Factory to Warehouse | Carrgo",
-        "description": "Door-to-door freight for UK importers from factory collection to warehouse delivery. Sea, air, road or rail with customs handled and quotes in 2 hours.",
+        "title": "Door-to-Door Freight & Cargo UK | Factory to Warehouse | Carrgo",
+        "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours.",
         "keywords": "door to door freight, door to door cargo, door to door shipping uk, factory to warehouse shipping, complete logistics uk, cargo shippers uk",
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
         "staticBody": """
 <h2>Door-to-door freight from collection to delivery</h2>
 <p>Carrgo manages door-to-door cargo and freight for UK importers, from supplier collection through export, international freight, UK customs clearance and final delivery.</p>
+<h2>What does door-to-door freight include?</h2>
+<p>A door-to-door freight quote can include supplier pickup, export paperwork, sea, air, road or rail freight, UK customs clearance, shipment tracking and delivery to your warehouse, shop, site or fulfilment centre.</p>
 <p>This is the right option when you want one freight forwarder to manage the whole shipment instead of coordinating a cargo shipper, customs broker and haulier separately.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
@@ -308,8 +310,38 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Tired of coordinating multiple logistics providers? Carrgo's door-to-door freight service handles everything from factory pickup to warehouse delivery. One quote, one contact, zero hassle.",
+                "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours.",
                 "url": "https://www.carrgo.co.uk/services/door-to-door"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do you offer door-to-door cargo services?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo offers door-to-door cargo services for UK importers, covering supplier collection, sea, air, road or rail freight, customs clearance, tracking and final delivery to your warehouse, shop, site or fulfilment centre."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is included in a door-to-door freight quote?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A door-to-door freight quote can include collection, export paperwork, international freight, UK customs clearance, duty and VAT guidance, cargo tracking and final delivery. Carrgo confirms exactly what is included before you book."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which Incoterms work best with door-to-door freight?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "For true door-to-door service, DDP or DAP usually work best. With DDP, Carrgo can handle duties and VAT. With EXW, Carrgo can collect from your supplier's factory."
+                        }
+                    }
+                ]
             }
         ]
     },
