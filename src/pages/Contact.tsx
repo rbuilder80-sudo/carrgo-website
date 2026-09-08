@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitToFormspree, SUPPORT_EMAIL, trackLead } from '../lib/formConfig';
+import { submitToFormspree, SUPPORT_EMAIL, trackLead, type FormDeliveryMethod } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -111,6 +111,7 @@ const quickLinks = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [deliveryMethod, setDeliveryMethod] = useState<FormDeliveryMethod>('api');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -127,6 +128,7 @@ export default function Contact() {
 
     const result = await submitToFormspree('Contact Enquiry', fields);
     if (result.success) {
+      setDeliveryMethod(result.deliveryMethod || 'api');
       setSubmitted(true);
       trackLead('contact_form', result.deliveryMethod);
     } else {
@@ -229,9 +231,13 @@ export default function Contact() {
                       <div className="w-16 h-16 bg-[#DCFCE7] rounded-full flex items-center justify-center mx-auto mb-4">
                         <CheckCircle className="w-8 h-8 text-[#16A34A]" aria-hidden="true" />
                       </div>
-                      <h3 className="text-2xl font-bold text-[#111827] mb-2">Message Sent!</h3>
+                      <h3 className="text-2xl font-bold text-[#111827] mb-2">
+                        {deliveryMethod === 'email_client' ? 'Email App Opened' : 'Message Sent!'}
+                      </h3>
                       <p className="text-[#4B5563] mb-6">
-                        Thank you for contacting us. Our team will review your message and respond within 2 hours during UK business hours.
+                        {deliveryMethod === 'email_client'
+                          ? 'Please press Send in your email app so our team receives your enquiry at support@carrgo.co.uk.'
+                          : 'Thank you for contacting us. Our team will review your message and respond within 2 hours during UK business hours.'}
                       </p>
                       <Link
                         to="/"

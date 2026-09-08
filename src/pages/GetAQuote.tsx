@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { submitToFormspree, trackLead } from '../lib/formConfig';
+import { submitToFormspree, trackLead, type FormDeliveryMethod } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -94,6 +94,7 @@ function generateReference() {
 export default function GetAQuote() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [submitted, setSubmitted] = useState(false);
+  const [deliveryMethod, setDeliveryMethod] = useState<FormDeliveryMethod>('api');
   const [reference, setReference] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -115,6 +116,7 @@ export default function GetAQuote() {
 
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
+      setDeliveryMethod(result.deliveryMethod || 'api');
       setReference(generateReference());
       setSubmitted(true);
       trackLead('quote_form', result.deliveryMethod);
@@ -215,9 +217,13 @@ export default function GetAQuote() {
                       <div className="w-20 h-20 bg-[#DCFCE7] rounded-full flex items-center justify-center mx-auto mb-6">
                         <CheckCircle className="w-10 h-10 text-[#16A34A]" aria-hidden="true" />
                       </div>
-                      <h3 className="text-2xl font-bold text-[#111827] mb-2">Quote Request Received!</h3>
+                      <h3 className="text-2xl font-bold text-[#111827] mb-2">
+                        {deliveryMethod === 'email_client' ? 'Email App Opened' : 'Quote Request Received!'}
+                      </h3>
                       <p className="text-[#4B5563] mb-4 max-w-md mx-auto leading-relaxed">
-                        Thank you. Our team will review your shipment details and respond within 2 hours with your all-inclusive quote.
+                        {deliveryMethod === 'email_client'
+                          ? 'Please press Send in your email app so our team receives your shipment details at support@carrgo.co.uk.'
+                          : 'Thank you. Our team will review your shipment details and respond within 2 hours with your all-inclusive quote.'}
                       </p>
                       <div className="bg-[#F8FAFC] rounded-lg p-4 inline-block mb-6">
                         <span className="text-sm text-[#4B5563]">Your Reference: </span>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitToFormspree, trackLead } from '../lib/formConfig';
+import { submitToFormspree, trackLead, type FormDeliveryMethod } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
@@ -83,8 +83,10 @@ function FaqAccordion() {
 /* ── Main Home Page ── */
 export default function Home() {
   const [heroSubmitted, setHeroSubmitted] = useState(false);
+  const [heroDeliveryMethod, setHeroDeliveryMethod] = useState<FormDeliveryMethod>('api');
   const [heroLoading, setHeroLoading] = useState(false);
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
+  const [quoteDeliveryMethod, setQuoteDeliveryMethod] = useState<FormDeliveryMethod>('api');
   const [quoteLoading, setQuoteLoading] = useState(false);
   const [quoteError, setQuoteError] = useState<string | null>(null);
 
@@ -99,6 +101,7 @@ export default function Home() {
     });
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
+      setHeroDeliveryMethod(result.deliveryMethod || 'api');
       setHeroSubmitted(true);
       trackLead('homepage_hero_quote_form', result.deliveryMethod);
     }
@@ -117,6 +120,7 @@ export default function Home() {
     });
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
+      setQuoteDeliveryMethod(result.deliveryMethod || 'api');
       setQuoteSubmitted(true);
       trackLead('homepage_quote_form', result.deliveryMethod);
     } else {
@@ -213,8 +217,14 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">Quote Request Sent!</h3>
-                    <p className="text-brand-100 text-sm">We will respond within 2 hours.</p>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {heroDeliveryMethod === 'email_client' ? 'Email App Opened' : 'Quote Request Sent!'}
+                    </h3>
+                    <p className="text-brand-100 text-sm">
+                      {heroDeliveryMethod === 'email_client'
+                        ? 'Please press Send in your email app so our team receives your quote request.'
+                        : 'We will respond within 2 hours.'}
+                    </p>
                   </div>
                 ) : (
                   <form className="space-y-4" onSubmit={handleHeroSubmit}>
@@ -555,8 +565,14 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Quote Request Sent!</h3>
-              <p className="text-brand-100">We will respond within 2 hours with your all-inclusive quote.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {quoteDeliveryMethod === 'email_client' ? 'Email App Opened' : 'Quote Request Sent!'}
+              </h3>
+              <p className="text-brand-100">
+                {quoteDeliveryMethod === 'email_client'
+                  ? 'Please press Send in your email app so our team receives your quote request.'
+                  : 'We will respond within 2 hours with your all-inclusive quote.'}
+              </p>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleQuoteSubmit}>
