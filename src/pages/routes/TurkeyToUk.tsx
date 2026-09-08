@@ -17,8 +17,31 @@ const faqData = [
   { q: 'How does Carrgo handle customs clearance for Turkish imports?', a: 'Our customs team manages the full UK import process for Turkish goods. We prepare CDS declarations, verify origin documents, calculate duties and VAT, and deal with HMRC directly. Most clearances finish within 24 hours of arrival.' },
   { q: 'What goods are most commonly shipped from Turkey to the UK?', a: 'Turkish exports to the UK include textiles, automotive parts, steel, machinery, ceramics, food, and furniture. We handle all these with tailored packaging and customs requirements for each commodity type.' },
   { q: 'Can Carrgo arrange collection from anywhere in Turkey?', a: 'Yes. We collect from Istanbul, Ankara, Izmir, Bursa, Mersin, and all major Turkish hubs. Our network covers industrial zones, free trade zones, and supplier warehouses with road and intermodal options.' },
+  { q: 'Can Carrgo arrange air freight to Turkey from the UK?', a: 'Yes. Carrgo can arrange UK to Turkey air freight for urgent exports, samples and commercial cargo, including UK collection, airline booking, export paperwork and delivery planning through Istanbul and other Turkish gateways.' },
   { q: 'What should I do if my Turkish goods are held at UK customs?', a: 'Contact us straight away. Our customs team will find the issue — usually missing paperwork, wrong commodity codes, or duty queries. We resolve most holds within 24–48 hours by working directly with Border Force.' },
 ];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Turkey to UK Road Freight and Cargo Shipping',
+  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  areaServed: [{ '@type': 'Country', name: 'Turkey' }, { '@type': 'Country', name: 'United Kingdom' }],
+  description: 'Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
 
 function FaqAccordion() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -53,14 +76,7 @@ export default function TurkeyToUk() {
         keywords="turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade"
         ogUrl="https://www.carrgo.co.uk/routes/turkey-to-uk/"
         canonical="https://www.carrgo.co.uk/routes/turkey-to-uk/"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Turkey to UK Road Freight and Cargo Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
-          "areaServed": [{"@type": "Country", "name": "Turkey"}, {"@type": "Country", "name": "United Kingdom"}],
-          "description": "Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery."
-        }}
+        structuredData={[serviceSchema, faqSchema]}
       />
 
       <main id="main-content">
@@ -139,6 +155,7 @@ export default function TurkeyToUk() {
                   <li><strong>Fastest:</strong> Air freight from Istanbul, 2–3 days.</li>
                   <li><strong>Best value for pallets:</strong> Road freight, 5–7 days.</li>
                   <li><strong>Best value for containers:</strong> Sea freight, 14–20 days.</li>
+                  <li><strong>UK to Turkey exports:</strong> Air freight for urgent samples and stock.</li>
                   <li><strong>Quote route:</strong> Turkey collection to UK delivery with customs handled.</li>
                 </ul>
                 <Link to="/get-a-quote" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1A6DFF] hover:underline">

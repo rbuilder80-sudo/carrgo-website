@@ -599,6 +599,13 @@ ROUTES = {
         "keywords": "turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade",
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
         "h1": "Turkey to UK Road Freight &amp; Cargo Shipping",
+        "staticBody": """
+<h2>Best road freight from Turkey to UK for commercial cargo</h2>
+<p>For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR movement certificate support, UK customs clearance and delivery to your warehouse or fulfilment centre.</p>
+<h2>Air freight to Turkey and from Istanbul to the UK</h2>
+<p>Carrgo handles air freight from Istanbul to the UK for urgent stock and samples, and can also arrange UK to Turkey air freight exports with collection, airline booking, export paperwork and delivery planning.</p>
+<p>Use road freight for fast pallets, sea freight for larger container loads, and air freight when speed matters more than cost.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
@@ -615,6 +622,44 @@ ROUTES = {
                 "areaServed": "GB",
                 "description": "Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery.",
                 "url": "https://www.carrgo.co.uk/routes/turkey-to-uk"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long does shipping from Turkey to the UK take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sea freight from Turkey to the UK takes 14-20 days port-to-port, road freight takes 5-7 days door-to-door, and air freight from Istanbul to the UK takes 2-3 days."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the best road freight from Turkey to UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR support, UK customs clearance and final delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo arrange air freight to Turkey from the UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo can arrange UK to Turkey air freight for urgent exports, samples and commercial cargo, including UK collection, airline booking, export paperwork and delivery planning through Istanbul and other Turkish gateways."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does shipping from Turkey to UK cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Road freight from Turkey to the UK typically costs GBP 200-500 per pallet. Sea freight ranges from GBP 800-2,200 per container. Air freight is usually GBP 2.50-5 per kilogram."
+                        }
+                    }
+                ]
             }
         ]
     },
