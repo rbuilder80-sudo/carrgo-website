@@ -187,6 +187,8 @@ ROUTES = {
         "staticBody": """
 <h2>Door-to-door air freight for urgent cargo</h2>
 <p>Carrgo arranges air freight to the UK with collection, airline booking, customs clearance and delivery to your warehouse, office, site or fulfilment centre.</p>
+<h2>What is included in door-to-door air freight?</h2>
+<p>A door-to-door air freight quote can include supplier collection, airport handling, airway bill documentation, UK customs clearance, tracking and final delivery. It is best for urgent stock, samples, spare parts and high-value commercial cargo.</p>
 <p>Choose door-to-door air freight when stock, samples, spare parts or high-value cargo need a faster option than sea or road freight.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
@@ -205,6 +207,36 @@ ROUTES = {
                 "areaServed": "GB",
                 "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
                 "url": "https://www.carrgo.co.uk/services/air-freight"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do you offer door-to-door air freight?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo handles door-to-door air freight including supplier collection, airport handling, airway bill documentation, UK customs clearance, tracking and final delivery to your warehouse or fulfilment centre."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is included in door-to-door air freight?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A door-to-door air freight quote can include supplier collection, airport handling, airway bill documentation, UK customs clearance, tracking and final delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does door-to-door air freight take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Express door-to-door air freight usually takes 1-3 days, while economy air freight typically takes 3-5 days depending on origin, airline capacity, customs clearance and final delivery location."
+                        }
+                    }
+                ]
             }
         ]
     },
