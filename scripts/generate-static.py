@@ -10,7 +10,7 @@ ROUTES = {
     "/": {
         "title": "UK Freight Forwarder | Cargo Services & Quotes in 2 Hours | Carrgo",
         "description": "Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours.",
-        "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
+        "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
@@ -23,10 +23,10 @@ ROUTES = {
                 "url": "https://www.carrgo.co.uk",
                 "logo": "https://www.carrgo.co.uk/logo-192x192.png",
                 "image": "https://www.carrgo.co.uk/og-image.png",
-                "email": "info@carrgo.co.uk",
+                "email": "support@carrgo.co.uk",
                 "contactPoint": {
                     "@type": "ContactPoint",
-                    "email": "info@carrgo.co.uk",
+                    "email": "support@carrgo.co.uk",
                     "contactType": "customer service",
                     "availableLanguage": "English"
                 },
@@ -45,7 +45,7 @@ ROUTES = {
                     {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
                     {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}},
                     {"@type": "Question", "name": "What is the cheapest way to ship from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight (FCL or LCL) is the cheapest option for most China-to-UK shipments. A 20ft container costs GBP 1,200-2,800 and a 40ft container GBP 2,000-4,500. For smaller consignments under 15 CBM, LCL sharing starts from GBP 300 per CBM. Rail freight via the New Silk Road is faster than sea and cheaper than air."}},
-                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive freight quotes within 2 hours during UK business hours. Simply submit your origin, destination, cargo details and ready date through the online quote form or email info@carrgo.co.uk."}},
+                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive freight quotes within 2 hours during UK business hours. Simply submit your origin, destination, cargo details and ready date through the online quote form or email support@carrgo.co.uk."}},
                     {"@type": "Question", "name": "Which freight forwarder is best for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "The best freight forwarder for UK imports from China offers clear all-inclusive pricing, proactive customs support, and reliable transit times. Carrgo specialises in China-to-UK sea, air and rail freight with customs clearance included, quotes in 2 hours, and tracking throughout."}},
                     {"@type": "Question", "name": "What documents do I need to import goods into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "You need a commercial invoice, packing list, bill of lading or airway bill, and a UK EORI number starting with GB. Depending on the goods, you may also need certificates of origin, import licences or health certificates. Carrgo prepares all documentation for you."}},
                     {"@type": "Question", "name": "Does Carrgo offer door-to-door shipping from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles door-to-door freight from China to the UK, including supplier collection, freight booking, export customs, UK import customs clearance, duty and VAT calculation, and final delivery to your warehouse or Amazon FBA centre."}}
@@ -91,8 +91,8 @@ ROUTES = {
     },
     "/services": {
         "title": "Cargo Services UK | Freight Forwarding Services | Carrgo",
-        "description": "UK cargo services and freight forwarding for commercial goods. Compare sea freight, door-to-door air freight, road, rail, customs clearance and warehousing. Quotes in 2 hours.",
-        "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
+        "description": "UK cargo services from a freight forwarder and cargo shipping company. Sea, air, road, rail, customs clearance, door-to-door freight and quotes in 2 hours.",
+        "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
@@ -207,8 +207,8 @@ ROUTES = {
     },
     "/services/door-to-door": {
         "title": "Door-to-Door Freight UK | Factory to Warehouse | Carrgo",
-        "description": "Tired of coordinating multiple logistics providers? Carrgo's door-to-door freight service handles everything from factory pickup to warehouse delivery. One quote, one contact, zero hassle.",
-        "keywords": "door to door freight, factory to warehouse shipping, complete logistics uk",
+        "description": "Door-to-door freight for UK importers from factory collection to warehouse delivery. Sea, air, road or rail with customs handled and quotes in 2 hours.",
+        "keywords": "door to door freight, door to door cargo, door to door shipping uk, factory to warehouse shipping, complete logistics uk, cargo shippers uk",
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"

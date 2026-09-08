@@ -74,8 +74,8 @@ export default function DoorToDoor() {
     <>
       <Seo
         title="Door-to-Door Freight UK | Factory to Warehouse Shipping | Carrgo"
-        description="Complete door-to-door freight forwarding from factory floor to UK warehouse. Sea, air, road, or rail — we manage every leg, customs, and delivery. One all-inclusive quote, one invoice."
-        keywords="door to door freight, door to door shipping uk, factory to warehouse, end to end logistics, door to door delivery"
+        description="Door-to-door freight for UK importers from factory collection to warehouse delivery. Sea, air, road or rail with customs handled and quotes in 2 hours."
+        keywords="door to door freight, door to door cargo, door to door shipping uk, factory to warehouse, end to end logistics, door to door delivery, cargo shippers uk"
         ogUrl="https://www.carrgo.co.uk/services/door-to-door"
         canonical="https://www.carrgo.co.uk/services/door-to-door"
         structuredData={[serviceSchema, faqSchema]}
@@ -91,7 +91,7 @@ export default function DoorToDoor() {
                   Door-to-Door Freight UK — Factory to Warehouse
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Complete door-to-door freight forwarding from your supplier's factory to your UK warehouse. Sea, air, road, or rail — we manage every leg, customs, and delivery. One quote, one invoice, zero hassle.
+                  Complete door-to-door freight forwarding from your supplier's factory to your UK warehouse. Sea, air, road, or rail — we manage every leg, customs, and delivery. One quote, one invoice, zero hassle for UK importers comparing cargo shippers.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -111,7 +111,7 @@ export default function DoorToDoor() {
                     Get a Door-to-Door Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <a href="mailto:support@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
-                    Call Our Team
+                    Email Our Team
                   </a>
                 </div>
               </div>
