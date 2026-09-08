@@ -29,6 +29,8 @@ function formatEmailBody(formType: string, fields: Record<string, string>) {
 function openEmailFallback(formType: string, fields: Record<string, string>) {
   if (typeof window === 'undefined') return false;
 
+  trackLead(`${formType.toLowerCase().replace(/\s+/g, '_')}_email_fallback`, 'email_client');
+
   const subject = encodeURIComponent(`${formType} from carrgo.co.uk`);
   const body = encodeURIComponent(formatEmailBody(formType, fields));
   window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
@@ -89,6 +91,20 @@ export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod 
     gtag?: (...args: unknown[]) => void;
   };
 
+  const eventId = `lead_${formLabel}_${deliveryMethod}`;
+  try {
+    const dedupeKey = `carrgo_${eventId}`;
+    const deliveryDedupeKey = `carrgo_lead_${deliveryMethod}`;
+    const lastTrackedAt = Number(window.sessionStorage.getItem(dedupeKey) || 0);
+    const lastDeliveryTrackedAt = Number(window.sessionStorage.getItem(deliveryDedupeKey) || 0);
+    const now = Date.now();
+    if (now - lastTrackedAt < 3000 || now - lastDeliveryTrackedAt < 3000) return;
+    window.sessionStorage.setItem(dedupeKey, String(now));
+    window.sessionStorage.setItem(deliveryDedupeKey, String(now));
+  } catch {
+    // sessionStorage can be unavailable in strict privacy modes; still send the lead event.
+  }
+
   analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
   analyticsWindow.gtag = analyticsWindow.gtag || ((...args: unknown[]) => {
     analyticsWindow.dataLayer?.push(args);
@@ -96,16 +112,22 @@ export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod 
 
   if (analyticsWindow.gtag) {
     analyticsWindow.gtag('event', 'generate_lead', {
+      event_id: eventId,
       event_category: 'form',
       event_label: formLabel,
+      form_name: formLabel,
       method: deliveryMethod,
+      transport_type: 'beacon',
       value: 1,
+      currency: 'GBP',
     });
 
     if (deliveryMethod === 'email_client') {
       analyticsWindow.gtag('event', 'email_fallback_opened', {
         event_category: 'form',
         event_label: formLabel,
+        method: deliveryMethod,
+        transport_type: 'beacon',
       });
     }
   }
