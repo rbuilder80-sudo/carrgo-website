@@ -4,6 +4,7 @@ import { Ship, Globe, FileText, Building2, ExternalLink } from 'lucide-react';
 
 /* ── Page Data with Categories ── */
 const servicePages = [
+  { path: '/cargo-shipping-company', title: 'Cargo Shipping Company', desc: 'UK cargo shipping company for importers and exporters needing sea freight, air cargo, road freight, customs and delivery.', modified: '2026-09-08' },
   { path: '/services/sea-freight', title: 'Sea Freight', desc: 'FCL & LCL container shipping worldwide to UK ports including Felixstowe, Southampton, and London Gateway.', modified: '2025-01-15' },
   { path: '/services/air-freight', title: 'Air Freight', desc: 'Express and economy air cargo from China, USA, UAE, and Europe to UK airports.', modified: '2025-01-15' },
   { path: '/services/road-freight', title: 'Road Freight', desc: 'FTL & LTL European haulage to and from the UK with daily departures and GPS tracking.', modified: '2025-01-15' },

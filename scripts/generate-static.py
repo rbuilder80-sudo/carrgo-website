@@ -32,6 +32,7 @@ ROUTES = {
 <h2>Cargo services for UK importers and exporters</h2>
 <p>Carrgo is a UK freight forwarder for businesses that need cargo services by sea, air, road or rail. We handle collection, freight booking, customs clearance, tracking and final delivery in one quote.</p>
 <p>Use Carrgo when you are comparing cargo shippers, cargo freight forwarding, a cargo shipping company or a freight forwarder near you for UK imports and exports.</p>
+<p><a href="https://www.carrgo.co.uk/cargo-shipping-company/">Compare cargo shipping company services</a> before you request a quote.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
@@ -1412,6 +1413,10 @@ ROUTES = {
         "keywords": "carrgo sitemap, freight forwarder pages, website map carrgo",
         "canonical": "https://www.carrgo.co.uk/sitemap",
         "h1": "Sitemap — Carrgo Freight Solutions",
+        "staticBody": """
+<h2>Key freight service pages</h2>
+<p><a href="https://www.carrgo.co.uk/cargo-shipping-company/">Cargo Shipping Company UK</a> helps UK importers and exporters compare cargo shippers, freight forwarding, customs clearance and delivery from one team.</p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/privacy": {

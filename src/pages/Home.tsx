@@ -290,7 +290,7 @@ export default function Home() {
               { title: 'Cargo Services UK', desc: 'Sea, air, road, rail and customs in one managed freight service.', href: '/services' },
               { title: 'Door-to-Door Air Freight', desc: 'Urgent cargo with collection, airport handling, customs and delivery.', href: '/services/air-freight' },
               { title: 'Door-to-Door Sea Freight Quote', desc: 'FCL and LCL shipping with UK customs clearance and final delivery.', href: '/services/sea-freight' },
-              { title: 'Shipping and Cargo Services', desc: 'International cargo forwarding for UK importers and exporters.', href: '/get-a-quote' },
+              { title: 'Cargo Shipping Company', desc: 'International cargo forwarding for UK importers and exporters.', href: '/cargo-shipping-company' },
             ].map(item => (
               <Link key={item.title} to={item.href} className="block bg-white rounded-lg border border-brand-100 p-5 hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-gray-900">{item.title}</h3>
