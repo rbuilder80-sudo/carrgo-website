@@ -58,9 +58,9 @@
 
 <script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
@@ -70,7 +70,7 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CYyJpGfy.css">
   </head>
   <body>
-    <noscript>
+<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>UK Cargo Services &amp; Freight Forwarding</h1>
 <p>Need a UK freight forwarder? Carrgo handles cargo services by sea, air, road and rail with customs clearance, door-to-door delivery and quotes in 2 hours.</p>

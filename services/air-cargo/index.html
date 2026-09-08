@@ -57,9 +57,9 @@
 
 <script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
@@ -69,7 +69,7 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CYyJpGfy.css">
   </head>
   <body>
-    <noscript>
+<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>Air Cargo UK — Express &amp; Charter Freight Services</h1>
 <p>Time-sensitive cargo needs air freight. Carrgo's air cargo service handles express, charter, and standard air freight with customs clearance. Get your air cargo quote in 30 minutes.</p>

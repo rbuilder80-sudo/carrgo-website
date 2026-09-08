@@ -57,9 +57,9 @@
 
 <script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
@@ -69,7 +69,7 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CYyJpGfy.css">
   </head>
   <body>
-    <noscript>
+<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>Carrgo Port Intelligence — UK &amp; Ireland Port Congestion Tracker</h1>
 <p>Live UK & Ireland port intelligence with Port Health Scores™, 24h/7d forecasts, congestion predictions, and importer risk assessments. Track Felixstowe, Southampton, Dublin, Belfast & all 18 major ports. Free, no subscription.</p>

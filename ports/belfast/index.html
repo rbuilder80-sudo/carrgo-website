@@ -56,9 +56,9 @@
 
 <script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
@@ -68,7 +68,7 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CYyJpGfy.css">
   </head>
   <body>
-    <noscript>
+<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>Belfast Port Intelligence — Health Score &amp; Forecasts</h1>
 <p>Live Belfast port intelligence: health score, vessel queues, berth status, 24h/7d forecasts, and importer impact assessment. Northern Ireland's largest port tracking.</p>

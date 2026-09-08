@@ -57,9 +57,9 @@
 
 <script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
@@ -69,7 +69,7 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CYyJpGfy.css">
   </head>
   <body>
-    <noscript>
+<noscript>
 <div style="max-width:800px;margin:40px auto;padding:20px;font-family:system-ui,sans-serif;line-height:1.6">
 <h1>Import Duty &amp; Landed Cost Readiness for Business Central Users</h1>
 <p>If purchase invoices live in Business Central but customs data doesn't, margins are guessing. Carrgo reviews the nine inputs behind your UK landed cost.</p>
