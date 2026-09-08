@@ -1322,6 +1322,41 @@ def write_route_file(gh_pages_dir, route, html):
     return output
 
 
+def sync_app_asset_references(gh_pages_dir, base_html):
+    """Refresh app shell asset references in preserved static HTML pages."""
+
+    current_index_js = re.search(r'src="(/assets/index-[^"]+\.js)"', base_html)
+    current_index_css = re.search(r'href="(/assets/index-[^"]+\.css)"', base_html)
+    current_router_js = re.search(r'href="(/assets/vendor-router-[^"]+\.js)"', base_html)
+    current_icons_js = re.search(r'href="(/assets/vendor-icons-[^"]+\.js)"', base_html)
+
+    replacements = []
+    if current_index_js:
+        replacements.append((r'/assets/index-[A-Za-z0-9_-]+\.js', current_index_js.group(1)))
+    if current_index_css:
+        replacements.append((r'/assets/index-[A-Za-z0-9_-]+\.css', current_index_css.group(1)))
+    if current_router_js:
+        replacements.append((r'/assets/vendor-router-[A-Za-z0-9_-]+\.js', current_router_js.group(1)))
+    if current_icons_js:
+        replacements.append((r'/assets/vendor-icons-[A-Za-z0-9_-]+\.js', current_icons_js.group(1)))
+
+    if not replacements:
+        print("WARNING: could not detect current app asset references")
+        return
+
+    changed = 0
+    for html_path in gh_pages_dir.rglob("*.html"):
+        page = html_path.read_text(encoding="utf-8")
+        updated = page
+        for pattern, replacement in replacements:
+            updated = re.sub(pattern, replacement, updated)
+        if updated != page:
+            html_path.write_text(updated, encoding="utf-8")
+            changed += 1
+
+    print(f"Updated app asset references in {changed} HTML files")
+
+
 def build_redirect_html(source_route, target_route, target_meta):
     """Create a GitHub Pages-compatible redirect page for legacy URLs."""
 
@@ -1710,6 +1745,8 @@ def main():
         )
         sitemap_path.write_text(sitemap, encoding="utf-8")
         print(f"Updated: {sitemap_path}")
+
+    sync_app_asset_references(gh_pages_dir, base_html)
 
     # Fix crawl traps in preserved static pages that are not generated from the
     # React app. GitHub Pages cannot serve both a file and folder at the same
