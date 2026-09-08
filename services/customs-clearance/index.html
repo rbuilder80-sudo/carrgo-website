@@ -14,7 +14,8 @@
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QS3BEJ5G6K';
     document.head.appendChild(s);
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', 'G-QS3BEJ5G6K');
   })();
