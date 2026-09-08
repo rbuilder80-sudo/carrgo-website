@@ -1503,9 +1503,9 @@ def build_html(route, meta, base_html, is_404=False):
     # This silently converts /path to /#/path for HashRouter compatibility
     redirect_script = '''<script>
 (function(){
-  var p = location.pathname;
+  var p = location.pathname.replace(/\\/+$/, '') || '/';
   if (!location.hash && p !== '/' && p !== '/index.html') {
-    history.replaceState(null, '', '/#' + p);
+    history.replaceState(null, '', '/#' + p + location.search);
   }
 })();
 </script>
