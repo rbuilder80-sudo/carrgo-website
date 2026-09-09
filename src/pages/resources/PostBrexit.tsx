@@ -29,12 +29,57 @@ function WarningBox({ children, title }: { children: React.ReactNode; title: str
   );
 }
 
+const faqData = [
+  {
+    question: 'What do I need to import goods into the UK after Brexit?',
+    answer: 'Most UK importers need a GB EORI number, the right commodity code, a commercial invoice, packing list, shipment value, origin details, and any licences or certificates required for controlled goods. A customs declaration is then submitted through the Customs Declaration Service.',
+  },
+  {
+    question: 'Do EU goods still need UK customs clearance?',
+    answer: 'Yes. Goods imported into Great Britain from the EU usually need an import declaration, commodity code, customs value and VAT or duty checks. Preferential duty may apply when goods meet the rules of origin under the relevant trade agreement.',
+  },
+  {
+    question: 'Can Carrgo handle UK import customs clearance for me?',
+    answer: 'Yes. Carrgo can review supplier documents, check commodity codes, prepare import declarations, calculate duty and VAT, and coordinate clearance with the freight movement so goods can be delivered without avoidable border delays.',
+  },
+];
+
+const guideSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Guide',
+  name: 'UK Import Customs Clearance Guide',
+  description: 'A practical post-Brexit customs guide for UK importers covering EORI numbers, commodity codes, CDS import declarations, rules of origin, duty, VAT and common clearance delays.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Carrgo Freight Solutions Ltd',
+    url: 'https://www.carrgo.co.uk',
+  },
+  url: 'https://www.carrgo.co.uk/resources/post-brexit-customs-guide',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function PostBrexit() {
   return (
     <>
       <Seo
-        title="Post-Brexit Customs Guide | Carrgo Freight Solutions"
-        description="Navigating UK customs after Brexit. Essential guidance for importers on EORI numbers, commodity codes, customs declarations, VAT and duties."
+        title="UK Import Customs Clearance Guide | Post-Brexit Rules | Carrgo"
+        description="UK import customs clearance guide for 2026: EORI numbers, commodity codes, CDS declarations, rules of origin, duty, VAT and document checks."
+        keywords="uk import customs clearance guide, post brexit customs guide, uk import rules 2026, eori number, commodity code, customs declaration service, import duty vat"
+        ogUrl="https://www.carrgo.co.uk/resources/post-brexit-customs-guide"
+        canonical="https://www.carrgo.co.uk/resources/post-brexit-customs-guide"
+        structuredData={[guideSchema, faqSchema]}
       />
 
       {/* Hero */}
@@ -49,11 +94,39 @@ export default function PostBrexit() {
               Essential Guide
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Post-Brexit Customs Guide
+              UK Import Customs Clearance Guide
             </h1>
             <p className="text-lg text-brand-100 leading-relaxed max-w-2xl">
-              Everything UK importers need to know about customs since Brexit. From EORI numbers to commodity codes and declarations.
+              Practical post-Brexit customs guidance for UK importers: EORI numbers, commodity codes, CDS declarations, rules of origin, duty, VAT and document checks.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Answer */}
+      <section aria-label="UK import customs quick answer" className="py-12 bg-white border-b border-gray-100">
+        <div className="container-carrgo">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">What does a UK importer need for customs clearance?</h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              To clear goods into the UK, you normally need a GB EORI number, a correct commodity code, supplier invoice, packing list, goods value, country of origin, freight details and any licence or certificate needed for controlled products. Carrgo checks these before shipment and submits the import declaration through CDS.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                'GB EORI number and importer details',
+                'Commodity code and goods description',
+                'Commercial invoice and packing list',
+                'Customs value, duty, VAT and origin evidence',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+            <Link to="/get-a-quote" className="mt-6 inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:underline">
+              Get customs clearance help <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -171,7 +244,7 @@ export default function PostBrexit() {
             </h2>
             <div className="bg-white rounded-xl border p-6">
               <p className="text-gray-600 leading-relaxed mb-4">
-                A customs declaration is the official document submitted to customs authorities declaring the details of your imported goods. All UK imports now require a declaration through either CHIEF (being phased out) or the new Customs Declaration Service (CDS).
+                A customs declaration is the official submission that tells HMRC what goods are being imported, who is responsible for them, their value, origin, commodity code and any duty or VAT due. UK import declarations are handled through the Customs Declaration Service (CDS).
               </p>
               <h3 className="font-semibold text-gray-900 mb-3">Required Documents</h3>
               <ul className="space-y-2 mb-6">
@@ -297,7 +370,7 @@ export default function PostBrexit() {
                 {
                   icon: <FileCheck className="w-6 h-6" />,
                   title: 'Customs Clearance',
-                  desc: 'Full import and export declarations filed through our direct CHIEF and CDS access.',
+                  desc: 'Full import and export declarations prepared for the Customs Declaration Service.',
                 },
                 {
                   icon: <ScanSearch className="w-6 h-6" />,
@@ -343,10 +416,10 @@ export default function PostBrexit() {
         <div className="container-carrgo">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Navigating Customs Made Simple
+              Need UK Import Customs Clearance?
             </h2>
             <p className="text-gray-600 mb-8">
-              Let our customs experts handle the complexity. Get compliant, stress-free imports with Carrgo.
+              Let Carrgo check your documents, confirm the right customs information and coordinate clearance with your freight movement.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

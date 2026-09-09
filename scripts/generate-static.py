@@ -1169,12 +1169,68 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/post-brexit-customs-guide": {
-        "title": "Post-Brexit Customs Guide | UK Import Rules 2026 | Carrgo",
-        "description": "Brexit changed UK customs rules. Carrgo's post-Brexit customs guide explains EORI numbers, customs declarations, rules of origin, and NI Protocol. Stay compliant. Download now.",
-        "keywords": "post brexit customs guide, uk import rules 2026, eori number, customs declaration, ni protocol",
+        "title": "UK Import Customs Clearance Guide | Post-Brexit Rules | Carrgo",
+        "description": "UK import customs clearance guide for 2026: EORI numbers, commodity codes, CDS declarations, rules of origin, duty, VAT and document checks.",
+        "keywords": "uk import customs clearance guide, post brexit customs guide, uk import rules 2026, eori number, commodity code, customs declaration service, import duty vat",
         "canonical": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide",
-        "h1": "Post-Brexit Customs Guide — UK Import Rules 2026",
+        "h1": "UK Import Customs Clearance Guide — Post-Brexit Rules",
+        "staticBody": """
+<h2>What does a UK importer need for customs clearance?</h2>
+<p>To clear goods into the UK, you normally need a GB EORI number, a correct commodity code, supplier invoice, packing list, goods value, country of origin, freight details and any licence or certificate needed for controlled products. Carrgo checks these before shipment and submits the import declaration through CDS.</p>
+<ul>
+<li>GB EORI number and importer details</li>
+<li>Commodity code and goods description</li>
+<li>Commercial invoice and packing list</li>
+<li>Customs value, duty, VAT and origin evidence</li>
+</ul>
+<p><a href="https://www.carrgo.co.uk/get-a-quote">Get customs clearance help</a></p>
+""",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Guide",
+                "name": "UK Import Customs Clearance Guide",
+                "description": "A practical post-Brexit customs guide for UK importers covering EORI numbers, commodity codes, CDS import declarations, rules of origin, duty, VAT and common clearance delays.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions Ltd",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "url": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What do I need to import goods into the UK after Brexit?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most UK importers need a GB EORI number, the right commodity code, a commercial invoice, packing list, shipment value, origin details, and any licences or certificates required for controlled goods. A customs declaration is then submitted through the Customs Declaration Service."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do EU goods still need UK customs clearance?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Goods imported into Great Britain from the EU usually need an import declaration, commodity code, customs value and VAT or duty checks. Preferential duty may apply when goods meet the rules of origin under the relevant trade agreement."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo handle UK import customs clearance for me?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo can review supplier documents, check commodity codes, prepare import declarations, calculate duty and VAT, and coordinate clearance with the freight movement so goods can be delivered without avoidable border delays."
+                        }
+                    }
+                ]
+            }
+        ]
     },
     "/resources/testimonials": {
         "title": "Client Testimonials | Carrgo Freight Solutions Reviews",
