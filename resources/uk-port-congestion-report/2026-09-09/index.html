@@ -1,188 +1,84 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UK Port Congestion: Week of 2026-09-09 | Carrgo</title>
-    <meta name="description" content="Archived UK and Ireland port congestion snapshot for 2026-09-09: 17 ports, average health score 77.4, Grangemouth most congested at 42." />
-    <link rel="canonical" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/2026-09-09/" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:title" content="UK Port Congestion: Week of 2026-09-09 | Carrgo" />
-    <meta property="og:description" content="Archived UK and Ireland port congestion snapshot for 2026-09-09: 17 ports, average health score 77.4, Grangemouth most congested at 42." />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.carrgo.co.uk/resources/uk-port-congestion-report/2026-09-09/" />
-    <meta property="og:site_name" content="Carrgo Freight Solutions" />
-    <meta property="og:locale" content="en_GB" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "UK & Ireland Port Congestion Report \u2014 2026-09-09", "description": "Health scores, vessel queues, berth utilisation and waiting times for 17 UK and Ireland ports, published by Carrgo Freight Solutions.", "url": "https://www.carrgo.co.uk/resources/uk-port-congestion-report/2026-09-09/", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "license": "https://creativecommons.org/licenses/by/4.0/", "creativeWorkStatus": "Published", "isAccessibleForFree": true, "keywords": ["UK port congestion", "port delays", "vessel queue", "berth utilisation", "freight forwarding", "port health score"], "spatialCoverage": {"@type": "Place", "name": "United Kingdom and Ireland"}, "temporalCoverage": "2026-09-09", "variableMeasured": [{"@type": "PropertyValue", "name": "Health score", "description": "0-100 composite of vessel queue, berth utilisation and waiting time."}, {"@type": "PropertyValue", "name": "Vessels waiting"}, {"@type": "PropertyValue", "name": "Berth utilisation", "unitText": "PERCENT"}, {"@type": "PropertyValue", "name": "Average waiting time"}], "creator": {"@type": "Organization", "name": "Carrgo Freight Solutions", "url": "https://www.carrgo.co.uk"}, "publisher": {"@type": "Organization", "name": "Carrgo Freight Solutions", "url": "https://www.carrgo.co.uk"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/rbuilder80-sudo/carrgo-uk-port-congestion-data/main/data/latest.csv"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://raw.githubusercontent.com/rbuilder80-sudo/carrgo-uk-port-congestion-data/main/data/latest.json"}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which UK port is most congested right now?", "acceptedAnswer": {"@type": "Answer", "text": "As of 2026-09-09, Grangemouth is the most congested UK or Ireland port tracked by Carrgo, with a health score of 42 out of 100, 6 vessels waiting and typical waits of 4-6 days."}}, {"@type": "Question", "name": "Which UK port has the shortest waiting time?", "acceptedAnswer": {"@type": "Answer", "text": "Holyhead currently has the best conditions, scoring 90 out of 100 with waits of 0-1 days."}}, {"@type": "Question", "name": "How is the Carrgo port health score calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The health score is a 0-100 composite of vessels waiting, berth utilisation and average waiting time. Above 75 is normal, 50-74 is moderate, and below 50 indicates congestion."}}, {"@type": "Question", "name": "Can I cite this port congestion data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This dataset is free to cite and republish with attribution to Carrgo Freight Solutions and a link to carrgo.co.uk."}}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carrgo.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.carrgo.co.uk/resources/shipping-guides/"}, {"@type": "ListItem", "position": 3, "name": "UK Port Congestion Report 2026-09-09", "item": "https://www.carrgo.co.uk/resources/uk-port-congestion-report/2026-09-09/"}]}</script>
-    <style>
-      body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65;
-        color:#111827;margin:0;background:#fff}
-      .wrap{max-width:900px;margin:0 auto;padding:32px 20px 64px}
-      h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
-      h2{font-size:1.35rem;margin:36px 0 10px}
-      h3{font-size:1.1rem;margin:24px 0 8px}
-      .meta{color:#6b7280;font-size:.9rem;margin-bottom:24px}
-      .answer{background:#f0f6ff;border-left:4px solid #1a6dff;padding:16px 18px;
-        border-radius:6px;margin:18px 0 28px;font-size:1.05rem}
-      table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}
-      th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #e5e7eb}
-      th{background:#f9fafb;font-weight:600}
-      tbody tr:hover{background:#fafafa}
-      .cite{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;
-        padding:16px 18px;margin:28px 0}
-      .cta{display:inline-block;background:#1a6dff;color:#fff;text-decoration:none;
-        padding:12px 20px;border-radius:8px;font-weight:600;margin:8px 8px 8px 0}
-      code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:.9em}
-      a{color:#1a6dff}
-    </style>
-  </head>
-  <body>
-  <div class="wrap">
-    <nav aria-label="Breadcrumb" class="meta">
-      <a href="https://www.carrgo.co.uk/">Home</a> &rsaquo;
-      <a href="https://www.carrgo.co.uk/resources/shipping-guides/">Resources</a> &rsaquo;
-      UK Port Congestion Report
-    </nav>
-
-    <h1>UK &amp; Ireland Port Congestion Report — 2026-09-09</h1>
-    <p class="meta">Published 2026-09-09 by Carrgo Freight Solutions ·
-      Covering 17 ports · Permanent record for 2026-09-09 ·
-      <strong>Free to cite with attribution</strong></p>
-
-    <h2>Which UK port is most congested right now?</h2>
-    <p class="answer">As of 2026-09-09, Carrgo tracks 17 UK and Ireland ports with an average health score of 77.4 out of 100. Grangemouth is the most congested at 42, with waits of 4-6 days. Holyhead is clearest at 90. 1 ports are congested, 4 moderate, 12 normal.</p>
-
-    <h2>Full port congestion table — 2026-09-09</h2>
-    <table>
-      <caption class="meta">Health score 0-100. Above 75 normal, 50-74 moderate,
-        below 50 congested. Source: Carrgo port intelligence.</caption>
-      <thead>
-        <tr><th>Port</th><th>Region</th><th>Health score</th><th>Status</th>
-        <th>Typical wait</th><th>Vessels waiting</th><th>Berth use</th></tr>
-      </thead>
-      <tbody>
-<tr><td><a href="https://www.carrgo.co.uk/ports/grangemouth/">Grangemouth</a></td><td>Scotland</td><td>42</td><td>Congested</td><td>4-6 days</td><td>6</td><td>92%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/dublin/">Dublin</a></td><td>Ireland</td><td>58</td><td>Moderate</td><td>2-4 days</td><td>5</td><td>88%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/liverpool/">Liverpool</a></td><td>England</td><td>65</td><td>Moderate</td><td>2-3 days</td><td>3</td><td>82%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/immingham/">Immingham</a></td><td>England</td><td>68</td><td>Moderate</td><td>2-3 days</td><td>3</td><td>75%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/felixstowe/">Felixstowe</a></td><td>England</td><td>72</td><td>Moderate</td><td>2-4 days</td><td>4</td><td>78%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/shannon-foynes/">Shannon Foynes</a></td><td>Ireland</td><td>79</td><td>Normal</td><td>1-2 days</td><td>1</td><td>55%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/cork/">Cork</a></td><td>Ireland</td><td>81</td><td>Normal</td><td>1-2 days</td><td>2</td><td>58%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/belfast/">Belfast</a></td><td>Northern Ireland</td><td>82</td><td>Normal</td><td>1-2 days</td><td>2</td><td>60%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/waterford/">Waterford</a></td><td>Ireland</td><td>82</td><td>Normal</td><td>1 day</td><td>1</td><td>50%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/londonderry/">Londonderry</a></td><td>Northern Ireland</td><td>83</td><td>Normal</td><td>1 day</td><td>1</td><td>52%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/tilbury/">Tilbury</a></td><td>England</td><td>84</td><td>Normal</td><td>1-2 days</td><td>2</td><td>62%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/rosslare-europort/">Rosslare Europort</a></td><td>Ireland</td><td>84</td><td>Normal</td><td>1 day</td><td>1</td><td>48%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/southampton/">Southampton</a></td><td>England</td><td>85</td><td>Normal</td><td>1-2 days</td><td>2</td><td>65%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/bristol/">Bristol</a></td><td>England</td><td>86</td><td>Normal</td><td>1 day</td><td>1</td><td>55%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/larne/">Larne</a></td><td>Northern Ireland</td><td>87</td><td>Normal</td><td>0-1 days</td><td>1</td><td>50%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/london-gateway/">London Gateway</a></td><td>England</td><td>88</td><td>Normal</td><td>1-2 days</td><td>1</td><td>58%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/holyhead/">Holyhead</a></td><td>Wales</td><td>90</td><td>Normal</td><td>0-1 days</td><td>0</td><td>45%</td></tr>
-      </tbody>
-    </table>
-
-
-    <h2>Which UK ports are getting worse this week?</h2>
-    <p class="answer">Over the past seven days 4 of 17 tracked ports deteriorated and 13 improved. Grangemouth moved furthest in the wrong direction, down 8 points from 50 to 42.</p>
-    <table>
-      <caption class="meta">Change in Carrgo port health score over the last 7 and 30 days.
-        A negative change means conditions deteriorated. Source: Carrgo port intelligence.</caption>
-      <thead>
-        <tr><th>Port</th><th>Score 7 days ago</th><th>Score now</th>
-        <th>7-day change</th><th>30-day change</th><th>Direction</th></tr>
-      </thead>
-      <tbody>
-<tr><td><a href="https://www.carrgo.co.uk/ports/grangemouth/">Grangemouth</a></td><td>50</td><td>42</td><td>-8</td><td>-16</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/dublin/">Dublin</a></td><td>63</td><td>58</td><td>-5</td><td>-10</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/liverpool/">Liverpool</a></td><td>70</td><td>65</td><td>-5</td><td>-9</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/immingham/">Immingham</a></td><td>70</td><td>68</td><td>-2</td><td>-4</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/shannon-foynes/">Shannon Foynes</a></td><td>78</td><td>79</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/cork/">Cork</a></td><td>80</td><td>81</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/belfast/">Belfast</a></td><td>81</td><td>82</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/waterford/">Waterford</a></td><td>81</td><td>82</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/londonderry/">Londonderry</a></td><td>82</td><td>83</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/bristol/">Bristol</a></td><td>85</td><td>86</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/holyhead/">Holyhead</a></td><td>89</td><td>90</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/southampton/">Southampton</a></td><td>83</td><td>85</td><td>+2</td><td>+5</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/larne/">Larne</a></td><td>84</td><td>87</td><td>+3</td><td>+4</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/felixstowe/">Felixstowe</a></td><td>68</td><td>72</td><td>+4</td><td>-3</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/tilbury/">Tilbury</a></td><td>80</td><td>84</td><td>+4</td><td>+6</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/rosslare-europort/">Rosslare Europort</a></td><td>80</td><td>84</td><td>+4</td><td>+6</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/london-gateway/">London Gateway</a></td><td>82</td><td>88</td><td>+6</td><td>+10</td><td>improving</td></tr>
-      </tbody>
-    </table>
-    <p>Week-over-week movement matters more than the absolute score when you are
-      booking. A port sitting at 68 and falling three points a week is a worse bet
-      than a port sitting at 62 and holding steady, because the trend tells you what
-      conditions will look like when your vessel actually arrives.</p>
-
-    <h2>Summary figures</h2>
-    <ul>
-      <li><strong>Ports tracked:</strong> 17</li>
-      <li><strong>Average health score:</strong> 77.4 / 100</li>
-      <li><strong>Total vessels waiting across all ports:</strong> 36</li>
-      <li><strong>Congested (below 50):</strong> 1 — Grangemouth (42)</li>
-      <li><strong>Moderate (50-74):</strong> 4 — Dublin (58), Liverpool (65), Immingham (68), Felixstowe (72)</li>
-      <li><strong>Normal (75+):</strong> 12</li>
-    </ul>
-
-    <h2>How the health score is calculated</h2>
-    <p>The Carrgo port health score is a 0-100 composite of three measured inputs:
-      the number of vessels waiting for a berth, berth utilisation as a percentage,
-      and the average waiting time before a vessel is worked. A score above 75 means
-      normal operations, 50-74 means moderate delay risk, and below 50 means the port
-      is congested and importers should expect knock-on delays to inland delivery.</p>
-
-    <h2>What importers should do about it</h2>
-    <h3>If your cargo is routed through a congested port</h3>
-    <p>Check the alternative. A port scoring 40 points higher on the same coast
-      frequently clears cargo days faster, and the re-routing cost is often lower than
-      the demurrage you would pay waiting. Use the
-      <a href="https://www.carrgo.co.uk/tools/port-comparison/">port comparison tool</a> to compare two
-      ports side by side, then price the difference with the
-      <a href="https://www.carrgo.co.uk/tools/cost-calculator/">freight cost calculator</a>.</p>
-
-    <h3>If you are planning a shipment</h3>
-    <p>Book against current conditions rather than last quarter's assumptions.
-      Congestion at UK ports moves week to week, which is why this report is
-      republished weekly rather than left static.</p>
-
-    <div class="cite">
-      <h3 style="margin-top:0">Citation &amp; reuse licence</h3>
-      <p>This dataset is published for public reference and is
-        <strong>free to cite, quote and republish with attribution</strong>
-        (CC BY 4.0). Journalists, analysts and other freight businesses are welcome
-        to use it.</p>
-      <p><strong>Suggested citation:</strong><br>
-        <code>Carrgo Freight Solutions, "UK &amp; Ireland Port Congestion Report,
-        2026-09-09", https://www.carrgo.co.uk/resources/uk-port-congestion-report/</code></p>
-      <p><strong>Want the raw data?</strong> Every edition is published as open
-        CSV and JSON on GitHub:
-        <a href="https://github.com/rbuilder80-sudo/carrgo-uk-port-congestion-data">
-        carrgo-uk-port-congestion-data</a> — machine-readable, versioned, and free
-        to use under the same licence.</p>
-    </div>
-
-    <h2>Live data and related tools</h2>
-    <p>This report is a dated snapshot. For live figures that update continuously:</p>
-    <p>
-      <a class="cta" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/archive/">Past weekly editions</a>
-      <a class="cta" href="https://www.carrgo.co.uk/resources/port-congestion-tracker/">Live port congestion tracker</a>
-      <a class="cta" href="https://www.carrgo.co.uk/tools/port-comparison/">Compare two ports</a>
-      <a class="cta" href="https://www.carrgo.co.uk/tools/cost-calculator/">Freight cost calculator</a>
-    </p>
-
-    <h2>About Carrgo</h2>
-    <p>Carrgo Freight Solutions is a UK freight forwarder handling sea freight,
-      air cargo, road haulage, rail freight and customs clearance for UK importers
-      and exporters. We publish this port intelligence because our own operations
-      depend on it.
-      <a href="https://www.carrgo.co.uk/get-a-quote/">Get a freight quote</a> ·
-      <a href="https://www.carrgo.co.uk/contact/">Contact us</a></p>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Correction: UK Port Congestion Report 9 September 2026 | Carrgo</title>
+<meta name="description" content="Correction notice: numerical congestion claims previously shown on this dated page were not verified operational measurements and have been withdrawn.">
+<meta name="robots" content="noindex, follow"><link rel="canonical" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/">
+<link rel="icon" href="/favicon.svg"><style>
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;color:#111827;margin:0;background:#fff}.wrap{max-width:1050px;margin:0 auto;padding:32px 20px 80px}h1{font-size:2rem;line-height:1.2}h2{font-size:1.4rem;margin-top:34px}h3{font-size:1.05rem;margin-bottom:4px}.meta{color:#6b7280;font-size:.9rem}.warning{border-left:4px solid #b45309;background:#fffbeb;padding:18px;margin:20px 0}.evidence{border-left:4px solid #1a6dff;background:#eff6ff;padding:18px;margin:20px 0}a{color:#0b57d0}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #d1d5db;padding:10px;text-align:left;vertical-align:top}th{background:#f9fafb}@media(max-width:720px){.wrap{padding:20px 14px 90px}table{font-size:.85rem}th,td{padding:7px}}
+</style></head><body><main class="wrap">
+<nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/resources/uk-port-congestion-report/">Port report</a> › Correction</nav>
+<h1>Correction: report dated 9 September 2026</h1>
+<section class="warning"><h2>Unsupported numerical claims withdrawn</h2><p>This page previously relabelled hard-coded health scores, queues, berth utilisation and waiting times as live data. Those figures were not traceable to timestamped primary operational measurements and have been removed. They must not be used for routing or cost decisions.</p></section>
+<p>The evidence review found no comparable port-wide numerical measurement. Dated Liverpool and Dublin operating notices remain available in the evidence ledger, but they do not establish port-wide congestion.</p>
+<p><a href="/resources/port-congestion-tracker/">Current port evidence tracker</a> · <a href="/data/port-evidence/2026-09-09.json">Evidence ledger for 9 September 2026</a></p>
+</main><!-- carrgo-quick-quote-start -->
+<style id="carrgo-quick-quote-style">
+  @media (min-width:1280px){main,footer{padding-right:360px!important}}
+  .carrgo-qq-card{box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827}
+  .carrgo-qq-card *{box-sizing:border-box}
+  .carrgo-qq-kicker{margin:0 0 4px;color:#1A6DFF;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .carrgo-qq-title{margin:0;color:#111827;font-size:20px;line-height:1.15;font-weight:800}
+  .carrgo-qq-copy{margin:8px 0 14px;color:#4b5563;font-size:12px;line-height:1.45}
+  .carrgo-qq-form{display:grid;gap:10px}
+  .carrgo-qq-label{display:grid;gap:4px;font-size:12px;font-weight:700;color:#1f2937}
+  .carrgo-qq-label input{min-height:42px;width:100%;border:1px solid #d1d5db;border-radius:7px;padding:9px 10px;font:16px system-ui;background:#fff;color:#111827}
+  .carrgo-qq-submit{min-height:46px;border:0;border-radius:9px;background:#1A6DFF;color:#fff;padding:11px 14px;font:800 16px system-ui;cursor:pointer}
+  #quick-quote-static{position:fixed;right:16px;top:96px;z-index:40;width:320px;max-height:calc(100vh - 112px);overflow:auto;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 24px 60px rgba(15,23,42,.20);padding:16px}
+  #quick-quote-mobile-static{display:none}
+  @media (max-width:1279px){
+    main,footer{padding-right:0!important}
+    #quick-quote-static{display:none}
+    #quick-quote-mobile-static{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 20px 55px rgba(15,23,42,.24);max-height:82vh;overflow:auto}
+    #quick-quote-mobile-static summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 14px;background:#1A6DFF;color:#fff;border-radius:18px;cursor:pointer}
+    #quick-quote-mobile-static summary::-webkit-details-marker{display:none}
+    .carrgo-qq-mobile-open{background:#fff;color:#1A6DFF;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:800}
+    .carrgo-qq-mobile-body{padding:14px}
+  }
+</style>
+<aside id="quick-quote-static" class="carrgo-qq-card" data-static-quick-quote data-quick-quote-placement="sticky-sidebar" aria-labelledby="quick-quote-static-heading">
+  <p class="carrgo-qq-kicker">2-minute quote</p>
+  <h2 id="quick-quote-static-heading" class="carrgo-qq-title">Ask about your shipment through this port</h2>
+  <p class="carrgo-qq-copy">Send the basics now. Carrgo will ask for extra shipment details after your enquiry arrives.</p>
+  <form class="carrgo-qq-form" action="https://formsubmit.co/support@carrgo.co.uk" method="POST">
+      <input type="hidden" name="_subject" value="New Quick Quote Enquiry - Carrgo Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="quote_invitation" value="Ask about your shipment through this port">
+      <input type="hidden" name="source_page" value="/resources/uk-port-congestion-report">
+      <input type="hidden" name="follow_up_note" value="Initial quick quote enquiry. Ask for shipment dates, Incoterms, HS code, packing list and customs details after this enquiry arrives.">
+      <label class="carrgo-qq-label">Origin<input name="origin" required value="" placeholder="City, country or supplier"></label>
+      <label class="carrgo-qq-label">Destination<input name="destination" required value="UK or Ireland port" placeholder="UK address, city or port"></label>
+      <label class="carrgo-qq-label">Goods<input name="goods" required placeholder="Furniture, cartons, machinery"></label>
+      <label class="carrgo-qq-label">Approx weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM"></label>
+      <label class="carrgo-qq-label">Dimensions<input name="dimensions" placeholder="Pallet/carton size or I'm not sure"></label>
+      <label class="carrgo-qq-label">Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label class="carrgo-qq-label">Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="carrgo-qq-label">Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="Best number to contact you"></label>
+      <button type="submit" class="carrgo-qq-submit">Get instant quote</button>
+  </form>
+</aside>
+<details id="quick-quote-mobile-static" class="carrgo-qq-card" data-static-quick-quote data-quick-quote-placement="mobile-sticky">
+  <summary><span><span class="carrgo-qq-kicker" style="color:rgba(255,255,255,.8)">Quick enquiry</span><strong>Ask about your shipment through this port</strong></span><span class="carrgo-qq-mobile-open">Open</span></summary>
+  <div class="carrgo-qq-mobile-body">
+    <p class="carrgo-qq-copy">Send origin, destination, goods and contact details now. Extra shipment details can come later.</p>
+    <form class="carrgo-qq-form" action="https://formsubmit.co/support@carrgo.co.uk" method="POST">
+      <input type="hidden" name="_subject" value="New Quick Quote Enquiry - Carrgo Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="quote_invitation" value="Ask about your shipment through this port">
+      <input type="hidden" name="source_page" value="/resources/uk-port-congestion-report">
+      <input type="hidden" name="follow_up_note" value="Initial quick quote enquiry. Ask for shipment dates, Incoterms, HS code, packing list and customs details after this enquiry arrives.">
+      <label class="carrgo-qq-label">Origin<input name="origin" required value="" placeholder="City, country or supplier"></label>
+      <label class="carrgo-qq-label">Destination<input name="destination" required value="UK or Ireland port" placeholder="UK address, city or port"></label>
+      <label class="carrgo-qq-label">Goods<input name="goods" required placeholder="Furniture, cartons, machinery"></label>
+      <label class="carrgo-qq-label">Approx weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM"></label>
+      <label class="carrgo-qq-label">Dimensions<input name="dimensions" placeholder="Pallet/carton size or I'm not sure"></label>
+      <label class="carrgo-qq-label">Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label class="carrgo-qq-label">Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="carrgo-qq-label">Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="Best number to contact you"></label>
+      <button type="submit" class="carrgo-qq-submit">Get instant quote</button>
+    </form>
   </div>
-  </body>
-</html>
+</details>
+<script>(function(){setTimeout(function(){if(document.getElementById('quick-quote')){document.querySelectorAll('[data-static-quick-quote],#carrgo-quick-quote-style').forEach(function(el){el.remove();});}},1200);})();</script>
+<!-- carrgo-quick-quote-end --></body></html>
