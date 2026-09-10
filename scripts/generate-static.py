@@ -1779,7 +1779,7 @@ def published_path_to_url(html_path, gh_pages_dir):
     if rel.endswith("/index.html"):
         return f"https://www.carrgo.co.uk/{rel[:-11]}/"
     if rel.endswith(".html"):
-        return f"https://www.carrgo.co.uk/{rel[:-5]}"
+        return f"https://www.carrgo.co.uk/{rel}"
     return None
 
 
@@ -1788,12 +1788,7 @@ def update_sitemap_with_indexable_pages(gh_pages_dir):
     if not sitemap_path.exists():
         return
 
-    sitemap = sitemap_path.read_text(encoding="utf-8")
-    sitemap = sitemap.replace("https://carrgo.co.uk/", "https://www.carrgo.co.uk/")
-    existing_entries = {
-        normalize_page_url(match.group(1)): match.group(0)
-        for match in re.finditer(r"<url><loc>(https://www\.carrgo\.co\.uk[^<]+)</loc>.*?</url>", sitemap)
-    }
+    existing_entries = {}
 
     for html_path in gh_pages_dir.rglob("*.html"):
         if html_path.name == "404.html":
@@ -1815,10 +1810,7 @@ def update_sitemap_with_indexable_pages(gh_pages_dir):
         if not loc.startswith("https://www.carrgo.co.uk/"):
             continue
 
-        existing_entries.setdefault(
-            loc,
-            f"<url><loc>{loc}</loc><lastmod>{date.today().isoformat()}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>",
-        )
+        existing_entries[loc] = f"<url><loc>{loc}</loc><lastmod>{date.today().isoformat()}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>"
 
     ordered = "\n  ".join(existing_entries[loc] for loc in sorted(existing_entries))
     sitemap_path.write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  {ordered}\n</urlset>\n', encoding="utf-8")
