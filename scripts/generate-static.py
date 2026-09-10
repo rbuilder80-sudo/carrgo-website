@@ -1024,22 +1024,20 @@ ROUTES = {
         ]
     },
     "/resources/port-congestion-tracker": {
-        "title": "Carrgo Port Intelligence | UK Port Congestion Tracker, Predictions & Health Scores",
-        "description": "Live UK & Ireland port intelligence with Port Health Scores™, 24h/7d forecasts, congestion predictions, and importer risk assessments. Track Felixstowe, Southampton, Dublin, Belfast & all 18 major ports. Free, no subscription.",
-        "keywords": "uk port intelligence, port congestion tracker, port health score, felixstowe delays, dublin port congestion, belfast port status, liverpool port status, uk container port delays, port predictions",
-        "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
-        "h1": "Carrgo Port Intelligence — UK &amp; Ireland Port Congestion Tracker",
+        "title": "UK & Ireland Port Congestion Evidence | Carrgo",
+        "description": "Dated primary-source port operating notices for 17 UK and Ireland ports. Unverified waiting times, scores and forecasts are shown as unknown.",
+        "keywords": "uk port congestion evidence, port operating notices, felixstowe port status, southampton port status, liverpool port notices, dublin port notices",
+        "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker/",
+        "h1": "UK &amp; Ireland Port Congestion Tracker",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
         "structuredData": [
             {
                 "@context": "https://schema.org",
-                "@type": "WebApplication",
-                "name": "Carrgo Port Intelligence",
-                "applicationCategory": "FreightTool",
-                "operatingSystem": "Any",
-                "description": "Live UK & Ireland port intelligence with Port Health Scores, 24h/7d forecasts, congestion predictions, and importer risk assessments.",
-                "url": "https://www.carrgo.co.uk/resources/port-congestion-tracker",
+                "@type": "WebPage",
+                "name": "UK & Ireland Port Congestion Evidence",
+                "description": "Dated primary-source port operating notices with unverified numerical congestion metrics shown as unknown.",
+                "url": "https://www.carrgo.co.uk/resources/port-congestion-tracker/",
                 "provider": {
                     "@type": "Organization",
                     "name": "Carrgo Freight Solutions",

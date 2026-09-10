@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-09-10",
+  "measurementObservedAt": null,
+  "previousComparableObservation": null,
+  "coverage": 17,
+  "status": "unverified-metrics",
+  "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
+  "audit": {
+    "sourceBranch": "main",
+    "sourceCommit": "270e4dbe44e62162d7b381b14a371b15f2ec298b",
+    "productionBaseCommit": "1d0cbf17683a3faa3ee8a8512fc5e82a58bda80a",
+    "findings": [
+      "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
+      "The production report contains figures labelled 2026-09-02, whereas the search extraction still showed 2026-08-26. Neither date establishes when the metrics were measured.",
+      "Other port detail and comparison pages consume the same unverified data. Their numerical results must not be treated as operational evidence.",
+      "A scheduled publisher regenerated the weekly report on 9 September with the same unsupported numerical values relabelled as live data. The public current report and dated edition were corrected to explicit unverified states."
+    ],
+    "changesSincePrevious": "New Met Éireann small-craft warnings are in force around Irish coastal waters on 10 September, including force 6 or 7 south-to-southwest winds through 17:00 on the east coast. This is navigation/weather context, not a port-wide congestion measurement; no congestion change is calculated."
+  },
+  "sources": [
+    {
+      "id": "liverpool-55",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/142jelmm/lntm-2026-055-temporary-closure-of-s7-and-s8.pdf",
+      "publishedOn": "2026-08-26",
+      "checkedOn": "2026-09-10",
+      "kind": "primary-notice",
+      "access": "Public PDF text checked from indexed primary notice",
+      "confidence": "high for notice content; current amendments not independently confirmed",
+      "claim": "Notice 55/2026 schedules closure of S7 and part of S8 at Royal Seaforth Dock from 1 to 29 September 2026. The restricted quay section is 480 m to 792 m.",
+      "validFrom": "2026-09-01",
+      "validThrough": "2026-09-29",
+      "publishedAt": null,
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "supportedClaim": "Notice 55/2026 schedules closure of S7 and part of S8 at Royal Seaforth Dock from 1 to 29 September 2026. The restricted quay section is 480 m to 792 m."
+    },
+    {
+      "id": "liverpool-43",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/tulazv3l/lntm-2026-043-temporary-closures-of-langton-lock.pdf",
+      "publishedOn": "2026-07-10",
+      "checkedOn": "2026-09-09",
+      "kind": "primary-notice",
+      "access": "Public PDF text checked from indexed primary notice",
+      "confidence": "high for notice content; actual lock slots must be confirmed",
+      "claim": "Notice 43/2026 sets recurring Langton Lock closures through 11 September. Monday and Sunday windows are 09:00 to 20:00; Wednesday and Friday windows are 11:00 to 20:00. The Dockmaster can vary timings and suitably sized vessels may use the Hornby Passage and Gladstone Lock subject to confirmation.",
+      "validFrom": "2026-07-19",
+      "validThrough": "2026-09-11",
+      "publishedAt": null,
+      "checkedAt": "2026-09-09T08:05:31+01:00",
+      "supportedClaim": "Notice 43/2026 sets recurring Langton Lock closures through 11 September. Monday and Sunday windows are 09:00 to 20:00; Wednesday and Friday windows are 11:00 to 20:00. The Dockmaster can vary timings and suitably sized vessels may use the Hornby Passage and Gladstone Lock subject to confirmation."
+    },
+    {
+      "id": "liverpool-59",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/qivmgfg2/lntm-2026-059-temporary-closure-of-gladstone-lock.pdf",
+      "publishedOn": "2026-09-07",
+      "checkedOn": "2026-09-09",
+      "kind": "primary-notice",
+      "access": "Public PDF text checked from indexed primary notice",
+      "confidence": "high for notice content; actual lock/tide arrangements must be confirmed",
+      "claim": "Notice 59/2026 schedules a temporary Gladstone Lock closure for engineering work on 15 September 2026 from 09:00 to 17:00. Vessels able to transit the Hornby Passage may continue and use Langton Lock subject to tide height and Dockmaster confirmation.",
+      "validFrom": "2026-09-15",
+      "validThrough": "2026-09-15",
+      "publishedAt": null,
+      "checkedAt": "2026-09-09T08:05:31+01:00",
+      "supportedClaim": "Notice 59/2026 schedules a temporary Gladstone Lock closure for engineering work on 15 September 2026 from 09:00 to 17:00. Vessels able to transit the Hornby Passage may continue and use Langton Lock subject to tide height and Dockmaster confirmation."
+    },
+    {
+      "id": "felixstowe-status",
+      "publisher": "Port of Felixstowe",
+      "url": "https://ocean.portoffelixstowe.co.uk/",
+      "publishedOn": null,
+      "checkedOn": "2026-09-09",
+      "kind": "primary-status",
+      "access": "403 in public research fetch",
+      "confidence": "none for operational conditions",
+      "claim": null,
+      "publishedAt": null,
+      "checkedAt": "2026-09-09T08:05:31+01:00",
+      "supportedClaim": null
+    },
+    {
+      "id": "southampton-status",
+      "publisher": "DP World",
+      "url": "https://www.dpworld.com/en/ports-terminals/united-kingdom/southampton/live-status",
+      "publishedOn": null,
+      "checkedOn": "2026-09-10",
+      "kind": "primary-status",
+      "access": "Live status page retrieved; accessible text links to daily status but no timestamped port-wide congestion measurement was suitable for the comparable ledger",
+      "confidence": "none for port-wide congestion conditions",
+      "claim": null,
+      "publishedAt": null,
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "supportedClaim": null
+    },
+    {
+      "id": "gateway-status",
+      "publisher": "DP World",
+      "url": "https://www.dpworld.com/en/ports-terminals/united-kingdom/london-gateway/live-status",
+      "publishedOn": null,
+      "checkedOn": "2026-09-10",
+      "kind": "primary-status",
+      "access": "Live status page retrieved; accessible text links to a customer notice dated 09/08/2026 but no port-wide congestion measurement was available in accessible text",
+      "confidence": "none for port-wide congestion conditions",
+      "claim": null,
+      "publishedAt": null,
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "supportedClaim": null
+    },
+    {
+      "id": "dublin-notices",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/information-centre/notice-to-mariners-2026/",
+      "publishedOn": null,
+      "checkedOn": "2026-09-10",
+      "kind": "primary-index",
+      "access": "Notice index and current notice PDFs checked through public search extraction",
+      "confidence": "none for port-wide congestion conditions",
+      "claim": null,
+      "publishedAt": null,
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "supportedClaim": null
+    },
+    {
+      "id": "dublin-48",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/wp-content/uploads/2026/08/48-2026-Maintenance-Dredge-Campaign.pdf",
+      "publishedOn": "2026-08-27",
+      "checkedOn": "2026-09-09",
+      "kind": "primary-notice",
+      "access": "Public PDF text checked from indexed primary notice",
+      "confidence": "high for notice content; actual daily dredging location/timing must be confirmed by VTS",
+      "claim": "Notice 48/2026 says maintenance dredging started on 3 September for approximately three weeks, with works in the outer and inner fairway and all berths throughout Dublin Port. Vessels are told to pass at slow speed and allow for restricted manoeuvrability.",
+      "validFrom": "2026-09-03",
+      "publishedAt": null,
+      "checkedAt": "2026-09-09T08:05:31+01:00",
+      "supportedClaim": "Notice 48/2026 says maintenance dredging started on 3 September for approximately three weeks, with works in the outer and inner fairway and all berths throughout Dublin Port. Vessels are told to pass at slow speed and allow for restricted manoeuvrability."
+    },
+    {
+      "id": "dublin-39-3",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/wp-content/uploads/2026/09/39.3-2026-Survey-Operations-1.pdf",
+      "publishedOn": "2026-09-01",
+      "checkedOn": "2026-09-10",
+      "kind": "primary-notice",
+      "access": "Public PDF text checked from indexed primary notice",
+      "confidence": "high for notice content; actual weather/operations-dependent status must be confirmed",
+      "claim": "Notice 39.3/2026 schedules geophysical survey operations from 13 September until approximately 30 September in western Dublin Bay south of the Great South Wall and west of Dun Laoghaire Harbour. Vessels are asked to navigate with caution, keep a safe distance and pass at slow speed.",
+      "validFrom": "2026-09-13",
+      "publishedAt": null,
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "supportedClaim": "Notice 39.3/2026 schedules geophysical survey operations from 13 September until approximately 30 September in western Dublin Bay south of the Great South Wall and west of Dun Laoghaire Harbour. Vessels are asked to navigate with caution, keep a safe distance and pass at slow speed."
+    },
+    {
+      "id": "met-eireann-ei822-2026-09-09",
+      "publisher": "Met Éireann",
+      "url": "https://www.met.ie/warnings/tomorrow/marine/EI822",
+      "publishedOn": "2026-09-08",
+      "publishedAt": "2026-09-08T07:31:00+01:00",
+      "checkedOn": "2026-09-09",
+      "checkedAt": "2026-09-09T08:05:31+01:00",
+      "kind": "official-weather-warning",
+      "access": "Public warning page retrieved through indexed primary-source text",
+      "confidence": "high for the stated warning period; none for port-wide congestion conditions",
+      "claim": "A small-craft warning stated that northwest winds could reach force 6 at times from Malin Head through Strangford Lough to Wicklow Head. It expired at 04:00 on 9 September, before this evidence review.",
+      "supportedClaim": "A small-craft warning stated that northwest winds could reach force 6 at times from Malin Head through Strangford Lough to Wicklow Head. It expired at 04:00 on 9 September, before this evidence review.",
+      "validFrom": "2026-09-09T00:00:00+01:00",
+      "validThrough": "2026-09-09T04:00:00+01:00"
+    },
+    {
+      "id": "met-eireann-2026-09-10",
+      "publisher": "Met Éireann",
+      "url": "https://www.met.ie/warnings/today/dublin",
+      "publishedOn": "2026-09-09",
+      "publishedAt": "2026-09-09T00:26:00+01:00",
+      "checkedOn": "2026-09-10",
+      "checkedAt": "2026-09-10T08:46:27+01:00",
+      "kind": "official-weather-warning",
+      "access": "Public warning page retrieved through indexed primary-source text",
+      "confidence": "high for the stated warning periods; none for port-wide congestion conditions",
+      "claim": "Small-craft warnings are in force on 10 September. South to southwest winds are forecast to reach force 6 or 7 at times from Fair Head through Howth Head to Roche's Point from 07:00 to 17:00; another warning covers Roche's Point through Slyne Head to Fair Head until 14:00.",
+      "supportedClaim": "Small-craft warnings are in force on 10 September. South to southwest winds are forecast to reach force 6 or 7 at times from Fair Head through Howth Head to Roche's Point from 07:00 to 17:00; another warning covers Roche's Point through Slyne Head to Fair Head until 14:00.",
+      "validFrom": "2026-09-10T07:00:00+01:00",
+      "validThrough": "2026-09-10T17:00:00+01:00"
+    }
+  ],
+  "ports": [
+    {
+      "port": "Felixstowe",
+      "slug": "felixstowe",
+      "sources": [
+        "felixstowe-status"
+      ],
+      "review": "Source access blocked; current conditions unknown.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Southampton",
+      "slug": "southampton",
+      "sources": [
+        "southampton-status"
+      ],
+      "review": "Live status page checked. No timestamped, comparable port-wide congestion measurement was available in accessible primary-source text.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "London Gateway",
+      "slug": "london-gateway",
+      "sources": [
+        "gateway-status"
+      ],
+      "review": "Live status page checked. No timestamped, comparable port-wide congestion measurement was available in accessible primary-source text.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Liverpool",
+      "slug": "liverpool",
+      "sources": [
+        "liverpool-55",
+        "liverpool-43",
+        "liverpool-59"
+      ],
+      "review": "Three dated operating notices found for berth/lock restrictions. Confirm current applicability with the terminal; port-wide congestion remains unknown.",
+      "observedAt": null,
+      "confidence": "high for listed notice content; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Bristol",
+      "slug": "bristol",
+      "sources": [],
+      "review": "No primary operational measurement reviewed in this run.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Tilbury",
+      "slug": "tilbury",
+      "sources": [],
+      "review": "No primary operational measurement reviewed in this run.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Immingham",
+      "slug": "immingham",
+      "sources": [],
+      "review": "No primary operational measurement reviewed in this run.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Grangemouth",
+      "slug": "grangemouth",
+      "sources": [],
+      "review": "No primary operational measurement reviewed in this run.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Holyhead",
+      "slug": "holyhead",
+      "sources": [],
+      "review": "No primary operational measurement reviewed in this run.",
+      "observedAt": null,
+      "confidence": "none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Belfast",
+      "slug": "belfast",
+      "sources": [
+        "met-eireann-ei822-2026-09-09",
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Larne",
+      "slug": "larne",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Londonderry",
+      "slug": "londonderry",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Dublin",
+      "slug": "dublin",
+      "sources": [
+        "dublin-notices",
+        "dublin-48",
+        "dublin-39-3",
+        "met-eireann-ei822-2026-09-09",
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Maintenance dredging and survey notices remain current. Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for listed notice and warning content; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Cork",
+      "slug": "cork",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Rosslare Europort",
+      "slug": "rosslare-europort",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Shannon Foynes",
+      "slug": "shannon-foynes",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    },
+    {
+      "port": "Waterford",
+      "slug": "waterford",
+      "sources": [
+        "met-eireann-2026-09-10"
+      ],
+      "review": "Small-craft warnings affect adjacent Irish coastal waters on 10 September. They support a navigation/weather caution, not a port-wide congestion measurement; measured conditions remain unknown.",
+      "observedAt": null,
+      "confidence": "high for the weather warning; none for port-wide congestion",
+      "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
+      "changesSinceLastComparableObservation": null
+    }
+  ],
+  "metricsForAllPorts": {
+    "observedAt": null,
+    "healthScore": null,
+    "congestionScore": null,
+    "waitingTimeHours": null,
+    "vesselsWaiting": null,
+    "berthUtilisationPercent": null,
+    "forecast": null,
+    "historicalChange": null,
+    "confidence": "unverified",
+    "missingEvidence": "Timestamped primary measurements, reproducible scoring methodology and comparable historical observations."
+  },
+  "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
+  "checkedAt": "2026-09-10T08:46:27+01:00"
+}
