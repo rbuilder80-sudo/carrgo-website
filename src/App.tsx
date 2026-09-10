@@ -31,7 +31,6 @@ const DoorToDoor = lazy(() => import('./pages/services/DoorToDoor'));
 const AmazonFba = lazy(() => import('./pages/services/AmazonFba'));
 const Warehousing = lazy(() => import('./pages/services/Warehousing'));
 const ContainerShipping = lazy(() => import('./pages/services/ContainerShipping'));
-const AirCargo = lazy(() => import('./pages/services/AirCargo'));
 const Logistics = lazy(() => import('./pages/services/Logistics'));
 
 // Route pages

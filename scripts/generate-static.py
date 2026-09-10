@@ -1570,6 +1570,7 @@ STATIC_REDIRECTS = {
     "/cost-calculator": "/tools/cost-calculator",
     "/freight-quote": "/get-a-quote",
     "/air-freight": "/services/air-freight",
+    "/services/air-cargo": "/services/air-freight",
     "/sea-freight": "/services/sea-freight",
     "/freight-forwarding": "/services",
     "/services/freight-forwarding": "/services",
