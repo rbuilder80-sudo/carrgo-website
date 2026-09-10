@@ -75,7 +75,7 @@ export default function AirFreight() {
     <>
       <Seo
         title="Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo"
-        description="Door-to-door air freight UK, Northern Ireland and Ireland. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quotes in 2 hours."
+        description="Door to door air freight UK, Northern Ireland and Ireland. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quotes in 2 hours."
         keywords="door to door air freight, air freight uk, air cargo uk, express air freight, air freight northern ireland, air freight from ireland, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
         ogUrl="https://www.carrgo.co.uk/services/air-freight"
         canonical="https://www.carrgo.co.uk/services/air-freight"

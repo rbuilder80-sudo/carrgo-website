@@ -91,8 +91,8 @@ export default function CargoShippingCompany() {
   return (
     <>
       <Seo
-        title="Cargo Shipping Company UK | Sea, Air & Road Cargo | Carrgo"
-        description="UK cargo shipping company for importers and exporters. Sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery. Quote in 2 hours."
+        title="Cargo Shipping Company UK | Cargo Forwarder Quotes | Carrgo"
+        description="UK cargo shipping company and cargo forwarder for sea, air and road freight. Compare cargo shippers with customs, tracking and delivery included."
         keywords="cargo shipping company, cargo shippers, cargo services uk, cargo freight forwarding, shipping and cargo services, cargo forwarder, freight forwarding company uk, cargo shipping quote"
         ogUrl="https://www.carrgo.co.uk/cargo-shipping-company"
         canonical="https://www.carrgo.co.uk/cargo-shipping-company"
@@ -106,10 +106,10 @@ export default function CargoShippingCompany() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase text-blue-200 mb-3">Cargo shipping and freight forwarding</span>
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  Cargo Shipping Company UK
+                  Cargo Shipping Company and Cargo Forwarder UK
                 </h1>
                 <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-                  Carrgo arranges cargo shipping for UK importers and exporters by sea, air and road. One team handles carrier booking, supplier collection, customs clearance, tracking and final delivery.
+                  Carrgo arranges cargo shipping for UK importers and exporters by sea, air and road. One team handles carrier booking, supplier collection, customs clearance, tracking and final delivery so you can compare cargo shippers with one clear quote.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]">

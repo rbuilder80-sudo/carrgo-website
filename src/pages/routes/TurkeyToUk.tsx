@@ -71,8 +71,8 @@ export default function TurkeyToUk() {
   return (
     <>
       <Seo
-        title="Turkey to UK Road Freight & Cargo Shipping | Istanbul to UK | Carrgo"
-        description="Cargo from Turkey to UK by road, sea or air. Istanbul to UK collections, customs clearance, ATR support, delivery in 5-7 days by road and quotes in 2 hours."
+        title="Turkey to UK Freight | Road, Sea & Air Cargo | Carrgo"
+        description="Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with quotes in 2 hours."
         keywords="turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade"
         ogUrl="https://www.carrgo.co.uk/routes/turkey-to-uk/"
         canonical="https://www.carrgo.co.uk/routes/turkey-to-uk/"
@@ -87,10 +87,10 @@ export default function TurkeyToUk() {
               <div>
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase text-brand-200 mb-3">SHIPPING ROUTE</span>
                 <h1 id="hero-heading" className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  Turkey to UK Road Freight & Cargo Shipping
+                  Turkey to UK Freight: Road, Sea & Air Cargo
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
-                  Ship cargo from Turkey to the UK with Carrgo. We collect from Istanbul, Bursa, Izmir, Mersin and Ankara, then move goods by road freight in 5–7 days, sea freight in 14–20 days or air freight in 2–3 days with customs clearance included.
+                  Ship cargo from Turkey to the UK with Carrgo. We collect from Istanbul, Bursa, Izmir, Mersin and Ankara, then move goods by road freight in 5-7 days, sea freight in 14-20 days or air freight in 2-3 days with customs clearance included.
                 </p>
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
@@ -111,7 +111,7 @@ export default function TurkeyToUk() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]">
-                    Get a Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    Get a Turkey Freight Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-600 transition-colors min-h-[44px]">
                     Contact Us

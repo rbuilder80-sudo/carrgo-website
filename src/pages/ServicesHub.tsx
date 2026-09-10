@@ -202,8 +202,8 @@ export default function ServicesHub() {
   return (
     <>
       <Seo
-        title="Cargo Services UK | Freight Forwarder Quote in 2 Hours | Carrgo"
-        description="Cargo services for UK businesses: sea, air, road and rail freight with customs clearance, tracking and door-to-door delivery. Get a quote in 2 hours."
+        title="Cargo Services UK | Shipping, Transport & Quotes | Carrgo"
+        description="Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with quotes in 2 hours."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://www.carrgo.co.uk/services"
         canonical="https://www.carrgo.co.uk/services"
@@ -227,7 +227,7 @@ export default function ServicesHub() {
                   to="/get-a-quote"
                   className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]"
                 >
-                  Get a Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get a Cargo Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+442045827588"

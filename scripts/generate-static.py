@@ -111,8 +111,8 @@ ROUTES = {
         ]
     },
     "/services": {
-        "title": "Cargo Services UK | Freight Forwarder Quote in 2 Hours | Carrgo",
-        "description": "Cargo services for UK businesses: sea, air, road and rail freight with customs clearance, tracking and door-to-door delivery. Get a quote in 2 hours.",
+        "title": "Cargo Services UK | Shipping, Transport & Quotes | Carrgo",
+        "description": "Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with quotes in 2 hours.",
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
@@ -234,11 +234,11 @@ ROUTES = {
         ]
     },
     "/cargo-shipping-company": {
-        "title": "Cargo Shipping Company UK | Sea, Air & Road Cargo | Carrgo",
-        "description": "UK cargo shipping company for importers and exporters. Sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery. Quote in 2 hours.",
+        "title": "Cargo Shipping Company UK | Cargo Forwarder Quotes | Carrgo",
+        "description": "UK cargo shipping company and cargo forwarder for sea, air and road freight. Compare cargo shippers with customs, tracking and delivery included.",
         "keywords": "cargo shipping company, cargo shippers, cargo services uk, cargo freight forwarding, shipping and cargo services, cargo forwarder, freight forwarding company uk, cargo shipping quote",
         "canonical": "https://www.carrgo.co.uk/cargo-shipping-company",
-        "h1": "Cargo Shipping Company UK",
+        "h1": "Cargo Shipping Company and Cargo Forwarder UK",
         "staticBody": """
 <h2>Cargo shipping and freight forwarding from one UK team</h2>
 <p>Carrgo arranges cargo shipping for UK importers and exporters by sea, air and road. One team handles carrier booking, supplier collection, customs clearance, tracking and final delivery.</p>
@@ -305,7 +305,7 @@ ROUTES = {
     },
     "/services/air-freight": {
         "title": "Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo",
-        "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
+        "description": "Door to door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
         "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Door-to-Door Air Freight UK",
@@ -854,11 +854,11 @@ ROUTES = {
         ]
     },
     "/routes/turkey-to-uk": {
-        "title": "Turkey to UK Road Freight & Cargo Shipping | Istanbul to UK | Carrgo",
-        "description": "Cargo from Turkey to UK by road, sea or air. Istanbul to UK collections, customs clearance, ATR support, delivery in 5-7 days by road and quotes in 2 hours.",
+        "title": "Turkey to UK Freight | Road, Sea & Air Cargo | Carrgo",
+        "description": "Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with quotes in 2 hours.",
         "keywords": "turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade",
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
-        "h1": "Turkey to UK Road Freight &amp; Cargo Shipping",
+        "h1": "Turkey to UK Freight: Road, Sea &amp; Air Cargo",
         "staticBody": """
 <h2>Best road freight from Turkey to UK for commercial cargo</h2>
 <p>For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR movement certificate support, UK customs clearance and delivery to your warehouse or fulfilment centre.</p>
