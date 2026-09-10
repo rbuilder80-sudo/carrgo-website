@@ -23,15 +23,15 @@ def normalize_page_url(url):
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "Cargo Services UK | Freight Forwarder Quotes in 2 Hours | Carrgo",
-        "description": "Cargo services for UK importers and exporters. Carrgo handles sea, air, road, rail, customs and door-to-door delivery with quotes in 2 hours.",
+        "title": "Cargo Services UK | Shipping & Freight Quotes | Carrgo",
+        "description": "UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a quote in 2 hours.",
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
-        "h1": "UK Cargo Services &amp; Freight Forwarding",
+        "h1": "UK Cargo Services, Shipping and Freight Forwarding",
         "staticBody": """
 <h2>Cargo services for UK importers and exporters</h2>
-<p>Carrgo is a UK freight forwarder for businesses that need cargo services by sea, air, road or rail. We handle collection, freight booking, customs clearance, tracking and final delivery in one quote.</p>
-<p>Use Carrgo when you are comparing cargo shippers, cargo freight forwarding, a cargo shipping company or a freight forwarder near you for UK imports and exports.</p>
+<p>Carrgo is a UK freight forwarder for businesses that need cargo services, shipping and cargo support by sea, air, road or rail. We handle collection, freight booking, customs clearance, tracking and final delivery in one quote.</p>
+<p>Use Carrgo when you are comparing cargo shippers, cargo freight forwarding, a cargo shipping company, cargo transportation or a cargo forwarder for UK imports and exports.</p>
 <p><a href="https://www.carrgo.co.uk/cargo-shipping-company/">Compare cargo shipping company services</a> before you request a quote.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png",

@@ -134,8 +134,8 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
       <Seo
-        title="Cargo Services UK | Freight Forwarder Quotes in 2 Hours | Carrgo"
-        description="Cargo services for UK importers and exporters. Carrgo handles sea, air, road, rail, customs and door-to-door delivery with quotes in 2 hours."
+        title="Cargo Services UK | Shipping & Freight Quotes | Carrgo"
+        description="UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a quote in 2 hours."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://www.carrgo.co.uk/"
         canonical="https://www.carrgo.co.uk/"
@@ -198,7 +198,7 @@ export default function Home() {
               {/* Direct answer block for AI search readiness */}
               <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
                 <p className="text-lg text-white leading-relaxed" itemProp="text">
-                  <strong className="text-green-300">Carrgo is a UK freight forwarder for cargo services</strong>, covering sea freight (FCL/LCL), door-to-door air freight, road haulage, rail freight, customs clearance, and final delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
+                  <strong className="text-green-300">Carrgo provides UK cargo services and freight forwarding</strong>, covering sea freight (FCL/LCL), door-to-door air freight, road haulage, rail freight, customs clearance, and final delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
                 </p>
               </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
