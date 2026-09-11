@@ -124,7 +124,7 @@ Interactive tool to find the right Incoterm for your shipment based on risk, cos
 Generate a customised checklist of required documents for your specific import shipment.
 
 ### [Port Comparison Tool](https://www.carrgo.co.uk/tools/port-comparison)
-Compare health scores, wait times, forecasts and capacity across all 18 UK & Ireland ports.
+Legacy comparison page. Its numerical health scores, wait times and forecasts are not currently backed by timestamped primary measurements; use the evidence tracker instead.
 
 ### [Importer Cost Calculator](https://www.carrgo.co.uk/tools/cost-calculator)
 Calculate the real cost of port delays — demurrage, detention, storage & lost sales.
@@ -166,4 +166,3 @@ How Carrgo handles freight from quote to delivery.
 - Republic of Ireland (Dublin, Cork, Rosslare, Shannon Foynes, Waterford)
 
 ## Accreditations
-
