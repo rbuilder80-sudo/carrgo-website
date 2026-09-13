@@ -97,6 +97,7 @@ export default function Home() {
     formData.forEach((value, key) => {
       fields[key] = String(value);
     });
+    fields.source_page = '/';
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setHeroSubmitted(true);
@@ -115,6 +116,7 @@ export default function Home() {
     formData.forEach((value, key) => {
       fields[key] = String(value);
     });
+    fields.source_page = '/';
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
       setQuoteSubmitted(true);

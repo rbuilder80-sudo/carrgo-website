@@ -97,8 +97,21 @@ export default function GetAQuote() {
   const [reference, setReference] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [shipmentFields, setShipmentFields] = useState<Record<string, string>>({});
 
-  const handleNext = useCallback(() => setStep(2), []);
+  const collectFormFields = (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    const fields: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      fields[key] = String(value);
+    });
+    return fields;
+  };
+
+  const handleNext = useCallback((form: HTMLFormElement) => {
+    setShipmentFields(collectFormFields(form));
+    setStep(2);
+  }, []);
   const handleBack = useCallback(() => setStep(1), []);
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
@@ -107,11 +120,11 @@ export default function GetAQuote() {
     setError(null);
 
     const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-    const fields: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      fields[key] = String(value);
-    });
+    const fields = {
+      ...shipmentFields,
+      ...collectFormFields(form),
+      source_page: '/get-a-quote/',
+    };
 
     const result = await submitToFormspree('Quote Request', fields);
     if (result.success) {
@@ -122,7 +135,7 @@ export default function GetAQuote() {
       setError(result.error || 'Something went wrong. Please try again.');
     }
     setLoading(false);
-  }, []);
+  }, [shipmentFields]);
 
   return (
     <>
@@ -271,7 +284,7 @@ export default function GetAQuote() {
                         {step === 1 ? 'Step 1: Shipment Details' : 'Step 2: Your Details'}
                       </h3>
 
-                      <form onSubmit={step === 1 ? (e => { e.preventDefault(); handleNext(); }) : handleSubmit} className="space-y-4">
+                      <form onSubmit={step === 1 ? (e => { e.preventDefault(); handleNext(e.currentTarget); }) : handleSubmit} className="space-y-4">
                         {step === 1 ? (
                           /* Step 1: Shipment Details */
                           <>

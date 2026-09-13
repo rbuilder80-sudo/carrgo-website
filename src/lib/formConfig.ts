@@ -19,15 +19,26 @@ export async function submitToFormspree(
   formType: string,
   fields: Record<string, string>
 ): Promise<FormSubmitResult> {
+  const replyTo = fields.email || fields.from_email || fields.Email || fields.reply_to || '';
+  const sourcePage = typeof window !== 'undefined'
+    ? `${window.location.origin}${window.location.pathname}`
+    : 'carrgo.co.uk';
+
   const payload = new FormData();
   payload.append('_subject', `${formType} from carrgo.co.uk`);
   payload.append('_template', 'table');
   payload.append('_captcha', 'false');
-  payload.append('_replyto', fields.email || fields.Email || '');
+  payload.append('_replyto', replyTo);
   payload.append('form_type', formType);
+  payload.append('source_page', fields.source_page || sourcePage);
+  payload.append('submitted_at', new Date().toISOString());
 
   Object.entries(fields).forEach(([key, value]) => {
-    payload.append(key, value);
+    if (key === 'source_page') return;
+    const label = key
+      .replace(/[_-]+/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+    payload.append(label, value);
   });
 
   try {

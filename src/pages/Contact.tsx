@@ -124,6 +124,7 @@ export default function Contact() {
     formData.forEach((value, key) => {
       fields[key] = String(value);
     });
+    fields.source_page = '/contact/';
 
     const result = await submitToFormspree('Contact Enquiry', fields);
     if (result.success) {
