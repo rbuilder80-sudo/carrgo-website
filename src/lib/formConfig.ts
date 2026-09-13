@@ -1,4 +1,5 @@
 export const SUPPORT_EMAIL = 'support@carrgo.co.uk';
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${SUPPORT_EMAIL}`;
 
 export interface FormSubmissionState {
   loading: boolean;
@@ -6,7 +7,7 @@ export interface FormSubmissionState {
   error: string | null;
 }
 
-export type FormDeliveryMethod = 'api' | 'email_client';
+export type FormDeliveryMethod = 'formsubmit' | 'api' | 'email_client';
 
 interface FormSubmitResult {
   success: boolean;
@@ -41,25 +42,28 @@ export async function submitToFormspree(
   formType: string,
   fields: Record<string, string>
 ): Promise<FormSubmitResult> {
+  const payload = new FormData();
+  payload.append('_subject', `${formType} from carrgo.co.uk`);
+  payload.append('_template', 'table');
+  payload.append('_captcha', 'false');
+  payload.append('_replyto', fields.email || fields.Email || '');
+  payload.append('form_type', formType);
+
+  Object.entries(fields).forEach(([key, value]) => {
+    payload.append(key, value);
+  });
+
   try {
-    const response = await fetch('/.netlify/functions/send-form-email', {
+    const response = await fetch(FORMSUBMIT_ENDPOINT, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({ formType, fields }),
+      body: payload,
     });
 
     if (response.ok) {
-      return { success: true, deliveryMethod: 'api' };
-    }
-
-    if (response.status === 404 || response.status === 405) {
-      const opened = openEmailFallback(formType, fields);
-      if (opened) {
-        return { success: true, deliveryMethod: 'email_client' };
-      }
+      return { success: true, deliveryMethod: 'formsubmit' };
     }
 
     const body = await response.json().catch(() => null);
@@ -80,7 +84,7 @@ export async function submitToFormspree(
   }
 }
 
-export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod = 'api') {
+export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod = 'formsubmit') {
   const isCarrgoHost = typeof window !== 'undefined'
     && /(^|\.)carrgo\.co\.uk$/i.test(window.location.hostname);
 
