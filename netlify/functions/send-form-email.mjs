@@ -1,16 +1,55 @@
 const SUPPORT_EMAIL = 'support@carrgo.co.uk';
-const DEFAULT_FROM_EMAIL = 'Carrgo Website <onboarding@resend.dev>';
+const DEFAULT_FROM_EMAIL = 'Carrgo Website <support@carrgo.co.uk>';
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
-function json(statusCode, body) {
-  return {
-    statusCode,
+function getEnv(key) {
+  return globalThis.Netlify?.env?.get?.(key) || process.env[key];
+}
+
+function wantsJson(request) {
+  const accept = request.headers.get('accept') || '';
+  const contentType = request.headers.get('content-type') || '';
+  return accept.includes('application/json') || contentType.includes('application/json');
+}
+
+function json(status, body) {
+  return new Response(JSON.stringify(body), {
+    status,
     headers: {
       'content-type': 'application/json; charset=utf-8',
       'cache-control': 'no-store',
     },
-    body: JSON.stringify(body),
-  };
+  });
+}
+
+function html(status, title, message) {
+  return new Response(`<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>${escapeHtml(title)} | Carrgo</title>
+  <style>
+    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;background:#f8fafc;color:#111827;margin:0}
+    main{max-width:680px;margin:10vh auto;padding:32px;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 20px 50px #0f172a1a}
+    h1{font-size:2rem;line-height:1.2;margin:0 0 12px}
+    a{color:#1a6dff;font-weight:700}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>${escapeHtml(title)}</h1>
+    <p>${escapeHtml(message)}</p>
+    <p><a href="/">Return to Carrgo</a></p>
+  </main>
+</body>
+</html>`, {
+    status,
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 'no-store',
+    },
+  });
 }
 
 function escapeHtml(value) {
@@ -44,6 +83,31 @@ function findEmail(fields) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidate) ? candidate : undefined;
 }
 
+async function parsePayload(request) {
+  const contentType = request.headers.get('content-type') || '';
+
+  if (contentType.includes('application/json')) {
+    return request.json();
+  }
+
+  if (
+    contentType.includes('application/x-www-form-urlencoded') ||
+    contentType.includes('multipart/form-data')
+  ) {
+    const formData = await request.formData();
+    const rawFields = Object.fromEntries(
+      Array.from(formData.entries()).map(([key, value]) => [key, typeof value === 'string' ? value : value.name])
+    );
+    const formType = rawFields.formType || rawFields._subject || 'Website Enquiry';
+    const fields = Object.fromEntries(
+      Object.entries(rawFields).filter(([key]) => !key.startsWith('_') && key !== 'formType')
+    );
+    return { formType, fields };
+  }
+
+  return {};
+}
+
 function buildHtml(formType, fields, submittedAt) {
   const rows = Object.entries(fields)
     .map(([key, value]) => `
@@ -74,28 +138,38 @@ function buildText(formType, fields, submittedAt) {
   return [`New ${formType} - Carrgo Website`, `Submitted ${submittedAt}`, '', ...lines].join('\n');
 }
 
-export async function handler(event) {
-  if (event.httpMethod !== 'POST') {
-    return json(405, { ok: false, error: 'Method not allowed' });
+export default async function sendFormEmail(request) {
+  const jsonResponse = wantsJson(request);
+
+  if (request.method !== 'POST') {
+    return jsonResponse
+      ? json(405, { ok: false, error: 'Method not allowed' })
+      : html(405, 'Form not submitted', 'Please submit the form from carrgo.co.uk.');
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = getEnv('RESEND_API_KEY');
   if (!apiKey) {
-    return json(503, { ok: false, error: 'Email service is not configured' });
+    return jsonResponse
+      ? json(503, { ok: false, error: 'Email service is not configured' })
+      : html(503, 'Email service not configured', 'Please email support@carrgo.co.uk directly.');
   }
 
   let payload;
   try {
-    payload = JSON.parse(event.body || '{}');
+    payload = await parsePayload(request);
   } catch {
-    return json(400, { ok: false, error: 'Invalid submission' });
+    return jsonResponse
+      ? json(400, { ok: false, error: 'Invalid submission' })
+      : html(400, 'Invalid submission', 'Please check the form and try again.');
   }
 
   const formType = String(payload.formType || 'Website Enquiry').trim().slice(0, 80);
   const fields = normalizeFields(payload.fields);
   const fieldCount = Object.keys(fields).length;
   if (fieldCount === 0) {
-    return json(400, { ok: false, error: 'Please complete the form before submitting' });
+    return jsonResponse
+      ? json(400, { ok: false, error: 'Please complete the form before submitting' })
+      : html(400, 'Please complete the form', 'Please go back, complete the required fields and submit again.');
   }
 
   const replyTo = findEmail(fields);
@@ -106,7 +180,7 @@ export async function handler(event) {
   });
 
   const resendPayload = {
-    from: process.env.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL,
+    from: getEnv('RESEND_FROM_EMAIL') || DEFAULT_FROM_EMAIL,
     to: [SUPPORT_EMAIL],
     subject: `New ${formType} - Carrgo Website`,
     html: buildHtml(formType, fields, submittedAt),
@@ -125,11 +199,13 @@ export async function handler(event) {
 
   const body = await response.json().catch(() => null);
   if (!response.ok) {
-    return json(502, {
-      ok: false,
-      error: body?.message || 'Unable to send email right now',
-    });
+    const message = body?.message || 'Unable to send email right now';
+    return jsonResponse
+      ? json(502, { ok: false, error: message })
+      : html(502, 'Message not sent', `${message}. Please email support@carrgo.co.uk directly.`);
   }
 
-  return json(200, { ok: true, id: body?.id });
+  return jsonResponse
+    ? json(200, { ok: true, id: body?.id })
+    : html(200, 'Enquiry received', 'Thank you. Carrgo will review your details and reply from support@carrgo.co.uk.');
 }
