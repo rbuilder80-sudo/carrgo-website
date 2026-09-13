@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Seo from '../../components/Seo';
-import { submitToFormspree, trackLead, type FormDeliveryMethod } from '../../lib/formConfig';
+import { submitToFormspree, trackLead } from '../../lib/formConfig';
 
 interface EvidenceSource {
   id: string;
@@ -36,7 +36,6 @@ interface Evidence {
 
 function QuickQuote({ id }: { id: string }) {
   const [submitted, setSubmitted] = useState(false);
-  const [deliveryMethod, setDeliveryMethod] = useState<FormDeliveryMethod>('api');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -55,8 +54,7 @@ function QuickQuote({ id }: { id: string }) {
 
     const result = await submitToFormspree('Port Congestion Quote Request', fields);
     if (result.success) {
-      const method = result.deliveryMethod || 'api';
-      setDeliveryMethod(method);
+      const method = result.deliveryMethod || 'formsubmit';
       setSubmitted(true);
       trackLead('port_congestion_quote', method);
     } else {
@@ -68,13 +66,9 @@ function QuickQuote({ id }: { id: string }) {
   if (submitted) {
     return (
       <div role="status" className="rounded-xl bg-green-50 border border-green-200 p-5">
-        <h2 className="text-lg font-bold text-green-900">
-          {deliveryMethod === 'email_client' ? 'Email app opened' : 'Enquiry received'}
-        </h2>
+        <h2 className="text-lg font-bold text-green-900">Enquiry received</h2>
         <p className="mt-2 text-sm text-green-800">
-          {deliveryMethod === 'email_client'
-            ? 'Press Send in your email app so Carrgo receives your shipment details.'
-            : 'Carrgo will review the route and contact you for any extra shipment details.'}
+          Carrgo will review the route and contact you for any extra shipment details.
         </p>
       </div>
     );

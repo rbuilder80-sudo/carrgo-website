@@ -7,35 +7,12 @@ export interface FormSubmissionState {
   error: string | null;
 }
 
-export type FormDeliveryMethod = 'formsubmit' | 'api' | 'email_client';
+export type FormDeliveryMethod = 'formsubmit';
 
 interface FormSubmitResult {
   success: boolean;
   error?: string;
   deliveryMethod?: FormDeliveryMethod;
-}
-
-function formatEmailBody(formType: string, fields: Record<string, string>) {
-  const lines = [
-    `${formType} from carrgo.co.uk`,
-    '',
-    ...Object.entries(fields)
-      .filter(([, value]) => value.trim().length > 0)
-      .map(([key, value]) => `${key}: ${value}`),
-  ];
-
-  return lines.join('\n');
-}
-
-function openEmailFallback(formType: string, fields: Record<string, string>) {
-  if (typeof window === 'undefined') return false;
-
-  trackLead(`${formType.toLowerCase().replace(/\s+/g, '_')}_email_fallback`, 'email_client');
-
-  const subject = encodeURIComponent(`${formType} from carrgo.co.uk`);
-  const body = encodeURIComponent(formatEmailBody(formType, fields));
-  window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
-  return true;
 }
 
 export async function submitToFormspree(
@@ -72,14 +49,11 @@ export async function submitToFormspree(
       error: body?.error || `Submission failed (${response.status})`,
     };
   } catch (err) {
-    const opened = openEmailFallback(formType, fields);
-    if (opened) {
-      return { success: true, deliveryMethod: 'email_client' };
-    }
-
     return {
       success: false,
-      error: err instanceof Error ? err.message : 'Network error. Please try again.',
+      error: err instanceof Error
+        ? err.message
+        : 'Submission could not be sent. Please email support@carrgo.co.uk.',
     };
   }
 }
@@ -125,14 +99,5 @@ export function trackLead(formLabel: string, deliveryMethod: FormDeliveryMethod 
       value: 1,
       currency: 'GBP',
     });
-
-    if (deliveryMethod === 'email_client') {
-      analyticsWindow.gtag('event', 'email_fallback_opened', {
-        event_category: 'form',
-        event_label: formLabel,
-        method: deliveryMethod,
-        transport_type: 'beacon',
-      });
-    }
   }
 }
