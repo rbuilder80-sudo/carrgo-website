@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && find dist -type d -name '*.html' -prune -exec rm -rf {} + && CARRGO_GH_PAGES_DIR=dist python3 scripts/generate-static.py && cp sitemap.xml dist/sitemap.xml",
     "lint": "eslint .",
     "preview": "vite preview"
   },
