@@ -44,6 +44,7 @@ function check(name, ok, detail) {
   const sm = await get(RAW + '/gh-pages/sitemap.xml');
   const locs = (sm.text.match(/<loc>/g) || []).length;
   check('sitemap >= 74 URLs', sm.status === 200 && locs >= 74, 'urls=' + locs);
+  check('sitemap excludes raw data files', !/\/data\/port-evidence\/[^<]+\.(json|csv)<\/loc>/i.test(sm.text), 'raw data files are not search landing pages');
   const ik = await get(LIVE + '/' + INDEXNOW_KEY + '.txt');
   check('IndexNow key file', ik.status === 200, 'status=' + ik.status);
   const ll = await get(RAW + '/gh-pages/llms.txt');
