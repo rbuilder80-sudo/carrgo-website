@@ -1564,6 +1564,42 @@ ROUTES = {
     }
 }
 
+# Port intelligence pages must never imply that synthetic client-side sample
+# values are measured operational data. Keep static metadata aligned with the
+# evidence-led tracker; unknown is not the same as normal operations.
+ROUTES["/tools/port-comparison"].update({
+    "title": "UK & Ireland Port Evidence Comparison | Carrgo",
+    "description": "Compare evidence coverage for 17 UK and Ireland ports. Unverified waiting times, queues, berth utilisation, scores and forecasts are shown as unknown.",
+    "keywords": "UK port status evidence, Ireland port notices, port congestion evidence, shipping disruption notices",
+    "h1": "UK &amp; Ireland Port Evidence Comparison",
+    "staticBody": """
+<h2>Current numerical measurements are unverified</h2>
+<p>Carrgo withholds untraceable health scores, waiting times, vessel queues, berth utilisation and forecasts. Unknown does not mean normal operations.</p>
+<p><a href="/resources/port-congestion-tracker/">View dated port evidence and source limitations</a>.</p>
+""",
+})
+
+PORT_EVIDENCE_NAMES = {
+    "felixstowe": "Felixstowe", "southampton": "Southampton", "london-gateway": "London Gateway",
+    "liverpool": "Liverpool", "bristol": "Bristol", "tilbury": "Tilbury", "immingham": "Immingham",
+    "grangemouth": "Grangemouth", "holyhead": "Holyhead", "belfast": "Belfast", "larne": "Larne",
+    "londonderry": "Londonderry", "dublin": "Dublin", "cork": "Cork",
+    "rosslare-europort": "Rosslare Europort", "shannon-foynes": "Shannon Foynes", "waterford": "Waterford",
+}
+for slug, port_name in PORT_EVIDENCE_NAMES.items():
+    route = f"/ports/{slug}"
+    ROUTES[route].update({
+        "title": f"{port_name} Port Status Evidence | Carrgo",
+        "description": f"Evidence-led {port_name} port status page. Unverified waiting times, vessel queues, berth utilisation, scores and forecasts remain unknown.",
+        "keywords": f"{port_name} port status, {port_name} port notices, {port_name} shipping disruption, {port_name} freight quote",
+        "h1": f"{port_name} Port Status Evidence",
+        "staticBody": f"""
+<h2>Current congestion measurements: unknown</h2>
+<p>No comparable, timestamped primary measurement has been verified for {port_name} port-wide waiting time, vessel queues, berth utilisation or congestion. Unknown does not mean normal operations.</p>
+<p><a href="/resources/port-congestion-tracker/">Check dated primary notices and limitations</a> or <a href="/get-a-quote/">ask about a shipment through {port_name}</a>.</p>
+""",
+    })
+
 STATIC_REDIRECTS = {
     "/port-intelligence": "/resources/port-congestion-tracker",
     "/port-comparison": "/tools/port-comparison",
