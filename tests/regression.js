@@ -37,7 +37,11 @@ function check(name, ok, detail) {
   const a1 = await get(LIVE + '/blog/sea-freight-costs-2026.html');
   check('article #1 live', a1.status === 200 && a1.text.length > 500, 'status=' + a1.status + ' bytes=' + a1.text.length);
   const a2 = await get(LIVE + '/blog/china-uk-shipping-time-2026.html');
-  check('article #2 live', a2.status === 200 && a2.text.length > 500, 'status=' + a2.status + ' bytes=' + a2.text.length);
+  const a2Consolidated = a2.status === 200
+    && /noindex\s*,?\s*follow/i.test(a2.text)
+    && /rel="canonical" href="https:\/\/www\.carrgo\.co\.uk\/routes\/china-to-uk\/?"/i.test(a2.text)
+    && /(?:http-equiv="refresh"|location\.replace)/i.test(a2.text);
+  check('article #2 consolidated to China–UK route', a2Consolidated, 'status=' + a2.status + ' bytes=' + a2.text.length);
 
   // 3. Indexing pipeline
   console.log('[indexing]');
