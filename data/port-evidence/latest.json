@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedOn": "2026-09-21",
+  "checkedOn": "2026-09-22",
   "measurementObservedAt": null,
   "previousComparableObservation": null,
   "coverage": 17,
@@ -8,7 +8,7 @@
   "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
   "audit": {
     "sourceBranch": "main",
-    "sourceCommit": "1ea2d37be6e2b596116d4be9a4925fc2ea9ec687",
+    "sourceCommit": "6f45ff5f724ef86df16d6c646d9e20889dfc89c3",
     "productionBaseCommit": "1c54b29bc68e0764d0926413596c6af33bb39a85",
     "findings": [
       "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
@@ -17,7 +17,7 @@
       "A scheduled publisher regenerated the weekly report on 9 September with the same unsupported numerical values relabelled as live data. The public current report and dated edition were corrected to explicit unverified states.",
       "An external Carrgo SEO Agent regenerated the production report on 16 September with unsupported synthetic health scores labelled as live data, while the evidence ledger still recorded every numerical measurement as unknown. The current report, archive and dated URL were corrected on 17 September."
     ],
-    "changesSincePrevious": "The relevant Irish Sea and Northern Ireland inshore strong-wind warnings shown on 20 September are no longer present in the 21 September forecast. The Irish Sea and Malin also have no gale warning. Liverpool, Dublin and Belfast official notice indexes show no new operational notice beyond the notices already recorded. Public Felixstowe and DP World status pages still expose no timestamped port-wide queue, waiting-time or berth-utilisation measurement suitable for comparison, so no congestion change is calculated."
+    "changesSincePrevious": "Strong-wind warnings have returned for Great Orme Head to the Mull of Galloway, the Isle of Man, Lough Foyle to Carlingford Lough, and the Firth of Clyde and North Channel. The Irish Sea and Malin still have no gale warning, although Irish Sea winds may reach force 7 later. Liverpool, Dublin and Belfast official notice indexes show no newer operational notice beyond the notices already recorded. No timestamped, comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
   },
   "sources": [
     {
@@ -823,6 +823,96 @@
       "validThrough": "2026-09-22T06:00:00Z",
       "missingEvidence": "The forecast does not report terminal operations, queues, berth use or waiting times.",
       "observedAt": null
+    },
+    {
+      "id": "liverpool-notices-index-2026-09-22",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/marine/our-ports/liverpool/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-22",
+      "checkedAt": "2026-09-22T08:54:47+01:00",
+      "kind": "primary-index",
+      "access": "Official Liverpool marine page retrieved; no newer operational notice was found beyond Notices 48, 55 and 57 already recorded",
+      "confidence": "high for the live notice index at the stated check time; none for port-wide congestion conditions",
+      "claim": "The official Liverpool marine page still lists Notice 48 as its latest notice and includes Notices 55 and 57 in the current-year list. No newer operational notice was found after the 21 September check.",
+      "supportedClaim": "The official Liverpool marine page still lists Notice 48 as its latest notice and includes Notices 55 and 57 in the current-year list. No newer operational notice was found after the 21 September check.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "The index does not report port-wide queues, waiting times, berth utilisation or shipment-specific impacts."
+    },
+    {
+      "id": "dublin-notices-index-2026-09-22",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/information-centre/notice-to-mariners-2026/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-22",
+      "checkedAt": "2026-09-22T08:54:47+01:00",
+      "kind": "primary-index",
+      "access": "Official 2026 notice index retrieved; Notice 48 remains the latest listed notice",
+      "confidence": "high for the live notice index at the stated check time; none for port-wide congestion",
+      "claim": "Dublin Port’s official 2026 index still ends at Notice 48/2026. No later operational notice was listed at the check time.",
+      "supportedClaim": "Dublin Port’s official 2026 index still ends at Notice 48/2026. No later operational notice was listed at the check time.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "The index does not report port-wide queue, waiting-time or berth-utilisation measurements."
+    },
+    {
+      "id": "belfast-notices-index-2026-09-22",
+      "publisher": "Belfast Harbour Commissioners",
+      "url": "https://www.belfast-harbour.co.uk/news/document_categories/notice-to-mariners/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-22",
+      "checkedAt": "2026-09-22T08:54:47+01:00",
+      "kind": "primary-index",
+      "access": "Official notice archive retrieved; Notice 20 remains the latest listed notice",
+      "confidence": "high for the live notice archive at the stated check time; none for port-wide congestion",
+      "claim": "Belfast Harbour’s official archive still lists Notice 20/2026 as the latest notice. No later operational notice was listed at the check time.",
+      "supportedClaim": "Belfast Harbour’s official archive still lists Notice 20/2026 as the latest notice. No later operational notice was listed at the check time.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "The archive does not report port-wide queue, waiting-time or berth-utilisation measurements."
+    },
+    {
+      "id": "met-office-shipping-2026-09-22",
+      "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
+      "publishedOn": "2026-09-22",
+      "publishedAt": "2026-09-22T04:05:00Z",
+      "checkedOn": "2026-09-22",
+      "checkedAt": "2026-09-22T08:54:47+01:00",
+      "kind": "official-weather",
+      "access": "Public current shipping forecast text retrieved",
+      "confidence": "high for the stated forecast period; none for port-wide congestion conditions",
+      "claim": "The shipping forecast issued at 04:05 UTC on 22 September lists no gale warning for the Irish Sea or Malin. Irish Sea winds are southwest force 3 to 5, becoming cyclonic force 4 to 6 later and occasionally force 7; Malin winds are southwesterly force 3 to 5, becoming variable force 2 to 4, then northwesterly force 4 to 6 later.",
+      "supportedClaim": "The shipping forecast issued at 04:05 UTC on 22 September lists no gale warning for the Irish Sea or Malin. Irish Sea winds are southwest force 3 to 5, becoming cyclonic force 4 to 6 later and occasionally force 7; Malin winds are southwesterly force 3 to 5, becoming variable force 2 to 4, then northwesterly force 4 to 6 later.",
+      "validFrom": "2026-09-22T06:00:00Z",
+      "validThrough": "2026-09-23T06:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "The source does not report terminal operations, port-wide queues, waiting times or berth utilisation."
+    },
+    {
+      "id": "met-office-inshore-2026-09-22",
+      "publisher": "Met Office",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast",
+      "publishedOn": "2026-09-22",
+      "publishedAt": "2026-09-22T06:00:00Z",
+      "checkedOn": "2026-09-22",
+      "checkedAt": "2026-09-22T08:54:47+01:00",
+      "kind": "official-weather",
+      "access": "Public current inshore forecast text retrieved",
+      "confidence": "high for the stated forecast period; none for port-wide congestion conditions",
+      "claim": "The inshore forecast issued at 06:00 UTC on 22 September carries strong-wind warnings for Great Orme Head to the Mull of Galloway, the Isle of Man, Lough Foyle to Carlingford Lough, and the Firth of Clyde and North Channel. The Isle of Man may reach northwest force 5 to 7 later; the other named areas may reach force 6 later. This is coastal weather context, not evidence of port congestion.",
+      "supportedClaim": "The inshore forecast issued at 06:00 UTC on 22 September carries strong-wind warnings for Great Orme Head to the Mull of Galloway, the Isle of Man, Lough Foyle to Carlingford Lough, and the Firth of Clyde and North Channel. The Isle of Man may reach northwest force 5 to 7 later; the other named areas may reach force 6 later. This is coastal weather context, not evidence of port congestion.",
+      "validFrom": "2026-09-22T06:00:00Z",
+      "validThrough": "2026-09-23T06:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "The source does not report terminal operations, port-wide queues, waiting times or berth utilisation."
     }
   ],
   "ports": [
@@ -867,13 +957,12 @@
       "port": "Liverpool",
       "slug": "liverpool",
       "sources": [
-        "liverpool-notices-index-2026-09-21",
-        "liverpool-live-met-2026-09-21",
+        "liverpool-notices-index-2026-09-22",
         "liverpool-48",
         "liverpool-55",
         "liverpool-57"
       ],
-      "review": "Peel Ports’ live list still contains ten current-year notices. Notice 48 remains the latest; Notices 55 and 57 remain listed. The live meteorological table showed lighter southwesterly winds than the previous check, but it did not report operational disruption. Confirm shipment-specific effects with the Dockmaster or terminal. Port-wide congestion remains unknown.",
+      "review": "Peel Ports’ live page still lists Notices 48, 55 and 57, with no newer operational notice found. Notice 48 remains open-ended; Notices 55 and 57 remain within their stated periods. Confirm shipment-specific effects with the Dockmaster or terminal. Port-wide congestion remains unknown.",
       "observedAt": null,
       "confidence": "high for listed notice content; none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -923,10 +1012,10 @@
       "port": "Holyhead",
       "slug": "holyhead",
       "sources": [
-        "met-office-shipping-2026-09-21",
-        "met-office-inshore-2026-09-21"
+        "met-office-shipping-2026-09-22",
+        "met-office-inshore-2026-09-22"
       ],
-      "review": "The Irish Sea has no gale warning, and the adjacent inshore area no longer carries a strong-wind warning. This is weather context, not evidence of Holyhead operations. No current port-specific queue, waiting-time or berth-utilisation measurement was verified, so current measured conditions remain unknown.",
+      "review": "The Irish Sea has no gale warning, but the Great Orme Head–Mull of Galloway and Isle of Man inshore areas carry strong-wind warnings, with winds potentially reaching force 7 later around the Isle of Man. This is weather context, not evidence of Holyhead operations. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -938,10 +1027,10 @@
       "sources": [
         "belfast-15",
         "belfast-19-rev1",
-        "belfast-notices-index-2026-09-21",
-        "met-office-inshore-2026-09-21"
+        "belfast-notices-index-2026-09-22",
+        "met-office-inshore-2026-09-22"
       ],
-      "review": "Belfast Harbour’s official archive still records revised berth-depth restrictions and continuing Oil Berth 3 works, where some operational impacts may arise at certain stages. Nearby inshore areas no longer carry a strong-wind warning. None of these sources measures Belfast-wide queues, waiting time or berth utilisation, so current measured congestion remains unknown.",
+      "review": "Belfast Harbour’s archive still records revised berth-depth restrictions and continuing Oil Berth 3 works. Lough Foyle–Carlingford Lough and the Firth of Clyde/North Channel carry strong-wind warnings. These sources do not measure Belfast-wide queues, waiting time or berth utilisation, so current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -951,9 +1040,9 @@
       "port": "Larne",
       "slug": "larne",
       "sources": [
-        "met-office-inshore-2026-09-21"
+        "met-office-inshore-2026-09-22"
       ],
-      "review": "The Firth of Clyde and North Channel inshore area no longer carries a strong-wind warning. This is weather context, not a Larne operational measurement. No current port-specific queue, waiting-time or berth-utilisation measurement was verified, so current measured conditions remain unknown.",
+      "review": "The Firth of Clyde and North Channel inshore area carries a strong-wind warning, with northwesterly winds forecast to reach force 4 to 6 later. This is weather context, not a Larne operational measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -963,10 +1052,10 @@
       "port": "Londonderry",
       "slug": "londonderry",
       "sources": [
-        "met-office-shipping-2026-09-21",
-        "met-office-inshore-2026-09-21"
+        "met-office-shipping-2026-09-22",
+        "met-office-inshore-2026-09-22"
       ],
-      "review": "Malin has no gale warning, and the Lough Foyle to Carlingford Lough inshore area no longer carries a strong-wind warning. These are weather observations, not a Londonderry port congestion measurement. Current measured conditions remain unknown.",
+      "review": "Malin has no gale warning, while the Lough Foyle to Carlingford Lough inshore area carries a strong-wind warning with northwesterly force 4 to 6 later. These are weather observations, not a Londonderry port congestion measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -976,7 +1065,7 @@
       "port": "Dublin",
       "slug": "dublin",
       "sources": [
-        "dublin-notices-index-2026-09-21",
+        "dublin-notices-index-2026-09-22",
         "dublin-48",
         "dublin-39-3"
       ],
