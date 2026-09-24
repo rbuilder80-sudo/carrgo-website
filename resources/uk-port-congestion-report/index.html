@@ -1,188 +1,53 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UK Port Congestion Report — Live Weekly Data | Carrgo</title>
-    <meta name="description" content="Live congestion data for 17 UK and Ireland ports on 2026-09-23. Average health score 77.4. Grangemouth worst at 42. Free to cite with attribution." />
-    <link rel="canonical" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:title" content="UK Port Congestion Report — Live Weekly Data | Carrgo" />
-    <meta property="og:description" content="Live congestion data for 17 UK and Ireland ports on 2026-09-23. Average health score 77.4. Grangemouth worst at 42. Free to cite with attribution." />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.carrgo.co.uk/resources/uk-port-congestion-report/" />
-    <meta property="og:site_name" content="Carrgo Freight Solutions" />
-    <meta property="og:locale" content="en_GB" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "UK & Ireland Port Congestion Report \u2014 2026-09-23", "description": "Health scores, vessel queues, berth utilisation and waiting times for 17 UK and Ireland ports, published by Carrgo Freight Solutions.", "url": "https://www.carrgo.co.uk/resources/uk-port-congestion-report/", "datePublished": "2026-09-23", "dateModified": "2026-09-23", "license": "https://creativecommons.org/licenses/by/4.0/", "creativeWorkStatus": "Published", "isAccessibleForFree": true, "keywords": ["UK port congestion", "port delays", "vessel queue", "berth utilisation", "freight forwarding", "port health score"], "spatialCoverage": {"@type": "Place", "name": "United Kingdom and Ireland"}, "temporalCoverage": "2026-09-23", "variableMeasured": [{"@type": "PropertyValue", "name": "Health score", "description": "0-100 composite of vessel queue, berth utilisation and waiting time."}, {"@type": "PropertyValue", "name": "Vessels waiting"}, {"@type": "PropertyValue", "name": "Berth utilisation", "unitText": "PERCENT"}, {"@type": "PropertyValue", "name": "Average waiting time"}], "creator": {"@type": "Organization", "name": "Carrgo Freight Solutions", "url": "https://www.carrgo.co.uk"}, "publisher": {"@type": "Organization", "name": "Carrgo Freight Solutions", "url": "https://www.carrgo.co.uk"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/rbuilder80-sudo/carrgo-uk-port-congestion-data/main/data/latest.csv"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://raw.githubusercontent.com/rbuilder80-sudo/carrgo-uk-port-congestion-data/main/data/latest.json"}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which UK port is most congested right now?", "acceptedAnswer": {"@type": "Answer", "text": "As of 2026-09-23, Grangemouth is the most congested UK or Ireland port tracked by Carrgo, with a health score of 42 out of 100, 6 vessels waiting and typical waits of 4-6 days."}}, {"@type": "Question", "name": "Which UK port has the shortest waiting time?", "acceptedAnswer": {"@type": "Answer", "text": "Holyhead currently has the best conditions, scoring 90 out of 100 with waits of 0-1 days."}}, {"@type": "Question", "name": "How is the Carrgo port health score calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The health score is a 0-100 composite of vessels waiting, berth utilisation and average waiting time. Above 75 is normal, 50-74 is moderate, and below 50 indicates congestion."}}, {"@type": "Question", "name": "Can I cite this port congestion data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This dataset is free to cite and republish with attribution to Carrgo Freight Solutions and a link to carrgo.co.uk."}}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carrgo.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.carrgo.co.uk/resources/shipping-guides/"}, {"@type": "ListItem", "position": 3, "name": "UK Port Congestion Report 2026-09-23", "item": "https://www.carrgo.co.uk/resources/uk-port-congestion-report/"}]}</script>
-    <style>
-      body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65;
-        color:#111827;margin:0;background:#fff}
-      .wrap{max-width:900px;margin:0 auto;padding:32px 20px 64px}
-      h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
-      h2{font-size:1.35rem;margin:36px 0 10px}
-      h3{font-size:1.1rem;margin:24px 0 8px}
-      .meta{color:#6b7280;font-size:.9rem;margin-bottom:24px}
-      .answer{background:#f0f6ff;border-left:4px solid #1a6dff;padding:16px 18px;
-        border-radius:6px;margin:18px 0 28px;font-size:1.05rem}
-      table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}
-      th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #e5e7eb}
-      th{background:#f9fafb;font-weight:600}
-      tbody tr:hover{background:#fafafa}
-      .cite{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;
-        padding:16px 18px;margin:28px 0}
-      .cta{display:inline-block;background:#1a6dff;color:#fff;text-decoration:none;
-        padding:12px 20px;border-radius:8px;font-weight:600;margin:8px 8px 8px 0}
-      code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:.9em}
-      a{color:#1a6dff}
-    </style>
-  </head>
-  <body>
-  <div class="wrap">
-    <nav aria-label="Breadcrumb" class="meta">
-      <a href="https://www.carrgo.co.uk/">Home</a> &rsaquo;
-      <a href="https://www.carrgo.co.uk/resources/shipping-guides/">Resources</a> &rsaquo;
-      UK Port Congestion Report
-    </nav>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UK Port Congestion Report — 18 September 2026 | Carrgo</title>
+<meta name="description" content="Carrgo's evidence-led UK and Ireland port report for 18 September 2026: verified Liverpool and Dublin notices, Irish Sea weather context and unknown port-wide congestion metrics.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"><link rel="canonical" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/">
+<meta property="og:title" content="UK Port Congestion Report — 18 September 2026 | Carrgo"><meta property="og:description" content="Primary-source port operating advisory with unsupported congestion metrics withheld."><meta property="og:url" content="https://www.carrgo.co.uk/resources/uk-port-congestion-report/"><meta property="og:type" content="article">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.carrgo.co.uk/#organization","name":"Carrgo Freight Solutions","url":"https://www.carrgo.co.uk/","email":"support@carrgo.co.uk"},{"@type":"WebSite","@id":"https://www.carrgo.co.uk/#website","name":"Carrgo","url":"https://www.carrgo.co.uk/","publisher":{"@id":"https://www.carrgo.co.uk/#organization"}},{"@type":"WebPage","@id":"https://www.carrgo.co.uk/resources/uk-port-congestion-report/#webpage","url":"https://www.carrgo.co.uk/resources/uk-port-congestion-report/","name":"UK Port Congestion Report — 18 September 2026 | Carrgo","isPartOf":{"@id":"https://www.carrgo.co.uk/#website"},"datePublished":"2026-09-18","dateModified":"2026-09-18","mainEntity":{"@id":"https://www.carrgo.co.uk/resources/uk-port-congestion-report/#article"}},{"@type":"NewsArticle","@id":"https://www.carrgo.co.uk/resources/uk-port-congestion-report/#article","headline":"UK & Ireland Port Congestion Report — 18 September 2026","description":"Evidence-led weekly port operating advisory covering verified Liverpool and Dublin notices and Irish Sea weather context, with unavailable port-wide congestion metrics recorded as unknown.","datePublished":"2026-09-18","dateModified":"2026-09-18","author":{"@id":"https://www.carrgo.co.uk/#organization"},"publisher":{"@id":"https://www.carrgo.co.uk/#organization"},"mainEntityOfPage":{"@id":"https://www.carrgo.co.uk/resources/uk-port-congestion-report/#webpage"},"articleSection":"Port congestion evidence","about":["UK ports","Ireland ports","Liverpool port notices","Dublin Port notices","Irish Sea freight planning"],"isBasedOn":["https://www.carrgo.co.uk/data/port-evidence/2026-09-18.json","https://www.peelports.com/marine/our-ports/liverpool/","https://www.dublinport.ie/information-centre/notice-to-mariners-2026/","https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast","https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast"],"mentions":{"@id":"https://www.carrgo.co.uk/data/port-evidence/2026-09-18.json#dataset"}},{"@type":"Dataset","@id":"https://www.carrgo.co.uk/data/port-evidence/2026-09-18.json#dataset","name":"Carrgo UK & Ireland port evidence ledger — 18 September 2026","description":"Dated public-source evidence ledger recording source dates, check times, supported operational claims, confidence and missing evidence. Unavailable congestion metrics are null, not zero.","url":"https://www.carrgo.co.uk/data/port-evidence/2026-09-18.json","datePublished":"2026-09-18","dateModified":"2026-09-18","creator":{"@id":"https://www.carrgo.co.uk/#organization"},"publisher":{"@id":"https://www.carrgo.co.uk/#organization"},"isAccessibleForFree":true,"conditionsOfAccess":"Carrgo-owned factual summaries are public; linked source documents remain under their owners’ terms and are not relicensed.","measurementTechnique":"Public-source evidence review; no AIS feed, score, forecast or historical change is calculated without traceable comparable measurements.","variableMeasured":["source publication time","observation/check time","supported operational claim","confidence","missing evidence","unknown congestion metrics"],"distribution":[{"@type":"DataDownload","name":"Dated JSON evidence ledger","contentUrl":"https://www.carrgo.co.uk/data/port-evidence/2026-09-18.json","encodingFormat":"application/json"},{"@type":"DataDownload","name":"Dated CSV evidence extract","contentUrl":"https://www.carrgo.co.uk/data/port-evidence/2026-09-18.csv","encodingFormat":"text/csv"}]}]}</script>
+<style>body{font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:#111827;margin:0;background:#fff}.wrap{max-width:1050px;margin:auto;padding:32px 20px 90px}h1{font-size:2rem;line-height:1.2}h2{font-size:1.42rem;margin-top:34px}h3{font-size:1.08rem;margin-bottom:4px}.meta{color:#5b6472;font-size:.92rem}.warning{border-left:4px solid #b45309;background:#fffbeb;padding:18px;margin:20px 0}.evidence{border-left:4px solid #1a6dff;background:#eff6ff;padding:18px;margin:20px 0}.advice{border-left:4px solid #047857;background:#ecfdf5;padding:18px;margin:20px 0}a{color:#0b57d0}table{width:100%;border-collapse:collapse;margin:18px 0}caption{text-align:left;font-weight:800;margin-bottom:8px}th,td{border:1px solid #d1d5db;padding:10px;text-align:left;vertical-align:top}th{background:#f9fafb}.quote{position:fixed;right:16px;top:96px;z-index:40;width:320px;max-height:calc(100vh - 112px);overflow:auto;box-sizing:border-box;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 24px 60px #0f172a33;padding:16px}.kicker{margin:0;color:#1a6dff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.quote h2{margin:4px 0;font-size:20px}.quote form{display:grid;gap:9px}.quote label{display:grid;gap:3px;font-size:12px;font-weight:700}.quote input,.quote button{box-sizing:border-box;min-height:44px;width:100%;border:1px solid #d1d5db;border-radius:8px;padding:9px 10px;font:16px system-ui}.quote button{border:0;background:#1a6dff;color:#fff;font-weight:800}@media(min-width:1180px){main{padding-right:360px}}@media(max-width:1179px){.quote{position:static;width:auto;max-height:none;margin:24px 14px}.wrap{padding-bottom:24px}}@media(max-width:720px){.wrap{padding:20px 14px}table{display:block;overflow-x:auto;font-size:.86rem}th,td{min-width:130px;padding:7px}}</style></head><body><main class="wrap"><nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/resources/shipping-guides/">Resources</a> › UK port congestion report</nav>
+<h1>UK &amp; Ireland Port Congestion Report</h1>
+<p class="meta">Published 18 September 2026 · Sources rechecked 18 September 2026 at 15:05 BST · Coverage: 17 ports · Last verified port-wide numerical measurement: unknown</p>
+<section class="warning"><h2>Operational advisory, not a numerical congestion ranking</h2><p>No comparable, timestamped primary measurement was verified this week for port-wide waiting times, vessel queues, berth utilisation or congestion scores. Unknown does not mean normal: it means the evidence needed to calculate a defensible ranking was unavailable.</p></section>
+<section class="evidence"><h2>Weekly evidence summary</h2><p>Liverpool’s official notice page still lists local dock, bridge and lock notices. The Canada 90-foot Swing Bridge and Alfred Lock notices had time-limited windows that ended before this report was published; the source does not confirm actual reopening, so operators should verify locally. Royal Seaforth S7/S8 and the South Gladstone south quay remain within their stated closure periods. Dublin Port continues to list maintenance dredging and survey work. Met Office marine forecasts issued on 18 September carry Irish Sea and nearby coastal gale or strong-wind conditions. These are operational constraints and weather context—not measurements of port-wide congestion.</p></section>
 
-    <h1>UK &amp; Ireland Port Congestion Report — 2026-09-23</h1>
-    <p class="meta">Published 2026-09-23 by Carrgo Freight Solutions ·
-      Covering 17 ports · Updated weekly ·
-      <strong>Free to cite with attribution</strong></p>
+<h2>Verified position at publication</h2>
+<table><caption>Primary-source findings and practical importer checks</caption><thead><tr><th scope="col">Port or area</th><th scope="col">Verified finding</th><th scope="col">Evidence time</th><th scope="col">What importers should check</th></tr></thead><tbody>
+<tr><th scope="row"><a href="/ports/liverpool/">Liverpool</a></th><td>Notices 55 and 57 remain within their stated closure periods: Royal Seaforth S7/part S8 through 29 September and South Gladstone south quay through 27 September. Notices 62 and 63 describe time-limited bridge/lock windows that have now ended; no reopening confirmation or port-wide waiting time was found.</td><td>Peel Ports index rechecked 18 September at 15:05 BST.</td><td>Confirm vessel movement route, berth availability, lock/bridge access and terminal collection slot with the carrier, terminal or Dockmaster.</td></tr>
+<tr><th scope="row"><a href="/ports/dublin/">Dublin</a></th><td>Notice 48 says maintenance dredging began 3 September for approximately three weeks. Notice 39.3 schedules survey work from 13 September, but two public copies conflict on the approximate end date.</td><td>Dublin Port notice index rechecked 18 September at 15:05 BST.</td><td>Ask Dublin Port VTS or the carrier which work area applies, whether manoeuvring restrictions affect the call and which survey end date is current.</td></tr>
+<tr><th scope="row">Irish Sea / <a href="/ports/holyhead/">Holyhead</a></th><td>The shipping forecast issued 10:30 UTC retains an Irish Sea gale warning and forecasts southwest force 5–7, occasionally gale 8 at first, easing later. This does not establish a delay at Holyhead.</td><td>Forecast valid 12:00 UTC 18 September to 12:00 UTC 19 September.</td><td>Check the operator’s live sailing notice and terminal cut-off before dispatching a driver.</td></tr>
+<tr><th scope="row"><a href="/routes/belfast-northern-ireland/">Belfast / Larne</a></th><td>The inshore forecast issued 12:00 UTC lists strong winds for Lough Foyle to Carlingford Lough and the Firth of Clyde/North Channel. No port-specific queue or waiting-time measurement was verified.</td><td>Forecast valid 12:00 UTC 18 September to 12:00 UTC 19 September.</td><td>Confirm sailing status, accompanied/unaccompanied cut-off and collection appointment directly with the operator.</td></tr>
+<tr><th scope="row">Other 12 covered ports</th><td>No current, comparable port-wide queue, waiting-time or berth-utilisation measurement was verified. Conditions are therefore unknown, not zero or normal.</td><td>Evidence ledger reviewed 18 September.</td><td>Use the <a href="/resources/port-congestion-tracker/">17-port tracker</a> for source coverage and confirm shipment-specific conditions before routing.</td></tr>
+</tbody></table>
 
-    <h2>Which UK port is most congested right now?</h2>
-    <p class="answer">As of 2026-09-23, Carrgo tracks 17 UK and Ireland ports with an average health score of 77.4 out of 100. Grangemouth is the most congested at 42, with waits of 4-6 days. Holyhead is clearest at 90. 1 ports are congested, 4 moderate, 12 normal.</p>
+<h2>What changed over the past seven days</h2>
+<ul>
+<li><strong>New Liverpool restrictions were recorded.</strong> Notice 62 covered Canada 90-foot Swing Bridge on 17 September; Notice 63 covered Alfred Lock on the 18 September high-water tide. Both stated windows had ended by publication, but no independent reopening confirmation was located.</li>
+<li><strong>Several earlier Liverpool windows ended.</strong> The Langton Lock schedule in Notice 43 ended on 11 September, Notice 60’s A-Bridge window ended on 14 September and Notice 59’s Gladstone Lock window ended on 15 September.</li>
+<li><strong>Ongoing Liverpool berth/dock restrictions remain.</strong> Notices 55 and 57 continue within their stated periods.</li>
+<li><strong>Dublin’s public notice position is materially unchanged.</strong> Dredging and survey notices remain listed; the conflict between two public Notice 39.3 end dates is unresolved.</li>
+<li><strong>Marine weather deteriorated for this report’s publication window.</strong> The current Met Office forecast includes Irish Sea gale conditions and strong winds around nearby coasts. This is weather context only; no carrier cancellation or port-wide delay was inferred.</li>
+</ul>
+<p>No numerical week-on-week congestion change is calculated because there are no comparable verified port-wide measurements for either week.</p>
 
-    <h2>Full port congestion table — 2026-09-23</h2>
-    <table>
-      <caption class="meta">Health score 0-100. Above 75 normal, 50-74 moderate,
-        below 50 congested. Source: Carrgo port intelligence.</caption>
-      <thead>
-        <tr><th>Port</th><th>Region</th><th>Health score</th><th>Status</th>
-        <th>Typical wait</th><th>Vessels waiting</th><th>Berth use</th></tr>
-      </thead>
-      <tbody>
-<tr><td><a href="https://www.carrgo.co.uk/ports/grangemouth/">Grangemouth</a></td><td>Scotland</td><td>42</td><td>Congested</td><td>4-6 days</td><td>6</td><td>92%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/dublin/">Dublin</a></td><td>Ireland</td><td>58</td><td>Moderate</td><td>2-4 days</td><td>5</td><td>88%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/liverpool/">Liverpool</a></td><td>England</td><td>65</td><td>Moderate</td><td>2-3 days</td><td>3</td><td>82%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/immingham/">Immingham</a></td><td>England</td><td>68</td><td>Moderate</td><td>2-3 days</td><td>3</td><td>75%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/felixstowe/">Felixstowe</a></td><td>England</td><td>72</td><td>Moderate</td><td>2-4 days</td><td>4</td><td>78%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/shannon-foynes/">Shannon Foynes</a></td><td>Ireland</td><td>79</td><td>Normal</td><td>1-2 days</td><td>1</td><td>55%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/cork/">Cork</a></td><td>Ireland</td><td>81</td><td>Normal</td><td>1-2 days</td><td>2</td><td>58%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/belfast/">Belfast</a></td><td>Northern Ireland</td><td>82</td><td>Normal</td><td>1-2 days</td><td>2</td><td>60%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/waterford/">Waterford</a></td><td>Ireland</td><td>82</td><td>Normal</td><td>1 day</td><td>1</td><td>50%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/londonderry/">Londonderry</a></td><td>Northern Ireland</td><td>83</td><td>Normal</td><td>1 day</td><td>1</td><td>52%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/tilbury/">Tilbury</a></td><td>England</td><td>84</td><td>Normal</td><td>1-2 days</td><td>2</td><td>62%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/rosslare-europort/">Rosslare Europort</a></td><td>Ireland</td><td>84</td><td>Normal</td><td>1 day</td><td>1</td><td>48%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/southampton/">Southampton</a></td><td>England</td><td>85</td><td>Normal</td><td>1-2 days</td><td>2</td><td>65%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/bristol/">Bristol</a></td><td>England</td><td>86</td><td>Normal</td><td>1 day</td><td>1</td><td>55%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/larne/">Larne</a></td><td>Northern Ireland</td><td>87</td><td>Normal</td><td>0-1 days</td><td>1</td><td>50%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/london-gateway/">London Gateway</a></td><td>England</td><td>88</td><td>Normal</td><td>1-2 days</td><td>1</td><td>58%</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/holyhead/">Holyhead</a></td><td>Wales</td><td>90</td><td>Normal</td><td>0-1 days</td><td>0</td><td>45%</td></tr>
-      </tbody>
-    </table>
+<h2>Primary evidence</h2>
+<ul>
+<li>Peel Ports: <a href="https://www.peelports.com/marine/our-ports/liverpool/">Liverpool notice index</a>; <a href="https://www.peelports.com/media/142jelmm/lntm-2026-055-temporary-closure-of-s7-and-s8.pdf">Notice 55</a>; <a href="https://www.peelports.com/media/4r5p5yyi/lntm-2026-057-temporary-closure-of-south-gladstone-branch-dock-no-2.pdf">Notice 57</a>; <a href="https://www.peelports.com/media/rdvpvxk2/lntm-2026-062-temporary-closure-of-canada-90-swing-bridge.pdf">Notice 62</a>; <a href="https://www.peelports.com/media/xtwbi5nd/lntm-2026-063-temporary-closure-of-alfred-lock.pdf">Notice 63</a>.</li>
+<li>Dublin Port: <a href="https://www.dublinport.ie/information-centre/notice-to-mariners-2026/">official 2026 notice index</a>; <a href="https://www.dublinport.ie/wp-content/uploads/2026/08/48-2026-Maintenance-Dredge-Campaign.pdf">Notice 48</a>; <a href="https://www.dublinport.ie/wp-content/uploads/2026/09/39.3-2026-Survey-Operations-1.pdf">Notice 39.3 copy one</a>; <a href="https://www.dublinport.ie/wp-content/uploads/2026/09/39.3-2026-Survey-Operations.pdf">Notice 39.3 copy two</a>.</li>
+<li>Met Office on behalf of the Maritime and Coastguard Agency: <a href="https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast">shipping forecast</a> and <a href="https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast">inshore waters forecast</a>.</li>
+</ul>
 
+<h2>Questions to ask before booking or collection</h2>
+<ol>
+<li>Has the vessel schedule or terminal cut-off changed since the booking confirmation?</li>
+<li>Does a lock, bridge, dredging or survey notice affect this vessel, berth or collection route?</li>
+<li>Is a vehicle appointment required, and is the slot still confirmed?</li>
+<li>Are customs release, port health or transit documents complete before dispatch?</li>
+<li>When does free time begin, and who bears demurrage, detention or storage if the plan changes?</li>
+</ol>
+<section class="advice"><h2>Plan a shipment around these notices</h2><p>Carrgo can check the intended port, service and routing against the available operational evidence. For a shipment-specific plan, use the quote form with origin, destination, goods and approximate weight or volume. You can choose “I’m not sure” for dimensions.</p><p><a href="/services/sea-freight/">Sea freight</a> · <a href="/services/customs-clearance/">Customs clearance</a> · <a href="/routes/dublin-ireland/">Dublin freight route</a></p></section>
 
-    <h2>Which UK ports are getting worse this week?</h2>
-    <p class="answer">Over the past seven days 4 of 17 tracked ports deteriorated and 13 improved. Grangemouth moved furthest in the wrong direction, down 8 points from 50 to 42.</p>
-    <table>
-      <caption class="meta">Change in Carrgo port health score over the last 7 and 30 days.
-        A negative change means conditions deteriorated. Source: Carrgo port intelligence.</caption>
-      <thead>
-        <tr><th>Port</th><th>Score 7 days ago</th><th>Score now</th>
-        <th>7-day change</th><th>30-day change</th><th>Direction</th></tr>
-      </thead>
-      <tbody>
-<tr><td><a href="https://www.carrgo.co.uk/ports/grangemouth/">Grangemouth</a></td><td>50</td><td>42</td><td>-8</td><td>-16</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/dublin/">Dublin</a></td><td>63</td><td>58</td><td>-5</td><td>-10</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/liverpool/">Liverpool</a></td><td>70</td><td>65</td><td>-5</td><td>-9</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/immingham/">Immingham</a></td><td>70</td><td>68</td><td>-2</td><td>-4</td><td>worsening</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/shannon-foynes/">Shannon Foynes</a></td><td>78</td><td>79</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/cork/">Cork</a></td><td>80</td><td>81</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/belfast/">Belfast</a></td><td>81</td><td>82</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/waterford/">Waterford</a></td><td>81</td><td>82</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/londonderry/">Londonderry</a></td><td>82</td><td>83</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/bristol/">Bristol</a></td><td>85</td><td>86</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/holyhead/">Holyhead</a></td><td>89</td><td>90</td><td>+1</td><td>+2</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/southampton/">Southampton</a></td><td>83</td><td>85</td><td>+2</td><td>+5</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/larne/">Larne</a></td><td>84</td><td>87</td><td>+3</td><td>+4</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/felixstowe/">Felixstowe</a></td><td>68</td><td>72</td><td>+4</td><td>-3</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/tilbury/">Tilbury</a></td><td>80</td><td>84</td><td>+4</td><td>+6</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/rosslare-europort/">Rosslare Europort</a></td><td>80</td><td>84</td><td>+4</td><td>+6</td><td>improving</td></tr>
-<tr><td><a href="https://www.carrgo.co.uk/ports/london-gateway/">London Gateway</a></td><td>82</td><td>88</td><td>+6</td><td>+10</td><td>improving</td></tr>
-      </tbody>
-    </table>
-    <p>Week-over-week movement matters more than the absolute score when you are
-      booking. A port sitting at 68 and falling three points a week is a worse bet
-      than a port sitting at 62 and holding steady, because the trend tells you what
-      conditions will look like when your vessel actually arrives.</p>
-
-    <h2>Summary figures</h2>
-    <ul>
-      <li><strong>Ports tracked:</strong> 17</li>
-      <li><strong>Average health score:</strong> 77.4 / 100</li>
-      <li><strong>Total vessels waiting across all ports:</strong> 36</li>
-      <li><strong>Congested (below 50):</strong> 1 — Grangemouth (42)</li>
-      <li><strong>Moderate (50-74):</strong> 4 — Dublin (58), Liverpool (65), Immingham (68), Felixstowe (72)</li>
-      <li><strong>Normal (75+):</strong> 12</li>
-    </ul>
-
-    <h2>How the health score is calculated</h2>
-    <p>The Carrgo port health score is a 0-100 composite of three measured inputs:
-      the number of vessels waiting for a berth, berth utilisation as a percentage,
-      and the average waiting time before a vessel is worked. A score above 75 means
-      normal operations, 50-74 means moderate delay risk, and below 50 means the port
-      is congested and importers should expect knock-on delays to inland delivery.</p>
-
-    <h2>What importers should do about it</h2>
-    <h3>If your cargo is routed through a congested port</h3>
-    <p>Check the alternative. A port scoring 40 points higher on the same coast
-      frequently clears cargo days faster, and the re-routing cost is often lower than
-      the demurrage you would pay waiting. Use the
-      <a href="https://www.carrgo.co.uk/tools/port-comparison/">port comparison tool</a> to compare two
-      ports side by side, then price the difference with the
-      <a href="https://www.carrgo.co.uk/tools/cost-calculator/">freight cost calculator</a>.</p>
-
-    <h3>If you are planning a shipment</h3>
-    <p>Book against current conditions rather than last quarter's assumptions.
-      Congestion at UK ports moves week to week, which is why this report is
-      republished weekly rather than left static.</p>
-
-    <div class="cite">
-      <h3 style="margin-top:0">Citation &amp; reuse licence</h3>
-      <p>This dataset is published for public reference and is
-        <strong>free to cite, quote and republish with attribution</strong>
-        (CC BY 4.0). Journalists, analysts and other freight businesses are welcome
-        to use it.</p>
-      <p><strong>Suggested citation:</strong><br>
-        <code>Carrgo Freight Solutions, "UK &amp; Ireland Port Congestion Report,
-        2026-09-23", https://www.carrgo.co.uk/resources/uk-port-congestion-report/</code></p>
-      <p><strong>Want the raw data?</strong> Every edition is published as open
-        CSV and JSON on GitHub:
-        <a href="https://github.com/rbuilder80-sudo/carrgo-uk-port-congestion-data">
-        carrgo-uk-port-congestion-data</a> — machine-readable, versioned, and free
-        to use under the same licence.</p>
-    </div>
-
-    <h2>Live data and related tools</h2>
-    <p>This report is a dated snapshot. For live figures that update continuously:</p>
-    <p>
-      <a class="cta" href="https://www.carrgo.co.uk/resources/uk-port-congestion-report/archive/">Past weekly editions</a>
-      <a class="cta" href="https://www.carrgo.co.uk/resources/port-congestion-tracker/">Live port congestion tracker</a>
-      <a class="cta" href="https://www.carrgo.co.uk/tools/port-comparison/">Compare two ports</a>
-      <a class="cta" href="https://www.carrgo.co.uk/tools/cost-calculator/">Freight cost calculator</a>
-    </p>
-
-    <h2>About Carrgo</h2>
-    <p>Carrgo Freight Solutions is a UK freight forwarder handling sea freight,
-      air cargo, road haulage, rail freight and customs clearance for UK importers
-      and exporters. We publish this port intelligence because our own operations
-      depend on it.
-      <a href="https://www.carrgo.co.uk/get-a-quote/">Get a freight quote</a> ·
-      <a href="https://www.carrgo.co.uk/contact/">Contact us</a></p>
-  </div>
-  </body>
-</html>
+<h2>Methodology and limitations</h2>
+<p>Carrgo reviews dated public primary sources and records each supported claim at the narrowest defensible level. Port or terminal notices support only the location and period they name. Weather forecasts describe sea or coastal areas and are not treated as evidence of terminal queues. Carrgo does not currently use a verified AIS feed and does not calculate a numerical congestion, health, queue or berth-utilisation score without traceable measurements and a reproducible method. Missing values remain unknown. Advice is separated from facts, and users should confirm time-sensitive arrangements with the relevant carrier, terminal, port or VTS.</p>
+<p class="meta">Published by Carrgo Freight Solutions. This report is an original synthesis of the linked primary sources. Corrections and source questions: <a href="mailto:support@carrgo.co.uk">support@carrgo.co.uk</a>.</p>
+<p><a href="/resources/port-congestion-tracker/">View the 17-port evidence tracker</a> · <a href="/data/port-evidence/2026-09-18.json">Download JSON evidence</a> · <a href="/data/port-evidence/2026-09-18.csv">Download CSV evidence</a> · <a href="/resources/uk-port-congestion-report/archive/">Report archive</a></p>
+</main><aside class="quote" aria-label="Quick freight quote"><p class="kicker">2-minute quote</p><h2>Ask about your shipment through this port</h2><p>Send the basics now. Carrgo will ask for extra shipment details after your enquiry arrives.</p><form data-formsubmit-form action="https://formsubmit.co/support@carrgo.co.uk" method="POST"><input type="hidden" name="_subject" value="Port Congestion Quote Request"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="source_page" value="/resources/uk-port-congestion-report/"><label>Origin<input name="origin" required placeholder="City, country or supplier"></label><label>Destination<input name="destination" required value="UK or Ireland port"></label><label>Goods<input name="goods" required placeholder="Furniture, cartons, machinery"></label><label>Approximate weight / volume<input name="weight_volume" required placeholder="600 kg / 4 CBM"></label><label>Dimensions<input name="dimensions" list="dimension-options" placeholder="Pallet/carton size or I’m not sure"><datalist id="dimension-options"><option value="I’m not sure"></datalist></label><label>Name<input name="name" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel"></label><button type="submit">Request a freight quote</button></form></aside><script>(()=>{const e="support@carrgo.co.uk",a="https://formsubmit.co/ajax/"+e;for(const t of document.querySelectorAll("form[data-formsubmit-form]"))t.addEventListener("submit",async o=>{o.preventDefault();const n=new FormData(t);try{const e=await fetch(a,{method:"POST",headers:{accept:"application/json"},body:n});if(e.ok){document.body.innerHTML="<main style=\"max-width:680px;margin:10vh auto;padding:32px;font:16px system-ui,sans-serif\"><h1>Enquiry received</h1><p>Thank you. Carrgo will review your details and reply from support@carrgo.co.uk.</p><p><a href=\"/\">Return to Carrgo</a></p></main>";return}}catch(e){}document.body.innerHTML="<main style=\"max-width:680px;margin:10vh auto;padding:32px;font:16px system-ui,sans-serif\"><h1>Enquiry not sent</h1><p>The form could not submit automatically. Please email support@carrgo.co.uk directly.</p><p><a href=\"/\">Return to Carrgo</a></p></main>"})})();</script><a class="carrgo-floating-quote" href="/get-a-quote/" aria-label="Get a free freight quote">Get a Free Quote</a><style>.carrgo-floating-quote{position:fixed;right:16px;bottom:max(16px,env(safe-area-inset-bottom));z-index:35;display:inline-flex;min-height:48px;max-width:calc(100vw - 32px);align-items:center;justify-content:center;border-radius:999px;background:#1A6DFF;color:#fff;padding:12px 20px;font:800 14px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;text-decoration:none;box-shadow:0 18px 38px rgba(15,23,42,.22);border:1px solid rgba(255,255,255,.75)}.carrgo-floating-quote:hover{background:#1557CC}@media(max-width:520px){.carrgo-floating-quote{right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:11px 16px;font-size:13px}}@media print{.carrgo-floating-quote{display:none}}</style></body></html>
