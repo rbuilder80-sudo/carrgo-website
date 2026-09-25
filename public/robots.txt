@@ -52,3 +52,4 @@ Allow: /
 
 # Sitemap
 Sitemap: https://www.carrgo.co.uk/sitemap.xml
+Sitemap: https://www.carrgo.co.uk/news-sitemap.xml
