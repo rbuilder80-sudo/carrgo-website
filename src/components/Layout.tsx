@@ -35,10 +35,8 @@ const serviceNames: Record<string, string> = {
 function quoteContext(pathname: string): QuoteContext | null {
   const path = pathname.replace(/\/$/, '') || '/';
 
-  // These pages already contain a complete quote form of their own.
-  if (path === '/' || path === '/get-a-quote' || path.startsWith('/ports/') ||
-      path === '/tools/port-comparison' || path.startsWith('/resources/port-congestion-tracker') ||
-      path.startsWith('/resources/uk-port-congestion-report')) return null;
+  // The dedicated quote page already contains the full quote journey.
+  if (path === '/get-a-quote') return null;
 
   if (routeQuotes[path]) return routeQuotes[path];
   if (path.startsWith('/routes/')) return { title: 'Get a route-specific freight quote', destination: 'United Kingdom' };
@@ -53,6 +51,19 @@ function quoteContext(pathname: string): QuoteContext | null {
     return { title: `Get a freight quote for ${industry} goods`, destination: 'United Kingdom' };
   }
 
+  if (path.startsWith('/ports/')) {
+    const port = path.split('/').pop()?.replace(/-/g, ' ') || 'UK port';
+    return { title: `Ask about your shipment through ${port}`, destination: 'United Kingdom' };
+  }
+
+  if (path.startsWith('/resources/port-congestion-tracker') || path.startsWith('/resources/uk-port-congestion-report')) {
+    return { title: 'Ask about your shipment through a UK port', destination: 'United Kingdom' };
+  }
+
+  if (path === '/tools/cost-calculator' || path === '/tools/port-comparison') {
+    return { title: 'Turn this estimate into a live freight quote', destination: 'United Kingdom' };
+  }
+
   return { title: 'Get a freight shipping quote', destination: 'United Kingdom' };
 }
 
@@ -64,11 +75,13 @@ export default function Layout() {
     <>
       <ScrollToTop />
       <Navbar />
-      <main id="main-content" className={quote ? 'xl:pr-[22rem]' : undefined}>
-        <Outlet />
-      </main>
+      <div className={quote ? 'pb-20 lg:pb-0' : undefined}>
+        <main id="main-content">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
       {quote && <PortQuoteForm title={quote.title} origin={quote.origin} destination={quote.destination} sourcePage={pathname} />}
-      <Footer />
     </>
   );
 }
