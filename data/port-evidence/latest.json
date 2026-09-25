@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedOn": "2026-09-24",
+  "checkedOn": "2026-09-25",
   "measurementObservedAt": null,
   "previousComparableObservation": null,
   "coverage": 17,
@@ -8,8 +8,8 @@
   "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
   "audit": {
     "sourceBranch": "main",
-    "sourceCommit": "21da54eb5b175e413c0f7e6273d52b7b6304f858",
-    "productionBaseCommit": "6d0dc1dc2d485d27d47cb67dfd42c46db195602d",
+    "sourceCommit": "0e665ca266b3bb65789780fa8a5d9474edf2cf17",
+    "productionBaseCommit": "ec5c459e63e1f404a285282686df8457f23fa850",
     "findings": [
       "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
       "The production report contains figures labelled 2026-09-02, whereas the search extraction still showed 2026-08-26. Neither date establishes when the metrics were measured.",
@@ -18,7 +18,7 @@
       "An external Carrgo SEO Agent regenerated the production report on 16 September with unsupported synthetic health scores labelled as live data, while the evidence ledger still recorded every numerical measurement as unknown. The current report, archive and dated URL were corrected on 17 September.",
       "A separate automated publisher replaced the valid 18 September current report and archive on production with an unsupported 23 September numerical snapshot while the evidence ledger still recorded every numerical congestion metric as unknown. The valid report and archive were restored on 24 September, and the unsupported dated URL was retained only as a transparent noindex correction record."
     ],
-    "changesSincePrevious": "Peel Ports added Liverpool Notice 64/2026, dated 23 September, scheduling Alfred Lock closed to vessel movements on the 10:38 high-water tide on 24 September and stating withdrawal at 19:48 unless notice is given to the contrary. Dublin still lists Notice 49 as latest. Belfast still lists Notice 22, but its detail page remains unavailable. Met Office gale warnings are now in force for the Shannon and Malin sea areas, while the Irish Sea has no formal gale warning; relevant Irish Sea and Northern Ireland coastal areas retain strong-wind warnings. These notices and forecasts do not establish port-wide congestion. No timestamped, comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+    "changesSincePrevious": "Peel Ports issued Liverpool Notice 65/2026 for Langton Lock closures on 27 and 28 September and amended Notice 57/2026 to extend the South Gladstone Branch Dock No. 2 south-quay closure until 19:00 on 2 October. Notice 64's stated Alfred Lock window ended on 24 September; no actual reopening is inferred. Dublin still lists Notice 49 as latest and Belfast still lists Notice 22 without accessible operational detail. Met Office gale warnings for Shannon and Malin have cleared, while relevant Irish Sea and Northern Ireland coastal areas retain strong-wind warnings. These notices and forecasts do not establish port-wide congestion. No timestamped, comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
   },
   "sources": [
     {
@@ -1124,6 +1124,132 @@
       "validThrough": "2026-09-25T00:00:00Z",
       "observedAt": null,
       "missingEvidence": "Port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "id": "liverpool-notices-index-2026-09-25",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/marine/our-ports/liverpool/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "primary-index",
+      "access": "Official live Liverpool marine page retrieved; 11 current-year notices are listed, Notice 65/2026 is latest, and amended Notice 57(A)/2026 is listed",
+      "confidence": "high for the live index and listed notice titles; none for port-wide congestion",
+      "claim": "The live index lists Notice 65/2026 for temporary Langton Lock closures as the latest current-year notice and lists amended Notice 57(A)/2026 for South Gladstone Branch Dock No. 2.",
+      "supportedClaim": "The live index lists Notice 65/2026 for temporary Langton Lock closures as the latest current-year notice and lists amended Notice 57(A)/2026 for South Gladstone Branch Dock No. 2.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Timestamped primary port-wide queue, waiting-time and berth-utilisation measurements suitable for comparison."
+    },
+    {
+      "id": "liverpool-57a",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/aohh3flb/lntm-2026-057-a-temporary-closure-of-south-gladstone-branch-dock-no-2.pdf",
+      "publishedOn": "2026-08-26",
+      "publishedAt": null,
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "primary-notice-amendment",
+      "access": "Public amended primary notice PDF text retrieved",
+      "confidence": "high for the amended closure period and restriction; none for port-wide congestion",
+      "claim": "Amended Notice 57/2026 extends the closure of the south quay of South Gladstone Branch Dock No. 2 from 14 September at 00:00 until 2 October at 19:00. Vessels must not come alongside the quay during that period.",
+      "supportedClaim": "Amended Notice 57/2026 extends the closure of the south quay of South Gladstone Branch Dock No. 2 from 14 September at 00:00 until 2 October at 19:00. Vessels must not come alongside the quay during that period.",
+      "validFrom": "2026-09-14T00:00:00+01:00",
+      "validThrough": "2026-10-02T19:00:00+01:00",
+      "observedAt": null,
+      "missingEvidence": "The notice does not report port-wide queues, waiting time, berth utilisation or shipment-specific effects."
+    },
+    {
+      "id": "liverpool-65",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/yjniy2gc/lntm-2026-065-temporary-closures-of-langton-lock.pdf",
+      "publishedOn": "2026-09-25",
+      "publishedAt": null,
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "primary-notice",
+      "access": "Public primary notice PDF text retrieved",
+      "confidence": "high for the stated closure periods and navigation instruction; none for port-wide congestion",
+      "claim": "Notice 65/2026 schedules Langton Lock closed to vessel movements for diving inspections from 15:00 to 20:00 on 27 September and from 14:00 to 19:00 on 28 September. Passing vessels must use minimum safe speed and give the lock entrance a wide berth.",
+      "supportedClaim": "Notice 65/2026 schedules Langton Lock closed to vessel movements for diving inspections from 15:00 to 20:00 on 27 September and from 14:00 to 19:00 on 28 September. Passing vessels must use minimum safe speed and give the lock entrance a wide berth.",
+      "validFrom": "2026-09-27T15:00:00+01:00",
+      "validThrough": "2026-09-28T19:00:00+01:00",
+      "observedAt": null,
+      "missingEvidence": "Actual lock availability outside the stated periods and timestamped port-wide queue, waiting-time or berth-utilisation measurements."
+    },
+    {
+      "id": "dublin-notices-index-2026-09-25",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/information-centre/notice-to-mariners-2026/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "primary-index",
+      "access": "Official 2026 notice index retrieved; Notice 49/2026 remains the latest listed notice",
+      "confidence": "high for the listed notice sequence; none for port-wide congestion",
+      "claim": "Notice 49/2026 remains the latest notice listed on the official 2026 index.",
+      "supportedClaim": "Notice 49/2026 remains the latest notice listed on the official 2026 index.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Timestamped primary port-wide queue, waiting-time and berth-utilisation measurements suitable for comparison."
+    },
+    {
+      "id": "belfast-notices-index-2026-09-25",
+      "publisher": "Belfast Harbour Commissioners",
+      "url": "https://www.belfast-harbour.co.uk/news/document_categories/notice-to-mariners/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "primary-index",
+      "access": "Official archive retrieved; Notice 22/2026 remains the latest listing, but its detail URL still does not expose notice text",
+      "confidence": "high that Notice 22 and its title are listed; none for unavailable dates, positions, instructions or port-wide congestion",
+      "claim": "The archive still lists Notice 22/2026, ‘Turbidity Buoy Deployment for D3 Works’; operational details remain unavailable from the linked page.",
+      "supportedClaim": "The archive still lists Notice 22/2026, ‘Turbidity Buoy Deployment for D3 Works’; operational details remain unavailable from the linked page.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Notice 22 publication time, deployment dates, buoy positions, navigation instructions, and timestamped port-wide measurements."
+    },
+    {
+      "id": "met-office-shipping-2026-09-25",
+      "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
+      "publishedOn": "2026-09-25",
+      "publishedAt": "2026-09-25T04:05:00+01:00",
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "official-weather-forecast",
+      "access": "Public official shipping forecast retrieved",
+      "confidence": "high for the stated forecast period; none for port-wide congestion conditions",
+      "claim": "The forecast valid 06:00 on 25 September to 06:00 on 26 September carries no formal gale warning for the Irish Sea, Shannon or Malin. Irish Sea winds may reach force 6 later; Shannon and Malin are forecast at southwest force 5 to 7. This is sea-area weather context, not a port congestion measurement.",
+      "supportedClaim": "The forecast valid 06:00 on 25 September to 06:00 on 26 September carries no formal gale warning for the Irish Sea, Shannon or Malin. Irish Sea winds may reach force 6 later; Shannon and Malin are forecast at southwest force 5 to 7. This is sea-area weather context, not a port congestion measurement.",
+      "validFrom": "2026-09-25T06:00:00+01:00",
+      "validThrough": "2026-09-26T06:00:00+01:00",
+      "observedAt": null,
+      "missingEvidence": "Port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "id": "met-office-inshore-2026-09-25",
+      "publisher": "Met Office",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast",
+      "publishedOn": "2026-09-25",
+      "publishedAt": "2026-09-25T06:00:00Z",
+      "checkedOn": "2026-09-25",
+      "checkedAt": "2026-09-25T08:08:42+01:00",
+      "kind": "official-weather-forecast",
+      "access": "Public official inshore forecast retrieved",
+      "confidence": "high for the stated forecast period; none for port-wide congestion conditions",
+      "claim": "Strong-wind warnings cover Great Orme Head to the Mull of Galloway, the Isle of Man, Lough Foyle to Carlingford Lough, and the Firth of Clyde and North Channel. Winds in these areas may reach force 6 later. This is coastal weather context, not evidence of port congestion.",
+      "supportedClaim": "Strong-wind warnings cover Great Orme Head to the Mull of Galloway, the Isle of Man, Lough Foyle to Carlingford Lough, and the Firth of Clyde and North Channel. Winds in these areas may reach force 6 later. This is coastal weather context, not evidence of port congestion.",
+      "validFrom": "2026-09-25T06:00:00Z",
+      "validThrough": "2026-09-26T06:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
     }
   ],
   "ports": [
@@ -1168,13 +1294,13 @@
       "port": "Liverpool",
       "slug": "liverpool",
       "sources": [
-        "liverpool-notices-index-2026-09-24",
-        "liverpool-64",
+        "liverpool-notices-index-2026-09-25",
+        "liverpool-65",
+        "liverpool-57a",
         "liverpool-48",
-        "liverpool-55",
-        "liverpool-57"
+        "liverpool-55"
       ],
-      "review": "Peel Ports added Notice 64/2026 for Alfred Lock, scheduled closed to vessel movements on the 10:38 high-water tide today with withdrawal stated for 19:48 unless amended. Notice 48 remains open-ended; Notices 55 and 57 remain within their stated periods. These local restrictions do not measure port-wide congestion, which remains unknown.",
+      "review": "Peel Ports issued Notice 65/2026 for Langton Lock closures from 15:00 to 20:00 on 27 September and 14:00 to 19:00 on 28 September. Amended Notice 57/2026 extends the South Gladstone Branch Dock No. 2 south-quay closure until 19:00 on 2 October. Notice 48 remains open-ended and Notice 55 remains within its stated period. Notice 64's stated Alfred Lock window ended on 24 September; actual reopening was not inferred. These local restrictions do not measure port-wide congestion, which remains unknown.",
       "observedAt": null,
       "confidence": "high for listed notice content; none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -1224,10 +1350,10 @@
       "port": "Holyhead",
       "slug": "holyhead",
       "sources": [
-        "met-office-shipping-2026-09-24",
-        "met-office-inshore-2026-09-24"
+        "met-office-shipping-2026-09-25",
+        "met-office-inshore-2026-09-25"
       ],
-      "review": "The Irish Sea has no formal gale warning, but the adjacent St Davids Head–Great Orme Head, Great Orme Head–Mull of Galloway and Isle of Man inshore areas carry strong-wind warnings. This is weather context, not evidence of Holyhead operations. Current measured congestion remains unknown.",
+      "review": "The Irish Sea has no formal gale warning, but the adjacent Great Orme Head–Mull of Galloway and Isle of Man inshore areas carry strong-wind warnings. This is weather context, not evidence of Holyhead operations. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -1239,8 +1365,8 @@
       "sources": [
         "belfast-15",
         "belfast-19-rev1",
-        "belfast-notices-index-2026-09-24",
-        "met-office-inshore-2026-09-24"
+        "belfast-notices-index-2026-09-25",
+        "met-office-inshore-2026-09-25"
       ],
       "review": "Belfast Harbour still lists Notice 22/2026 for D3 turbidity-buoy deployment, but the linked detail page does not expose dates, positions or instructions. Revised berth-depth restrictions and Oil Berth 3 works remain recorded. Lough Foyle to Carlingford Lough carries a strong-wind warning. None measures Belfast-wide congestion, so current measured congestion remains unknown.",
       "observedAt": null,
@@ -1252,9 +1378,9 @@
       "port": "Larne",
       "slug": "larne",
       "sources": [
-        "met-office-inshore-2026-09-24"
+        "met-office-inshore-2026-09-25"
       ],
-      "review": "The Firth of Clyde and North Channel inshore area carries a strong-wind warning, with southerly winds forecast at force 4 to 6 before easing. This is weather context, not a Larne operational measurement. Current measured congestion remains unknown.",
+      "review": "The Firth of Clyde and North Channel inshore area carries a strong-wind warning, with southwest winds forecast at force 4 or 5 and occasionally force 6 later. This is weather context, not a Larne operational measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -1264,10 +1390,10 @@
       "port": "Londonderry",
       "slug": "londonderry",
       "sources": [
-        "met-office-shipping-2026-09-24",
-        "met-office-inshore-2026-09-24"
+        "met-office-shipping-2026-09-25",
+        "met-office-inshore-2026-09-25"
       ],
-      "review": "Malin has a formal gale warning for southerly force 8 expected later, and Lough Foyle to Carlingford Lough carries a strong-wind warning. These are weather forecasts, not a Londonderry port congestion measurement. Current measured congestion remains unknown.",
+      "review": "Malin has no formal gale warning, while Lough Foyle to Carlingford Lough carries a strong-wind warning and Malin winds are forecast at southwest force 5 to 7. These are weather forecasts, not a Londonderry port congestion measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -1277,7 +1403,7 @@
       "port": "Dublin",
       "slug": "dublin",
       "sources": [
-        "dublin-notices-index-2026-09-24",
+        "dublin-notices-index-2026-09-25",
         "dublin-49",
         "dublin-48",
         "dublin-39-3"
@@ -1312,9 +1438,9 @@
       "port": "Shannon Foynes",
       "slug": "shannon-foynes",
       "sources": [
-        "met-office-shipping-2026-09-24"
+        "met-office-shipping-2026-09-25"
       ],
-      "review": "The Shannon shipping area has a continuing gale warning for southerly force 8. This is offshore sea-area weather context, not a measurement of Shannon Foynes port operations. Current measured congestion remains unknown.",
+      "review": "The Shannon shipping area has no formal gale warning, but southwest winds are forecast at force 5 to 7 with rough or very rough seas. This is offshore sea-area weather context, not a measurement of Shannon Foynes port operations. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -1344,6 +1470,6 @@
     "missingEvidence": "Timestamped primary measurements, reproducible scoring methodology and comparable historical observations."
   },
   "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
-  "checkedAt": "2026-09-24T08:14:08+01:00",
-  "changesSincePreviousCheck": "Dublin Port added Notice 49/2026 on 22 September for a capital dredging campaign scheduled from 1 October for approximately two weeks at named berths, basins and inner-fairway locations. Belfast Harbour added Notice 22/2026 for D3 turbidity-buoy deployment, but the linked detail URL redirects to the publications page, so its operational dates and instructions remain unverified. Liverpool lists no newer notice. Strong-wind warnings continue around relevant Irish Sea and Northern Ireland coasts; the Irish Sea and Malin have no formal gale warning, while the Shannon sea area has a gale warning for southerly force 8 expected later. These notices and forecasts do not establish port-wide congestion. No timestamped, comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+  "checkedAt": "2026-09-25T08:08:42+01:00",
+  "changesSincePreviousCheck": "Peel Ports issued Liverpool Notice 65/2026 for Langton Lock closures on 27 and 28 September and amended Notice 57/2026 to extend the South Gladstone Branch Dock No. 2 south-quay closure until 19:00 on 2 October. Notice 64's stated Alfred Lock window ended on 24 September; no actual reopening is inferred. Dublin still lists Notice 49 as latest and Belfast still lists Notice 22 without accessible operational detail. Met Office gale warnings for Shannon and Malin have cleared, while relevant Irish Sea and Northern Ireland coastal areas retain strong-wind warnings. These notices and forecasts do not establish port-wide congestion. No timestamped, comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
 }
