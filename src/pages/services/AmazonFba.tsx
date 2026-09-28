@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, Truck, TrainFront, FileCheck, Package,
-  Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
-  Clock, Shield, Barcode, RotateCcw, Search, Boxes, AlertTriangle
+  Ship, Plane, Truck, TrainFront, Package,
+  Warehouse, ArrowRight, CheckCircle, ChevronDown,
+  Barcode, RotateCcw, Search, Boxes, AlertTriangle
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -222,7 +222,7 @@ export default function AmazonFba() {
               {[
                 { step: '1', title: 'Collection from Supplier', desc: 'We collect goods directly from your supplier in China, USA, EU, or UK. Our team verifies the shipment details and checks the packing list against your purchase order.' },
                 { step: '2', title: 'International Shipping', desc: 'Choose sea, air, or rail freight. We handle all export documentation, customs clearance at origin, and transit tracking so you know exactly where your shipment is.' },
-                { step: '3', title: 'UK Customs Clearance', desc: 'Our customs brokers handle all HMRC declarations, duty calculations, and VAT processing. We ensure 99%+ first-time clearance success at all UK ports.' },
+                { step: '3', title: 'UK Customs Clearance', desc: 'Carrgo coordinates declaration requirements, duty and VAT information, and port release using the shipment documents supplied.' },
                 { step: '4', title: 'FBA Prep & Inspection', desc: 'At our Midlands facility, we inspect each item, apply FNSKU labels, add suffocation warnings, polybag if needed, and bundle products according to your instructions.' },
                 { step: '5', title: 'Carton & Pallet Prep', desc: 'We create Amazon-compliant cartons (max 23kg, proper labels) and pallets (1200×1000mm, max 1.8m height). Every carton gets the correct Amazon shipment label.' },
                 { step: '6', title: 'Delivery to Amazon FC', desc: 'We book your delivery appointment through Amazon\'s Carrier Central system and deliver to BHX4, EMA1, LBA1, or any UK fulfilment centre. Proof of delivery provided.' },

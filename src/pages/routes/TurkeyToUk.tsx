@@ -484,7 +484,7 @@ export default function TurkeyToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Turkey to UK shipping?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Carrgo Freight Solutions Ltd, based in Bolton, has been serving UK importers since 2026. Our team brings over two decades of combined freight experience, with particular expertise in Turkish trade lanes, FTA documentation, and UK customs procedures.
+              Carrgo coordinates Turkey–UK road, sea and air freight, with shipment-specific checks for collection, trade documents, carrier availability and final delivery.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, Truck, TrainFront, FileCheck, Package,
+  Ship, Truck, FileCheck, Package,
   Warehouse, Globe, ArrowRight, CheckCircle, ChevronRight,
   Clock, Shield, Users, TrendingUp, BarChart3, MapPin, Boxes, Headphones, Factory
 } from 'lucide-react';
@@ -54,7 +54,7 @@ const logisticsServices = [
   {
     icon: FileCheck,
     title: 'Customs Clearance',
-    description: 'Expert UK customs brokerage services with HMRC CDS entries, duty deferment, tariff classification, and compliance management. Our 99%+ first-submission clearance rate minimises delays and detention charges.',
+    description: 'UK customs support covering document checks, declaration coordination, duty and VAT information, and port release for commercial freight movements.',
     link: '/services/customs-clearance',
   },
   {
@@ -193,7 +193,7 @@ export default function Logistics() {
                     'Complete freight management across all transport modes',
                     'UK warehousing with pick-and-pack and inventory management',
                     'Nationwide distribution and last-mile delivery',
-                    'Expert customs clearance with 99%+ success rate',
+                    'Shipment-specific customs and document checks',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-blue-100">
                       <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -229,8 +229,8 @@ export default function Logistics() {
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center border border-white/20">
                   <Shield className="w-8 h-8 mx-auto mb-2 text-blue-200" aria-hidden="true" />
-                  <div className="text-2xl font-extrabold">99%+</div>
-                  <div className="text-xs text-blue-200">Customs Success</div>
+                  <div className="text-2xl font-extrabold">Customs</div>
+                  <div className="text-xs text-blue-200">Document Support</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center border border-white/20">
                   <Users className="w-8 h-8 mx-auto mb-2 text-blue-200" aria-hidden="true" />

@@ -1079,12 +1079,17 @@ ROUTES = {
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/resources/case-studies": {
-        "title": "Case Studies | UK Freight Success Stories | Carrgo",
-        "description": "See how Carrgo helped UK businesses solve their shipping challenges. Real case studies of customs clearance, cost savings, and on-time delivery. Read our success stories.",
-        "keywords": "freight case studies, shipping success stories, uk freight examples, carrgo clients",
+        "title": "Case Studies Correction | Carrgo",
+        "description": "Carrgo has withdrawn unverified case-study outcomes pending source records and publication consent.",
+        "keywords": "",
         "canonical": "https://www.carrgo.co.uk/resources/case-studies",
-        "h1": "Case Studies — UK Freight Success Stories",
-        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+        "h1": "Unverified Case-Study Claims Withdrawn",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "noindex": True,
+        "staticBody": """
+<p>Carrgo has removed the case-study outcomes previously shown at this URL because source records and publication consent were not available for independent verification.</p>
+<p>This address remains available as a correction record. <a href="/get-a-quote/">Request a shipment-specific freight quote</a>.</p>
+"""
     },
     "/resources/industries": {
         "title": "Industries We Serve | Freight Solutions by Sector | Carrgo",
@@ -1231,12 +1236,17 @@ ROUTES = {
         ]
     },
     "/resources/testimonials": {
-        "title": "Client Testimonials | Carrgo Freight Solutions Reviews",
-        "description": "Read reviews from UK importers using Carrgo freight forwarding. 500+ businesses trust us with sea freight, customs clearance, and door-to-door logistics. 4.9/5 client satisfaction.",
-        "keywords": "carrgo reviews, freight forwarder testimonials, shipping company reviews uk, carrgo feedback, importer testimonials",
+        "title": "Testimonials Correction | Carrgo",
+        "description": "Carrgo has withdrawn unverified ratings and testimonials pending source records and publication consent.",
+        "keywords": "",
         "canonical": "https://www.carrgo.co.uk/resources/testimonials",
-        "h1": "What UK Importers Say About Carrgo",
-        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+        "h1": "Unverified Testimonials Withdrawn",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "noindex": True,
+        "staticBody": """
+<p>Carrgo has removed the ratings and testimonials previously shown at this URL because source records and publication consent were not available for independent verification.</p>
+<p>This address remains available as a correction record. <a href="/get-a-quote/">Request a shipment-specific freight quote</a>.</p>
+"""
     },
     "/tools/cost-calculator": {
         "title": "Importer Cost Calculator | Port Delay Costs | Demurrage & Detention | Carrgo",
@@ -1392,19 +1402,24 @@ ROUTES = {
     },
     "/about": {
         "title": "About Carrgo | UK Freight Forwarder | Carrgo",
-        "description": "Learn about Carrgo Freight Solutions — a UK freight forwarder based in Bolton, Greater Manchester. 30+ years experience, BIFA & IATA accredited. Serving UK importers and exporters nationwide.",
+        "description": "Carrgo coordinates sea, air, road and rail freight, customs support and delivery for UK and Ireland importers and exporters.",
         "keywords": "about carrgo, freight forwarder bolton, manchester logistics company, carrgo team",
         "canonical": "https://www.carrgo.co.uk/about",
         "h1": "About Carrgo — UK Freight Forwarder Based in Bolton",
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     },
     "/results": {
-        "title": "Results & Testimonials | Carrgo Freight Success | Carrgo",
-        "description": "See Carrgo's results — 500+ UK importers served, 99%+ customs clearance success, 2-hour quote response. Read testimonials from our clients. Trust Carrgo with your freight.",
-        "keywords": "carrgo results, freight testimonials, client reviews carrgo, shipping success",
+        "title": "Results Page Correction | Carrgo",
+        "description": "Carrgo has withdrawn unverified client totals and outcome figures pending source records and publication consent.",
+        "keywords": "",
         "canonical": "https://www.carrgo.co.uk/results",
-        "h1": "Results &amp; Testimonials — Carrgo Freight Success",
-        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+        "h1": "Unverified Client Claims Withdrawn",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "noindex": True,
+        "staticBody": """
+<p>Carrgo has removed the client totals and outcome figures previously shown at this URL because source records and publication consent were not available for independent verification.</p>
+<p>This address remains available as a correction record. <a href="/get-a-quote/">Request a shipment-specific freight quote</a>.</p>
+"""
     },
     "/contact": {
         "title": "Contact Carrgo | Freight Forwarding Support | Carrgo",

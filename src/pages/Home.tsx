@@ -11,7 +11,7 @@ import {
 const faqData = [
   { q: 'How long does sea freight from China to UK take?', a: 'Sea freight from China to UK typically takes 25-35 days port-to-port, or 35-45 days door-to-door depending on the origin city and UK destination port.' },
   { q: 'What is the difference between FCL and LCL shipping?', a: 'FCL (Full Container Load) means you rent an entire container for your goods only. LCL (Less than Container Load) means your goods share a container with other shipments. FCL is typically more cost-effective for larger volumes.' },
-  { q: 'Do you handle customs clearance?', a: 'Yes, our experienced customs brokers handle all UK import and export declarations with a high first-submission success rate, ensuring smooth clearance at all UK ports.' },
+  { q: 'Do you handle customs clearance?', a: 'Carrgo can coordinate UK import and export declarations, document checks and port release as part of a freight movement. Requirements depend on the goods, route and importer or exporter responsibilities.' },
   { q: 'How quickly can I get a freight quote?', a: 'We provide all-inclusive freight quotes within 2 hours during UK business hours. Simply fill out our quote form or email us at support@carrgo.co.uk.' },
   { q: 'What are Incoterms and which should I use?', a: 'Incoterms define who is responsible for costs and risks at each stage of shipping. EXW, FOB, and DDP are the most common. Our team can advise on the best option for your shipment.' },
   { q: 'Can you ship to Amazon FBA warehouses?', a: 'Yes, we specialise in Amazon FBA freight including FBA prep, labelling, palletisation, and delivery to all UK fulfilment centres including BHX4, EMA1, and LBA1.' },
@@ -130,7 +130,7 @@ export default function Home() {
   return (
     <main role="main" itemScope itemType="https://schema.org/WebPage" data-page="home">
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
-      <meta itemProp="description" content="Carrgo is a trusted UK &amp; Ireland freight forwarder handling sea freight (FCL/LCL), air cargo, road haulage, rail freight &amp; customs clearance." />
+      <meta itemProp="description" content="Carrgo coordinates UK and Ireland sea freight, air cargo, road haulage, rail freight and customs support." />
       <Seo
         title="Cargo Services UK | Shipping & Freight Quotes | Carrgo"
         description="UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a quote in 2 hours."
@@ -161,7 +161,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-              {"@type": "Question", "name": "How much does sea freight from China to the UK cost?", "acceptedAnswer": {"@type": "Answer", "text": "LCL sea freight from China starts from GBP 300 per CBM. A 20ft FCL container costs GBP 1,200-2,800 and a 40ft FCL GBP 2,000-4,500 depending on origin port. Carrgo provides all-inclusive quotes within 2 hours."}},
+              {"@type": "Question", "name": "How much does sea freight from China to the UK cost?", "acceptedAnswer": {"@type": "Answer", "text": "Sea-freight pricing depends on origin, destination, cargo volume, container type, current carrier availability and the collection, customs and delivery scope. Carrgo requests those details before preparing a shipment-specific quote."}},
               {"@type": "Question", "name": "How long does sea freight from China to the UK take?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight from Shanghai or Shenzhen to Felixstowe takes 25-35 days. China-UK rail via the New Silk Road takes 14-20 days. Air freight takes 3-5 days door-to-door."}},
               {"@type": "Question", "name": "Does Carrgo handle UK and Ireland customs clearance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles UK and Ireland import customs declarations, duty calculations and port release at all major UK and Irish ports including Belfast and Dublin."}},
               {"@type": "Question", "name": "What is the difference between FCL and LCL shipping?", "acceptedAnswer": {"@type": "Answer", "text": "FCL (Full Container Load) means your cargo uses a full 20ft or 40ft container. LCL (Less than Container Load) means your cargo shares container space with other shipments. LCL is better for smaller consignments under 15 CBM."}},
@@ -196,7 +196,7 @@ export default function Home() {
               {/* Direct answer block for AI search readiness */}
               <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 border border-white/20" itemScope itemType="https://schema.org/Answer">
                 <p className="text-lg text-white leading-relaxed" itemProp="text">
-                  <strong className="text-green-300">Carrgo provides UK cargo services and freight forwarding</strong>, covering sea freight (FCL/LCL), door-to-door air freight, road haulage, rail freight, customs clearance, and final delivery. We provide all-inclusive cargo shipping quotes within 2 hours, with tracking and dedicated account managers.
+                  <strong className="text-green-300">Carrgo provides UK cargo services and freight coordination</strong>, covering sea freight (FCL/LCL), door-to-door air freight, road haulage, rail freight, customs support and final delivery. Quote scope is matched to the shipment details supplied.
                 </p>
               </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
@@ -321,38 +321,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== ACCREDITATIONS ====== */}
-      <section aria-label="Accreditations" data-section="accreditations" className="bg-gray-50 py-6 border-b">
+      {/* ====== VERIFIED SERVICE SCOPE ====== */}
+      <section aria-labelledby="service-scope-heading" data-section="service-scope" className="border-b bg-gray-50 py-10">
         <div className="container-carrgo">
-          <p className="text-center text-sm text-gray-500 mb-3">Trusted by UK importers. Members of leading industry bodies.</p>
-          <div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 font-semibold text-sm">
-            
-            
-            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" /> AEO Certified</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ====== STATS (static, not animated) ====== */}
-      <section aria-label="Company statistics" data-section="stats" itemScope itemType="https://schema.org/AboutPage" className="py-16 bg-white">
-        <div className="container-carrgo">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <article>
-              <div className="text-4xl font-extrabold text-brand-800">500+</div>
-              <p className="text-gray-600 mt-1">UK Importers Served</p>
-            </article>
-            <article>
-              <div className="text-4xl font-extrabold text-brand-800">30+</div>
-              <p className="text-gray-600 mt-1">Years Experience</p>
-            </article>
-            <article>
-              <div className="text-4xl font-extrabold text-brand-800">99%+</div>
-              <p className="text-gray-600 mt-1">Customs Clearance Success</p>
-            </article>
-            <article>
-              <div className="text-4xl font-extrabold text-brand-800">2hr</div>
-              <p className="text-gray-600 mt-1">Average Quote Response</p>
-            </article>
+          <h2 id="service-scope-heading" className="mb-6 text-center text-2xl font-bold text-gray-900">Freight support matched to the shipment</h2>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['Freight modes', 'Sea, air, road and rail options'],
+              ['Coverage', 'Great Britain, Northern Ireland and Ireland'],
+              ['Customs support', 'Document and clearance coordination'],
+              ['Quote inputs', 'Route, goods, weight or volume and ready date'],
+            ].map(([title, text]) => (
+              <article key={title} className="rounded-lg border border-gray-200 bg-white p-5">
+                <h3 className="font-bold text-gray-900">{title}</h3>
+                <p className="mt-1 text-sm text-gray-600">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -409,7 +393,7 @@ export default function Home() {
       <section id="services" aria-labelledby="services-heading" data-section="services" itemScope itemType="https://schema.org/ItemList" className="py-16 bg-gray-50">
         <div className="container-carrgo">
           <h2 id="services-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">What freight forwarding services does Carrgo offer?</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Carrgo provides complete freight forwarding solutions for UK importers, including sea freight, air cargo, road haulage, rail freight, customs clearance, and door-to-door delivery. Every service is managed by a dedicated account manager with real-time tracking.</p>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Carrgo coordinates sea freight, air cargo, road haulage, rail freight, customs support and door-to-door delivery. The available scope and shipment updates depend on the selected carrier and route.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map(s => {
               const Icon = s.icon;
@@ -437,16 +421,16 @@ export default function Home() {
       {/* ====== WHY CHOOSE ====== */}
       <section aria-labelledby="why-heading" data-section="why-choose" className="py-16 bg-white">
         <div className="container-carrgo">
-          <h2 id="why-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">Why do UK importers choose Carrgo over other freight forwarders?</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">UK businesses choose Carrgo because we offer all-inclusive pricing with no hidden fees, expert in-house customs clearance, quotes within 2 hours, real-time shipment tracking, and a dedicated account manager for every client.</p>
+          <h2 id="why-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">What can Carrgo include in a freight movement?</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">The quotation is built around the actual route and cargo details, with the included collection, freight, customs and delivery scope stated clearly.</p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: Shield, title: 'All-Inclusive Pricing', desc: 'One quote covers everything. No hidden fuel surcharges, no terminal handling fees, no customs inspection surprises.' },
-              { icon: FileCheck, title: 'Expert Customs Clearance', desc: 'Our experienced brokers handle all documentation with a high first-submission success rate, minimising delays at UK ports.' },
+              { icon: Shield, title: 'Itemised Scope', desc: 'The quote states which collection, freight, customs and delivery elements are included.' },
+              { icon: FileCheck, title: 'Customs Coordination', desc: 'Document requirements and declaration responsibilities are checked for the specific shipment.' },
               { icon: Clock, title: 'Fast Quote Response', desc: 'Receive your all-inclusive freight quote within 2 hours during UK business hours.' },
-              { icon: TrendingUp, title: 'Real-Time Tracking', desc: 'Track your shipment at every stage with our live updates and proactive notifications.' },
-              { icon: Users, title: 'Dedicated Account Manager', desc: 'Every client gets a single point of contact who knows your business and your shipments.' },
-              { icon: Globe, title: 'Global Network', desc: 'Established relationships with carriers and agents across 50+ trade routes worldwide.' },
+              { icon: TrendingUp, title: 'Shipment Updates', desc: 'Milestone updates and available carrier information are shared during the movement.' },
+              { icon: Users, title: 'Clear Contact', desc: 'A Carrgo contact coordinates the enquiry and confirms what information is still needed.' },
+              { icon: Globe, title: 'Route Checks', desc: 'Carrier or agent availability and cut-offs are checked for the requested trade lane.' },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -465,28 +449,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== COMPARISON TABLE ====== */}
+      {/* ====== QUOTE SCOPE TABLE ====== */}
       <section aria-labelledby="compare-heading" data-section="comparison" className="py-16 bg-brand-50">
         <div className="container-carrgo">
-          <h2 id="compare-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">How does Carrgo compare to traditional freight forwarders?</h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Carrgo differs from traditional freight forwarders by offering transparent all-inclusive pricing, in-house customs experts, real-time tracking, dedicated account managers, and 2-hour quote responses instead of 24-48 hours.</p>
+          <h2 id="compare-heading" className="text-3xl font-bold text-center text-gray-900 mb-3">What should a freight quote confirm?</h2>
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">A useful quote separates confirmed scope from costs or requirements that depend on the carrier, terminal, customs authority or final shipment details.</p>
           <div className="overflow-x-auto">
             <table className="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-sm border">
               <thead>
                 <tr className="bg-gray-100">
-                  <th scope="col" className="text-left px-6 py-4 font-semibold text-gray-700">Feature</th>
-                  <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-500">Traditional Forwarder</th>
-                  <th scope="col" className="text-center px-6 py-4 font-semibold text-brand-800">Carrgo</th>
+                  <th scope="col" className="text-left px-6 py-4 font-semibold text-gray-700">Quote item</th>
+                  <th scope="col" className="text-center px-6 py-4 font-semibold text-gray-500">What to provide</th>
+                  <th scope="col" className="text-center px-6 py-4 font-semibold text-brand-800">What Carrgo checks</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Hidden Fees', 'Common', 'None — all-inclusive'],
-                  ['Customs Broker', 'Separate provider', 'In-house experts'],
-                  ['Tracking', 'Portal only', 'Real-time updates'],
-                  ['Account Manager', 'Shared team', 'Dedicated'],
-                  ['Quote Speed', '24-48 hours', '2 hours'],
-                  ['Communication', 'Email only', 'Email, chat, updates'],
+                  ['Route', 'Origin and destination', 'Available freight mode and routing'],
+                  ['Cargo', 'Goods, weight or volume, dimensions', 'Handling and equipment requirements'],
+                  ['Timing', 'Ready date and deadline', 'Current cut-offs and availability'],
+                  ['Customs', 'Importer/exporter details and documents', 'Declaration scope and missing information'],
+                  ['Delivery', 'Final address and access needs', 'Collection and final-mile scope'],
+                  ['Validity', 'Any expected shipment changes', 'Rate validity and stated exclusions'],
                 ].map(([feat, trad, carr], i) => (
                   <tr key={i} className="border-t">
                     <td className="px-6 py-3 font-medium text-gray-900">{feat}</td>

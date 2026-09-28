@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, Truck, TrainFront, FileCheck, Package,
-  Warehouse, Globe, ArrowRight, CheckCircle, ChevronDown,
-  Clock, Shield, AlertTriangle, ClipboardCheck, BookOpen, Calculator, CreditCard, Users
+  Ship, Plane, Truck, FileCheck, Package,
+  Globe, ArrowRight, CheckCircle, ChevronDown,
+  Shield, AlertTriangle, ClipboardCheck, BookOpen, Calculator, CreditCard, Users
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -91,7 +91,7 @@ export default function CustomsClearance() {
                   Customs Clearance UK — Import & Export Brokers
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Our customs brokers handle all UK import and export declarations. CDS entries, duty deferment, commodity code classification, and full compliance. 99%+ first-submission success rate.
+                  Carrgo coordinates UK import and export declarations, document checks, commodity-code information, duty and VAT details, and port release using the shipment information supplied.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -320,18 +320,18 @@ export default function CustomsClearance() {
         <section aria-labelledby="why-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Trust</span>
+              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Before submission</span>
               <h2 id="why-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                Why Choose Our Customs Brokers?
+                What Carrgo Checks for Customs Clearance
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { stat: '99%+', label: 'First-Submission Success Rate', desc: 'Our experienced brokers get declarations right the first time.' },
-                { stat: '2hr', label: 'Average Clearance Time', desc: 'Fast clearance means less time waiting at the port.' },
-                { stat: '50%', label: 'Fewer Inspections', desc: 'Experienced brokers benefit from lower inspection rates.' },
-                { stat: '100%', label: 'Compliance Guarantee', desc: 'Full regulatory compliance on every declaration.' },
-                { stat: 'Zero', label: 'Client Penalties', desc: 'No customs penalties for any Carrgo client declarations.' },
+                { stat: 'EORI', label: 'Importer Identity', desc: 'The correct GB or XI EORI and responsible importer or exporter.' },
+                { stat: 'HS', label: 'Commodity Details', desc: 'Goods descriptions and commodity-code information supplied for review.' },
+                { stat: 'Value', label: 'Customs Value', desc: 'Invoice value, currency, freight elements and valuation method.' },
+                { stat: 'Origin', label: 'Origin Evidence', desc: 'Country of origin and any preference documents needed for a claim.' },
+                { stat: 'Docs', label: 'Shipment Records', desc: 'Commercial invoice, packing list and transport documents.' },
               ].map((item, i) => (
                 <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] text-center">
                   <div className="text-3xl font-extrabold text-[#1A6DFF] mb-2">{item.stat}</div>
@@ -363,7 +363,7 @@ export default function CustomsClearance() {
               Get Your Customs Clearance Quote
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
-              Professional customs brokers with a 99%+ first-submission success rate. Fast, compliant, hassle-free clearance.
+              Send the route, goods and available documents so Carrgo can confirm the declaration scope and information still required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">

@@ -1,4 +1,4 @@
-import { Ship, Mail, Phone, MapPin, ArrowUp, Linkedin } from 'lucide-react';
+import { Ship, Mail, ArrowUp, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -38,8 +38,6 @@ const industries = [
 
 const company = [
   { label: 'About Us', to: '/about' },
-  { label: 'Our Results', to: '/results' },
-  { label: 'Testimonials', to: '/resources/testimonials' },
   { label: 'Contact', to: '/contact' },
   { label: 'Get a Quote', to: '/get-a-quote' },
 ];
@@ -55,7 +53,6 @@ const resources = [
   { label: 'Container Size Guide', to: '/resources/container-size-guide' },
   { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
   { label: 'Freight FAQs', to: '/resources/freight-faqs' },
-  { label: 'Case Studies', to: '/resources/case-studies' },
   { label: 'Industries', to: '/resources/industries' },
   { label: 'Our Process', to: '/resources/our-process' },
   { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },
@@ -123,7 +120,7 @@ export default function Footer() {
                 <span itemProp="name">Carrgo</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-sm" itemProp="description">
-                Trusted UK freight forwarding company with over 30 years combined industry experience. All-inclusive door-to-door shipping with quotes in 2 hours.
+                UK freight coordination for sea, air, road and rail movements, customs support and door-to-door delivery.
               </p>
               <div className="not-italic space-y-2.5 text-sm">
                 <div className="flex items-center gap-2.5">

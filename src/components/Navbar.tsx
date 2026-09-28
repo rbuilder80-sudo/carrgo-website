@@ -48,8 +48,6 @@ const resourceLinks = [
   { label: 'Container Size Guide', to: '/resources/container-size-guide' },
   { label: 'Incoterms Guide', to: '/resources/incoterms-guide' },
   { label: 'Freight FAQs', to: '/resources/freight-faqs' },
-  { label: 'Case Studies', to: '/resources/case-studies' },
-  { label: 'Testimonials', to: '/resources/testimonials' },
   { label: 'Industries', to: '/resources/industries' },
   { label: 'Our Process', to: '/resources/our-process' },
   { label: 'Post-Brexit Guide', to: '/resources/post-brexit-customs-guide' },

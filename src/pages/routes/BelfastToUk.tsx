@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Truck, Clock, MapPin, ArrowRight,
+  Ship, Truck, MapPin, ArrowRight,
   CheckCircle, ChevronDown, FileCheck, Shield, TrendingUp,
   Users, Globe, Anchor, Package, AlertCircle
 } from 'lucide-react';
@@ -510,7 +510,7 @@ export default function BelfastToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Northern Ireland freight?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Carrgo Freight Solutions Ltd, based in Bolton, has served UK and Northern Ireland shippers since 2026. Our team brings over two decades of combined experience, with deep expertise in the Windsor Framework, NI Protocol, and Irish Sea logistics.
+              Carrgo coordinates Northern Ireland freight movements, with shipment-specific checks for Irish Sea routing, Windsor Framework requirements, carrier availability and final delivery.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[

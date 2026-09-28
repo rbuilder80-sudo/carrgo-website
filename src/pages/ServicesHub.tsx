@@ -100,7 +100,7 @@ const services = [
   {
     icon: FileCheck,
     title: 'Customs Clearance',
-    description: 'Expert UK customs brokerage with HMRC CDS entries, duty and VAT calculations, and compliance management. Our 99%+ first-submission success rate ensures your cargo clears quickly.',
+    description: 'UK customs support covering document checks, declaration coordination, duty and VAT information, and port release for commercial freight movements.',
     link: '/services/customs-clearance',
   },
   {
@@ -165,8 +165,8 @@ const whyChoose = [
   },
   {
     icon: TrendingUp,
-    title: '99%+ Customs Clearance Success',
-    description: 'Our expert customs brokers achieve a first-submission clearance rate of over 99%, minimising delays, detention charges and storage fees at UK ports and airports.',
+    title: 'Shipment-Specific Customs Checks',
+    description: 'Declaration requirements and missing documents are checked against the goods, route and importer responsibilities.',
   },
 ];
 
@@ -242,16 +242,16 @@ export default function ServicesHub() {
                   <div className="text-xs text-blue-200">Core Services</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
-                  <div className="text-2xl font-extrabold">150+</div>
-                  <div className="text-xs text-blue-200">Countries Served</div>
+                  <div className="text-2xl font-extrabold">4</div>
+                  <div className="text-xs text-blue-200">Transport Modes</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
                   <div className="text-2xl font-extrabold">2hrs</div>
                   <div className="text-xs text-blue-200">Quote Response</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
-                  <div className="text-2xl font-extrabold">99%+</div>
-                  <div className="text-xs text-blue-200">Customs Success</div>
+                  <div className="text-2xl font-extrabold">GB · NI · IE</div>
+                  <div className="text-xs text-blue-200">Core Coverage</div>
                 </div>
               </div>
             </div>

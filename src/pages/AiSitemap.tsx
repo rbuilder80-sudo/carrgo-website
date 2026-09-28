@@ -29,13 +29,11 @@ const routePages = [
 ];
 
 const resourcePages = [
-  { path: '/resources/port-congestion-tracker', title: 'Port Congestion Tracker', desc: 'Live UK port status for 18 ports including Felixstowe, Southampton, London Gateway, Belfast, and Dublin. Updated daily.', modified: '2025-01-15' },
+  { path: '/resources/port-congestion-tracker', title: 'Port Congestion Tracker', desc: 'Dated operating evidence for 17 UK and Ireland ports, with unverified numerical measurements shown as unknown.', modified: '2026-09-28' },
   { path: '/resources/shipping-guides', title: 'Shipping Guides', desc: 'Comprehensive sea, air, road, rail, and customs shipping guides for UK importers.', modified: '2025-01-15' },
   { path: '/resources/container-size-guide', title: 'Container Size Guide', desc: '20ft, 40ft, 40ft HC container dimensions, capacity, weight limits, and loading guidance.', modified: '2025-01-15' },
   { path: '/resources/incoterms-guide', title: 'Incoterms Guide', desc: 'Full guide to all 11 Incoterms 2020 rules: EXW, FCA, CPT, CIP, DAP, DPU, DDP, FAS, FOB, CFR, CIF.', modified: '2025-01-15' },
   { path: '/resources/freight-faqs', title: 'Freight FAQs', desc: 'Answers to common freight forwarding questions about costs, transit times, documentation, and customs.', modified: '2025-01-15' },
-  { path: '/resources/case-studies', title: 'Case Studies', desc: 'Success stories and metrics from UK importers using Carrgo freight services.', modified: '2025-01-15' },
-  { path: '/resources/testimonials', title: 'Testimonials', desc: 'Reviews and feedback from satisfied UK importer clients.', modified: '2025-01-15' },
   { path: '/resources/industries', title: 'Industries', desc: 'Freight solutions tailored for furniture, e-commerce, automotive, construction, electronics, and fashion.', modified: '2025-01-15' },
   { path: '/resources/our-process', title: 'Our Process', desc: '5-step freight forwarding process from quote request to final delivery.', modified: '2025-01-15' },
   { path: '/resources/post-brexit-customs-guide', title: 'Post-Brexit Customs Guide', desc: 'Navigating UK customs after Brexit: EORI numbers, rules of origin, NI Protocol, Windsor Framework.', modified: '2025-01-15' },
@@ -50,7 +48,6 @@ const resourcePages = [
 const companyPages = [
   { path: '/', title: 'Homepage', desc: 'UK and Ireland freight forwarder. Sea, air, road, and rail shipping with all-inclusive quotes in 2 hours.', modified: '2025-01-15' },
   { path: '/about', title: 'About Carrgo', desc: 'Company story, mission, values, and team.', modified: '2025-01-15' },
-  { path: '/results', title: 'Our Results', desc: 'Case studies, performance metrics, and success stories from UK importers.', modified: '2025-01-15' },
   { path: '/contact', title: 'Contact Us', desc: 'Get in touch with Carrgo via email, phone, or contact form for quotes and enquiries.', modified: '2025-01-15' },
   { path: '/get-a-quote', title: 'Get a Quote', desc: 'Free all-inclusive freight quote within 2 hours. No obligation.', modified: '2025-01-15' },
 ];

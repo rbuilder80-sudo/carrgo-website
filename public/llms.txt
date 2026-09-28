@@ -146,9 +146,6 @@ Step-by-step guides for importing and exporting.
 ### [Freight FAQs](https://www.carrgo.co.uk/resources/freight-faqs)
 Frequently asked questions about freight forwarding, customs and shipping.
 
-### [Case Studies](https://www.carrgo.co.uk/resources/case-studies)
-Real client success stories and logistics solutions.
-
 ### [Our Process](https://www.carrgo.co.uk/resources/our-process)
 How Carrgo handles freight from quote to delivery.
 
@@ -164,5 +161,3 @@ How Carrgo handles freight from quote to delivery.
 - Great Britain (England, Scotland, Wales)
 - Northern Ireland (Belfast, Larne, Londonderry)
 - Republic of Ireland (Dublin, Cork, Rosslare, Shannon Foynes, Waterford)
-
-## Accreditations

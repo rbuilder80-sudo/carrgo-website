@@ -7,7 +7,7 @@ const Home = lazy(() => import('./pages/Home'));
 
 // Company pages
 const About = lazy(() => import('./pages/About'));
-const Results = lazy(() => import('./pages/Results'));
+const EvidenceCorrection = lazy(() => import('./pages/EvidenceCorrection'));
 const Contact = lazy(() => import('./pages/Contact'));
 const GetAQuote = lazy(() => import('./pages/GetAQuote'));
 const FreightForwarderManchester = lazy(() => import('./pages/FreightForwarderManchester'));
@@ -79,11 +79,9 @@ const ShippingGuides = lazy(() => import('./pages/resources/ShippingGuides'));
 const ContainerGuide = lazy(() => import('./pages/resources/ContainerGuide'));
 const Incoterms = lazy(() => import('./pages/resources/Incoterms'));
 const FreightFaqs = lazy(() => import('./pages/resources/FreightFaqs'));
-const CaseStudies = lazy(() => import('./pages/resources/CaseStudies'));
 const Industries = lazy(() => import('./pages/resources/Industries'));
 const OurProcess = lazy(() => import('./pages/resources/OurProcess'));
 const PostBrexit = lazy(() => import('./pages/resources/PostBrexit'));
-const Testimonials = lazy(() => import('./pages/resources/Testimonials'));
 
 export default function App() {
   return (
@@ -97,7 +95,7 @@ export default function App() {
 
           {/* Company pages */}
           <Route path="/about" element={<Suspense fallback={<Loading />}><About /></Suspense>} />
-          <Route path="/results" element={<Suspense fallback={<Loading />}><Results /></Suspense>} />
+          <Route path="/results" element={<Suspense fallback={<Loading />}><EvidenceCorrection /></Suspense>} />
           <Route path="/contact" element={<Suspense fallback={<Loading />}><Contact /></Suspense>} />
           <Route path="/get-a-quote" element={<Suspense fallback={<Loading />}><GetAQuote /></Suspense>} />
           <Route path="/freight-forwarder-manchester" element={<Suspense fallback={<Loading />}><FreightForwarderManchester /></Suspense>} />
@@ -149,12 +147,12 @@ export default function App() {
           <Route path="/resources/container-size-guide" element={<Suspense fallback={<Loading />}><ContainerGuide /></Suspense>} />
           <Route path="/resources/incoterms-guide" element={<Suspense fallback={<Loading />}><Incoterms /></Suspense>} />
           <Route path="/resources/freight-faqs" element={<Suspense fallback={<Loading />}><FreightFaqs /></Suspense>} />
-          <Route path="/resources/case-studies" element={<Suspense fallback={<Loading />}><CaseStudies /></Suspense>} />
+          <Route path="/resources/case-studies" element={<Suspense fallback={<Loading />}><EvidenceCorrection /></Suspense>} />
           <Route path="/resources/industries" element={<Suspense fallback={<Loading />}><Industries /></Suspense>} />
           <Route path="/resources/our-process" element={<Suspense fallback={<Loading />}><OurProcess /></Suspense>} />
           <Route path="/resources/post-brexit-customs-guide" element={<Suspense fallback={<Loading />}><PostBrexit /></Suspense>} />
           <Route path="/resources/uk-import-customs-clearance-guide" element={<Navigate to="/resources/post-brexit-customs-guide" replace />} />
-          <Route path="/resources/testimonials" element={<Suspense fallback={<Loading />}><Testimonials /></Suspense>} />
+          <Route path="/resources/testimonials" element={<Suspense fallback={<Loading />}><EvidenceCorrection /></Suspense>} />
 
           {/* Industry pages */}
           <Route path="/industries/ecommerce" element={<Suspense fallback={<Loading />}><IndustryEcommerce /></Suspense>} />

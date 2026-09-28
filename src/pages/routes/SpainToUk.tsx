@@ -4,7 +4,7 @@ import Seo from '../../components/Seo';
 import {
   Ship, Plane, Truck, Clock, MapPin, ArrowRight,
   CheckCircle, ChevronDown, FileCheck, Shield, TrendingUp,
-  Users, Globe, Anchor, Package
+  Users, Anchor, Package
 } from 'lucide-react';
 
 const faqData = [
@@ -439,7 +439,7 @@ export default function SpainToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Why choose Carrgo for Spain to UK shipping?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Carrgo Freight Solutions Ltd, based in Bolton, has served UK importers since 2026. Our team brings over two decades of combined experience in European freight, with particular expertise in post-Brexit customs, Spanish supply chains, and cross-Channel logistics.
+              Carrgo coordinates Spain–UK road, sea and air freight, with shipment-specific checks for collection, customs requirements, carrier availability and final delivery.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
