@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.carrgo.co.uk/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/about/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.carrgo.co.uk/blog/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/blog/sea-freight-costs-2026.html</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/blog/uk-customs-clearance-process-2026.html</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/business-central-import-duty-landed-cost-readiness/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -88,4 +88,14 @@
   <url><loc>https://www.carrgo.co.uk/tools/port-comparison/</loc><lastmod>2026-09-14</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/tools/uk-import-cost-tracker/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.carrgo.co.uk/tools/woocommerce-uk-import-readiness-plugin/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/cargo-shipping-guide-uk-importers/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/freight-forwarding-services-explained/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/international-freight-forwarding-guide/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/container-shipping-companies-vs-freight-forwarders/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/how-to-choose-cargo-shipping-company/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/air-freight-services-when-to-use-air-cargo/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/accurate-freight-shipping-quote-guide/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/door-to-door-cargo-shipping-explained/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/sea-freight-fcl-lcl-port-delay-guide/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.carrgo.co.uk/blog/ocean-freight-shipping-costs-surcharges/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
