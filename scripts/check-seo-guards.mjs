@@ -67,6 +67,7 @@ requireText(getAQuote.includes('name="origin-country"') && getAQuote.includes('n
 requireText(getAQuote.includes('name="cargo"') && getAQuote.includes('name="weight"') && getAQuote.includes('name="volume"'), 'Quote form cargo, weight or volume field is missing');
 requireText(getAQuote.includes('name="name"') && getAQuote.includes('name="email"') && getAQuote.includes('name="phone"'), 'Quote form contact fields are missing');
 requireText(!generator.includes('<meta name="last-modified" content="2026-07-15"'), 'Static generator exposes a fabricated shared last-modified date');
+requireText(generator.includes('hashlib.sha256(entry_path.read_bytes())'), 'Static generator is missing the app-shell cache version');
 
 for (const url of ['/resources/case-studies', '/resources/testimonials', '/results']) {
   requireText(generator.includes(`"${url}": {`), `${url} correction metadata is missing from static generation`);

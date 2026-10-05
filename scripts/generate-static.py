@@ -2,7 +2,7 @@
 # Fixes the broken 404.html and creates static HTML files for every route
 # Each route gets: proper meta tags, H1, structured data, and React app hydration
 
-import json, os, re, shutil
+import hashlib, json, os, re, shutil
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
@@ -1816,6 +1816,21 @@ def sync_app_asset_references(gh_pages_dir, base_html):
     if not replacements:
         print("WARNING: could not detect current app asset references")
         return
+
+    # Vite's entry filename can remain stable when a post-build source rewrite
+    # changes the app shell. Version the entry request from its actual bytes so
+    # GitHub Pages/CDN caches cannot keep serving an older React application
+    # behind freshly generated HTML.
+    if current_index_js:
+        entry_path = gh_pages_dir / current_index_js.group(1).lstrip("/")
+        if entry_path.exists():
+            entry_version = hashlib.sha256(entry_path.read_bytes()).hexdigest()[:12]
+            versioned_entry = f"{current_index_js.group(1)}?v={entry_version}"
+            base_html = base_html.replace(current_index_js.group(1), versioned_entry)
+            replacements[0] = (
+                r'/assets/index-[A-Za-z0-9_-]+\.js(?:\?v=[A-Fa-f0-9]+)?',
+                versioned_entry,
+            )
 
     changed = 0
     for html_path in gh_pages_dir.rglob("*.html"):

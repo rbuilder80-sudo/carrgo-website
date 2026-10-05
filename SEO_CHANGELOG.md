@@ -46,3 +46,8 @@
 - Search-engine snippets may continue to show cached wording until the pages are recrawled; no indexing API or retired sitemap-ping endpoint was used.
 - Reinstating any accreditation, testimonial, case study or quantified performance claim requires traceable evidence and publication permission.
 - Private Friday-distribution outcomes remain unknown because `support@carrgo.co.uk` is not available as an authenticated connected mailbox. No outreach or follow-up was sent in this run.
+
+# 5 October 2026 — production app-shell cache integrity
+
+- Version the generated entry-script request from the deployed file bytes so a changed React shell cannot be hidden behind a stale GitHub Pages/CDN cache entry.
+- Added an automated source guard for the versioning rule.
