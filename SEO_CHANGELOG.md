@@ -49,5 +49,6 @@
 
 # 5 October 2026 — production app-shell cache integrity
 
-- Version the generated entry-script request from the deployed file bytes so a changed React shell cannot be hidden behind a stale GitHub Pages/CDN cache entry.
-- Added an automated source guard for the versioning rule.
+- Publish the generated JavaScript and CSS module graph in one content-addressed directory so CDN caches cannot combine chunks from different builds.
+- Added an automated source guard for the content-addressed asset rule.
+- Added explicit self-canonicals to the privacy and terms pages so React hydration cannot overwrite their generated canonical URLs with the homepage.

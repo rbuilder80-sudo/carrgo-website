@@ -1817,20 +1817,34 @@ def sync_app_asset_references(gh_pages_dir, base_html):
         print("WARNING: could not detect current app asset references")
         return
 
-    # Vite's entry filename can remain stable when a post-build source rewrite
-    # changes the app shell. Version the entry request from its actual bytes so
-    # GitHub Pages/CDN caches cannot keep serving an older React application
-    # behind freshly generated HTML.
-    if current_index_js:
-        entry_path = gh_pages_dir / current_index_js.group(1).lstrip("/")
-        if entry_path.exists():
-            entry_version = hashlib.sha256(entry_path.read_bytes()).hexdigest()[:12]
-            versioned_entry = f"{current_index_js.group(1)}?v={entry_version}"
-            base_html = base_html.replace(current_index_js.group(1), versioned_entry)
-            replacements[0] = (
-                r'/assets/index-[A-Za-z0-9_-]+\.js(?:\?v=[A-Fa-f0-9]+)?',
-                versioned_entry,
-            )
+    # Keep every module in one content-addressed directory. Some prior builds
+    # reused Vite filenames even when their bytes changed, allowing GitHub
+    # Pages/CDN caches to mix old and new chunks. A directory digest avoids that
+    # split-brain state while preserving relative ES-module imports.
+    assets_dir = gh_pages_dir / "assets"
+    app_assets = sorted(
+        path for path in assets_dir.iterdir()
+        if path.is_file() and path.suffix in {".js", ".css"}
+    )
+    digest = hashlib.sha256()
+    for asset in app_assets:
+        digest.update(asset.name.encode("utf-8"))
+        digest.update(asset.read_bytes())
+    build_dir_name = f"build-{digest.hexdigest()[:12]}"
+    version_dir = assets_dir / build_dir_name
+    version_dir.mkdir(exist_ok=True)
+    for asset in app_assets:
+        target = version_dir / asset.name
+        shutil.copy2(asset, target)
+        if target.suffix == ".js":
+            content = target.read_text(encoding="utf-8")
+            content = content.replace('"assets/', f'"assets/{build_dir_name}/')
+            target.write_text(content, encoding="utf-8")
+
+    replacements = [
+        (pattern, f"/assets/{build_dir_name}/{Path(replacement).name}")
+        for pattern, replacement in replacements
+    ]
 
     changed = 0
     for html_path in gh_pages_dir.rglob("*.html"):

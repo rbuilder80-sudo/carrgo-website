@@ -61,13 +61,15 @@ for (const [path, content] of [
 ]) {
   requireText(content.includes('CARRGO FREIGHT LTD'), `${path} is missing the verified legal entity`);
 }
+requireText(terms.includes('canonical="https://www.carrgo.co.uk/terms/"'), 'Terms page is missing its self-canonical');
+requireText(privacy.includes('canonical="https://www.carrgo.co.uk/privacy/"'), 'Privacy page is missing its self-canonical');
 requireText(contact.includes("identifier: '17480219'"), 'Contact schema is missing the verified company number');
 requireText(contact.includes("streetAddress: '66 Paul Street'"), 'Contact schema is missing the verified registered office');
 requireText(getAQuote.includes('name="origin-country"') && getAQuote.includes('name="dest-country"'), 'Quote form origin or destination field is missing');
 requireText(getAQuote.includes('name="cargo"') && getAQuote.includes('name="weight"') && getAQuote.includes('name="volume"'), 'Quote form cargo, weight or volume field is missing');
 requireText(getAQuote.includes('name="name"') && getAQuote.includes('name="email"') && getAQuote.includes('name="phone"'), 'Quote form contact fields are missing');
 requireText(!generator.includes('<meta name="last-modified" content="2026-07-15"'), 'Static generator exposes a fabricated shared last-modified date');
-requireText(generator.includes('hashlib.sha256(entry_path.read_bytes())'), 'Static generator is missing the app-shell cache version');
+requireText(generator.includes('build_dir_name = f"build-{digest.hexdigest()[:12]}"'), 'Static generator is missing content-addressed app assets');
 
 for (const url of ['/resources/case-studies', '/resources/testimonials', '/results']) {
   requireText(generator.includes(`"${url}": {`), `${url} correction metadata is missing from static generation`);
