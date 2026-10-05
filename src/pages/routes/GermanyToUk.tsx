@@ -52,7 +52,7 @@ export default function GermanyToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Germany to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "Germany"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Road, sea and air freight forwarding from Germany to the UK with post-Brexit customs clearance."
         }}
@@ -361,7 +361,7 @@ export default function GermanyToUk() {
               {[
                 { icon: Truck, title: 'Daily Departures', desc: 'Daily road freight departures from Hamburg, Frankfurt, Munich and all major German cities to the UK.' },
                 { icon: FileCheck, title: 'Brexit Expertise', desc: 'Our team navigates post-Brexit customs requirements ensuring smooth clearance every time.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive Germany–UK freight quote within 2 hours during UK business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive Germany–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full visibility of your shipment from German collection to UK delivery with milestone updates.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'Your personal account manager understands your route and keeps your supply chain moving.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'Freight, fuel, customs clearance, and documentation — one price with no hidden extras.' },
@@ -395,7 +395,7 @@ export default function GermanyToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Get Your Germany–UK Freight Quote</h2>
-            <p className="text-brand-100 mb-8 text-lg">Road freight from £150 per pallet. Daily departures with full customs clearance. Quote in 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Road freight from £150 per pallet. Daily departures with full customs clearance. Request a shipment-specific quote.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

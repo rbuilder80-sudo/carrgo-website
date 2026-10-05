@@ -57,7 +57,7 @@ export default function DublinToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Dublin to UK Freight Forwarding",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "Ireland"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Freight forwarding from Dublin and Ireland to the UK via Irish Sea. Sea, road and air shipping with full Irish and UK customs clearance."
         }}
@@ -313,7 +313,7 @@ export default function DublinToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include ferry, fuel, Irish and UK customs clearance, and delivery. No hidden fees. Carrgo Freight Solutions Ltd.
+              All quotes include ferry, fuel, Irish and UK customs clearance, and delivery. No hidden fees. CARRGO FREIGHT LTD.
             </p>
           </div>
         </section>
@@ -448,7 +448,7 @@ export default function DublinToUk() {
               {[
                 { icon: Ship, title: 'Short Sea Specialists', desc: 'Expert knowledge of all Irish Sea routes including Dublin–Holyhead, Dublin–Liverpool, and Rosslare services.' },
                 { icon: FileCheck, title: 'Irish Customs Experts', desc: 'Our team understands both Irish and UK customs requirements post-Brexit, handling T1 transits and CDS entries.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive Ireland–UK freight quote within 2 hours during business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive Ireland–UK shipment-specific freight quote after reviewing the supplied details during business hours.' },
                 { icon: TrendingUp, title: 'Live Ferry Tracking', desc: 'Track your cargo across the Irish Sea with real-time ferry schedules and arrival notifications.' },
                 { icon: Users, title: 'Dedicated Account Manager', desc: 'Your personal contact understands the Ireland–UK trade lane and keeps your shipments on schedule.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'One quote covers ferry, fuel, Irish and UK customs clearance, and delivery — no hidden fees.' },
@@ -485,7 +485,7 @@ export default function DublinToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get an Ireland to UK freight quote?</h2>
-            <p className="text-brand-100 mb-8 text-lg">Dublin to UK shipping from just 2 hours by ferry. All-inclusive quotes with full Irish customs clearance within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Dublin to UK shipping from just 2 hours by ferry. All-inclusive quotes with a shipment-specific quote after review.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

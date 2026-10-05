@@ -8,12 +8,12 @@ import {
 const legalSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Privacy Policy — Carrgo Freight Solutions Ltd',
+  name: 'Privacy Policy — CARRGO FREIGHT LTD',
   url: 'https://www.carrgo.co.uk/privacy',
-  description: 'Carrgo Freight Solutions Ltd privacy policy. GDPR-compliant data protection policy for UK freight forwarding services.',
+  description: 'CARRGO FREIGHT LTD data protection policy for UK freight forwarding services.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };
@@ -34,8 +34,8 @@ export default function Privacy() {
   return (
     <>
       <Seo
-        title="Privacy Policy | Carrgo Freight Solutions Ltd"
-        description="Carrgo Freight Solutions Ltd privacy policy. Learn how we collect, use, and protect your personal data. GDPR-compliant data protection for UK freight forwarding."
+        title="Privacy Policy | CARRGO FREIGHT LTD"
+        description="CARRGO FREIGHT LTD privacy policy. Learn how we collect, use and protect personal data for UK freight forwarding enquiries."
         noindex={true}
         structuredData={legalSchema}
       />
@@ -50,7 +50,7 @@ export default function Privacy() {
                 Privacy Policy
               </h1>
               <p className="text-lg text-[#4B5563]">
-                Last updated: January 2026. Carrgo Freight Solutions Ltd is committed to protecting your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+                Last updated: 5 October 2026. CARRGO FREIGHT LTD is committed to protecting your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Privacy() {
                     </div>
                     <div className="text-[#4B5563] leading-relaxed space-y-4">
                       <p>
-                        Carrgo Freight Solutions Ltd (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a UK freight forwarding company registered in England and Wales. Our registered office is at Suite 12, International Trade Centre, London, EC2A 4BX. We are the data controller responsible for your personal data.
+                        CARRGO FREIGHT LTD (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a UK company registered in England and Wales under company number 17480219. Our registered office is at 66 Paul Street, London, England, EC2A 4NA. We are the data controller responsible for your personal data.
                       </p>
                       <p>
                         This privacy policy explains how we collect, use, store, and protect your personal data when you use our website, request quotes, book our freight forwarding services, or otherwise interact with us. We are committed to ensuring that your privacy is protected and that we comply with all applicable data protection laws, including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
@@ -347,15 +347,12 @@ export default function Privacy() {
                         If you have any questions about this privacy policy, how we handle your personal data, or if you wish to exercise any of your data protection rights, please contact us:
                       </p>
                       <div className="bg-[#F8FAFC] rounded-lg p-5 border border-[#E5E7EB]">
-                        <p className="font-semibold text-[#111827]">Carrgo Freight Solutions Ltd</p>
-                        <p>Suite 12, International Trade Centre</p>
-                        <p>London, EC2A 4BX</p>
+                        <p className="font-semibold text-[#111827]">CARRGO FREIGHT LTD</p>
+                        <p>Company number 17480219</p>
+                        <p>66 Paul Street</p>
+                        <p>London, England, EC2A 4NA</p>
                         <p className="mt-2">
                           Email:{' '}
-                          <a href="mailto:support@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">support@carrgo.co.uk</a>
-                        </p>
-                        <p>
-                          Phone:{' '}
                           <a href="mailto:support@carrgo.co.uk" className="text-[#1A6DFF] hover:underline">support@carrgo.co.uk</a>
                         </p>
                       </div>
@@ -364,7 +361,7 @@ export default function Privacy() {
                         <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline">ico.org.uk</a>.
                       </p>
                       <p className="text-sm text-[#9CA3AF] mt-6">
-                        This privacy policy was last updated on 1 January 2026. We may update this policy from time to time and will post any changes on this page. We encourage you to review this policy periodically.
+                        This privacy policy was last updated on 5 October 2026. We may update this policy from time to time and will post any changes on this page. We encourage you to review this policy periodically.
                       </p>
                     </div>
                   </section>

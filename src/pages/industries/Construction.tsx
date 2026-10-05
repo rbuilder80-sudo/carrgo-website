@@ -11,7 +11,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Construction Materials Freight Forwarding UK — Building Supplies | Carrgo',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

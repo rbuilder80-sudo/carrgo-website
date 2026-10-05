@@ -13,7 +13,7 @@ const serviceSchema = {
   name: 'Air Cargo UK — International Air Freight Shipping',
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
@@ -418,7 +418,7 @@ export default function AirCargo() {
               Get Your Air Cargo Quote Today
             </h2>
             <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              Need express air cargo or economy air freight? Our team will provide a competitive, all-inclusive quote within 2 hours. Tell us your cargo details and destination, and we will handle the rest.
+              Need express air cargo or economy air freight? Our team will provide a competitive, all-inclusive quote after reviewing the supplied details. Tell us your cargo details and destination, and we will handle the rest.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

@@ -53,7 +53,7 @@ export default function ChinaToUk() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "China to UK Freight Shipping",
-            "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+            "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
             "areaServed": [{"@type": "Country", "name": "China"}, {"@type": "Country", "name": "United Kingdom"}],
             "description": "Sea, air and rail freight forwarding from China to the UK with customs clearance."
           },
@@ -446,12 +446,12 @@ export default function ChinaToUk() {
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why should I choose Carrgo for China to UK shipping?</h2>
-            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Carrgo offers established China expertise, dedicated customs specialists, 2-hour quotes, live shipment tracking, a dedicated account manager, and all-inclusive pricing with no hidden fees — making us the preferred freight forwarder for UK importers sourcing from China.</p>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Carrgo offers established China expertise, dedicated customs specialists, shipment-specific quotes, live shipment tracking, a dedicated account manager, and all-inclusive pricing with no hidden fees — making us the preferred freight forwarder for UK importers sourcing from China.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: Globe, title: 'China Expertise', desc: 'Established relationships with Chinese freight agents and carriers across all major ports and cities.' },
                 { icon: FileCheck, title: 'Customs Specialists', desc: 'Our experienced brokers ensure first-time clearance with accurate declarations every time.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive China–UK freight quote within 2 hours during UK business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive China–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Track your shipment from Chinese factory to UK warehouse with real-time milestone updates.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'A single point of contact who understands your China supply chain and keeps you informed.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'One price covers freight, fuel, documentation, UK customs clearance, and port handling — no surprises.' },
@@ -486,8 +486,8 @@ export default function ChinaToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get a China to UK freight quote?</h2>
-            <p className="text-gray-600 mb-6 max-w-xl">Request your all-inclusive China to UK freight quote by filling in our online form with your origin city, cargo details, and preferred transport mode. Carrgo responds within 2 hours with a competitive, no-obligation quote.</p>
-            <p className="text-brand-100 mb-8 text-lg">Sea, air, or rail — we&apos;ll find the best shipping solution for your China imports. All-inclusive quote within 2 hours.</p>
+            <p className="text-gray-600 mb-6 max-w-xl">Request your all-inclusive China to UK freight quote by filling in our online form with your origin city, cargo details, and preferred transport mode. Carrgo responds after reviewing the shipment details.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea, air, or rail — we&apos;ll find the best shipping solution for your China imports. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

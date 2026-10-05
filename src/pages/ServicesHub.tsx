@@ -15,7 +15,7 @@ const serviceSchema = {
   description: 'Cargo services for UK businesses including sea freight, air cargo, road freight, rail freight, customs clearance, warehousing and door-to-door delivery.',
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
     logo: { '@type': 'ImageObject', url: 'https://www.carrgo.co.uk/logo.png' },
     contactPoint: {
@@ -156,7 +156,7 @@ const whyChoose = [
   {
     icon: Clock,
     title: 'Fast Quote Turnaround',
-    description: 'Receive detailed, all-inclusive freight quotes within 2 hours during business hours. No hidden fees, no surprises — just transparent pricing for every shipment.',
+    description: 'Receive detailed, all-inclusive shipment-specific freight quotes after reviewing the supplied details. No hidden fees, no surprises — just transparent pricing for every shipment.',
   },
   {
     icon: Users,
@@ -175,7 +175,7 @@ const howItWorks = [
   {
     step: '01',
     title: 'Get a Quote',
-    description: 'Fill out our quick quote form or call our team. Tell us what you are shipping, where from and where to. We will send a detailed, all-inclusive quote within 2 hours.',
+    description: 'Fill out our quick quote form or call our team. Tell us what you are shipping, where from and where to. We will send a detailed, all-inclusive quote after reviewing the supplied details.',
     link: '/get-a-quote',
   },
   {
@@ -203,7 +203,7 @@ export default function ServicesHub() {
     <>
       <Seo
         title="Cargo Services UK | Shipping, Transport & Quotes | Carrgo"
-        description="Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with quotes in 2 hours."
+        description="Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with shipment-specific quotes."
         keywords="cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding"
         ogUrl="https://www.carrgo.co.uk/services"
         canonical="https://www.carrgo.co.uk/services"
@@ -367,7 +367,7 @@ export default function ServicesHub() {
                 How does Carrgo's freight forwarding process work?
               </h2>
               <p className="text-[#4B5563] max-w-2xl mx-auto">
-                Shipping freight internationally with Carrgo follows a simple 4-step process: request a quote with your shipment details, receive your all-inclusive price within 2 hours, we collect and handle all transport and customs, then deliver to your UK warehouse.
+                Shipping freight internationally with Carrgo follows a simple 4-step process: request a quote with your shipment details, receive a shipment-specific price after review, we collect and handle all transport and customs, then deliver to your UK warehouse.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -397,7 +397,7 @@ export default function ServicesHub() {
               How do I get a free freight quote from Carrgo?
             </h2>
             <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Whether you need sea freight, air cargo, road haulage or rail freight, our team is ready to provide a competitive, all-inclusive quote within 2 hours. Simply tell us about your shipment and we will respond with a no-obligation quote.
+              Whether you need sea freight, air cargo, road haulage or rail freight, our team is ready to provide a competitive, all-inclusive quote after reviewing the supplied details. Simply tell us about your shipment and we will respond with a no-obligation quote.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -416,7 +416,7 @@ export default function ServicesHub() {
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-blue-200">
               <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> No obligation quotes</span>
               <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> All-inclusive pricing</span>
-              <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> 2-hour response time</span>
+              <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> shipment-specific review</span>
             </div>
           </div>
         </section>

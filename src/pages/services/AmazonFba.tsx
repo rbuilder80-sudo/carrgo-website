@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Amazon FBA Freight UK — FBA Prep & Shipping',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -36,7 +36,7 @@ const faqData = [
   { q: 'Do you ship to all UK Amazon fulfilment centres?', a: 'Yes, we deliver to all UK Amazon fulfilment centres including BHX4 (Coventry), EMA1 (Derby), LBA1 (Doncaster), MAN2 (Manchester), GLA1 (Gourock), and BRS1 (Bristol). We book appointments through Amazon\'s Carrier Central system and provide proof of delivery.' },
   { q: 'Can you handle FBA shipments from the USA and Europe?', a: 'Absolutely. We handle FBA shipments from the USA, China, India, Turkey, UAE, and all EU countries. Whether you need sea freight from the USA, air freight from China, or road freight from Germany, we manage the entire journey to Amazon UK.' },
   { q: 'What is the minimum order quantity for FBA prep?', a: 'We have no strict minimum order quantity. Whether you are shipping 50 units or 5,000 units, we can handle your FBA prep. For very small shipments, we may combine prep with other clients to keep costs efficient. Contact us for a tailored quote.' },
-  { q: 'How do I get started with Carrgo FBA services?', a: 'Getting started is simple. Fill out our quote form with your product details, supplier location, and target Amazon FC. We will provide an all-inclusive quote within 2 hours. Once approved, we coordinate collection, shipping, customs, prep, and delivery — you only deal with one contact throughout.' },
+  { q: 'How do I get started with Carrgo FBA services?', a: 'Getting started is simple. Fill out our quote form with your product details, supplier location, and target Amazon FC. We will provide an all-inclusive quote after reviewing the supplied details. Once approved, we coordinate collection, shipping, customs, prep, and delivery — you only deal with one contact throughout.' },
 ];
 
 const faqSchema = {

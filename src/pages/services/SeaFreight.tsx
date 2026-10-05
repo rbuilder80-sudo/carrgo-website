@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Sea Freight Services UK — FCL & LCL Container Shipping',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -364,7 +364,7 @@ export default function SeaFreight() {
               {[
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'No hidden fuel surcharges, terminal handling fees, or customs inspection surprises.' },
                 { icon: FileCheck, title: 'Customs Coordination', desc: 'Document checks and declaration support matched to the shipment.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive sea freight quote within 2 hours during UK business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive sea shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: Globe, title: 'Carrier Options', desc: 'Carrier and routing availability checked for the requested trade lane.' },
               ].map((item, i) => {
                 const Icon = item.icon;

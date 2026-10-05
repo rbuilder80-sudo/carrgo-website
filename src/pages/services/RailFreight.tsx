@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Rail Freight China to UK — New Silk Road',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: [
     { '@type': 'Country', name: 'United Kingdom' },
     { '@type': 'Country', name: 'China' },

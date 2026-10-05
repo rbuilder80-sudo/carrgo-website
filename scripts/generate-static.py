@@ -24,7 +24,7 @@ def normalize_page_url(url):
 ROUTES = {
     "/": {
         "title": "Cargo Services UK | Shipping & Freight Quotes | Carrgo",
-        "description": "UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a quote in 2 hours.",
+        "description": "UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a shipment-specific quote.",
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services, Shipping and Freight Forwarding",
@@ -38,13 +38,21 @@ ROUTES = {
         "structuredData": [
             {
                 "@context": "https://schema.org",
-                "@type": ["Organization", "LocalBusiness"],
+                "@type": "Organization",
                 "name": "Carrgo Freight Solutions",
-                "legalName": "Carrgo Freight Solutions Ltd",
+                "legalName": "CARRGO FREIGHT LTD",
+                "identifier": "17480219",
                 "url": "https://www.carrgo.co.uk",
                 "logo": "https://www.carrgo.co.uk/logo-192x192.png",
                 "image": "https://www.carrgo.co.uk/og-image.png",
                 "email": "support@carrgo.co.uk",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "66 Paul Street",
+                    "addressLocality": "London",
+                    "postalCode": "EC2A 4NA",
+                    "addressCountry": "GB"
+                },
                 "contactPoint": {
                     "@type": "ContactPoint",
                     "email": "support@carrgo.co.uk",
@@ -60,14 +68,14 @@ ROUTES = {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
                 "mainEntity": [
-                    {"@type": "Question", "name": "How much does sea freight from China to the UK cost?", "acceptedAnswer": {"@type": "Answer", "text": "LCL sea freight from China starts from GBP 300 per CBM. A 20ft FCL container costs GBP 1,200-2,800 and a 40ft FCL GBP 2,000-4,500 depending on origin port. Carrgo provides all-inclusive quotes within 2 hours."}},
+                    {"@type": "Question", "name": "How much does sea freight from China to the UK cost?", "acceptedAnswer": {"@type": "Answer", "text": "LCL sea freight from China starts from GBP 300 per CBM. A 20ft FCL container costs GBP 1,200-2,800 and a 40ft FCL GBP 2,000-4,500 depending on origin port. Carrgo provides all-inclusive shipment-specific quotes after reviewing the supplied details."}},
                     {"@type": "Question", "name": "How long does sea freight from China to the UK take?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight from Shanghai or Shenzhen to Felixstowe takes 25-35 days. China-UK rail via the New Silk Road takes 14-20 days. Air freight takes 3-5 days door-to-door."}},
                     {"@type": "Question", "name": "Does Carrgo handle UK and Ireland customs clearance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles UK and Ireland import customs declarations, duty calculations and port release at all major UK and Irish ports including Belfast and Dublin."}},
                     {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
                     {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}},
                     {"@type": "Question", "name": "What is the cheapest way to ship from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Sea freight (FCL or LCL) is the cheapest option for most China-to-UK shipments. A 20ft container costs GBP 1,200-2,800 and a 40ft container GBP 2,000-4,500. For smaller consignments under 15 CBM, LCL sharing starts from GBP 300 per CBM. Rail freight via the New Silk Road is faster than sea and cheaper than air."}},
-                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive freight quotes within 2 hours during UK business hours. Simply submit your origin, destination, cargo details and ready date through the online quote form or email support@carrgo.co.uk."}},
-                    {"@type": "Question", "name": "Which freight forwarder is best for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "The best freight forwarder for UK imports from China offers clear all-inclusive pricing, proactive customs support, and reliable transit times. Carrgo specialises in China-to-UK sea, air and rail freight with customs clearance included, quotes in 2 hours, and tracking throughout."}},
+                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive shipment-specific freight quotes after reviewing the supplied details. Simply submit your origin, destination, cargo details and ready date through the online quote form or email support@carrgo.co.uk."}},
+                    {"@type": "Question", "name": "Which freight forwarder is best for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "The best freight forwarder for UK imports from China offers clear all-inclusive pricing, proactive customs support, and reliable transit times. Carrgo specialises in China-to-UK sea, air and rail freight with customs clearance included, shipment-specific quotes, and tracking throughout."}},
                     {"@type": "Question", "name": "What documents do I need to import goods into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "You need a commercial invoice, packing list, bill of lading or airway bill, and a UK EORI number starting with GB. Depending on the goods, you may also need certificates of origin, import licences or health certificates. Carrgo prepares all documentation for you."}},
                     {"@type": "Question", "name": "Does Carrgo offer door-to-door shipping from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles door-to-door freight from China to the UK, including supplier collection, freight booking, export customs, UK import customs clearance, duty and VAT calculation, and final delivery to your warehouse or Amazon FBA centre."}}
                 ]
@@ -87,7 +95,7 @@ ROUTES = {
     },
     "/services/sea-freight": {
         "title": "Sea Freight UK | Container Shipping | Import & Export | Carrgo",
-        "description": "Need affordable container shipping from China, Europe, or USA? Carrgo's sea freight UK service handles FCL, LCL, and bulk cargo with full customs clearance. Get your sea freight quote in 2 hours. Reliable, tracked, HMRC-compliant.",
+        "description": "Need affordable container shipping from China, Europe, or USA? Carrgo's sea freight UK service handles FCL, LCL, and bulk cargo with full customs clearance. Get your sea shipment-specific freight quote. Reliable, tracked, HMRC-compliant.",
         "keywords": "sea freight uk, fcl lcl shipping, container shipping uk, sea freight from china to uk, freight forwarder uk",
         "canonical": "https://www.carrgo.co.uk/services/sea-freight",
         "h1": "Sea Freight Services UK — FCL &amp; LCL Container Shipping",
@@ -105,14 +113,14 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Need affordable container shipping from China, Europe, or USA? Carrgo's sea freight UK service handles FCL, LCL, and bulk cargo with full customs clearance. Get your sea freight quote in 2 hours. Reliable, tracked, HMRC-compliant.",
+                "description": "Need affordable container shipping from China, Europe, or USA? Carrgo's sea freight UK service handles FCL, LCL, and bulk cargo with full customs clearance. Get your sea shipment-specific freight quote. Reliable, tracked, HMRC-compliant.",
                 "url": "https://www.carrgo.co.uk/services/sea-freight"
             }
         ]
     },
     "/services": {
         "title": "Cargo Services UK | Shipping, Transport & Quotes | Carrgo",
-        "description": "Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with quotes in 2 hours.",
+        "description": "Compare UK cargo services for sea, air, road and rail freight. Carrgo handles customs, tracking and door-to-door delivery with shipment-specific quotes.",
         "keywords": "cargo services uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, freight forwarding services uk, cargo shippers, cargo shipping company, freight forwarder near me, freight forwarding, logistics services, haulage company, transport company, shipping company, freight forwarder uk, cargo shipping services, uk freight services, international freight forwarding",
         "canonical": "https://www.carrgo.co.uk/services",
         "h1": "UK Cargo Services &amp; Freight Forwarding",
@@ -172,8 +180,8 @@ ROUTES = {
         ]
     },
     "/freight-forwarder-manchester": {
-        "title": "Freight Forwarder Manchester | Cargo Quotes in 2 Hours | Carrgo",
-        "description": "Freight forwarder for Manchester and North West businesses. Sea, air and road cargo with customs clearance, tracking and door-to-door delivery. Quote in 2 hours.",
+        "title": "Freight Forwarder Manchester | Cargo Services | Carrgo",
+        "description": "Freight forwarder for Manchester and North West businesses. Sea, air and road cargo with customs clearance, tracking and door-to-door delivery. Request a shipment-specific quote.",
         "keywords": "freight forwarder manchester, freight forwarder near me, manchester freight forwarder, cargo services manchester, shipping company manchester, customs clearance manchester, manchester air freight, north west freight forwarder",
         "canonical": "https://www.carrgo.co.uk/freight-forwarder-manchester",
         "h1": "Freight Forwarder Manchester",
@@ -297,7 +305,7 @@ ROUTES = {
     },
     "/routes": {
         "title": "International Freight Routes to the UK | Carrgo",
-        "description": "Freight routes to the UK from China, Europe, USA, India, Turkey, UAE, Spain, Ireland and Northern Ireland. Compare sea, air, road and rail options and get a quote in 2 hours.",
+        "description": "Freight routes to the UK from China, Europe, USA, India, Turkey, UAE, Spain, Ireland and Northern Ireland. Compare sea, air, road and rail options and get a shipment-specific quote.",
         "keywords": "freight routes uk, shipping routes to uk, international freight routes, uk import routes, cargo routes uk",
         "canonical": "https://www.carrgo.co.uk/routes",
         "h1": "Freight Routes to the UK",
@@ -305,7 +313,7 @@ ROUTES = {
     },
     "/services/air-freight": {
         "title": "Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo",
-        "description": "Door to door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
+        "description": "Door to door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Request a shipment-specific quote.",
         "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Door-to-Door Air Freight UK",
@@ -330,7 +338,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quote in 2 hours.",
+                "description": "Door-to-door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Request a shipment-specific quote.",
                 "url": "https://www.carrgo.co.uk/services/air-freight"
             },
             {
@@ -367,7 +375,7 @@ ROUTES = {
     },
     "/services/road-freight": {
         "title": "Road Freight Forwarder UK | European Haulage | Carrgo",
-        "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Quote in 2 hours.",
+        "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Request a shipment-specific quote.",
         "keywords": "road freight forwarder, road freight uk, european haulage, pallet shipping, groupage freight, ftl ltl uk",
         "canonical": "https://www.carrgo.co.uk/services/road-freight",
         "h1": "Road Freight Forwarder for UK &amp; Europe",
@@ -385,7 +393,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Quote in 2 hours.",
+                "description": "Road freight forwarder for UK and European haulage. FTL and LTL transport from Germany, Netherlands, France, Spain, Ireland and Northern Ireland. Request a shipment-specific quote.",
                 "url": "https://www.carrgo.co.uk/services/road-freight"
             }
         ]
@@ -442,7 +450,7 @@ ROUTES = {
     },
     "/services/door-to-door": {
         "title": "Door-to-Door Freight & Cargo UK | Factory to Warehouse | Carrgo",
-        "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours.",
+        "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Request a shipment-specific quote.",
         "keywords": "door to door freight, door to door cargo, door to door shipping uk, factory to warehouse shipping, complete logistics uk, cargo shippers uk",
         "canonical": "https://www.carrgo.co.uk/services/door-to-door",
         "h1": "Door-to-Door Freight — Factory to Warehouse Delivery",
@@ -467,7 +475,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours.",
+                "description": "Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Request a shipment-specific quote.",
                 "url": "https://www.carrgo.co.uk/services/door-to-door"
             },
             {
@@ -573,7 +581,7 @@ ROUTES = {
     },
     "/services/container-shipping": {
         "title": "Container Shipping UK | FCL & LCL | 20ft & 40ft | Carrgo",
-        "description": "Need container shipping for your imports? Carrgo handles 20ft, 40ft, and 40ft HC containers with FCL and LCL options. Full customs clearance. Get your container shipping quote in 2 hours.",
+        "description": "Need container shipping for your imports? Carrgo handles 20ft, 40ft, and 40ft HC containers with FCL and LCL options. Full customs clearance. Get your container shipment-specific shipping quote.",
         "keywords": "container shipping uk, fcl lcl containers, 20ft container, 40ft container",
         "canonical": "https://www.carrgo.co.uk/services/container-shipping",
         "h1": "Container Shipping UK — FCL &amp; LCL Container Services",
@@ -591,7 +599,7 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Need container shipping for your imports? Carrgo handles 20ft, 40ft, and 40ft HC containers with FCL and LCL options. Full customs clearance. Get your container shipping quote in 2 hours.",
+                "description": "Need container shipping for your imports? Carrgo handles 20ft, 40ft, and 40ft HC containers with FCL and LCL options. Full customs clearance. Get your container shipment-specific shipping quote.",
                 "url": "https://www.carrgo.co.uk/services/container-shipping"
             }
         ]
@@ -673,7 +681,7 @@ ROUTES = {
     },
     "/routes/germany-to-uk": {
         "title": "Shipping from Germany to UK | Road & Sea Freight | Carrgo",
-        "description": "Shipping from Germany to UK? Carrgo offers road freight (2-4 days) and sea freight (5-8 days) with full customs clearance. Get your Germany-UK freight quote in 2 hours.",
+        "description": "Shipping from Germany to UK? Carrgo offers road freight (2-4 days) and sea freight (5-8 days) with full customs clearance. Get your Germany-UK shipment-specific freight quote.",
         "keywords": "shipping from germany to uk, germany to uk freight, road freight germany uk",
         "canonical": "https://www.carrgo.co.uk/routes/germany-to-uk",
         "h1": "Shipping from Germany to UK — Road &amp; Sea Freight",
@@ -691,14 +699,14 @@ ROUTES = {
                     "url": "https://www.carrgo.co.uk"
                 },
                 "areaServed": "GB",
-                "description": "Shipping from Germany to UK? Carrgo offers road freight (2-4 days) and sea freight (5-8 days) with full customs clearance. Get your Germany-UK freight quote in 2 hours.",
+                "description": "Shipping from Germany to UK? Carrgo offers road freight (2-4 days) and sea freight (5-8 days) with full customs clearance. Get your Germany-UK shipment-specific freight quote.",
                 "url": "https://www.carrgo.co.uk/routes/germany-to-uk"
             }
         ]
     },
     "/routes/netherlands-to-uk": {
         "title": "Shipping from Netherlands to UK | Rotterdam Freight Forwarder | Carrgo",
-        "description": "Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a quote in 2 hours.",
+        "description": "Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a shipment-specific quote.",
         "keywords": "shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk freight, rotterdam to uk shipping, shipping from holland to uk, dutch road freight uk, freight forwarder netherlands uk",
         "canonical": "https://www.carrgo.co.uk/routes/netherlands-to-uk",
         "h1": "Shipping from Netherlands to UK — Rotterdam Freight Forwarder",
@@ -855,7 +863,7 @@ ROUTES = {
     },
     "/routes/turkey-to-uk": {
         "title": "Turkey to UK Freight | Road, Sea & Air Cargo | Carrgo",
-        "description": "Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with quotes in 2 hours.",
+        "description": "Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with shipment-specific quotes.",
         "keywords": "turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade",
         "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
         "h1": "Turkey to UK Freight: Road, Sea &amp; Air Cargo",
@@ -1109,7 +1117,7 @@ ROUTES = {
     },
     "/industries/manufacturing": {
         "title": "Manufacturing Freight UK | Raw Materials & Machinery Shipping | Carrgo",
-        "description": "Manufacturers — need reliable shipping for raw materials, machinery, and components? Carrgo handles manufacturing freight with sea, air, and road options. Full customs clearance. Get your quote in 2 hours.",
+        "description": "Manufacturers — need reliable shipping for raw materials, machinery, and components? Carrgo handles manufacturing freight with sea, air, and road options. Full customs clearance. Get your shipment-specific quote.",
         "keywords": "manufacturing freight uk, raw materials shipping, machinery freight, factory logistics",
         "canonical": "https://www.carrgo.co.uk/industries/manufacturing",
         "h1": "Manufacturing Freight UK — Raw Materials &amp; Machinery Shipping",
@@ -1198,7 +1206,7 @@ ROUTES = {
                 "description": "A practical post-Brexit customs guide for UK importers covering EORI numbers, commodity codes, CDS import declarations, rules of origin, duty, VAT and common clearance delays.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 },
                 "url": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide"
@@ -1423,7 +1431,7 @@ ROUTES = {
     },
     "/contact": {
         "title": "Contact Carrgo | Freight Forwarding Support | Carrgo",
-        "description": "Ready to ship? Get your all-inclusive freight quote in 2 hours. Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. Call or email us today.",
+        "description": "Contact Carrgo about a shipment-specific freight quote, customs requirements or shipment planning. Email support@carrgo.co.uk or use the online forms.",
         "keywords": "contact carrgo, freight quote uk, bolton freight contact, manchester shipping company",
         "canonical": "https://www.carrgo.co.uk/contact",
         "h1": "Contact Carrgo — Freight Forwarding Support",
@@ -1431,7 +1439,7 @@ ROUTES = {
     },
     "/get-a-quote": {
         "title": "Get a Freight Quote UK | Import & Export Shipping | Carrgo",
-        "description": "Ready to ship? Get your all-inclusive freight quote in 2 hours. Carrgo handles UK import & export shipping, customs clearance, and door-to-door logistics. No hidden fees. Start now.",
+        "description": "Request a shipment-specific UK freight quote for sea, air, road or rail. Supply the route, goods, weight or volume and timing.",
         "keywords": "freight quote uk, shipping quote, get a freight quote, import quote uk, export quote",
         "canonical": "https://www.carrgo.co.uk/get-a-quote",
         "h1": "Get a Freight Quote — UK Import &amp; Export Shipping",
@@ -1453,7 +1461,7 @@ ROUTES = {
                 "description": "Squarespace handles your storefront — it doesn't clear UK customs for you. Guide to import duties, DDP/DDU choices and HS codes for UK Squarespace sellers.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 }
             }
@@ -1475,7 +1483,7 @@ ROUTES = {
                 "description": "Shipping into the UK via ShipStation? Send Carrgo your ShipStation export and we check destination, HS codes, country of origin, declared values, weights and documents for UK customs-delay risk.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 }
             }
@@ -1497,7 +1505,7 @@ ROUTES = {
                 "description": "If your purchase invoices live in Dynamics 365 Business Central but your customs data doesn't, your margins are guessing. Carrgo reviews the nine inputs that decide your UK landed cost.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 }
             }
@@ -1519,7 +1527,7 @@ ROUTES = {
                 "description": "Half of freight enquiries can't be quoted on first touch. Carrgo's readiness review scores each enquiry on nine fields and hands your reps a missing-data checklist, a customs-risk flag and the next best action.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 }
             }
@@ -1541,7 +1549,7 @@ ROUTES = {
                 "description": "SAP Business One runs your purchasing — but if HS codes, Incoterms and freight costs aren't captured cleanly, your landed cost is wrong. Carrgo reviews your import data readiness.",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions Ltd",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk"
                 }
             }
@@ -2069,9 +2077,7 @@ def build_html(route, meta, base_html, is_404=False):
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="{description}" />
 <meta name="keywords" content="{keywords}" />
-<meta name="author" content="Carrgo Freight Solutions Ltd" />
-<meta name="last-modified" content="2026-07-15" />
-<meta name="date" content="2026-07-15" />
+<meta name="author" content="CARRGO FREIGHT LTD" />
 <meta name="robots" content="{robots}" />
 <link rel="canonical" href="{canonical}" />
 <link rel="alternate" hreflang="en-gb" href="{canonical}" />
@@ -2115,8 +2121,8 @@ def build_html(route, meta, base_html, is_404=False):
 <h1>{h1}</h1>
 <p>{description}</p>
 {static_body}
-<p><strong>Carrgo Freight Solutions</strong> — UK freight forwarder handling sea freight, air cargo, road haulage, rail freight, and customs clearance for UK importers and exporters.</p>
-<p><a href="https://www.carrgo.co.uk/get-a-quote">Get a free quote in 2 hours</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a></p>
+<p><strong>Carrgo</strong> is the trading name of CARRGO FREIGHT LTD (company 17480219), registered at 66 Paul Street, London, England, EC2A 4NA.</p>
+<p><a href="https://www.carrgo.co.uk/get-a-quote">Request a shipment-specific quote</a> | <a href="https://www.carrgo.co.uk/contact">Contact us</a></p>
 <p><strong>Who we help:</strong> UK importers, exporters, procurement managers, logistics managers, manufacturers, ecommerce businesses, Amazon FBA sellers, wholesalers, retailers, and customs-clearance customers.</p>
 <p><strong>Services:</strong> <a href="https://www.carrgo.co.uk/services/sea-freight">Sea Freight</a> | <a href="https://www.carrgo.co.uk/services/air-freight">Air Freight</a> | <a href="https://www.carrgo.co.uk/services/road-freight">Road Freight</a> | <a href="https://www.carrgo.co.uk/services/customs-clearance">Customs Clearance</a> | <a href="https://www.carrgo.co.uk/resources/port-congestion-tracker">Port Tracker</a></p>
 </div>

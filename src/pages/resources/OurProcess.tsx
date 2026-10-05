@@ -29,7 +29,7 @@ const steps: ProcessStep[] = [
     step: 2,
     icon: <ClipboardList className="w-6 h-6" />,
     title: 'Quote & Booking',
-    description: 'We provide a detailed all-inclusive quote within 2 hours. Once confirmed, we book cargo space and coordinate with your supplier.',
+    description: 'We provide a detailed all-inclusive quote after reviewing the supplied details. Once confirmed, we book cargo space and coordinate with your supplier.',
     details: [
       'All-inclusive quote with no hidden fees',
       'Multiple transport options provided',

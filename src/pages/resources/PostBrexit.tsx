@@ -51,7 +51,7 @@ const guideSchema = {
   description: 'A practical post-Brexit customs guide for UK importers covering EORI numbers, commodity codes, CDS import declarations, rules of origin, duty, VAT and common clearance delays.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
   url: 'https://www.carrgo.co.uk/resources/post-brexit-customs-guide',

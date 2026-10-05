@@ -38,7 +38,7 @@ const serviceSchema = {
   serviceType: ['Cargo Shipping', 'Freight Forwarding', 'Sea Freight', 'Air Cargo', 'Road Freight', 'Customs Clearance'],
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
     email: 'support@carrgo.co.uk',
   },

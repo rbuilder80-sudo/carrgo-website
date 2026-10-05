@@ -216,8 +216,8 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="container-carrgo py-5">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-gray-500">
-            <small>&copy; {year} Carrgo Freight Solutions Ltd. All rights reserved.</small>
+          <p className="text-center text-sm text-gray-500 sm:text-left">
+            <small>&copy; {year} CARRGO FREIGHT LTD · Company 17480219 · Registered office: 66 Paul Street, London, England, EC2A 4NA.</small>
           </p>
           <button
             type="button"

@@ -57,7 +57,7 @@ export default function SpainToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Spain to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "Spain"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Road, sea and air freight forwarding from Spain to the UK with post-Brexit customs clearance."
         }}
@@ -316,7 +316,7 @@ export default function SpainToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include Spanish collection, freight, Channel crossing, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd.
+              All quotes include Spanish collection, freight, Channel crossing, UK customs clearance, and final delivery. No hidden fees. CARRGO FREIGHT LTD.
             </p>
           </div>
         </section>
@@ -445,7 +445,7 @@ export default function SpainToUk() {
               {[
                 { icon: Truck, title: 'Regular Departures', desc: 'Road freight departures from Barcelona, Valencia, Madrid and all major Spanish cities.' },
                 { icon: FileCheck, title: 'Brexit Specialists', desc: 'Our team navigates post-Brexit customs with expertise in UK-EU TCA origin requirements.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive Spain–UK freight quote within 2 hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive Spain–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full shipment visibility from Spanish collection through France to UK delivery.' },
                 { icon: Users, title: 'Spanish Network', desc: 'Established partnerships with Spanish hauliers and freight agents across all regions.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'Spanish collection, transport, Channel crossing, UK customs, and delivery in one price.' },
@@ -482,7 +482,7 @@ export default function SpainToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get a Spain to UK freight quote?</h2>
-            <p className="text-brand-100 mb-8 text-lg">Road, sea, or air — regular departures with full customs clearance. Quote in 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Road, sea, or air — regular departures with full customs clearance. Request a shipment-specific quote.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

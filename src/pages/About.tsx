@@ -13,7 +13,9 @@ const services = [
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Carrgo Freight Solutions Ltd',
+  name: 'CARRGO FREIGHT LTD',
+  legalName: 'CARRGO FREIGHT LTD',
+  identifier: '17480219',
   url: 'https://www.carrgo.co.uk/',
   email: 'support@carrgo.co.uk',
   areaServed: ['GB', 'IE', 'Northern Ireland'],
@@ -45,7 +47,7 @@ export default function About() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-brand-200">About Carrgo</p>
           <h1 id="about-heading" className="mb-6 text-4xl font-extrabold leading-tight lg:text-5xl">Freight coordination for UK and Ireland businesses</h1>
           <p className="max-w-3xl text-lg leading-relaxed text-brand-100">
-            Carrgo Freight Solutions Ltd helps commercial importers and exporters coordinate collection, international freight, customs support and final delivery. Shipment scope and availability are confirmed against the actual route, cargo and booking requirements.
+            Carrgo is the trading name of CARRGO FREIGHT LTD (company 17480219). We help commercial importers and exporters coordinate collection, international freight, customs support and final delivery. Shipment scope and availability are confirmed against the actual route, cargo and booking requirements.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link to="/get-a-quote" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-brand-900 hover:bg-gray-100">Request a freight quote <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>

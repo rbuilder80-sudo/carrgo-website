@@ -12,7 +12,7 @@ const pageSchema = {
     'Half of freight enquiries can\u2019t be quoted on first touch. Carrgo\u2019s readiness review scores each enquiry on nine fields and hands your reps a missing-data checklist, a customs-risk flag and the next best action.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };

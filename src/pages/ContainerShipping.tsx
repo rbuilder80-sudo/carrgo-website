@@ -6,7 +6,7 @@ export default function ContainerShipping() {
     <main role="main" className="min-h-screen">
       <Seo
         title="Container Shipping UK | FCL & LCL Sea Freight | Carrgo"
-        description="Container shipping UK — FCL & LCL services from China, India, USA & Europe. 20ft, 40ft & 40ft HC containers. Competitive rates. Get quotes in 2 hours."
+        description="Container shipping UK — FCL & LCL services from China, India, USA & Europe. 20ft, 40ft & 40ft HC containers. Competitive rates. Get shipment-specific quotes."
         keywords="container shipping uk, fcl shipping, lcl shipping, sea freight containers, shipping containers, 20ft container, 40ft container"
         ogUrl="https://www.carrgo.co.uk/services/container-shipping"
         canonical="https://www.carrgo.co.uk/services/container-shipping"

@@ -57,7 +57,7 @@ export default function BelfastToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Belfast Freight Forwarding",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "Northern Ireland"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Freight forwarding services for Northern Ireland via Belfast Harbour, Larne, and Foyle Port. NI Protocol and Windsor Framework specialists."
         }}
@@ -312,7 +312,7 @@ export default function BelfastToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include ferry crossing, transit documentation, customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd.
+              All quotes include ferry crossing, transit documentation, customs clearance, and final delivery. No hidden fees. CARRGO FREIGHT LTD.
             </p>
           </div>
         </section>
@@ -553,7 +553,7 @@ export default function BelfastToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get a Northern Ireland freight quote?</h2>
-            <p className="text-brand-100 mb-8 text-lg">Belfast freight forwarding with full NI Protocol compliance. Sea, road, and customs — all-inclusive quote within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Belfast freight forwarding with full NI Protocol compliance. Sea, road, and customs — all-inclusive quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Door-to-Door Freight UK — Factory to Warehouse',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -76,7 +76,7 @@ export default function DoorToDoor() {
     <>
       <Seo
         title="Door-to-Door Freight & Cargo UK | Factory to Warehouse | Carrgo"
-        description="Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Quote in 2 hours."
+        description="Door-to-door cargo and freight for UK importers. Supplier collection, sea, air, road or rail freight, customs clearance and final delivery. Request a shipment-specific quote."
         keywords="door to door freight, door to door cargo, door to door shipping uk, factory to warehouse, end to end logistics, door to door delivery, cargo shippers uk"
         ogUrl="https://www.carrgo.co.uk/services/door-to-door"
         canonical="https://www.carrgo.co.uk/services/door-to-door"
@@ -267,7 +267,7 @@ export default function DoorToDoor() {
                 { icon: Phone, title: 'One Point of Contact', desc: 'A single dedicated account manager for your entire shipment.' },
                 { icon: FileCheck, title: 'All-Inclusive Quotes', desc: 'One quote covers everything — no hidden fees or surprise charges.' },
                 { icon: MapPin, title: 'Global Collection', desc: 'We collect from factories and warehouses in over 100 countries.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive door-to-door quote within 2 hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive door-to-door shipment-specific quote after reviewing the supplied details.' },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (

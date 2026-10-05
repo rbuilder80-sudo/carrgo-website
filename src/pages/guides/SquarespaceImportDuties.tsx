@@ -12,7 +12,7 @@ const pageSchema = {
     'Squarespace handles your storefront — it doesn\u2019t clear UK customs for you. Guide to import duties, DDP/DDU choices and HS codes for UK Squarespace sellers.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };

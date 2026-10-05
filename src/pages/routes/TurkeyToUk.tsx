@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Turkey to UK Road Freight and Cargo Shipping',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: [{ '@type': 'Country', name: 'Turkey' }, { '@type': 'Country', name: 'United Kingdom' }],
   description: 'Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery.',
 };
@@ -72,7 +72,7 @@ export default function TurkeyToUk() {
     <>
       <Seo
         title="Turkey to UK Freight | Road, Sea & Air Cargo | Carrgo"
-        description="Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with quotes in 2 hours."
+        description="Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with shipment-specific quotes."
         keywords="turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade"
         ogUrl="https://www.carrgo.co.uk/routes/turkey-to-uk/"
         canonical="https://www.carrgo.co.uk/routes/turkey-to-uk/"
@@ -361,7 +361,7 @@ export default function TurkeyToUk() {
               ))}
             </div>
             <p className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-              All quotes include Turkish collection, freight, UK customs clearance, and final delivery. No hidden fees. Carrgo Freight Solutions Ltd.
+              All quotes include Turkish collection, freight, UK customs clearance, and final delivery. No hidden fees. CARRGO FREIGHT LTD.
             </p>
           </div>
         </section>
@@ -490,7 +490,7 @@ export default function TurkeyToUk() {
               {[
                 { icon: Globe, title: 'Turkey Expertise', desc: 'Established carrier relationships across Turkish ports, airports, and road networks.' },
                 { icon: FileCheck, title: 'FTA Specialists', desc: 'We maximise your UK-Turkey FTA benefits with correct origin documentation.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive Turkey–UK freight quote within 2 hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive Turkey–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full shipment visibility from Turkish collection to UK delivery.' },
                 { icon: Users, title: 'Bilingual Support', desc: 'Our team can communicate effectively with Turkish suppliers and agents.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'Freight, FTA documentation, UK customs clearance, and delivery in one price.' },
@@ -527,7 +527,7 @@ export default function TurkeyToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get a Turkey to UK freight quote?</h2>
-            <p className="text-brand-100 mb-8 text-lg">Sea, road, or air — with full UK-Turkey FTA support. All-inclusive quote within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea, road, or air — with full UK-Turkey FTA support. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

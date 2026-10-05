@@ -38,7 +38,7 @@ const serviceSchema = {
   serviceType: ['Freight Forwarding', 'Cargo Services', 'Customs Clearance', 'Air Freight', 'Sea Freight', 'Road Freight'],
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
     email: 'support@carrgo.co.uk',
   },
@@ -97,8 +97,8 @@ export default function FreightForwarderManchester() {
   return (
     <>
       <Seo
-        title="Freight Forwarder Manchester | Cargo Quotes in 2 Hours | Carrgo"
-        description="Freight forwarder for Manchester and North West businesses. Sea, air and road cargo with customs clearance, tracking and door-to-door delivery. Quote in 2 hours."
+        title="Freight Forwarder Manchester | Cargo Services | Carrgo"
+        description="Freight forwarder for Manchester and North West businesses. Sea, air and road cargo with customs clearance, tracking and door-to-door delivery. Request a shipment-specific quote."
         keywords="freight forwarder manchester, freight forwarder near me, manchester freight forwarder, cargo services manchester, shipping company manchester, customs clearance manchester, manchester air freight, north west freight forwarder"
         ogUrl="https://www.carrgo.co.uk/freight-forwarder-manchester"
         canonical="https://www.carrgo.co.uk/freight-forwarder-manchester"
@@ -115,7 +115,7 @@ export default function FreightForwarderManchester() {
                   Freight Forwarder Manchester
                 </h1>
                 <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-                  Cargo services for Manchester, Greater Manchester and North West businesses. Carrgo handles sea freight, air freight, road freight, customs clearance, tracking and door-to-door delivery with all-inclusive quotes in 2 hours.
+                  Cargo services for Manchester, Greater Manchester and North West businesses. Carrgo handles sea freight, air freight, road freight, customs clearance, tracking and door-to-door delivery with all-inclusive shipment-specific quotes.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors min-h-[44px]">
@@ -163,7 +163,7 @@ export default function FreightForwarderManchester() {
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { icon: Clock, title: '2-hour quotes', desc: 'Fast, all-inclusive pricing when shipment details are complete.' },
+                  { icon: Clock, title: 'shipment-specific quotes', desc: 'Fast, all-inclusive pricing when shipment details are complete.' },
                   { icon: MapPin, title: 'North West coverage', desc: 'Manchester, Bolton, Trafford Park, Salford and nearby areas.' },
                   { icon: Warehouse, title: 'Warehouse delivery', desc: 'Delivery to business premises, sites and fulfilment centres.' },
                   { icon: FileCheck, title: 'Customs handled', desc: 'CDS declarations, duty checks and release coordination.' },

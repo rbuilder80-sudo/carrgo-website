@@ -46,10 +46,10 @@ const resourcePages = [
 ];
 
 const companyPages = [
-  { path: '/', title: 'Homepage', desc: 'UK and Ireland freight forwarder. Sea, air, road, and rail shipping with all-inclusive quotes in 2 hours.', modified: '2025-01-15' },
+  { path: '/', title: 'Homepage', desc: 'UK and Ireland freight forwarder. Sea, air, road, and rail shipping with all-inclusive shipment-specific quotes.', modified: '2025-01-15' },
   { path: '/about', title: 'About Carrgo', desc: 'Company story, mission, values, and team.', modified: '2025-01-15' },
   { path: '/contact', title: 'Contact Us', desc: 'Get in touch with Carrgo via email, phone, or contact form for quotes and enquiries.', modified: '2025-01-15' },
-  { path: '/get-a-quote', title: 'Get a Quote', desc: 'Free all-inclusive freight quote within 2 hours. No obligation.', modified: '2025-01-15' },
+  { path: '/get-a-quote', title: 'Get a Quote', desc: 'Free all-inclusive shipment-specific freight quote after reviewing the supplied details. No obligation.', modified: '2025-01-15' },
 ];
 
 const legalPages = [

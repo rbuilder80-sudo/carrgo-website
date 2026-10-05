@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Air Freight UK — Air Cargo Shipping Services',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -75,7 +75,7 @@ export default function AirFreight() {
     <>
       <Seo
         title="Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo"
-        description="Door to door air freight UK, Northern Ireland and Ireland. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Quotes in 2 hours."
+        description="Door to door air freight UK, Northern Ireland and Ireland. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Shipment-specific quotes."
         keywords="door to door air freight, air freight uk, air cargo uk, express air freight, air freight northern ireland, air freight from ireland, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
         ogUrl="https://www.carrgo.co.uk/services/air-freight"
         canonical="https://www.carrgo.co.uk/services/air-freight"
@@ -377,7 +377,7 @@ export default function AirFreight() {
               Get Your Air Freight Quote
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
-              Express and economy air cargo from China, USA, UAE, and Europe. All-inclusive pricing with 2-hour response.
+              Express and economy air cargo from China, USA, UAE, and Europe. All-inclusive pricing with shipment-specific review.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">

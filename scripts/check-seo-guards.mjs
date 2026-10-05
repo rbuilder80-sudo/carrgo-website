@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const requireText = (condition, message) => {
@@ -14,6 +14,20 @@ const home = read('src/pages/Home.tsx');
 const footer = read('src/components/Footer.tsx');
 const navbar = read('src/components/Navbar.tsx');
 const generator = read('scripts/generate-static.py');
+const contact = read('src/pages/Contact.tsx');
+const getAQuote = read('src/pages/GetAQuote.tsx');
+const terms = read('src/pages/Terms.tsx');
+const privacy = read('src/pages/Privacy.tsx');
+
+const sourceFiles = (directory) => readdirSync(new URL(`../${directory}`, import.meta.url), { withFileTypes: true })
+  .flatMap((entry) => entry.isDirectory()
+    ? sourceFiles(`${directory}/${entry.name}`)
+    : entry.name.endsWith('.tsx') || entry.name.endsWith('.ts')
+      ? [`${directory}/${entry.name}`]
+      : []);
+const commercialSource = [...sourceFiles('src'), 'scripts/generate-static.py']
+  .map((path) => `${path}\n${read(path)}`)
+  .join('\n');
 
 requireText(layout.includes('<PortQuoteForm'), 'Global contextual quote form is missing from Layout');
 requireText(layout.includes("'/routes/china-to-uk'"), 'China–UK quote context is missing');
@@ -34,6 +48,25 @@ for (const [path, content] of [
 ]) {
   requireText(!unsupportedTrustClaims.test(content), `${path} exposes an unsupported trust or performance claim`);
 }
+
+const unsupportedCommercialClaims = /(quote|quotes|respond|response|price)[^.\n]{0,60}(within|in)\s+(two|2)\s*hours?|(?:two|2)[-\s]*hour[^.\n]{0,40}(quote|response)|1 hour 42|up to 22%|HMRC Registered|447700123456|International Trade Centre|EC2A 4BX|Carrgo Freight Solutions Ltd/i;
+requireText(!unsupportedCommercialClaims.test(commercialSource), 'Source exposes an unsupported response, performance, contact or legal-entity claim');
+
+for (const [path, content] of [
+  ['src/pages/Contact.tsx', contact],
+  ['src/pages/GetAQuote.tsx', getAQuote],
+  ['src/pages/Terms.tsx', terms],
+  ['src/pages/Privacy.tsx', privacy],
+  ['src/components/Footer.tsx', footer],
+]) {
+  requireText(content.includes('CARRGO FREIGHT LTD'), `${path} is missing the verified legal entity`);
+}
+requireText(contact.includes("identifier: '17480219'"), 'Contact schema is missing the verified company number');
+requireText(contact.includes("streetAddress: '66 Paul Street'"), 'Contact schema is missing the verified registered office');
+requireText(getAQuote.includes('name="origin-country"') && getAQuote.includes('name="dest-country"'), 'Quote form origin or destination field is missing');
+requireText(getAQuote.includes('name="cargo"') && getAQuote.includes('name="weight"') && getAQuote.includes('name="volume"'), 'Quote form cargo, weight or volume field is missing');
+requireText(getAQuote.includes('name="name"') && getAQuote.includes('name="email"') && getAQuote.includes('name="phone"'), 'Quote form contact fields are missing');
+requireText(!generator.includes('<meta name="last-modified" content="2026-07-15"'), 'Static generator exposes a fabricated shared last-modified date');
 
 for (const url of ['/resources/case-studies', '/resources/testimonials', '/results']) {
   requireText(generator.includes(`"${url}": {`), `${url} correction metadata is missing from static generation`);

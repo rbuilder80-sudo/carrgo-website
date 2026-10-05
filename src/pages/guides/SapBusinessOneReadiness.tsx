@@ -12,7 +12,7 @@ const pageSchema = {
     'SAP Business One runs your purchasing — but if HS codes, Incoterms and freight costs aren\u2019t captured cleanly, your landed cost is wrong. Carrgo reviews your import data readiness.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };

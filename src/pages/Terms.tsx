@@ -9,12 +9,12 @@ import {
 const legalSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Terms of Service — Carrgo Freight Solutions Ltd',
+  name: 'Terms of Service — CARRGO FREIGHT LTD',
   url: 'https://www.carrgo.co.uk/terms',
-  description: 'Terms and conditions for Carrgo Freight Solutions Ltd freight forwarding services.',
+  description: 'Terms and conditions for CARRGO FREIGHT LTD freight forwarding services.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };
@@ -35,8 +35,8 @@ export default function Terms() {
   return (
     <>
       <Seo
-        title="Terms of Service | Carrgo Freight Solutions Ltd"
-        description="Terms and conditions for Carrgo Freight Solutions Ltd freight forwarding services. Read about our booking, payment, liability, and cancellation policies."
+        title="Terms of Service | CARRGO FREIGHT LTD"
+        description="Terms and conditions for CARRGO FREIGHT LTD freight forwarding services. Read about our booking, payment, liability, and cancellation policies."
         noindex={true}
         structuredData={legalSchema}
       />
@@ -51,7 +51,7 @@ export default function Terms() {
                 Terms of Service
               </h1>
               <p className="text-lg text-[#4B5563]">
-                Last updated: January 2026. These terms govern your use of Carrgo Freight Solutions Ltd&apos;s services and website. Please read them carefully before booking our services.
+                Last updated: 5 October 2026. These terms govern your use of CARRGO FREIGHT LTD&apos;s services and website. Please read them carefully before booking our services.
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function Terms() {
                       <ul className="space-y-3 ml-4">
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
-                          <span><strong className="text-[#111827]">&ldquo;We&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;, &ldquo;Carrgo&rdquo;:</strong> Carrgo Freight Solutions Ltd, a company registered in England and Wales with its registered office at Suite 12, International Trade Centre, London, EC2A 4BX.</span>
+                          <span><strong className="text-[#111827]">&ldquo;We&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;, &ldquo;Carrgo&rdquo;:</strong> CARRGO FREIGHT LTD, company number 17480219, registered in England and Wales with its registered office at 66 Paul Street, London, England, EC2A 4NA.</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#1A6DFF] font-bold">&bull;</span>
@@ -141,7 +141,7 @@ export default function Terms() {
                     </div>
                     <div className="text-[#4B5563] leading-relaxed space-y-4">
                       <p>
-                        Carrgo Freight Solutions Ltd provides freight forwarding services including sea freight (FCL and LCL), air freight, road freight, rail freight, customs clearance, warehousing, and related logistics services. All services are provided subject to these terms and conditions.
+                        CARRGO FREIGHT LTD provides freight forwarding services including sea freight (FCL and LCL), air freight, road freight, rail freight, customs clearance, warehousing, and related logistics services. All services are provided subject to these terms and conditions.
                       </p>
                       <p>
                         We act as a freight forwarder and not as a common carrier. This means we arrange the carriage of goods on your behalf with third-party carriers. We reserve the right to refuse to handle any shipment at our sole discretion, including but not limited to dangerous goods, prohibited items, or shipments that do not comply with applicable laws and regulations.
@@ -381,7 +381,7 @@ export default function Terms() {
                         </li>
                       </ul>
                       <p className="text-sm text-[#9CA3AF] mt-6">
-                        These terms and conditions were last updated on 1 January 2026. We may update these terms from time to time and will post any changes on this page. Your continued use of our Services after any changes constitutes acceptance of the updated terms. We encourage you to review these terms periodically.
+                        These terms and conditions were last updated on 5 October 2026. We may update these terms from time to time and will post any changes on this page. Your continued use of our Services after any changes constitutes acceptance of the updated terms. We encourage you to review these terms periodically.
                       </p>
                     </div>
                   </section>
@@ -396,7 +396,7 @@ export default function Terms() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-extrabold mb-4">Ready to Ship With Carrgo?</h2>
             <p className="text-[#D4E3FF] text-lg mb-8">
-              Get your all-inclusive freight quote in 2 hours. No hidden fees, no obligation.
+              Request a no-obligation, shipment-specific freight quote based on your route, cargo and delivery scope.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

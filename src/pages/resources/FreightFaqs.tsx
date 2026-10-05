@@ -87,7 +87,7 @@ const categories: FaqCategory[] = [
     items: [
       {
         question: 'How quickly can I get a freight quote?',
-        answer: 'We provide all-inclusive freight quotes within 2 hours during UK business hours (Mon-Fri, 9am-6pm). Simply fill out our quote form with your cargo details, origin, destination and preferred transport mode.',
+        answer: 'We provide all-inclusive shipment-specific freight quotes after reviewing the supplied details (Mon-Fri, 9am-6pm). Simply fill out our quote form with your cargo details, origin, destination and preferred transport mode.',
       },
       {
         question: 'Do you ship to Amazon FBA warehouses?',

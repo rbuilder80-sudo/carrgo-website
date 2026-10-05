@@ -13,7 +13,7 @@ const serviceSchema = {
   name: 'UK Logistics Provider — Freight & Supply Chain Services',
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },

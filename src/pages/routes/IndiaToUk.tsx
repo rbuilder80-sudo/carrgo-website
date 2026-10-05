@@ -52,7 +52,7 @@ export default function IndiaToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "India to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "India"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Sea and air freight forwarding from India to the UK with customs clearance. UK-India FTA compliant."
         }}
@@ -416,7 +416,7 @@ export default function IndiaToUk() {
               {[
                 { icon: Globe, title: 'India Network', desc: 'Strong partnerships with Indian freight agents across all major ports and airports.' },
                 { icon: FileCheck, title: 'Customs Experts', desc: 'Experienced brokers specialising in Indian commodity classifications and documentation.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive India–UK freight quote within 2 hours during UK business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive India–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Track your shipment from Indian port to UK delivery with milestone updates.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'A single point of contact who understands the India-UK trade lane and your business.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'Freight, documentation, UK customs clearance, and delivery — one price, no surprises.' },
@@ -450,7 +450,7 @@ export default function IndiaToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Get Your India–UK Freight Quote</h2>
-            <p className="text-brand-100 mb-8 text-lg">Sea or air — we&apos;ll find the best shipping solution for your India imports. All-inclusive quote within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea or air — we&apos;ll find the best shipping solution for your India imports. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

@@ -12,7 +12,7 @@ const faqData = [
   { q: 'How long does sea freight from China to UK take?', a: 'Sea freight from China to UK typically takes 25-35 days port-to-port, or 35-45 days door-to-door depending on the origin city and UK destination port.' },
   { q: 'What is the difference between FCL and LCL shipping?', a: 'FCL (Full Container Load) means you rent an entire container for your goods only. LCL (Less than Container Load) means your goods share a container with other shipments. FCL is typically more cost-effective for larger volumes.' },
   { q: 'Do you handle customs clearance?', a: 'Carrgo can coordinate UK import and export declarations, document checks and port release as part of a freight movement. Requirements depend on the goods, route and importer or exporter responsibilities.' },
-  { q: 'How quickly can I get a freight quote?', a: 'We provide all-inclusive freight quotes within 2 hours during UK business hours. Simply fill out our quote form or email us at support@carrgo.co.uk.' },
+  { q: 'How quickly can I get a freight quote?', a: 'We provide all-inclusive shipment-specific freight quotes after reviewing the supplied details. Simply fill out our quote form or email us at support@carrgo.co.uk.' },
   { q: 'What are Incoterms and which should I use?', a: 'Incoterms define who is responsible for costs and risks at each stage of shipping. EXW, FOB, and DDP are the most common. Our team can advise on the best option for your shipment.' },
   { q: 'Can you ship to Amazon FBA warehouses?', a: 'Yes, we specialise in Amazon FBA freight including FBA prep, labelling, palletisation, and delivery to all UK fulfilment centres including BHX4, EMA1, and LBA1.' },
   { q: 'What is rail freight from China to UK?', a: 'Rail freight via the New Silk Road is a middle-ground option: faster than sea (14-20 days) and cheaper than air (approximately 40% savings). It runs from major Chinese cities to the UK.' },
@@ -133,22 +133,26 @@ export default function Home() {
       <meta itemProp="description" content="Carrgo coordinates UK and Ireland sea freight, air cargo, road haulage, rail freight and customs support." />
       <Seo
         title="Cargo Services UK | Shipping & Freight Quotes | Carrgo"
-        description="UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a quote in 2 hours."
+        description="UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a shipment-specific quote."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://www.carrgo.co.uk/"
         canonical="https://www.carrgo.co.uk/"
         structuredData={[
           {
             "@context": "https://schema.org",
-            "@type": ["Organization", "LocalBusiness"],
+            "@type": "Organization",
             "name": "Carrgo Freight Solutions",
-            "legalName": "Carrgo Freight Solutions Ltd",
+            "legalName": "CARRGO FREIGHT LTD",
+            "identifier": "17480219",
             "url": "https://www.carrgo.co.uk",
             "logo": "https://www.carrgo.co.uk/logo.png",
             "description": "UK & Ireland freight forwarder specialising in sea freight, air freight, customs clearance, and door-to-door logistics.",
             "email": "support@carrgo.co.uk",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "66 Paul Street",
+              "addressLocality": "London",
+              "postalCode": "EC2A 4NA",
               "addressCountry": "GB",
               "addressRegion": "England"
             },
@@ -200,14 +204,14 @@ export default function Home() {
                 </p>
               </div>
               <p className="text-xl text-brand-100 mb-8 leading-relaxed">
-                <span itemProp="description">Cargo services for sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> Get an all-inclusive door-to-door shipping quote in 2 hours.
+                <span itemProp="description">Cargo services for sea freight, air cargo, road haulage, rail freight, and customs clearance.</span> Get an all-inclusive door-to-door shipment-specific shipping quote.
               </p>
 
             </div>
             <div className="hidden lg:block">
               <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
                 <h2 className="text-2xl font-bold mb-2">Get Your Quote</h2>
-                <p className="text-brand-100 mb-6 text-sm">Fill in your details and we will respond within 2 hours.</p>
+                <p className="text-brand-100 mb-6 text-sm">Fill in the route and cargo details so we can review your shipment.</p>
                 {heroSubmitted ? (
                   <div className="text-center py-8">
                     <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -216,7 +220,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">Quote Request Sent!</h3>
-                    <p className="text-brand-100 text-sm">We will respond within 2 hours.</p>
+                    <p className="text-brand-100 text-sm">We will contact you after reviewing the shipment details.</p>
                   </div>
                 ) : (
                   <form className="space-y-4" onSubmit={handleHeroSubmit}>
@@ -427,7 +431,7 @@ export default function Home() {
             {[
               { icon: Shield, title: 'Itemised Scope', desc: 'The quote states which collection, freight, customs and delivery elements are included.' },
               { icon: FileCheck, title: 'Customs Coordination', desc: 'Document requirements and declaration responsibilities are checked for the specific shipment.' },
-              { icon: Clock, title: 'Fast Quote Response', desc: 'Receive your all-inclusive freight quote within 2 hours during UK business hours.' },
+              { icon: Clock, title: 'Fast Quote Response', desc: 'Receive your all-inclusive shipment-specific freight quote after reviewing the supplied details.' },
               { icon: TrendingUp, title: 'Shipment Updates', desc: 'Milestone updates and available carrier information are shared during the movement.' },
               { icon: Users, title: 'Clear Contact', desc: 'A Carrgo contact coordinates the enquiry and confirms what information is still needed.' },
               { icon: Globe, title: 'Route Checks', desc: 'Carrier or agent availability and cut-offs are checked for the requested trade lane.' },
@@ -488,11 +492,11 @@ export default function Home() {
       <section aria-labelledby="how-heading" data-section="how-it-works" itemScope itemType="https://schema.org/HowTo" className="py-16 bg-white">
         <div className="container-carrgo">
           <h2 id="how-heading" className="text-3xl font-bold text-center text-gray-900 mb-10">How does Carrgo's freight forwarding process work?</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Getting your goods from factory to warehouse takes 5 simple steps with Carrgo: request a quote, receive your all-inclusive price within 2 hours, we collect from your supplier, handle all transport and customs, then deliver to your UK warehouse.</p>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Getting your goods from factory to warehouse takes 5 simple steps with Carrgo: request a quote, receive a shipment-specific price after review, we collect from your supplier, handle all transport and customs, then deliver to your UK warehouse.</p>
           <ol className="grid md:grid-cols-5 gap-6">
             {[
               { step: '1', title: 'Request a Quote', desc: 'Fill in our form with your shipment details' },
-              { step: '2', title: 'Receive Your Price', desc: 'All-inclusive quote within 2 hours' },
+              { step: '2', title: 'Receive Your Price', desc: 'All-inclusive shipment-specific quote after reviewing the supplied details' },
               { step: '3', title: 'We Collect', desc: 'Goods picked up from your supplier' },
               { step: '4', title: 'We Handle Everything', desc: 'Transport, customs, documentation' },
               { step: '5', title: 'Delivered', desc: 'Goods arrive at your UK warehouse' },
@@ -564,7 +568,7 @@ export default function Home() {
       <section aria-labelledby="quote-heading" data-section="quote-form" className="py-16 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="quote-heading" className="text-3xl font-bold text-center mb-3">How do I get a free freight quote from Carrgo?</h2>
-          <p className="text-center text-brand-100 mb-8 max-w-2xl mx-auto">Simply fill in our online form with your shipment details — origin, destination, cargo type, and weight. Carrgo responds with an all-inclusive freight quote within 2 hours during UK business hours, with no obligation.</p>
+          <p className="text-center text-brand-100 mb-8 max-w-2xl mx-auto">Simply fill in our online form with your shipment details — origin, destination, cargo type, and weight. Carrgo responds with an all-inclusive shipment-specific freight quote after reviewing the supplied details, with no obligation.</p>
           {quoteSubmitted ? (
             <div className="text-center py-8">
               <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -573,7 +577,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Quote Request Sent!</h3>
-              <p className="text-brand-100">We will respond within 2 hours with your all-inclusive quote.</p>
+              <p className="text-brand-100">We will contact you after reviewing the shipment details.</p>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleQuoteSubmit}>
@@ -657,7 +661,7 @@ export default function Home() {
       <section aria-label="Get started" data-section="cta-banner" className="py-16 bg-brand-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to ship your goods to the UK with Carrgo?</h2>
-          <p className="text-brand-100 mb-8 text-lg max-w-2xl mx-auto">Get your all-inclusive freight quote in 2 hours. No hidden fees, no obligation. Our logistics team is ready to handle your shipment from factory to warehouse.</p>
+          <p className="text-brand-100 mb-8 text-lg max-w-2xl mx-auto">Get your all-inclusive shipment-specific freight quote. No hidden fees, no obligation. Our logistics team is ready to handle your shipment from factory to warehouse.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
               Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

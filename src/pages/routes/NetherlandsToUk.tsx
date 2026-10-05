@@ -21,7 +21,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Shipping from Netherlands to UK',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: [{ '@type': 'Country', name: 'Netherlands' }, { '@type': 'Country', name: 'United Kingdom' }],
   description: 'Door-to-door road, sea and air freight from the Netherlands to the UK, including Rotterdam and Amsterdam collections, customs clearance and final UK delivery.',
   url: 'https://www.carrgo.co.uk/routes/netherlands-to-uk',
@@ -69,7 +69,7 @@ export default function NetherlandsToUk() {
     <>
       <Seo
         title="Shipping from Netherlands to UK | Rotterdam Freight Forwarder | Carrgo"
-        description="Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a quote in 2 hours."
+        description="Shipping from Netherlands to UK with daily road freight, Rotterdam sea freight, Amsterdam air cargo, customs clearance and UK delivery. Get a shipment-specific quote."
         keywords="shipping from netherlands to uk, netherlands to uk freight, rotterdam to uk freight, rotterdam to uk shipping, shipping from holland to uk, dutch road freight uk, freight forwarder netherlands uk"
         ogUrl="https://www.carrgo.co.uk/routes/netherlands-to-uk"
         canonical="https://www.carrgo.co.uk/routes/netherlands-to-uk"
@@ -436,7 +436,7 @@ export default function NetherlandsToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Get Your Netherlands–UK Freight Quote</h2>
-            <p className="text-brand-100 mb-8 text-lg">Road freight from £120 per pallet. Daily departures. All-inclusive quote within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Road freight from £120 per pallet. Daily departures. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

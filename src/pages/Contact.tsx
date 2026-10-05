@@ -3,80 +3,44 @@ import { submitToFormspree, SUPPORT_EMAIL, trackLead } from '../lib/formConfig';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
-  Phone, Mail, MapPin, Clock, MessageCircle,
+  Mail, MapPin,
   ArrowRight, Send, CheckCircle
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
-const localBusinessSchema = {
+const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Carrgo Freight Solutions Ltd',
+  '@type': 'Organization',
+  name: 'CARRGO FREIGHT LTD',
+  legalName: 'CARRGO FREIGHT LTD',
+  identifier: '17480219',
   image: 'https://www.carrgo.co.uk/og-image.jpg',
-  '@id': 'https://www.carrgo.co.uk',
+  '@id': 'https://www.carrgo.co.uk/#organization',
   url: 'https://www.carrgo.co.uk',
-    email: SUPPORT_EMAIL,
-  priceRange: '££',
+  email: SUPPORT_EMAIL,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Suite 12, International Trade Centre',
+    streetAddress: '66 Paul Street',
     addressLocality: 'London',
-    postalCode: 'EC2A 4BX',
+    postalCode: 'EC2A 4NA',
     addressCountry: 'GB',
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '51.5203',
-    longitude: '-0.0793',
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:30',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '09:00',
-      closes: '13:00',
-    },
-  ],
 };
 
 const contactMethods = [
   {
-    icon: Phone,
-    label: 'Call Us',
-        note: 'Monday–Friday, 8:30am–6pm GMT',
-      },
-  {
     icon: Mail,
     label: 'Email Us',
     value: SUPPORT_EMAIL,
-    note: 'We respond within 2 hours',
+    note: 'Freight quotes, customs questions and general enquiries',
     href: 'mailto:support@carrgo.co.uk',
   },
   {
-    icon: MessageCircle,
-    label: 'WhatsApp',
-        note: 'Quick questions welcome',
-    href: 'https://wa.me/447700123456',
-  },
-  {
     icon: MapPin,
-    label: 'Office',
-    value: 'Suite 12, International Trade Centre, London, EC2A 4BX',
-    note: 'By appointment only',
-    href: 'https://maps.google.com/?q=EC2A+4BX',
-  },
-  {
-    icon: Clock,
-    label: 'Business Hours',
-    value: 'Monday–Friday: 8:30am–6pm',
-    note: 'Saturday: 9am–1pm (limited)',
-    href: undefined,
+    label: 'Registered Office',
+    value: '66 Paul Street, London, England, EC2A 4NA',
+    note: 'CARRGO FREIGHT LTD · Company 17480219',
+    href: 'https://find-and-update.company-information.service.gov.uk/company/17480219',
   },
 ];
 
@@ -103,9 +67,10 @@ const quickLinks = [
     icon: CheckCircle,
   },
   {
-    title: 'Call Our Team',
-    desc: 'Speak directly with a freight specialist.',
-        icon: Phone,
+    title: 'Email Carrgo',
+    desc: 'Send a route, cargo or documentation question.',
+    href: 'mailto:support@carrgo.co.uk',
+    icon: Mail,
   },
 ];
 
@@ -140,12 +105,12 @@ export default function Contact() {
     <>
       <Seo
         title="Contact Carrgo | UK Freight Forwarder | Carrgo"
-        description="Contact Carrgo freight forwarders. Email support@carrgo.co.uk for shipping quotes, customs queries & freight advice. We reply within 2 hours."
+        description="Contact Carrgo about a freight quote, customs requirements or shipment planning. Email support@carrgo.co.uk or use the online forms."
         keywords="contact freight forwarder, freight quote contact, customs broker contact, shipping company uk contact, freight forwarding phone"
         ogUrl="https://www.carrgo.co.uk/contact"
         canonical="https://www.carrgo.co.uk/contact"
         structuredData={[
-          localBusinessSchema,
+          organizationSchema,
           {
             "@context": "https://schema.org",
             "@type": "ContactPage",
@@ -167,7 +132,7 @@ export default function Contact() {
                 Get in Touch With Our Team
               </h1>
               <p className="text-lg text-[#4B5563] leading-relaxed">
-                Whether you need a freight quote, have a customs question, or want to discuss your supply chain — our team is here to help. We respond within 2 hours during UK business hours and every enquiry is handled by a real person who understands freight forwarding.
+                Request a shipment-specific freight quote, ask a customs question or send the route and cargo details you want Carrgo to review.
               </p>
             </div>
           </div>
@@ -209,9 +174,9 @@ export default function Contact() {
 
                 {/* Additional contact note */}
                 <div className="mt-6 bg-[#EBF2FF] rounded-xl p-5 border border-[#D4E3FF]">
-                  <h3 className="font-bold text-[#111827] mb-2">Need an Urgent Quote?</h3>
+                  <h3 className="font-bold text-[#111827] mb-2">Need a Freight Quote?</h3>
                   <p className="text-sm text-[#4B5563] mb-3">
-                    For the fastest response, use our online quote form. We typically respond within 1 hour 42 minutes during business hours.
+                    Use the quote form to supply the origin, destination, goods, approximate weight or volume and contact details in one request.
                   </p>
                   <Link
                     to="/get-a-quote"
@@ -232,7 +197,7 @@ export default function Contact() {
                       </div>
                       <h3 className="text-2xl font-bold text-[#111827] mb-2">Message Sent!</h3>
                       <p className="text-[#4B5563] mb-6">
-                        Thank you for contacting us. Our team will review your message and respond within 2 hours during UK business hours.
+                        Thank you for contacting us. Our team will review your message and contact you about the enquiry.
                       </p>
                       <Link
                         to="/"
@@ -374,22 +339,22 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* ====== MAP ====== */}
-        <section aria-label="Office location map" className="bg-white">
+        {/* ====== REGISTERED OFFICE ====== */}
+        <section aria-label="Registered office" className="bg-white">
           <div className="w-full h-96 bg-[#F8FAFC] border-y border-[#E5E7EB] relative overflow-hidden">
-            {/* Map placeholder */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-[#1A6DFF] mx-auto mb-3" aria-hidden="true" />
-                <p className="font-bold text-[#111827] text-lg">Carrgo Freight Solutions Ltd</p>
-                <p className="text-[#4B5563]">Suite 12, International Trade Centre, London, EC2A 4BX</p>
+                <p className="font-bold text-[#111827] text-lg">CARRGO FREIGHT LTD</p>
+                <p className="text-[#4B5563]">Registered office: 66 Paul Street, London, England, EC2A 4NA</p>
+                <p className="text-sm text-[#4B5563] mt-1">Registered in England and Wales · Company number 17480219</p>
                 <a
-                  href="https://maps.google.com/?q=EC2A+4BX"
+                  href="https://find-and-update.company-information.service.gov.uk/company/17480219"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#1A6DFF] font-medium mt-3 hover:underline"
                 >
-                  Get Directions <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  View company record <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>

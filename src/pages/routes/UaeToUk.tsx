@@ -52,7 +52,7 @@ export default function UaeToUk() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "UAE to UK Freight Shipping",
-          "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+          "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
           "areaServed": [{"@type": "Country", "name": "United Arab Emirates"}, {"@type": "Country", "name": "United Kingdom"}],
           "description": "Sea and air freight forwarding from the UAE to the UK with customs clearance."
         }}
@@ -350,7 +350,7 @@ export default function UaeToUk() {
               {[
                 { icon: Globe, title: 'UAE Network', desc: 'Strong partnerships with UAE freight agents across all Emirates and free zones.' },
                 { icon: FileCheck, title: 'Customs Experts', desc: 'Experienced brokers specialising in UAE-origin commodity classifications.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive UAE–UK freight quote within 2 hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive UAE–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full visibility from UAE collection or port to UK delivery.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'Your personal account manager understands Middle East logistics and your needs.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'UAE collection, freight, UK customs clearance, and delivery — one transparent price.' },
@@ -384,7 +384,7 @@ export default function UaeToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Get Your UAE–UK Freight Quote</h2>
-            <p className="text-brand-100 mb-8 text-lg">Sea or air from Dubai, Abu Dhabi, or any Emirates. All-inclusive quote within 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea or air from Dubai, Abu Dhabi, or any Emirates. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

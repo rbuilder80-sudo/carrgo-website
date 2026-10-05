@@ -12,7 +12,7 @@ const serviceSchema = {
   name: 'International Shipping UK — Global Freight Routes',
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
   areaServed: [
@@ -384,7 +384,7 @@ export default function RoutesHub() {
               Get Your International Shipping Quote
             </h2>
             <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              Whether you are shipping from China, Germany, the USA or anywhere else in the world, our team will provide a competitive, all-inclusive route quote within 2 hours. Sea, air, road or rail — we have the right solution for your cargo.
+              Whether you are shipping from China, Germany, the USA or anywhere else in the world, our team will provide a competitive, all-inclusive shipment-specific route quote after reviewing the supplied details. Sea, air, road or rail — we have the right solution for your cargo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -403,7 +403,7 @@ export default function RoutesHub() {
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-blue-200">
               <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> 150+ countries</span>
               <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> Sea, air, road & rail</span>
-              <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> 2-hour quote response</span>
+              <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" aria-hidden="true" /> shipment-specific quote review</span>
             </div>
           </div>
         </section>

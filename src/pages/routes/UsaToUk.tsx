@@ -17,7 +17,7 @@ const faqData = [
   { q: 'Can I ship Amazon FBA goods from USA to UK?', a: 'Yes, Carrgo handles Amazon FBA shipments from the USA to UK fulfilment centres including BHX4, EMA1, and LBA1. We manage FBA prep, labelling, palletisation, and appointment booking through Amazon Carrier Central. Full customs clearance included.' },
   { q: 'Do you ship from USA to Northern Ireland and Ireland?', a: 'Yes. USA goods can be shipped to Northern Ireland via Belfast or Larne, and to the Republic of Ireland via Dublin or Cork. We handle all customs requirements including the NI Protocol and Irish customs declarations.' },
   { q: 'What is the best Incoterm for USA to UK shipping?', a: 'DDP (Delivered Duty Paid) is best for most UK importers as the seller handles all costs and customs. FOB (Free on Board) is common for sea freight — the seller delivers to the US port, and you handle freight and UK customs. Carrgo can advise based on your supplier agreement.' },
-  { q: 'How do I get a freight quote from USA to UK?', a: 'Fill out our online quote form with your US origin city, cargo details, weight, dimensions, and preferred transport mode. We provide an all-inclusive quote within 2 hours covering collection, freight, customs, and UK delivery.' },
+  { q: 'How do I get a freight quote from USA to UK?', a: 'Fill out our online quote form with your US origin city, cargo details, weight, dimensions, and preferred transport mode. We provide an all-inclusive quote after reviewing the supplied details covering collection, freight, customs, and UK delivery.' },
 ];
 
 function FaqAccordion() {
@@ -58,7 +58,7 @@ export default function UsaToUk() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "USA to UK Freight Forwarding",
-            "provider": { "@type": "Organization", "name": "Carrgo Freight Solutions Ltd" },
+            "provider": { "@type": "Organization", "name": "CARRGO FREIGHT LTD" },
             "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}],
             "description": "Sea and air freight forwarding from the USA to the UK, including US collection, UK customs clearance and final delivery.",
             "url": "https://www.carrgo.co.uk/routes/usa-to-uk"
@@ -495,7 +495,7 @@ export default function UsaToUk() {
               {[
                 { icon: Globe, title: 'Transatlantic Expertise', desc: 'Deep experience managing USA–UK freight from both East and West Coasts with reliable carrier partnerships.' },
                 { icon: FileCheck, title: 'Customs Specialists', desc: 'Experienced brokers specialising in US commodity classifications and import requirements.' },
-                { icon: Clock, title: '2-Hour Quotes', desc: 'Receive your all-inclusive USA–UK freight quote within 2 hours during UK business hours.' },
+                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive USA–UK shipment-specific freight quote after reviewing the supplied details.' },
                 { icon: TrendingUp, title: 'Live Tracking', desc: 'Full visibility from US collection or port through transatlantic transit to UK delivery.' },
                 { icon: Users, title: 'Dedicated Manager', desc: 'Your personal account manager understands the transatlantic route and your business needs.' },
                 { icon: Shield, title: 'All-Inclusive Pricing', desc: 'US collection, ocean/air freight, UK customs clearance, and delivery — one transparent price.' },
@@ -529,7 +529,7 @@ export default function UsaToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Get Your USA–UK Freight Quote</h2>
-            <p className="text-brand-100 mb-8 text-lg">Sea or air from any US coast. All-inclusive pricing with UK customs clearance. Quote in 2 hours.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea or air from any US coast. All-inclusive pricing with UK customs clearance. Request a shipment-specific quote.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
                 Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />

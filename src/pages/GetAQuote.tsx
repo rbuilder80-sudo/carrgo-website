@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import {
   CheckCircle, ArrowRight, ArrowLeft, Send,
-  Clock, FileCheck, TrendingUp, Shield, Mail
+  Clock, FileCheck, Shield, Mail
 } from 'lucide-react';
 
 /* ── JSON-LD Structured Data ── */
@@ -12,9 +12,14 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Freight Quote Service',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: {
+    '@type': 'Organization',
+    name: 'CARRGO FREIGHT LTD',
+    identifier: '17480219',
+    url: 'https://www.carrgo.co.uk',
+  },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
-  description: 'Get an all-inclusive freight quote within 2 hours. Sea, air, road, and rail freight forwarding from Carrgo.',
+  description: 'Request a shipment-specific sea, air, road or rail freight quote from Carrgo.',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -26,21 +31,21 @@ const serviceSchema = {
 const benefits = [
   {
     icon: Clock,
-    title: '2-Hour Response',
-    desc: 'We respond within 2 hours during UK business hours. Average response time is just 1 hour 42 minutes.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'All-Inclusive Pricing',
-    desc: 'Every cost itemised — freight, customs, documentation, and UK delivery. No surprises, ever.',
+    title: 'Shipment-Specific Review',
+    desc: 'We review the route, cargo, timing and handling requirements before preparing a quote.',
   },
   {
     icon: FileCheck,
-    title: 'Customs Clearance Included',
-    desc: 'Customs clearance built into every quote. Our customs brokers handle everything.',
+    title: 'Clear Quote Scope',
+    desc: 'Your quote explains the included freight, customs, documentation and delivery items that apply to the shipment.',
   },
   {
     icon: Shield,
+    title: 'Customs Scope Confirmed',
+    desc: 'We confirm the customs support and documents required for the route and goods before booking.',
+  },
+  {
+    icon: Clock,
     title: 'Multiple Options',
     desc: 'We compare sea, air, road, and rail to find the best balance of speed and cost for your shipment.',
   },
@@ -78,10 +83,10 @@ const hearAbout = [
 ];
 
 const whatHappensNext = [
-  { step: '1', title: 'We Review', desc: 'Our team reviews your shipment details within 2 hours during UK business hours.' },
-  { step: '2', title: 'We Compare', desc: 'We calculate the best route and rates across our carrier network for your cargo.' },
-  { step: '3', title: 'You Receive', desc: 'You get your all-inclusive quote with every cost itemised and explained clearly.' },
-  { step: '4', title: 'We Ship', desc: 'Approve the quote and we book your shipment — collection through to delivery.' },
+  { step: '1', title: 'We Review', desc: 'Our team checks the route, cargo, timing and handling details supplied.' },
+  { step: '2', title: 'We Check Options', desc: 'We confirm suitable freight modes, carrier availability and the customs scope.' },
+  { step: '3', title: 'You Receive', desc: 'You receive a shipment-specific quote explaining the included services and assumptions.' },
+  { step: '4', title: 'You Decide', desc: 'If you accept the quote, we confirm the booking and next collection steps.' },
 ];
 
 function generateReference() {
@@ -141,7 +146,7 @@ export default function GetAQuote() {
     <>
       <Seo
         title="Get a Freight Quote UK | Shipping & Air Freight Quotes | Carrgo"
-        description="Get freight quotations in 2 hours. Sea, air, road & rail shipping quotes UK. Tell us your route, cargo & timing — we send all-inclusive pricing."
+        description="Request a shipment-specific UK freight quote for sea, air, road or rail. Tell Carrgo the route, goods, weight or volume and timing."
         keywords="freight quote uk, shipping quote uk, freight forwarding quote, sea freight quote, air freight quote, customs clearance quote, freight cost estimate, cheap freight uk"
         ogUrl="https://www.carrgo.co.uk/get-a-quote"
         canonical="https://www.carrgo.co.uk/get-a-quote"
@@ -156,10 +161,10 @@ export default function GetAQuote() {
             <div className="text-center max-w-3xl mx-auto">
               <span className="inline-block text-xs font-semibold tracking-widest text-[#1A6DFF] uppercase mb-4">Get a Quote</span>
               <h1 id="quote-hero-heading" className="text-4xl lg:text-5xl font-extrabold text-[#111827] leading-tight mb-6">
-                Get a Freight Quote UK — Shipping Quotes in 2 Hours
+                Get a Shipment-Specific Freight Quote
               </h1>
               <p className="text-lg text-[#4B5563] leading-relaxed">
-                Complete the form below and our team will respond with a competitive, all-inclusive freight quote. No hidden fees, no obligation. Average response time: 1 hour 42 minutes.
+                Tell us the origin, destination, goods, weight or volume and timing. We will review the shipment requirements before preparing a no-obligation quote.
               </p>
             </div>
           </div>
@@ -175,7 +180,7 @@ export default function GetAQuote() {
                   Why Request a Quote From Carrgo?
                 </h2>
                 <p className="text-[#4B5563] mb-6 leading-relaxed">
-                  We have helped over 500 UK importers reduce freight costs by up to 22% while eliminating customs delays. Get your quote today and see the difference.
+                  A useful freight quote depends on the actual route, cargo, ready date and delivery scope. Supplying those details helps us check the right mode and requirements.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -198,7 +203,7 @@ export default function GetAQuote() {
                 {/* Trust indicators */}
                 <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-5 mb-6">
                   <div className="flex flex-wrap gap-3">
-                    {['Industry Compliant', 'HMRC Registered', 'Experienced Team'].map((badge) => (
+                    {['Shipment-specific scope', 'No-obligation request', 'Customs requirements checked'].map((badge) => (
                       <span key={badge} className="inline-flex items-center gap-1 text-xs font-medium text-[#16A34A] bg-[#DCFCE7] px-3 py-1.5 rounded-full">
                         <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" /> {badge}
                       </span>
@@ -230,7 +235,7 @@ export default function GetAQuote() {
                       </div>
                       <h3 className="text-2xl font-bold text-[#111827] mb-2">Quote Request Received!</h3>
                       <p className="text-[#4B5563] mb-4 max-w-md mx-auto leading-relaxed">
-                        Thank you. Our team will review your shipment details and respond within 2 hours with your all-inclusive quote.
+                        Thank you. Our team will review the supplied shipment details and contact you about the quote or any missing information.
                       </p>
                       <div className="bg-[#F8FAFC] rounded-lg p-4 inline-block mb-6">
                         <span className="text-sm text-[#4B5563]">Your Reference: </span>

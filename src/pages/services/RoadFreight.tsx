@@ -12,7 +12,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Road Freight UK — European Haulage & Transport Company',
-  provider: { '@type': 'Organization', name: 'Carrgo Freight Solutions Ltd' },
+  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
   areaServed: [
     { '@type': 'Country', name: 'United Kingdom' },
     { '@type': 'Continent', name: 'Europe' },

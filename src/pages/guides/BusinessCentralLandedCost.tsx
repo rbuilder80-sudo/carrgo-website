@@ -12,7 +12,7 @@ const pageSchema = {
     'If your purchase invoices live in Dynamics 365 Business Central but your customs data doesn\u2019t, your margins are guessing. Carrgo reviews the nine inputs that decide your UK landed cost.',
   publisher: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
 };

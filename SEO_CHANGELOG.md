@@ -1,5 +1,28 @@
 # SEO change and outcome log
 
+## 5 October 2026 — legal entity and quote-claim correction
+
+### Public evidence reviewed
+
+- The official Companies House record identifies the active company as CARRGO FREIGHT LTD, company number 17480219, with its registered office at 66 Paul Street, London, England, EC2A 4NA: https://find-and-update.company-information.service.gov.uk/company/17480219
+- Carrgo's public home, contact, quote and service pages still exposed an unsupported two-hour quote-response promise. The repository contained no response-time measurement or service commitment that substantiated it.
+- The contact page also exposed a placeholder WhatsApp number, opening hours, map coordinates and a different office address without supporting business records.
+
+### Shipped correction
+
+- Aligned the legal entity across page copy, legal pages, footer, Organization schema and static HTML generation.
+- Updated the legal pages' visible revision date to the actual date of this substantive company-identity correction.
+- Removed the unsupported two-hour response promise across source and generated metadata while preserving route transit-time statements.
+- Rebuilt the quote and contact copy around shipment-specific review, retained the high-intent quote forms and removed unverified contact methods and LocalBusiness fields.
+- Removed the fabricated shared July `last-modified` and `date` meta tags from generated pages.
+- Added repository guards against reintroducing the old legal name, placeholder contact details, unsupported response/performance claims or missing quote-form fields.
+
+### Outcome and limitations
+
+- This is a factual-integrity and conversion-trust correction. It does not claim ranking, traffic, authority, response-time or enquiry gains.
+- Existing search snippets may retain the old wording until recrawled. No Search Console submission, Indexing API call or retired sitemap ping was used.
+- Private Friday-distribution outcomes remain unknown because `support@carrgo.co.uk` is not available as an authenticated connected mailbox. No outreach or follow-up was sent.
+
 ## 28 September 2026 — evidence and trust correction
 
 ### Public evidence reviewed

@@ -13,7 +13,7 @@ const serviceSchema = {
   name: 'Container Shipping UK — FCL & LCL Sea Freight',
   provider: {
     '@type': 'Organization',
-    name: 'Carrgo Freight Solutions Ltd',
+    name: 'CARRGO FREIGHT LTD',
     url: 'https://www.carrgo.co.uk',
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
@@ -107,7 +107,7 @@ const howSteps = [
   {
     step: '1',
     title: 'Get Your Quote',
-    description: 'Tell us your cargo details, origin, destination and timeline. We will send an all-inclusive FCL or LCL quote within 2 hours.',
+    description: 'Tell us your cargo details, origin, destination and timeline. We will send an all-inclusive FCL or LCL shipment-specific quote after reviewing the supplied details.',
     icon: Globe,
   },
   {
@@ -180,7 +180,7 @@ export default function ContainerShipping() {
     <>
       <Seo
         title="Container Shipping UK | FCL, LCL & Sea Freight Containers | Carrgo"
-        description="UK container shipping — 20ft, 40ft, FCL & LCL. Get container shipping quotes in 2 hours. Full load and part load sea freight to 150+ countries."
+        description="UK container shipping — 20ft, 40ft, FCL & LCL. Get container shipment-specific shipping quotes. Full load and part load sea freight to 150+ countries."
         keywords="container shipping uk, fcl shipping, lcl shipping, container shipping quote, sea freight containers, 20ft container, 40ft container, container freight uk, full container load, less than container load"
         ogUrl="https://www.carrgo.co.uk/services/container-shipping"
         canonical="https://www.carrgo.co.uk/services/container-shipping"
@@ -424,7 +424,7 @@ export default function ContainerShipping() {
               Get Your Container Shipping Quote
             </h2>
             <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              Whether you need a 20ft container from China, a 40ft HC from India, or LCL groupage from Europe, our team will provide a competitive, all-inclusive quote within 2 hours.
+              Whether you need a 20ft container from China, a 40ft HC from India, or LCL groupage from Europe, our team will provide a competitive, all-inclusive quote after reviewing the supplied details.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
