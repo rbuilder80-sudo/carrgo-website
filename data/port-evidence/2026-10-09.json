@@ -2410,34 +2410,34 @@
       "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
       "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
       "publishedOn": "2026-10-09",
-      "publishedAt": "2026-10-09T04:05:00Z",
+      "publishedAt": "2026-10-09T10:30:00Z",
       "checkedOn": "2026-10-09",
-      "checkedAt": "2026-10-09T08:25:55+01:00",
+      "checkedAt": "2026-10-09T15:16:15+01:00",
       "kind": "official-weather-forecast",
       "access": "Public official shipping forecast retrieved",
-      "confidence": "high for the forecast period and Irish Sea and Malin text; reduced for the Shannon warning issue time; none for port-wide congestion conditions",
-      "claim": "The forecast valid 06:00 UTC on 9 October to 06:00 UTC on 10 October has no gale-warning heading for the Irish Sea, where winds are southwest veering northwest force 5 to 7. Malin carries a gale warning issued at 21:54 UTC on 8 October for westerly gale force 8 expected later. Shannon is displayed with a gale warning and occasional gale force 8 in the north, but its listed issue time of 23:47 UTC on 9 October is later than this evidence check, so that warning timestamp is internally inconsistent and is not treated as independently verified. This is sea-area weather context, not a congestion measurement.",
-      "supportedClaim": "The forecast valid 06:00 UTC on 9 October to 06:00 UTC on 10 October has no gale-warning heading for the Irish Sea, where winds are southwest veering northwest force 5 to 7. Malin carries a gale warning issued at 21:54 UTC on 8 October for westerly gale force 8 expected later. Shannon is displayed with a gale warning and occasional gale force 8 in the north, but its listed issue time of 23:47 UTC on 9 October is later than this evidence check, so that warning timestamp is internally inconsistent and is not treated as independently verified. This is sea-area weather context, not a congestion measurement.",
-      "validFrom": "2026-10-09T06:00:00Z",
-      "validThrough": "2026-10-10T06:00:00Z",
+      "confidence": "high for the stated forecast period and text; none for port-wide congestion conditions",
+      "claim": "The shipping forecast issued at 10:30 UTC and valid from 12:00 UTC on 9 October to 12:00 UTC on 10 October carries gale warnings for Malin and Shannon. The Irish Sea has no gale-warning heading and winds are forecast southwest veering northwest force 5 to 7. This is sea-area weather context, not a congestion measurement.",
+      "supportedClaim": "The shipping forecast issued at 10:30 UTC and valid from 12:00 UTC on 9 October to 12:00 UTC on 10 October carries gale warnings for Malin and Shannon. The Irish Sea has no gale-warning heading and winds are forecast southwest veering northwest force 5 to 7. This is sea-area weather context, not a congestion measurement.",
+      "validFrom": "2026-10-09T12:00:00Z",
+      "validThrough": "2026-10-10T12:00:00Z",
       "observedAt": null,
-      "missingEvidence": "A non-future Shannon warning issue time, port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
     },
     {
       "id": "met-office-inshore-2026-10-09",
       "publisher": "Met Office",
       "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast",
       "publishedOn": "2026-10-09",
-      "publishedAt": "2026-10-09T06:00:00Z",
+      "publishedAt": "2026-10-09T12:00:00Z",
       "checkedOn": "2026-10-09",
-      "checkedAt": "2026-10-09T08:25:55+01:00",
+      "checkedAt": "2026-10-09T15:16:15+01:00",
       "kind": "official-weather-forecast",
       "access": "Public official inshore forecast retrieved",
       "confidence": "high for the stated forecast period; none for port-wide congestion conditions",
       "claim": "Strong-wind warnings continue for all five relevant sectors from St Davids Head through the North Channel. Forecast winds reach force 7 in every sector; Lough Foyle to Carlingford Lough has occasional gale force 8 in the northeast, and the Firth of Clyde and North Channel sector has occasional gale force 8 in the North Channel. This is coastal weather context, not evidence of port congestion.",
       "supportedClaim": "Strong-wind warnings continue for all five relevant sectors from St Davids Head through the North Channel. Forecast winds reach force 7 in every sector; Lough Foyle to Carlingford Lough has occasional gale force 8 in the northeast, and the Firth of Clyde and North Channel sector has occasional gale force 8 in the North Channel. This is coastal weather context, not evidence of port congestion.",
-      "validFrom": "2026-10-09T06:00:00Z",
-      "validThrough": "2026-10-10T06:00:00Z",
+      "validFrom": "2026-10-09T12:00:00Z",
+      "validThrough": "2026-10-10T12:00:00Z",
       "observedAt": null,
       "missingEvidence": "Port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
     }
@@ -2665,6 +2665,6 @@
     "missingEvidence": null
   },
   "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
-  "checkedAt": "2026-10-09T08:25:55+01:00",
-  "changesSincePreviousCheck": "Belfast Notice 25/2026 is now accessible and confirms that HMS QUEEN ELIZABETH was scheduled to arrive at D1 berth at 08:00 on 7 October, with a 100-metre exclusion zone during her stay. The notice gives no departure time, so current vessel presence and exclusion-zone status remain unknown. Liverpool still lists Notices 68 and 67 as latest, Dublin still lists Notice 49 as latest, and Belfast lists Notice 25 as latest. Malin carries a gale warning and relevant inshore sectors forecast winds up to gale force 8. Shannon is displayed with a gale warning, but its issue time is later than this evidence check and is marked internally inconsistent. These are local navigation notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+  "checkedAt": "2026-10-09T15:16:15+01:00",
+  "changesSincePreviousCheck": "Belfast Notice 25/2026 confirms that HMS QUEEN ELIZABETH was scheduled to arrive at D1 berth at 08:00 on 7 October, with a 100-metre exclusion zone during her stay; current vessel presence and exclusion-zone status remain unknown because no departure time is stated. Liverpool still lists Notices 68 and 67 as latest, Dublin still lists Notice 49 as latest, and Belfast lists Notice 25 as latest. The afternoon Met Office forecasts carry gale warnings for Malin and Shannon and strong-wind warnings for the relevant coastal sectors. These are local navigation notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
 }
