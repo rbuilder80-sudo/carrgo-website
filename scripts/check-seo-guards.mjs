@@ -33,9 +33,11 @@ const commercialSource = [...sourceFiles('src'), 'scripts/generate-static.py', '
 requireText(layout.includes('<PortQuoteForm'), 'Global contextual quote form is missing from Layout');
 requireText(layout.includes("'/routes/china-to-uk'"), 'China–UK quote context is missing');
 requireText(layout.includes("origin: 'China'"), 'China route origin is not preselected');
-requireText(quoteForm.includes('Approximate weight / volume'), 'Quick quote weight/volume field is missing');
-requireText(quoteForm.includes('I’m not sure'), 'Quick quote dimensions fallback is missing');
-requireText(quoteForm.includes('name="email"'), 'Quick quote contact field is missing');
+requireText(quoteForm.includes('Approx. weight / volume'), 'Quick quote weight/volume field is missing');
+requireText(quoteForm.includes('Not sure'), 'Quick quote equipment fallback is missing');
+requireText(quoteForm.includes('quick-email') && quoteForm.includes('type="email"'), 'Quick quote contact field is missing');
+requireText(quoteForm.includes("submitToFormspree('Quick Freight Quote'"), 'Quick quote delivery integration is missing');
+requireText(quoteForm.includes('40HC') && quoteForm.includes('45HC') && quoteForm.includes('FTL') && quoteForm.includes('LCL'), 'Quick quote full load and container choices missing');
 
 requireText(correction.includes('Unverified client claims withdrawn'), 'Evidence correction notice is missing');
 requireText(correction.includes('noindex'), 'Evidence correction pages must be noindex');
