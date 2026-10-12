@@ -27,7 +27,7 @@ const faqData = [
   },
   {
     q: 'How quickly can I get a cargo shipping quote?',
-    a: 'Carrgo aims to provide all-inclusive cargo shipping quotes within 2 business hours when shipment details are complete.',
+    a: 'Submit the origin, destination, cargo description, weight, dimensions and ready date so the quotation can be prepared against the supplied shipment details.',
   },
 ];
 

@@ -54,7 +54,7 @@ const faqData = [
   },
   {
     question: 'How quickly can I get a cargo services quote?',
-    answer: 'Carrgo aims to send freight and cargo quotes within 2 business hours when the shipment details are complete.',
+    answer: 'Submit the origin, destination, cargo description, weight, dimensions and ready date so the quotation can be prepared against the supplied shipment details.',
   },
 ];
 

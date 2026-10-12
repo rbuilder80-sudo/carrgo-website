@@ -50,7 +50,7 @@ for (const [path, content] of [
   requireText(!unsupportedTrustClaims.test(content), `${path} exposes an unsupported trust or performance claim`);
 }
 
-const unsupportedCommercialClaims = /(quote|quotes|respond|response|price)[^.\n]{0,60}(within|in)\s+(two|2)\s*hours?|(?:two|2)[-\s]*hour[^.\n]{0,40}(quote|response)|1 hour 42|up to 22%|HMRC Registered|447700123456|International Trade Centre|EC2A 4BX|Carrgo Freight Solutions Ltd/i;
+const unsupportedCommercialClaims = /(quote|quotes|respond|response|price)[^.\n]{0,60}(within|in)\s+(two|2)\s*(business\s*)?hours?|(?:two|2)[-\s]*(business\s*)?hour[^.\n]{0,40}(quote|response)|1 hour 42|up to 22%|HMRC Registered|447700123456|International Trade Centre|EC2A 4BX|Carrgo Freight Solutions Ltd/i;
 requireText(!unsupportedCommercialClaims.test(commercialSource), 'Source exposes an unsupported response, performance, contact or legal-entity claim');
 
 const unsupportedChinaPriceClaims = /GBP 300 per CBM|GBP 1,200-2,800|GBP 2,000-4,500|£800–£3,500\/container|£4–£8\/kg|£2,500–£4,000\/container|£0\.50–£1\.50|£4\.50–£8\.50|£2\.00–£3\.50/i;
