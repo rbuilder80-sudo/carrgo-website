@@ -9,19 +9,50 @@ const initial = { mode: 'sea', load: 'FCL', equipment: '40HC', origin: '', desti
 
 export default function PortQuoteForm({ title, destination, sourcePage, origin }: Props) {
   const [open, setOpen] = useState(false);
+  const [autoPopupBlocked, setAutoPopupBlocked] = useState(false);
   const [step, setStep] = useState(1);
   const [values, setValues] = useState({ ...initial, origin: origin || '', destination });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [sent, setSent] = useState(false);
+  const popupStorageKey = `carrgo_quote_popup_seen:${sourcePage}`;
   const change = (key: keyof typeof initial, value: string) => setValues(v => ({ ...v, [key]: value }));
-  useEffect(() => { setOpen(false); setStep(1); setSent(false); setValues({ ...initial, origin: origin || '', destination }); }, [sourcePage, origin, destination]);
+  const markPopupSeen = () => {
+    setAutoPopupBlocked(true);
+    try { window.sessionStorage.setItem(popupStorageKey, '1'); } catch {}
+  };
+  const openQuoteForm = () => {
+    markPopupSeen();
+    setOpen(true);
+  };
+  const closeQuoteForm = () => {
+    markPopupSeen();
+    setOpen(false);
+  };
+  useEffect(() => {
+    let seen = false;
+    try { seen = window.sessionStorage.getItem(popupStorageKey) === '1'; } catch {}
+    setOpen(false);
+    setStep(1);
+    setSent(false);
+    setAutoPopupBlocked(seen);
+    setValues({ ...initial, origin: origin || '', destination });
+  }, [sourcePage, origin, destination, popupStorageKey]);
+  useEffect(() => {
+    if (open || sent || autoPopupBlocked) return;
+    const timer = window.setTimeout(() => {
+      setOpen(true);
+      setAutoPopupBlocked(true);
+      try { window.sessionStorage.setItem(popupStorageKey, '1'); } catch {}
+    }, 30000);
+    return () => window.clearTimeout(timer);
+  }, [autoPopupBlocked, open, popupStorageKey, sent]);
   useEffect(() => {
     if (!open) return;
-    const close = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    const close = (e: KeyboardEvent) => { if (e.key === 'Escape') closeQuoteForm(); };
     document.addEventListener('keydown', close);
     return () => document.removeEventListener('keydown', close);
-  }, [open]);
+  }, [open, popupStorageKey]);
   async function send(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (busy) return;
@@ -31,16 +62,16 @@ export default function PortQuoteForm({ title, destination, sourcePage, origin }
       shipment_priority: values.load === 'FCL' || values.load === 'FTL' ? 'Full load' : 'Part load'
     });
     setBusy(false);
-    if (result.success) { setSent(true); trackLead('quick_quote', result.deliveryMethod); }
+    if (result.success) { markPopupSeen(); setSent(true); trackLead('quick_quote', result.deliveryMethod); }
     else setError(result.error || 'Unable to send. Please email support@carrgo.co.uk.');
   }
   return <div id="quick-quote">
-    <button type="button" onClick={() => setOpen(true)} className="fixed bottom-5 right-5 z-40 hidden min-h-12 items-center gap-2 rounded-full bg-[#1A6DFF] px-5 font-bold text-white shadow-xl hover:bg-[#1557CC] lg:inline-flex"><FileText size={19}/> Get a Freight Quote</button>
-    <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 p-2 shadow-lg lg:hidden"><button type="button" onClick={() => setOpen(true)} className="min-h-12 w-full rounded-xl bg-[#1A6DFF] font-bold text-white">Get a Freight Quote</button></div>
+    <button type="button" onClick={openQuoteForm} className="fixed bottom-5 right-5 z-40 hidden min-h-12 items-center gap-2 rounded-full bg-[#1A6DFF] px-5 font-bold text-white shadow-xl hover:bg-[#1557CC] lg:inline-flex"><FileText size={19}/> Get a Freight Quote</button>
+    <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 p-2 shadow-lg lg:hidden"><button type="button" onClick={openQuoteForm} className="min-h-12 w-full rounded-xl bg-[#1A6DFF] font-bold text-white">Get a Freight Quote</button></div>
     {open && <>
-      <button type="button" onClick={() => setOpen(false)} aria-label="Close quick quote" className="fixed inset-0 z-40 bg-slate-950/40"/>
+      <button type="button" onClick={closeQuoteForm} aria-label="Close quick quote" className="fixed inset-0 z-40 bg-slate-950/40"/>
       <section role="dialog" aria-modal="true" aria-label={title} className="fixed inset-x-2 bottom-2 top-6 z-50 overflow-y-auto rounded-2xl bg-white p-5 shadow-2xl sm:inset-x-auto sm:bottom-5 sm:right-5 sm:top-12 sm:w-[430px]">
-        <div className="mb-4 flex items-start justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Free, no-obligation quote</p><h2 className="text-xl font-extrabold text-gray-900">{title}</h2><p className="text-sm text-gray-600">Quick details now; we can confirm the rest later.</p></div><button type="button" aria-label="Close quote form" onClick={() => setOpen(false)} className="rounded-full p-2 hover:bg-gray-100"><X/></button></div>
+        <div className="mb-4 flex items-start justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Free, no-obligation quote</p><h2 className="text-xl font-extrabold text-gray-900">{title}</h2><p className="text-sm text-gray-600">Quick details now; we can confirm the rest later.</p></div><button type="button" aria-label="Close quote form" onClick={closeQuoteForm} className="rounded-full p-2 hover:bg-gray-100"><X/></button></div>
         {sent ? <div role="status" className="space-y-3 py-8 text-center"><CheckCircle className="mx-auto text-green-600" size={44}/><h3 className="text-xl font-bold">Request submitted</h3><p>Thank you. We will review your shipment and reply using your contact details.</p><p className="text-sm">If you do not hear back, email support@carrgo.co.uk.</p></div> :
         <form onSubmit={send} className="space-y-3">
           <p className="text-xs font-semibold text-gray-500">Step {step} of 2</p>
