@@ -10,8 +10,8 @@ import {
 const faqData = [
   { q: 'How long does sea freight from China to UK take?', a: 'Sea freight from China to the UK typically takes 25–35 days port-to-port depending on the origin port. Shanghai to Felixstowe is approximately 25–28 days, while Shenzhen to Southampton averages 28–32 days. Door-to-door service adds approximately 7–10 days for inland collection and UK delivery.' },
   { q: 'What documents are required for shipping from China to the UK?', a: 'You will need a commercial invoice, packing list, bill of lading (for sea freight) or airway bill (for air freight), and a valid EORI number. Depending on your goods, you may also need certificates of origin, import licences, or conformity certificates (UKCA/CE marking).' },
-  { q: 'Is rail freight from China to UK reliable?', a: 'Yes. Rail freight via the New Silk Road has become highly reliable, with transit times of 14–20 days. It offers an excellent middle ground between the speed of air freight and the cost-effectiveness of sea freight. Services run regularly from Xi\'an, Yiwu, and Chengdu to the UK via Duisburg.' },
-  { q: 'What are the main China origin ports for UK-bound cargo?', a: 'The busiest departure ports are Shanghai (world\'s largest container port), Shenzhen (including Shekou and Yantian), Ningbo-Zhoushan, Qingdao, Tianjin, Xiamen, and Dalian. Your choice of port depends on your supplier\'s location and carrier availability.' },
+  { q: 'Is rail freight from China to UK suitable for every shipment?', a: 'Not always. Rail routing, departure availability, cargo acceptance and transit-country requirements must be confirmed for each shipment. Ask for a current route check before relying on rail for a deadline.' },
+  { q: 'What are the main China origin ports for UK-bound cargo?', a: 'Common origin options include Shanghai, Shenzhen (including Shekou and Yantian), Ningbo-Zhoushan, Qingdao, Tianjin, Xiamen and Dalian. The practical departure point depends on the supplier location, cargo and current carrier service.' },
   { q: 'How much does shipping from China to the UK cost?', a: 'The price depends on the collection point, destination, transport mode, cargo dimensions, weight, commodity, Incoterm and current carrier charges. Send those details for a shipment-specific FCL, LCL, air or rail freight quote.' },
 ];
 
@@ -75,28 +75,28 @@ export default function ChinaToUk() {
               {
                 "@type": "HowToStep",
                 "name": "Choose Your Transport Mode",
-                "text": "Select sea freight (25–35 days, most economical), air freight (3–5 days, fastest), or rail freight (14–20 days, best balance). Consider your cargo volume, budget, and delivery deadline.",
+                "text": "Compare sea freight (25–35 days), air freight (3–5 days) and rail freight (14–20 days) against the cargo, available service, budget and delivery deadline.",
                 "url": "https://www.carrgo.co.uk/routes/china-to-uk"
               },
               {
                 "@type": "HowToStep",
                 "name": "Prepare Export Documentation",
-                "text": "Ensure your supplier provides a commercial invoice, packing list, and bill of lading (sea) or airway bill (air). Obtain a Certificate of Origin if claiming preferential tariff rates.",
+                "text": "Confirm the commercial invoice, packing list and transport-document requirements. Extra certificates, licences or controls depend on the commodity and routing.",
               },
               {
                 "@type": "HowToStep",
                 "name": "Book Freight with a Forwarder",
-                "text": "Contact Carrgo with your cargo details (weight, dimensions, HS code, origin port). We provide an all-inclusive quote covering freight, fuel, documentation, and UK customs clearance.",
+                "text": "Contact Carrgo with the origin, destination, cargo description, weight, dimensions, Incoterm and ready date. The quotation will identify the services and charges included for that shipment.",
               },
               {
                 "@type": "HowToStep",
                 "name": "Obtain a UK EORI Number",
-                "text": "Register for an EORI number with HMRC if you don't already have one. This is mandatory for all UK import declarations.",
+                "text": "Check whether the importer needs a GB or XI EORI number for the planned movement and obtain the appropriate registration before the declaration is submitted.",
               },
               {
                 "@type": "HowToStep",
                 "name": "Customs Clearance at UK Port",
-                "text": "Carrgo's customs brokers submit your import declaration to HMRC, calculate duty and VAT (20% standard), and arrange for cargo release once payment is confirmed.",
+                "text": "Confirm the customs-declaration scope, commodity code, duty and VAT treatment before booking. Requirements and charges depend on the goods and shipment structure.",
               },
               {
                 "@type": "HowToStep",
@@ -236,9 +236,9 @@ export default function ChinaToUk() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Shanghai (Port of Shanghai)', desc: 'World\'s busiest container port — primary hub for UK-bound cargo' },
+                    { name: 'Shanghai (Port of Shanghai)', desc: 'Origin option for suppliers in and around eastern China' },
                     { name: 'Shenzhen (Shekou/Yantian)', desc: 'Major southern hub serving Pearl River Delta manufacturers' },
-                    { name: 'Ningbo-Zhoushan', desc: 'Second-busiest Chinese port — excellent for Zhejiang province goods' },
+                    { name: 'Ningbo-Zhoushan', desc: 'Origin option for suppliers in Zhejiang province' },
                     { name: 'Qingdao', desc: 'Key northern port serving Shandong and northern China' },
                     { name: 'Tianjin', desc: 'Primary port for Beijing and northeastern China cargo' },
                     { name: 'Xiamen', desc: 'Major port in Fujian province — strong UK connections' },
@@ -261,14 +261,14 @@ export default function ChinaToUk() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Felixstowe', desc: 'UK\'s largest container port — handles 40% of UK container traffic' },
-                    { name: 'Southampton', desc: 'Second-largest UK container port — deep-water capability' },
+                    { name: 'Felixstowe', desc: 'Potential UK arrival port for container services' },
+                    { name: 'Southampton', desc: 'Potential UK arrival port for container services' },
                     { name: 'London Gateway', desc: 'Modern deep-sea port with integrated logistics park' },
                     { name: 'Liverpool', desc: 'Key northwest port with Irish Sea connections' },
-                    { name: 'Heathrow Airport', desc: 'UK\'s largest air cargo hub — express freight gateway' },
-                    { name: 'Manchester Airport', desc: 'Northern air freight hub with growing cargo capacity' },
-                    { name: 'East Midlands Airport', desc: 'Central UK air cargo hub — strong e-commerce links' },
-                    { name: 'Tilbury', desc: 'Fastest-growing UK port — RoRo and container services' },
+                    { name: 'Heathrow Airport', desc: 'Potential arrival airport for air-freight services' },
+                    { name: 'Manchester Airport', desc: 'Potential northern arrival airport for air freight' },
+                    { name: 'East Midlands Airport', desc: 'Potential central UK arrival airport for air freight' },
+                    { name: 'Tilbury', desc: 'Potential UK arrival port where the carrier service is suitable' },
                   ].map((port, i) => (
                     <li key={i} className="flex gap-3">
                       <Anchor className="w-5 h-5 text-[#1A6DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -349,7 +349,7 @@ export default function ChinaToUk() {
                 </tbody>
               </table>
             </div>
-            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which mode suits your shipment? <Link to="/get-a-quote" className="text-[#1A6DFF] font-medium hover:underline">Get a free quote</Link> and Carrgo will recommend the best option.</p>
+            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which mode suits your shipment? <Link to="/get-a-quote" className="text-[#1A6DFF] font-medium hover:underline">Request a shipment-specific quote</Link> so the available routes can be compared against your cargo and deadline.</p>
           </div>
         </section>
 
@@ -358,7 +358,7 @@ export default function ChinaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are commonly shipped from China to the UK?</h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Common commercial imports include electronics, machinery, furniture, textiles, toys, automotive parts and consumer goods. Packaging, documentation and product-control requirements must be checked against the specific commodity.</p>
-            <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this trade lane</p>
+            <p className="text-center text-gray-600 mb-10">Common commodity examples; acceptance and documentation must be confirmed</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { name: 'Electronics & Tech', desc: 'Consumer electronics, components, smartphones, laptops, chargers and accessories.' },
@@ -385,7 +385,7 @@ export default function ChinaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What customs clearance and documentation is needed for China to UK imports?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              UK importers need a valid EORI number, commercial invoice, packing list, bill of lading or airway bill, and sometimes a certificate of origin. Carrgo's experienced customs brokers handle all UK import declarations to ensure smooth clearance at the port of entry.
+              UK importers generally need an EORI number and core commercial and transport documents. Extra licences, certificates or controls depend on the commodity and origin. Confirm the declaration and representation scope before booking.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -399,7 +399,7 @@ export default function ChinaToUk() {
                     'Bill of Lading (sea) or Airway Bill (air freight)',
                     'Certificate of Origin (for preferential tariff claims)',
                     'Import Licence (for restricted goods only)',
-                    'UK EORI Number (required for all UK importers)',
+                    'The appropriate GB or XI EORI number where required',
                   ].map((doc, i) => (
                     <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
                       <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -415,23 +415,23 @@ export default function ChinaToUk() {
                 <ul className="space-y-3 text-gray-600 text-sm">
                   <li className="flex justify-between pb-2 border-b border-gray-100">
                     <span>Import Duty</span>
-                    <span className="font-medium">Varies by HS code (0%–25%+)</span>
+                    <span className="font-medium">Check the current UK Trade Tariff for the commodity</span>
                   </li>
                   <li className="flex justify-between pb-2 border-b border-gray-100">
                     <span>VAT</span>
-                    <span className="font-medium">20% (standard rate)</span>
+                    <span className="font-medium">Confirm the applicable VAT treatment for the import</span>
                   </li>
                   <li className="flex justify-between pb-2 border-b border-gray-100">
                     <span>Customs Clearance Fee</span>
-                    <span className="font-medium">Included in Carrgo quote</span>
+                    <span className="font-medium">Scope and fee shown on the shipment quote</span>
                   </li>
                   <li className="flex justify-between pb-2 border-b border-gray-100">
                     <span>Port Handling</span>
-                    <span className="font-medium">Included in Carrgo quote</span>
+                    <span className="font-medium">Carrier and terminal charges shown where applicable</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Commodity Codes</span>
-                    <span className="font-medium">We help you classify</span>
+                    <span className="font-medium">Importer must confirm the correct commodity code</span>
                   </li>
                 </ul>
               </div>
@@ -443,15 +443,15 @@ export default function ChinaToUk() {
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">Why should I choose Carrgo for China to UK shipping?</h2>
-            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Carrgo offers established China expertise, dedicated customs specialists, shipment-specific quotes, live shipment tracking, a dedicated account manager, and all-inclusive pricing with no hidden fees — making us the preferred freight forwarder for UK importers sourcing from China.</p>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">A useful China–UK quote should define the route, charging basis, customs scope and final-delivery requirements for the shipment details supplied.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Globe, title: 'China Expertise', desc: 'Established relationships with Chinese freight agents and carriers across all major ports and cities.' },
-                { icon: FileCheck, title: 'Customs Specialists', desc: 'Our experienced brokers ensure first-time clearance with accurate declarations every time.' },
-                { icon: Clock, title: 'Shipment-Specific Quotes', desc: 'Receive your all-inclusive China–UK shipment-specific freight quote after reviewing the supplied details.' },
-                { icon: TrendingUp, title: 'Live Tracking', desc: 'Track your shipment from Chinese factory to UK warehouse with real-time milestone updates.' },
-                { icon: Users, title: 'Dedicated Manager', desc: 'A single point of contact who understands your China supply chain and keeps you informed.' },
-                { icon: Shield, title: 'All-Inclusive Pricing', desc: 'One price covers freight, fuel, documentation, UK customs clearance, and port handling — no surprises.' },
+                { icon: Globe, title: 'Origin and route', desc: 'Provide the supplier collection point so the practical port, airport or rail terminal can be checked.' },
+                { icon: FileCheck, title: 'Customs scope', desc: 'Confirm the importer, Incoterm, commodity code and declaration responsibilities before booking.' },
+                { icon: Clock, title: 'Shipment-specific quote', desc: 'The quotation should identify the current route, charging basis, included services and validity period.' },
+                { icon: TrendingUp, title: 'Milestone expectations', desc: 'Confirm which collection, departure, arrival, customs and delivery updates are available on the selected service.' },
+                { icon: Users, title: 'Shipment contact', desc: 'Confirm who will handle booking questions and operational updates for the movement.' },
+                { icon: Shield, title: 'Charge checks', desc: 'Review origin, freight, destination, customs and final-delivery charges before accepting the quote.' },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -483,11 +483,11 @@ export default function ChinaToUk() {
         <section className="py-16 bg-brand-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">How do I get a China to UK freight quote?</h2>
-            <p className="text-gray-600 mb-6 max-w-xl">Request your all-inclusive China to UK freight quote by filling in our online form with your origin city, cargo details, and preferred transport mode. Carrgo responds after reviewing the shipment details.</p>
-            <p className="text-brand-100 mb-8 text-lg">Sea, air, or rail — we&apos;ll find the best shipping solution for your China imports. All-inclusive shipment-specific quote after reviewing the supplied details.</p>
+            <p className="text-gray-600 mb-6 max-w-xl">Request a China to UK freight quote by filling in the online form with the origin, destination, cargo details and preferred transport mode. The quotation can then be prepared against the shipment details supplied.</p>
+            <p className="text-brand-100 mb-8 text-lg">Sea, air or rail options can be checked against your cargo, origin, destination and required delivery date. The quotation will state its scope and exclusions.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-brand-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
-                Get a Free Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                Request a Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-600 transition-colors min-h-[44px]">
                 Contact Us
@@ -501,13 +501,13 @@ export default function ChinaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Can Carrgo ship China goods onward to Ireland and Northern Ireland?</h2>
             <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-              Yes. Goods arriving at UK ports from China can be forwarded onward to Ireland and Northern Ireland via our Irish Sea services. We offer seamless China-to-Ireland shipping with full customs handling at both UK and Irish entry points, including Northern Ireland Protocol compliance.
+              Onward movement to Ireland or Northern Ireland may be possible, but the route, customs procedure, carrier service and final-delivery scope must be confirmed for the shipment.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Ship, title: 'China to Ireland Sea Freight', time: '30–40 days total', desc: 'FCL and LCL sea freight from Shanghai, Shenzhen, or Ningbo to Dublin Port via UK transit. Full customs clearance at Dublin Port with T1 transit documentation handled by our Irish customs team.' },
-                { icon: Truck, title: 'China to Northern Ireland', time: '30–40 days total', desc: 'Sea freight to Liverpool or Heysham, then onward RoRo ferry to Belfast Harbour or Larne. Full Northern Ireland Protocol compliance and Windsor Framework documentation included.' },
-                { icon: Plane, title: 'China to Ireland Air Freight', time: '5–8 days total', desc: 'Air freight from any Chinese airport to Dublin Airport via Heathrow or Manchester. Express customs clearance and same-day delivery within Ireland for urgent shipments.' },
+                { icon: Ship, title: 'China to Ireland Sea Freight', time: '30–40 days total', desc: 'Ask for a current FCL or LCL route check to Dublin, including whether the service is direct or transhipped and which customs procedure applies.' },
+                { icon: Truck, title: 'China to Northern Ireland', time: '30–40 days total', desc: 'Confirm the booked UK or Irish Sea gateway, onward ferry service, customs status and final-delivery scope.' },
+                { icon: Plane, title: 'China to Ireland Air Freight', time: '5–8 days total', desc: 'Confirm the origin airport, routing, destination airport, customs scope and final delivery before booking.' },
               ].map((mode, i) => {
                 const Icon = mode.icon;
                 return (
@@ -565,25 +565,25 @@ export default function ChinaToUk() {
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Cost &amp; Timing Disclaimer</h2>
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
                   <p className="text-sm text-amber-800 font-medium mb-2">
-                    The rates and transit times shown are representative industry ranges for guidance only.
+                    The transit-time ranges shown are planning guidance only; this page does not publish current freight rates.
                   </p>
                   <p className="text-sm text-amber-700 leading-relaxed">
-                    Actual freight costs depend on fuel surcharges (BAF), peak-season demand, currency fluctuations, cargo type, and carrier availability. Always request a current all-inclusive quote for accurate pricing.
+                    Actual routing, timing and charges depend on the cargo, origin, destination, service availability and quotation date. Request a current shipment-specific quote before committing to a deadline or budget.
                   </p>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">What these estimates do not include</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">•</span>
-                    <span><strong>Import Duty</strong> — varies by HS commodity code (0%–25%+). Use the <a href="https://www.trade-tariff.service.gov.uk/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline">UK Trade Tariff</a> to check your rate.</span>
+                    <span><strong>Import Duty</strong> — check the current rate for the commodity in the <a href="https://www.trade-tariff.service.gov.uk/" target="_blank" rel="noopener noreferrer" className="text-[#1A6DFF] hover:underline">UK Trade Tariff</a>.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">•</span>
-                    <span><strong>VAT</strong> — charged at 20% on most goods (CIF value + duty + shipping).</span>
+                    <span><strong>VAT</strong> — confirm the applicable import-VAT treatment for the goods and importer.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">•</span>
-                    <span><strong>Port congestion delays</strong> — check our <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link> for current wait times at Felixstowe, Southampton, and other UK ports.</span>
+                    <span><strong>Port conditions</strong> — our <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link> records official operational notices and marks unavailable queue or waiting-time measurements as unknown.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">•</span>
@@ -658,26 +658,15 @@ export default function ChinaToUk() {
               </div>
             </div>
 
-            {/* Reviewer byline */}
+            {/* Methodology note */}
             <div className="mt-10 pt-6 border-t border-gray-100">
               <p className="text-sm text-gray-500">
-                <span className="font-medium text-gray-700">Reviewed by Carrgo Operations Team</span> — Last reviewed <time dateTime="2026-07-08">July 2026</time>. Transit times and rates are based on industry benchmarks from Drewry and Freightos. For live port conditions, see our <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link>.
+                <span className="font-medium text-gray-700">Methodology:</span> route examples and transit ranges are planning guidance, not live carrier schedules or quotations. Current service availability, charges and shipment acceptance must be confirmed before booking. For evidence-led port notices, see the <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] hover:underline">Port Congestion Tracker</Link>.
               </p>
             </div>
           </div>
         </section>
 
-        {/* ====== LAST UPDATED ====== */}
-        <section className="py-4 bg-gray-100 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm text-gray-500">
-              <span className="inline-flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                Last Updated: <time dateTime="2026-07-08">July 2026</time> — China-UK shipping rates and transit times verified
-              </span>
-            </p>
-          </div>
-        </section>
       </main>
     </>
   );

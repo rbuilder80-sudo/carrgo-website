@@ -74,8 +74,8 @@ ROUTES = {
                     {"@type": "Question", "name": "Can Carrgo ship to Amazon FBA warehouses in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo supports FBA-compliant shipping, customs clearance, carton prep and final-mile delivery to Amazon fulfilment centres across the UK."}},
                     {"@type": "Question", "name": "Do I need an EORI number to import into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You need a UK EORI number starting with GB to import goods into Great Britain, and an XI EORI number for Northern Ireland. Carrgo can guide you through the registration process."}},
                     {"@type": "Question", "name": "Which freight mode should I use from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "The right mode depends on cargo size, weight, value, deadline, route availability and budget. Sea, air and rail should be compared using current shipment-specific quotes rather than fixed historic price bands."}},
-                    {"@type": "Question", "name": "How quickly can I get a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Carrgo provides all-inclusive shipment-specific freight quotes after reviewing the supplied details. Simply submit your origin, destination, cargo details and ready date through the online quote form or email support@carrgo.co.uk."}},
-                    {"@type": "Question", "name": "Which freight forwarder is best for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "The best freight forwarder for UK imports from China offers clear all-inclusive pricing, proactive customs support, and reliable transit times. Carrgo specialises in China-to-UK sea, air and rail freight with customs clearance included, shipment-specific quotes, and tracking throughout."}},
+                    {"@type": "Question", "name": "How do I request a freight quote from Carrgo?", "acceptedAnswer": {"@type": "Answer", "text": "Submit the origin, destination, cargo description, weight, dimensions, Incoterm and ready date through the online quote form or email support@carrgo.co.uk. The quotation can then identify the route, charging basis and included services for the shipment."}},
+                    {"@type": "Question", "name": "How should I compare freight forwarders for UK imports from China?", "acceptedAnswer": {"@type": "Answer", "text": "Compare current shipment-specific quotations on the same scope: origin collection, route, charging basis, customs responsibilities, destination charges, final delivery, validity period and excluded costs."}},
                     {"@type": "Question", "name": "What documents do I need to import goods into the UK?", "acceptedAnswer": {"@type": "Answer", "text": "You need a commercial invoice, packing list, bill of lading or airway bill, and a UK EORI number starting with GB. Depending on the goods, you may also need certificates of origin, import licences or health certificates. Carrgo prepares all documentation for you."}},
                     {"@type": "Question", "name": "Does Carrgo offer door-to-door shipping from China to the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Carrgo handles door-to-door freight from China to the UK, including supplier collection, freight booking, export customs, UK import customs clearance, duty and VAT calculation, and final delivery to your warehouse or Amazon FBA centre."}}
                 ]
@@ -164,7 +164,7 @@ ROUTES = {
                         "name": "Can Carrgo handle customs and delivery as one service?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Carrgo can include supplier collection, freight booking, UK customs clearance, tracking and final delivery in one all-inclusive cargo quote."
+                            "text": "The shipment quote can identify which collection, freight, customs, tracking and final-delivery services are included. Confirm the scope and exclusions before booking."
                         }
                     },
                     {
@@ -234,7 +234,7 @@ ROUTES = {
                         "name": "How quickly can I get a Manchester freight quote?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Carrgo aims to send all-inclusive freight quotes within 2 business hours when shipment details are complete."
+                            "text": "Submit the origin, destination, cargo description, weight, dimensions and ready date so the quotation can be prepared against the supplied shipment details."
                         }
                     }
                 ]
@@ -296,7 +296,7 @@ ROUTES = {
                         "name": "How quickly can I get a cargo shipping quote?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Carrgo aims to provide all-inclusive cargo shipping quotes within 2 business hours when shipment details are complete."
+                            "text": "Submit the origin, destination, cargo description, weight, dimensions and ready date so the quotation can be prepared against the supplied shipment details."
                         }
                     }
                 ]

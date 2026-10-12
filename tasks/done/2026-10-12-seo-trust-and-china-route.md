@@ -13,8 +13,11 @@
 2. Reworked the existing China–UK route's cost guidance around the information needed for a real quote: origin, destination, commodity, Incoterm, dimensions, weight, mode, customs scope and final delivery.
 3. Removed unreferenced fixed price bands and the unreferenced trade-value statistic without changing the existing transit-time guidance.
 4. Replaced unsupported comparison rows for reliability, carbon, insurance and frequency with booking checks and quote-input guidance.
-5. Added a regression guard covering `index.html`, `llms.txt`, the China route and the static generator so later builds fail if the unsupported two-hour promise or removed China price bands return.
-6. Updated sitemap `lastmod` only for the homepage and China–UK route.
+5. Removed unsupported China-route superlatives and guarantees, including unsourced port rankings, guaranteed first-time clearance, “preferred” status, no-hidden-fee wording, real-time tracking and blanket customs/compliance claims.
+6. Replaced the stale “rates and transit times verified” byline with a methodology note that distinguishes planning ranges from live carrier schedules and quotations.
+7. Corrected the tracker link description: it records dated operational notices and leaves unavailable queue and waiting-time measurements unknown.
+8. Added a regression guard covering `index.html`, `llms.txt`, the China route and the static generator so later builds fail if the unsupported two-hour promise, removed China price bands or specified unsupported China-route claims return.
+9. Updated sitemap `lastmod` only for the homepage and China–UK route.
 
 ## Conversion path
 

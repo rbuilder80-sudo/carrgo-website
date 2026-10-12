@@ -18,6 +18,7 @@ const contact = read('src/pages/Contact.tsx');
 const getAQuote = read('src/pages/GetAQuote.tsx');
 const terms = read('src/pages/Terms.tsx');
 const privacy = read('src/pages/Privacy.tsx');
+const chinaRoute = read('src/pages/routes/ChinaToUk.tsx');
 
 const sourceFiles = (directory) => readdirSync(new URL(`../${directory}`, import.meta.url), { withFileTypes: true })
   .flatMap((entry) => entry.isDirectory()
@@ -59,6 +60,9 @@ for (const [path, content] of [
 ]) {
   requireText(!unsupportedChinaPriceClaims.test(content), `${path} exposes an unsupported China–UK price band`);
 }
+
+const unsupportedChinaMarketingClaims = /preferred freight forwarder|first-time clearance|no hidden fees|rates and transit times verified|current wait times at Felixstowe|world's busiest container port|handles 40% of UK container traffic/i;
+requireText(!unsupportedChinaMarketingClaims.test(chinaRoute), 'China–UK route exposes an unsupported marketing or operational claim');
 
 for (const [path, content] of [
   ['src/pages/Contact.tsx', contact],
