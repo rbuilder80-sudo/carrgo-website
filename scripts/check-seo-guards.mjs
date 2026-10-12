@@ -25,7 +25,7 @@ const sourceFiles = (directory) => readdirSync(new URL(`../${directory}`, import
     : entry.name.endsWith('.tsx') || entry.name.endsWith('.ts')
       ? [`${directory}/${entry.name}`]
       : []);
-const commercialSource = [...sourceFiles('src'), 'scripts/generate-static.py']
+const commercialSource = [...sourceFiles('src'), 'scripts/generate-static.py', 'index.html', 'public/llms.txt']
   .map((path) => `${path}\n${read(path)}`)
   .join('\n');
 
@@ -51,6 +51,14 @@ for (const [path, content] of [
 
 const unsupportedCommercialClaims = /(quote|quotes|respond|response|price)[^.\n]{0,60}(within|in)\s+(two|2)\s*hours?|(?:two|2)[-\s]*hour[^.\n]{0,40}(quote|response)|1 hour 42|up to 22%|HMRC Registered|447700123456|International Trade Centre|EC2A 4BX|Carrgo Freight Solutions Ltd/i;
 requireText(!unsupportedCommercialClaims.test(commercialSource), 'Source exposes an unsupported response, performance, contact or legal-entity claim');
+
+const unsupportedChinaPriceClaims = /GBP 300 per CBM|GBP 1,200-2,800|GBP 2,000-4,500|£800–£3,500\/container|£4–£8\/kg|£2,500–£4,000\/container|£0\.50–£1\.50|£4\.50–£8\.50|£2\.00–£3\.50/i;
+for (const [path, content] of [
+  ['src/pages/routes/ChinaToUk.tsx', read('src/pages/routes/ChinaToUk.tsx')],
+  ['scripts/generate-static.py', generator],
+]) {
+  requireText(!unsupportedChinaPriceClaims.test(content), `${path} exposes an unsupported China–UK price band`);
+}
 
 for (const [path, content] of [
   ['src/pages/Contact.tsx', contact],

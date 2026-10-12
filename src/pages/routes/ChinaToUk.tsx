@@ -12,7 +12,7 @@ const faqData = [
   { q: 'What documents are required for shipping from China to the UK?', a: 'You will need a commercial invoice, packing list, bill of lading (for sea freight) or airway bill (for air freight), and a valid EORI number. Depending on your goods, you may also need certificates of origin, import licences, or conformity certificates (UKCA/CE marking).' },
   { q: 'Is rail freight from China to UK reliable?', a: 'Yes. Rail freight via the New Silk Road has become highly reliable, with transit times of 14–20 days. It offers an excellent middle ground between the speed of air freight and the cost-effectiveness of sea freight. Services run regularly from Xi\'an, Yiwu, and Chengdu to the UK via Duisburg.' },
   { q: 'What are the main China origin ports for UK-bound cargo?', a: 'The busiest departure ports are Shanghai (world\'s largest container port), Shenzhen (including Shekou and Yantian), Ningbo-Zhoushan, Qingdao, Tianjin, Xiamen, and Dalian. Your choice of port depends on your supplier\'s location and carrier availability.' },
-  { q: 'How much does shipping a container from China to UK cost?', a: 'Sea freight costs vary by season and demand. FCL (Full Container Load) typically ranges from £800 to £3,500 per container. LCL (Less than Container Load) is charged per cubic metre. Air freight ranges from £4 to £8 per kilogram. Contact us for an all-inclusive quote with no hidden fees.' },
+  { q: 'How much does shipping from China to the UK cost?', a: 'The price depends on the collection point, destination, transport mode, cargo dimensions, weight, commodity, Incoterm and current carrier charges. Send those details for a shipment-specific FCL, LCL, air or rail freight quote.' },
 ];
 
 function FaqAccordion() {
@@ -44,7 +44,7 @@ export default function ChinaToUk() {
     <>
       <Seo
         title="Shipping from China to UK | Sea, Air & Rail Freight | Carrgo"
-        description="Shipping from China to UK — sea (25-35 days), air (3-5 days), rail (14-20 days). Shanghai, Shenzhen, Ningbo to Felixstowe, Southampton. Get quotes."
+        description="Compare sea, air and rail freight from China to the UK, including supplier collection, customs clearance and final delivery. Request a shipment-specific quote."
         keywords="shipping from china to uk, china to uk freight, sea freight china to uk, fcl shipping from china, lcl china to uk, rail freight china to uk, new silk road shipping, yiwu to london, china to ireland shipping, china to northern ireland freight, china to dublin, china to belfast"
         ogUrl="https://www.carrgo.co.uk/routes/china-to-uk"
         canonical="https://www.carrgo.co.uk/routes/china-to-uk"
@@ -119,7 +119,7 @@ export default function ChinaToUk() {
                   Shipping from China to UK — Sea, Air & Rail Freight
                 </h1>
                 <p className="text-lg text-brand-100 mb-8 leading-relaxed">
-                  Ship goods from China to the UK with Carrgo. Choose from sea freight (25–35 days), air freight (3–5 days), or rail freight (14–20 days). All-inclusive pricing with HMRC customs clearance included.
+                  Ship goods from China to the UK with Carrgo. Choose from sea freight (25–35 days), air freight (3–5 days), or rail freight (14–20 days). Pricing and customs scope are confirmed against your cargo, Incoterm and delivery requirements.
                 </p>
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center border border-white/20">
@@ -170,16 +170,16 @@ export default function ChinaToUk() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What is the China to UK trade lane?</h2>
             <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              The China to UK shipping route is one of the world&apos;s busiest trade corridors. Over £45 billion worth of goods are imported from China to the UK annually, spanning electronics, machinery, textiles, furniture, and consumer products. Carrgo provides comprehensive freight forwarding services across all major transport modes including sea, air, and rail freight.
+              China–UK freight can move by sea, air or rail, with the practical route determined by the supplier location, cargo, required delivery date and UK destination. Carrgo can coordinate collection, international freight, customs scope and final delivery under one shipment plan.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-4xl font-extrabold text-[#1A6DFF] mb-1">£45B+</div>
-                <p className="text-gray-600">Annual UK imports from China</p>
+                <div className="text-3xl font-extrabold text-[#1A6DFF] mb-1">China–UK</div>
+                <p className="text-gray-600">Established commercial trade lane</p>
               </div>
               <div>
-                <div className="text-4xl font-extrabold text-[#1A6DFF] mb-1">8+</div>
-                <p className="text-gray-600">Major Chinese ports served</p>
+                <div className="text-3xl font-extrabold text-[#1A6DFF] mb-1">Multiple</div>
+                <p className="text-gray-600">Origin ports and airports</p>
               </div>
               <div>
                 <div className="text-4xl font-extrabold text-[#1A6DFF] mb-1">3</div>
@@ -292,9 +292,9 @@ export default function ChinaToUk() {
             <p className="text-center text-gray-600 mb-10">Three transport modes to suit your timeline and budget</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Ship, title: 'Sea Freight', price: '£800–£3,500/container', time: '25–35 days', best: 'Large shipments, FCL & LCL', desc: 'The most cost-effective option for shipping from China to the UK. FCL (Full Container Load) is ideal for volumes over 15 CBM. LCL (Less than Container Load) lets you share container space for smaller shipments. Weekly sailings from all major Chinese ports to Felixstowe and Southampton.' },
-                { icon: Plane, title: 'Air Freight', price: '£4–£8/kg', time: '3–5 days', best: 'Urgent cargo, high-value goods', desc: 'When speed matters, air freight from China to the UK delivers in just 3–5 days. Ideal for electronics, samples, spare parts, and time-sensitive cargo. We offer both express and economy air freight options with collection from any Chinese city to any UK address.' },
-                { icon: TrainFront, title: 'Rail Freight', price: '£2,500–£4,000/container', time: '14–20 days', best: 'Best balance of speed and cost', desc: 'Rail freight via the New Silk Road offers a compelling middle ground. Faster than sea at approximately half the cost of air freight. Services depart regularly from Xi\'an, Yiwu, Chengdu and other Chinese cities, arriving in the UK via the Duisburg gateway.' },
+                { icon: Ship, title: 'Sea Freight', price: 'Shipment-specific price', time: '25–35 days', best: 'Large shipments, FCL & LCL', desc: 'FCL gives one importer use of a full container, while LCL consolidates smaller consignments. The quote depends on origin collection, container or cargo details, current carrier charges, customs scope and final UK delivery.' },
+                { icon: Plane, title: 'Air Freight', price: 'Shipment-specific price', time: '3–5 days', best: 'Urgent cargo, high-value goods', desc: 'Air freight is suited to urgent stock, samples, spare parts and higher-value commercial cargo. The quote uses chargeable weight, dimensions, origin airport or collection point, handling requirements and final delivery.' },
+                { icon: TrainFront, title: 'Rail Freight', price: 'Shipment-specific price', time: '14–20 days', best: 'Middle-ground timing option', desc: 'Rail freight can provide an alternative between sea and air for suitable cargo. Routing, departure availability, transit countries and current pricing must be confirmed before booking.' },
               ].map((mode, i) => {
                 const Icon = mode.icon;
                 return (
@@ -332,15 +332,12 @@ export default function ChinaToUk() {
                 <tbody>
                   {[
                     ['Transit time', '25–35 days', '3–5 days', '14–20 days'],
-                    ['Cost per kg', '£0.50–£1.50', '£4.50–£8.50', '£2.00–£3.50'],
+                    ['Typical charging basis', 'FCL container or LCL volume/weight', 'Chargeable weight', 'Container, pallet or chargeable weight'],
                     ['Best for', 'Large volumes, non-urgent', 'Urgent, high-value', 'Mid-range budget, regular'],
-                    ['Carbon footprint', 'Medium', 'High', 'Low'],
-                    ['Reliability', 'High (fixed schedules)', 'Very high (daily flights)', 'High (growing network)'],
-                    ['Cargo restrictions', 'Few', 'Many (hazardous, oversized)', 'Some (size limits)'],
-                    ['Tracking', 'Container-level', 'Piece-level', 'Container-level'],
-                    ['Insurance cost', 'Lower', 'Higher', 'Lower'],
-                    ['Frequency', 'Weekly sailings', 'Daily flights', '2–3 trains/week'],
-                    ['UK arrival', 'Felixstowe, Southampton', 'Heathrow, Manchester', 'Dagenham, Daventry'],
+                    ['Booking checks', 'Container size, cut-off and free time', 'Chargeable weight and airline acceptance', 'Route and departure availability'],
+                    ['Cargo restrictions', 'Confirm dangerous, oversized or controlled goods', 'Confirm airline and security acceptance', 'Confirm operator and transit-country acceptance'],
+                    ['Quote needs', 'Origin, destination, goods, weight and volume', 'Origin, destination, goods, weight and dimensions', 'Origin, destination, goods, weight and dimensions'],
+                    ['UK arrival examples', 'Felixstowe, Southampton', 'Heathrow, Manchester', 'Terminal depends on the confirmed service'],
                   ].map(([feat, sea, air, rail], i) => (
                     <tr key={i} className="border-t">
                       <td className="px-6 py-3 font-medium text-gray-900">{feat}</td>
@@ -360,7 +357,7 @@ export default function ChinaToUk() {
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What goods are commonly shipped from China to the UK?</h2>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">The UK imports over £45 billion annually from China including electronics, machinery, furniture, textiles, toys, automotive parts, and consumer goods. Carrgo handles all categories with specialised packaging and compliance support.</p>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Common commercial imports include electronics, machinery, furniture, textiles, toys, automotive parts and consumer goods. Packaging, documentation and product-control requirements must be checked against the specific commodity.</p>
             <p className="text-center text-gray-600 mb-10">Commodities we regularly handle on this trade lane</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
