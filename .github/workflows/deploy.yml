@@ -1,5 +1,5 @@
 name: Build and Deploy to GitHub Pages
-# Revalidate production publishing for the two-step quote form
+# Trigger production publishing after workflow re-enable
 
 on:
   push:
