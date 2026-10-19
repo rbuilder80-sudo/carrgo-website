@@ -201,7 +201,7 @@ ROUTES = {
                 "serviceType": ["Freight Forwarding", "Cargo Services", "Customs Clearance", "Air Freight", "Sea Freight", "Road Freight"],
                 "provider": {
                     "@type": "Organization",
-                    "name": "Carrgo Freight Solutions",
+                    "name": "CARRGO FREIGHT LTD",
                     "url": "https://www.carrgo.co.uk",
                     "email": "support@carrgo.co.uk"
                 },
@@ -245,7 +245,7 @@ ROUTES = {
         "title": "Cargo Shipping Company UK | Cargo Forwarder Quotes | Carrgo",
         "description": "UK cargo shipping company and cargo forwarder for sea, air and road freight. Compare cargo shippers with customs, tracking and delivery included.",
         "keywords": "cargo shipping company, cargo shippers, cargo services uk, cargo freight forwarding, shipping and cargo services, cargo forwarder, freight forwarding company uk, cargo shipping quote",
-        "canonical": "https://www.carrgo.co.uk/cargo-shipping-company",
+        "canonical": "https://www.carrgo.co.uk/cargo-shipping-company/",
         "h1": "Cargo Shipping Company and Cargo Forwarder UK",
         "staticBody": """
 <h2>Cargo shipping and freight forwarding from one UK team</h2>
@@ -253,6 +253,8 @@ ROUTES = {
 <h2>Cargo shippers vs freight forwarder</h2>
 <p>Cargo shippers often move goods on one leg of the journey. A freight forwarder coordinates the full movement, including carrier booking, documents, customs clearance, tracking and final delivery.</p>
 <p>Use Carrgo when you want one quote covering freight, paperwork and delivery instead of managing separate carriers, customs brokers and hauliers.</p>
+<h2>Check current port notices for your shipment</h2>
+<p>Local lock, berth, dredging and weather notices can affect how a shipment is planned, even when no comparable port-wide queue or waiting-time measurement is available. Carrgo's <a href="https://www.carrgo.co.uk/resources/port-congestion-tracker/">UK and Ireland port evidence tracker</a> records dated operational sources and keeps unsupported numerical metrics unknown. <a href="https://www.carrgo.co.uk/get-a-quote/">Ask about your shipment</a> with the origin, destination, goods and approximate weight or volume.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
@@ -269,7 +271,7 @@ ROUTES = {
                 },
                 "areaServed": "GB",
                 "description": "UK cargo shipping company for sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery.",
-                "url": "https://www.carrgo.co.uk/cargo-shipping-company"
+                "url": "https://www.carrgo.co.uk/cargo-shipping-company/"
             },
             {
                 "@context": "https://schema.org",
