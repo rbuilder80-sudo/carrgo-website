@@ -58,6 +58,8 @@ requireText(!unsupportedCommercialClaims.test(commercialSource), 'Source exposes
 requireText(cargoShipping.includes('canonical="https://www.carrgo.co.uk/cargo-shipping-company/"'), 'Cargo shipping page canonical must use the published trailing-slash URL');
 requireText(cargoShipping.includes('resources/port-congestion-tracker'), 'Cargo shipping page must link to the port evidence tracker');
 requireText(cargoShipping.includes('Check current port notices for your shipment'), 'Cargo shipping page evidence-context section is missing');
+requireText(generator.includes('Check current port notices for your shipment'), 'Static generator cargo page evidence-context section is missing');
+requireText(generator.includes('https://www.carrgo.co.uk/cargo-shipping-company/'), 'Static generator cargo page canonical must use the published trailing-slash URL');
 
 const unsupportedChinaPriceClaims = /GBP 300 per CBM|GBP 1,200-2,800|GBP 2,000-4,500|£800–£3,500\/container|£4–£8\/kg|£2,500–£4,000\/container|£0\.50–£1\.50|£4\.50–£8\.50|£2\.00–£3\.50/i;
 for (const [path, content] of [
