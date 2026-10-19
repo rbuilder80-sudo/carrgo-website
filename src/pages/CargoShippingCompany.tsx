@@ -44,7 +44,7 @@ const serviceSchema = {
   },
   areaServed: { '@type': 'Country', name: 'United Kingdom' },
   description: 'UK cargo shipping company for sea freight, air cargo, road freight, customs clearance, tracking and door-to-door delivery.',
-  url: 'https://www.carrgo.co.uk/cargo-shipping-company',
+  url: 'https://www.carrgo.co.uk/cargo-shipping-company/',
 };
 
 const faqSchema = {
@@ -94,8 +94,8 @@ export default function CargoShippingCompany() {
         title="Cargo Shipping Company UK | Cargo Forwarder Quotes | Carrgo"
         description="UK cargo shipping company and cargo forwarder for sea, air and road freight. Compare cargo shippers with customs, tracking and delivery included."
         keywords="cargo shipping company, cargo shippers, cargo services uk, cargo freight forwarding, shipping and cargo services, cargo forwarder, freight forwarding company uk, cargo shipping quote"
-        ogUrl="https://www.carrgo.co.uk/cargo-shipping-company"
-        canonical="https://www.carrgo.co.uk/cargo-shipping-company"
+        ogUrl="https://www.carrgo.co.uk/cargo-shipping-company/"
+        canonical="https://www.carrgo.co.uk/cargo-shipping-company/"
         structuredData={[serviceSchema, faqSchema]}
       />
 
@@ -201,6 +201,30 @@ export default function CargoShippingCompany() {
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="port-intelligence-heading" className="py-14 bg-white border-y border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+              <div>
+                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Before you book</span>
+                <h2 id="port-intelligence-heading" className="text-3xl font-bold text-[#111827] mt-3 mb-4">
+                  Check current port notices for your shipment
+                </h2>
+                <p className="text-[#4B5563] leading-relaxed">
+                  Local lock, berth, dredging and weather notices can affect how a shipment is planned, even when no comparable port-wide queue or waiting-time measurement is available. Carrgo's <Link to="/resources/port-congestion-tracker" className="text-[#1A6DFF] font-semibold hover:underline">UK and Ireland port evidence tracker</Link> records dated operational sources and keeps unsupported numerical metrics unknown.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 lg:justify-end">
+                <Link to="/resources/port-congestion-tracker" className="inline-flex items-center gap-2 bg-[#111827] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1F2937] transition-colors min-h-[44px]">
+                  View port evidence <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/get-a-quote" className="inline-flex items-center gap-2 border border-[#1A6DFF] text-[#1A6DFF] px-6 py-3 rounded-lg font-semibold hover:bg-[#EBF2FF] transition-colors min-h-[44px]">
+                  Ask about your shipment <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
