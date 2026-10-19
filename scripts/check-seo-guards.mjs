@@ -19,6 +19,7 @@ const getAQuote = read('src/pages/GetAQuote.tsx');
 const terms = read('src/pages/Terms.tsx');
 const privacy = read('src/pages/Privacy.tsx');
 const chinaRoute = read('src/pages/routes/ChinaToUk.tsx');
+const cargoShipping = read('src/pages/CargoShippingCompany.tsx');
 
 const sourceFiles = (directory) => readdirSync(new URL(`../${directory}`, import.meta.url), { withFileTypes: true })
   .flatMap((entry) => entry.isDirectory()
@@ -54,6 +55,9 @@ for (const [path, content] of [
 
 const unsupportedCommercialClaims = /(quote|quotes|respond|response|price)[^.\n]{0,60}(within|in)\s+(two|2)\s*(business\s*)?hours?|(?:two|2)[-\s]*(business\s*)?hour[^.\n]{0,40}(quote|response)|1 hour 42|up to 22%|HMRC Registered|447700123456|International Trade Centre|EC2A 4BX|Carrgo Freight Solutions Ltd/i;
 requireText(!unsupportedCommercialClaims.test(commercialSource), 'Source exposes an unsupported response, performance, contact or legal-entity claim');
+requireText(cargoShipping.includes('canonical="https://www.carrgo.co.uk/cargo-shipping-company/"'), 'Cargo shipping page canonical must use the published trailing-slash URL');
+requireText(cargoShipping.includes('resources/port-congestion-tracker'), 'Cargo shipping page must link to the port evidence tracker');
+requireText(cargoShipping.includes('Check current port notices for your shipment'), 'Cargo shipping page evidence-context section is missing');
 
 const unsupportedChinaPriceClaims = /GBP 300 per CBM|GBP 1,200-2,800|GBP 2,000-4,500|£800–£3,500\/container|£4–£8\/kg|£2,500–£4,000\/container|£0\.50–£1\.50|£4\.50–£8\.50|£2\.00–£3\.50/i;
 for (const [path, content] of [
