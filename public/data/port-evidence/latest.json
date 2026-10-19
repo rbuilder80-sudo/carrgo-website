@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedOn": "2026-10-18",
+  "checkedOn": "2026-10-19",
   "measurementObservedAt": null,
   "previousComparableObservation": null,
   "coverage": 17,
@@ -8,8 +8,8 @@
   "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
   "audit": {
     "sourceBranch": "main",
-    "sourceCommit": "3d8ac8f38a2515e414d17dbf8fad2ea8b4fde4f1",
-    "productionBaseCommit": "3d8ac8f38a2515e414d17dbf8fad2ea8b4fde4f1",
+    "sourceCommit": "ee79cf9ba2cb867122511b96e501465c9217b984",
+    "productionBaseCommit": "ee79cf9ba2cb867122511b96e501465c9217b984",
     "findings": [
       "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
       "The production report contains figures labelled 2026-09-02, whereas the search extraction still showed 2026-08-26. Neither date establishes when the metrics were measured.",
@@ -20,7 +20,7 @@
       "Production was again overwritten with an unsupported automated numerical snapshot dated 1 October while the evidence ledger recorded every numerical congestion metric as unknown. The valid 25 September report and evidence-led archive were restored on 2 October, and the unsupported dated URL was retained only as a transparent noindex correction record.",
       "On 4 October the live current report was again found serving the unsupported 1 October numerical snapshot despite the corrected source on main. This run republishes the corrected source; the separate writer remains an unresolved production-integrity risk."
     ],
-    "changesSincePrevious": "No newer Liverpool notice is listed: Notice 69 remains latest and C11 remains scheduled off station for dredging until approximately mid-November; no reopening confirmation for the ended Gladstone Lock window is inferred. Dublin Notice 49 and Belfast Notice 26 remain latest, with no real-time work, vessel or completion status confirmed. The Met Office shipping forecast issued at 04:05 UTC on 18 October shows no formal gale warning for the Irish Sea, Shannon or Malin; Irish Sea winds are easterly or northeasterly force 3 to 5, Shannon variable 2 to 4 in the southeast and southerly or southwesterly 4 to 6 in the northwest, and Malin southerly 3 to 5 with occasional 6 in the far north. The 06:00 UTC inshore forecast for 18 October shows variable force 2 to 4 conditions in Lough Foyle–Carlingford Lough and variable force 3 or less becoming southerly or southeasterly 2 to 4 in the North Channel. These are local notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+    "changesSincePrevious": "Liverpool Notice 70/2026 schedules Alfred Lock closed to vessel movements on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal stated at 06:56 on 23 October unless amended. Notice 69 still records C11 removed for dredging, expected off station until mid-November. Ireland Department of Transport Marine Notice 50/2026 records nearshore Irish Sea interconnector surveys along Loughshinny and Gormanstown from 17 to 20 October, subject to weather and operational constraints; this is not a Dublin Port notice and does not measure congestion. Dublin Port still lists Notice 49 as its latest port notice and Belfast still lists Notice 26, with D3 dredging scheduled through 5 January 2027. The current Met Office shipping forecast has no formal gale warning for the Irish Sea, Shannon or Malin; it forecasts Irish Sea northeast veering southeast force 3 to 5, Shannon south or southeast force 3 to 5 becoming cyclonic 4 to 6, and Malin south or southwest backing southeast force 4 to 6. These local notices and weather forecasts are operational context, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
   },
   "sources": [
     {
@@ -3286,6 +3286,78 @@
       "validThrough": "2026-10-19T06:00:00Z",
       "observedAt": null,
       "missingEvidence": "Port-specific effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "checkedOn": "2026-10-19",
+      "checkedAt": "2026-10-19T08:18:14+01:00",
+      "id": "liverpool-notices-index-2026-10-19",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/marine/our-ports/liverpool/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "kind": "official-port-notice-index",
+      "access": "Public official current-notice page retrieved",
+      "confidence": "high for displayed notice sequence and stated restrictions; none for real-time status or port-wide congestion",
+      "claim": "The official current-notice page lists Notice 70/2026 as latest. Notice 70 schedules Alfred Lock closed on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal at 06:56 on 23 October unless amended. Notice 69 records C11 removed for dredging until approximately mid-November.",
+      "supportedClaim": "The official current-notice page lists Notice 70/2026 as latest. Notice 70 schedules Alfred Lock closed on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal at 06:56 on 23 October unless amended. Notice 69 records C11 removed for dredging until approximately mid-November.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Real-time lock and dredging status, vessel-specific delay evidence, C11 reinstatement confirmation and timestamped port-wide congestion measurements."
+    },
+    {
+      "checkedOn": "2026-10-19",
+      "checkedAt": "2026-10-19T08:18:14+01:00",
+      "id": "liverpool-70",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/media/l4xk0tzu/lntm-2026-070-temporary-closure-of-alfred-lock.pdf",
+      "publishedOn": "2026-10-16",
+      "publishedAt": null,
+      "kind": "primary-notice",
+      "access": "Public official PDF text retrieved",
+      "confidence": "high for the stated closure schedule; none for actual closure status, vessel-specific delay or port-wide congestion",
+      "claim": "Notice 70/2026 schedules Alfred Lock closed to vessel movements on the 09:14 and 21:24 high-water tides on 22 October 2026. Unless notice is given to the contrary, it is withdrawn at 06:56 on 23 October 2026.",
+      "supportedClaim": "Notice 70/2026 schedules Alfred Lock closed to vessel movements on the 09:14 and 21:24 high-water tides on 22 October 2026. Unless notice is given to the contrary, it is withdrawn at 06:56 on 23 October 2026.",
+      "validFrom": "2026-10-22T09:14:00+01:00",
+      "validThrough": "2026-10-23T06:56:00+01:00",
+      "observedAt": null,
+      "missingEvidence": "Whether the closure is amended or withdrawn, actual vessel-specific delay and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "checkedOn": "2026-10-19",
+      "checkedAt": "2026-10-19T08:18:14+01:00",
+      "id": "irish-marine-50-2026-10-19",
+      "publisher": "Ireland Department of Transport",
+      "url": "https://assets.gov.ie/static/documents/ace6e232/MN_50_of_2026_ISGI_Nearshore_Surveys.pdf",
+      "publishedOn": null,
+      "publishedAt": null,
+      "kind": "official-marine-notice",
+      "access": "Public official Marine Notice PDF text retrieved",
+      "confidence": "high for the stated activity and dates; none for port-wide congestion or port-specific delay",
+      "claim": "Marine Notice 50/2026 records nearshore Irish Sea interconnector surveys along the shores of Loughshinny and Gormanstown from 17 to 20 October 2026, subject to weather and operational constraints. This is not a Dublin Port notice and does not measure congestion.",
+      "supportedClaim": "Marine Notice 50/2026 records nearshore Irish Sea interconnector surveys along the shores of Loughshinny and Gormanstown from 17 to 20 October 2026, subject to weather and operational constraints. This is not a Dublin Port notice and does not measure congestion.",
+      "validFrom": "2026-10-17",
+      "validThrough": "2026-10-20",
+      "observedAt": null,
+      "missingEvidence": "Survey activity status after the stated period, port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "checkedOn": "2026-10-19",
+      "checkedAt": "2026-10-19T08:18:14+01:00",
+      "id": "met-office-shipping-2026-10-19",
+      "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
+      "publishedOn": "2026-10-18",
+      "publishedAt": "2026-10-18T21:57:00Z",
+      "kind": "official-weather-forecast",
+      "access": "Public official shipping forecast retrieved",
+      "confidence": "high for displayed area forecasts; none for port-wide congestion conditions",
+      "claim": "The current shipping forecast has no formal gale warning for the Irish Sea, Shannon or Malin. Irish Sea winds are northeast veering southeast force 3 to 5; Shannon south or southeast force 3 to 5 becoming cyclonic 4 to 6; and Malin south or southwest backing southeast force 4 to 6. This is sea-area weather context, not a congestion measurement.",
+      "supportedClaim": "The current shipping forecast has no formal gale warning for the Irish Sea, Shannon or Malin. Irish Sea winds are northeast veering southeast force 3 to 5; Shannon south or southeast force 3 to 5 becoming cyclonic 4 to 6; and Malin south or southwest backing southeast force 4 to 6. This is sea-area weather context, not a congestion measurement.",
+      "validFrom": "2026-10-18T21:57:00Z",
+      "validThrough": "2026-10-19T21:57:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
     }
   ],
   "ports": [
@@ -3330,7 +3402,8 @@
       "port": "Liverpool",
       "slug": "liverpool",
       "sources": [
-        "liverpool-notices-index-2026-10-18",
+        "liverpool-notices-index-2026-10-19",
+        "liverpool-70",
         "liverpool-69",
         "liverpool-68",
         "liverpool-53-revised",
@@ -3338,7 +3411,7 @@
         "liverpool-57a",
         "liverpool-66"
       ],
-      "review": "Peel Ports still lists Notice 69/2026 as latest. It records C11 removed to enable dredging, with Vox Alexia expected around 26 October and C11 expected off station until mid-November. Notice 68’s scheduled Gladstone Lock window on 15 October has ended, but no reopening confirmation is published. These are local advisories, not a measurement of Liverpool-wide congestion, which remains unknown.",
+      "review": "Notice 70/2026 schedules Alfred Lock closed on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal at 06:56 on 23 October unless amended. Notice 69 records C11 removed for dredging until approximately mid-November. These are local navigation advisories, not a measurement of Liverpool-wide congestion, which remains unknown.",
       "observedAt": null,
       "confidence": "high for listed notice content; none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -3388,10 +3461,10 @@
       "port": "Holyhead",
       "slug": "holyhead",
       "sources": [
-        "met-office-shipping-2026-10-18",
+        "met-office-shipping-2026-10-19",
         "met-office-inshore-2026-10-18"
       ],
-      "review": "The 18 October shipping forecast has no Irish Sea gale warning; winds are easterly or northeasterly force 3 to 5. The nearby inshore St Georges Channel is easterly or northeasterly force 3 to 5. Weather advisories are not evidence of Holyhead operations or a congestion measurement. Current measured congestion remains unknown.",
+      "review": "The current shipping forecast has no Irish Sea gale warning; winds are northeast veering southeast force 3 to 5. Weather advisories are not evidence of Holyhead operations or a congestion measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -3444,13 +3517,14 @@
       "port": "Dublin",
       "slug": "dublin",
       "sources": [
-        "dublin-notices-index-2026-10-18",
-        "met-office-shipping-2026-10-18",
+        "dublin-notices-index-2026-10-19",
+        "irish-marine-50-2026-10-19",
+        "met-office-shipping-2026-10-19",
         "dublin-49",
         "dublin-48",
         "dublin-39-3"
       ],
-      "review": "Dublin Port still lists Notice 49/2026 as latest and no Notice 50 is displayed. Its capital dredging campaign was scheduled from 1 October for approximately two weeks; the index does not confirm the real-time work stage or completion. The Irish Sea has no formal gale warning in the 18 October forecast, but these notices and forecasts do not measure port-wide congestion.",
+      "review": "Dublin Port still lists Notice 49/2026 as latest. Separately, Ireland Marine Notice 50/2026 records nearshore interconnector surveys along Loughshinny and Gormanstown from 17 to 20 October, subject to weather and operational constraints; it is not a Dublin Port notice. These local advisories do not measure port-wide congestion, which remains unknown.",
       "observedAt": null,
       "confidence": "high for listed notice content; none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -3483,9 +3557,9 @@
       "port": "Shannon Foynes",
       "slug": "shannon-foynes",
       "sources": [
-        "met-office-shipping-2026-10-18"
+        "met-office-shipping-2026-10-19"
       ],
-      "review": "Shannon has no formal gale warning in the 18 October forecast. Variable force 2 to 4 in the southeast and southerly or southwesterly force 4 to 6 in the northwest are forecast. This is offshore weather context, not a measurement of port operations. Current measured congestion remains unknown.",
+      "review": "Shannon has no formal gale warning in the current forecast. South or southeast force 3 to 5 becoming cyclonic 4 to 6 is forecast. This is offshore weather context, not a measurement of port operations. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -3495,10 +3569,10 @@
       "port": "Waterford",
       "slug": "waterford",
       "sources": [
-        "met-office-shipping-2026-10-18",
+        "met-office-shipping-2026-10-19",
         "met-office-inshore-2026-10-18"
       ],
-      "review": "The Irish Sea has no formal gale warning and nearby St Georges Channel winds are forecast easterly or northeasterly force 3 to 5. This is weather context, not evidence of Waterford operations or a congestion measurement. Current measured congestion remains unknown.",
+      "review": "The Irish Sea has no formal gale warning. This is weather context, not evidence of Waterford operations or a congestion measurement. Current measured congestion remains unknown.",
       "observedAt": null,
       "confidence": "none for port-wide congestion",
       "missingEvidence": "Timestamped primary port-wide measurements suitable for comparison.",
@@ -3518,6 +3592,6 @@
     "missingEvidence": null
   },
   "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
-  "checkedAt": "2026-10-18T08:26:15+01:00",
-  "changesSincePreviousCheck": "No newer Liverpool notice is listed: Notice 69 remains latest and C11 remains scheduled off station for dredging until approximately mid-November; no reopening confirmation for the ended Gladstone Lock window is inferred. Dublin Notice 49 and Belfast Notice 26 remain latest, with no real-time work, vessel or completion status confirmed. The Met Office shipping forecast issued at 04:05 UTC on 18 October shows no formal gale warning for the Irish Sea, Shannon or Malin; Irish Sea winds are easterly or northeasterly force 3 to 5, Shannon variable 2 to 4 in the southeast and southerly or southwesterly 4 to 6 in the northwest, and Malin southerly 3 to 5 with occasional 6 in the far north. The 06:00 UTC inshore forecast for 18 October shows variable force 2 to 4 conditions in Lough Foyle–Carlingford Lough and variable force 3 or less becoming southerly or southeasterly 2 to 4 in the North Channel. These are local notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+  "checkedAt": "2026-10-19T08:18:14+01:00",
+  "changesSincePreviousCheck": "Liverpool Notice 70/2026 schedules Alfred Lock closed to vessel movements on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal stated at 06:56 on 23 October unless amended. Notice 69 still records C11 removed for dredging, expected off station until mid-November. Ireland Department of Transport Marine Notice 50/2026 records nearshore Irish Sea interconnector surveys along Loughshinny and Gormanstown from 17 to 20 October, subject to weather and operational constraints; this is not a Dublin Port notice and does not measure congestion. Dublin Port still lists Notice 49 as its latest port notice and Belfast still lists Notice 26, with D3 dredging scheduled through 5 January 2027. The current Met Office shipping forecast has no formal gale warning for the Irish Sea, Shannon or Malin; it forecasts Irish Sea northeast veering southeast force 3 to 5, Shannon south or southeast force 3 to 5 becoming cyclonic 4 to 6, and Malin south or southwest backing southeast force 4 to 6. These local notices and weather forecasts are operational context, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
 }
