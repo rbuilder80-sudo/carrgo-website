@@ -52,3 +52,25 @@
 - Publish the generated JavaScript and CSS module graph in one content-addressed directory so CDN caches cannot combine chunks from different builds.
 - Added an automated source guard for the content-addressed asset rule.
 - Added explicit self-canonicals to the privacy and terms pages so React hydration cannot overwrite their generated canonical URLs with the homepage.
+
+## 19 October 2026 — cargo shipping page evidence-path improvement
+
+### Evidence reviewed
+
+- Ubersuggest UK organic data showed Carrgo with 57 tracked organic keywords but only 2 estimated organic visits; the commercial keyword “cargo shipping company uk” was reported at position 24 for the homepage (data returned 19 October 2026). This is directional third-party data, not Search Console or a ranking guarantee.
+- Public search results currently surface the homepage for that query, while the dedicated cargo shipping company page (https://www.carrgo.co.uk/cargo-shipping-company/) was not shown in the focused result set.
+- The dedicated page already had a shipment-specific quote CTA and service links, but no contextual link to Carrgo's dated port-evidence resource in its main content.
+
+### Shipped change
+
+- Added a factual “Check current port notices for your shipment” section to the existing cargo shipping page.
+- Linked the page to the port-evidence tracker and retained a page-matched shipment enquiry CTA.
+- Aligned source-level canonical and Service-schema URLs to the published trailing-slash URL.
+- Added guards for the canonical, evidence link and contextual section.
+- Updated both sitemap sources' truthful lastmod for the substantive page improvement.
+
+### Outcome and limitations
+
+- This improves internal topical context and crawl paths for an existing commercial page; it does not claim ranking, traffic, authority or enquiry gains.
+- The tracker states operational evidence and withholds unsupported queue, waiting-time and berth-utilisation measurements; the new copy makes the same distinction.
+- No air-cargo URL consolidation or transit-time claim was changed. No outreach was sent; the authorised support@carrgo.co.uk mailbox remains unverified.
