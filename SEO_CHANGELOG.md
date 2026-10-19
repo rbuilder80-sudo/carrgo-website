@@ -67,6 +67,7 @@
 - Linked the page to the port-evidence tracker and retained a page-matched shipment enquiry CTA.
 - Aligned source-level canonical and Service-schema URLs to the published trailing-slash URL.
 - Added guards for the canonical, evidence link and contextual section.
+- Corrected the static generator override used by the deployed HTML, which is separate from the React route source, and guarded that output as well.
 - Updated both sitemap sources' truthful lastmod for the substantive page improvement.
 
 ### Outcome and limitations
