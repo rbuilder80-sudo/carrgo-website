@@ -23,3 +23,8 @@ The highest-impact scoped change was to improve the existing commercial cargo sh
 - Focused search: https://www.carrgo.co.uk/ (current result for the query)
 - Dedicated page: https://www.carrgo.co.uk/cargo-shipping-company/
 - Port evidence tracker: https://www.carrgo.co.uk/resources/port-congestion-tracker/
+
+
+## Live verification correction
+
+The first source-only deployment passed its build but the deployed static generator override still served the old cargo-page body. Live verification caught that mismatch. The generator and its guard were then updated so the published HTML contains the new section and trailing-slash canonical before the final deployment claim.
