@@ -121,7 +121,7 @@ export default function PortCongestion() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch('/data/port-evidence/latest.json', { signal: controller.signal, cache: 'no-cache' })
+    fetch('/data/port-evidence/latest.json?latest=' + Date.now(), { signal: controller.signal, cache: 'no-store' })
       .then(response => {
         if (!response.ok) throw new Error('Evidence unavailable');
         return response.json();
