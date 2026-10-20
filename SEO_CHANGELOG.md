@@ -75,3 +75,11 @@
 - This improves internal topical context and crawl paths for an existing commercial page; it does not claim ranking, traffic, authority or enquiry gains.
 - The tracker states operational evidence and withholds unsupported queue, waiting-time and berth-utilisation measurements; the new copy makes the same distinction.
 - No air-cargo URL consolidation or transit-time claim was changed. No outreach was sent; the authorised support@carrgo.co.uk mailbox remains unverified.
+
+
+## 2026-10-20 — port evidence integrity update
+
+- Public-source review checked Liverpool, Dublin and Belfast official notice indexes plus Met Office shipping and inshore forecasts at `2026-10-20T08:35:42+01:00` BST.
+- Belfast’s index now lists Notice 27/2026 (ploughing operations); Liverpool Notice 70 remains current for Alfred Lock closures on 22 October; Dublin Notice 49 remains the latest listed port notice.
+- The dated ledger and tracker continue to report 17-port coverage with all unsupported numerical congestion, queue, waiting-time and berth-utilisation fields as unknown/null.
+- No port-wide comparable congestion measurement was found; weather and local navigation notices are retained only as operational context.
