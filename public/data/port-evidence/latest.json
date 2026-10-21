@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "checkedOn": "2026-10-20",
+  "checkedOn": "2026-10-21",
   "measurementObservedAt": null,
-  "previousComparableObservation": "2026-10-19",
+  "previousComparableObservation": "2026-10-20",
   "coverage": 17,
   "status": "unverified-metrics",
   "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
   "audit": {
     "sourceBranch": "main",
-    "sourceCommit": "d124a9502ee36ed6b13f6df202db4881d23949f0",
-    "productionBaseCommit": "d124a9502ee36ed6b13f6df202db4881d23949f0",
+    "sourceCommit": "249588904c100588cc8c9fb204d8535999811838",
+    "productionBaseCommit": "249588904c100588cc8c9fb204d8535999811838",
     "findings": [
       "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
       "The production report contains figures labelled 2026-09-02, whereas the search extraction still showed 2026-08-26. Neither date establishes when the metrics were measured.",
@@ -20,7 +20,7 @@
       "Production was again overwritten with an unsupported automated numerical snapshot dated 1 October while the evidence ledger recorded every numerical congestion metric as unknown. The valid 25 September report and evidence-led archive were restored on 2 October, and the unsupported dated URL was retained only as a transparent noindex correction record.",
       "On 4 October the live current report was again found serving the unsupported 1 October numerical snapshot despite the corrected source on main. This run republishes the corrected source; the separate writer remains an unresolved production-integrity risk."
     ],
-    "changesSincePrevious": "Belfast Harbour’s official index now lists Notice 27/2026 for ploughing operations, followed by Notice 24/2026 for the D3 dredging programme. Liverpool Notice 70 remains current and schedules Alfred Lock closed on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal at 06:56 on 23 October unless amended; Notice 69 continues to record C11 removed for dredging until approximately mid-November. Dublin Port still lists Notice 49/2026, Capital Dredge Campaign, as its latest notice. The 20 October Met Office shipping forecast carries a gale warning for Shannon, but no formal gale-warning heading for the Irish Sea or Malin; the inshore forecast shows strong winds in relevant Irish Sea and Northern Ireland coastal sectors. These are local notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+    "changesSincePrevious": "Liverpool, Dublin and Belfast official notice indexes are unchanged: Liverpool Notice 70 remains latest, Dublin Notice 49 remains latest and Belfast Notice 27 remains latest. The 21 October Met Office shipping forecast now carries formal gale warnings for the Irish Sea, Shannon and Malin, including severe-gale-force 9 wording for the Irish Sea and Shannon. Relevant inshore sectors also carry strong-wind warnings, with severe-gale-force 9 in the St Davids Head–Great Orme Head sector and gale-force 8 conditions in other reviewed sectors. These are weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
   },
   "sources": [
     {
@@ -3484,6 +3484,96 @@
       "validThrough": "2026-10-21T06:00:00Z",
       "observedAt": null,
       "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "id": "liverpool-notices-index-2026-10-21",
+      "publisher": "Peel Ports",
+      "url": "https://www.peelports.com/marine/our-ports/liverpool/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-10-21",
+      "checkedAt": "2026-10-21T08:37:12+01:00",
+      "kind": "official-port-notice-index",
+      "access": "Public official current-notice page retrieved",
+      "confidence": "high for displayed notice sequence and stated restrictions; none for real-time status or port-wide congestion",
+      "claim": "The official current-notice page still lists Notice 70/2026 as latest and Notice 69/2026 as the preceding latest notice. Notice 70 schedules Alfred Lock closures on two 22 October high-water tides; Notice 69 records C11 removed for dredging until approximately mid-November.",
+      "supportedClaim": "The official current-notice page still lists Notice 70/2026 as latest and Notice 69/2026 as the preceding latest notice. Notice 70 schedules Alfred Lock closures on two 22 October high-water tides; Notice 69 records C11 removed for dredging until approximately mid-November.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Real-time lock and dredging status, vessel-specific delay evidence, C11 reinstatement confirmation and timestamped port-wide congestion measurements."
+    },
+    {
+      "id": "belfast-notices-index-2026-10-21",
+      "publisher": "Belfast Harbour Commissioners",
+      "url": "https://www.belfast-harbour.co.uk/news/document_categories/notice-to-mariners/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-10-21",
+      "checkedAt": "2026-10-21T08:37:12+01:00",
+      "kind": "official-port-notice-index",
+      "access": "Public official notice archive retrieved",
+      "confidence": "high for listed notice sequence; none for real-time vessel movements, work status, traffic management or port-wide congestion",
+      "claim": "The official archive still lists Notice 27/2026, Ploughing operations, as the latest notice, followed by Notice 24/2026 for the D3 dredging programme. The index does not provide real-time traffic status or a port-wide congestion measurement.",
+      "supportedClaim": "The official archive still lists Notice 27/2026, Ploughing operations, as the latest notice, followed by Notice 24/2026 for the D3 dredging programme. The index does not provide real-time traffic status or a port-wide congestion measurement.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Details and timing of the ploughing operation beyond the index title, real-time harbour traffic, D3 work stage, any one-way traffic activation and timestamped port-wide congestion measurements."
+    },
+    {
+      "id": "dublin-notices-index-2026-10-21",
+      "publisher": "Dublin Port",
+      "url": "https://www.dublinport.ie/information-centre/notice-to-mariners-2026/",
+      "publishedOn": null,
+      "publishedAt": null,
+      "checkedOn": "2026-10-21",
+      "checkedAt": "2026-10-21T08:37:12+01:00",
+      "kind": "official-port-notice-index",
+      "access": "Public official notice index retrieved",
+      "confidence": "high for listed notice sequence; none for real-time works or port-wide congestion",
+      "claim": "The official Dublin Port index still lists Notice 49/2026, Capital Dredge Campaign, as latest. The index does not confirm the real-time stage or completion of that campaign and does not provide a port-wide congestion measurement.",
+      "supportedClaim": "The official Dublin Port index still lists Notice 49/2026, Capital Dredge Campaign, as latest. The index does not confirm the real-time stage or completion of that campaign and does not provide a port-wide congestion measurement.",
+      "validFrom": null,
+      "validThrough": null,
+      "observedAt": null,
+      "missingEvidence": "Real-time work stage, confirmed campaign completion date and timestamped primary port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "id": "met-office-shipping-2026-10-21",
+      "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
+      "publishedOn": "2026-10-21",
+      "publishedAt": "2026-10-21T04:05:00Z",
+      "checkedOn": "2026-10-21",
+      "checkedAt": "2026-10-21T08:37:12+01:00",
+      "kind": "official-weather-forecast",
+      "access": "Public official shipping forecast retrieved",
+      "confidence": "high for displayed sea-area forecasts and warning text; none for port-wide congestion conditions",
+      "claim": "The shipping forecast issued at 04:05 UTC on 21 October carries formal gale warnings for the Irish Sea, Shannon and Malin. The Irish Sea warning says northwesterly gale force 8 is imminent and severe gale force 9 is expected soon; Shannon says northwesterly severe gale force 9 is decreasing to gale force 8 imminently; Malin says northwesterly gale force 8 is expected soon. These are sea-area weather warnings, not congestion measurements.",
+      "supportedClaim": "The shipping forecast issued at 04:05 UTC on 21 October carries formal gale warnings for the Irish Sea, Shannon and Malin. The Irish Sea warning says northwesterly gale force 8 is imminent and severe gale force 9 is expected soon; Shannon says northwesterly severe gale force 9 is decreasing to gale force 8 imminently; Malin says northwesterly gale force 8 is expected soon. These are sea-area weather warnings, not congestion measurements.",
+      "validFrom": "2026-10-21T06:00:00Z",
+      "validThrough": "2026-10-22T06:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
+    },
+    {
+      "id": "met-office-inshore-2026-10-21",
+      "publisher": "Met Office",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/inshore-waters-forecast",
+      "publishedOn": "2026-10-21",
+      "publishedAt": "2026-10-21T06:00:00Z",
+      "checkedOn": "2026-10-21",
+      "checkedAt": "2026-10-21T08:37:12+01:00",
+      "kind": "official-weather-forecast",
+      "access": "Public official inshore forecast retrieved",
+      "confidence": "high for displayed forecast period; none for port-wide congestion conditions",
+      "claim": "The inshore forecast issued at 06:00 UTC on 21 October shows strong-wind warnings across the relevant Irish Sea and Northern Ireland sectors. St Davids Head–Great Orme Head is forecast northwesterly force 7 to severe gale 9; Great Orme Head–Mull of Galloway and the North Channel reach gale force 8; Lough Foyle–Carlingford Lough reaches gale force 8. These are coastal weather advisories, not evidence of port congestion.",
+      "supportedClaim": "The inshore forecast issued at 06:00 UTC on 21 October shows strong-wind warnings across the relevant Irish Sea and Northern Ireland sectors. St Davids Head–Great Orme Head is forecast northwesterly force 7 to severe gale 9; Great Orme Head–Mull of Galloway and the North Channel reach gale force 8; Lough Foyle–Carlingford Lough reaches gale force 8. These are coastal weather advisories, not evidence of port congestion.",
+      "validFrom": "2026-10-21T06:00:00Z",
+      "validThrough": "2026-10-22T06:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements."
     }
   ],
   "ports": [
@@ -3536,7 +3626,8 @@
         "liverpool-48",
         "liverpool-57a",
         "liverpool-66",
-        "liverpool-notices-index-2026-10-20"
+        "liverpool-notices-index-2026-10-20",
+        "liverpool-notices-index-2026-10-21"
       ],
       "review": "Notice 70 schedules Alfred Lock closures on two 22 October tides and Notice 69 records C11 removed for dredging until approximately mid-November. These are navigation restrictions, not a port-wide congestion measurement. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3591,7 +3682,9 @@
         "met-office-shipping-2026-10-19",
         "met-office-inshore-2026-10-18",
         "met-office-shipping-2026-10-20",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "met-office-shipping-2026-10-21",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3611,7 +3704,9 @@
         "belfast-15",
         "belfast-19-rev1",
         "belfast-notices-index-2026-10-20",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "belfast-notices-index-2026-10-21",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "The current official index lists Notice 27/2026 for ploughing operations and Notice 24/2026 for D3 dredging. Operational impact and any traffic controls require confirmation; current measured congestion remains unknown.",
       "observedAt": null,
@@ -3624,7 +3719,8 @@
       "slug": "larne",
       "sources": [
         "met-office-inshore-2026-10-18",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3639,7 +3735,9 @@
         "met-office-shipping-2026-10-18",
         "met-office-inshore-2026-10-18",
         "met-office-shipping-2026-10-20",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "met-office-shipping-2026-10-21",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3658,7 +3756,9 @@
         "dublin-48",
         "dublin-39-3",
         "dublin-notices-index-2026-10-20",
-        "met-office-shipping-2026-10-20"
+        "met-office-shipping-2026-10-20",
+        "dublin-notices-index-2026-10-21",
+        "met-office-shipping-2026-10-21"
       ],
       "review": "Dublin Port’s current index still lists Notice 49/2026, Capital Dredge Campaign. The real-time work stage and any operational effect are unverified; current measured congestion remains unknown.",
       "observedAt": null,
@@ -3682,7 +3782,8 @@
       "sources": [
         "met-office-shipping-2026-10-18",
         "met-office-inshore-2026-10-18",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3695,7 +3796,8 @@
       "slug": "shannon-foynes",
       "sources": [
         "met-office-shipping-2026-10-19",
-        "met-office-shipping-2026-10-20"
+        "met-office-shipping-2026-10-20",
+        "met-office-shipping-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3709,7 +3811,8 @@
       "sources": [
         "met-office-shipping-2026-10-19",
         "met-office-inshore-2026-10-18",
-        "met-office-inshore-2026-10-20"
+        "met-office-inshore-2026-10-20",
+        "met-office-inshore-2026-10-21"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -3731,6 +3834,6 @@
     "missingEvidence": null
   },
   "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
-  "checkedAt": "2026-10-20T08:35:42+01:00",
-  "changesSincePreviousCheck": "Belfast Harbour’s official index now lists Notice 27/2026 for ploughing operations, followed by Notice 24/2026 for the D3 dredging programme. Liverpool Notice 70 remains current and schedules Alfred Lock closed on the 09:14 and 21:24 high-water tides on 22 October, with withdrawal at 06:56 on 23 October unless amended; Notice 69 continues to record C11 removed for dredging until approximately mid-November. Dublin Port still lists Notice 49/2026, Capital Dredge Campaign, as its latest notice. The 20 October Met Office shipping forecast carries a gale warning for Shannon, but no formal gale-warning heading for the Irish Sea or Malin; the inshore forecast shows strong winds in relevant Irish Sea and Northern Ireland coastal sectors. These are local notices and weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
+  "checkedAt": "2026-10-21T08:37:12+01:00",
+  "changesSincePreviousCheck": "Liverpool, Dublin and Belfast official notice indexes are unchanged: Liverpool Notice 70 remains latest, Dublin Notice 49 remains latest and Belfast Notice 27 remains latest. The 21 October Met Office shipping forecast now carries formal gale warnings for the Irish Sea, Shannon and Malin, including severe-gale-force 9 wording for the Irish Sea and Shannon. Relevant inshore sectors also carry strong-wind warnings, with severe-gale-force 9 in the St Davids Head–Great Orme Head sector and gale-force 8 conditions in other reviewed sectors. These are weather advisories, not port-wide congestion measurements. No timestamped, comparable queue, waiting-time or berth-utilisation measurement was found, so no congestion change is calculated."
 }
