@@ -22,3 +22,7 @@ Publish a dated update because the official marine-weather evidence materially c
 ## Methodology and limitations
 
 This is a dated public-source review, not an AIS feed. Notices and weather warnings support only their stated location, period and conditions. No comparable port-wide queue, waiting-time or berth-utilisation measurement was found, so no congestion change, score, ranking or forecast is calculated. Last checked remains separate from last measured.
+
+## Validation
+
+Repository validation before deployment confirmed 17 port records, 198 preserved source records, zero broken source references, null unsupported numerical metrics and 17 static tracker rows.
