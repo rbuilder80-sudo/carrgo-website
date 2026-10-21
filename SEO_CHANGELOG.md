@@ -83,3 +83,10 @@
 - Belfast’s index now lists Notice 27/2026 (ploughing operations); Liverpool Notice 70 remains current for Alfred Lock closures on 22 October; Dublin Notice 49 remains the latest listed port notice.
 - The dated ledger and tracker continue to report 17-port coverage with all unsupported numerical congestion, queue, waiting-time and berth-utilisation fields as unknown/null.
 - No port-wide comparable congestion measurement was found; weather and local navigation notices are retained only as operational context.
+
+## 2026-10-21 — port weather evidence update
+
+- Rechecked the official Liverpool, Dublin and Belfast notice indexes at `2026-10-21T08:37:12+01:00`; their latest listed notices remain Liverpool 70/2026, Dublin 49/2026 and Belfast 27/2026.
+- Recorded the Met Office shipping forecast issued at 04:05 UTC: formal gale warnings cover the Irish Sea, Shannon and Malin, including severe-gale-force 9 wording for the Irish Sea and Shannon.
+- Recorded the 06:00 UTC inshore forecast’s strong-wind warnings for relevant Irish Sea and Northern Ireland coastal sectors.
+- Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null. Weather warnings remain operational context, not congestion measurements.
