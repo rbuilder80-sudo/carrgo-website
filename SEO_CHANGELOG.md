@@ -90,3 +90,11 @@
 - Recorded the Met Office shipping forecast issued at 04:05 UTC: formal gale warnings cover the Irish Sea, Shannon and Malin, including severe-gale-force 9 wording for the Irish Sea and Shannon.
 - Recorded the 06:00 UTC inshore forecast’s strong-wind warnings for relevant Irish Sea and Northern Ireland coastal sectors.
 - Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null. Weather warnings remain operational context, not congestion measurements.
+
+## 2026-10-22 — port notice and severe-weather evidence update
+
+- Rechecked the official Liverpool, Dublin and Belfast notice indexes at `2026-10-22T08:46:54+01:00`; Liverpool Notice 70 remains latest, Dublin Notice 49 remains latest, and Belfast added Notice 28/2026 for a temporary no-wake zone in D1 and D3.
+- Recorded Liverpool Notice 70’s two Alfred Lock closure tides on 22 October and its stated withdrawal time on 23 October, unless amended.
+- Recorded the 04:05 UTC Met Office shipping forecast: formal gale warnings cover the Irish Sea and Shannon, with severe-gale-force 9 expected later in the Irish Sea and violent-storm-force 11 later in Shannon. Malin has no formal gale-warning heading in this issue.
+- Recorded the 06:00 UTC inshore forecast’s strong-wind warnings for the reviewed Irish Sea and Northern Ireland sectors.
+- Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null. Notices and weather warnings remain operational context, not congestion measurements.
