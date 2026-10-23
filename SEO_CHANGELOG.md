@@ -98,3 +98,11 @@
 - Recorded the 04:05 UTC Met Office shipping forecast: formal gale warnings cover the Irish Sea and Shannon, with severe-gale-force 9 expected later in the Irish Sea and violent-storm-force 11 later in Shannon. Malin has no formal gale-warning heading in this issue.
 - Recorded the 06:00 UTC inshore forecast’s strong-wind warnings for the reviewed Irish Sea and Northern Ireland sectors.
 - Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null. Notices and weather warnings remain operational context, not congestion measurements.
+
+## 2026-10-23 — Langton Lock and marine-weather evidence update
+
+- Added Liverpool Notice 71/2026: Langton Lock is scheduled closed from 12:00 on 24 October to 22:00 on 25 October to protect the outer caisson from heavy swell expected with Storm Boelo. Suitable vessels may use Hornby Passage and Gladstone Lock subject to Dockmaster consultation.
+- Recorded that Notice 70’s stated Alfred Lock window ended at 06:56 on 23 October unless amended; elapsed time is not treated as reopening confirmation.
+- Rechecked Dublin and Belfast notice indexes; Notice 49 and Notice 28 remain latest respectively.
+- Recorded the 04:05 UTC shipping forecast’s Irish Sea and Shannon gale warnings and the 06:00 UTC inshore strong-wind warnings. Weather remains operational context, not congestion evidence.
+- Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null.
