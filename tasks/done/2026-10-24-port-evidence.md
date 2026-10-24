@@ -22,4 +22,5 @@
 - SEO guard: passed
 - Production build: passed
 - Regression suite: 10 passed, 4 pre-existing failures (two legacy article URLs return 404, stale engine heartbeat, and undefined health-feed overall status)
-- Deployment and live verification: pending
+- Deployment: GitHub Pages workflow run 40074041270 succeeded for commit e2d69d83e79ac0c6520ff50bc099c12350162e70
+- Live verification: tracker, dated/latest ledgers, sitemap, robots.txt and unchanged 23 October weekly report returned HTTP 200; the tracker showed the 24 October check, 17 unknown rows, self-canonical, quote form and current source summaries
