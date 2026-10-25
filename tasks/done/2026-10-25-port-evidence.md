@@ -21,4 +21,5 @@
 - JSON/source-reference integrity: passed (17 ports, 222 uniquely identified sources, no broken port references, all numerical metrics null)
 - SEO guard and production build: passed
 - Regression suite: 10/14 passed; four unchanged baseline failures remain (two retired article URLs return 404, stale engine heartbeat, and `health.json` has no `overall` value)
-- Deployment and live verification: pending
+- Deployment: GitHub Pages workflow run 40176327255 succeeded for commit 22c5602126f9a0ee407ba9d54b09d3b214543cda
+- Live verification: tracker, dated/latest ledgers, sitemap, robots.txt and unchanged 23 October weekly report loaded successfully; the tracker showed the 25 October check, 17 unknown rows, current source summaries, a self-canonical and the quote form. The dated and latest ledgers matched at 17 ports and 222 sources with every numerical metric null.
