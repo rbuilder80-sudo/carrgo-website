@@ -50,6 +50,6 @@ Defer until the next scoped build: an importer customs-readiness preflight that 
 ## Publication status
 
 - Drafted and tested locally: complete.
-- Committed: pending.
-- Deployment: pending.
-- Live verification: pending.
+- Committed: complete in `c1ecdf6847b46bb1377f2845228c8186564ec385`; exact large-file restoration in `1f17e39b2cb7a9207e64810f6f15cc850c730949`.
+- Deployment: successful through the established GitHub Pages workflow, run `40353272793`. An earlier run (`40352868643`) failed because the static generator blob was incompletely transferred during publication; the full exact file was restored before the successful run.
+- Live verification: passed. `/services/customs-clearance/` returned HTTP 200 with the new title, description, visible checklist, official GOV.UK citations, self-canonical, indexable robots directive, Service and FAQPage data and customs-specific quote heading. The live quote form requires origin, destination, goods, approximate weight/volume, name and email, and exposes the dimensions `I'm not sure` option. The live sitemap contains the customs URL with `lastmod` 2026-10-26; robots.txt names the regular and news sitemaps; `/services/air-cargo/` resolves in the browser to `/services/air-freight/`.
