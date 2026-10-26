@@ -23,8 +23,8 @@ def normalize_page_url(url):
 # === Route metadata: pain-point-focused SEO for every page ===
 ROUTES = {
     "/": {
-        "title": "Cargo Services UK | Shipping & Freight Quotes | Carrgo",
-        "description": "UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a shipment-specific quote.",
+        "title": "Cargo Services UK | Sea & Air Freight Quotes | Carrgo",
+        "description": "UK cargo services for businesses. Compare sea freight and door-to-door air freight, with collection, customs clearance and delivery. Request a freight quote.",
         "keywords": "cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, cargo shippers, cargo shipping company, freight forwarder near me, shipping company uk, logistics company, freight company, customs clearance agents uk, import shipping uk, export shipping uk, freight quote uk, manchester freight",
         "canonical": "https://www.carrgo.co.uk/",
         "h1": "UK Cargo Services, Shipping and Freight Forwarding",
@@ -33,6 +33,7 @@ ROUTES = {
 <p>Carrgo is a UK freight forwarder for businesses that need cargo services, shipping and cargo support by sea, air, road or rail. We handle collection, freight booking, customs clearance, tracking and final delivery in one quote.</p>
 <p>Use Carrgo when you are comparing cargo shippers, cargo freight forwarding, a cargo shipping company, cargo transportation or a cargo forwarder for UK imports and exports.</p>
 <p><a href="https://www.carrgo.co.uk/cargo-shipping-company/">Compare cargo shipping company services</a> before you request a quote.</p>
+<p>Compare <a href="https://www.carrgo.co.uk/services/air-freight/">door-to-door air freight</a>, <a href="https://www.carrgo.co.uk/routes/china-to-uk/">China to UK shipping</a> and <a href="https://www.carrgo.co.uk/routes/turkey-to-uk/">Turkey to UK freight</a> for your route and delivery requirements.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png",
         "structuredData": [
@@ -315,7 +316,7 @@ ROUTES = {
     },
     "/services/air-freight": {
         "title": "Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo",
-        "description": "Door to door air freight to the UK for urgent cargo. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Request a shipment-specific quote.",
+        "description": "Door-to-door air freight to the UK, Ireland and Northern Ireland. Compare collection, customs and final delivery in a shipment-specific air cargo quote.",
         "keywords": "door to door air freight, air freight uk, express cargo shipping, urgent air freight, air cargo quotes, time critical delivery",
         "canonical": "https://www.carrgo.co.uk/services/air-freight",
         "h1": "Door-to-Door Air Freight UK",
@@ -325,6 +326,10 @@ ROUTES = {
 <h2>What is included in door-to-door air freight?</h2>
 <p>A door-to-door air freight quote can include supplier collection, airport handling, airway bill documentation, UK customs clearance, tracking and final delivery. It is best for urgent stock, samples, spare parts and high-value commercial cargo.</p>
 <p>Choose door-to-door air freight when stock, samples, spare parts or high-value cargo need a faster option than sea or road freight.</p>
+<h2>Compare a complete door-to-door air freight quote</h2>
+<p>Send the collection and delivery postcodes, number of pieces, packed dimensions, total weight, goods and cargo-ready date. Include your delivery deadline and tell us about batteries, liquids or other cargo that needs an acceptance check.</p>
+<p>Ask for collection, airport handling, air carriage, customs clearance and final delivery to be itemised. Confirm the Incoterm, chargeable weight, quote validity, and whether duty, VAT, storage and specialist handling are included or excluded. Airport-to-airport transit is only one part of the delivery schedule.</p>
+<p><a href="https://www.carrgo.co.uk/routes/china-to-uk/">Compare China to UK shipping options</a> or <a href="https://www.carrgo.co.uk/services/customs-clearance/">check the customs clearance scope</a> before booking. <a href="https://www.carrgo.co.uk/get-a-quote/">Request a door-to-door air freight quote</a>.</p>
 """,
         "ogImage": "https://www.carrgo.co.uk/og-image.png"
     ,
@@ -1877,10 +1882,16 @@ def update_sitemap_with_indexable_pages(gh_pages_dir):
     if not sitemap_path.exists():
         return
 
+    previous_lastmods = {}
+    for entry in re.findall(r"<url>(.*?)</url>", sitemap_path.read_text(encoding="utf-8"), re.DOTALL):
+        location = re.search(r"<loc>(.*?)</loc>", entry)
+        modified = re.search(r"<lastmod>(.*?)</lastmod>", entry)
+        if location and modified:
+            previous_lastmods[normalize_page_url(location.group(1))] = modified.group(1)
     existing_entries = {}
 
     for html_path in gh_pages_dir.rglob("*.html"):
-        if html_path.name == "404.html":
+        if not html_path.is_file() or html_path.name == "404.html":
             continue
 
         html = html_path.read_text(encoding="utf-8")
@@ -1899,7 +1910,9 @@ def update_sitemap_with_indexable_pages(gh_pages_dir):
         if not loc.startswith("https://www.carrgo.co.uk/"):
             continue
 
-        existing_entries[loc] = f"<url><loc>{loc}</loc><lastmod>{date.today().isoformat()}</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>"
+        modified = previous_lastmods.get(loc)
+        lastmod = f"<lastmod>{modified}</lastmod>" if modified else ""
+        existing_entries[loc] = f"<url><loc>{loc}</loc>{lastmod}<changefreq>weekly</changefreq><priority>0.6</priority></url>"
 
     ordered = "\n  ".join(existing_entries[loc] for loc in sorted(existing_entries))
     sitemap_path.write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  {ordered}\n</urlset>\n', encoding="utf-8")

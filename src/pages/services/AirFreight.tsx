@@ -26,8 +26,8 @@ const serviceSchema = {
 };
 
 const faqData = [
-  { q: 'How much does air freight to the UK cost?', a: 'Air freight costs depend on chargeable weight (actual or volumetric, whichever is higher). Typical rates from China to the UK range from £3.50–£7.00 per kg for economy and £6.00–£12.00 per kg for express. We provide all-inclusive quotes with no hidden fees.' },
-  { q: 'How long does air freight take to reach the UK?', a: 'Express air freight takes 1–3 days door-to-door, while economy air freight typically takes 3–5 days. Transit times vary by origin — European origins are faster (1–2 days) compared to Asia (3–5 days).' },
+  { q: 'How much does air freight to the UK cost?', a: 'Air freight is usually priced on chargeable weight: the greater of actual weight and volumetric weight under the carrier’s rules. Send the collection and delivery postcodes, number of pieces, dimensions, weight, goods and ready date. Ask the quote to itemise collection, airport handling, air carriage, customs and final delivery, and confirm whether duty, VAT, storage or specialist handling are excluded.' },
+  { q: 'How long does air freight take to reach the UK?', a: 'Timing depends on the collection point, available flights, cargo acceptance, customs release and delivery postcode. Airport-to-airport transit is only one part of a door-to-door shipment. Give us your cargo-ready date and required delivery date so we can check an express or economy option and confirm the proposed schedule before booking.' },
   { q: 'Do you offer door-to-door air freight?', a: 'Yes. Carrgo handles door-to-door air freight including collection from the supplier, airport handling, airway bill documentation, UK customs clearance, and final delivery to your warehouse or fulfilment centre.' },
   { q: 'Can you arrange air freight to Northern Ireland and Ireland?', a: 'Yes. We arrange air freight to Northern Ireland through Belfast and other suitable UK airports, and air freight to Ireland through Dublin, Shannon and Cork, including customs and final delivery planning.' },
   { q: 'Are there any cargo restrictions on air freight?', a: 'Yes — hazardous materials, lithium batteries, liquids, and perishables require special handling and documentation. Some items are restricted by aviation industry regulations. Contact our team to confirm if your cargo is suitable for air freight.' },
@@ -75,7 +75,7 @@ export default function AirFreight() {
     <>
       <Seo
         title="Door-to-Door Air Freight UK | Air Cargo Quotes | Carrgo"
-        description="Door to door air freight UK, Northern Ireland and Ireland. Express and economy air cargo with collection, customs clearance, tracking and final delivery. Shipment-specific quotes."
+        description="Door-to-door air freight to the UK, Ireland and Northern Ireland. Compare collection, customs and final delivery in a shipment-specific air cargo quote."
         keywords="door to door air freight, air freight uk, air cargo uk, express air freight, air freight northern ireland, air freight from ireland, air freight to ireland, air cargo to northern ireland, airport freight heathrow, air freight quotes uk"
         ogUrl="https://www.carrgo.co.uk/services/air-freight"
         canonical="https://www.carrgo.co.uk/services/air-freight"
@@ -92,7 +92,7 @@ export default function AirFreight() {
                   Air Freight UK — Air Cargo Shipping Services
                 </h1>
                 <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Book express and economy door-to-door air freight from China, USA, UAE, Ireland, Northern Ireland, and Europe to Heathrow, Manchester, Birmingham, Belfast and Dublin. Air cargo includes collection, airway bill documentation, customs clearance, tracking and final delivery in 1–5 days.
+                  Arrange door-to-door air freight from supplier collection through airport handling, customs clearance and final delivery. Tell us the route, cargo-ready date and delivery deadline so we can check suitable express and economy options for the UK, Ireland and Northern Ireland.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -125,6 +125,16 @@ export default function AirFreight() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="air-quote-scope" className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-[#4B5563]">
+            <h2 id="air-quote-scope" className="text-2xl font-bold text-[#111827]">Compare a complete door-to-door air freight quote</h2>
+            <p>Send the collection and delivery postcodes, number of pieces, packed dimensions, total weight, goods and cargo-ready date. Include your delivery deadline and tell us about batteries, liquids or other cargo that needs an acceptance check.</p>
+            <p>Ask for collection, airport handling, air carriage, customs clearance and final delivery to be itemised. Confirm the Incoterm, chargeable weight, quote validity, and whether duty, VAT, storage and specialist handling are included or excluded. Airport-to-airport transit is only one part of the delivery schedule.</p>
+            <p><Link to="/routes/china-to-uk/" className="text-[#1A6DFF] underline">Compare China to UK shipping options</Link> or <Link to="/services/customs-clearance/" className="text-[#1A6DFF] underline">check the customs clearance scope</Link> before booking.</p>
+            <Link to="/get-a-quote/" className="inline-flex min-h-[44px] items-center rounded-lg bg-[#1A6DFF] px-6 py-3 font-semibold text-white">Request a door-to-door air freight quote</Link>
           </div>
         </section>
 

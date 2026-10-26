@@ -106,3 +106,14 @@
 - Rechecked Dublin and Belfast notice indexes; Notice 49 and Notice 28 remain latest respectively.
 - Recorded the 04:05 UTC shipping forecast’s Irish Sea and Shannon gale warnings and the 06:00 UTC inshore strong-wind warnings. Weather remains operational context, not congestion evidence.
 - Preserved 17-port coverage and all unsupported queue, waiting-time, berth-utilisation, score and forecast fields as unknown/null.
+
+## 2026-10-26 — search click-through and quote journey improvements
+
+- Refined the homepage title and description while retaining its cargo-services focus, URL and canonical. Added crawlable links to existing air-freight, China and Turkey pages.
+- Expanded the existing air-freight page with quote-scope, chargeable-weight, cargo-detail and delivery-planning guidance in both rendered and static content.
+- Preselected air, road or rail in the quick quote on the matching service page. Air enquiries no longer carry hidden container/full-load fields.
+- Require an explicit successful FormSubmit acknowledgement before showing submission success or recording a lead; HTTP success alone is insufficient.
+- Removed twelve confirmed HTTP 404 URLs from both source sitemaps. Kept the generated sitemap as the publishing output instead of overwriting it with the source list, and preserved existing lastmod dates for unchanged pages.
+- Added build checks for real sitemap output files, self-canonicals and indexability, plus eight isolated delivery-response checks that send no live enquiries.
+- Validated TypeScript, the production client build, static generation, SEO guards, sitemap checks and the air-selected quote journey in Chrome. Existing quick-form lint findings and the unrelated missing SaaS regression suite predate these changes.
+- Ranking, CTR and qualified-enquiry impact require post-publication measurement; no increase or delivery deadline is guaranteed.

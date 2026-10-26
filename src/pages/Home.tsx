@@ -132,8 +132,8 @@ export default function Home() {
       <meta itemProp="name" content="Freight Forwarder UK &amp; Ireland | Sea, Air, Road &amp; Rail Shipping | Carrgo" />
       <meta itemProp="description" content="Carrgo coordinates UK and Ireland sea freight, air cargo, road haulage, rail freight and customs support." />
       <Seo
-        title="Cargo Services UK | Shipping & Freight Quotes | Carrgo"
-        description="UK cargo services for importers: sea freight, door-to-door air freight, road, rail, customs clearance and final delivery. Get a shipment-specific quote."
+        title="Cargo Services UK | Sea & Air Freight Quotes | Carrgo"
+        description="UK cargo services for businesses. Compare sea freight and door-to-door air freight, with collection, customs clearance and delivery. Request a freight quote."
         keywords="cargo services uk, freight forwarder uk, freight forwarding company uk, shipping and cargo services, cargo transportation, cargo logistics, cargo freight forwarding, cargo forwarder, shipping company uk, logistics company, freight company, freight forwarding services, sea freight services uk, air freight quotes, customs clearance agents uk, container shipping uk, shipping from china to uk, freight quote uk, freight forwarder northern ireland, belfast port freight, dublin port customs clearance, amazon fba freight uk, door to door freight"
         ogUrl="https://www.carrgo.co.uk/"
         canonical="https://www.carrgo.co.uk/"

@@ -50,14 +50,14 @@ export async function submitToFormspree(
       body: payload,
     });
 
-    if (response.ok) {
+    const body = await response.json().catch(() => null);
+    if (response.ok && (body?.success === true || body?.success === 'true')) {
       return { success: true, deliveryMethod: 'formsubmit' };
     }
 
-    const body = await response.json().catch(() => null);
     return {
       success: false,
-      error: body?.error || `Submission failed (${response.status})`,
+      error: body?.message || body?.error || 'Your request could not be confirmed. Please try again or email support@carrgo.co.uk.',
     };
   } catch (err) {
     return {

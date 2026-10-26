@@ -70,6 +70,9 @@ function quoteContext(pathname: string): QuoteContext | null {
 export default function Layout() {
   const { pathname } = useLocation();
   const quote = quoteContext(pathname);
+  const defaultMode = pathname.includes('/services/air-freight') ? 'air'
+    : pathname.includes('/services/road-freight') ? 'road'
+    : pathname.includes('/services/rail-freight') ? 'rail' : 'sea';
 
   return (
     <>
@@ -81,7 +84,7 @@ export default function Layout() {
         </main>
         <Footer />
       </div>
-      {quote && <PortQuoteForm title={quote.title} origin={quote.origin} destination={quote.destination} sourcePage={pathname} />}
+      {quote && <PortQuoteForm title={quote.title} origin={quote.origin} destination={quote.destination} sourcePage={pathname} defaultMode={defaultMode} />}
     </>
   );
 }

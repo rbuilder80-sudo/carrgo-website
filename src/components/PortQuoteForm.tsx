@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 import { FileText, X, CheckCircle } from 'lucide-react';
 import { submitToFormspree, trackLead } from '../lib/formConfig';
 
-type Props = { title: string; destination: string; sourcePage: string; origin?: string };
+type Props = { title: string; destination: string; sourcePage: string; origin?: string; defaultMode?: string };
 const input = 'w-full min-h-11 rounded-lg border border-gray-300 bg-white px-3 text-base focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200';
 const label = 'block text-sm font-semibold text-gray-800 mb-1';
 const initial = { mode: 'sea', load: 'FCL', equipment: '40HC', origin: '', destination: '', cargo: '', weight: '', name: '', email: '', phone: '' };
 
-export default function PortQuoteForm({ title, destination, sourcePage, origin }: Props) {
+export default function PortQuoteForm({ title, destination, sourcePage, origin, defaultMode = 'sea' }: Props) {
   const [open, setOpen] = useState(false);
   const [autoPopupBlocked, setAutoPopupBlocked] = useState(false);
   const [step, setStep] = useState(1);
-  const [values, setValues] = useState({ ...initial, origin: origin || '', destination });
+  const [values, setValues] = useState({ ...initial, mode: defaultMode, load: defaultMode === 'road' ? 'FTL' : 'FCL', origin: origin || '', destination });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [sent, setSent] = useState(false);
@@ -36,8 +36,8 @@ export default function PortQuoteForm({ title, destination, sourcePage, origin }
     setStep(1);
     setSent(false);
     setAutoPopupBlocked(seen);
-    setValues({ ...initial, origin: origin || '', destination });
-  }, [sourcePage, origin, destination, popupStorageKey]);
+    setValues({ ...initial, mode: defaultMode, load: defaultMode === 'road' ? 'FTL' : 'FCL', origin: origin || '', destination });
+  }, [sourcePage, origin, destination, popupStorageKey, defaultMode]);
   useEffect(() => {
     if (open || sent || autoPopupBlocked) return;
     const timer = window.setTimeout(() => {
@@ -57,9 +57,13 @@ export default function PortQuoteForm({ title, destination, sourcePage, origin }
     e.preventDefault();
     if (busy) return;
     setBusy(true); setError('');
+    const { load, equipment, ...shipment } = values;
+    const usesContainer = values.mode === 'sea' || values.mode === 'rail';
+    const usesLoad = usesContainer || values.mode === 'road';
     const result = await submitToFormspree('Quick Freight Quote', {
-      ...values, source_page: window.location.href,
-      shipment_priority: values.load === 'FCL' || values.load === 'FTL' ? 'Full load' : 'Part load'
+      ...shipment, source_page: window.location.href,
+      ...(usesLoad ? { load, shipment_priority: load === 'FCL' || load === 'FTL' ? 'Full load' : 'Part load' } : {}),
+      ...(usesContainer && load === 'FCL' ? { equipment } : {}),
     });
     setBusy(false);
     if (result.success) { markPopupSeen(); setSent(true); trackLead('quick_quote', result.deliveryMethod); }
