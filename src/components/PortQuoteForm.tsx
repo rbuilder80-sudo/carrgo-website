@@ -5,7 +5,7 @@ import { submitToFormspree, trackLead } from '../lib/formConfig';
 type Props = { title: string; destination: string; sourcePage: string; origin?: string; defaultMode?: string };
 const input = 'w-full min-h-11 rounded-lg border border-gray-300 bg-white px-3 text-base focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200';
 const label = 'block text-sm font-semibold text-gray-800 mb-1';
-const initial = { mode: 'sea', load: 'FCL', equipment: '40HC', origin: '', destination: '', cargo: '', weight: '', name: '', email: '', phone: '' };
+const initial = { mode: 'sea', load: 'FCL', equipment: '40HC', origin: '', destination: '', cargo: '', weight: '', dimensions: '', name: '', email: '', phone: '' };
 
 export default function PortQuoteForm({ title, destination, sourcePage, origin, defaultMode = 'sea' }: Props) {
   const [open, setOpen] = useState(false);
@@ -88,7 +88,8 @@ export default function PortQuoteForm({ title, destination, sourcePage, origin, 
             <button type="button" disabled={!values.origin.trim() || !values.destination.trim()} onClick={()=>setStep(2)} className="min-h-12 w-full rounded-lg bg-[#1A6DFF] font-bold text-white disabled:opacity-40">Next: cargo and contact →</button>
           </> : <>
             <div><label className={label} htmlFor="quick-cargo">What are you shipping? *</label><input id="quick-cargo" required className={input} value={values.cargo} onChange={e=>change('cargo',e.target.value)} placeholder="e.g. 20 pallets of clothing"/></div>
-            <div><label className={label} htmlFor="quick-weight">Approx. weight / volume (optional)</label><input id="quick-weight" className={input} value={values.weight} onChange={e=>change('weight',e.target.value)} placeholder="e.g. 15,000 kg or 20 CBM"/></div>
+            <div><label className={label} htmlFor="quick-weight">Approx. weight / volume *</label><input id="quick-weight" required className={input} value={values.weight} onChange={e=>change('weight',e.target.value)} placeholder="e.g. 15,000 kg or 20 CBM"/></div>
+            <div><label className={label} htmlFor="quick-dimensions">Packed dimensions</label><input id="quick-dimensions" list="quick-dimension-options" className={input} value={values.dimensions} onChange={e=>change('dimensions',e.target.value)} placeholder="Length × width × height, or I’m not sure"/><datalist id="quick-dimension-options"><option value="I’m not sure"/></datalist></div>
             <div><label className={label} htmlFor="quick-name">Your name *</label><input id="quick-name" required className={input} autoComplete="name" value={values.name} onChange={e=>change('name',e.target.value)}/></div>
             <div><label className={label} htmlFor="quick-email">Email address *</label><input id="quick-email" type="email" required className={input} autoComplete="email" value={values.email} onChange={e=>change('email',e.target.value)}/></div>
             <div><label className={label} htmlFor="quick-phone">Phone / WhatsApp (optional)</label><input id="quick-phone" type="tel" className={input} autoComplete="tel" value={values.phone} onChange={e=>change('phone',e.target.value)}/></div>

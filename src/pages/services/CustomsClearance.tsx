@@ -2,421 +2,166 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 import {
-  Ship, Plane, Truck, FileCheck, Package,
-  Globe, ArrowRight, CheckCircle, ChevronDown,
-  Shield, AlertTriangle, ClipboardCheck, BookOpen, Calculator, CreditCard, Users
+  ArrowRight, BookOpen, Calculator, CheckCircle, ChevronDown,
+  ClipboardList, FileCheck, Info, Package, Plane, Ship, Truck,
 } from 'lucide-react';
 
-/* ── JSON-LD Structured Data ── */
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Customs Clearance UK — Import & Export Brokers',
-  provider: { '@type': 'Organization', name: 'CARRGO FREIGHT LTD' },
-  areaServed: { '@type': 'Country', name: 'United Kingdom' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Customs Clearance Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Import Declarations (CDS)' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Export Declarations' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commodity Code Classification' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Duty Deferment' } },
-    ],
+  name: 'UK Customs Clearance Support',
+  serviceType: 'Customs clearance coordination',
+  provider: {
+    '@type': 'Organization',
+    name: 'CARRGO FREIGHT LTD',
+    url: 'https://www.carrgo.co.uk/',
   },
+  areaServed: { '@type': 'Country', name: 'United Kingdom' },
+  description: 'Customs-clearance support for UK imports and exports, including document review, declaration coordination, tariff checks and release planning.',
+  url: 'https://www.carrgo.co.uk/services/customs-clearance/',
 };
 
 const faqData = [
-  { q: 'What is the Customs Declaration Service (CDS)?', a: 'The Customs Declaration Service (CDS) is the UK\'s electronic system for handling customs declarations, replacing the older CHIEF system. All UK import and export declarations must now be submitted through CDS. Our HMRC-authorised brokers are fully trained and registered to submit declarations on CDS on your behalf.' },
-  { q: 'How do I find the right commodity code for my goods?', a: 'Commodity codes (also called HS codes) are 8-10 digit numbers that classify your goods for customs purposes. The code determines the duty rate and any restrictions. Our team can accurately classify your goods using the UK Trade Tariff, ensuring you pay the correct duty and VAT.' },
-  { q: 'What duties and VAT will I need to pay on imports?', a: 'UK import duties vary by product type and origin country. Most goods attract VAT at 20% on the total value including duty and shipping. Some goods benefit from preferential duty rates under trade agreements. We calculate all costs upfront so there are no surprises.' },
-  { q: 'How has Brexit changed UK customs requirements?', a: 'Since leaving the EU customs union, all goods moving between the UK and EU require customs declarations. UK importers need a GB EORI number, commodity codes, and may face customs checks. We guide you through every step and handle all documentation.' },
-  { q: 'What is duty deferment and how does it work?', a: 'Duty deferment allows you to defer payment of customs duties and VAT to a single monthly payment rather than paying at the point of import. This improves cash flow. We can help you set up a deferment account with HMRC or use our own facility.' },
+  {
+    q: 'What information is needed for a UK customs-clearance quote?',
+    a: 'Provide the route, importer or exporter details, EORI number where required, commercial invoice, packing list, transport document, goods description, country of origin, Incoterm and any known commodity code or licence requirement. Carrgo can identify missing information before the declaration scope is confirmed.',
+  },
+  {
+    q: 'Can I appoint someone to deal with customs for me?',
+    a: 'Yes. GOV.UK explains that a customs agent, freight forwarder or other intermediary can be appointed. The appointment and type of representation must be agreed, and the trader must provide accurate shipment and authorisation details.',
+  },
+  {
+    q: 'How are commodity codes, duty and VAT checked?',
+    a: 'The UK Trade Tariff is used to identify commodity codes and the measures, duty and VAT rates linked to the goods. The result depends on the product description, origin, customs value and any relief or preference that can be evidenced.',
+  },
+  {
+    q: 'Can import VAT be accounted for on a VAT Return?',
+    a: 'Eligible VAT-registered businesses may use postponed VAT accounting. Whether it applies depends on the importer and declaration, so the intended payment method should be confirmed before submission.',
+  },
+  {
+    q: 'Does customs clearance guarantee immediate release?',
+    a: 'No. A correctly prepared declaration does not control an HMRC, Border Force, port or terminal intervention. Release timing can also depend on document availability, payment, licences, inspections and the carrier or terminal process.',
+  },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqData.map(faq => ({
+  mainEntity: faqData.map(({ q, a }) => ({
     '@type': 'Question',
-    name: faq.q,
-    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
   })),
 };
 
-/* ── FAQ Accordion ── */
 function FaqAccordion() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
-  return (
-    <div className="space-y-3">
-      {faqData.map((faq, i) => (
-        <div key={i} className="border border-gray-200 rounded-lg overflow-hidden">
-          <button
-            type="button"
-            className="w-full flex items-center justify-between p-4 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors"
-            onClick={() => setOpenIdx(openIdx === i ? null : i)}
-            aria-expanded={openIdx === i}
-            aria-controls={`faq-ans-${i}`}>
-            <span>{faq.q}</span>
-            <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform flex-shrink-0 ${openIdx === i ? 'rotate-180' : ''}`} aria-hidden="true" />
-          </button>
-          {openIdx === i && (
-            <div id={`faq-ans-${i}`} className="px-4 pb-4 text-gray-600 leading-relaxed">{faq.a}</div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
+  return <div className="space-y-3">
+    {faqData.map((faq, index) => <div key={faq.q} className="overflow-hidden rounded-lg border border-gray-200">
+      <button type="button" className="flex w-full items-center justify-between p-4 text-left font-medium text-gray-900 hover:bg-gray-50" onClick={() => setOpenIdx(openIdx === index ? null : index)} aria-expanded={openIdx === index} aria-controls={`customs-faq-${index}`}>
+        <span>{faq.q}</span>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform ${openIdx === index ? 'rotate-180' : ''}`} aria-hidden="true" />
+      </button>
+      {openIdx === index && <div id={`customs-faq-${index}`} className="px-4 pb-4 leading-relaxed text-gray-600">{faq.a}</div>}
+    </div>)}
+  </div>;
 }
 
 export default function CustomsClearance() {
-  return (
-    <>
-      <Seo
-        title="Customs Clearance UK | Import & Export Brokers | Carrgo"
-        description="UK customs clearance & import/export brokerage. CDS declarations, duty calculations, commodity codes. NI Protocol expertise. Belfast & Dublin."
-        keywords="customs clearance uk, customs broker, import declarations cds, customs clearance northern ireland, irish customs broker, t1 documents, transit documents, customs duty vat"
-        ogUrl="https://www.carrgo.co.uk/services/customs-clearance"
-        canonical="https://www.carrgo.co.uk/services/customs-clearance"
-        structuredData={[serviceSchema, faqSchema]}
-      />
-      <main id="main-content">
-        {/* ====== HERO ====== */}
-        <section aria-labelledby="hero-heading" className="relative overflow-hidden bg-gradient-to-br from-[#EFF6FF] to-white py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Customs Clearance</span>
-                <h1 id="hero-heading" className="text-3xl lg:text-5xl font-extrabold text-[#111827] leading-tight mt-3 mb-6">
-                  Customs Clearance UK — Import & Export Brokers
-                </h1>
-                <p className="text-lg text-[#4B5563] mb-8 leading-relaxed">
-                  Carrgo coordinates UK import and export declarations, document checks, commodity-code information, duty and VAT details, and port release using the shipment information supplied.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    'Professional customs brokers',
-                    'CDS (Customs Declaration Service) entries',
-                    'Duty deferment accounts',
-                    'Commodity code classification',
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#4B5563]">
-                      <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-[#1A6DFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557CC] transition-colors min-h-[44px]">
-                    Get a Customs Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                  </Link>
-                  <a href="mailto:support@carrgo.co.uk" className="inline-flex items-center gap-2 bg-white text-[#4B5563] border border-[#E5E7EB] px-6 py-3 rounded-lg font-semibold hover:bg-[#F8FAFC] transition-colors min-h-[44px]">
-                    Call Our Team
-                  </a>
-                </div>
-              </div>
-              <div className="hidden lg:block">
-                <img
-                  src="/images/service-customs.jpg"
-                  alt="Customs documentation on clipboard with container port in background"
-                  className="rounded-2xl shadow-lg w-full object-cover"
-                  loading="eager"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+  const checklist = [
+    ['Importer or exporter', 'Legal name, address, EORI where required and the party responsible for the declaration.'],
+    ['Goods', 'Plain-language description, intended use, material or composition, quantity and any known commodity code.'],
+    ['Value and origin', 'Commercial invoice, currency, Incoterm, freight elements, country of origin and preference evidence where claimed.'],
+    ['Transport', 'Packing list, transport document, route, port or terminal and expected arrival or departure details.'],
+    ['Controls', 'Any licences, certificates, sanitary or product-specific requirements known to apply.'],
+    ['Payment', 'How duty, import VAT and other charges will be paid or accounted for, including PVA where eligible.'],
+  ];
 
-        {/* ====== SERVICES BREAKDOWN ====== */}
-        <section aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">What We Handle</span>
-              <h2 id="services-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                Our Customs Clearance Services
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: ClipboardCheck, title: 'Import Declarations', desc: 'Full CDS entry preparation and submission for all UK imports. We ensure accurate declarations with correct commodity codes, valuations, and origin declarations.' },
-                { icon: FileCheck, title: 'Export Declarations', desc: 'Complete export customs documentation for goods leaving the UK. Required for all post-Brexit EU shipments and worldwide exports.' },
-                { icon: BookOpen, title: 'Commodity Code Classification', desc: 'Expert HS code determination using the UK Trade Tariff. Correct classification ensures accurate duty rates and regulatory compliance.' },
-                { icon: Calculator, title: 'Duty & VAT Calculation', desc: 'Accurate assessment of all import duties, VAT, and excise duties payable. We provide transparent cost breakdowns before your goods arrive.' },
-                { icon: CreditCard, title: 'Duty Deferment', desc: 'Deferred payment arrangements allowing you to pay customs duties monthly rather than at the point of import. Improves cash flow significantly.' },
-                { icon: Shield, title: 'Customs Compliance', desc: 'Audit support, record keeping, and ongoing compliance advice. We help you maintain HMRC-compliant systems and processes.' },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-[#1A6DFF]" aria-hidden="true" />
-                    </div>
-                    <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
-                    <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
-                  </article>
-                );
-              })}
+  return <>
+    <Seo title="Customs Clearance UK | Import & Export Support | Carrgo" description="UK customs-clearance support for imports and exports: document review, CDS declaration coordination, commodity-code checks, duty and VAT planning, and port release." keywords="customs clearance uk, customs declaration support, import customs clearance, export customs declaration, cds declaration, commodity code checks" ogUrl="https://www.carrgo.co.uk/services/customs-clearance/" canonical="https://www.carrgo.co.uk/services/customs-clearance/" structuredData={[serviceSchema, faqSchema]} />
+    <main id="main-content">
+      <section aria-labelledby="customs-heading" className="bg-gradient-to-br from-[#EFF6FF] to-white py-16 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A6DFF]">Customs clearance</p>
+            <h1 id="customs-heading" className="mt-3 text-3xl font-extrabold leading-tight text-[#111827] lg:text-5xl">UK Customs Clearance for Imports and Exports</h1>
+            <p className="mt-6 text-lg leading-relaxed text-[#4B5563]">Carrgo coordinates the information, documents and declaration scope needed for a UK import or export movement. The service can sit alongside sea, air or road freight, or support a customs-only enquiry where the transport details are already known.</p>
+            <ul className="mt-7 space-y-3 text-[#4B5563]">
+              {['Import and export declaration coordination', 'Commercial-document and shipment-data checks', 'Commodity-code and UK Trade Tariff review', 'Duty, VAT and release-method questions identified before submission'].map(item => <li key={item} className="flex gap-3"><CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" aria-hidden="true" /><span>{item}</span></li>)}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link to="/get-a-quote" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#1A6DFF] px-6 py-3 font-semibold text-white hover:bg-[#1557CC]">Request a customs-clearance quote <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              <Link to="/resources/post-brexit-customs-guide" className="inline-flex min-h-11 items-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 hover:bg-gray-50">Read the customs guide</Link>
             </div>
           </div>
-        </section>
+          <aside className="rounded-2xl border border-blue-100 bg-white p-7 shadow-lg" aria-label="Customs scope note">
+            <Info className="h-9 w-9 text-[#1A6DFF]" aria-hidden="true" />
+            <h2 className="mt-4 text-2xl font-bold text-gray-900">What this page does not promise</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">No customs provider can guarantee a particular duty outcome, inspection decision or release time without the complete facts and the authorities’ decision. Carrgo confirms the proposed scope, assumptions, representation route and exclusions against the shipment information supplied.</p>
+          </aside>
+        </div>
+      </section>
 
-        {/* ====== PROCESS ====== */}
-        <section aria-labelledby="process-heading" className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">How It Works</span>
-              <h2 id="process-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                Our Customs Clearance Process
-              </h2>
-            </div>
-            <ol className="grid md:grid-cols-4 gap-8">
-              {[
-                { step: '1', title: 'Document Review', desc: 'We review your commercial invoice, packing list, and shipping documents' },
-                { step: '2', title: 'Classification', desc: 'Correct commodity codes assigned and duty/VAT calculated' },
-                { step: '3', title: 'Submission', desc: 'CDS entry submitted with all required declarations' },
-                { step: '4', title: 'Clearance', desc: 'Goods cleared and released for delivery to your premises' },
-              ].map(item => (
-                <li key={item.step} className="text-center relative">
-                  <div className="w-14 h-14 bg-[#1A6DFF] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-lg">
-                    {item.step}
-                  </div>
-                  <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
-                  <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
-                </li>
-              ))}
-            </ol>
+      <section aria-labelledby="scope-heading" className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A6DFF]">Service scope</p>
+            <h2 id="scope-heading" className="mt-3 text-3xl font-bold text-gray-900">What Carrgo can coordinate</h2>
+            <p className="mt-4 text-lg text-gray-600">The final scope depends on the route, goods, importer or exporter, Incoterm and declaration type. These are the main workstreams to confirm.</p>
           </div>
-        </section>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: FileCheck, title: 'Declaration preparation', body: 'Collect the required shipment data and coordinate the import or export declaration route and supporting records.' },
+              { icon: BookOpen, title: 'Tariff and commodity checks', body: 'Review the supplied goods description against the UK Trade Tariff and flag where more technical product detail is needed.' },
+              { icon: Calculator, title: 'Duty and VAT planning', body: 'Identify the customs value, origin evidence and intended payment method needed to estimate or account for charges.' },
+              { icon: ClipboardList, title: 'Document readiness', body: 'Check the commercial invoice, packing list, transport document and available licences or certificates before submission.' },
+              { icon: Package, title: 'Release coordination', body: 'Align the declaration reference and release steps with the carrier, port, terminal or delivery plan for the booked movement.' },
+              { icon: Info, title: 'Exceptions and limitations', body: 'Explain outstanding information, third-party dependencies and items outside the quoted customs-clearance scope.' },
+            ].map(({ icon: Icon, title, body }) => <article key={title} className="rounded-xl border border-gray-200 p-6"><Icon className="h-9 w-9 text-[#1A6DFF]" aria-hidden="true" /><h3 className="mt-4 text-lg font-bold text-gray-900">{title}</h3><p className="mt-2 leading-relaxed text-gray-600">{body}</p></article>)}
+          </div>
+        </div>
+      </section>
 
-        {/* ====== NORTHERN IRELAND CUSTOMS ====== */}
-        <section aria-labelledby="ni-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Northern Ireland</span>
-              <h2 id="ni-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                Northern Ireland Customs Clearance
-              </h2>
-              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
-                Northern Ireland's unique trading position requires specialist customs knowledge. Our team are experts in the Windsor Framework, NI Protocol, and Irish customs procedures.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Shield, title: 'Windsor Framework', desc: 'Expert guidance on green lane (NI internal) and red lane (EU-bound) procedures. We classify your goods correctly and ensure the right documentation for each pathway.' },
-                { icon: FileCheck, title: 'T2 Transit Documents', desc: 'T2 transit declarations, Transit Accompanying Documents (TAD), and NCTS submissions for GB–NI movements. Full management of the transit process from start to finish.' },
-                { icon: Globe, title: 'GB–NI Movements', desc: 'Complete customs handling for goods moving between Great Britain and Northern Ireland, including safety & security declarations, supplementary declarations, and UKIMS checks.' },
-                { icon: AlertTriangle, title: 'Irish Customs', desc: 'Customs clearance for goods entering Ireland (ROI) from the UK or beyond. T1 transit documents, Irish import declarations, and Revenue (Irish customs) compliance.' },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-[#1A6DFF]" aria-hidden="true" />
-                    </div>
-                    <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
-                    <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
-                  </article>
-                );
-              })}
-            </div>
-            <div className="text-center mt-8">
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/routes/belfast-northern-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
-                  Belfast Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-                <Link to="/routes/dublin-ireland" className="inline-flex items-center gap-2 text-[#1A6DFF] font-semibold hover:gap-3 transition-all">
-                  Dublin Route <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
+      <section aria-labelledby="checklist-heading" className="bg-[#F8FAFC] py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="checklist-heading" className="text-3xl font-bold text-gray-900">Customs-clearance information checklist</h2>
+          <p className="mt-4 max-w-3xl text-lg text-gray-600">Send what is available. If a field is unknown, mark it as unknown rather than guessing; Carrgo can then identify what must be confirmed before the declaration is prepared.</p>
+          <div className="mt-8 overflow-x-auto rounded-xl border border-gray-200 bg-white">
+            <table className="w-full min-w-[680px] border-collapse text-left"><caption className="sr-only">Information commonly needed to scope UK customs clearance</caption><thead className="bg-gray-100"><tr><th scope="col" className="px-5 py-4">Area</th><th scope="col" className="px-5 py-4">Information to provide</th></tr></thead><tbody>{checklist.map(([area, detail]) => <tr key={area} className="border-t border-gray-200"><th scope="row" className="px-5 py-4 font-semibold text-gray-900">{area}</th><td className="px-5 py-4 text-gray-600">{detail}</td></tr>)}</tbody></table>
           </div>
-        </section>
+          <p className="mt-5 text-sm text-gray-600">The importer or exporter remains responsible for supplying accurate information and retaining the records required for their transaction. Any tariff, origin or tax treatment depends on the facts and supporting evidence.</p>
+        </div>
+      </section>
 
-        {/* ====== POST-BREXIT COMPLIANCE ====== */}
-        <section aria-labelledby="brexit-heading" className="py-16 md:py-24 bg-[#EFF6FF]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Brexit Guidance</span>
-              <h2 id="brexit-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                UK Customs After Brexit
-              </h2>
-              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
-                Navigating post-Brexit customs can be complex. Our expert brokers ensure your imports and exports remain compliant and efficient.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { icon: Globe, title: 'EU to UK Requirements', desc: 'Since Brexit, all goods entering the UK from the EU require a customs declaration, commodity codes, and may be subject to customs checks. We handle every aspect of EU-to-UK customs clearance, ensuring compliance with the new rules.' },
-                { icon: AlertTriangle, title: 'Northern Ireland Protocol', desc: 'Goods moving between Great Britain and Northern Ireland have special arrangements under the Windsor Framework. We understand the complexities and can advise on the correct procedures for NI movements, including green lane and red lane classifications.' },
-                { icon: Users, title: 'EORI & Registration', desc: 'All UK importers and exporters need a valid EORI number starting with GB. NI traders may need an XI EORI for EU trade. We can guide you through EORI registration and ensure you have all necessary documentation in place.' },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB]">
-                    <div className="w-12 h-12 bg-[#EBF2FF] rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-[#1A6DFF]" aria-hidden="true" />
-                    </div>
-                    <h3 className="font-bold text-lg text-[#111827] mb-2">{item.title}</h3>
-                    <p className="text-[#4B5563] text-sm leading-relaxed">{item.desc}</p>
-                  </article>
-                );
-              })}
-            </div>
+      <section aria-labelledby="guidance-heading" className="bg-white py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_.9fr] lg:px-8">
+          <div>
+            <h2 id="guidance-heading" className="text-3xl font-bold text-gray-900">Official guidance used for this service explanation</h2>
+            <p className="mt-4 leading-relaxed text-gray-600">These GOV.UK sources explain the declaration system and the trader’s options. They are linked so an importer can check the underlying rule instead of relying on an unsupported marketing promise.</p>
+            <ul className="mt-6 space-y-3">
+              <li><a className="font-semibold text-[#1557CC] underline" href="https://www.gov.uk/government/collections/customs-declaration-service">Customs Declaration Service</a></li>
+              <li><a className="font-semibold text-[#1557CC] underline" href="https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf">Appoint someone to deal with customs</a></li>
+              <li><a className="font-semibold text-[#1557CC] underline" href="https://www.gov.uk/trade-tariff">UK Trade Tariff: commodity codes, duty and VAT</a></li>
+              <li><a className="font-semibold text-[#1557CC] underline" href="https://www.gov.uk/eori">Get an EORI number</a></li>
+              <li><a className="font-semibold text-[#1557CC] underline" href="https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return">Postponed VAT accounting eligibility</a></li>
+            </ul>
           </div>
-        </section>
+          <aside className="rounded-2xl bg-[#EFF6FF] p-7"><h3 className="text-xl font-bold text-gray-900">Related Carrgo guidance</h3><ul className="mt-5 space-y-3"><li><Link className="font-semibold text-[#1557CC]" to="/guides/commodity-codes">Commodity-code guide →</Link></li><li><Link className="font-semibold text-[#1557CC]" to="/resources/incoterms-guide">Incoterms guide →</Link></li><li><Link className="font-semibold text-[#1557CC]" to="/services/sea-freight">Sea freight and customs scope →</Link></li><li><Link className="font-semibold text-[#1557CC]" to="/services/road-freight">European road freight →</Link></li></ul></aside>
+        </div>
+      </section>
 
-        {/* ====== INCOTERMS COMPARISON ====== */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Shipping Terms</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                EXW vs FOB vs CIF vs DDP: Which Incoterm is best for UK importers?
-              </h2>
-              <p className="text-[#4B5563] mt-4 max-w-2xl mx-auto">
-                Incoterms define who pays for transport, insurance, and customs at each stage. Choosing the right term affects your total cost, risk, and control. Compare the four most common Incoterms for UK imports.
-              </p>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-sm border">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th scope="col" className="text-left px-4 py-4 font-semibold text-gray-700">Feature</th>
-                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">EXW</th>
-                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">FOB</th>
-                    <th scope="col" className="text-center px-4 py-4 font-semibold text-gray-600">CIF</th>
-                    <th scope="col" className="text-center px-4 py-4 font-semibold text-[#1A6DFF]">DDP</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Seller\'s responsibility', 'Factory gate only', 'Port of origin', 'Port of destination', 'Your door'],
-                    ['Buyer\'s responsibility', 'Everything from factory', 'Freight, insurance, customs', 'Customs, delivery', 'Nothing'],
-                    ['Freight cost', 'Buyer pays', 'Buyer pays', 'Seller pays', 'Seller pays'],
-                    ['Insurance', 'Buyer arranges', 'Buyer arranges', 'Seller arranges', 'Seller arranges'],
-                    ['Customs clearance', 'Buyer handles', 'Buyer handles', 'Buyer handles', 'Seller handles'],
-                    ['Risk transfer point', 'Factory', 'On board vessel', 'On board vessel', 'Your warehouse'],
-                    ['Control', 'Buyer has full control', 'Buyer chooses carrier', 'Buyer chooses carrier', 'Seller controls all'],
-                    ['Best for', 'Experienced importers', 'Standard sea freight', 'Risk-averse buyers', 'Hands-off importers'],
-                    ['Hidden costs', 'Many (pickup, export)', 'Few', 'Some (destination charges)', 'None (all-inclusive)'],
-                    ['Carrgo recommendation', 'Use with caution', 'Most common', 'Good for beginners', 'Best for simplicity'],
-                  ].map(([feat, exw, fob, cif, ddp], i) => (
-                    <tr key={i} className="border-t">
-                      <td className="px-4 py-3 font-medium text-gray-900">{feat}</td>
-                      <td className="px-4 py-3 text-center text-gray-600">{exw}</td>
-                      <td className="px-4 py-3 text-center text-gray-600">{fob}</td>
-                      <td className="px-4 py-3 text-center text-gray-600">{cif}</td>
-                      <td className="px-4 py-3 text-center text-gray-600">{ddp}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-center text-gray-500 text-sm mt-6 max-w-2xl mx-auto">Not sure which Incoterm suits your shipment? <Link to="/contact" className="text-[#1A6DFF] font-medium hover:underline">Speak to Carrgo</Link> and our customs team will advise the best option.</p>
-          </div>
-        </section>
+      <section aria-labelledby="faq-heading" className="bg-[#F8FAFC] py-16 md:py-24"><div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"><h2 id="faq-heading" className="text-center text-3xl font-bold text-gray-900">Customs-clearance questions</h2><div className="mt-9"><FaqAccordion /></div></div></section>
 
-        {/* ====== WHY CUSTOMS ====== */}
-        <section aria-labelledby="why-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Before submission</span>
-              <h2 id="why-heading" className="text-3xl lg:text-4xl font-bold text-[#111827] mt-3">
-                What Carrgo Checks for Customs Clearance
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {[
-                { stat: 'EORI', label: 'Importer Identity', desc: 'The correct GB or XI EORI and responsible importer or exporter.' },
-                { stat: 'HS', label: 'Commodity Details', desc: 'Goods descriptions and commodity-code information supplied for review.' },
-                { stat: 'Value', label: 'Customs Value', desc: 'Invoice value, currency, freight elements and valuation method.' },
-                { stat: 'Origin', label: 'Origin Evidence', desc: 'Country of origin and any preference documents needed for a claim.' },
-                { stat: 'Docs', label: 'Shipment Records', desc: 'Commercial invoice, packing list and transport documents.' },
-              ].map((item, i) => (
-                <article key={i} className="bg-white rounded-xl p-6 border border-[#E5E7EB] text-center">
-                  <div className="text-3xl font-extrabold text-[#1A6DFF] mb-2">{item.stat}</div>
-                  <h3 className="font-bold text-sm text-[#111827] mb-1">{item.label}</h3>
-                  <p className="text-[#4B5563] text-xs leading-relaxed">{item.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section aria-label="Request a customs-clearance quote" className="bg-[#1A6DFF] py-16 md:py-20"><div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8"><h2 className="text-3xl font-bold text-white">Scope your customs-clearance requirement</h2><p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">Send the origin, destination, goods, approximate weight or volume and available documents. Carrgo will identify the proposed declaration scope and any missing information.</p><Link to="/get-a-quote" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-[#1A6DFF] hover:bg-gray-100">Request a customs-clearance quote <ArrowRight className="h-5 w-5" aria-hidden="true" /></Link></div></section>
 
-        {/* ====== FAQ ====== */}
-        <section aria-labelledby="faq-heading" className="py-16 md:py-24 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <span className="text-[#1A6DFF] font-semibold text-sm uppercase tracking-wider">Customs FAQ</span>
-              <h2 id="faq-heading" className="text-3xl font-bold text-[#111827] mt-3">
-                Customs Clearance Frequently Asked Questions
-              </h2>
-            </div>
-            <FaqAccordion />
-          </div>
-        </section>
+      <section aria-label="Related freight services" className="bg-white py-12"><div className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">{[
+        { icon: Ship, label: 'Sea freight', to: '/services/sea-freight' },
+        { icon: Plane, label: 'Air freight', to: '/services/air-freight' },
+        { icon: Truck, label: 'Road freight', to: '/services/road-freight' },
+        { icon: Package, label: 'Door-to-door freight', to: '/services/door-to-door' },
+      ].map(({ icon: Icon, label, to }) => <Link key={label} to={to} className="flex items-center gap-3 rounded-xl border border-gray-200 p-4 font-semibold text-gray-900 hover:border-blue-300 hover:shadow-sm"><Icon className="h-6 w-6 text-[#1A6DFF]" aria-hidden="true" />{label}</Link>)}</div></section>
 
-        {/* ====== CTA BANNER ====== */}
-        <section aria-label="Get a customs clearance quote" className="py-16 md:py-24 bg-[#1A6DFF]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Get Your Customs Clearance Quote
-            </h2>
-            <p className="text-white/85 text-lg mb-8 max-w-2xl mx-auto">
-              Send the route, goods and available documents so Carrgo can confirm the declaration scope and information still required.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/get-a-quote" className="inline-flex items-center gap-2 bg-white text-[#1A6DFF] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors min-h-[44px]">
-                Get a Customs Quote <ArrowRight className="w-5 h-5" aria-hidden="true" />
-              </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#1557CC] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#124DB8] transition-colors min-h-[44px]">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ====== RELATED SERVICES ====== */}
-        <section aria-labelledby="related-heading" className="py-16 md:py-24 bg-[#F8FAFC]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="related-heading" className="text-2xl font-bold text-[#111827] mb-8 text-center">
-              Explore Our Other Services
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Ship, title: 'Sea Freight', desc: 'FCL & LCL container shipping worldwide to UK ports', href: '/services/sea-freight' },
-                { icon: Plane, title: 'Air Freight', desc: 'Express & economy air cargo with door-to-door delivery', href: '/services/air-freight' },
-                { icon: Truck, title: 'Road Freight', desc: 'FTL & LTL European haulage to and from the UK', href: '/services/road-freight' },
-                { icon: Package, title: 'Door-to-Door', desc: 'Complete factory-to-warehouse forwarding', href: '/services/door-to-door' },
-              ].map(s => {
-                const Icon = s.icon;
-                return (
-                  <Link key={s.title} to={s.href} className="bg-white rounded-xl p-6 border border-[#E5E7EB] hover:shadow-lg transition-shadow group">
-                    <Icon className="w-10 h-10 text-[#1A6DFF] mb-3" aria-hidden="true" />
-                    <h3 className="font-bold text-lg text-[#111827] mb-1">{s.title}</h3>
-                    <p className="text-[#4B5563] text-sm mb-3">{s.desc}</p>
-                    <span className="text-[#1A6DFF] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Learn more <ArrowRight className="w-3 h-3" aria-hidden="true" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ====== LAST UPDATED ====== */}
-        <section className="py-4 bg-gray-100 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm text-gray-500">
-              <span className="inline-flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                Last Updated: <time dateTime="2026-07-08">July 2026</time> — Customs regulations and Incoterms verified for accuracy
-              </span>
-            </p>
-          </div>
-        </section>
-      </main>
-    </>
-  );
+      <p className="border-t border-gray-200 bg-gray-50 py-4 text-center text-sm text-gray-500">Content reviewed against the linked GOV.UK guidance on 26 October 2026.</p>
+    </main>
+  </>;
 }

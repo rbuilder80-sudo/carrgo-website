@@ -20,6 +20,7 @@ const terms = read('src/pages/Terms.tsx');
 const privacy = read('src/pages/Privacy.tsx');
 const chinaRoute = read('src/pages/routes/ChinaToUk.tsx');
 const cargoShipping = read('src/pages/CargoShippingCompany.tsx');
+const customsClearance = read('src/pages/services/CustomsClearance.tsx');
 
 const sourceFiles = (directory) => readdirSync(new URL(`../${directory}`, import.meta.url), { withFileTypes: true })
   .flatMap((entry) => entry.isDirectory()
@@ -35,6 +36,8 @@ requireText(layout.includes('<PortQuoteForm'), 'Global contextual quote form is 
 requireText(layout.includes("'/routes/china-to-uk'"), 'China–UK quote context is missing');
 requireText(layout.includes("origin: 'China'"), 'China route origin is not preselected');
 requireText(quoteForm.includes('Approx. weight / volume'), 'Quick quote weight/volume field is missing');
+requireText(quoteForm.includes('id="quick-weight" required'), 'Quick quote weight/volume field must be required');
+requireText(quoteForm.includes('id="quick-dimensions"') && quoteForm.includes('I’m not sure'), 'Quick quote dimensions fallback is missing');
 requireText(quoteForm.includes('Not sure'), 'Quick quote equipment fallback is missing');
 requireText(quoteForm.includes('quick-email') && quoteForm.includes('type="email"'), 'Quick quote contact field is missing');
 requireText(quoteForm.includes("submitToFormspree('Quick Freight Quote'"), 'Quick quote delivery integration is missing');
@@ -71,6 +74,18 @@ for (const [path, content] of [
 
 const unsupportedChinaMarketingClaims = /preferred freight forwarder|first-time clearance|no hidden fees|rates and transit times verified|current wait times at Felixstowe|world's busiest container port|handles 40% of UK container traffic/i;
 requireText(!unsupportedChinaMarketingClaims.test(chinaRoute), 'China–UK route exposes an unsupported marketing or operational claim');
+
+const unsupportedCustomsClaims = /100% compliance|HMRC-authorised brokers|our own facility|fully trained and registered|all costs upfront|experts in the Windsor Framework/i;
+requireText(!unsupportedCustomsClaims.test(customsClearance), 'Customs page exposes an unsupported authorisation, outcome or facility claim');
+requireText(!unsupportedCustomsClaims.test(generator), 'Static customs page exposes an unsupported authorisation, outcome or facility claim');
+for (const officialUrl of [
+  'https://www.gov.uk/government/collections/customs-declaration-service',
+  'https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf',
+  'https://www.gov.uk/trade-tariff',
+]) {
+  requireText(customsClearance.includes(officialUrl), `Customs page is missing primary guidance link: ${officialUrl}`);
+  requireText(generator.includes(officialUrl), `Static customs page is missing primary guidance link: ${officialUrl}`);
+}
 
 for (const [path, content] of [
   ['src/pages/Contact.tsx', contact],
