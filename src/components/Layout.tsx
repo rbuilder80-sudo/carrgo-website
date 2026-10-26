@@ -43,7 +43,7 @@ function quoteContext(pathname: string): QuoteContext | null {
 
   const service = path.match(/^\/services\/([^/]+)$/)?.[1];
   if (service && serviceNames[service]) {
-    return { title: `Get a ${serviceNames[service]} quote`, destination: 'United Kingdom' };
+    return { title: `Get ${service === 'air-freight' || service === 'amazon-fba-freight' ? 'an' : 'a'} ${serviceNames[service]} quote`, destination: 'United Kingdom' };
   }
 
   if (path.startsWith('/industries/')) {
