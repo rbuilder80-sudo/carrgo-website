@@ -21,4 +21,5 @@
 - JSON/source-reference integrity: passed (17 ports, 227 unique sources, no broken references; all congestion measurements remain null/unknown)
 - SEO guard and production build: passed (`npm run check:seo`; 227 static HTML files; built sitemap checks passed)
 - Existing SaaS regression suite: 10 passed, 4 failed. The failures are unchanged legacy checks for two absent article URLs, a stale engine heartbeat and an `overall` field missing from the live health feed; none is caused by this content/data update.
-- Deployment and live verification: pending
+- Deployment: successful via the established GitHub Pages workflow, run 40292086249, from commit `af72652261a3fcae68bdeddeed2b8274a63c140e`.
+- Live verification: passed after deployment. The tracker returned the 26 October checked timestamp, self-canonical, quote path and 17 `Unknown` rows; both latest and dated ledgers returned 17 ports, 227 sources and null `measurementObservedAt`; robots.txt referenced the sitemap; the tracker sitemap `lastmod` was 26 October while the unchanged weekly report remained dated and mapped to 23 October.
