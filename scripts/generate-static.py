@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 36334)
-Total output lines: 2337
-
 # Carrgo Static HTML Generator for GitHub Pages
 # Fixes the broken 404.html and creates static HTML files for every route
 # Each route gets: proper meta tags, H1, structured data, and React app hydration
@@ -875,7 +872,387 @@ ROUTES = {
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "East Coast to UK FCL containers typically cost 1200 to 3000 pounds depending on season and shipment details. West Coast to UK ranges from 1800 to 4000 pounds. LCL is charged per cubic metre."
-             …6334 tokens truncated…       "@type": "Answer",
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need an EORI number to import from the USA to UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. A UK EORI number is mandatory for commercial imports into the UK from the USA. Carrgo can guide importers through the requirement before goods ship."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "/routes/turkey-to-uk": {
+        "title": "Turkey to UK Freight | Road, Sea & Air Cargo | Carrgo",
+        "description": "Cargo from Turkey or Istanbul to the UK by road, sea or air. Compare road freight, customs, ATR support and delivery with shipment-specific quotes.",
+        "keywords": "turkey to uk freight, road freight from turkey to uk, best road freight from turkey to uk, cargo from turkey to uk, cargo from istanbul to uk, istanbul to uk shipping, shipping from turkey to uk, turkish freight forwarder, ambarli to felixstowe, turkey uk trade",
+        "canonical": "https://www.carrgo.co.uk/routes/turkey-to-uk",
+        "h1": "Turkey to UK Freight: Road, Sea &amp; Air Cargo",
+        "staticBody": """
+<h2>Best road freight from Turkey to UK for commercial cargo</h2>
+<p>For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR movement certificate support, UK customs clearance and delivery to your warehouse or fulfilment centre.</p>
+<h2>Air freight to Turkey and from Istanbul to the UK</h2>
+<p>Carrgo handles air freight from Istanbul to the UK for urgent stock and samples, and can also arrange UK to Turkey air freight exports with collection, airline booking, export paperwork and delivery planning.</p>
+<p>Use road freight for fast pallets, sea freight for larger container loads, and air freight when speed matters more than cost.</p>
+""",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Turkey to UK Road Freight & Cargo Shipping",
+                "serviceType": "Turkey To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Road, sea and air freight forwarding from Turkey to the UK, including Istanbul cargo collections, ATR documentation, customs clearance and final UK delivery.",
+                "url": "https://www.carrgo.co.uk/routes/turkey-to-uk"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long does shipping from Turkey to the UK take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sea freight from Turkey to the UK takes 14-20 days port-to-port, road freight takes 5-7 days door-to-door, and air freight from Istanbul to the UK takes 2-3 days."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the best road freight from Turkey to UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "For most palletised Turkish imports, road freight is the best balance of speed and cost. Carrgo arranges supplier collection, export paperwork, ATR support, UK customs clearance and final delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Carrgo arrange air freight to Turkey from the UK?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Carrgo can arrange UK to Turkey air freight for urgent exports, samples and commercial cargo, including UK collection, airline booking, export paperwork and delivery planning through Istanbul and other Turkish gateways."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does shipping from Turkey to UK cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Road freight from Turkey to the UK typically costs GBP 200-500 per pallet. Sea freight ranges from GBP 800-2,200 per container. Air freight is usually GBP 2.50-5 per kilogram."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "/routes/uae-to-uk": {
+        "title": "Shipping from UAE to UK | Dubai Freight | Sea & Air | Carrgo",
+        "description": "Shipping from UAE to UK? Carrgo handles Dubai and Abu Dhabi freight with sea freight (18-24 days) and air freight (2-4 days). Full customs clearance. Get your UAE-UK freight quote.",
+        "keywords": "shipping from uae to uk, dubai to uk freight, uae freight forwarding",
+        "canonical": "https://www.carrgo.co.uk/routes/uae-to-uk",
+        "h1": "Shipping from UAE to UK — Dubai Freight Services",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from UAE to UK — Dubai Freight Services",
+                "serviceType": "Uae To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from UAE to UK? Carrgo handles Dubai and Abu Dhabi freight with sea freight (18-24 days) and air freight (2-4 days). Full customs clearance. Get your UAE-UK freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/uae-to-uk"
+            }
+        ]
+    },
+    "/routes/spain-to-uk": {
+        "title": "Shipping from Spain to UK | Road & Sea Freight | Carrgo",
+        "description": "Shipping from Spain to UK? Carrgo offers road freight (4-9 days) and sea freight (7-12 days) with full customs clearance. Barcelona, Madrid to UK. Get your Spain-UK freight quote.",
+        "keywords": "shipping from spain to uk, spain to uk freight, road freight spain uk",
+        "canonical": "https://www.carrgo.co.uk/routes/spain-to-uk",
+        "h1": "Shipping from Spain to UK — Road &amp; Sea Freight",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping from Spain to UK — Road &amp; Sea Freight",
+                "serviceType": "Spain To Uk",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping from Spain to UK? Carrgo offers road freight (4-9 days) and sea freight (7-12 days) with full customs clearance. Barcelona, Madrid to UK. Get your Spain-UK freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/spain-to-uk"
+            }
+        ]
+    },
+    "/routes/belfast-northern-ireland": {
+        "title": "Shipping to Belfast & Northern Ireland | Freight | Customs | Carrgo",
+        "description": "Shipping to Northern Ireland? Carrgo handles Belfast, Larne, and Londonderry freight with full NI Protocol compliance. Sea, road, and air options. Windsor Framework documentation included.",
+        "keywords": "shipping to northern ireland, belfast freight, ni protocol shipping, windsor framework",
+        "canonical": "https://www.carrgo.co.uk/routes/belfast-northern-ireland",
+        "h1": "Shipping to Belfast &amp; Northern Ireland — NI Protocol Compliant",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping to Belfast &amp; Northern Ireland — NI Protocol Compliant",
+                "serviceType": "Belfast Northern Ireland",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping to Northern Ireland? Carrgo handles Belfast, Larne, and Londonderry freight with full NI Protocol compliance. Sea, road, and air options. Windsor Framework documentation included.",
+                "url": "https://www.carrgo.co.uk/routes/belfast-northern-ireland"
+            }
+        ]
+    },
+    "/routes/dublin-ireland": {
+        "title": "Shipping to Dublin & Ireland | Freight | Customs | Carrgo",
+        "description": "Shipping to Ireland? Carrgo handles Dublin, Cork, Rosslare, and Shannon Foynes freight with full Irish customs clearance. Sea, road, and air options. Get your Ireland freight quote.",
+        "keywords": "shipping to ireland, dublin freight, ireland customs clearance, cork shipping",
+        "canonical": "https://www.carrgo.co.uk/routes/dublin-ireland",
+        "h1": "Shipping to Dublin &amp; Ireland — Full Customs Clearance",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Shipping to Dublin &amp; Ireland — Full Customs Clearance",
+                "serviceType": "Dublin Ireland",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "areaServed": "GB",
+                "description": "Shipping to Ireland? Carrgo handles Dublin, Cork, Rosslare, and Shannon Foynes freight with full Irish customs clearance. Sea, road, and air options. Get your Ireland freight quote.",
+                "url": "https://www.carrgo.co.uk/routes/dublin-ireland"
+            }
+        ]
+    },
+    "/resources/port-congestion-tracker": {
+        "title": "UK & Ireland Port Congestion Evidence | Carrgo",
+        "description": "Dated primary-source port operating notices for 17 UK and Ireland ports. Unverified waiting times, scores and forecasts are shown as unknown.",
+        "keywords": "uk port congestion evidence, port operating notices, felixstowe port status, southampton port status, liverpool port notices, dublin port notices",
+        "canonical": "https://www.carrgo.co.uk/resources/port-congestion-tracker/",
+        "h1": "UK &amp; Ireland Port Congestion Tracker",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "UK & Ireland Port Congestion Evidence",
+                "description": "Dated primary-source port operating notices with unverified numerical congestion metrics shown as unknown.",
+                "url": "https://www.carrgo.co.uk/resources/port-congestion-tracker/",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Carrgo Freight Solutions",
+                    "url": "https://www.carrgo.co.uk"
+                }
+            }
+        ]
+    },
+    "/resources/shipping-guides": {
+        "title": "Shipping Guides | UK Import & Export Documentation | Carrgo",
+        "description": "Confused by shipping documentation? Carrgo's free shipping guides cover UK import/export paperwork, Incoterms, customs declarations, and compliance requirements. Download now.",
+        "keywords": "shipping guides uk, import export documentation, shipping paperwork, freight documentation",
+        "canonical": "https://www.carrgo.co.uk/resources/shipping-guides",
+        "h1": "Shipping Guides — UK Import &amp; Export Documentation",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/container-size-guide": {
+        "title": "Container Size Guide | 20ft, 40ft, HC | FCL & LCL | Carrgo",
+        "description": "Not sure what container size you need? Carrgo's container size guide explains 20ft, 40ft, and 40ft HC dimensions, capacities, and FCL vs LCL. Plan your shipment efficiently.",
+        "keywords": "container size guide, 20ft container, 40ft container, fcl vs lcl, container dimensions",
+        "canonical": "https://www.carrgo.co.uk/resources/container-size-guide",
+        "h1": "Container Size Guide — 20ft, 40ft &amp; High Cube Containers",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/incoterms-guide": {
+        "title": "Incoterms Guide 2020 | EXW, FOB, CIF, DDP Explained | Carrgo",
+        "description": "Confused by Incoterms? Carrgo's guide explains EXW, FOB, CIF, DDP, and all 2020 Incoterms with clear examples. Know exactly who pays for what in your international shipment.",
+        "keywords": "incoterms guide, exw fob cif ddp, incoterms 2020 explained, shipping terms",
+        "canonical": "https://www.carrgo.co.uk/resources/incoterms-guide",
+        "h1": "Incoterms Guide 2020 — EXW, FOB, CIF, DDP Explained",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/freight-faqs": {
+        "title": "Freight FAQs | Common Shipping Questions Answered | Carrgo",
+        "description": "Got questions about freight forwarding? Carrgo answers the most common questions about shipping costs, transit times, customs, documentation, and insurance. Get the answers you need.",
+        "keywords": "freight faqs, shipping questions, common freight questions, freight forwarding faq",
+        "canonical": "https://www.carrgo.co.uk/resources/freight-faqs",
+        "h1": "Freight FAQs — Common Shipping Questions Answered",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/case-studies": {
+        "title": "Case Studies Correction | Carrgo",
+        "description": "Carrgo has withdrawn unverified case-study outcomes pending source records and publication consent.",
+        "keywords": "",
+        "canonical": "https://www.carrgo.co.uk/resources/case-studies",
+        "h1": "Unverified Case-Study Claims Withdrawn",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png",
+        "noindex": True,
+        "staticBody": """
+<p>Carrgo has removed the case-study outcomes previously shown at this URL because source records and publication consent were not available for independent verification.</p>
+<p>This address remains available as a correction record. <a href="/get-a-quote/">Request a shipment-specific freight quote</a>.</p>
+"""
+    },
+    "/resources/industries": {
+        "title": "Industries We Serve | Freight Solutions by Sector | Carrgo",
+        "description": "Whatever your industry, Carrgo has freight solutions. We serve furniture, e-commerce, automotive, construction, electronics, and fashion sectors. Find your industry's shipping solution.",
+        "keywords": "industries served freight, freight by sector, shipping solutions industry",
+        "canonical": "https://www.carrgo.co.uk/resources/industries",
+        "h1": "Industries We Serve — Freight Solutions by Sector",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/ecommerce": {
+        "title": "Ecommerce Freight UK | Amazon FBA Shipping | Online Retail | Carrgo",
+        "description": "Ecommerce sellers — struggling with shipping to Amazon FBA or direct-to-consumer fulfilment? Carrgo handles ecommerce freight including FBA prep, labelling, and delivery to UK fulfilment centres. Fast quotes.",
+        "keywords": "ecommerce freight uk, amazon fba shipping, online retail logistics, ecommerce delivery uk",
+        "canonical": "https://www.carrgo.co.uk/industries/ecommerce",
+        "h1": "Ecommerce Freight UK — Amazon FBA &amp; Online Retail Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/manufacturing": {
+        "title": "Manufacturing Freight UK | Raw Materials & Machinery Shipping | Carrgo",
+        "description": "Manufacturers — need reliable shipping for raw materials, machinery, and components? Carrgo handles manufacturing freight with sea, air, and road options. Full customs clearance. Get your shipment-specific quote.",
+        "keywords": "manufacturing freight uk, raw materials shipping, machinery freight, factory logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/manufacturing",
+        "h1": "Manufacturing Freight UK — Raw Materials &amp; Machinery Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/retail": {
+        "title": "Retail Freight UK | Wholesale & Distribution Shipping | Carrgo",
+        "description": "Retailers — struggling with stock replenishment and wholesale distribution? Carrgo handles retail freight with pallet shipping, container loads, and express delivery. Seasonal surges handled. Get your quote.",
+        "keywords": "retail freight uk, wholesale shipping, distribution logistics, retail logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/retail",
+        "h1": "Retail Freight UK — Wholesale &amp; Distribution Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/automotive": {
+        "title": "Automotive Freight UK | Car Parts & Vehicle Shipping | Carrgo",
+        "description": "Automotive suppliers — need reliable parts shipping and vehicle logistics? Carrgo handles automotive freight including car parts, tyres, accessories, and vehicle components. Full customs clearance. Get your quote.",
+        "keywords": "automotive freight uk, car parts shipping, vehicle logistics, automotive logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/automotive",
+        "h1": "Automotive Freight UK — Car Parts &amp; Vehicle Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/construction": {
+        "title": "Construction Freight UK | Building Materials & Equipment | Carrgo",
+        "description": "Construction companies — need heavy materials and equipment shipped to site? Carrgo handles construction freight including building materials, machinery, and tools. Flatbed and heavy haul available. Get your quote.",
+        "keywords": "construction freight uk, building materials shipping, construction logistics, heavy haul",
+        "canonical": "https://www.carrgo.co.uk/industries/construction",
+        "h1": "Construction Freight UK — Building Materials &amp; Equipment Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/electronics": {
+        "title": "Electronics Freight UK | Tech & Gadget Shipping | Carrgo",
+        "description": "Electronics importers — need safe shipping for fragile tech products? Carrgo handles electronics freight with anti-static packaging, shock protection, and climate-controlled options. Insurance included. Get your quote.",
+        "keywords": "electronics freight uk, tech shipping, gadget logistics, electronics logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/electronics",
+        "h1": "Electronics Freight UK — Tech &amp; Gadget Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/medical": {
+        "title": "Medical Freight UK | Pharma & Healthcare Shipping | Carrgo",
+        "description": "Healthcare suppliers — need temperature-controlled shipping for medical and pharmaceutical products? Carrgo handles medical freight with cold chain, GDP compliance, and secure handling. Get your quote.",
+        "keywords": "medical freight uk, pharmaceutical shipping, healthcare logistics, cold chain logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/medical",
+        "h1": "Medical Freight UK — Pharmaceutical &amp; Healthcare Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/industries/furniture": {
+        "title": "Furniture Freight UK | Flat-Pack & Upholstered Shipping | Carrgo",
+        "description": "Furniture importers — worried about damage to flat-pack and upholstered goods? Carrgo handles furniture freight with custom crating, protective wrapping, and white-glove delivery. Get your quote.",
+        "keywords": "furniture freight uk, flat pack shipping, upholstered furniture shipping, furniture logistics",
+        "canonical": "https://www.carrgo.co.uk/industries/furniture",
+        "h1": "Furniture Freight UK — Flat-Pack &amp; Upholstered Shipping",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/our-process": {
+        "title": "Our Process | How Carrgo Works | Step-by-Step | Carrgo",
+        "description": "Wondering how freight forwarding works? Carrgo's 5-step process takes you from quote request to delivery. Transparent, tracked, and hassle-free. See how we work.",
+        "keywords": "freight process, how freight forwarding works, shipping process steps, carrgo process",
+        "canonical": "https://www.carrgo.co.uk/resources/our-process",
+        "h1": "Our Process — How Carrgo Works Step-by-Step",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    },
+    "/resources/post-brexit-customs-guide": {
+        "title": "UK Import Customs Clearance Guide | Post-Brexit Rules | Carrgo",
+        "description": "UK import customs clearance guide for 2026: EORI numbers, commodity codes, CDS declarations, rules of origin, duty, VAT and document checks.",
+        "keywords": "uk import customs clearance guide, post brexit customs guide, uk import rules 2026, eori number, commodity code, customs declaration service, import duty vat",
+        "canonical": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide",
+        "h1": "UK Import Customs Clearance Guide — Post-Brexit Rules",
+        "staticBody": """
+<h2>What does a UK importer need for customs clearance?</h2>
+<p>To clear goods into the UK, you normally need a GB EORI number, a correct commodity code, supplier invoice, packing list, goods value, country of origin, freight details and any licence or certificate needed for controlled products. Carrgo checks these before shipment and submits the import declaration through CDS.</p>
+<ul>
+<li>GB EORI number and importer details</li>
+<li>Commodity code and goods description</li>
+<li>Commercial invoice and packing list</li>
+<li>Customs value, duty, VAT and origin evidence</li>
+</ul>
+<p><a href="https://www.carrgo.co.uk/get-a-quote">Get customs clearance help</a></p>
+""",
+        "ogImage": "https://www.carrgo.co.uk/og-image.png"
+    ,
+        "structuredData": [
+            {
+                "@context": "https://schema.org",
+                "@type": "Guide",
+                "name": "UK Import Customs Clearance Guide",
+                "description": "A practical post-Brexit customs guide for UK importers covering EORI numbers, commodity codes, CDS import declarations, rules of origin, duty, VAT and common clearance delays.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CARRGO FREIGHT LTD",
+                    "url": "https://www.carrgo.co.uk"
+                },
+                "url": "https://www.carrgo.co.uk/resources/post-brexit-customs-guide"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What do I need to import goods into the UK after Brexit?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most UK importers need a GB EORI number, the right commodity code, a commercial invoice, packing list, shipment value, origin details, and any licences or certificates required for controlled goods. A customs declaration is then submitted through the Customs Declaration Service."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do EU goods still need UK customs clearance?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
                             "text": "Yes. Goods imported into Great Britain from the EU usually need an import declaration, commodity code, customs value and VAT or duty checks. Preferential duty may apply when goods meet the rules of origin under the relevant trade agreement."
                         }
                     },
