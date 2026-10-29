@@ -21,5 +21,7 @@
 - SEO guard and form-delivery checks: passed
 - Production build and built-sitemap checks: passed — 227 static HTML files; 89 unique indexable sitemap URLs
 - Existing SaaS regression suite: baseline unchanged — 10 passed, 4 failed (two retired article expectations, stale heartbeat and undefined legacy health status)
-- Deployment: pending
-- Live verification: pending
+- Repository commit: `02283ad671fd701ba49c9fb6982a1aa05091638a`
+- Deployment: GitHub Pages workflow [40844213330](https://github.com/rbuilder80-sudo/carrgo-website/actions/runs/40844213330) completed successfully
+- Live verification: passed — tracker, dated/latest JSON, CSV, sitemap, robots and unchanged 23 October report returned HTTP 200; tracker is canonical/indexable, shows 17 `Unknown` rows, exposes the complete quote path and records the 29 October check; both JSON files contain 17 ports and 242 sources with all port-wide measurements null
+- Existing regression workflow [40844213338](https://github.com/rbuilder80-sudo/carrgo-website/actions/runs/40844213338) failed on the same four legacy assertions reproduced locally; the scoped SEO/form/build checks passed
