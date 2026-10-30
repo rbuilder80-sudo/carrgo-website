@@ -27,9 +27,13 @@
 
 ## Editorial distribution
 
-- Status: not submitted unless and until the connected mailbox is verified as the authenticated support@carrgo.co.uk identity or an explicitly authorised send-as identity.
+- Status: not submitted. The connected Gmail profile is authenticated as `rbuilder80@gmail.com`; no available account-configuration evidence verifies `support@carrgo.co.uk` as the mailbox or an authorised send-as identity. The mandatory sender restriction therefore blocks every submission.
 - No fallback sender, Reply-To substitution, test message or follow-up chaser is permitted.
-- Official public outlet routes and any submission outcome are recorded after post-publication verification.
+- Logistics Manager: not submitted; its official contact page designates `lmnewsdesk@akabomedia.co.uk` as the press-release route monitored by the editorial team: https://www.logisticsmanager.com/contact-us/
+- Container News: not submitted; its official public submission form accepts a source URL and sender details, but using it would not establish authenticated `support@carrgo.co.uk` origin: https://container-news.com/submit-your-news/
+- The Loadstar: not submitted; the clearly documented press-release route is a paid £50 placement, which is outside scope, while a free current submission address was not exposed in accessible official text: https://theloadstar.com/press-releases/
+- Port Technology International: skipped as ambiguous for this edition; its official contact page exposes general enquiries rather than a designated free editorial submission route: https://www.porttechnology.org/contact/
+- No Gmail Sent/history retry reconciliation was needed because no authorised send was attempted. No outlet acceptance, external publication or attribution link is claimed.
 
 ## Prepared pitch — not sent
 
@@ -41,3 +45,13 @@ Carrgo’s 30 October UK and Ireland port evidence report records two practical 
 - `npm run build`: passed (TypeScript, Vite, static generation and 90-URL built-sitemap checks).
 - Custom report validation: passed (17 ports, 250 preserved source records, all numerical metrics null, valid NewsArticle/Dataset JSON-LD, dated/current canonicals, accessible table, quote fields, downloads and sitemap membership).
 - `node tests/regression.js`: 10 passed, 4 known baseline failures. The applicable homepage, sitemap, IndexNow, `llms.txt`, heartbeat-presence and completed-task assertions passed; the suite continues to flag two retired article URLs, its stale heartbeat-age assertion and an existing `health.json` schema mismatch (`overall` undefined). These baseline failures are unrelated to this report.
+
+## Deployment and live verification
+
+- Source commit: `8011619503ab8c372dd543cb816d56859c7cbe43` on `main`.
+- Established GitHub Pages workflow: run 41079108787 completed successfully on 30 October 2026.
+- The dated and current report URLs were live-verified with the 30 October headline, visible 15:03 GMT publication/check time, accessible evidence table, indexable self-referencing canonical, NewsArticle and Dataset JSON-LD, primary citations, internal port/service links and the complete quote path.
+- The live dated ledger was parsed successfully: 17 ports, 250 preserved source records, all numerical metrics null, no comparable port observations, and the 11:30/12:00 Met Office records present.
+- The dated CSV completed a browser download. The regular sitemap contains the current URL, 30 October edition, preserved 23 October edition and truthful 30 October `lastmod`; the News sitemap contains only the eligible 30 October edition.
+- Live `robots.txt` references both `sitemap.xml` and `news-sitemap.xml`; the tracker exposes the afternoon forecasts and links to the current report.
+- Search Console submission and indexing were not claimed; public-search extraction was still serving a stale cached copy immediately after deployment, which is not evidence that the live site failed to update.
