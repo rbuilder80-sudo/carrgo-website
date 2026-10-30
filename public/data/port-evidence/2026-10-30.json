@@ -8,8 +8,8 @@
   "methodology": "Public-source evidence review, not an AIS feed. Notices support only their stated location and period. A notice is not a measurement of port-wide congestion. Missing measurements remain null; no score, ranking, forecast or historical change is calculated. Health scores run high-is-good; congestion scores run high-is-bad. Neither is currently verified.",
   "audit": {
     "sourceBranch": "main",
-    "sourceCommit": "c7a7cdd4a1ff8ed60a8f1891b46184f360cee291",
-    "productionBaseCommit": "c7a7cdd4a1ff8ed60a8f1891b46184f360cee291",
+    "sourceCommit": "94135e71f24d32243a9b985c1f01a3b396154d18",
+    "productionBaseCommit": "94135e71f24d32243a9b985c1f01a3b396154d18",
     "findings": [
       "src/data/portData.ts contains 17 hard-coded port records, relative update strings and random synthetic history; these are not verified observations.",
       "The production report contains figures labelled 2026-09-02, whereas the search extraction still showed 2026-08-26. Neither date establishes when the metrics were measured.",
@@ -20,7 +20,7 @@
       "Production was again overwritten with an unsupported automated numerical snapshot dated 1 October while the evidence ledger recorded every numerical congestion metric as unknown. The valid 25 September report and evidence-led archive were restored on 2 October, and the unsupported dated URL was retained only as a transparent noindex correction record.",
       "On 4 October the live current report was again found serving the unsupported 1 October numerical snapshot despite the corrected source on main. This run republishes the corrected source; the separate writer remains an unresolved production-integrity risk."
     ],
-    "changesSincePrevious": "Since the 29 October check, no newer official port notice was found: Liverpool still lists Notice 72/2026 as its latest alert, Belfast still lists Notice 29/2026, and Dublin still lists Notice 49/2026. A Maersk advisory dated 26 October confirms that its London Gateway empty-container acceptance restrictions were lifted from 12:00 that day; this carrier-specific recovery does not establish terminal-wide performance. The Met Office shipping forecast issued at 05:05 UTC on 30 October carries a Malin gale warning for southerly gale force 8 expected soon, while the Irish Sea and Shannon have no gale-warning headings. The inshore forecast issued at 06:00 UTC retains strong-wind warnings in reviewed Irish Sea and Northern Ireland sectors, generally easing. No comparable port-wide queue, waiting-time or berth-utilisation measurement was verified, so no numerical congestion change is calculated."
+    "changesSincePrevious": "The afternoon recheck adds the 11:30 UTC shipping forecast and 12:00 UTC inshore forecast. Irish Sea, Shannon and Malin no longer carry gale-warning headings in the 11:30 product; Northern Ireland inshore sectors retain strong-wind warnings with force 6 only at first and easing. Liverpool still lists Notice 72/2026, Belfast still lists Notice 29/2026 and Dublin still lists Notice 49/2026. Maersk’s 26 October London Gateway empty-return resumption remains carrier-specific recovery evidence. No comparable port-wide queue, waiting-time, dwell-time or berth-utilisation measurement was verified, so all numerical congestion changes remain unknown."
   },
   "sources": [
     {
@@ -4474,6 +4474,42 @@
       "validThrough": "2026-10-31T06:00:00Z",
       "observedAt": null,
       "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time and berth-utilisation measurements suitable for comparison."
+    },
+    {
+      "id": "met-office-shipping-2026-10-30-1130",
+      "publisher": "Met Office on behalf of the Maritime and Coastguard Agency",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast",
+      "publishedOn": "2026-10-30",
+      "publishedAt": "2026-10-30T11:30:00Z",
+      "checkedOn": "2026-10-30",
+      "checkedAt": "2026-10-30T15:03:23+00:00",
+      "kind": "official-weather-advisory",
+      "access": "Public official shipping forecast checked directly",
+      "confidence": "high for the displayed forecast period, sea-area text and warning headings; none for port-wide congestion conditions",
+      "claim": "The shipping forecast issued at 11:30 UTC on 30 October, valid from 12:00 UTC on 30 October to 12:00 UTC on 31 October, has no gale-warning heading for the Irish Sea, Shannon or Malin. The Irish Sea is forecast southerly or southeasterly 3 to 5, occasionally variable 2 later; Shannon cyclonic 4 to 6, becoming variable 3 for a time; and Malin south 5 to 7 becoming variable 2 to 4. These are sea-area forecasts, not evidence of port congestion or a measured port disruption.",
+      "supportedClaim": "The shipping forecast issued at 11:30 UTC on 30 October, valid from 12:00 UTC on 30 October to 12:00 UTC on 31 October, has no gale-warning heading for the Irish Sea, Shannon or Malin. The Irish Sea is forecast southerly or southeasterly 3 to 5, occasionally variable 2 later; Shannon cyclonic 4 to 6, becoming variable 3 for a time; and Malin south 5 to 7 becoming variable 2 to 4. These are sea-area forecasts, not evidence of port congestion or a measured port disruption.",
+      "validFrom": "2026-10-30T12:00:00Z",
+      "validThrough": "2026-10-31T12:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time, dwell-time and berth-utilisation measurements suitable for comparison."
+    },
+    {
+      "id": "met-office-inshore-2026-10-30-1200",
+      "publisher": "Met Office",
+      "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/print/inshore-waters-forecast",
+      "publishedOn": "2026-10-30",
+      "publishedAt": "2026-10-30T12:00:00Z",
+      "checkedOn": "2026-10-30",
+      "checkedAt": "2026-10-30T15:03:23+00:00",
+      "kind": "official-weather-advisory",
+      "access": "Public official inshore waters forecast checked directly",
+      "confidence": "high for the displayed forecast period and strong-wind headings; none for port-wide congestion conditions",
+      "claim": "The inshore forecast issued at 12:00 UTC on 30 October, valid to 12:00 UTC on 31 October, has no strong-wind heading for St Davids Head to Great Orme Head, Great Orme Head to Mull of Galloway or Isle of Man. Lough Foyle to Carlingford Lough and the North Channel retain strong-wind warnings, with southerly or southeasterly 4 or 5, occasionally 6 at first and 3 later. These are coastal weather advisories, not evidence of port congestion or a measured port disruption.",
+      "supportedClaim": "The inshore forecast issued at 12:00 UTC on 30 October, valid to 12:00 UTC on 31 October, has no strong-wind heading for St Davids Head to Great Orme Head, Great Orme Head to Mull of Galloway or Isle of Man. Lough Foyle to Carlingford Lough and the North Channel retain strong-wind warnings, with southerly or southeasterly 4 or 5, occasionally 6 at first and 3 later. These are coastal weather advisories, not evidence of port congestion or a measured port disruption.",
+      "validFrom": "2026-10-30T12:00:00Z",
+      "validThrough": "2026-10-31T12:00:00Z",
+      "observedAt": null,
+      "missingEvidence": "Port-specific operational effects and timestamped port-wide queue, waiting-time, dwell-time and berth-utilisation measurements suitable for comparison."
     }
   ],
   "ports": [
@@ -4615,7 +4651,9 @@
         "met-office-shipping-2026-10-29-0505",
         "met-office-inshore-2026-10-29-0600",
         "met-office-shipping-2026-10-30-0505",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-shipping-2026-10-30-1130",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4657,7 +4695,8 @@
         "belfast-notices-index-2026-10-29",
         "met-office-inshore-2026-10-29-0600",
         "belfast-notices-index-2026-10-30",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Notice 29/2026 remains latest, titled as a clarification of turbidity buoy deployment for D3 works. Its detail remains unavailable through the index, so no effect is inferred. Current strong-wind warnings are context only; measured congestion remains unknown.",
       "observedAt": null,
@@ -4681,7 +4720,8 @@
         "met-office-inshore-2026-10-27-0600",
         "met-office-inshore-2026-10-28-0001",
         "met-office-inshore-2026-10-29-0600",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4718,7 +4758,9 @@
         "met-office-shipping-2026-10-29-0505",
         "met-office-inshore-2026-10-29-0600",
         "met-office-shipping-2026-10-30-0505",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-shipping-2026-10-30-1130",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4758,7 +4800,8 @@
         "dublin-notices-index-2026-10-29",
         "met-office-shipping-2026-10-29-0505",
         "dublin-notices-index-2026-10-30",
-        "met-office-shipping-2026-10-30-0505"
+        "met-office-shipping-2026-10-30-0505",
+        "met-office-shipping-2026-10-30-1130"
       ],
       "review": "Dublin Port’s index still lists Notice 49/2026 as latest. Its real-time work stage and any operational effect remain unverified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4797,7 +4840,9 @@
         "met-office-shipping-2026-10-29-0505",
         "met-office-inshore-2026-10-29-0600",
         "met-office-shipping-2026-10-30-0505",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-shipping-2026-10-30-1130",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4821,7 +4866,8 @@
         "met-office-shipping-2026-10-27-0505",
         "met-office-shipping-2026-10-28-0505",
         "met-office-shipping-2026-10-29-0505",
-        "met-office-shipping-2026-10-30-0505"
+        "met-office-shipping-2026-10-30-0505",
+        "met-office-shipping-2026-10-30-1130"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4850,7 +4896,9 @@
         "met-office-shipping-2026-10-29-0505",
         "met-office-inshore-2026-10-29-0600",
         "met-office-shipping-2026-10-30-0505",
-        "met-office-inshore-2026-10-30-0600"
+        "met-office-inshore-2026-10-30-0600",
+        "met-office-shipping-2026-10-30-1130",
+        "met-office-inshore-2026-10-30-1200"
       ],
       "review": "Current weather advisories are operational context only; no timestamped primary port-wide queue, waiting-time or berth-utilisation measurement was verified. Current measured congestion remains unknown.",
       "observedAt": null,
@@ -4872,6 +4920,6 @@
     "missingEvidence": null
   },
   "reuse": "Original factual summaries with links; source documents are not republished or relicensed. Source owners retain their rights.",
-  "checkedAt": "2026-10-30T08:48:39+00:00",
-  "changesSincePreviousCheck": "Since the 29 October check, no newer official port notice was found: Liverpool still lists Notice 72/2026 as its latest alert, Belfast still lists Notice 29/2026, and Dublin still lists Notice 49/2026. A Maersk advisory dated 26 October confirms that its London Gateway empty-container acceptance restrictions were lifted from 12:00 that day; this carrier-specific recovery does not establish terminal-wide performance. The Met Office shipping forecast issued at 05:05 UTC on 30 October carries a Malin gale warning for southerly gale force 8 expected soon, while the Irish Sea and Shannon have no gale-warning headings. The inshore forecast issued at 06:00 UTC retains strong-wind warnings in reviewed Irish Sea and Northern Ireland sectors, generally easing. No comparable port-wide queue, waiting-time or berth-utilisation measurement was verified, so no numerical congestion change is calculated."
+  "checkedAt": "2026-10-30T15:03:23+00:00",
+  "changesSincePreviousCheck": "The afternoon recheck adds the 11:30 UTC shipping forecast and 12:00 UTC inshore forecast. Irish Sea, Shannon and Malin no longer carry gale-warning headings in the 11:30 product; Northern Ireland inshore sectors retain strong-wind warnings with force 6 only at first and easing. Liverpool still lists Notice 72/2026, Belfast still lists Notice 29/2026 and Dublin still lists Notice 49/2026. Maersk’s 26 October London Gateway empty-return resumption remains carrier-specific recovery evidence. No comparable port-wide queue, waiting-time, dwell-time or berth-utilisation measurement was verified, so all numerical congestion changes remain unknown."
 }
